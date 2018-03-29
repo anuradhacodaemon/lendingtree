@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>SOT</title>
+
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            $(document).ready(function () {
+      			//send ajax call to fetch data 
+                progressBarWidth1 = $("#progress-bar-parent1").css("width").split("px")[0];
+               
+     			// first bar	
+                $("#progress-bar1").css("width", "0%");
+                $("#progress-bar1").html("Various Public Record Databases");
+      			
+            });
+
+            var step1Slot = Math.floor((Math.random() * 15) + 15);
+            var step2Slot = Math.floor((Math.random() * 10) + 40);
+            var step3Slot = Math.floor((Math.random() * 15) + 60);
+            var step4Slot = Math.floor((Math.random() * 10) + 75);
+
+            var step1Interval = Math.floor((Math.random() * 200) + 1);
+            var step2Interval = Math.floor((Math.random() * 500) + 1000);
+            var step3Interval = Math.floor((Math.random() * 500) + 1000);
+            var step4Interval = Math.floor((Math.random() * 100) + 1);
+
+      		// array to randomize time interval of each stage 
+            var intervalArr = [step1Interval, step2Interval, step3Interval, step4Interval];
+			// first bar	
+            var processProgressBar1 = function () {
+                var widthArr1 = $("#progress-bar1").css("width").split("px");
+                var width1 = Math.round((Math.round(widthArr1[0]) / progressBarWidth1) * 100);
+				
+				if(width1 = 20){
+				
+				$("#img1").attr('src','images/fb_icon.png');
+				
+				}
+				if(width1 = 60){
+				
+				setTimeout(function(){$("#img2").attr('src','images/google_plus_icon.png')},1000);
+						
+				}
+				if(width1 = 90){
+					
+				setTimeout(function(){$("#img3").attr('src','images/instagram_icon.png')},2000);
+				}
+				if(width1 = 100){
+				setTimeout(function(){$("#img4").attr('src','images/twitter_icon.png')},3000);
+				}
+                $("#progress-bar1").css("width", (width1 + 1) + "%");
+            }
+			// second bar	
+            
+            // Start Processing progress bar1
+            var startProgressBar1 = function (interval) {
+                progressIntervalTillResponse = setInterval(processProgressBar1, interval);
+            }
+      		
+            setTimeout(startProgressBar1, 3000, intervalArr[Math.floor((Math.random() * 3) + 0)]);
+           
+        </script>
+    </head>
+
+    <body>
+  <section id="content">
+
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h3 class="margin-0 product-title text-center margin-top-20">2/5 step <small>We're Currently Searching Our Available Data Sources</small></h3></div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top-20 padding-0">
+                        <div class="jumbotron" id="progress_bar_holder" >
+                            <div class="container">
+                                <div id="progress-bar-parent1" class="progress align-middle" >
+                                    <div id="progress-bar1" class="progress-bar progress-bar-striped active align-middle" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+
+                                    </div>
+                                    <span> Various Public Record Databases </span>    
+                                </div>
+                                
+                               <img id="img1" src="images/loader.gif"/>
+                               <img id="img2" src="images/loader.gif"/>
+                               <img id="img3" src="images/loader.gif"/>
+                               <img id="img4" src="images/loader.gif"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="result"></div>
+            </div>
+        </section>
+     
+
+    </body>
+</html>
