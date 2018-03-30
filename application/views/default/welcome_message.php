@@ -143,7 +143,7 @@
               <a href="https://coastalcommunityfcu.org/">
                 <div class="prodicon img-responsive">
                   <div class="outerborder outerborder-120">
-                    <img src="img/house.svg" class="img-responsive"/>
+                    <img src="<?php echo BASE_URL; ?>public/html/img/house.svg" class="img-responsive"/>
                   </div>
                 </div>
                 <p class="prodname">Reverse Mortgage</p>
@@ -155,7 +155,7 @@
               <a href="https://coastalcommunityfcu.org/">
                 <div class="prodicon img-responsive">
                   <div class="outerborder outerborder-120">
-                    <img src="img/graduation-hat.svg" class="img-responsive"/>
+                    <img src="<?php echo BASE_URL; ?>public/html/img/graduation-hat.svg" class="img-responsive"/>
                   </div>
                 </div>
                 <p class="prodname">Student Loans</p>
@@ -167,7 +167,7 @@
               <a href="https://coastalcommunityfcu.org/">
                 <div class="prodicon img-responsive">
                   <div class="outerborder outerborder-120">
-                    <img src="img/spinner.svg" class="img-responsive"/>
+                    <img src="<?php echo BASE_URL; ?>public/html/img/spinner.svg" class="img-responsive"/>
                   </div>
                 </div>
                 <p class="prodname">Free Credit Score</p>
@@ -190,7 +190,7 @@
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="">
               <div class="click-box effect-sadie">
-                <span class="icon-ring"><img src="img/mortgage-rate.svg" class="img-responsive"/></span>
+                <span class="icon-ring"><img src="<?php echo BASE_URL; ?>public/html/img/mortgage-rate.svg" class="img-responsive"/></span>
                 <h5 class="nomargin">Live Mortgage Rates</h5>
                 <p>Evaluate your options with our calculators<br><span class="blue">Get Started</span></p>
               </div>
@@ -199,7 +199,7 @@
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="">
               <div class="click-box text-center padding40 white effect-sadie">
-                <span class="icon-ring"><img src="img/mortgage-calculator.svg" class="img-responsive"/></span>
+                <span class="icon-ring"><img src="<?php echo BASE_URL; ?>public/html/img/mortgage-calculator.svg" class="img-responsive"/></span>
                 <h5 class="nomargin">Mortgage Calculators</h5>
                 <p>Evaluate your options with our calculators<br><span class="blue">Get Started</span></p>
               </div>
@@ -208,7 +208,7 @@
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="">
               <div class="click-box text-center padding40 white effect-sadie">
-                <span class="icon-ring"><img src="img/rating.svg" class="img-responsive"/></span>
+                <span class="icon-ring"><img src="<?php echo BASE_URL; ?>public/html/img/rating.svg" class="img-responsive"/></span>
                 <h5 class="nomargin">Ratings & Reviews</h5>
                 <p>Evaluate your options with our calculators<br><span class="blue">Get Started</span></p>
               </div>
@@ -217,7 +217,7 @@
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="">
               <div class="click-box text-center padding40 white effect-sadie">
-                <span class="icon-ring"><img src="img/spinner.svg" class="img-responsive"/></span>
+                <span class="icon-ring"><img src="<?php echo BASE_URL; ?>public/html/img/spinner.svg" class="img-responsive"/></span>
                 <h5 class="nomargin">Free Credit Scores</h5>
                 <p>Evaluate your options with our calculators<br><span class="blue">Get Started</span></p>
               </div>

@@ -23,10 +23,18 @@ class Auto extends CI_Controller {
         // Construct the parent class
         parent::__construct();
         $this->load->model('loan_model');
+        
        
     }
 
     public function index() {
+        
+      $data = array();
+              $data = array(
+                
+                'panel' =>'frontend'
+            );
+            $this->session->set_userdata('userdata', $data);     
         $this->template->view('step1_view');
     }
 

@@ -21,6 +21,11 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
              $data = array();
+              $data = array(
+                
+                'panel' =>'frontend'
+            );
+            $this->session->set_userdata('userdata', $data);
 		$this->template->view('welcome_message');
 	}
 }

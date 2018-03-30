@@ -56,3 +56,12 @@ $route['translate_uri_dashes'] = FALSE;
 $route['auto/'] = 'auto/index';
 $route['auto/step2/(:any)'] = 'auto/step2/$1';
 $route['auto/step3/(:any)'] = 'auto/step3/$1';
+
+$route['admin'] = 'admin/home/index';
+$route['admin/dashboard'] = 'admin/home/dashboard';
+
+
+$route['admin/user'] = 'admin/admin_user/index';
+$route['admin/user/(:num)'] = 'admin/admin_user/index/$1';
+$route['admin/user/details/(:num)'] = 'admin/admin_user/details/$1';
+$route['admin/user/mailsent'] = 'admin/admin_user/mailsent';

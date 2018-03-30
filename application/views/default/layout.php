@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php if($this->session->userdata['userdata']['panel']=='frontend')
+{?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -50,9 +53,9 @@
  <!-- Footer ends here -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script>
       var winWidth = $(window).width();
       $( document ).ready(function() {
@@ -63,3 +66,85 @@
         }
       });
     </script>
+    
+<?php } if($this->session->userdata['userdata']['panel']=='admin')
+{
+    ?>
+    
+    
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php echo (isset($title)) ? $title : 'lendingtree'; ?> </title>
+        <!-- Bootstrap core CSS -->
+        <link href="<?php echo BASE_URL; ?>public/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/css/animate.min.css" rel="stylesheet">
+        <!-- Custom styling plus plugins -->
+        <link href="<?php echo BASE_URL; ?>public/admin/css/custom.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/fonts/icomoon/styles.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo BASE_URL; ?>public/admin/css/components.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/css/icheck/flat/green.css" rel="stylesheet">
+        <script src="<?php echo BASE_URL; ?>public/admin/js/jquery.min.js"></script>
+
+    </head>
+    
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+
+                <?php
+                 $this->load->view('adminlayout/adminheader', $data);
+                ?>
+                <!-- top navigation -->
+
+                <!-- /top navigation -->
+                <?php $this->load->view('adminlayout/navigation', $data); ?>
+                <!-- page content -->
+
+                <div class="right_col" role="main">
+
+                <?php $this->load->view($view, $data); ?>
+
+                  </div>
+                <!-- /page content -->    
+                <?php $this->load->view('adminlayout/footer', $data); ?>
+                    <!-- /footer content -->
+              
+            </div>
+
+        </div>
+
+        <div id="custom_notifications" class="custom-notifications dsp_none">
+            <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+            </ul>
+            <div class="clearfix"></div>
+            <div id="notif-group" class="tabbed_notifications"></div>
+        </div>
+
+        <!-- Bootstrap -->
+        <script src="<?php echo BASE_URL; ?>public/admin/js/bootstrap.min.js" data-semver="3.1.1" data-require="bootstrap"></script>
+        <script src="<?php echo BASE_URL; ?>public/admin/js/bootbox.js"></script>
+
+       <!-- <script src="<?php echo BASE_URL; ?>public/admin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>-->
+        <!-- FastClick -->
+       
+        <!-- Custom Theme Scripts -->
+        <script src="<?php echo BASE_URL; ?>public/admin/build/js/custom.min.js"></script>
+        <script src="<?php echo BASE_URL; ?>public/admin/js/pace/pace.min.js"></script> 
+        <script>
+
+
+        </script>
+    </body>
+</html>
+
+
+    
+    <?php
+}
+?>
