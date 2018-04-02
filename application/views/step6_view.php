@@ -7,18 +7,17 @@
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label"></label>
-                    <div class="form-group">
+                  
                         <label for="usr">Your Current Employer?</label>
                         <input type="text" name="cemployer" placeholder="" class="form-control" id="cemployer" required="">
                         <span id="err1" style="color: red"></span>
 
-                    </div>
-                    <div class="form-group">
+                   
                         <label for="usr">Your Job Title?</label>
                         <input type="text" name="job_title" placeholder="" class="form-control" id="job_title" required="">
                         <span id="err2" style="color: red"></span>
 
-                    </div>
+                    
                     <button class="btn btn-primary" onclick="step6()" > continue   <i class="fa fa-angle-right"></i> </button>
 
 
