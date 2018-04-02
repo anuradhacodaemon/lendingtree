@@ -31,7 +31,7 @@ if($_SERVER['HTTP_HOST']=='localhost' )
 	}
 	else
 	{
-		$config['base_url']	= 'http://54.145.124.70/neozee/';
+		$config['base_url']	= 'http://18.222.7.137/lendingtree/';
 		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/lendingtree/');
 		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/lendingtree/');
 	}
