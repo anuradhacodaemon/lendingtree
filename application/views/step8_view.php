@@ -9,16 +9,20 @@
                     <label class="control-label">Your Name</label>
                     <div class="form-group">
 
-                        <input type="text" name="firstname" placeholder="firstname" class="form-control" id="firstname" required="">
+                        <input type="text" name="firstname" placeholder="firstname" class="form-control" id="firstname" required="" value="<?php if(isset($this->session->userdata['userdata']['firstname'])) echo $this->session->userdata['userdata']['firstname']?>">
                         <span id="err1" style="color: red"></span>
                         </div>
 <div class="form-group">
-                        <input type="text" name="lastname" placeholder="lastname" class="form-control" id="lastname" required="">
+                        <input type="text" name="lastname" placeholder="lastname" class="form-control" id="lastname" value="<?php if(isset($this->session->userdata['userdata']['lastname'])) echo $this->session->userdata['userdata']['lastname']?>" required="">
                         <span id="err2" style="color: red"></span>
-                        <button class="btn btn-primary" onclick="step8($('#firstname').val(), $('#lastname').val())" > continue   <i class="fa fa-angle-right"></i> </button>
 
 
                     </div>
+                    
+                                                        <button class="btn btn-primary" onclick="back()" > <i class="fa fa-angle-left"></i> Back    </button>
+
+                                            <button class="btn btn-primary" onclick="step8($('#firstname').val(), $('#lastname').val())" > continue   <i class="fa fa-angle-right"></i> </button>
+
 
                 </div>
             </div>
@@ -28,6 +32,21 @@
 
 
 <script> //$('input[name=amount]').val()
+    
+     function back() {
+
+                            $.ajax({
+                                type: "GET",
+                                url: "<?php echo BASE_URL . 'auto/step6' ?>",
+                                success: function (data)
+                                {
+                                    
+                                    $('#container').html(data).effect("slide", 'slow');
+                                    //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+                                }
+                            });
+
+                        }
 
                         function step8(firstname, lastname) {
                             if ($('input[name=firstname]').val() == '')

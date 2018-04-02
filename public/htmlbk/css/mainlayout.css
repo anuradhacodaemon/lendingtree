@@ -6,12 +6,6 @@ body {
 }
 a {transition: all .3s;}
 .inner_container {min-height: auto;}
-.inner_height {min-height: 480px;}
-/* margin css */
-.margbot_10 {margin-bottom: 10px !important;}
-.margbot_20 {margin-bottom: 20px !important;}
-.margbot_30 {margin-bottom: 30px !important;}
-.margbot_40 {margin-bottom: 40px !important;}
 /* Header */
 .header-main {
     overflow: hidden;
@@ -456,15 +450,6 @@ a {transition: all .3s;}
     font-size: 28px;
     font-family: loved_by_the_kingregular, Arial, Helvetica, sans-serif;
 }
-.form-main h2 {
-    padding: 0;
-    margin: 0 0 10px;
-    display: block;
-    color: #000;
-    text-align: center;
-    font-size: 24px;
-    font-family: loved_by_the_kingregular, Arial, Helvetica, sans-serif;
-}
 .radio {
     margin-top: 0;
     text-align: center;
@@ -474,6 +459,7 @@ a {transition: all .3s;}
 }
 .radio .button {
     border-radius: 2px;
+    background: #31ada5;
     width: 320px;
     display: inline-block;
     padding: 18px;
@@ -484,42 +470,11 @@ a {transition: all .3s;}
     cursor: pointer;
     text-align: center;
     font-size: 24px;
-    border: 0 none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#42e2d8+0,42e2d8+7,40dad0+19,3dccc3+33,309e97+72,2d908a+88,2b8c86+95,2b8c86+100 */
-    background: #42e2d8; /* Old browsers */
-    background: -moz-linear-gradient(top, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e2d8', endColorstr='#2b8c86',GradientType=0 ); /* IE6-9 */
 }
-.radio .button:hover {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2b8c86+0,2b8c86+5,2d908a+12,309e97+28,3dccc3+67,40dad0+81,42e2d8+93,42e2d8+100 */
-    background: #2b8c86; /* Old browsers */
-    background: -moz-linear-gradient(top, #2b8c86 0%, #2b8c86 5%, #2d908a 12%, #309e97 28%, #3dccc3 67%, #40dad0 81%, #42e2d8 93%, #42e2d8 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #2b8c86 0%,#2b8c86 5%,#2d908a 12%,#309e97 28%,#3dccc3 67%,#40dad0 81%,#42e2d8 93%,#42e2d8 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #2b8c86 0%,#2b8c86 5%,#2d908a 12%,#309e97 28%,#3dccc3 67%,#40dad0 81%,#42e2d8 93%,#42e2d8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b8c86', endColorstr='#42e2d8',GradientType=0 ); /* IE6-9 */
-}
-.status {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbeaba+0,fbeaba+18,fbe9b5+26,fadb85+75,fada80+84,fada80+100 */
-    background: #fbeaba !important; /* Old browsers */
-    background: -moz-linear-gradient(top, #fbeaba 0%, #fbeaba 18%, #fbe9b5 26%, #fadb85 75%, #fada80 84%, #fada80 100%) !important; /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #fbeaba 0%,#fbeaba 18%,#fbe9b5 26%,#fadb85 75%,#fada80 84%,#fada80 100%) !important; /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #fbeaba 0%,#fbeaba 18%,#fbe9b5 26%,#fadb85 75%,#fada80 84%,#fada80 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbeaba', endColorstr='#fada80',GradientType=0 ) !important; /* IE6-9 */
-    color: #000 !important;
-}
-.status:hover {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fada80+0,fada80+16,fadb85+25,fbe9b5+74,fbeaba+82,fbeaba+100 */
-    background: #fada80 !important; /* Old browsers */
-    background: -moz-linear-gradient(top, #fada80 0%, #fada80 16%, #fadb85 25%, #fbe9b5 74%, #fbeaba 82%, #fbeaba 100%) !important; /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #fada80 0%,#fada80 16%,#fadb85 25%,#fbe9b5 74%,#fbeaba 82%,#fbeaba 100%) !important; /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #fada80 0%,#fada80 16%,#fadb85 25%,#fbe9b5 74%,#fbeaba 82%,#fbeaba 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fada80', endColorstr='#fbeaba',GradientType=0 ) !important; /* IE6-9 */
-    color: #000 !important;
-}
-.radio .button_back {
+
+.radio .custom-button {
     border-radius: 2px;
+    background: rgb(24, 58, 163);
     width: 320px;
     display: inline-block;
     padding: 18px;
@@ -530,34 +485,12 @@ a {transition: all .3s;}
     cursor: pointer;
     text-align: center;
     font-size: 24px;
-    border: 0 none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fe8215+0,fe8215+18,fa7f14+25,c45e05+74,bd5a03+84,bd5a03+100 */
-    background: #fe8215; /* Old browsers */
-    background: -moz-linear-gradient(top, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #fe8215 0%,#fe8215 18%,#fa7f14 25%,#c45e05 74%,#bd5a03 84%,#bd5a03 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #fe8215 0%,#fe8215 18%,#fa7f14 25%,#c45e05 74%,#bd5a03 84%,#bd5a03 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe8215', endColorstr='#bd5a03',GradientType=0 ); /* IE6-9 */
 }
-.radio .button_back:hover {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bd5a03+0,bd5a03+16,c45e05+26,fa7f14+75,fe8215+82,fe8215+100 */
-    background: #bd5a03; /* Old browsers */
-    background: -moz-linear-gradient(top, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd5a03', endColorstr='#fe8215',GradientType=0 ); /* IE6-9 */
+
+.radio .custom-button .label-text {
+    display: inline;
 }
-.button_back .sprites.continueIcon {
-    float: left;
-    width: 16px;
-    height: 23px;
-}
-.button_back .continueIcon {
-    background-position: 0 -58px !important;
-    transform: rotate(180deg);
-}
-.status .continueIcon {
-    background-position: 0 -58px !important;
-}
+
 .radio .button .label-text {
     display: inline-block;
     width: 85%;
@@ -587,93 +520,6 @@ input[type="radio"], input[type="checkbox"] {
     margin: 4px 0 0;
     margin-top: 1px \9;
     line-height: normal;
-}
-.form-main input.form-control {
-    font-size: 20px;
-    text-align: center;
-    height: 58px;
-    width: 360px;
-    margin: 0 auto;
-}
-.form-main select.form-control {
-    font-size: 20px;
-    text-align: center;
-    height: 58px;
-    margin: 0 auto;
-}
-.subtext {
-    width: 550px;
-    font-size: 13px;
-    color: #707070;
-    text-align: center;
-    margin: 0 auto 20px;
-    font-family: 'Open Sans',sans-serif;
-}
-/*custom checkbox */
-.checkbox-sec {
-    display: inline-block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-.checkbox-sec input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.checkbox-sec:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox-sec input:checked ~ .checkmark {
-    background-color: #31ada5;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox-sec input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-sec .checkmark:after {
-    left: 10px;
-    top: 7px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
 }
 
 
