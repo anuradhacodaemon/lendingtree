@@ -126,7 +126,7 @@
         else
         {
             $('#err2').html('');
-            alert('vcxv');
+            
             $.ajax({
                 type: "GET",
                 url: "<?php echo BASE_URL . 'auto/step9/' ?>" + email + '/' + password,
