@@ -26,9 +26,9 @@
                             <span class="continueIcon sprites"></span>
                             <input type="radio" value="NewCarPurchase"  onclick="step3(3)" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
-                    
+            <!--        
              <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
-
+-->
 
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                 success: function (data)
                                 {
                                     
-                                    $('#container').html(data).effect("slide", 'slow');
+                                    $('#container').html(data).effect( "slide",{distance: 5});
                                     //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
                                 }
                             });
@@ -62,7 +62,7 @@
                               success: function (data)
                               {
 
-                                  $('#container').html(data).effect("slide", 'slow');
+                                  $('#container').html(data).effect( "slide",{distance: 5});
                               }
                           });
 

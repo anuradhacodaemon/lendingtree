@@ -66,7 +66,7 @@
 
 
 
-                                  $('#container').html(data).effect( "slide",'slow' );
+                                  $('#container').html(data).effect( "slide",{distance: 5});
 
 
                                   //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';

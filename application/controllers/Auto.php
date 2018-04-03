@@ -64,10 +64,11 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0) {
+    public function step4($id = 0,$pre_approved) {
         if ($id) {
             $data = array(
                 'amount' => $id,
+                'pre_approved' => $pre_approved,
                 'years_emt' => $this->session->userdata['userdata']['years_emt'],
                 'type' => $this->session->userdata['userdata']['type'],
             );
@@ -83,6 +84,7 @@ class Auto extends CI_Controller {
         if ($buyfrom) {
             $data = array(
                 'buying_from' => $buyfrom,
+                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
                 'amount' => $this->session->userdata['userdata']['amount'],
                 'years_emt' => $this->session->userdata['userdata']['years_emt'],
                 'type' => $this->session->userdata['userdata']['type'],
@@ -102,6 +104,7 @@ class Auto extends CI_Controller {
                 'month' => $month,
                 'day' => $day,
                 'years' => $year,
+                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
                 'buying_from' => $this->session->userdata['userdata']['buying_from'],
                 'amount' => $this->session->userdata['userdata']['amount'],
                 'years_emt' => $this->session->userdata['userdata']['years_emt'],
@@ -121,6 +124,7 @@ class Auto extends CI_Controller {
             $data = array(
                 'cemployee' => $cemployee,
                 'job_title' => $job_title,
+                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
                 'buying_from' => $this->session->userdata['userdata']['buying_from'],
                 'month' => $this->session->userdata['userdata']['month'],
                 'day' => $this->session->userdata['userdata']['day'],
@@ -143,6 +147,7 @@ class Auto extends CI_Controller {
             $data = array(
                 'pre_tax_income' => $pre_tax_income,
                 'other_income' => $other_income,
+                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
                 'buying_from' => $this->session->userdata['userdata']['buying_from'],
                 'cemployee' => $this->session->userdata['userdata']['cemployee'],
                 'job_title' => $this->session->userdata['userdata']['job_title'],
@@ -167,6 +172,7 @@ class Auto extends CI_Controller {
             $data = array(
                 'firstname' => $firstname,
                 'lastname' => $lastname,
+                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
                 'buying_from' => $this->session->userdata['userdata']['buying_from'],
                 'pre_tax_income' => $this->session->userdata['userdata']['pre_tax_income'],
                 'other_income' => $this->session->userdata['userdata']['other_income'],
@@ -177,8 +183,8 @@ class Auto extends CI_Controller {
                 'years' => $this->session->userdata['userdata']['years'],
                 'amount' => $this->session->userdata['userdata']['amount'],
                 'years_emt' => $this->session->userdata['userdata']['years_emt'],
-                'type' => $this->session->userdata['userdata']['type'],
-                'add_date' => date('Y-m-d H:i:s')
+                'type' => $this->session->userdata['userdata']['type']
+               
             );
 
             $this->session->set_userdata('userdata', $data);
@@ -186,15 +192,18 @@ class Auto extends CI_Controller {
 
         //echo '<pre>';
         // print_r($this->session->userdata());
-        $this->loan_model->add_loan($this->session->userdata['userdata']);
+       // $this->loan_model->add_loan($this->session->userdata['userdata']);
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
         $this->load->view('step9_view');
     }
 
-    public function step9($firstname = '', $lastname = '') {
-        if ($firstname) {
+    public function step9($email = '', $password = '') {
+        if ($email) {
             $data = array(
                 'buying_from' => $this->session->userdata['userdata']['buying_from'],
+                'email' => $email,
+                'password' => $password,
+                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
                 'firstname' => $this->session->userdata['userdata']['firstname'],
                 'lastname' => $this->session->userdata['userdata']['lastname'],
                 'pre_tax_income' => $this->session->userdata['userdata']['pre_tax_income'],
@@ -212,11 +221,12 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata('userdata', $data);
         }
-        echo '<pre>';
-        print_r($this->session->userdata());
+       // echo '<pre>';
+       // print_r($this->session->userdata());
+        $this->loan_model->add_loan($this->session->userdata['userdata']);
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
-        $this->load->view('step9_view');
+        $this->load->view('step10_view');
     }
 
 }
