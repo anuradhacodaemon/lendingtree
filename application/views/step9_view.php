@@ -6,6 +6,17 @@
                     <!-- <h1>Compare live auto rates</h1> -->
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
+                     
+                                <?php
+                                if ($this->session->flashdata('item')) {
+                                    $message = $this->session->flashdata('item');
+                                    ?><div class="alert">
+                                    <div id="show"><?php echo $message['message'];
+                                    ?></div> </div>
+                                    <?php
+                                }
+                                ?>
+                           
                     <label class="control-label"> Great!Your rates are ready to view.<br>
                         Let's create a login to view your rates.</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
@@ -141,4 +152,17 @@
         }
 
     }
+    
+      $(document).ready(function() {
+            <?php
+            if (!empty($this->session->flashdata('item'))) {
+                ?>
+                window.setTimeout(function(){
+                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+                });
+                }, 4000);
+                $(".forgot_section").hide();
+            <?php } ?>
+            });
 </script>

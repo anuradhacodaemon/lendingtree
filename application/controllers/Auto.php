@@ -64,7 +64,7 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0,$pre_approved) {
+    public function step4($id = 0, $pre_approved) {
         if ($id) {
             $data = array(
                 'amount' => $id,
@@ -184,7 +184,6 @@ class Auto extends CI_Controller {
                 'amount' => $this->session->userdata['userdata']['amount'],
                 'years_emt' => $this->session->userdata['userdata']['years_emt'],
                 'type' => $this->session->userdata['userdata']['type']
-               
             );
 
             $this->session->set_userdata('userdata', $data);
@@ -192,7 +191,7 @@ class Auto extends CI_Controller {
 
         //echo '<pre>';
         // print_r($this->session->userdata());
-       // $this->loan_model->add_loan($this->session->userdata['userdata']);
+        // $this->loan_model->add_loan($this->session->userdata['userdata']);
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
         $this->load->view('step9_view');
     }
@@ -221,12 +220,21 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata('userdata', $data);
         }
-       // echo '<pre>';
-       // print_r($this->session->userdata());
-        $this->loan_model->add_loan($this->session->userdata['userdata']);
+        // echo '<pre>';
+        // print_r($this->session->userdata());
+        $result = $this->loan_model->add_loan($this->session->userdata['userdata']);
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
-        $this->load->view('step10_view');
+
+        if ($result > 0)
+            $this->load->view('step10_view');
+        else {
+
+            $error = 'Your email already exist';
+            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+
+            $this->load->view('step9_view');
+        }
     }
 
 }

@@ -25,21 +25,24 @@ class Loan_model extends CI_Model {
        
         $this->db->select('lend_id');
         $this->db->from(LOANS);
-        $this->db->where('firstname', $logData['firstname']);
-        $this->db->where("lastname", $logData['lastname']);
+        $this->db->where('email', $logData['email']);
+        //$this->db->where("lastname", $logData['lastname']);
         $result = $this->db->get();
-        $num = $result->num_rows();
+         $num = $result->num_rows();
+        //echo $this->db->last_query();
         if($num == 0)
         {
         $this->db->insert(LOANS, $logData);
         $id = $this->db->insert_id();
         if ($this->db->affected_rows() > 0) {
             return $id;
-        } else {
-            return false;
+        } 
         }
+        else
+        {
+             return 0;
         }
-         return false;
+        
     }
 
     public function update_user($id, $userData) {
