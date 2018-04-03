@@ -101,7 +101,7 @@
     }
 
     function step8(email, password) {
-   
+  
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if ($('input[name=email]').val() == '')
         {

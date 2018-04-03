@@ -105,8 +105,16 @@
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.lastname" && $sort_direction == "desc") { ?> onClick="sortList('user.lastname', 'asc')"<?php } ?> <?php if ($sort_by != "user.lastname") { ?> onClick="sortList('user.lastname', 'asc')"<?php } ?><?php if ($sort_by == "user.lastname" && $sort_direction == "asc") { ?> onClick="sortList('user.lastname', 'desc')"<?php } ?>> Lastname</a>&nbsp;<?php if ($sort_by == "user.lastname" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.lastname" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+ <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                               
+                               <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.type" && $sort_direction == "desc") { ?> onClick="sortList('user.type', 'asc')"<?php } ?> <?php if ($sort_by != "user.type") { ?> onClick="sortList('user.type', 'asc')"<?php } ?><?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?> onClick="sortList('user.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+
+
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.years_emt" && $sort_direction == "desc") { ?> onClick="sortList('user.years_emt', 'asc')"<?php } ?> <?php if ($sort_by != "user.years_emt") { ?> onClick="sortList('user.years_emt', 'asc')"<?php } ?><?php if ($sort_by == "user.years_emt" && $sort_direction == "asc") { ?> onClick="sortList('user.years_emt', 'desc')"<?php } ?>> Desired terms of loan</a>&nbsp;<?php if ($sort_by == "user.years_emt" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.years_emt" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                              
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.add_date" && $sort_direction == "desc") { ?> onClick="sortList('user.add_date', 'asc')"<?php } ?> <?php if ($sort_by != "user.add_date") { ?> onClick="sortList('user.add_date', 'asc')"<?php } ?><?php if ($sort_by == "user.add_date" && $sort_direction == "asc") { ?> onClick="sortList('user.add_date', 'desc')"<?php } ?>>Date</a>&nbsp;<?php if ($sort_by == "user.add_date" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.add_date" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -132,7 +140,37 @@
                                         
                                          <td class=" "><?php echo $v['firstname'] ?></td>
                                         <td class=" "><?php echo $v['lastname'] ?></td>
+                                         <td class=" "><?php echo $v['email'] ?></td>
+                                          <td class=" "><?php 
+                                if($v['type']==1)
+                                    $type='New Car Purchase';
+                                 if($v['type']==2)
+                                    $type='Used Car Purchase';
+                                  if($v['type']==3)
+                                    $type='Refinance';
+                                   if($v['type']==4)
+                                    $type='Lease Buy Out';
+                                
+                                
+                                echo $type; ?></td>
+                                          <td> <?php  if($v['years_emt']==7)
+                                    $years='7 Years (84 Months)';
+                                        if($v['years_emt']==6)
+                                    $years='6 Years (72 Months)';
+                                        if($v['years_emt']==5)
+                                    $years='5 Years (60 Months)';
+                                        if($v['years_emt']==4)
+                                    $years='4 Years (48 Months)';
+                                        if($v['years_emt']==3)
+                                    $years='3 Years (36 Months)';
+                                        if($v['years_emt']==2)
+                                    $years='2 Years (24 Months)';
+                                        if($v['years_emt']==1)
+                                    $years='1 Years (12 Months)';
                                         
+                                        echo $years;
+                                        
+                                         ?></td>
                                         <td><?php
                                             echo date("d-m-Y", strtotime($v['date']));
                                             ?></td>
