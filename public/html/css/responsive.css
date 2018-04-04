@@ -4,7 +4,7 @@
         text-align: center;
     }
     .number a {font-size: 14px;}
-    .banner-main {background: #f9fafd url(../img/bg-line.png) no-repeat 10% -46px; padding-top: 30px; padding-bottom: 30px;}
+    .banner-main {background: #feffff url(../img/bg-line.png) no-repeat 10% -46px; padding-top: 30px; padding-bottom: 30px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 28px; margin: 0 0 15px;}
     .banner-main .banner-left h2 {font-size: 22px;}
@@ -17,7 +17,7 @@
     .panel .logo-list {text-align: center;}
     .footer-main {padding: 10px; text-align: center;}
     .panel .block-frame .logo-list {float: none; margin: 0; padding: 0;}
-    .main-section {background: #f9fafd url(../img/bg-line.png) no-repeat 10% -46px; padding: 10px 0 0;}
+    .main-section {background: #feffff url(../img/bg-line.png) no-repeat 10% -46px; padding: 10px 0 0;}
     .form-main {padding: 0 0 110px;}
     .form-main .control-label {font-size: 22px;}
     .form-main h2 {font-size: 20px;}
@@ -55,7 +55,7 @@
     .logo {width: 65%;}
     .number a {font-size: 18px;}
     .banner-main {
-        background: #f9fafd url(../img/bg-line.png) no-repeat 97% -4px;
+        background: #feffff url(../img/bg-line.png) no-repeat 97% -4px;
         padding-top: 35px;
         padding-bottom: 30px;
         margin: 0;
@@ -74,7 +74,7 @@
     .quicklinks-main {padding: 20px 0;}
     .footer-main {padding: 10px; text-align: center;}
     .main-section {
-        background: #f9fafd url(../img/bg-line.png) no-repeat 97% -4px;
+        background: #feffff url(../img/bg-line.png) no-repeat 97% -4px;
         padding: 0;
         margin: 0;
     }
@@ -106,11 +106,19 @@
 @media only screen and (max-width:411px){ 
     .inner_height {min-height:662px;}
 }
-@media only screen and (max-width:375px){ 
+@media only screen and (min-width:375px) and (max-width:375px){
     .inner_height {min-height:500px;}
+}
+@media only screen and (min-width:360px) and (max-width:360px){ 
+    .inner_height {min-height:476px;}
 }
 @media only screen and (max-width:320px){ 
     .inner_height {min-height:400px;}
+}
+@media only screen and (min-width: 812px) and (max-width: 823px) {
+    .inner_height {
+        min-height: auto;
+    }
 }
 @media (min-width: 1200px) {
     .container {

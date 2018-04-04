@@ -1,7 +1,7 @@
 body {
     margin: 0;
     color: #000;
-    font: 1em source_sans_proregular, Arial, Helvetica, sans-serif;
+    font: 1em source_sans_proregular, Arial, Helvetica, sans-serif !important;
     background: #fbeaba;
 }
 a {transition: all .3s;}
@@ -41,7 +41,7 @@ a {transition: all .3s;}
 
 /* Banner */
 .banner-main {
-    background: #f9fafd url(../img/bg-line.png) no-repeat 50% 0px;
+    background: #feffff url(../img/bg-line.png) no-repeat 50% 0px;
     width: 100%;
     float: left;
     padding: 0;
@@ -639,11 +639,22 @@ input[type="radio"], input[type="checkbox"] {
     height: 25px;
     width: 25px;
     background-color: #eee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
 }
 
 /* On mouse-over, add a grey background color */
 .checkbox-sec:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: transparent;
+    border: 1px solid #31ada5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
 }
 
 /* When the checkbox is checked, add a blue background */
