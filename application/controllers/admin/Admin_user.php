@@ -169,58 +169,146 @@ class Admin_user extends CI_Controller {
     }
 
     public function export() {
-     
-       
-        $arr=array();
-        $arr[]="First Name";
-        $arr[]="Last Name";
-        $arr[]="Email";
-        if($this->session->userdata['export']['type'] !='')
-            $arr[]="Type of Loan";
-        if($this->session->userdata['export']['years_emt'] !='')
-            $arr[]="Desired Term of Loan";
-        if($this->session->userdata['export']['buying_from'] !='')
-            $arr[]="Buying from";
-          if($this->session->userdata['export']['pre_approved'] !='')
-            $arr[]="Pre approved";
-        if($this->session->userdata['export']['amount1'] !='' || $this->session->userdata['export']['amount2'] !='' )
-            $arr[]="Down payment";
-      
-         if($this->session->userdata['export']['pre_tax_income1'] !='' || $this->session->userdata['export']['pre_tax_income2'] !='' )
-            $arr[]="Yearly Income";
-       
-         if($this->session->userdata['export']['start_date'] !='' || $this->session->userdata['export']['end_date'] !='' )
-            $arr[]="DOB";
-          $arr=array($arr);
-      
-     
-       $data2 = $this->users->get_userall();
-     foreach ($data2 as $k => $v) {
+
+
+        $arr = array();
+        $arr[] = "First Name";
+        $arr[] = "Last Name";
+        $arr[] = "Email";
+        if ($this->session->userdata['export']['type'] != '')
+            $arr[] = "Type of Loan";
+        if ($this->session->userdata['export']['years_emt'] != '')
+            $arr[] = "Desired Term of Loan";
+        if ($this->session->userdata['export']['buying_from'] != '')
+            $arr[] = "Buying from";
+        if ($this->session->userdata['export']['pre_approved'] != '')
+            $arr[] = "Pre approved";
+        if ($this->session->userdata['export']['amount1'] != '' || $this->session->userdata['export']['amount2'] != '')
+            $arr[] = "Down payment";
+
+        if ($this->session->userdata['export']['pre_tax_income1'] != '' || $this->session->userdata['export']['pre_tax_income2'] != '')
+            $arr[] = "Yearly Income";
+
+        if ($this->session->userdata['export']['start_date'] != '' || $this->session->userdata['export']['end_date'] != '')
+            $arr[] = "DOB";
+        $arr = array($arr);
+
+
+        $data2 = $this->users->get_userall();
+        $type='';$years='';$buying_from='';$pre_approved='';
+        $a=array();
+        foreach ($data2 as $k => $v) {
+             $a=array($v['firstname'],$v['lastname'],$v['email']);
+             if ($this->session->userdata['export']['years_emt'] != ''){
+            if ($v['years_emt'] == 7)
+                $years = '7 Years (84 Months)';
+            if ($v['years_emt'] == 6)
+                $years = '6 Years (72 Months)';
+            if ($v['years_emt'] == 5)
+                $years = '5 Years (60 Months)';
+            if ($v['years_emt'] == 4)
+                $years = '4 Years (48 Months)';
+            if ($v['years_emt'] == 3)
+                $years = '3 Years (36 Months)';
+            if ($v['years_emt'] == 2)
+                $years = '2 Years (24 Months)';
+            if ($v['years_emt'] == 1)
+                $years = '1 Years (12 Months)';
+            array_push($a,$years);
+             }
+            
+             if ($this->session->userdata['export']['type'] != ''){
+            if ($v['type'] == 1)
+                $type = 'New Car Purchase';
+            if ($v['type'] == 2)
+                $type = 'Used Car Purchase';
+            if ($v['type'] == 3)
+                $type = 'Refinance';
+            if ($v['type'] == 4)
+                $type = 'Lease Buy Out';
+             array_push($a,$type);
+             }
+             
+             if ($this->session->userdata['export']['buying_from'] != ''){
+              
+            if ($v['buying_from'] == 1)
+                $buying_from = 'Dealer';
+            if ($v['buying_from'] == 2)
+                $buying_from = 'Private seller';
+            if ($v['buying_from'] == 3)
+                $buying_from = 'Don\'t Know';
+             array_push($a,$buying_from);
+             }
+             if ($this->session->userdata['export']['pre_approved'] != ''){
+            if ($v['pre_approved'] == 1)
+                $pre_approved = 'Yes';
+            if ($v['pre_approved'] == 0)
+                $pre_approved = 'No';
+             array_push($a,$pre_approved);
+             }
+             
+             if ($this->session->userdata['export']['amount1'] != '' || $this->session->userdata['export']['amount2'] != '')
+             {
+               array_push($a,$v['amount']);  
+             }
+
+        if ($this->session->userdata['export']['pre_tax_income1'] != '' || $this->session->userdata['export']['pre_tax_income2'] != '')
+        { 
+            array_push($a,$v['pre_tax_income']); 
+            
             
         }
+
+        if ($this->session->userdata['export']['start_date'] != '' || $this->session->userdata['export']['end_date'] != '')
+        { array_push($a,$v['dob']);
         
-      /*  foreach ($arr as $file) {
-    $result = [];
-    array_walk_recursive($file, function($item) use (&$result) {
-        $result[] = $item;
-    });
-    
-    fputcsv($fp, $result);
-    
-}*/
-        //fputcsv($fp, $arr);
-   /*$filename = "loans.csv";
-        $fp = fopen('php://output', 'w');
-        header('Content-type: application/csv');
-        header('Content-Disposition: attachment; filename=' . $filename);
-        $num_column = count($arr);
-        $data2 = $this->users->get_userall();
-        foreach ($data2 as $k => $v) {
-            fputcsv($fp, $v);
         }
-    * 
-    */
-    } 
+       
+       //$a= array_merge($a1,$a);
+        
+            //$arr[]=array($v['firstname'],$v['lastname'],$v['email'],$type,$years,$buying_from,$pre_approved,$v['amount'],$v['pre_tax_income'],$v['dob']);
+        
+        
+        $arr[]=$a;
+        }
+        //echo '<pre>';
+        //print_r($arr);
+        //die;
+         $filename = "loans.csv";
+          $fp = fopen('php://output', 'w');
+          header('Content-type: application/csv');
+          header('Content-Disposition: attachment; filename=' . $filename);
+foreach ($arr as $file) {
+          $result = [];
+          array_walk_recursive($file, function($item) use (&$result) {
+          $result[] = $item;
+          });
+
+          fputcsv($fp, $result);
+
+          } 
+        /*  foreach ($arr as $file) {
+          $result = [];
+          array_walk_recursive($file, function($item) use (&$result) {
+          $result[] = $item;
+          });
+
+          fputcsv($fp, $result);
+
+          } */
+        //fputcsv($fp, $arr);
+        /* $filename = "loans.csv";
+          $fp = fopen('php://output', 'w');
+          header('Content-type: application/csv');
+          header('Content-Disposition: attachment; filename=' . $filename);
+          $num_column = count($arr);
+          $data2 = $this->users->get_userall();
+          foreach ($data2 as $k => $v) {
+          fputcsv($fp, $v);
+          }
+         * 
+         */
+    }
 
     public function exportbk() {
         $this->load->helper('url');
