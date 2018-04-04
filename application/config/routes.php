@@ -64,4 +64,6 @@ $route['admin/dashboard'] = 'admin/home/dashboard';
 $route['admin/user'] = 'admin/admin_user/index';
 $route['admin/user/(:num)'] = 'admin/admin_user/index/$1';
 $route['admin/user/details/(:num)'] = 'admin/admin_user/details/$1';
+$route['admin/user/export'] = 'admin/admin_user/export';
+
 $route['admin/user/mailsent'] = 'admin/admin_user/mailsent';

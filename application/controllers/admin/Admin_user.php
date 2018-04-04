@@ -24,6 +24,7 @@ class Admin_user extends CI_Controller {
         parent::__construct();
         $this->load->model('admin/users');
         $this->load->library('pagination');
+        $this->load->helper('csv');
     }
 
     /* This method used view contact detail after login else redirect to login page.
@@ -36,6 +37,11 @@ class Admin_user extends CI_Controller {
             $data = array();
             $this->load->view('admin', $data);
         } else {
+
+
+            if (isset($_GET))
+                $this->session->set_userdata('export', $_GET);
+
             if (isset($_GET['start_date'])) {
                 if (!empty($_GET['start_date']))
                     $filterData['start_date'] = date('Y-m-d', strtotime($_GET['start_date']));
@@ -66,16 +72,46 @@ class Admin_user extends CI_Controller {
                 $filterData['email'] = '';
             }
 
-            if (isset($_GET['personal_phone'])) {
-                $filterData['personal_phone'] = $_GET['personal_phone'];
+            if (isset($_GET['type'])) {
+                $filterData['type'] = $_GET['type'];
                 //$this->session->set_userdata('client_id', $_POST['client_id']);
             } else {
-                $filterData['personal_phone'] = '';
+                $filterData['type'] = '';
             }
-            if (isset($_GET['business_phone'])) {
-                $filterData['business_phone'] = $_GET['business_phone'];
+            if (isset($_GET['years_emt'])) {
+                $filterData['years_emt'] = $_GET['years_emt'];
             } else {
-                $filterData['business_phone'] = '';
+                $filterData['years_emt'] = '';
+            }
+            if (isset($_GET['buying_from'])) {
+                $filterData['buying_from'] = $_GET['buying_from'];
+            } else {
+                $filterData['buying_from'] = '';
+            }
+            if (isset($_GET['pre_approved'])) {
+                $filterData['pre_approved'] = $_GET['pre_approved'];
+            } else {
+                $filterData['pre_approved'] = '';
+            }
+            if (isset($_GET['amount1'])) {
+                $filterData['amount1'] = $_GET['amount1'];
+            } else {
+                $filterData['amount1'] = '';
+            }
+            if (isset($_GET['amount2'])) {
+                $filterData['amount2'] = $_GET['amount2'];
+            } else {
+                $filterData['amount2'] = '';
+            }
+            if (isset($_GET['pre_tax_income1'])) {
+                $filterData['pre_tax_income1'] = $_GET['pre_tax_income1'];
+            } else {
+                $filterData['pre_tax_income1'] = '';
+            }
+            if (isset($_GET['pre_tax_income2'])) {
+                $filterData['pre_tax_income2'] = $_GET['pre_tax_income2'];
+            } else {
+                $filterData['pre_tax_income2'] = '';
             }
             if (isset($_GET['search'])) {
                 $filterData['search'] = $_GET['search'];
@@ -132,77 +168,87 @@ class Admin_user extends CI_Controller {
         }
     }
 
-    /* retrieve data from user model and sending this to mail function  */
-
-    public function mailsent() {
-
-        $post = $this->input->post();
-        foreach ($post as $k => $v) {
-            $record = $this->users->mail_sent_to($v);
+    public function export() {
+     
+       
+        $arr=array();
+        $arr[]="First Name";
+        $arr[]="Last Name";
+        $arr[]="Email";
+        if($this->session->userdata['export']['type'] !='')
+            $arr[]="Type of Loan";
+        if($this->session->userdata['export']['years_emt'] !='')
+            $arr[]="Desired Term of Loan";
+        if($this->session->userdata['export']['buying_from'] !='')
+            $arr[]="Buying from";
+          if($this->session->userdata['export']['pre_approved'] !='')
+            $arr[]="Pre approved";
+        if($this->session->userdata['export']['amount1'] !='' || $this->session->userdata['export']['amount2'] !='' )
+            $arr[]="Down payment";
+      
+         if($this->session->userdata['export']['pre_tax_income1'] !='' || $this->session->userdata['export']['pre_tax_income2'] !='' )
+            $arr[]="Yearly Income";
+       
+         if($this->session->userdata['export']['start_date'] !='' || $this->session->userdata['export']['end_date'] !='' )
+            $arr[]="DOB";
+          $arr=array($arr);
+      
+     
+       $data2 = $this->users->get_userall();
+     foreach ($data2 as $k => $v) {
+            
         }
-        /** prepare mail format* */
-        foreach ($record as $k => $v) {
-
-            $email = $v[0]['email'] . '-' . $v[0]['business_email'];
-            $this->mailformat($v[0]['id'], $v[0]['firstname'], $v[0]['lastname'], $email, $v[0]['business_phone'], $v[0]['personal_phone'], $v[0]['address']);
+        
+      /*  foreach ($arr as $file) {
+    $result = [];
+    array_walk_recursive($file, function($item) use (&$result) {
+        $result[] = $item;
+    });
+    
+    fputcsv($fp, $result);
+    
+}*/
+        //fputcsv($fp, $arr);
+   /*$filename = "loans.csv";
+        $fp = fopen('php://output', 'w');
+        header('Content-type: application/csv');
+        header('Content-Disposition: attachment; filename=' . $filename);
+        $num_column = count($arr);
+        $data2 = $this->users->get_userall();
+        foreach ($data2 as $k => $v) {
+            fputcsv($fp, $v);
         }
-        // redirect('admin/user');
-        $url = BASE_URL . 'admin/user';
-        echo "<script type='text/javascript'>window.location='$url';</script>";
-    }
+    * 
+    */
+    } 
 
-    /** Please dont change the mailformat because template is coming from database * */
-    public function mailformat($id, $firstname, $lastname, $email, $business_phone, $personal_phone, $address) {
-        $email1 = str_replace('-', ',', $email);
-        //$this->load->library('email');
-        //$this->email->set_mailtype("html");
-        $config = Array(
-            'protocol' => 'sendmail',
-            'smtp_host' => 'Smtp.gmail.com',
-            'smtp_port' => 25,
-            'smtp_user' => 'codaemon123',
-            'smtp_pass' => 'codaemon1234',
-            'smtp_timeout' => '4',
-            'mailtype' => 'html',
-            'charset' => 'iso-8859-1'
-        );
+    public function exportbk() {
+        $this->load->helper('url');
+        $this->load->helper('csv');
+        $query = $this->db->query('SELECT * FROM lend_loan');
+        $num = $query->num_fields();
+        $var = array();
+        $i = 1;
+        $fname = "";
+        while ($i <= $num) {
+            $test = $i;
+            $value = $this->input->post($test);
 
-        $this->load->library('email', $config);
-
-        $this->email->set_newline("\r\n");
-        //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
-        //$this->email->set_header('Content-type', 'text/html');
-        $this->email->from($this->session->userdata['userdata']['adminemail'], $this->session->userdata['userdata']['ud']);
-        //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
-        $this->email->to('' . $email1 . '');
-        $this->email->subject("Update your contact information");
-
-        $Link = $id . '&rand=' . rand(1, 10);
-        $url1 = encode_url($Link);
-        $url = base_url() . "updateinformation/" . $url1;
-        $emailtemplate = $this->users->get_emailtemplate();
-        $token = array(
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'personal_phone' => $personal_phone,
-            'business_phone' => $business_phone,
-            'address' => $address,
-            'url' => $url
-        );  // forming array to send in template
-        $pattern = '[%s]';
-        foreach ($token as $key => $val) {
-            $varMap[sprintf($pattern, $key)] = $val;
+            if ($value != '') {
+                $fname = $fname . " " . $value;
+                array_push($var, $value);
+            }
+            $i++;
         }
 
-        $emailContent = strtr($emailtemplate[0]['content'], $varMap);
-        $this->email->message($emailContent);
-        $emailSend = $this->email->send();
-        $this->users->update_user_email($id);
-        if ($emailSend) {
-            //echo $this->email->print_debugger();
-            return 1;
-        }
-        return 0;
+        $fname = trim($fname);
+
+        $fname = str_replace(' ', ',', $fname);
+
+        $this->db->select($fname);
+        $quer = $this->db->get('lend_loan');
+
+        query_to_csv($quer, TRUE, 'Products_' . date('dMy') . '.csv');
     }
 
 }

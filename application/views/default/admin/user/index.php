@@ -15,7 +15,7 @@
                 <input type="hidden" id="sort_direction" name="sort_direction" value="<?php echo $sort_direction; ?>">
 
                 <div class="row">
-                    <div class="col-md-3 form-group ">
+                    <!--<div class="col-md-3 form-group ">
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
@@ -39,7 +39,7 @@
                             ?>">
                         </div>
 
-                    </div>
+                    </div> 
 
                     <div class="col-md-2 form-group ">
 
@@ -63,11 +63,142 @@
                         ?>">
 
 
+                    </div> -->
+
+ <div class="col-md-2 form-group ">
+
+     <select name="type" class="form-control">
+           <option value="">Type of Loan</option>
+         <option value="1" <?php if(isset($_REQUEST['type'])) if($_REQUEST['type']==1) echo 'selected';?>>New Car Purchase</option>
+         <option value="2" <?php if(isset($_REQUEST['type'])) if($_REQUEST['type']==2) echo 'selected';?>>Used Car Purchase</option>
+         <option value="3" <?php if(isset($_REQUEST['type'])) if($_REQUEST['type']==3) echo 'selected';?>>Refinance</option>
+         <option value="4"<?php if(isset($_REQUEST['type'])) if($_REQUEST['type']==4) echo 'selected';?>>Lease Buy Out</option>
+       
+     </select>
+
+
+                    </div>
+                     <div class="col-md-2 form-group ">
+
+     <select name="years_emt" class="form-control">
+           <option value="">Desired Term of loans</option>
+         <option value="7"<?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==7) echo 'selected';?>>7 years(84 Months)</option>
+         <option value="6" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==6) echo 'selected';?>>6 years(72 Months)</option>
+         <option value="5" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==5) echo 'selected';?>>5 years (60 Months)</option>
+         <option value="4" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==4) echo 'selected';?>>4 years ((48 Months)</option>
+          <option value="3" <?php if(isset($_REQUEST['years_emt']))  if($_REQUEST['years_emt']==3) echo 'selected';?>>3 years(36 Months)</option>
+           <option value="2" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==2) echo 'selected';?>>2 years(24 Months)</option> 
+           <option value="1" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==1) echo 'selected';?>>1 year (12 Months)</option>
+       
+     </select>
+
+
                     </div>
 
+<div class="col-md-2 form-group ">
+
+     <select name="buying_from" class="form-control">
+           <option value="">Buying From</option>
+         <option value="1"<?php if(isset($_REQUEST['buying_from'])) if($_REQUEST['buying_from']==1) echo 'selected';?>>Dealer</option>
+         <option value="2"<?php if(isset($_REQUEST['buying_from'])) if($_REQUEST['buying_from']==2) echo 'selected';?>>Private Seller</option>
+         <option value="3"<?php if(isset($_REQUEST['buying_from'])) if($_REQUEST['buying_from']==3) echo 'selected';?>>Don't know</option>
+         
+       
+     </select>
 
 
+                    </div>
+                        
+                        <div class="col-md-2 form-group ">
 
+     <select name="pre_approved" class="form-control">
+           <option value="">Pre-approved</option>
+         <option value="1"<?php if(isset($_REQUEST['pre_approved'])) if($_REQUEST['pre_approved']==1) echo 'selected';?>>Yes</option>
+         <option value="0"<?php if(isset($_REQUEST['pre_approved'])) if($_REQUEST['pre_approved']==0) echo 'selected';?>>No</option>
+         
+       
+     </select>
+
+
+                    </div>
+                        
+                        <div class="col-md-2 form-group ">
+
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Down Payment less than" name="amount1" value="<?php
+                            if(isset($_REQUEST['amount1'])){
+                                echo $_REQUEST['amount1'];
+                            }
+                            ?>">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-2 form-group ">
+
+                       <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Down Payment greater than" name="amount2" value="<?php
+                            if(isset($_REQUEST['amount2'])){
+                                echo $_REQUEST['amount2'];
+                            }
+                            ?>">
+                        </div>
+
+
+                    </div>
+                        
+                         <div class="col-md-2 form-group ">
+
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Yearly income less than" name="pre_tax_income1" value="<?php
+                            if(isset($_REQUEST['pre_tax_income1'])){
+                                echo $_REQUEST['pre_tax_income1'];
+                            }
+                            ?>">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-2 form-group ">
+
+                       <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Yearly income greater than" name="pre_tax_income2" value="<?php
+                            if(isset($_REQUEST['pre_tax_income2'])){
+                                echo $_REQUEST['pre_tax_income2'];
+                            }
+                            ?>">
+                        </div>
+
+
+                    </div>
+                        
+                        <div class="col-md-2 form-group ">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar5"></i></span>
+                            <input type="text" id="start_date" class="form-control pickadate" placeholder=" Birth Date (Age) less than" name="start_date" value="<?php
+                            if (!empty($start_date)) {
+                                echo $start_date;
+                            }
+                            ?>">
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-2 form-group ">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar5"></i></span>
+                            <input type="text" id="end_date" class="form-control pickadate" placeholder=" Birth Date (Age) greater than" name="end_date" value="<?php
+                            if (!empty($end_date)) {
+                                echo $end_date;
+                            }
+                            ?>">
+                        </div>
+
+                    </div> 
 
                     <div class="col-md-1 form-group ">  
                         <span class="input-group-btn">
@@ -92,8 +223,8 @@
                     </div>
                 </div>
             </form>
-            <div class="x_content">
-                <form id="filter_form1" method="POST" action="">
+            <div class="x_content"><!--<a class="btn btn-primary"  target="_blank" href="<?php echo BASE_URL.'admin/user/export' ?>">Export as CSV</a>
+               --> <form id="filter_form1" method="POST" action="">
                     <table class="table table-striped responsive-utilities jambo_table bulk_action">
                         <thead>
                             <tr class="headings">
@@ -115,9 +246,17 @@
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.years_emt" && $sort_direction == "desc") { ?> onClick="sortList('user.years_emt', 'asc')"<?php } ?> <?php if ($sort_by != "user.years_emt") { ?> onClick="sortList('user.years_emt', 'asc')"<?php } ?><?php if ($sort_by == "user.years_emt" && $sort_direction == "asc") { ?> onClick="sortList('user.years_emt', 'desc')"<?php } ?>> Desired terms of loan</a>&nbsp;<?php if ($sort_by == "user.years_emt" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.years_emt" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                               
+<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.buying_from" && $sort_direction == "desc") { ?> onClick="sortList('user.buying_from', 'asc')"<?php } ?> <?php if ($sort_by != "user.buying_from") { ?> onClick="sortList('user.buying_from', 'asc')"<?php } ?><?php if ($sort_by == "user.buying_from" && $sort_direction == "asc") { ?> onClick="sortList('user.buying_from', 'desc')"<?php } ?>> Buying from</a>&nbsp;<?php if ($sort_by == "user.buying_from" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.buying_from" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Yearly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.add_date" && $sort_direction == "desc") { ?> onClick="sortList('user.add_date', 'asc')"<?php } ?> <?php if ($sort_by != "user.add_date") { ?> onClick="sortList('user.add_date', 'asc')"<?php } ?><?php if ($sort_by == "user.add_date" && $sort_direction == "asc") { ?> onClick="sortList('user.add_date', 'desc')"<?php } ?>>Date</a>&nbsp;<?php if ($sort_by == "user.add_date" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.add_date" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+
+
+<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_approved" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_approved', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_approved") { ?> onClick="sortList('user.pre_approved', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_approved" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_approved', 'desc')"<?php } ?>> Pre approved</a>&nbsp;<?php if ($sort_by == "user.pre_approved" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.pre_approved" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.dob" && $sort_direction == "desc") { ?> onClick="sortList('user.dob', 'asc')"<?php } ?> <?php if ($sort_by != "user.dob") { ?> onClick="sortList('user.dob', 'asc')"<?php } ?><?php if ($sort_by == "user.dob" && $sort_direction == "asc") { ?> onClick="sortList('user.dob', 'desc')"<?php } ?>>DOB</a>&nbsp;<?php if ($sort_by == "user.dob" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.dob" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <th class="column-title no-link last"><span class="nobr">View</span>
                                 </th>
 
@@ -171,8 +310,30 @@
                                         echo $years;
                                         
                                          ?></td>
+                                          <td class=" "><?php 
+                                if($v['buying_from']==1)
+                                    $type='Dealer';
+                                 if($v['buying_from']==2)
+                                    $type='Private seller';
+                                  if($v['buying_from']==3)
+                                    $type='Don\'t Know';
+                                 
+                                
+                                
+                                echo $type; ?></td>
+                                          <td><?php echo $v['pre_tax_income'];?></td>
+                                           <td class=" "><?php 
+                                if($v['pre_approved']==1)
+                                    $type='Yes';
+                                 if($v['pre_approved']==0)
+                                    $type='No';
+                                  
+                                 
+                                
+                                
+                                echo $type; ?></td>
                                         <td><?php
-                                            echo date("d-m-Y", strtotime($v['date']));
+                                            echo date("d-m-Y", strtotime($v['dob']));
                                             ?></td>
 
 
@@ -261,3 +422,12 @@
 }); 
 </script>
 <!-- iCheck -->
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#start_date" ).datepicker();
+     $( "#end_date" ).datepicker();
+  } );
+  </script>

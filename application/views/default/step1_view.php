@@ -50,44 +50,35 @@
 
 <script>
 
-                      function step2(id) {
+    function step2(id) {
 
-                          var url = "<?php echo BASE_URL . 'auto/step2/' ?>" + id;
+        var url = "<?php echo BASE_URL . 'auto/step2/' ?>" + id;
 
-                          $.ajax({
-                              type: "GET",
-                              url: url,
-                              
-                              
-                              success: function (data)
-                              {
+        $.ajax({
+            type: "GET",
+            url: url,
 
+            success: function (data)
+            {
 
 
-                                  $('#container').html(data).effect( "slide",{distance: 5});
+
+                $('#container').html(data).effect("slide", {distance: 5});
 
 
-                                  //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-                              }
-                          });
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
 
-                      }
+    }
 </script>
 
 
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
-<script src="<?php echo BASE_URL; ?>public/js/slide/bootstrap.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap.min.css">
-
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">
-
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 
-<script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-<link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet"><script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-<link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 
 
