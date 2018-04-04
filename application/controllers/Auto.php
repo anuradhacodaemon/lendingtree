@@ -198,6 +198,7 @@ class Auto extends CI_Controller {
 
     public function step9($email = '', $password = '') {
         if ($email) {
+            $dob=$this->session->userdata['userdata']['years'].'-'.$this->session->userdata['userdata']['month'].'-'.$this->session->userdata['userdata']['day'];
             $data = array(
                 'buying_from' => $this->session->userdata['userdata']['buying_from'],
                 'email' => $email,
@@ -215,6 +216,7 @@ class Auto extends CI_Controller {
                 'amount' => $this->session->userdata['userdata']['amount'],
                 'years_emt' => $this->session->userdata['userdata']['years_emt'],
                 'type' => $this->session->userdata['userdata']['type'],
+                'dob'=>$dob,
                 'add_date' => date('Y-m-d H:i:s')
             );
 

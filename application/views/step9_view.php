@@ -26,7 +26,7 @@
                     <span id="err1" style="color: red"></span>
 
                     <div class="col-xs-12 col-sm-12 margbot_10">
-                        <input type="text" name="password" placeholder="Create Password" value="<?php if (isset($this->session->userdata['userdata']['password'])) echo $this->session->userdata['userdata']['password'] ?>" class="form-control" id="password" >
+                        <input type="password" name="password" placeholder="Create Password" value="<?php if (isset($this->session->userdata['userdata']['password'])) echo $this->session->userdata['userdata']['password'] ?>" class="form-control" id="password" >
                     </div>
                     <label class="control-label">Plesae enter atleast 6 character</label>
                     <span id="err2" style="color: red"></span>

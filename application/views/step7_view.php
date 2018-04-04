@@ -99,7 +99,7 @@
         {
 
             $('#err1').html('Your Pre-tax yearly income should be number');
-           $('#pre_tax_income').focus();
+            $('#pre_tax_income').focus();
             return false;
         } else if ($('input[name=other_income]').val() == '')
         {
@@ -108,16 +108,14 @@
             $('#other_income').focus();
             $('#err1').html('');
             return false;
-        } 
-        else if (!RE.test($("#other_income").val()))
+        } else if (!RE.test($("#other_income").val()))
         {
 
             $('#err2').html('Any other yearly income should be number');
-           $('#other_income').focus();
+            $('#other_income').focus();
             $('#err1').html('');
             return false;
-        }
-        else
+        } else
         {
             $('#err2').html('');
             $.ajax({
@@ -134,3 +132,9 @@
 
     }
 </script>
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
+<link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
+

@@ -98,16 +98,8 @@
 </script>
 
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
-<script src="<?php echo BASE_URL; ?>public/js/slide/bootstrap.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap.min.css">
-
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">
-
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 
-<script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-<link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet"><script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-<link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
