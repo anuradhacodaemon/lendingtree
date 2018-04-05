@@ -10,7 +10,13 @@
                     <label class="control-label">Get a better offer with a down payment</label>
                     <h2>Even $200 could make a difference!</h2>
                     <div class="col-xs-12 col-sm-12 margbot_10">
-                        <input type="text" id="amount"  value="<?php if (isset($this->session->userdata['userdata']['amount'])) echo $this->session->userdata['userdata']['amount'] ?>"  name="amount" class="form-control" placeholder="$0" maxlength="8">
+                        <input type="text" id="amount"  value="<?php
+                        if (isset($this->session->userdata['userdata']['amount'])) {
+                            echo $this->session->userdata['userdata']['amount'];
+                        } else {
+                            echo '0';
+                        }
+                        ?>"  name="amount" class="form-control" placeholder="$0" maxlength="8">
                     </div>
                     <span id="err" style="color: red"></span>
                     <div class="col-xs-12 col-sm-12">
@@ -52,28 +58,12 @@
 
     function step4() {
         var RE = /^\d*\.?\d*$/;
-        if ($('input[name=amount]').val() == '')
-        {
 
-            $('#err').html('Amount is empty');
-            $('#amount').focus();
-            return false;
-        } else if (!RE.test($("#amount").val()))
-        {
+        var pre_approved = 1;
+        if ($('input[name=pre_approved]').prop("checked") == true) {
 
-            $('#err').html('Amount should be number');
-            $('#amount').val('');
-            $('#amount').focus();
-            return false;
-        } else
-        {
-            var pre_approved = 1;
-            if ($('input[name=pre_approved]').prop("checked") == true) {
-                pre_approved = 1;
-            } else if ($('input[name=pre_approved]').prop("checked") == false) {
-                pre_approved = 0;
-            }
-
+            pre_approved = 1;
+            $('#amount').val(0);
             $.ajax({
                 type: "GET",
                 url: "<?php echo BASE_URL . 'auto/step4/' ?>" + $('input[name=amount]').val() + '/' + pre_approved,
@@ -83,6 +73,43 @@
                     $('#container').html(data).effect("slide", {distance: 5});
                 }
             });
+        } else if ($('input[name=pre_approved]').prop("checked") == false) {
+            pre_approved = 0;
+            //alert(pre_approved);
+            if ($('input[name=amount]').val() == '' || $('input[name=amount]').val() == 0)
+            {
+                // alert(pre_approved);
+
+                $('#err').html('Amount is empty');
+                $('#amount').focus();
+                return false;
+            } else if (!RE.test($("#amount").val()))
+            {
+
+                $('#err').html('Amount should be number');
+                $('#amount').val('');
+                $('#amount').focus();
+                return false;
+            } else
+            {
+
+                $.ajax({
+                    type: "GET",
+                    url: "<?php echo BASE_URL . 'auto/step4/' ?>" + $('input[name=amount]').val() + '/' + pre_approved,
+                    success: function (data)
+                    {
+
+                        $('#container').html(data).effect("slide", {distance: 5});
+                    }
+                });
+
+            }
+
+        } else
+        {
+
+            return true;
+
         }
 
     }
