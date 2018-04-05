@@ -23,15 +23,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-if($_SERVER['HTTP_HOST']=='localhost' )
+if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	{
-		$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].':82/lendingtree/';
-		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].':82/lendingtree/');
-		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].':82/lendingtree/');
+		$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree/';
+		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/lendingtree/');
+		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/lendingtree/');
 	}
 	else
 	{
-		$config['base_url']	= 'http://18.222.7.137/';
+		$config['base_url']	= 'http://culoanportal.com/';
 		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/');
 		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/');
 	}

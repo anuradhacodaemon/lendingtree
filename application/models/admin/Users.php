@@ -179,71 +179,83 @@ class Users extends CI_Model {
     public function get_userall() {
         
         $filterData=$this->session->userdata['export'];
-        
+         $filter='user.firstname,user.lastname,user.email,';
+          if(isset($this->session->userdata['export']))
+        {
          if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
+           
         }
         if (!empty($filterData['lastname'])) {
             $this->db->like('user.lastname', $filterData['lastname'], 'both');
+             
         }
 
 
         if (!empty($filterData['email'])) {
             $this->db->where('user.email', $filterData['email']);
+            
         }
         if (!empty($filterData['type'])) {
             $this->db->where('user.type', $filterData['type']);
+             $filter.='user.type,';
         }
         if (!empty($filterData['years_emt'])) {
             $this->db->where('user.years_emt', $filterData['years_emt']);
+             $filter.='user.years_emt,';
         }
         if (!empty($filterData['buying_from'])) {
             $this->db->where('user.buying_from', $filterData['buying_from']);
+             $filter.='user.buying_from,';
         }
         
-        if ($filterData['pre_approved']!='') {
+        if (!empty($filterData['pre_approved'])) {
             $this->db->where('user.pre_approved', $filterData['pre_approved']);
+             $filter.='user.pre_approved,';
         }
         if (!empty($filterData['start_date'])) {
             $this->db->where('user.dob >= ', $filterData['start_date'] );
+             $filter.='user.dob,';
         }
         if (!empty($filterData['end_date'])) {
             $this->db->where('user.dob <= ', $filterData['end_date'] );
+             //$filter='user.dob';
         }
         if (!empty($filterData['amount1'])) {
              if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
             $this->db->group_start();
             $this->db->where(' user.amount <=', $filterData['amount1']);
+             $filter.='user.amount,';
         }
          if (!empty($filterData['amount2'])) {
             $this->db->or_where('user.amount >=', $filterData['amount2']);
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
+             if (!empty($filterData['amount1']) && !empty($filterData['amount2'])){
             $this->db->group_end();
+             }
+              //$filter='user.amount';
         }
          if (!empty($filterData['pre_tax_income1'])) {
              if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
              $this->db->group_start();
             $this->db->where('user.pre_tax_income <=', $filterData['pre_tax_income1']);
-        }
+         $filter.='user.pre_tax_income,';
+            
+         }
          if (!empty($filterData['pre_tax_income2'])) {
             $this->db->or_where('user.pre_tax_income >=', $filterData['pre_tax_income2']);
             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
             $this->db->group_end();
-            
+            //$filter='user.pre_tax_income';
          }
-        if (!empty($filterData['search'])) {
-            $this->db->group_start();
-            $this->db->like('user.email', $filterData['search'], 'both');
-            $this->db->or_like('user.firstname', $filterData['search'], 'both');
-            $this->db->or_like('user.personal_phone', $filterData['search'], 'both');
-            $this->db->or_like('user.business_phone', $filterData['search'], 'both');
-            $this->db->or_like('user.lastname', $filterData['search'], 'both');
-            $this->db->group_end();
         }
+        else {
+          $filter.='user.type,user.years_emt,user.buying_from,user.pre_approved,user.dob,user.amount,user.pre_tax_income,';   
+        }
+    $filter =substr($filter,0,-1);    
         
-        
+   
 
-        $this->db->select('user.*');
+        $this->db->select($filter);
 
         $this->db->from(LOANS . ' as user');
         // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');

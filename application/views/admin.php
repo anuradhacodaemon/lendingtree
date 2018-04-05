@@ -63,7 +63,7 @@
                                 <br />
 
                                 <div>
-                                    <h1><img src="<?php echo BASE_URL; ?>public/admin/images/gray_logo_yellow_background.png" width="50" height="50"> Lending tree Admin!</h1>
+                                    <h1><img src="<?php echo BASE_URL; ?>public/admin/images/gray_logo_yellow_background.png" width="50" height="50"> culoanportal Admin!</h1>
                                     <p><?php echo $this->lang->line('lfooter'); ?><a href="<?php echo BASE_URL1 ?>privacy-policy" target="_blank" class="to_register dark_grey"><?php echo $this->lang->line('privacy'); ?></a><?php echo $this->lang->line('and'); ?><a href="<?php echo BASE_URL1 ?>term-condition"  target="_blank" class="to_register dark_grey"> <?php echo $this->lang->line('terms'); ?></a></p>
                                 </div>
                             </div>
