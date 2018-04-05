@@ -1,5 +1,5 @@
 <footer>
     <div class="pull-right">
-Lendingtree   </div>
+culoanportal   </div>
     <div class="clearfix"></div>
 </footer>

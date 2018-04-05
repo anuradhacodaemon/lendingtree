@@ -79,7 +79,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo (isset($title)) ? $title : 'lendingtree'; ?> </title>
+        <title><?php echo (isset($title)) ? $title : 'culoanportal'; ?> </title>
         <!-- Bootstrap core CSS -->
         <link href="<?php echo BASE_URL; ?>public/admin/css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo BASE_URL; ?>public/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
