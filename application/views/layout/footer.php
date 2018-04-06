@@ -30,3 +30,25 @@
         </div>
 	</div>
     <!-- Footer ends here -->
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
+<link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
+<script src="<?php echo BASE_URL; ?>/public/js/lendingsteps.js"></script>
+
+<script> //$('input[name=amount]').val()
+ $(document).ready(function () {
+<?php
+if (!empty($this->session->flashdata('item'))) {
+    ?>
+            window.setTimeout(function () {
+                $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 4000);
+            $(".forgot_section").hide();
+<?php } ?>
+    });
+</script>
+

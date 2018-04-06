@@ -53,13 +53,13 @@ class Auto extends CI_Controller {
     public function step3($id = 0) {
         if ($id) {
             $data = array(
-                'years_emt' => $id,
+                'requested_amount' => $id,
                 'type' => $this->session->userdata['userdata']['type']
             );
 
             $this->session->set_userdata('userdata', $data);
         }
-        //echo '<pre>';
+       // echo '<pre>';
         // print_r($this->session->userdata());
         $this->load->view('step3_view');
     }
@@ -67,175 +67,104 @@ class Auto extends CI_Controller {
     public function step4($id = 0, $pre_approved) {
         if ($id) {
             $data = array(
-                'amount' => $id,
-                'pre_approved' => $pre_approved,
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
+                'current_employer' => $id,
+                'job_title' => $pre_approved,
+                'requested_amount' => $this->session->userdata['userdata']['requested_amount'],
                 'type' => $this->session->userdata['userdata']['type'],
             );
 
             $this->session->set_userdata('userdata', $data);
         }
-        // echo '<pre>';
-        //print_r($this->session->userdata());
+        //echo '<pre>';
+        // print_r($this->session->userdata());
         $this->load->view('step4_view');
     }
 
-    public function step44($buyfrom = 0) {
-        if ($buyfrom) {
-            $data = array(
-                'buying_from' => $buyfrom,
-                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
-                'amount' => $this->session->userdata['userdata']['amount'],
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
-                'type' => $this->session->userdata['userdata']['type'],
-            );
-
-            $this->session->set_userdata('userdata', $data);
-        }
-        //echo '<pre>';
-        //print_r($this->session->userdata());
-
-        $this->load->view('step5_view');
-    }
-
-    public function step5($month = 0, $day = 0, $year = 0) {
-        if ($month) {
-            $data = array(
-                'month' => $month,
-                'day' => $day,
-                'years' => $year,
-                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
-                'buying_from' => $this->session->userdata['userdata']['buying_from'],
-                'amount' => $this->session->userdata['userdata']['amount'],
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
-                'type' => $this->session->userdata['userdata']['type'],
-            );
-
-            $this->session->set_userdata('userdata', $data);
-        }
-        //echo '<pre>';
-        //print_r($this->session->userdata());
-
-        $this->load->view('step6_view');
-    }
-
-    public function step6($cemployee = '', $job_title = '') {
-        if ($cemployee) {
-            $data = array(
-                'cemployee' => $cemployee,
-                'job_title' => $job_title,
-                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
-                'buying_from' => $this->session->userdata['userdata']['buying_from'],
-                'month' => $this->session->userdata['userdata']['month'],
-                'day' => $this->session->userdata['userdata']['day'],
-                'years' => $this->session->userdata['userdata']['years'],
-                'amount' => $this->session->userdata['userdata']['amount'],
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
-                'type' => $this->session->userdata['userdata']['type'],
-            );
-
-            $this->session->set_userdata('userdata', $data);
-        }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-
-        $this->load->view('step7_view');
-    }
-
-    public function step7($pre_tax_income = '', $other_income = '') {
+    public function step5($pre_tax_income = 0) {
         if ($pre_tax_income) {
             $data = array(
                 'pre_tax_income' => $pre_tax_income,
-                'other_income' => $other_income,
-                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
-                'buying_from' => $this->session->userdata['userdata']['buying_from'],
-                'cemployee' => $this->session->userdata['userdata']['cemployee'],
+                'current_employer' => $this->session->userdata['userdata']['current_employer'],
                 'job_title' => $this->session->userdata['userdata']['job_title'],
-                'month' => $this->session->userdata['userdata']['month'],
-                'day' => $this->session->userdata['userdata']['day'],
-                'years' => $this->session->userdata['userdata']['years'],
-                'amount' => $this->session->userdata['userdata']['amount'],
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
+                'requested_amount' => $this->session->userdata['userdata']['requested_amount'],
                 'type' => $this->session->userdata['userdata']['type'],
             );
 
             $this->session->set_userdata('userdata', $data);
         }
-        //echo '<pre>';
+//echo '<pre>';
         // print_r($this->session->userdata());
-
-        $this->load->view('step8_view');
+        $this->load->view('step5_view');
     }
 
-    public function step8($firstname = '', $lastname = '') {
+    public function step6($firstname = '', $lastname = '', $address, $city, $state, $zip, $ssn) {
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
                 'lastname' => $lastname,
-                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
-                'buying_from' => $this->session->userdata['userdata']['buying_from'],
+                'address' => $address,
+                'city' => $city,
+                'state' => $state,
+                'zip' => $zip,
+                'ssn' => $ssn,
                 'pre_tax_income' => $this->session->userdata['userdata']['pre_tax_income'],
-                'other_income' => $this->session->userdata['userdata']['other_income'],
-                'cemployee' => $this->session->userdata['userdata']['cemployee'],
+                'current_employer' => $this->session->userdata['userdata']['current_employer'],
                 'job_title' => $this->session->userdata['userdata']['job_title'],
-                'month' => $this->session->userdata['userdata']['month'],
-                'day' => $this->session->userdata['userdata']['day'],
-                'years' => $this->session->userdata['userdata']['years'],
-                'amount' => $this->session->userdata['userdata']['amount'],
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
-                'type' => $this->session->userdata['userdata']['type']
+                'requested_amount' => $this->session->userdata['userdata']['requested_amount'],
+                'type' => $this->session->userdata['userdata']['type'],
             );
 
             $this->session->set_userdata('userdata', $data);
         }
-
         //echo '<pre>';
         // print_r($this->session->userdata());
-        // $this->loan_model->add_loan($this->session->userdata['userdata']);
-        //$this->loan_model->add_loan($this->session->userdata['userdata']);
-        $this->load->view('step9_view');
+
+        $this->load->view('step6_view');
     }
 
-    public function step9($email = '', $password = '') {
+    public function step7($email = '', $phone = '') {
         if ($email) {
-            $dob=$this->session->userdata['userdata']['years'].'-'.$this->session->userdata['userdata']['month'].'-'.$this->session->userdata['userdata']['day'];
             $data = array(
-                'buying_from' => $this->session->userdata['userdata']['buying_from'],
                 'email' => $email,
-                'password' => $password,
-                'pre_approved' => $this->session->userdata['userdata']['pre_approved'],
+                'phone' => $phone,
                 'firstname' => $this->session->userdata['userdata']['firstname'],
                 'lastname' => $this->session->userdata['userdata']['lastname'],
+                'address' => $this->session->userdata['userdata']['address'],
+                'city' => $this->session->userdata['userdata']['city'],
+                'state' => $this->session->userdata['userdata']['state'],
+                'zip' => $this->session->userdata['userdata']['zip'],
+                'ssn' => $this->session->userdata['userdata']['ssn'],
                 'pre_tax_income' => $this->session->userdata['userdata']['pre_tax_income'],
-                'other_income' => $this->session->userdata['userdata']['other_income'],
-                'cemployee' => $this->session->userdata['userdata']['cemployee'],
+                'current_employer' => $this->session->userdata['userdata']['current_employer'],
                 'job_title' => $this->session->userdata['userdata']['job_title'],
-                'month' => $this->session->userdata['userdata']['month'],
-                'day' => $this->session->userdata['userdata']['day'],
-                'years' => $this->session->userdata['userdata']['years'],
-                'amount' => $this->session->userdata['userdata']['amount'],
-                'years_emt' => $this->session->userdata['userdata']['years_emt'],
+                'requested_amount' => $this->session->userdata['userdata']['requested_amount'],
                 'type' => $this->session->userdata['userdata']['type'],
-                'dob'=>$dob,
-                'add_date' => date('Y-m-d H:i:s')
+                'add_date' => date('Y-m-d H:i:s'),
             );
 
             $this->session->set_userdata('userdata', $data);
         }
-        // echo '<pre>';
+       //echo '<pre>';
         // print_r($this->session->userdata());
+
         $result = $this->loan_model->add_loan($this->session->userdata['userdata']);
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0)
-            $this->load->view('step10_view');
+        {
+           $error = 'Thank your for your submission. Admin will contact you shortly';
+           $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+  
+           //redirect('/');
+           echo 1;
+        }
         else {
 
             $error = 'Your email already exist';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
-            $this->load->view('step9_view');
+            $this->load->view('step6_view');
         }
     }
 

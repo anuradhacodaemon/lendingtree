@@ -25,16 +25,12 @@ class Users extends CI_Model {
         if (!empty($filterData['type'])) {
             $this->db->where('user.type', $filterData['type']);
         }
-        if (!empty($filterData['years_emt'])) {
-            $this->db->where('user.years_emt', $filterData['years_emt']);
-        }
-        if (!empty($filterData['buying_from'])) {
-            $this->db->where('user.buying_from', $filterData['buying_from']);
+        if (!empty($filterData['requested_amount'])) {
+            $this->db->where('user.requested_amount', $filterData['requested_amount']);
         }
         
-        if ($filterData['pre_approved']!='') {
-            $this->db->where('user.pre_approved', $filterData['pre_approved']);
-        }
+        
+        
         if (!empty($filterData['start_date'])) {
             $this->db->where('user.dob >= ', $filterData['start_date'] );
         }
@@ -104,16 +100,12 @@ class Users extends CI_Model {
         if (!empty($filterData['type'])) {
             $this->db->where('user.type', $filterData['type']);
         }
-        if (!empty($filterData['years_emt'])) {
-            $this->db->where('user.years_emt', $filterData['years_emt']);
+        if (!empty($filterData['requested_amount'])) {
+            $this->db->where('user.requested_amount', $filterData['requested_amount']);
         }
-        if (!empty($filterData['buying_from'])) {
-            $this->db->where('user.buying_from', $filterData['buying_from']);
-        }
+       
         
-        if ($filterData['pre_approved']!='') {
-            $this->db->where('user.pre_approved', $filterData['pre_approved']);
-        }
+        
         if (!empty($filterData['start_date'])) {
             $this->db->where('user.dob >= ', $filterData['start_date'] );
         }

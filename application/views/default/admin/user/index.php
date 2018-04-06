@@ -243,21 +243,15 @@
                                     <?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.years_emt" && $sort_direction == "desc") { ?> onClick="sortList('user.years_emt', 'asc')"<?php } ?> <?php if ($sort_by != "user.years_emt") { ?> onClick="sortList('user.years_emt', 'asc')"<?php } ?><?php if ($sort_by == "user.years_emt" && $sort_direction == "asc") { ?> onClick="sortList('user.years_emt', 'desc')"<?php } ?>> Desired terms of loan</a>&nbsp;<?php if ($sort_by == "user.years_emt" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.years_emt" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "user.requested_amount") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('user.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                               
-<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.buying_from" && $sort_direction == "desc") { ?> onClick="sortList('user.buying_from', 'asc')"<?php } ?> <?php if ($sort_by != "user.buying_from") { ?> onClick="sortList('user.buying_from', 'asc')"<?php } ?><?php if ($sort_by == "user.buying_from" && $sort_direction == "asc") { ?> onClick="sortList('user.buying_from', 'desc')"<?php } ?>> Buying from</a>&nbsp;<?php if ($sort_by == "user.buying_from" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.buying_from" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Yearly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
 
-<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_approved" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_approved', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_approved") { ?> onClick="sortList('user.pre_approved', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_approved" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_approved', 'desc')"<?php } ?>> Pre approved</a>&nbsp;<?php if ($sort_by == "user.pre_approved" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.pre_approved" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.dob" && $sort_direction == "desc") { ?> onClick="sortList('user.dob', 'asc')"<?php } ?> <?php if ($sort_by != "user.dob") { ?> onClick="sortList('user.dob', 'asc')"<?php } ?><?php if ($sort_by == "user.dob" && $sort_direction == "asc") { ?> onClick="sortList('user.dob', 'desc')"<?php } ?>>DOB</a>&nbsp;<?php if ($sort_by == "user.dob" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.dob" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title no-link last"><span class="nobr">View</span>
+                                   <th class="column-title no-link last"><span class="nobr">View</span>
                                 </th>
 
                             </tr>
@@ -292,49 +286,27 @@
                                 
                                 
                                 echo $type; ?></td>
-                                          <td> <?php  if($v['years_emt']==7)
-                                    $years='7 Years (84 Months)';
-                                        if($v['years_emt']==6)
-                                    $years='6 Years (72 Months)';
-                                        if($v['years_emt']==5)
-                                    $years='5 Years (60 Months)';
-                                        if($v['years_emt']==4)
-                                    $years='4 Years (48 Months)';
-                                        if($v['years_emt']==3)
-                                    $years='3 Years (36 Months)';
-                                        if($v['years_emt']==2)
-                                    $years='2 Years (24 Months)';
-                                        if($v['years_emt']==1)
-                                    $years='1 Years (12 Months)';
+                                          <td> <?php  if($v['requested_amount']==7)
+                                    $years='$5,000-$10,000';
+                                        if($v['requested_amount']==6)
+                                    $years='$10,000-$15,000';
+                                        if($v['requested_amount']==5)
+                                    $years='$15,000-$20,000';
+                                        if($v['requested_amount']==4)
+                                    $years='$20,000-$30,000';
+                                        if($v['requested_amount']==3)
+                                    $years='$30,000- $40,000';
+                                        if($v['requested_amount']==2)
+                                    $years='$40,000 - $50,000';
+                                        if($v['requested_amount']==1)
+                                    $years='$50,000+';
                                         
                                         echo $years;
                                         
                                          ?></td>
-                                          <td class=" "><?php 
-                                if($v['buying_from']==1)
-                                    $type='Dealer';
-                                 if($v['buying_from']==2)
-                                    $type='Private seller';
-                                  if($v['buying_from']==3)
-                                    $type='Don\'t Know';
-                                 
-                                
-                                
-                                echo $type; ?></td>
+                                          
                                           <td><?php echo $v['pre_tax_income'];?></td>
-                                           <td class=" "><?php 
-                                if($v['pre_approved']==1)
-                                    $type='Yes';
-                                 if($v['pre_approved']==0)
-                                    $type='No';
-                                  
-                                 
-                                
-                                
-                                echo $type; ?></td>
-                                        <td><?php
-                                            echo date("d-m-Y", strtotime($v['dob']));
-                                            ?></td>
+                                           
 
 
                                         <td class="last"> 

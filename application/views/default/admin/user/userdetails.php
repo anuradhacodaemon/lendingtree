@@ -42,23 +42,16 @@
                                     </span>
                             </li>
                             <li>
-                                <span class="name"> Type of Loan</span>
+                                <span class="name"> Email</span>
                                 <span class="value text-success1"><?php 
-                                if($userDetails[0]['type']==1)
-                                    $type='New Car Purchase';
-                                 if($userDetails[0]['type']==2)
-                                    $type='Used Car Purchase';
-                                  if($userDetails[0]['type']==3)
-                                    $type='Refinance';
-                                   if($userDetails[0]['type']==4)
-                                    $type='Lease Buy Out';
                                 
                                 
-                                echo $type; ?> </span>
+                                
+                                echo $userDetails[0]['email']; ?> </span>
                             </li>
                             <li>
-                                <span class="name">Amount </span>
-                                <span class="value text-success1" id="jobStatus"> <?php echo $userDetails[0]['amount'] ?></span>
+                                <span class="name">Phone </span>
+                                <span class="value text-success1" id="jobStatus"> <?php echo $userDetails[0]['phone'] ?></span>
                             </li>
                         </ul>
                         <br />
@@ -69,42 +62,45 @@
 
                         <div class="row invoice-info">
                             <div class="col-sm-12 invoice-col padding_0">
-                                <div class="col-sm-12"><span> <b>Desired Loan Term:</b>&nbsp;
-                                        <?php  if($userDetails[0]['years_emt']==7)
-                                    $years='7 Years (84 Months)';
-                                        if($userDetails[0]['years_emt']==6)
-                                    $years='6 Years (72 Months)';
-                                        if($userDetails[0]['years_emt']==5)
-                                    $years='5 Years (60 Months)';
-                                        if($userDetails[0]['years_emt']==4)
-                                    $years='4 Years (48 Months)';
-                                        if($userDetails[0]['years_emt']==3)
-                                    $years='3 Years (36 Months)';
-                                        if($userDetails[0]['years_emt']==2)
-                                    $years='2 Years (24 Months)';
-                                        if($userDetails[0]['years_emt']==1)
-                                    $years='1 Years (12 Months)';
+                                <div class="col-sm-12"><span> <b>Request Amount:</b>&nbsp;
+                                        <?php  if($userDetails[0]['requested_amount']==7)
+                                    $years='$5,000-$10,000';
+                                        if($userDetails[0]['requested_amount']==6)
+                                    $years='$10,000-$15,000';
+                                        if($userDetails[0]['requested_amount']==5)
+                                    $years='$15,000-$20,000';
+                                        if($userDetails[0]['requested_amount']==4)
+                                    $years='$20,000-$30,000';
+                                        if($userDetails[0]['requested_amount']==3)
+                                    $years='$30,000- $40,000';
+                                        if($userDetails[0]['requested_amount']==2)
+                                    $years='$40,000 - $50,000';
+                                        if($userDetails[0]['requested_amount']==1)
+                                    $years='$50,000+';
                                         
                                         echo $years;
                                         
                                          ?></span>
                                 </div>
-                                 <div class="col-sm-12"><span> <b>From whom you are buying:</b>&nbsp;
-                                        <?php 
-                                        if($userDetails[0]['buying_from']==3)
-                                    $buying_from='Dealer';
-                                         if($userDetails[0]['buying_from']==2)
-                                    $buying_from='Private Seller';
-                                          if($userDetails[0]['buying_from']==1)
-                                    $buying_from='Don\'t Know';
-                                        echo $buying_from ?></span>
-                                </div>
-                                <div class="col-sm-12"><span> <b>When your are Born:</b>&nbsp;
-                                        <?php echo $userDetails[0]['day'].'-'.$userDetails[0]['month'].'-'.$userDetails[0]['years'] ?></span>
+                                
+                                
+                               <div class="col-sm-12"> <b>Type: &nbsp;</b>
+                                    <?php 
+                                if($userDetails[0]['type']==1)
+                                    $type='New Car Purchase';
+                                 if($userDetails[0]['type']==2)
+                                    $type='Used Car Purchase';
+                                  if($userDetails[0]['type']==3)
+                                    $type='Refinance';
+                                   if($userDetails[0]['type']==4)
+                                    $type='Lease Buy Out';
+                                
+                                
+                                echo $type; ?>
                                 </div>
                                
                                 <div class="col-sm-12"><b>Your Current Employer: &nbsp</b>
-                                        <?php echo $userDetails[0]['cemployee'] ?>
+                                        <?php echo $userDetails[0]['current_employer'] ?>
                                     </div>
                                     <div class="col-sm-12"><b>Your Job Title: &nbsp</b>
                                         <?php echo $userDetails[0]['job_title'] ?>
@@ -113,11 +109,23 @@
                                 <div class="col-sm-12"> <b>Your Pre-tax Yearly income: &nbsp;</b>
                                     <?php echo $userDetails[0]['pre_tax_income'] ?>
                                 </div>
-                               
- <div class="col-sm-12"> <b>Any other Yearly income: &nbsp;</b>
-                                    <?php echo $userDetails[0]['other_income'] ?>
+                               <div class="col-sm-12"> <b>Address: &nbsp;</b>
+                                    <?php echo $userDetails[0]['address'] ?>
                                 </div>
-
+                               
+ <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                    <?php echo $userDetails[0]['city'] ?>
+                                </div>
+                               <div class="col-sm-12"> <b>State: &nbsp;</b>
+                                    <?php echo $userDetails[0]['state'] ?>
+                                </div>
+                               <div class="col-sm-12"> <b>Zip: &nbsp;</b>
+                                    <?php echo $userDetails[0]['zip'] ?>
+                                </div>
+                               <div class="col-sm-12"> <b>SSN: &nbsp;</b>
+                                    <?php echo $userDetails[0]['ssn'] ?>
+                                </div>
+                               
                             </div>
                             <!-- /.col -->
 

@@ -78,21 +78,13 @@ class Admin_user extends CI_Controller {
             } else {
                 $filterData['type'] = '';
             }
-            if (isset($_GET['years_emt'])) {
-                $filterData['years_emt'] = $_GET['years_emt'];
+            if (isset($_GET['requested_amount'])) {
+                $filterData['requested_amount'] = $_GET['requested_amount'];
             } else {
-                $filterData['years_emt'] = '';
+                $filterData['requested_amount'] = '';
             }
-            if (isset($_GET['buying_from'])) {
-                $filterData['buying_from'] = $_GET['buying_from'];
-            } else {
-                $filterData['buying_from'] = '';
-            }
-            if (isset($_GET['pre_approved'])) {
-                $filterData['pre_approved'] = $_GET['pre_approved'];
-            } else {
-                $filterData['pre_approved'] = '';
-            }
+            
+           
             if (isset($_GET['amount1'])) {
                 $filterData['amount1'] = $_GET['amount1'];
             } else {
