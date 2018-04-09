@@ -1,5 +1,5 @@
 var base_url = $('#domain').val();
-alert(base_url);
+
 function step2(id) {
 
     var url = base_url + "auto/step2/" + id;
