@@ -30,6 +30,7 @@
         </div>
 	</div>
     <!-- Footer ends here -->
+    <input type="text" id="domain" value="<?php  echo base_url(); ?>" />
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">
