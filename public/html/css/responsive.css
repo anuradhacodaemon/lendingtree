@@ -3,7 +3,7 @@
     .number {
         text-align: center;
     }
-    .number a {font-size: 14px;}
+    .number a {font-size: 12px;}
     .banner-main {background: #feffff url(../img/bg-line.png) no-repeat 10% -46px; padding-top: 30px; padding-bottom: 30px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 28px; margin: 0 0 15px;}

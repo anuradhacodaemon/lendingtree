@@ -12,6 +12,9 @@ a {transition: all .3s;}
 .margbot_20 {margin-bottom: 20px !important;}
 .margbot_30 {margin-bottom: 30px !important;}
 .margbot_40 {margin-bottom: 40px !important;}
+.margtop_30 {margin-top: 30px !important;}
+/*width css*/
+.width_100 {width: 100% !important;}
 /* Header */
 .header-main {
     overflow: hidden;
@@ -600,7 +603,7 @@ input[type="radio"], input[type="checkbox"] {
     text-align: center;
     height: 58px;
     margin: 0 auto;
-    width: 360px !important;
+    width: 360px;
 }
 .subtext {
     width: 550px;
