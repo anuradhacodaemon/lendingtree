@@ -36,7 +36,7 @@
         gtag('js', new Date());  gtag('config', 'UA-117121524-1');
     </script>
   </head>
-  <body>
+  <body >
     <!-- Header starts here -->
    <?php  $this->load->view('layout/header', $data);
 ?>

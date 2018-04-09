@@ -36,6 +36,8 @@
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 <script src="<?php echo BASE_URL; ?>/public/js/lendingsteps.js"></script>
+<link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
+
 
 <script> //$('input[name=amount]').val()
  $(document).ready(function () {
@@ -70,11 +72,49 @@ if (!empty($this->session->flashdata('item'))) {
                                         var len = data.length;
                                         //alert(len);
                                         //$("#city").empty();
-                                        $("#city").html("<option value=''></option>");
+                                        $("#city").html("<option value=''>select city</option>");
                                         $.each(JSON.parse(data), function (key, value) {
                                             $('select[name="city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
                                         });
                                     }
                                 });
                             }
+              
+              
+              $(function() {
+//----- OPEN
+$('[data-popup-open]').on('click', function(e)  {
+var targeted_popup_class = jQuery(this).attr('data-popup-open');
+$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+e.preventDefault();
+});
+//----- CLOSE
+$('[data-popup-close]').on('click', function(e)  {
+var targeted_popup_class = jQuery(this).attr('data-popup-close');
+$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+e.preventDefault();
+});
+});
+                            
 </script>
+
+
+ <?php
+if ($this->session->flashdata('item')) {
+    $message = $this->session->flashdata('item');
+    ?>
+                    
+         <div class="popup" data-popup="popup-1">
+<div class="popup-inner">
+<h2>Thank you</h2>
+<p> <?php echo $message['message'];
+    ?></p>
+<a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+</div>
+</div>           
+                 
+    <?php
+}
+?>
+
+ 

@@ -81,47 +81,22 @@
                      <div class="col-md-2 form-group ">
 
      <select name="years_emt" class="form-control">
-           <option value="">Desired Term of loans</option>
-         <option value="7"<?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==7) echo 'selected';?>>7 years(84 Months)</option>
-         <option value="6" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==6) echo 'selected';?>>6 years(72 Months)</option>
-         <option value="5" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==5) echo 'selected';?>>5 years (60 Months)</option>
-         <option value="4" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==4) echo 'selected';?>>4 years ((48 Months)</option>
-          <option value="3" <?php if(isset($_REQUEST['years_emt']))  if($_REQUEST['years_emt']==3) echo 'selected';?>>3 years(36 Months)</option>
-           <option value="2" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==2) echo 'selected';?>>2 years(24 Months)</option> 
-           <option value="1" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==1) echo 'selected';?>>1 year (12 Months)</option>
+           <option value="">Request Amount</option>
+         <option value="7"<?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==7) echo 'selected';?>>$5,000-$10,000</option>
+         <option value="6" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==6) echo 'selected';?>>$10,000-$15,000</option>
+         <option value="5" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==5) echo 'selected';?>>$15,000-$20,000</option>
+         <option value="4" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==4) echo 'selected';?>>$20,000-$30,000</option>
+          <option value="3" <?php if(isset($_REQUEST['years_emt']))  if($_REQUEST['years_emt']==3) echo 'selected';?>>$30,000- $40,000</option>
+           <option value="2" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==2) echo 'selected';?>>$40,000 - $50,000</option> 
+           <option value="1" <?php if(isset($_REQUEST['years_emt'])) if($_REQUEST['years_emt']==1) echo 'selected';?>>$50,000+</option>
        
      </select>
 
 
                     </div>
 
-<div class="col-md-2 form-group ">
 
-     <select name="buying_from" class="form-control">
-           <option value="">Buying From</option>
-         <option value="1"<?php if(isset($_REQUEST['buying_from'])) if($_REQUEST['buying_from']==1) echo 'selected';?>>Dealer</option>
-         <option value="2"<?php if(isset($_REQUEST['buying_from'])) if($_REQUEST['buying_from']==2) echo 'selected';?>>Private Seller</option>
-         <option value="3"<?php if(isset($_REQUEST['buying_from'])) if($_REQUEST['buying_from']==3) echo 'selected';?>>Don't know</option>
-         
-       
-     </select>
-
-
-                    </div>
-                        
-                        <div class="col-md-2 form-group ">
-
-     <select name="pre_approved" class="form-control">
-           <option value="">Pre-approved</option>
-         <option value="1"<?php if(isset($_REQUEST['pre_approved'])) if($_REQUEST['pre_approved']==1) echo 'selected';?>>Yes</option>
-         <option value="0"<?php if(isset($_REQUEST['pre_approved'])) if($_REQUEST['pre_approved']==0) echo 'selected';?>>No</option>
-         
-       
-     </select>
-
-
-                    </div>
-                        
+                      <!--  
                         <div class="col-md-2 form-group ">
 
 
@@ -146,7 +121,7 @@
                         </div>
 
 
-                    </div>
+                    </div>-->
                         
                          <div class="col-md-2 form-group ">
 
@@ -174,7 +149,7 @@
 
                     </div>
                         
-                        <div class="col-md-2 form-group ">
+                    <!--    <div class="col-md-2 form-group ">
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
@@ -198,7 +173,7 @@
                             ?>">
                         </div>
 
-                    </div> 
+                    </div> -->
 
                     <div class="col-md-1 form-group ">  
                         <span class="input-group-btn">
@@ -300,7 +275,8 @@
                                     $years='$40,000 - $50,000';
                                         if($v['requested_amount']==1)
                                     $years='$50,000+';
-                                        
+                                         if($v['requested_amount']==0)
+                                    $years='0';
                                         echo $years;
                                         
                                          ?></td>

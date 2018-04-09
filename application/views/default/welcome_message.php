@@ -18,15 +18,7 @@
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 
                 <div class="offer-main clearfix">
-                      <?php
-if ($this->session->flashdata('item')) {
-    $message = $this->session->flashdata('item');
-    ?><div class="alert">
-        <div id="show"><?php echo $message['message'];
-    ?></div> </div>
-    <?php
-}
-?>
+                     
                     <div class="offer-cont">
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <a href="">

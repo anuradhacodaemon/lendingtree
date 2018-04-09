@@ -12,7 +12,7 @@
                 <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['userdata']['cemployer'])) echo $this->session->userdata['userdata']['cemployer']?>" class="form-control"  maxlength="8">
               </div>
                <span id="err1" style="color: red"></span>
-              <label class="control-label">Your Job Title?</label>
+              <label class="control-label">How many years have you worked there?</label>
               <div class="col-xs-12 col-sm-12 margbot_10">
                 <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['userdata']['job_title'])) echo $this->session->userdata['userdata']['job_title']?>" class="form-control" id="job_title" maxlength="8">
               </div>

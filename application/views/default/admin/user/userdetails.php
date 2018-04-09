@@ -63,7 +63,10 @@
                         <div class="row invoice-info">
                             <div class="col-sm-12 invoice-col padding_0">
                                 <div class="col-sm-12"><span> <b>Request Amount:</b>&nbsp;
-                                        <?php  if($userDetails[0]['requested_amount']==7)
+                                        <?php  
+                                        if($userDetails[0]['requested_amount']>0){
+                                            $years='';
+                                        if($userDetails[0]['requested_amount']==7)
                                     $years='$5,000-$10,000';
                                         if($userDetails[0]['requested_amount']==6)
                                     $years='$10,000-$15,000';
@@ -77,15 +80,19 @@
                                     $years='$40,000 - $50,000';
                                         if($userDetails[0]['requested_amount']==1)
                                     $years='$50,000+';
+                                      
                                         
                                         echo $years;
-                                        
+                                        }
                                          ?></span>
                                 </div>
                                 
                                 
                                <div class="col-sm-12"> <b>Type: &nbsp;</b>
                                     <?php 
+                                    if($userDetails[0]['type']>0)
+                                    {
+                                        $type='';
                                 if($userDetails[0]['type']==1)
                                     $type='New Car Purchase';
                                  if($userDetails[0]['type']==2)
@@ -96,7 +103,7 @@
                                     $type='Lease Buy Out';
                                 
                                 
-                                echo $type; ?>
+                                    echo $type;} ?>
                                 </div>
                                
                                 <div class="col-sm-12"><b>Your Current Employer: &nbsp</b>
@@ -114,10 +121,21 @@
                                 </div>
                                
  <div class="col-sm-12"> <b>City: &nbsp;</b>
-                                    <?php echo $userDetails[0]['city'] ?>
+                                    <?php
+                                    if($userDetails[0]['city']>0){
+                                    $city=$this->users->get_city($userDetails[0]['city']);
+                                    
+                                    echo $city[0]['name'];} ?>
                                 </div>
                                <div class="col-sm-12"> <b>State: &nbsp;</b>
-                                    <?php echo $userDetails[0]['state'] ?>
+                                    <?php
+                                    
+                                    if($userDetails[0]['state']>0)
+                                    {
+                                  $state=$this->users->get_city($userDetails[0]['state']);
+
+                                    echo $state[0]['name'];
+                                    }?>
                                 </div>
                                <div class="col-sm-12"> <b>Zip: &nbsp;</b>
                                     <?php echo $userDetails[0]['zip'] ?>

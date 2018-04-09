@@ -47,13 +47,6 @@ function step4() {
         $('#job_title').focus();
         $('#err1').html('');
         return false;
-    } else if (!RE.test($("#job_title").val()))
-    {
-
-        $('#err2').html('Your Job Title should have letter only ');
-        $('#job_title').focus();
-        $('#err1').html('');
-        return false;
     } else
     {
         $('#err2').html('');
@@ -212,7 +205,7 @@ function step6() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('input[name=city]').val() + '/' + $('input[name=state]').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
+            url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('#city').val() + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
             success: function (data)
             {
 
