@@ -153,7 +153,7 @@ class Auto extends CI_Controller {
                 'requested_amount' => $this->session->userdata['userdata']['requested_amount'],
                 'type' => $this->session->userdata['userdata']['type'],
                 'add_date' => date('Y-m-d H:i:s'),
-                'domain' =>BASE_URL
+                'domain' =>'http://'.$_SERVER['HTTP_HOST']
             );
 
             $this->session->set_userdata('userdata', $data);
