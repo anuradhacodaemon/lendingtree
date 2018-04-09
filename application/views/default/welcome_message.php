@@ -10,8 +10,8 @@
                 
                 <div class="banner-left">
                     <div class="banner-inner">
-                        <h1>Compare Loan Offers for Free</h1>
-                        <h2>How can we help you today?</h2>
+                      
+                        <h1>How can we help you today?</h1>
                     </div>
                 </div>
             </div>

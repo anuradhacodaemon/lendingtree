@@ -81,6 +81,7 @@ class Auto extends CI_Controller {
     }
 
     public function step5($pre_tax_income = 0) {
+        
         if ($pre_tax_income) {
             $data = array(
                 'pre_tax_income' => $pre_tax_income,
@@ -92,9 +93,21 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata('userdata', $data);
         }
+       
+        $data['state']=$this->loan_model->get_state();
+        $data['city']=$this->loan_model->get_city();
 //echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('step5_view');
+        $this->load->view('step5_view',$data);
+    }
+    public function getcity($state_id=0){
+        
+     $city= $this->loan_model->get_city($state_id);
+     echo json_encode($city);
+     
+   // print_r($city);
+   // die;
+
     }
 
     public function step6($firstname = '', $lastname = '', $address, $city, $state, $zip, $ssn) {
@@ -153,7 +166,7 @@ class Auto extends CI_Controller {
 
         if ($result > 0)
         {
-           $error = 'Thank your for your submission. Admin will contact you shortly';
+           $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
   
            //redirect('/');

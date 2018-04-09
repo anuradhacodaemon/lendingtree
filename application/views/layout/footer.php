@@ -50,5 +50,31 @@ if (!empty($this->session->flashdata('item'))) {
             $(".forgot_section").hide();
 <?php } ?>
     });
+    
 </script>
 
+
+<script>
+                            function get_city(id) {
+                                // alert("<?php echo BASE_URL; ?>auto/getcity/" +  id);
+                                $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+         $('#err4').html('');
+    
+    $.ajax({
+                                    type: "GET",
+                                    url: "<?php echo BASE_URL; ?>auto/getcity/" + id,
+                                    success: function (data)
+                                    {
+                                        var len = data.length;
+                                        //alert(len);
+                                        //$("#city").empty();
+                                        $("#city").html("<option value=''></option>");
+                                        $.each(JSON.parse(data), function (key, value) {
+                                            $('select[name="city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                                        });
+                                    }
+                                });
+                            }
+</script>

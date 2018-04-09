@@ -86,6 +86,9 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 define('LOANS', 'lend_loan');
 define('LOGIN', 'lend_user');
+define('COUNTRY', 'lend_countries');
+define('STATE', 'lend_states');
+define('CITY', 'lend_cities');
 
 define('RECORD_LIMIT', 10);
 define('TOTAL_ROWS', 2);

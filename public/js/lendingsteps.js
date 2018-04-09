@@ -70,6 +70,7 @@ function step4() {
 
 }
 
+
 function step5() {
     var RE = /^\d*\.?\d*$/;
     if ($('input[name=pre_tax_income]').val() == '')
@@ -103,6 +104,8 @@ function step5() {
 function step6() {
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
+    var RE1 = /^\d*\.?\d*$/;
+    
     if ($('input[name=firstname]').val() == '')
     {
 
@@ -137,26 +140,28 @@ function step6() {
         $('#err1').html('');
         $('#err2').html('');
         return false;
-    } else if ($('input[name=city]').val() == '')
+    }  else if ($('#state').val() == '' )
     {
-
-        $('#err4').html('city is empty');
-        $('#city').focus();
+        //alert($(this).val());
+       // alert($('input[name=state]').has('option').length);
+        $('#err4').html('state is empty');
+        $('#state').focus();
         $('#err1').html('');
         $('#err2').html('');
         $('#err3').html('');
         return false;
-    } else if ($('input[name=state]').val() == '')
+    } 
+    else if ($('#city').val() == '' )
     {
-
-        $('#err5').html('state is empty');
+        $('#err5').html('city is empty');
         $('#city').focus();
         $('#err1').html('');
         $('#err2').html('');
         $('#err3').html('');
-        $('#err4').html('');
+         $('#err4').html('');
         return false;
-    } else if ($('input[name=zip]').val() == '')
+    }
+    else if ($('input[name=zip]').val() == '')
     {
 
         $('#err6').html('zip is empty');
@@ -167,7 +172,20 @@ function step6() {
         $('#err4').html('');
         $('#err5').html('');
         return false;
-    } else if ($('input[name=ssn]').val() == '')
+    }else if (!RE1.test($("#zip").val()))
+    {
+
+        $('#err6').html('zip is should be number');
+        $('#zip').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+        $('#err4').html('');
+        $('#err5').html('');
+         return false;
+    }
+    
+    else if ($('input[name=ssn]').val() == '')
     {
 
         $('#err7').html('ssn is empty');
@@ -251,3 +269,4 @@ function step7() {
     }
 
 }
+ 
