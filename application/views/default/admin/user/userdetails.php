@@ -143,7 +143,9 @@
                                <div class="col-sm-12"> <b>SSN: &nbsp;</b>
                                     <?php echo $userDetails[0]['ssn'] ?>
                                 </div>
-                               
+                               <div class="col-sm-12"> <b>Domain: &nbsp;</b>
+                                    <?php echo $userDetails[0]['domain'] ?>
+                                </div>
                             </div>
                             <!-- /.col -->
 
