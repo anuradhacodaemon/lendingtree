@@ -11,13 +11,18 @@
                     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                       <div class="col-xs-12 col-sm-6 margbot_10">
                         <input type="text" name="firstname" placeholder="Firstname" value="<?php if (isset($this->session->userdata['userdata']['firstname'])) echo $this->session->userdata['userdata']['firstname'] ?>" class="form-control width_100" id="firstname" >
-                    </div>
                     <span id="err1" style="color: red"></span>
+                      
+                      </div>
+                   
 
                     <div class="col-xs-12 col-sm-6 margbot_10">
                         <input type="text" name="lastname" placeholder="Lastname" value="<?php if (isset($this->session->userdata['userdata']['lastname'])) echo $this->session->userdata['userdata']['lastname'] ?>" class="form-control width_100" id="lastname" >
-                    </div>
                     <span id="err2" style="color: red"></span>
+                    
+                    </div>
+                        
+                   
 
                     <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="address" placeholder="Address" value="<?php if (isset($this->session->userdata['userdata']['address'])) echo $this->session->userdata['userdata']['address'] ?>" class="form-control width_100" id="address" >
@@ -36,9 +41,9 @@
                                 <option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option> 
                             <?php } ?>
                         </select> 
-
+ <span id="err4" style="color: red"></span>
                     </div>
-                    <span id="err4" style="color: red"></span>
+                   
                     <div class="col-xs-12 col-sm-6 margbot_10">
                         <select class="form-control width_100" name="city" id="city" style="width:auto;">
                             <option value="">Select City</option> 
@@ -48,16 +53,21 @@
 
                                 <option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option> 
                             <?php } ?>
-                        </select>               </div>
-                    <span id="err5" style="color: red"></span>
+                        </select>            
+                    
+                       <span id="err5" style="color: red"></span>
+                    </div>
+                 
                     <div class="col-xs-12 col-sm-6 margbot_10">
                         <input type="text" name="zip" placeholder="Zip" value="<?php if (isset($this->session->userdata['userdata']['zip'])) echo $this->session->userdata['userdata']['zip'] ?>" class="form-control width_100" id="zip" >
-                    </div>
                     <span id="err6" style="color: red"></span>
+                    </div>
+                    
                     <div class="col-xs-12 col-sm-6 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN (###-##-####)" value="<?php if (isset($this->session->userdata['userdata']['ssn'])) echo $this->session->userdata['userdata']['ssn'] ?>" class="form-control width_100" id="ssn" >
+                     <span id="err7" style="color: red"></span>
                     </div>
-                    <span id="err7" style="color: red"></span>
+                   
                     
                     <div class="col-xs-12 col-sm-12 radio margtop_30">
                         <button type="button" class="button" onclick="step6()">Continue<span class="continueIcon sprites"></span></button>
