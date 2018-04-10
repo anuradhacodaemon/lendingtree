@@ -29,7 +29,7 @@
             <div class="login_wrapper">
                 <div class="animate form login_form">
                     <section class="login_content login_section">
-                        <form method="POST" action="<?php echo BASE_URL ?>admin/home/login">
+                        <form method="POST" action="<?php echo base_url() ?>admin/home/login">
                             <h1>Login</h1>
                             <div class="alert">
                                 <?php
