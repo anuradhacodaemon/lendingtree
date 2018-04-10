@@ -27,7 +27,7 @@
                    
 
                     <div class="col-xs-12 col-sm-12 margbot_10">
-                        <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['userdata']['password'])) echo $this->session->userdata['userdata']['password'] ?>" class="form-control" id="password" >
+                        <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['userdata']['password'])) echo $this->session->userdata['userdata']['password'] ?>" class="form-control" id="phone" >
                     </div>
                     <span id="err2" style="color: red"></span>
                     <div class="col-xs-12 col-sm-12 margbot_10">
