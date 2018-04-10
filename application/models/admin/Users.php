@@ -28,36 +28,42 @@ class Users extends CI_Model {
         if (!empty($filterData['requested_amount'])) {
             $this->db->where('user.requested_amount', $filterData['requested_amount']);
         }
-        
-        
-        
+
+        if (!empty($filterData['job_title'])) {
+            $this->db->where('user.job_title', $filterData['job_title']);
+        }
+
+        if (!empty($filterData['domain'])) {
+            $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+
+
         if (!empty($filterData['start_date'])) {
-            $this->db->where('user.dob >= ', $filterData['start_date'] );
+            $this->db->where('user.dob >= ', $filterData['start_date']);
         }
         if (!empty($filterData['end_date'])) {
-            $this->db->where('user.dob <= ', $filterData['end_date'] );
+            $this->db->where('user.dob <= ', $filterData['end_date']);
         }
         if (!empty($filterData['amount1'])) {
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
-            $this->db->group_start();
+            if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
+                $this->db->group_start();
             $this->db->where(' user.amount <=', $filterData['amount1']);
         }
-         if (!empty($filterData['amount2'])) {
+        if (!empty($filterData['amount2'])) {
             $this->db->or_where('user.amount >=', $filterData['amount2']);
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
-            $this->db->group_end();
+            if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
+                $this->db->group_end();
         }
-         if (!empty($filterData['pre_tax_income1'])) {
-             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-             $this->db->group_start();
+        if (!empty($filterData['pre_tax_income1'])) {
+            if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
+                $this->db->group_start();
             $this->db->where('user.pre_tax_income <=', $filterData['pre_tax_income1']);
         }
-         if (!empty($filterData['pre_tax_income2'])) {
+        if (!empty($filterData['pre_tax_income2'])) {
             $this->db->or_where('user.pre_tax_income >=', $filterData['pre_tax_income2']);
             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-            $this->db->group_end();
-            
-         }
+                $this->db->group_end();
+        }
         if (!empty($filterData['search'])) {
             $this->db->group_start();
             $this->db->like('user.email', $filterData['search'], 'both');
@@ -77,16 +83,16 @@ class Users extends CI_Model {
         else
             $this->db->order_by($sortData['sort_by'], $sortData['sort_direction']);
         $this->db->limit($limit, $start);
-        
+
         $result = $this->db->get();
         //echo $this->db->last_query();
-       
+
         return $result->result_array();
     }
 
     public function get_count_user($filterData = array()) {
 
-          if (!empty($filterData['firstname'])) {
+        if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
         if (!empty($filterData['lastname'])) {
@@ -103,36 +109,42 @@ class Users extends CI_Model {
         if (!empty($filterData['requested_amount'])) {
             $this->db->where('user.requested_amount', $filterData['requested_amount']);
         }
-       
-        
-        
+
+        if (!empty($filterData['job_title'])) {
+            $this->db->where('user.job_title', $filterData['job_title']);
+        }
+
+        if (!empty($filterData['domain'])) {
+            $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+
+
         if (!empty($filterData['start_date'])) {
-            $this->db->where('user.dob >= ', $filterData['start_date'] );
+            $this->db->where('user.dob >= ', $filterData['start_date']);
         }
         if (!empty($filterData['end_date'])) {
-            $this->db->where('user.dob <= ', $filterData['end_date'] );
+            $this->db->where('user.dob <= ', $filterData['end_date']);
         }
         if (!empty($filterData['amount1'])) {
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
-            $this->db->group_start();
+            if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
+                $this->db->group_start();
             $this->db->where(' user.amount <=', $filterData['amount1']);
         }
-         if (!empty($filterData['amount2'])) {
+        if (!empty($filterData['amount2'])) {
             $this->db->or_where('user.amount >=', $filterData['amount2']);
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
-            $this->db->group_end();
+            if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
+                $this->db->group_end();
         }
-         if (!empty($filterData['pre_tax_income1'])) {
-             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-             $this->db->group_start();
+        if (!empty($filterData['pre_tax_income1'])) {
+            if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
+                $this->db->group_start();
             $this->db->where('user.pre_tax_income <=', $filterData['pre_tax_income1']);
         }
-         if (!empty($filterData['pre_tax_income2'])) {
+        if (!empty($filterData['pre_tax_income2'])) {
             $this->db->or_where('user.pre_tax_income >=', $filterData['pre_tax_income2']);
             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-            $this->db->group_end();
-            
-         }
+                $this->db->group_end();
+        }
         if (!empty($filterData['search'])) {
             $this->db->group_start();
             $this->db->like('user.email', $filterData['search'], 'both');
@@ -161,24 +173,24 @@ class Users extends CI_Model {
 
         return $result->result_array();
     }
-    
-    public function get_state($state_id=0) {
+
+    public function get_state($state_id = 0) {
 
         $this->db->from(STATE);
-        $this->db->where('id',$state_id);
+        $this->db->where('id', $state_id);
         $result = $this->db->get();
-        
+
 
         return $result->result_array();
     }
 
-    public function get_city($city_id=0) {
+    public function get_city($city_id = 0) {
 //$this->db->select('id,name');
         $this->db->from(CITY);
-         $this->db->where('id',$city_id);
+        $this->db->where('id', $city_id);
         $result = $this->db->get();
-       //echo $this->db->last_query();
-      
+        //echo $this->db->last_query();
+
         return $result->result_array();
     }
 
@@ -188,94 +200,65 @@ class Users extends CI_Model {
         $result = $this->db->query($sql);
         return $result->result_array();
     }
+
     public function get_userall() {
-        
-        $filterData=$this->session->userdata['export'];
-         $filter='user.firstname,user.lastname,user.email,';
-          if(isset($this->session->userdata['export']))
-        {
-         if (!empty($filterData['firstname'])) {
-            $this->db->like('user.firstname', $filterData['firstname'], 'both');
-           
-        }
-        if (!empty($filterData['lastname'])) {
-            $this->db->like('user.lastname', $filterData['lastname'], 'both');
-             
-        }
+
+        $filterData = $this->session->userdata['export'];
+        $filter = 'user.email,user.type,user.requested_amount,user.pre_tax_income,user.job_title,user.domain';
+        //print_r($this->session->userdata['export']);
+        if (!empty($this->session->userdata['export'])) {
 
 
-        if (!empty($filterData['email'])) {
-            $this->db->where('user.email', $filterData['email']);
-            
+            if (!empty($filterData['email'])) {
+                $this->db->where('user.email', $filterData['email']);
+            }
+            if (!empty($filterData['type'])) {
+                $this->db->where('user.type', $filterData['type']);
+               // $filter .= 'user.type,';
+            }
+            if (!empty($filterData['requested_amount'])) {
+                $this->db->where('user.requested_amount', $filterData['requested_amount']);
+                //$filter .= 'user.requested_amount,';
+            }
+            if (!empty($filterData['pre_tax_income1'])) {
+                if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
+                    $this->db->group_start();
+                $this->db->where('user.pre_tax_income <=', $filterData['pre_tax_income1']);
+                //$filter .= 'user.pre_tax_income,';
+            }
+            if (!empty($filterData['pre_tax_income2'])) {
+                $this->db->or_where('user.pre_tax_income >=', $filterData['pre_tax_income2']);
+                if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
+                    $this->db->group_end();
+                //$filter='user.pre_tax_income';
+            }
+
+            if (!empty($filterData['job_title'])) {
+                $this->db->where('user.job_title', $filterData['job_title']);
+               // $filter .= 'user.job_title,';
+            }
+
+            if (!empty($filterData['domain'])) {
+                $this->db->where('user.domain', $filterData['domain']);
+               // $filter .= 'user.domain,';
+            }
+        } else {
+            //$filter .= 'user.type,user.requested_amount,user.pre_tax_income,user.job_title,user.domain,';
         }
-        if (!empty($filterData['type'])) {
-            $this->db->where('user.type', $filterData['type']);
-             $filter.='user.type,';
-        }
-        if (!empty($filterData['years_emt'])) {
-            $this->db->where('user.years_emt', $filterData['years_emt']);
-             $filter.='user.years_emt,';
-        }
-        if (!empty($filterData['buying_from'])) {
-            $this->db->where('user.buying_from', $filterData['buying_from']);
-             $filter.='user.buying_from,';
-        }
-        
-        if (!empty($filterData['pre_approved'])) {
-            $this->db->where('user.pre_approved', $filterData['pre_approved']);
-             $filter.='user.pre_approved,';
-        }
-        if (!empty($filterData['start_date'])) {
-            $this->db->where('user.dob >= ', $filterData['start_date'] );
-             $filter.='user.dob,';
-        }
-        if (!empty($filterData['end_date'])) {
-            $this->db->where('user.dob <= ', $filterData['end_date'] );
-             //$filter='user.dob';
-        }
-        if (!empty($filterData['amount1'])) {
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2']))
-            $this->db->group_start();
-            $this->db->where(' user.amount <=', $filterData['amount1']);
-             $filter.='user.amount,';
-        }
-         if (!empty($filterData['amount2'])) {
-            $this->db->or_where('user.amount >=', $filterData['amount2']);
-             if (!empty($filterData['amount1']) && !empty($filterData['amount2'])){
-            $this->db->group_end();
-             }
-              //$filter='user.amount';
-        }
-         if (!empty($filterData['pre_tax_income1'])) {
-             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-             $this->db->group_start();
-            $this->db->where('user.pre_tax_income <=', $filterData['pre_tax_income1']);
-         $filter.='user.pre_tax_income,';
-            
-         }
-         if (!empty($filterData['pre_tax_income2'])) {
-            $this->db->or_where('user.pre_tax_income >=', $filterData['pre_tax_income2']);
-            if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-            $this->db->group_end();
-            //$filter='user.pre_tax_income';
-         }
-        }
-        else {
-          $filter.='user.type,user.years_emt,user.buying_from,user.pre_approved,user.dob,user.amount,user.pre_tax_income,';   
-        }
-    $filter =substr($filter,0,-1);    
-        
-   
+        //$filter = substr($filter, 0, -1);
+
+
 
         $this->db->select($filter);
 
         $this->db->from(LOANS . ' as user');
+        $this->db->order_by('user.update_date', 'desc');
         // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
-      
+
 
         $result = $this->db->get();
-       // echo $this->db->last_query();
-          //die;
+        // echo $this->db->last_query();
+        //die;
         return $result->result_array();
     }
 
