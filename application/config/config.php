@@ -31,7 +31,7 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	}
 	else
 	{
-		$config['base_url']	= 'http://culoanportal.com/';
+		$config['base_url']	= 'http://' . $_SERVER['SERVER_NAME']. '/';
 		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/');
 		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/');
 	}
