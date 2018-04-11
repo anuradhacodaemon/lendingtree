@@ -129,11 +129,14 @@
 
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Domain" name="domain" value="<?php
-                            if (isset($_REQUEST['domain'])) {
-                                echo $_REQUEST['domain'];
-                            }
-                            ?>">
+                           
+                            
+                            <select class="form-control" placeholder="Domain" name="domain" >
+                                <option value="">select domain </option>
+                                <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if($_REQUEST['domain']=="http://coastalcommunity.culoanportal.com/") echo 'selected'?>>coastalcommunity.culoanportal.com</option>
+                                <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if($_REQUEST['domain']=="http://culoanportal.com/") echo 'selected'?>>culoanportal.com</option>
+
+                            </select>
                         </div>
 
                     </div>   
