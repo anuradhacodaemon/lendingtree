@@ -2,7 +2,18 @@
 html , body{
 	
  height:100%;
+ margin:0; padding: 0;
  
+}
+.login {
+    background: #fbeaba;
+}
+.logo-main {
+    padding: 0;
+    text-align:center;
+}
+.logo-main .logo-inner {
+    padding: 20px 0;
 }
  
 .full-width {
@@ -3418,19 +3429,24 @@ ul.project_files li a i {
 .product_social ul li a i {
     font-size: 35px
 }
-.login {
-    background: #F7F7F7
-}
 .login .fa-paw {
     font-size: 26px
 }
 a.hiddenanchor {
     display: none
 }
+.login_wrapper_main {
+    margin: 0px auto;
+    background: #fadb84;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
 .login_wrapper {
     right: 0px;
     margin: 0px auto;
-    margin-top: 5%;
+    margin-top: 0;
     max-width: 350px;
     position: relative
 }
@@ -3500,11 +3516,17 @@ form:after {
 }
 .login_content {
     margin: 0 auto;
-    padding: 25px 0 0;
+    padding: 20px;
     position: relative;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
-    min-width: 280px
+    min-width: 280px;
+    background: #fef0ca;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
 }
 .login_content a,
 .login_content .btn-default:hover {
@@ -3566,10 +3588,12 @@ form:after {
     -ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
     -o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
     box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
-    border: 1px solid #c8c8c8;
+    border: 1px solid #d9b13f;
     color: #777;
     margin: 0 0 20px;
-    width: 100%
+    width: 100%;
+    padding: 6px;
+    height: 42px;
 }
 .login_content form input[type="text"]:focus,
 .login_content form input[type="email"]:focus,
@@ -4276,8 +4300,18 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 .dark_grey{
 	color:#444;
 }
-.btn-yellow{
-background-color:#ffca00;
+.btn-yellow {
+    background-color: #ffca00;
+    border: 1px solid #ffca00;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 auto !important;
+    padding: 8px 12px;
+    text-align: center;
+    width: 130px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    float: none !important;
 }
 
 .profile_info h5 {
