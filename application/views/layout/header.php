@@ -8,7 +8,7 @@
           </div>
           <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
             <div class="number">
-              <a href="<?php echo BASE_URL; ?>">Call us <strong>(409) 220-0612</strong></a>
+              <a href="callto:4092200612">Call us <strong>(409) 220-0612</strong></a>
             </div>
           </div>
         </div>

@@ -59,12 +59,12 @@
                     </div>
                  
                     <div class="col-xs-12 col-sm-6 margbot_10">
-                        <input type="text" name="zip" placeholder="Zip" value="<?php if (isset($this->session->userdata['userdata']['zip'])) echo $this->session->userdata['userdata']['zip'] ?>" class="form-control width_100" id="zip" maxlength="5">
+                        <input type="text" name="zip" placeholder="Zip" value="<?php if (isset($this->session->userdata['userdata']['zip'])) echo $this->session->userdata['userdata']['zip'] ?>" class="form-control width_100" id="zip" >
                     <span id="err6" style="color: red"></span>
                     </div>
                     
                     <div class="col-xs-12 col-sm-6 margbot_10">
-                        <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['userdata']['ssn'])) echo $this->session->userdata['userdata']['ssn'] ?>" class="form-control width_100" id="ssn" >
+                        <input type="text" name="ssn" placeholder="SSN (###-##-####)" value="<?php if (isset($this->session->userdata['userdata']['ssn'])) echo $this->session->userdata['userdata']['ssn'] ?>" class="form-control width_100" id="ssn" >
                      <span id="err7" style="color: red"></span>
                     </div>
                    
@@ -83,25 +83,3 @@
     </div>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#ssn').keyup(function() {        
-        var val = this.value.replace(/\D/g, '');
-          var newVal = '';
-          if(val.length > 4) {
-             this.value = val;
-          }
-          if((val.length > 3) && (val.length < 6)) {
-             newVal += val.substr(0, 3) + '-';
-             val = val.substr(3);
-          }
-          if (val.length > 5) {
-             newVal += val.substr(0, 3) + '-';
-             newVal += val.substr(3, 2) + '-';
-             val = val.substr(5);
-           }
-           newVal += val;
-           this.value = newVal.substring(0, 11);
-    });
-});
-</script>

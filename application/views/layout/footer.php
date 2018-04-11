@@ -31,14 +31,11 @@
 </div>
 <!-- Footer ends here -->
 <?php
-if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
-	{
-		$setURL	= 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree/';
-        }
-        else
-        {
-            $setURL	= 'http://' . $_SERVER['SERVER_NAME']. '/';
-        }
+if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:82') {
+    $setURL = 'http://' . $_SERVER['HTTP_HOST'] . '/lendingtree/';
+} else {
+    $setURL = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+}
 ?>	
 <input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
@@ -81,7 +78,15 @@ if (!empty($this->session->flashdata('item'))) {
             success: function (data)
             {
                 var len = data.length;
-                //alert(len);
+                 $('#city').prop('disabled',false);
+
+                if (JSON.parse(data) == '') {
+                    $('#city').prop('disabled', 'disabled');
+                    // array empty or does not exist
+                }
+                
+                  
+                
                 //$("#city").empty();
                 $("#city").html("<option value=''>select city</option>");
                 $.each(JSON.parse(data), function (key, value) {

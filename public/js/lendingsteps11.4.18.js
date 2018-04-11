@@ -52,7 +52,7 @@ function step4() {
     }else if (!RE1.test($("#job_title").val()))
     {
 
-        $('#err2').html('Only digits allowed ');
+        $('#err2').html('How many years have you worked there should be number ');
         $('#job_title').focus();
         $('#err1').html('');
         return false;
@@ -192,7 +192,7 @@ function step6() {
     else if (!RE2.test($("#zip").val()))
     {
 
-        $('#err6').html('Zip code is invalid. 5 digits are mandatory');
+        $('#err6').html('zip is should be in ##### format');
         $('#zip').focus();
         $('#err1').html('');
         $('#err2').html('');
@@ -241,8 +241,8 @@ function step6() {
             }
         });
     }
-}
 
+}
 function step7() {
 
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -288,8 +288,8 @@ function step7() {
                // alert(data);
                 if(data==1)
                 {
-                    //location.href = base_url;
-                    gtag_report_conversion(base_url);
+               location.href = base_url;
+ 
                 }
                 else
                 {
@@ -297,22 +297,9 @@ function step7() {
             }
             }
         });
+
+
     }
-}
 
-/* Event snippet for Completed Auto App conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. */
-
-function gtag_report_conversion(url) {
- var callback = function () {
-   if (typeof(url) != 'undefined') {
-     window.location = url;
-   }
- };
- gtag('event', 'conversion', {
-     'send_to': 'AW-829513051/iHhxCPeEpYABENu6xYsD',
-     'event_callback': callback
- });
- return false;
 }
  

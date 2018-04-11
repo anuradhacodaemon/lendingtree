@@ -104,10 +104,6 @@ class Auto extends CI_Controller {
         
      $city= $this->loan_model->get_city($state_id);
      echo json_encode($city);
-     
-   // print_r($city);
-   // die;
-
     }
 
     public function step6($firstname = '', $lastname = '', $address, $city, $state, $zip, $ssn) {

@@ -35,14 +35,6 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());  gtag('config', 'UA-117121524-1');
     </script>
-
-    <!-- Global site tag (gtag.js) - Google AdWords: 829513051 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-829513051"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());  gtag('config', 'AW-829513051');
-    </script>
   </head>
   <body >
     <!-- Header starts here -->
