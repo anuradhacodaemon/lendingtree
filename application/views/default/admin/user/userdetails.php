@@ -114,7 +114,7 @@
                                     </div>
                        
                                 <div class="col-sm-12"> <b>Your Pre-tax Yearly income: &nbsp;</b>
-                                    <?php echo $userDetails[0]['pre_tax_income'] ?>
+                                    <?php echo '$'.number_format($userDetails[0]['pre_tax_income']); ?>
                                 </div>
                                <div class="col-sm-12"> <b>Address: &nbsp;</b>
                                     <?php echo $userDetails[0]['address'] ?>

@@ -9,6 +9,10 @@
                     <label class="control-label">Your Gross [Pre-Tax] Monthly Income?</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
                         <input  type="text" id="pre_tax_income" name="pre_tax_income" value="<?php if (isset($this->session->userdata['userdata']['pre_tax_income'])) echo $this->session->userdata['userdata']['pre_tax_income'] ?>" class="form-control"  >
+                       <input  type="hidden" id="pre_tax_income1" name="pre_tax_income1"  class="form-control"  >
+                       <input  type="hidden" id="err2" name="err2" value="0"  class="form-control"  >
+
+                    
                     </div>
                     <span id="err1" style="color: red"></span>
                     
@@ -28,5 +32,29 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
 
-
+$("#pre_tax_income").on('keyup', function(e){
+    
+     
+if (e.keyCode < 48 || e.keyCode > 57) {
+     $('#pre_tax_income').html('');
+      $('#err1').html('Your Pre-tax yearly income should be number');
+        $('#pre_tax_income').focus();
+    }
+    else
+    {
+       var n = parseInt($(this).val().replace(/\D/g,''),10);
+    $(this).val('$'+n.toLocaleString()); 
+    $('#err1').html('');
+       $('#err2').val(1);
+    }
+   
+  });
+$("#pre_tax_income").keyup(function(){
+    var val = $("#pre_tax_income").val().replace(/\D/g, '');
+        $("#pre_tax_income1").val(val);
+    });
+});
+</script>

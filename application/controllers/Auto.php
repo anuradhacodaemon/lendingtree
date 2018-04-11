@@ -59,7 +59,7 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata('userdata', $data);
         }
-       // echo '<pre>';
+        // echo '<pre>';
         // print_r($this->session->userdata());
         $this->load->view('step3_view');
     }
@@ -81,8 +81,12 @@ class Auto extends CI_Controller {
     }
 
     public function step5($pre_tax_income = 0) {
-        
+
         if ($pre_tax_income) {
+
+            //$num = explode('$', $pre_tax_income);
+           // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
                 'pre_tax_income' => $pre_tax_income,
                 'current_employer' => $this->session->userdata['userdata']['current_employer'],
@@ -93,17 +97,18 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata('userdata', $data);
         }
-       
-        $data['state']=$this->loan_model->get_state();
-        $data['city']=$this->loan_model->get_city();
+
+        $data['state'] = $this->loan_model->get_state();
+        $data['city'] = $this->loan_model->get_city();
 //echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('step5_view',$data);
+        $this->load->view('step5_view', $data);
     }
-    public function getcity($state_id=0){
-        
-     $city= $this->loan_model->get_city($state_id);
-     echo json_encode($city);
+
+    public function getcity($state_id = 0) {
+
+        $city = $this->loan_model->get_city($state_id);
+        echo json_encode($city);
     }
 
     public function step6($firstname = '', $lastname = '', $address, $city, $state, $zip, $ssn) {
@@ -149,27 +154,25 @@ class Auto extends CI_Controller {
                 'requested_amount' => $this->session->userdata['userdata']['requested_amount'],
                 'type' => $this->session->userdata['userdata']['type'],
                 'add_date' => date('Y-m-d H:i:s'),
-                'domain' =>'http://'.$_SERVER['SERVER_NAME'].'/'
+                'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/'
             );
 
             $this->session->set_userdata('userdata', $data);
         }
-       //echo '<pre>';
+        //echo '<pre>';
         // print_r($this->session->userdata());
 
         $result = $this->loan_model->add_loan($this->session->userdata['userdata']);
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
-        if ($result > 0)
-        {
-           $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
-           $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-  
-           //redirect('/');
-           echo 1;
-        }
-        else {
+        if ($result > 0) {
+            $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
+            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+
+            //redirect('/');
+            echo 1;
+        } else {
 
             $error = 'Your email already exist';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));

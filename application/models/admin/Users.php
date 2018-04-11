@@ -204,7 +204,7 @@ class Users extends CI_Model {
     public function get_userall() {
 
         $filterData = $this->session->userdata['export'];
-        $filter = 'user.email,user.type,user.requested_amount,user.pre_tax_income,user.job_title,user.domain';
+        $filter = 'user.firstname,user.lastname,user.phone,user.email,user.type,user.requested_amount,user.current_employer,user.pre_tax_income,user.job_title,user.domain,user.address,s.name as state,c.name as city,user.zip,user.ssn';
         //print_r($this->session->userdata['export']);
         if (!empty($this->session->userdata['export'])) {
 
@@ -253,8 +253,8 @@ class Users extends CI_Model {
 
         $this->db->from(LOANS . ' as user');
         $this->db->order_by('user.update_date', 'desc');
-        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
-
+        $this->db->join(STATE . ' as s', 's.id = user.state', 'left');
+        $this->db->join(CITY . ' as c', 'c.id = user.city', 'left');
 
         $result = $this->db->get();
         // echo $this->db->last_query();

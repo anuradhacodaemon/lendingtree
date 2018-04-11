@@ -313,7 +313,7 @@
                                             echo $years;
                                             ?></td>
 
-                                        <td><?php echo $v['pre_tax_income']; ?></td>
+                                        <td><?php echo '$'.number_format($v['pre_tax_income']); ?></td>
 
                                         <td><?php echo $v['job_title']; ?></td>
                                         <td><?php echo $v['domain']; ?></td>

@@ -172,29 +172,36 @@ class Admin_user extends CI_Controller {
 
     public function export() {
         $arr = array();
-        //$arr[] = "First Name";
-        //$arr[] = "Last Name";
+        $arr[] = "First Name";
+        $arr[] = "Last Name";
+        $arr[] = "Phone";
         $arr[] = "Email";
-       /* if (!empty($this->session->userdata['export'])) {
-            if (!empty($this->session->userdata['export']['type']))
-                $arr[] = "Type of Loan";
-            if (!empty($this->session->userdata['export']['requested_amount']))
-                $arr[] = "Requested Amount";
+        /* if (!empty($this->session->userdata['export'])) {
+          if (!empty($this->session->userdata['export']['type']))
+          $arr[] = "Type of Loan";
+          if (!empty($this->session->userdata['export']['requested_amount']))
+          $arr[] = "Requested Amount";
 
-            if (!empty($this->session->userdata['export']['pre_tax_income1']) || !empty($this->session->userdata['export']['pre_tax_income2']))
-                $arr[] = "Yearly Income";
-            if (!empty($this->session->userdata['export']['job_tile']))
-                $arr[] = "Work Experience";
-            if (!empty($this->session->userdata['export']['domain']))
-                $arr[] = "Domain";
-        }
-        else { */
+          if (!empty($this->session->userdata['export']['pre_tax_income1']) || !empty($this->session->userdata['export']['pre_tax_income2']))
+          $arr[] = "Yearly Income";
+          if (!empty($this->session->userdata['export']['job_tile']))
+          $arr[] = "Work Experience";
+          if (!empty($this->session->userdata['export']['domain']))
+          $arr[] = "Domain";
+          }
+          else { */
 
-            $arr[] = "Type of Loan";
-            $arr[] = "Requested Amount";
-            $arr[] = "Yearly Income";
-            $arr[] = "Work Experience";
-            $arr[] = "Domain";
+        $arr[] = "Type of Loan";
+        $arr[] = "Requested Amount";
+        $arr[] = "Current Employer";
+        $arr[] = "Yearly Income";
+        $arr[] = "Work Experience";
+        $arr[] = "Domain";
+        $arr[] = "Address";
+        $arr[] = "State";
+        $arr[] = "City";
+        $arr[] = "Zip";
+        $arr[] = "SSN";
         //}
         $arr = array($arr);
         $data2 = $this->users->get_userall();
@@ -205,7 +212,17 @@ class Admin_user extends CI_Controller {
         $pre_approved = '';
         $a = array();
         foreach ($data2 as $k => $v) {
-            $a = array( $v['email']);
+            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email']);
+
+            if ($v['type'] == 1)
+                $type = 'New Car Purchase';
+            if ($v['type'] == 2)
+                $type = 'Used Car Purchase';
+            if ($v['type'] == 3)
+                $type = 'Refinance';
+            if ($v['type'] == 4)
+                $type = 'Lease Buy Out';
+            array_push($a, $type);
             //if (!empty($this->session->userdata['export']['years_emt'])){
             if ($v['requested_amount'] == 7)
                 $years = '$5,000-$10,000';
@@ -222,24 +239,17 @@ class Admin_user extends CI_Controller {
             if ($v['requested_amount'] == 1)
                 $years = '$50,000+';
             array_push($a, $years);
+
             // }
             //if (!empty($this->session->userdata['export']['type'])){
-            if ($v['type'] == 1)
-                $type = 'New Car Purchase';
-            if ($v['type'] == 2)
-                $type = 'Used Car Purchase';
-            if ($v['type'] == 3)
-                $type = 'Refinance';
-            if ($v['type'] == 4)
-                $type = 'Lease Buy Out';
-            array_push($a, $type);
             //}
             //if (!empty($this->session->userdata['export']['buying_from'])){
             // }
             //if ($this->session->userdata['export']['pre_tax_income1'] != '' || $this->session->userdata['export']['pre_tax_income2'] != '')
             //{ 
-
-            array_push($a, $v['pre_tax_income']);
+            array_push($a, $v['current_employer']);
+            $income='$'.number_format($v['pre_tax_income']);
+            array_push($a, $income);
 
             //}
             //// if ($this->session->userdata['export']['amount1'] != '' || $this->session->userdata['export']['amount2'] != '')
@@ -250,6 +260,11 @@ class Admin_user extends CI_Controller {
             //{ 
             array_push($a, $v['domain']);
 
+            array_push($a, $v['address']);
+            array_push($a, $v['state']);
+            array_push($a, $v['city']);
+            array_push($a, $v['zip']);
+            array_push($a, $v['ssn']);
             //}
             //$a= array_merge($a1,$a);
             //$arr[]=array($v['firstname'],$v['lastname'],$v['email'],$type,$years,$buying_from,$pre_approved,$v['amount'],$v['pre_tax_income'],$v['dob']);

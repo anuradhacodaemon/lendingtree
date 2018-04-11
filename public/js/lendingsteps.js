@@ -29,7 +29,7 @@ function step3(id) {
 
 function step4() {
     var RE = /^[A-Za-z]+$/;
-     var RE1 = /^\d*\.?\d*$/;
+    var RE1 = /^\d*\.?\d*$/;
     if ($('input[name=cemployer]').val() == '')
     {
 
@@ -49,15 +49,14 @@ function step4() {
         $('#job_title').focus();
         $('#err1').html('');
         return false;
-    }else if (!RE1.test($("#job_title").val()))
+    } else if (!RE1.test($("#job_title").val()))
     {
 
         $('#err2').html('Only digits allowed ');
         $('#job_title').focus();
         $('#err1').html('');
         return false;
-    }
-    else
+    } else
     {
         $('#err2').html('');
         $.ajax({
@@ -76,15 +75,15 @@ function step4() {
 
 function step5() {
     var RE = /^\d*\.?\d*$/;
+
     if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
     {
 
         $('#err1').html('Your Pre-tax yearly income is empty');
         $('#pre_tax_income').focus();
         return false;
-    } else if (!RE.test($("#pre_tax_income").val()))
+    } else if ($('#err2').val() == 0)
     {
-
         $('#err1').html('Your Pre-tax yearly income should be number');
         $('#pre_tax_income').focus();
         return false;
@@ -93,7 +92,7 @@ function step5() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step5/" + $('input[name=pre_tax_income]').val(),
+            url: base_url + "auto/step5/" + $('input[name=pre_tax_income1]').val(),
             success: function (data)
             {
 
@@ -108,8 +107,8 @@ function step6() {
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
-    var RE2=/(^\d{5}$)|(^\d{5}-\d{4}$)/;
-    
+    var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+
     if ($('input[name=firstname]').val() == '')
     {
 
@@ -144,27 +143,27 @@ function step6() {
         $('#err1').html('');
         $('#err2').html('');
         return false;
-    }  else if ($('#state').val() == '' )
+    } else if ($('#state').val() == '')
     {
         //alert($(this).val());
-       // alert($('input[name=state]').has('option').length);
+        // alert($('input[name=state]').has('option').length);
         $('#err4').html('state is empty');
         $('#state').focus();
         $('#err1').html('');
         $('#err2').html('');
         $('#err3').html('');
         return false;
-    } 
+    }
     /*else if ($('#city').val() == '' )
-    {
-        $('#err5').html('city is empty');
-        $('#city').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-         $('#err4').html('');
-        return false;
-    }*/
+     {
+     $('#err5').html('city is empty');
+     $('#city').focus();
+     $('#err1').html('');
+     $('#err2').html('');
+     $('#err3').html('');
+     $('#err4').html('');
+     return false;
+     }*/
     else if ($('input[name=zip]').val() == '')
     {
 
@@ -176,7 +175,7 @@ function step6() {
         $('#err4').html('');
         $('#err5').html('');
         return false;
-    }else if (!RE1.test($("#zip").val()))
+    } else if (!RE1.test($("#zip").val()))
     {
 
         $('#err6').html('zip should be number');
@@ -186,10 +185,8 @@ function step6() {
         $('#err3').html('');
         $('#err4').html('');
         $('#err5').html('');
-         return false;
-    }
-    
-    else if (!RE2.test($("#zip").val()))
+        return false;
+    } else if (!RE2.test($("#zip").val()))
     {
 
         $('#err6').html('Zip code is invalid. 5 digits are mandatory');
@@ -200,9 +197,7 @@ function step6() {
         $('#err4').html('');
         $('#err5').html('');
         return false;
-    }
-    
-    else if ($('input[name=ssn]').val() == '')
+    } else if ($('input[name=ssn]').val() == '')
     {
 
         $('#err7').html('ssn is empty');
@@ -227,10 +222,10 @@ function step6() {
     } else
     {
         $('#err2').html('');
-        var city=0;
-        if($('#city').val() > 0)
-         city= $('#city').val();   
-            
+        var city = 0;
+        if ($('#city').val() > 0)
+            city = $('#city').val();
+
         $.ajax({
             type: "GET",
             url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
@@ -246,7 +241,7 @@ function step6() {
 function step7() {
 
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var RE1 = /^[0-9]{10}/ ;
+    var RE1 = /^[0-9]{10}/;
     if ($('input[name=email]').val() == '')
     {
 
@@ -265,18 +260,14 @@ function step7() {
         $('#phone').focus();
         $('#err1').html('');
         return false;
-    }
-    else if (!RE1.test($('#phone').val()))
+    } else if (!RE1.test($('#phone').val()))
     {
 
         $('#err2').html('Your phone number should be atleast 10 digit');
         $('#phone').focus();
         $('#err1').html('');
         return false;
-    }
-    
-    
-    else
+    } else
     {
         $('#err2').html('');
 
@@ -285,34 +276,33 @@ function step7() {
             url: base_url + "auto/step7/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
             success: function (data)
             {
-               // alert(data);
-                if(data==1)
+                // alert(data);
+                if (data == 1)
                 {
                     //location.href = base_url;
                     gtag_report_conversion(base_url);
-                }
-                else
+                } else
                 {
-                $('#container').html(data).effect("slide", {distance: 5});
-            }
+                    $('#container').html(data).effect("slide", {distance: 5});
+                }
             }
         });
     }
 }
 
 /* Event snippet for Completed Auto App conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. */
+ In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. */
 
 function gtag_report_conversion(url) {
- var callback = function () {
-   if (typeof(url) != 'undefined') {
-     window.location = url;
-   }
- };
- gtag('event', 'conversion', {
-     'send_to': 'AW-829513051/iHhxCPeEpYABENu6xYsD',
-     'event_callback': callback
- });
- return false;
+    var callback = function () {
+        if (typeof (url) != 'undefined') {
+            window.location = url;
+        }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-829513051/iHhxCPeEpYABENu6xYsD',
+        'event_callback': callback
+    });
+    return false;
 }
  
