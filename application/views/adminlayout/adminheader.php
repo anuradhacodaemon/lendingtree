@@ -4,7 +4,7 @@
                     <div class="left_col scroll-view">
 
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="<?php echo BASE_URL.'admin/user' ?>" class="site_title"><img src="<?php echo BASE_URL ?>public/admin/images/gray_logo_yellow_background.png" width="50" height="50"> <span>lending tree</span></a>
+                            <a href="<?php echo BASE_URL.'admin/user' ?>" class="site_title"><img src="<?php echo BASE_URL ?>public/admin/images/gray_logo_yellow_background.png" width="50" height="50"> <span>Culoanportal</span></a>
                         </div>
                         <div class="clearfix"></div>
 
@@ -31,7 +31,7 @@
                             <div class="menu_section">
                                 <h3>&nbsp; </h3>
                                 <ul class="nav side-menu">
-                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Loan User</a>
+                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Auto Loan User</a>
                                     </li>
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>

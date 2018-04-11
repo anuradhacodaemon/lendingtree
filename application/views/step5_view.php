@@ -38,7 +38,7 @@
                             foreach ($state as $k => $v) {
                                 ?> 
 
-                                <option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option> 
+                                <option value="<?php echo $v['id']; ?>" <?php if (isset($this->session->userdata['userdata']['state'])) if($this->session->userdata['userdata']['state']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
                             <?php } ?>
                         </select> 
  <span id="err4" style="color: red"></span>
@@ -51,7 +51,7 @@
                             foreach ($city as $k => $v) {
                                 ?> 
 
-                                <option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option> 
+                                <option value="<?php echo $v['id']; ?>"<?php if (isset($this->session->userdata['userdata']['city'])) if($this->session->userdata['userdata']['city']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
                             <?php } ?>
                         </select>            
                     

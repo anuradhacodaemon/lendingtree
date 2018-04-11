@@ -194,7 +194,7 @@ class Admin_user extends CI_Controller {
         $arr[] = "Type of Loan";
         $arr[] = "Requested Amount";
         $arr[] = "Current Employer";
-        $arr[] = "Yearly Income";
+        $arr[] = "Gross Monthly Income";
         $arr[] = "Work Experience";
         $arr[] = "Domain";
         $arr[] = "Address";
