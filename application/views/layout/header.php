@@ -8,7 +8,7 @@
           </div>
           <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
             <div class="number">
-              <a href="callto:4092200612">Call us <strong>(409) 220-0612</strong></a>
+              <a href="tel:4092200612">Call us <strong>(409) 220-0612</strong></a>
             </div>
           </div>
         </div>
