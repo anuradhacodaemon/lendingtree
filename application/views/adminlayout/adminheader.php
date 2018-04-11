@@ -31,7 +31,7 @@
                             <div class="menu_section">
                                 <h3>&nbsp; </h3>
                                 <ul class="nav side-menu">
-                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Loan User</a>
+                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Auto Loan User</a>
                                     </li>
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
