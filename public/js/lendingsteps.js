@@ -154,7 +154,7 @@ function step6() {
         $('#err3').html('');
         return false;
     }
-    /*else if ($('#city').val() == '' )
+    else if ($('#city').val() == ''  && !$('#city').prop('disabled'))
      {
      $('#err5').html('city is empty');
      $('#city').focus();
@@ -163,7 +163,7 @@ function step6() {
      $('#err3').html('');
      $('#err4').html('');
      return false;
-     }*/
+     }
     else if ($('input[name=zip]').val() == '')
     {
 
