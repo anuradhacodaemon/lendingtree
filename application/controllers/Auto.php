@@ -64,7 +64,7 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0, $pre_approved) {
+    public function step4($id = 0, $pre_approved=0) {
         if ($id) {
             $data = array(
                 'current_employer' => $id,
@@ -99,7 +99,9 @@ class Auto extends CI_Controller {
         }
 
         $data['state'] = $this->loan_model->get_state();
-        $data['city'] = $this->loan_model->get_city();
+        if(isset($this->session->userdata['userdata']['state'])){
+        $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
+        }
 //echo '<pre>';
         // print_r($this->session->userdata());
         $this->load->view('step5_view', $data);
@@ -111,7 +113,7 @@ class Auto extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function step6($firstname = '', $lastname = '', $address, $city, $state, $zip, $ssn) {
+    public function step6($firstname = '', $lastname = '', $address='', $city='', $state='', $zip='', $ssn='') {
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,

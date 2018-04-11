@@ -9,12 +9,12 @@
               <div class="clearfix"></div>
               <label class="control-label">Your Current Employer?</label>
               <div class="col-xs-12 col-sm-12 margbot_40">
-                <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['userdata']['cemployer'])) echo $this->session->userdata['userdata']['cemployer']?>" class="form-control"  maxlength="8">
+                <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['userdata']['current_employer'])) echo $this->session->userdata['userdata']['current_employer']?>" class="form-control"  >
               </div>
                <span id="err1" style="color: red"></span>
               <label class="control-label">How many years have you worked there?</label>
               <div class="col-xs-12 col-sm-12 margbot_10">
-                <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['userdata']['job_title'])) echo $this->session->userdata['userdata']['job_title']?>" class="form-control" id="job_title" maxlength="8">
+                <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['userdata']['job_title'])) echo $this->session->userdata['userdata']['job_title']?>" class="form-control" id="job_title" >
               </div>
               <span id="err2" style="color: red"></span>
               <div class="col-xs-12 col-sm-12 margbot_10">
