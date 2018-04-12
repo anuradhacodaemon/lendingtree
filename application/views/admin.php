@@ -24,13 +24,17 @@
     </head>
 
     <body class="login">
-        <div>
-
+        <div class="logo-main">
+          <div class="logo-inner">
+            <img src="<?php echo BASE_URL; ?>public/admin/images/gray_logo_yellow_background.png" alt="Culoanportal" title="Culoanportal" />
+          </div>
+        </div>
+        <div class="login_wrapper_main">
             <div class="login_wrapper">
                 <div class="animate form login_form">
                     <section class="login_content login_section">
                         <form method="POST" action="<?php echo base_url() ?>admin/home/login">
-                            <h1>Login</h1>
+                            <h1>Admin Login</h1>
                             <div class="alert">
                                 <?php
                                 if ($this->session->flashdata('item')) {
@@ -43,30 +47,18 @@
                                 ?>
                             </div>
                             <div>
-                                <input type="text" class="form-control" required="required" placeholder="username or email" name="username"/>
+                                <input type="text" class="form-control" required="required" placeholder="Username Or Email" name="username"/>
                             </div>
                             <div>
-                                <input type="password" class="form-control" required="required" placeholder="password" name="password"/>
+                                <input type="password" class="form-control" required="required" placeholder="Password" name="password"/>
                             </div>
-                            <div class="col-lg-12 text-center">
-                                <input type="submit" value="Login" class="btn submit btn-yellow"/>
-
-                            </div>
-
-
+                                <input type="submit" value="Login" class="btn-yellow"/>
                             <div class="clearfix"></div>
-
-                            <div class="separator">
-
-
                                 <div class="clearfix"></div>
                                 <br />
-
                                 <div>
-                                    <h1><img src="<?php echo BASE_URL; ?>public/admin/images/gray_logo_yellow_background.png" width="50" height="50"> culoanportal Admin!</h1>
                                     <p><?php echo $this->lang->line('lfooter'); ?><a href="<?php echo BASE_URL1 ?>privacy-policy" target="_blank" class="to_register dark_grey"><?php echo $this->lang->line('privacy'); ?></a><?php echo $this->lang->line('and'); ?><a href="<?php echo BASE_URL1 ?>term-condition"  target="_blank" class="to_register dark_grey"> <?php echo $this->lang->line('terms'); ?></a></p>
                                 </div>
-                            </div>
                         </form>
                     </section>
 

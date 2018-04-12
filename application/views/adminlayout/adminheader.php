@@ -4,7 +4,7 @@
                     <div class="left_col scroll-view">
 
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="<?php echo BASE_URL.'admin/user' ?>" class="site_title"><img src="<?php echo BASE_URL ?>public/admin/images/gray_logo_yellow_background.png" width="50" height="50"> <span>Culoanportal</span></a>
+                            <a href="<?php echo BASE_URL.'admin/user' ?>" class="site_title"><img src="<?php echo BASE_URL ?>public/admin/images/gray_logo_yellow_background_user.png"><span>Culoanportal</span></a>
                         </div>
                         <div class="clearfix"></div>
 
@@ -15,10 +15,7 @@
                                 <img src="<?php echo BASE_URL ?>public/images/img.jpg" alt="..." class="img-circle profile_img">
                             </div>-->
                             <div class="profile_info">
-                                <span>Welcome
-
-                                   
-                                </span>
+                                <span>Welcome</span>
                             </div>
                         </div>
                         <!-- /menu prile quick info -->
