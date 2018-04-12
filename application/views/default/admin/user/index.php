@@ -132,7 +132,7 @@
                            
                             
                             <select class="form-control" placeholder="Domain" name="domain" >
-                                <option value="">select domain </option>
+                                <option value="">Select domain </option>
                                 <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if($_REQUEST['domain']=="http://coastalcommunity.culoanportal.com/") echo 'selected'?>>coastalcommunity.culoanportal.com</option>
                                 <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if($_REQUEST['domain']=="http://culoanportal.com/") echo 'selected'?>>culoanportal.com</option>
 
@@ -140,11 +140,11 @@
                         </div>
 
                     </div>   
-                    <div class="col-md-2 form-group ">
+                    <div class="col-md-3 form-group ">
 
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Work experience (How many years have you worked there?)" name="job_title" value="<?php
+                            <input type="text" class="form-control" placeholder="Work experience (in years)" name="job_title" value="<?php
                             if (isset($_REQUEST['job_title'])) {
                                 echo $_REQUEST['job_title'];
                             }
@@ -153,7 +153,7 @@
 
                     </div>
 
-                    <div class="col-md-2 form-group ">
+                    <div class="col-md-3 form-group ">
 
 
                         <div class="input-group">
@@ -167,7 +167,7 @@
                     </div>
 
 
-                    <div class="col-md-2 form-group ">
+                    <div class="col-md-3 form-group ">
 
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Gross Monthly Income greater than" name="pre_tax_income2" value="<?php
@@ -209,9 +209,7 @@
                     </div> -->
 
                     <div class="col-md-1 form-group ">  
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Apply</button>
-                        </span>
+                        <button class="btn btn-primary" type="submit">Apply</button>
                     </div>
                 </div>
                 <div class="row">
@@ -229,9 +227,12 @@
                         entries
                         <!--</div>-->
                     </div>
+                    <div class="col-md-2 pull-right">
+                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
+                    </div>
                 </div>
             </form>
-            <div class="x_content"><a class="btn btn-primary"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
+            <div class="x_content">
                  <form id="filter_form1" method="POST" action="">
                     <table class="table table-striped responsive-utilities jambo_table bulk_action">
                         <thead>
