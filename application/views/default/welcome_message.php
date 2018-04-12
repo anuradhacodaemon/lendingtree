@@ -85,7 +85,7 @@
                     </div>
                     <div class="offer-cont">
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'auto' ?>">
+                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">

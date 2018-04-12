@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php if($this->session->userdata['userdata']['panel']=='frontend')
+<?php if($this->session->userdata['panel']=='frontend')
 {?>
 <html lang="en">
   <head>
@@ -82,7 +82,11 @@
       });
     </script>
     
-<?php } if($this->session->userdata['userdata']['panel']=='admin')
+<?php } 
+if(isset($this->session->userdata['userdata']['panel'])) 
+{
+   
+if($this->session->userdata['userdata']['panel']=='admin')
 {
     ?>
     
@@ -161,5 +165,6 @@
 
     
     <?php
+}
 }
 ?>

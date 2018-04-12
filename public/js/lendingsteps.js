@@ -1,5 +1,73 @@
 var base_url = $('#domain').val();
+if (window.performance) {
+  console.info("window.performance work's fine on this browser");
+}
+  if (performance.navigation.type == 1) {
+    //alert( "This page is reloaded" );
+    if (window.location.search.indexOf('step=1') > -1) {
+      $.ajax({
+            type: "GET",
+            url: base_url +"auto/step1",
+            success: function (data)
+            {
 
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        }); 
+    }
+    if (window.location.search.indexOf('step=2') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step2",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=3') > -1) {
+       
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step3",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=4') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step4",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=5') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step5",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+        
+     
+  }
 window.onpopstate = function ()
 {
     if (window.location.search.indexOf('step=1') > -1) {
@@ -67,13 +135,20 @@ window.onpopstate = function ()
 function step2(id) {
 
     var url = base_url + "auto/step2/" + id;
+    
     $.ajax({
         type: "GET",
         url: url,
         success: function (data)
         {
-            window.history.pushState("Details", "Title", base_url + "auto?step=1");
+            
+           
+            window.history.pushState("Details", "Title", base_url + "auto?step=2");
+            
             $('#container').html(data).effect("slide", {distance: 5});
+            
+             
+            
         }
     });
 
@@ -85,7 +160,7 @@ function step3(id) {
         url: base_url + "auto/step3/" + id,
         success: function (data)
         {
-            window.history.pushState("Details", "Title", base_url + "auto?step=2");
+            window.history.pushState("Details", "Title", base_url + "auto?step=3");
 
             $('#container').html(data).effect("slide", {distance: 5});
         }
@@ -130,7 +205,7 @@ function step4() {
             url: base_url + "auto/step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=3");
+                window.history.pushState("Details", "Title", base_url + "auto?step=4");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
@@ -161,7 +236,7 @@ function step5() {
             url: base_url + "auto/step5/" + $('input[name=pre_tax_income1]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=4");
+                window.history.pushState("Details", "Title", base_url + "auto?step=5");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
@@ -295,7 +370,7 @@ function step6() {
             url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=5");
+                window.history.pushState("Details", "Title", base_url + "auto?step=6");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });

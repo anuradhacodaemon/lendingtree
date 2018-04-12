@@ -57,7 +57,6 @@
                                 <div class="clearfix"></div>
                                 <br />
                                 <div>
-                                    <p><?php echo $this->lang->line('lfooter'); ?><a href="<?php echo BASE_URL1 ?>privacy-policy" target="_blank" class="to_register dark_grey"><?php echo $this->lang->line('privacy'); ?></a><?php echo $this->lang->line('and'); ?><a href="<?php echo BASE_URL1 ?>term-condition"  target="_blank" class="to_register dark_grey"> <?php echo $this->lang->line('terms'); ?></a></p>
                                 </div>
                         </form>
                     </section>

@@ -82,7 +82,7 @@ class Home extends CI_Controller {
                 redirect('admin/', 'refresh');
             } else {
 
-
+ $this->session->userdata['panel']='';
                 /* Load the view using template */
                 redirect('admin/user', 'refresh');
             }

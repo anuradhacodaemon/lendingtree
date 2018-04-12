@@ -25,7 +25,7 @@ class Welcome extends CI_Controller {
                 
                 'panel' =>'frontend'
             );
-            $this->session->set_userdata('userdata', $data);
+           $this->session->set_userdata('panel', 'frontend');
 		$this->template->view('welcome_message');
 	}
 }
