@@ -4406,3 +4406,5 @@ ul.job-detail-stats-overview li:first-child {
 .table-font{
     font-size: 14px !important;
 }
+
+img {max-width: 100%;}
