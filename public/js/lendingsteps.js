@@ -47,8 +47,9 @@ if (window.performance) {
             url: base_url +"auto/step4",
             success: function (data)
             {
-
+                
                 $('#container').html(data).effect("slide", {distance: 5});
+                
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -112,7 +113,7 @@ window.onpopstate = function ()
             url: base_url +"auto/step4",
             success: function (data)
             {
-
+               
                 $('#container').html(data).effect("slide", {distance: 5});
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
@@ -216,14 +217,14 @@ function step4() {
 
 function step5() {
     var RE = /^\d*\.?\d*$/;
-
+   
     if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
     {
 
         $('#err1').html('Your Pre-tax yearly income is empty');
         $('#pre_tax_income').focus();
         return false;
-    } else if ($('#err2').val() == 0)
+    } else if ($('#err2').val() == 0 && $('#pre_tax_income1').val()=='')
     {
         $('#err1').html('Your Pre-tax yearly income should be number');
         $('#pre_tax_income').focus();
