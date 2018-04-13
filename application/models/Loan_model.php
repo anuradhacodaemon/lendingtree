@@ -59,7 +59,29 @@ class Loan_model extends CI_Model {
             return 0;
         }
     }
-
+    public function addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost)
+    {
+        
+        $logData=array('ip_address'=>$ipaddress,'page'=>$page,'referrer'=>$referrer,'datetime'=>$datetime,'useragent'=>$useragent,'remotehost'=>$remotehost);
+      
+        $this->db->select('id');
+        $this->db->from(VISITOR);
+        $this->db->where('ip_address', $ipaddress);
+        $this->db->where("remotehost", $remotehost);
+        
+        $result = $this->db->get();
+        $num = $result->num_rows();
+        //echo $this->db->last_query();
+        if ($num == 0) {
+            $this->db->insert(VISITOR, $logData);
+            $id = $this->db->insert_id();
+            if ($this->db->affected_rows() > 0) {
+                return $id;
+            }
+        } else {
+            return 0;
+        }  
+    }
     /** user list * */
 }
 ?>

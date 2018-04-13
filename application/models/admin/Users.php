@@ -68,7 +68,7 @@ class Users extends CI_Model {
         $this->db->from(LOANS . ' as user');
 
         if (!is_array($sortData) || ($sortData['sort_by'] == "" && $sortData['sort_direction'] == ""))
-            $this->db->order_by('user.update_date', 'desc');
+            $this->db->order_by('user.add_date', 'desc');
         else
             $this->db->order_by($sortData['sort_by'], $sortData['sort_direction']);
         $this->db->limit($limit, $start);
@@ -108,7 +108,7 @@ class Users extends CI_Model {
         }
 
 
-       
+
         if (!empty($filterData['pre_tax_income1']) && empty($filterData['pre_tax_income2'])) {
             if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
                 $this->db->group_start();
@@ -243,6 +243,53 @@ class Users extends CI_Model {
         $result = $this->db->get();
         // echo $this->db->last_query();
         //die;
+        return $result->result_array();
+    }
+
+    public function updateStatus($lendid, $status) {
+        $userData['status'] = $status;
+        $this->db->where("lend_id", $lendid);
+        $this->db->update(LOANS, $userData);
+        return $this->db->affected_rows();
+    }
+
+    public function checklead() {
+        $this->db->select('count(lend_id) as numLead');
+        $this->db->like("add_date", date("Y-m-d"),"both");
+        $this->db->from(LOANS);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    
+     public function checklead_pending() {
+        $this->db->select('count(lend_id) as numLead');
+        $this->db->like("add_date", date("Y-m-d"),"both");
+        $this->db->where("status", 2);
+        $this->db->from(LOANS);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    public function checklead_approved() {
+        $this->db->select('count(lend_id) as numLead');
+        $this->db->like("add_date", date("Y-m-d"),"both");
+        $this->db->where("status", 1);
+        $this->db->from(LOANS);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    
+    public function checkvisitor() {
+         $this->db->select('count(id) as numVisitor');
+        $this->db->like("datetime", date("Y-m-d"),"both");
+        $this->db->from(VISITOR);
+        $result = $this->db->get();
+      
         return $result->result_array();
     }
 

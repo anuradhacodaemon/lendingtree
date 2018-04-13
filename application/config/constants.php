@@ -93,3 +93,4 @@ define('CITY', 'lend_cities');
 define('RECORD_LIMIT', 10);
 define('TOTAL_ROWS', 2);
 define('MASTERADMIN', 'admin');
+define('VISITOR', 'lend_visitor');

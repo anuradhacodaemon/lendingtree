@@ -9,8 +9,13 @@
 
 
                 <div class="x_content">
-                      
-                    <a href="<?php echo BASE_URL.'admin/user' ?>" style="color:#000;" >User</a> <br> <a href="<?php echo BASE_URL.'admin/home/logout' ?>" style="color:#000;" >Logout</a>
+                   <?php $lead_approved= $this->users->checklead_approved();
+                  $lend_pending=  $this->users->checklead_pending();
+                 $visitor=   $this->users->checkvisitor();
+                    ?>
+                    <strong> Number of Pending Applications : </strong> <?php echo $lead_approved[0]['numLead'] ?>
+                    <br><strong>  Number of Approved Applications :</strong><?php echo $lead_approved[0]['numLead'] ?>
+                    <br><strong> Total Portal Visitors today  :</strong><?php echo $visitor[0]['numVisitor'] ?>
               
                 </div>
 

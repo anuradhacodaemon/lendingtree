@@ -307,33 +307,9 @@ class Admin_user extends CI_Controller {
          */
     }
 
-    public function exportbk() {
-        $this->load->helper('url');
-        $this->load->helper('csv');
-        $query = $this->db->query('SELECT * FROM lend_loan');
-        $num = $query->num_fields();
-        $var = array();
-        $i = 1;
-        $fname = "";
-        while ($i <= $num) {
-            $test = $i;
-            $value = $this->input->post($test);
-
-            if ($value != '') {
-                $fname = $fname . " " . $value;
-                array_push($var, $value);
-            }
-            $i++;
-        }
-
-        $fname = trim($fname);
-
-        $fname = str_replace(' ', ',', $fname);
-
-        $this->db->select($fname);
-        $quer = $this->db->get('lend_loan');
-
-        query_to_csv($quer, TRUE, 'Products_' . date('dMy') . '.csv');
+    public function updatestatus()
+    {
+        $this->users->updateStatus($this->input->post('lendId'),$this->input->post('status'));
     }
 
 }
