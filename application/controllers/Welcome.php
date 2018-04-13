@@ -33,12 +33,12 @@ class Welcome extends CI_Controller {
         $ipaddress = $_SERVER['REMOTE_ADDR'];
         $page = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}";
       
-        //$referrer = $_SERVER['HTTP_REFERER'];
+        $referrer = $_SERVER['HTTP_HOST'];
         $datetime = date('Y-m-d h:i:s');
         $useragent = $_SERVER['HTTP_USER_AGENT'];
         $remotehost = @getHostByAddr($ipaddress);
          
-        //$this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
+        $this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
         $this->template->view('welcome_message');
     }
 
