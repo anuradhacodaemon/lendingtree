@@ -67,3 +67,5 @@ $route['admin/user/details/(:num)'] = 'admin/admin_user/details/$1';
 $route['admin/user/export'] = 'admin/admin_user/export';
 
 $route['admin/user/mailsent'] = 'admin/admin_user/mailsent';
+
+$route['admin/user/updatestatus'] = 'admin/admin_user/updatestatus';

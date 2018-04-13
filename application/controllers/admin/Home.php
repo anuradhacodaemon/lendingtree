@@ -23,7 +23,7 @@ class Home extends CI_Controller {
         // Construct the parent class
         parent::__construct();
         $this->load->model('admin/adminlogin_model');
-       
+       $this->load->model('admin/users');
     }
 
     /**
@@ -41,23 +41,23 @@ class Home extends CI_Controller {
             $this->load->view('admin', $data);
         } else {
             // redirect('admin/pages', 'refresh');
-           
+
             $this->template->view('admin/user/index', $data);
         }
     }
 
     public function dashboard() {
-        
+
         $data = array();
         if (!isset($this->session->userdata['userdata']['ud'])) {
             $this->load->view('admin', $data);
         } else {
             // redirect('admin/pages', 'refresh');
-           
+
             $this->template->view('admin/dashboard', $data);
         }
-        
     }
+
     /**
      * This method used to login for dispatcher depends username and password entered.
      * @param username and password in form.
@@ -67,7 +67,7 @@ class Home extends CI_Controller {
      * @see 
      */
     public function login() {
-       
+
         $data = array();
         $this->load->model('admin/adminlogin_model');
 
@@ -77,18 +77,18 @@ class Home extends CI_Controller {
             $password = $this->security->xss_clean($_POST['password']);
             $result = $this->adminlogin_model->validate($username, $password);
             if (!$result) {
-                 $error = 'Invalid username/password';
+                $error = 'Invalid username/password';
                 $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
                 redirect('admin/', 'refresh');
             } else {
 
- $this->session->userdata['panel']='';
+                $this->session->userdata['panel'] = '';
                 /* Load the view using template */
                 redirect('admin/user', 'refresh');
             }
         } else {
 
-          $this->session->set_flashdata('item', array('message' => '<font color=red>' . validation_errors() . '</font>', 'class' => 'success'));
+            $this->session->set_flashdata('item', array('message' => '<font color=red>' . validation_errors() . '</font>', 'class' => 'success'));
             $this->load->view('admin', $data);
         }
     }

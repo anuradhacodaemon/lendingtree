@@ -28,6 +28,8 @@
                             <div class="menu_section">
                                 <h3>&nbsp; </h3>
                                 <ul class="nav side-menu">
+                                       <li><a href="<?php echo BASE_URL ?>admin/dashboard"><i class="fa fa-edit"></i>Dashboard</a>
+                                    </li>
                                     <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Auto Loan User</a>
                                     </li>
 

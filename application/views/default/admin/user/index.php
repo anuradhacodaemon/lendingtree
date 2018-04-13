@@ -260,7 +260,8 @@
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?> <?php if ($sort_by != "user.domain") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?><?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?> onClick="sortList('user.domain', 'desc')"<?php } ?>> Domain</a>&nbsp;<?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-
+<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title no-link last"><span class="nobr">View</span>
                                 </th>
@@ -321,7 +322,12 @@
 
                                         <td><?php echo $v['job_title']; ?></td>
                                         <td><?php echo $v['domain']; ?></td>
-
+                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)"><?php if($v['status']==1) { ?>  Approved<?php } ?></a>
+ <?php if($v['status']== 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:yellow" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)">Pending/i> <?php } ?>
+ <?php if($v['status']==0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)"> Denied<?php } ?>
+</a>
+ 
+ </td>
                                         <td class="last"> 
 
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
@@ -370,10 +376,70 @@
     </div>
 </div>
 
+<div id="CalenderModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel2">Update</h4>
+            </div>
+            <div class="modal-body">
+                
+
+                <div id="testmodal2" style="padding: 5px 20px;">
+                    <form id="antoform2" class="form-horizontal calender" role="form">
+                        <input id="statusId" name="statusId" type="hidden">
+                         <input id="lendId" name="lendId" type="hidden">
+                        <div class="form-group">
+                            <label class="col-sm-9" control-label">Status</label>
+                            <div class="col-sm-9">
+                                <select name="status" id="status" >
+                                    
+                                    <option value="">select status</option> 
+                                    <option value="1">Approved</option> 
+                                    <option value="0">Denied</option> 
+                                    <option value="2">Pending</option>    
+                                </select>
+                            </div>
+                        </div>
 
 
-
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">close</button>
+                <button type="button" id="cPrice" class="btn btn-primary antosubmit2">submit</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
+    $("#cPrice").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url()  . '/admin/user/updatestatus' ?>",
+            data: $("#antoform2").serialize(), // serializes the form's elements.
+            success: function (data)
+            {
+                
+                $('.modal-backdrop').removeClass('modal-backdrop fade in');
+                
+                $("#CalenderModalView").attr('class', 'modal fade');
+                $("#CalenderModalView").attr("aria-hidden", "true");
+                /*$("#CalenderModalEdit").css('display', 'none');*/
+                $("body").attr('class', 'nav-md  pace-done');
+                location.href="<?php echo base_url().'/admin/user'?>";
+            }
+        });
+    });
+    
+    function getStatus(id,s){
+      $('#statusId').val(s);
+       $('#lendId').val(id);
+       $("#status").val(s);
+    }
     function submitForm()
     {
 
