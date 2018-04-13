@@ -323,7 +323,7 @@
                                         <td><?php echo $v['job_title']; ?></td>
                                         <td><?php echo $v['domain']; ?></td>
                                         <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)"><?php if($v['status']==1) { ?>  Approved<?php } ?></a>
- <?php if($v['status']== 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:yellow" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)">Pending/i> <?php } ?>
+ <?php if($v['status']== 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)">Pending <?php } ?>
  <?php if($v['status']==0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)"> Denied<?php } ?>
 </a>
  
