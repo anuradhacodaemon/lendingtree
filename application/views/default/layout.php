@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     
     <!-- Custom CSS -->
-    <link href="<?php echo BASE_URL; ?>public/html/css/mainlayout.css" rel="stylesheet">
-	<link href="<?php echo BASE_URL; ?>public/html/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL; ?>public/html/css/layout.css" rel="stylesheet">
+	<link href="<?php echo BASE_URL; ?>public/html/css/media.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,16 +71,6 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <script>
-      var winWidth = $(window).width();
-      $( document ).ready(function() {
-      if (winWidth >= 767)
-        {
-          var bannerHeight = $('.offer-main').height();
-          $('.banner-left').css("height", bannerHeight+100);
-        }
-      });
-    </script>
     
 <?php } 
 if(isset($this->session->userdata['userdata']['panel'])) 
