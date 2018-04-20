@@ -205,6 +205,7 @@
                         <!--</div>-->
                     </div>
                     <div class="col-md-2 pull-right">
+                         <button class="btn btn-primary pull-right" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
                         <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
                     </div>
                 </div>
@@ -216,7 +217,8 @@
                             <tr class="headings">
 
                                 <th class="column-title"># </th>
-
+<th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
+</th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
 <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
@@ -261,7 +263,10 @@
                                     <tr class="even pointer">
 
                                         <td class=" "><?php echo $i ?></td>
+ <th >
+                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
 
+                                        </th>
                                         <td class=" "><?php echo $v['email'] ?></td>
                                         <td class=" "><?php
                                             $type = '';
@@ -469,6 +474,31 @@
         });
         //});
     }
+    
+     function inactiveFranchiseAll() {
+        bootbox.confirm("Do you want to delete all these lead?", function (result) {
+            if (result)
+            {
+               $.ajax({
+                    type: "POST",
+                    data: $("#filter_form1").serialize(),
+                    url: "<?php echo base_url()  . 'admin/user/deleteall' ?>" ,
+                    success: function (data)
+                    {
+                        //alert(data);
+                        location.href = '<?php echo base_url()  . 'admin/user/' ?>';
+                    }
+                });  
+                
+              
+            }
+            else
+            {
+                //alert('no');
+            }
+        });
+        //});
+    }
 </script>
 <!-- iCheck -->
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -479,4 +509,7 @@
         $("#start_date").datepicker();
         $("#end_date").datepicker();
     });
+     $("#mainchk").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+}); 
 </script>
