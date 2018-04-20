@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -52,20 +51,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
 $route['auto/'] = 'auto/index';
 $route['auto/step2/(:any)'] = 'auto/step2/$1';
 $route['auto/step3/(:any)'] = 'auto/step3/$1';
-
 $route['admin'] = 'admin/home/index';
 $route['admin/dashboard'] = 'admin/home/dashboard';
-
-
 $route['admin/user'] = 'admin/admin_user/index';
 $route['admin/user/(:num)'] = 'admin/admin_user/index/$1';
 $route['admin/user/details/(:num)'] = 'admin/admin_user/details/$1';
 $route['admin/user/export'] = 'admin/admin_user/export';
-
 $route['admin/user/mailsent'] = 'admin/admin_user/mailsent';
-
 $route['admin/user/updatestatus'] = 'admin/admin_user/updatestatus';
+$route['admin/user/delete_inactive/(:any)'] = 'admin/admin_user/delete_inactive/$1';

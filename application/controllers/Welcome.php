@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
         $ipaddress = $_SERVER['REMOTE_ADDR'];
         $page = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}";
       
-        $referrer = $_SERVER['HTTP_REFERER'];
+        $referrer = $_SERVER['HTTP_HOST'];
         $datetime = date('Y-m-d h:i:s');
         $useragent = $_SERVER['HTTP_USER_AGENT'];
         $remotehost = @getHostByAddr($ipaddress);

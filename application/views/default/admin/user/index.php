@@ -1,4 +1,6 @@
-<?php //echo '<pre>';
+
+<?php
+//echo '<pre>';
 //$this->session->userdata['export']='';
 //print_r($this->session->userdata['export']);
 ?>
@@ -19,7 +21,6 @@
 
                 <div class="row">
                     <!--<div class="col-md-3 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" class="form-control pickadate" placeholder="<?php echo $this->lang->line('StartDate'); ?>" name="start_date" value="<?php
@@ -28,11 +29,8 @@
                     }
                     ?>">
                         </div>
-
-
                     </div>
                     <div class="col-md-3 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" class="form-control pickadate" placeholder="End Date" name="end_date" value="<?php
@@ -41,12 +39,8 @@
                     }
                     ?>">
                         </div>
-
                     </div> 
-
                     <div class="col-md-2 form-group ">
-
-
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Firstname" name="firstname" value="<?php
                     if (!empty($firstname)) {
@@ -54,18 +48,13 @@
                     }
                     ?>">
                         </div>
-
                     </div>
-
                     <div class="col-md-2 form-group ">
-
                         <input type="text" class="form-control" placeholder="Lastname" name="lastname" value="<?php
                     if (!empty($lastname)) {
                         echo $lastname;
                     }
                     ?>">
-
-
                     </div> -->
 
                     <div class="col-md-2 form-group ">
@@ -101,8 +90,6 @@
 
                     <!--  
                       <div class="col-md-2 form-group ">
-
-
                       <div class="input-group">
                           <input type="text" class="form-control" placeholder="Down Payment less than" name="amount1" value="<?php
                     if (isset($_REQUEST['amount1'])) {
@@ -110,11 +97,8 @@
                     }
                     ?>">
                       </div>
-
                   </div>
-
                   <div class="col-md-2 form-group ">
-
                      <div class="input-group">
                           <input type="text" class="form-control" placeholder="Down Payment greater than" name="amount2" value="<?php
                     if (isset($_REQUEST['amount2'])) {
@@ -122,19 +106,17 @@
                     }
                     ?>">
                       </div>
-
-
                   </div>-->
                     <div class="col-md-2 form-group ">
 
 
                         <div class="input-group">
-                           
-                            
+
+
                             <select class="form-control" placeholder="Domain" name="domain" >
                                 <option value="">Select domain </option>
-                                <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if($_REQUEST['domain']=="http://coastalcommunity.culoanportal.com/") echo 'selected'?>>coastalcommunity.culoanportal.com</option>
-                                <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if($_REQUEST['domain']=="http://culoanportal.com/") echo 'selected'?>>culoanportal.com</option>
+                                <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
+                                <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
 
                             </select>
                         </div>
@@ -183,7 +165,6 @@
 
 
                     <!--    <div class="col-md-2 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" id="start_date" class="form-control pickadate" placeholder=" Birth Date (Age) less than" name="start_date" value="<?php
@@ -192,11 +173,8 @@
                     }
                     ?>">
                         </div>
-
-
                     </div>
                     <div class="col-md-2 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" id="end_date" class="form-control pickadate" placeholder=" Birth Date (Age) greater than" name="end_date" value="<?php
@@ -205,7 +183,6 @@
                     }
                     ?>">
                         </div>
-
                     </div> -->
 
                     <div class="col-md-1 form-group ">  
@@ -233,37 +210,39 @@
                 </div>
             </form>
             <div class="x_content">
-                 <form id="filter_form1" method="POST" action="">
+                <form id="filter_form1" method="POST" action="">
                     <table class="table table-striped responsive-utilities jambo_table bulk_action">
                         <thead>
                             <tr class="headings">
 
                                 <th class="column-title"># </th>
 
-                                   <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+<?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.type" && $sort_direction == "desc") { ?> onClick="sortList('user.type', 'asc')"<?php } ?> <?php if ($sort_by != "user.type") { ?> onClick="sortList('user.type', 'asc')"<?php } ?><?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?> onClick="sortList('user.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+<?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "user.requested_amount") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('user.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+<?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Gross Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+<?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?> <?php if ($sort_by != "user.domain") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?><?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?> onClick="sortList('user.domain', 'desc')"<?php } ?>> Domain</a>&nbsp;<?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+<?php } if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-<th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+<?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><span class="nobr">View</span>
 
-                                <th class="column-title no-link last"><span class="nobr">View</span>
+                                <th class="column-title no-link last"><span class="nobr">Action</span>
+
                                 </th>
 
                             </tr>
@@ -283,9 +262,9 @@
 
                                         <td class=" "><?php echo $i ?></td>
 
-                                         <td class=" "><?php echo $v['email'] ?></td>
+                                        <td class=" "><?php echo $v['email'] ?></td>
                                         <td class=" "><?php
-                                      $type='';
+                                            $type = '';
                                             if ($v['type'] == 1)
                                                 $type = 'New Car Purchase';
                                             if ($v['type'] == 2)
@@ -294,11 +273,10 @@
                                                 $type = 'Refinance';
                                             if ($v['type'] == 4)
                                                 $type = 'Lease Buy Out';
-
-
                                             echo $type;
                                             ?></td>
-                                        <td> <?php $years = '';
+                                        <td> <?php
+                                            $years = '';
                                             if ($v['requested_amount'] == 7)
                                                 $years = '$5,000-$10,000';
                                             if ($v['requested_amount'] == 6)
@@ -318,20 +296,33 @@
                                             echo $years;
                                             ?></td>
 
-                                        <td><?php echo '$'.number_format($v['pre_tax_income']); ?></td>
+                                        <td><?php echo '$' . number_format($v['pre_tax_income']); ?></td>
 
                                         <td><?php echo $v['job_title']; ?></td>
                                         <td><?php echo $v['domain']; ?></td>
-                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)"><?php if($v['status']==1) { ?>  Approved<?php } ?></a>
- <?php if($v['status']== 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:yellow" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)">Pending/i> <?php } ?>
- <?php if($v['status']==0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id']?>,<?php echo $v['status']?>)"> Denied<?php } ?>
-</a>
- 
- </td>
-                                        <td class="last"> 
+                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
+        <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)">Pending <?php } ?>
+        <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"> Denied<?php } ?>
+                                                </a>
+
+                                        </td>
+
+
+                                        <td > 
 
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
                                         </td> 
+                                        <td class="last">
+
+                                            &nbsp;
+                                            <?php if ($v['active_status'] == 1) { ?>
+                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-check-circle fa-cog-green" aria-hidden="true"></i></a>
+                                            <?php } else { ?>
+                                                <a href="javascript:"  onclick="activeFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
+
+        <?php } ?>    
+
+                                        </td>
 
                                     </tr>
                                     <?php
@@ -385,17 +376,16 @@
                 <h4 class="modal-title" id="myModalLabel2">Update</h4>
             </div>
             <div class="modal-body">
-                
+
 
                 <div id="testmodal2" style="padding: 5px 20px;">
                     <form id="antoform2" class="form-horizontal calender" role="form">
                         <input id="statusId" name="statusId" type="hidden">
-                         <input id="lendId" name="lendId" type="hidden">
+                        <input id="lendId" name="lendId" type="hidden">
                         <div class="form-group">
                             <label class="col-sm-9" control-label">Status</label>
                             <div class="col-sm-9">
                                 <select name="status" id="status" >
-                                    
                                     <option value="">select status</option> 
                                     <option value="1">Approved</option> 
                                     <option value="0">Denied</option> 
@@ -403,8 +393,6 @@
                                 </select>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
             </div>
@@ -419,58 +407,68 @@
     $("#cPrice").click(function () {
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url()  . '/admin/user/updatestatus' ?>",
+            url: "<?php echo base_url() . '/admin/user/updatestatus' ?>",
             data: $("#antoform2").serialize(), // serializes the form's elements.
             success: function (data)
             {
-                
                 $('.modal-backdrop').removeClass('modal-backdrop fade in');
-                
                 $("#CalenderModalView").attr('class', 'modal fade');
                 $("#CalenderModalView").attr("aria-hidden", "true");
                 /*$("#CalenderModalEdit").css('display', 'none');*/
                 $("body").attr('class', 'nav-md  pace-done');
-                location.href="<?php echo base_url().'/admin/user'?>";
+                location.href = "<?php echo base_url() . '/admin/user' ?>";
             }
         });
     });
-    
-    function getStatus(id,s){
-      $('#statusId').val(s);
-       $('#lendId').val(id);
-       $("#status").val(s);
+    function getStatus(id, s) {
+        $('#statusId').val(s);
+        $('#lendId').val(id);
+        $("#status").val(s);
     }
     function submitForm()
     {
-
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
         $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/user?' ?>' + vars);
         $("#filter_form").submit();
-
     }
     function submitForm1()
     {
-
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
         $("#filter_form1").attr('action', '<?php echo BASE_URL . 'admin/user/mailsent' ?>');
         $("#filter_form1").submit();
-
     }
     function sortList(sortBy, sortDirection)
     {
-
         $("#sort_by").val(sortBy);
         $("#sort_direction").val(sortDirection);
         $("#filter_form").submit();
-
     }
     $("#mainchk").click(function () {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
+    function inactiveFranchise(franchiseid) {
+        bootbox.confirm("Do you want to delete this lead?", function (result) {
+            if (result)
+            {
+                $.ajax({
+                    type: "GET",
+                    url: "<?php echo base_url()  . 'admin/user/delete_inactive/' ?>" + franchiseid,
+                    success: function (data)
+                    {
+                        location.href = '<?php echo base_url()  . 'admin/user/' ?>';
+                    }
+                });
+            } else
+            {
+                //alert('no');
+            }
+        });
+        //});
+    }
 </script>
 <!-- iCheck -->
 <link rel="stylesheet" href="/resources/demos/style.css">
