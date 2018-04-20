@@ -317,6 +317,14 @@ class Admin_user extends CI_Controller {
                $this->users->updateactiveStatus($lend_id);
  
     }
+     public function deleteall()
+    {
+       
+        foreach($this->input->post('c') as $k=>$v)
+        {
+             $this->users->updateactiveStatus($v);
+        }
+    }
 
 }
 

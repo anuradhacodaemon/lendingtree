@@ -70,3 +70,4 @@ $route['admin/user/mailsent'] = 'admin/admin_user/mailsent';
 
 $route['admin/user/updatestatus'] = 'admin/admin_user/updatestatus';
 $route['admin/user/delete_inactive/(:any)'] = 'admin/admin_user/delete_inactive/$1';
+$route['admin/user/deleteall'] = 'admin/admin_user/deleteall';

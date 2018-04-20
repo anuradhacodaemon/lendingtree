@@ -20,7 +20,6 @@
 
                 <div class="row">
                     <!--<div class="col-md-3 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" class="form-control pickadate" placeholder="<?php echo $this->lang->line('StartDate'); ?>" name="start_date" value="<?php
@@ -29,11 +28,8 @@
                     }
                     ?>">
                         </div>
-
-
                     </div>
                     <div class="col-md-3 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" class="form-control pickadate" placeholder="End Date" name="end_date" value="<?php
@@ -42,12 +38,8 @@
                     }
                     ?>">
                         </div>
-
                     </div> 
-
                     <div class="col-md-2 form-group ">
-
-
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Firstname" name="firstname" value="<?php
                     if (!empty($firstname)) {
@@ -55,18 +47,13 @@
                     }
                     ?>">
                         </div>
-
                     </div>
-
                     <div class="col-md-2 form-group ">
-
                         <input type="text" class="form-control" placeholder="Lastname" name="lastname" value="<?php
                     if (!empty($lastname)) {
                         echo $lastname;
                     }
                     ?>">
-
-
                     </div> -->
 
                     <div class="col-md-2 form-group ">
@@ -102,8 +89,6 @@
 
                     <!--  
                       <div class="col-md-2 form-group ">
-
-
                       <div class="input-group">
                           <input type="text" class="form-control" placeholder="Down Payment less than" name="amount1" value="<?php
                     if (isset($_REQUEST['amount1'])) {
@@ -111,11 +96,8 @@
                     }
                     ?>">
                       </div>
-
                   </div>
-
                   <div class="col-md-2 form-group ">
-
                      <div class="input-group">
                           <input type="text" class="form-control" placeholder="Down Payment greater than" name="amount2" value="<?php
                     if (isset($_REQUEST['amount2'])) {
@@ -123,8 +105,6 @@
                     }
                     ?>">
                       </div>
-
-
                   </div>-->
                     <div class="col-md-2 form-group ">
 
@@ -184,7 +164,6 @@
 
 
                     <!--    <div class="col-md-2 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" id="start_date" class="form-control pickadate" placeholder=" Birth Date (Age) less than" name="start_date" value="<?php
@@ -193,11 +172,8 @@
                     }
                     ?>">
                         </div>
-
-
                     </div>
                     <div class="col-md-2 form-group ">
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="icon-calendar5"></i></span>
                             <input type="text" id="end_date" class="form-control pickadate" placeholder=" Birth Date (Age) greater than" name="end_date" value="<?php
@@ -206,7 +182,6 @@
                     }
                     ?>">
                         </div>
-
                     </div> -->
 
                     <div class="col-md-1 form-group ">  
@@ -229,6 +204,7 @@
                         <!--</div>-->
                     </div>
                     <div class="col-md-2 pull-right">
+                         <button class="btn btn-primary pull-right" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
                         <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
                     </div>
                 </div>
@@ -240,7 +216,8 @@
                             <tr class="headings">
 
                                 <th class="column-title"># </th>
-
+<th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
+</th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
 <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
@@ -285,7 +262,10 @@
                                     <tr class="even pointer">
 
                                         <td class=" "><?php echo $i ?></td>
+ <th >
+                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
 
+                                        </th>
                                         <td class=" "><?php echo $v['email'] ?></td>
                                         <td class=" "><?php
                                             $type = '';
@@ -297,8 +277,6 @@
                                                 $type = 'Refinance';
                                             if ($v['type'] == 4)
                                                 $type = 'Lease Buy Out';
-
-
                                             echo $type;
                                             ?></td>
                                         <td> <?php
@@ -412,7 +390,6 @@
                             <label class="col-sm-9" control-label">Status</label>
                             <div class="col-sm-9">
                                 <select name="status" id="status" >
-
                                     <option value="">select status</option> 
                                     <option value="1">Approved</option> 
                                     <option value="0">Denied</option> 
@@ -420,8 +397,6 @@
                                 </select>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
             </div>
@@ -440,9 +415,7 @@
             data: $("#antoform2").serialize(), // serializes the form's elements.
             success: function (data)
             {
-
                 $('.modal-backdrop').removeClass('modal-backdrop fade in');
-
                 $("#CalenderModalView").attr('class', 'modal fade');
                 $("#CalenderModalView").attr("aria-hidden", "true");
                 /*$("#CalenderModalEdit").css('display', 'none');*/
@@ -451,7 +424,6 @@
             }
         });
     });
-
     function getStatus(id, s) {
         $('#statusId').val(s);
         $('#lendId').val(id);
@@ -459,38 +431,30 @@
     }
     function submitForm()
     {
-
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
         $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/user?' ?>' + vars);
         $("#filter_form").submit();
-
     }
     function submitForm1()
     {
-
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
         $("#filter_form1").attr('action', '<?php echo BASE_URL . 'admin/user/mailsent' ?>');
         $("#filter_form1").submit();
-
     }
     function sortList(sortBy, sortDirection)
     {
-
         $("#sort_by").val(sortBy);
         $("#sort_direction").val(sortDirection);
         $("#filter_form").submit();
-
     }
     $("#mainchk").click(function () {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
     function inactiveFranchise(franchiseid) {
-
-
         bootbox.confirm("Do you want to delete this lead?", function (result) {
             if (result)
             {
@@ -509,6 +473,31 @@
         });
         //});
     }
+    
+     function inactiveFranchiseAll() {
+        bootbox.confirm("Do you want to delete all these lead?", function (result) {
+            if (result)
+            {
+               $.ajax({
+                    type: "POST",
+                    data: $("#filter_form1").serialize(),
+                    url: "<?php echo base_url()  . 'admin/user/deleteall' ?>" ,
+                    success: function (data)
+                    {
+                        //alert(data);
+                        location.href = '<?php echo base_url()  . 'admin/user/' ?>';
+                    }
+                });  
+                
+              
+            }
+            else
+            {
+                //alert('no');
+            }
+        });
+        //});
+    }
 </script>
 <!-- iCheck -->
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -519,4 +508,7 @@
         $("#start_date").datepicker();
         $("#end_date").datepicker();
     });
+     $("#mainchk").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+}); 
 </script>
