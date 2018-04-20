@@ -311,6 +311,12 @@ class Admin_user extends CI_Controller {
     {
         $this->users->updateStatus($this->input->post('lendId'),$this->input->post('status'));
     }
+    
+    public function delete_inactive($lend_id=0)
+    {
+               $this->users->updateactiveStatus($lend_id);
+ 
+    }
 
 }
 

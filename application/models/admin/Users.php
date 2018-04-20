@@ -66,7 +66,7 @@ class Users extends CI_Model {
 
         $this->db->select('*,user.add_date as date');
         $this->db->from(LOANS . ' as user');
-
+        $this->db->where('active_status', 1);
         if (!is_array($sortData) || ($sortData['sort_by'] == "" && $sortData['sort_direction'] == ""))
             $this->db->order_by('user.add_date', 'desc');
         else
@@ -134,7 +134,7 @@ class Users extends CI_Model {
             $this->db->or_like('user.lastname', $filterData['search'], 'both');
             $this->db->group_end();
         }
-
+        $this->db->where('active_status', 1);
         $this->db->from(LOANS . ' as user');
 
         $result = $this->db->get();
@@ -253,19 +253,27 @@ class Users extends CI_Model {
         return $this->db->affected_rows();
     }
 
+    public function updateactiveStatus($lendid) {
+        $userData['active_status'] = '0';
+        $this->db->where("lend_id", $lendid);
+        $this->db->update(LOANS, $userData);
+
+        return $this->db->affected_rows();
+    }
+
     public function checklead() {
         $this->db->select('count(lend_id) as numLead');
-        $this->db->like("add_date", date("Y-m-d"),"both");
+        $this->db->like("add_date", date("Y-m-d"), "both");
         $this->db->from(LOANS);
         $result = $this->db->get();
         // echo $this->db->last_query();
         //die;
         return $result->result_array();
     }
-    
-     public function checklead_pending() {
+
+    public function checklead_pending() {
         $this->db->select('count(lend_id) as numLead');
-        $this->db->like("add_date", date("Y-m-d"),"both");
+        $this->db->like("add_date", date("Y-m-d"), "both");
         $this->db->where("status", 2);
         $this->db->from(LOANS);
         $result = $this->db->get();
@@ -273,9 +281,10 @@ class Users extends CI_Model {
         //die;
         return $result->result_array();
     }
+
     public function checklead_approved() {
         $this->db->select('count(lend_id) as numLead');
-        $this->db->like("add_date", date("Y-m-d"),"both");
+        $this->db->like("add_date", date("Y-m-d"), "both");
         $this->db->where("status", 1);
         $this->db->from(LOANS);
         $result = $this->db->get();
@@ -283,13 +292,22 @@ class Users extends CI_Model {
         //die;
         return $result->result_array();
     }
-    
+
     public function checkvisitor() {
-         $this->db->select('count(id) as numVisitor');
-        $this->db->like("datetime", date("Y-m-d"),"both");
+        $this->db->select('count(id) as numVisitor');
+        $this->db->like("datetime", date("Y-m-d"), "both");
         $this->db->from(VISITOR);
         $result = $this->db->get();
-      
+
+        return $result->result_array();
+    }
+
+    public function getVisitor() {
+        $this->db->select('count(id) as Numrecord,datetime');
+        $this->db->from(VISITOR);
+        $this->db->group_by('datetime');
+        $result = $this->db->get();
+
         return $result->result_array();
     }
 
