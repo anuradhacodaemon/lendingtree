@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Coastal Community FCU Galveston, Tx</title>
+    <title>MCT Credit Union</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
@@ -88,7 +88,7 @@ if($this->session->userdata['userdata']['panel']=='admin')
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo (isset($title)) ? $title : 'culoanportal'; ?> </title>
+        <title><?php echo (isset($title)) ? $title : 'MCT Credit Union'; ?> </title>
         <!-- Bootstrap core CSS -->
         <link href="<?php echo BASE_URL; ?>public/admin/css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo BASE_URL; ?>public/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
