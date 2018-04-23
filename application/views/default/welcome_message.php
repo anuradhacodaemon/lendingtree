@@ -2,78 +2,13 @@
 
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
-    <div class="container">
-        
+    <div class="container">       
         <div class="row">
-            <div class="col-lg-7 col-lg-offset-5 col-md-8 col-md-offset-4 col-sm-7 col-sm-offset-5 col-xs-12">
+            <div class="col-lg-5 col-lg-offset-7 col-md-5 col-md-offset-7 col-sm-7 col-sm-offset-5 col-xs-12">
                 <div class="offer-main clearfix">
                     <h1>How can we help you today?</h1>
                     <div class="offer-cont">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <a href="">
-                                <button class="offer-circ">
-                                    <div class="outer-circ">
-                                        <div class="inner-bevel">
-                                            <div class="second-bevel">
-                                                <div class="offer-img offer-refinance"></div>
-                                                <p class="title">HOME REFINANCE</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="offer-cont">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <a href="">
-                                <button class="offer-circ">
-                                    <div class="outer-circ">
-                                        <div class="inner-bevel">
-                                            <div class="second-bevel">
-                                                <div class="offer-img offer-home"></div>
-                                                <p class="title">HOME PURCHASE</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="offer-cont">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <a href="">
-                                <button class="offer-circ">
-                                    <div class="outer-circ">
-                                        <div class="inner-bevel">
-                                            <div class="second-bevel">
-                                                <div class="offer-img offer-personal"></div>
-                                                <p class="title">PERSONAL LOANS</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="offer-cont">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <a href="">
-                                <button class="offer-circ">
-                                    <div class="outer-circ">
-                                        <div class="inner-bevel">
-                                            <div class="second-bevel">
-                                                <div class="offer-img offer-home-equity"></div>
-                                                <p class="title">HOME EQUITY LOANS</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="offer-cont">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
@@ -89,14 +24,14 @@
                         </div>
                     </div>
                     <div class="offer-cont">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <a href="">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div class="offer-img offer-business"></div>
-                                                <p class="title">BUSINESS LOANS</p>
+                                                <div class="offer-img offer-personal"></div>
+                                                <p class="title">AUTO REFINANCE</p>
                                             </div>
                                         </div>
                                     </div>
