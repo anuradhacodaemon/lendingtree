@@ -60,7 +60,7 @@ a {transition: all .3s;}
 }
 .banner-main .banner-left h1 {
     font-size: 36px;
-    margin: 0 0 25px;
+    margin: 0;
     font-family: loved_by_the_kingregular, Arial, Helvetica, sans-serif;
     color: #000;
     font-weight: 500;
@@ -72,7 +72,7 @@ a {transition: all .3s;}
     color: #000;
     font-weight: 400;
 }
-.offer-main {padding-top: 60px;}
+.offer-main {padding-top: 60px; float: right;}
 .offer-cont .offer-circ {
     background: 0 0;
     border: 0;
