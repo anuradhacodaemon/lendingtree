@@ -44,6 +44,8 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 <script src="<?php echo BASE_URL; ?>/public/js/lendingsteps.js"></script>
+<script src="<?php echo BASE_URL; ?>/public/js/refinancesteps.js"></script>
+
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
 
 
@@ -132,4 +134,34 @@ if ($this->session->flashdata('item')) {
     <?php
 }
 ?>
+
+<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.js"></script>
+<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.min.js"></script>
+<script>
+ 
+
+// Without JQuery
+var slider = new Slider("#ex6");
+
+slider.on("slide", function(sliderValue) {
+    
+  // sliderValue= Math.floor(sliderValue/100 % 10);
+    //sliderValue=sliderValue*10/100;
+    newValue=sliderValue+1;
+    //document.getElementById("ex6SliderVal").textContent ='';
+   sliderv= increment(Math.floor(sliderValue*10)/1000,newValue);
+   if( newValue > sliderv)
+   {
+       sliderv= newValue+increment(sliderv);
+   }
+   
+	document.getElementById("ex6SliderVal").textContent = sliderv.toFixed(2)+ "%";
+});
+
+function increment(sliderValue)
+{
+   return (sliderValue+0.01);
+}
+</script>
+
 
