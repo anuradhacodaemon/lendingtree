@@ -26,15 +26,14 @@ class Refinance extends CI_Controller {
     }
 
     public function index() {
-       
-      
-        if(empty($this->session->userdata['userdata']))
-        {    
-        $data = array();
+
+
+        if (empty($this->session->userdata['userdata'])) {
+            $data = array();
         }
-        
+
         $this->session->set_userdata('panel', 'frontend');
-        
+
         $this->template->view('refinance_step1');
     }
 
@@ -48,10 +47,10 @@ class Refinance extends CI_Controller {
             $data = array(
                 'currently_owe' => $id
             );
-            $this->session->set_userdata( $data);
-        } 
-         //echo '<pre>';
-         //print_r($this->session->userdata());
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        //print_r($this->session->userdata());
         $this->load->view('refinance_step2');
     }
 
@@ -59,38 +58,35 @@ class Refinance extends CI_Controller {
         if ($id) {
             $data = array(
                 'monthly_payment' => $id
-                
             );
 
-            $this->session->set_userdata( $data);
-        } 
+            $this->session->set_userdata($data);
+        }
         // echo '<pre>';
         // print_r($this->session->userdata());
         $this->load->view('refinance_step3');
     }
-    
 
     public function refinancestep4($id = 0) {
         if ($id) {
             $data = array(
                 'vin' => $id
-               
             );
 
-            $this->session->set_userdata( $data);
+            $this->session->set_userdata($data);
         }
-        
-        
+
+
         //echo '<pre>';
         // print_r($this->session->userdata());
-         $data['state'] = $this->loan_model->get_state();
-        if(isset($this->session->userdata['userdata']['state'])){
-        $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
+        $data['state'] = $this->loan_model->get_state();
+        if (isset($this->session->userdata['userdata']['state'])) {
+            $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
         }
         $this->load->view('refinance_step4', $data);
     }
 
-    public function refinancestep5($firstname = '', $lastname = '', $address='', $city='', $state='') {
+    public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '') {
 
         if ($firstname) {
             $data = array(
@@ -99,10 +95,9 @@ class Refinance extends CI_Controller {
                 'address' => $address,
                 'city' => $city,
                 'state' => $state
-               
             );
 
-            $this->session->set_userdata( $data);
+            $this->session->set_userdata($data);
         }
         $this->load->view('refinance_step5');
     }
@@ -113,18 +108,21 @@ class Refinance extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function refinancestep6($month = 0, $day = 0, $year = 0,$ssn='') {
-         if ($email) {
+    public function refinancestep6($month = 0, $day = 0, $year = 0, $ssn = '') {
+        if ($ssn) {
             $data = array(
                 'month' => $month,
                 'day' => $day,
                 'years' => $year,
-                 'dob' => $year.'-'.$month.'-'.$day,
-                'ssn' =>$ssn
+                'dob' => $year . '-' . $month . '-' . $day,
+                'ssn' => $ssn
             );
 
-            $this->session->set_userdata( $data);
+            $this->session->set_userdata($data);
         }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+        
         $this->load->view('refinance_step6');
         //die;
     }
@@ -136,17 +134,17 @@ class Refinance extends CI_Controller {
                 'phone' => $phone,
                 'add_date' => date('Y-m-d H:i:s'),
                 'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
-                'status' =>"2"
+                'status' => "2"
             );
 
-            $this->session->set_userdata( $data);
+            $this->session->set_userdata($data);
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
-         //die;
-         unset($this->session->userdata['panel']);  
-         unset($this->session->userdata['__ci_last_regenerate']); 
-          unset($this->session->userdata['userdata']); 
+
+        unset($this->session->userdata['panel']);
+        unset($this->session->userdata['__ci_last_regenerate']);
+        unset($this->session->userdata['userdata']);
         $result = $this->loan_model->add_refinance($this->session->userdata());
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
@@ -154,21 +152,22 @@ class Refinance extends CI_Controller {
         if ($result > 0) {
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-            $this->session->userdata['userdata']='';
-            $this->session->userdata['type']='';
-            $this->session->userdata['requested_amount']='';
-            $this->session->userdata['current_employer']='';
-            $this->session->userdata['job_title']='';
-            $this->session->userdata['pre_tax_income']='';
-            $this->session->userdata['firstname']='';
-            $this->session->userdata['lastname']='';
-            $this->session->userdata['address']='';
-            $this->session->userdata['state']='';
-            $this->session->userdata['city']='';
-            $this->session->userdata['zip']='';
-            $this->session->userdata['ssn']='';
-            $this->session->userdata['email']='';
-            $this->session->userdata['phone']='';
+            $this->session->userdata['userdata'] = '';
+            $this->session->userdata['currently_owe'] = '';
+            $this->session->userdata['monthly_payment'] = '';
+            $this->session->userdata['vin'] = '';
+            $this->session->userdata['firstname'] = '';
+            $this->session->userdata['lastname'] = '';
+
+            $this->session->userdata['state'] = '';
+            $this->session->userdata['city'] = '';
+            $this->session->userdata['month'] = '';
+            $this->session->userdata['day'] = '';
+            $this->session->userdata['years'] = '';
+            $this->session->userdata['dob'] = '';
+            $this->session->userdata['ssn'] = '';
+            $this->session->userdata['email'] = '';
+            $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
         } else {

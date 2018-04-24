@@ -135,27 +135,3 @@ if ($this->session->flashdata('item')) {
 }
 ?>
 
-<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.js"></script>
-<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.min.js"></script>
-<script>
- 
-
-// Without JQuery
-$("#ex6").slider();
-$("#ex6").on("slide", function(slideEvt) {
-	$("#ex6SliderVal").text(slideEvt.value);
-});
-
-// Without JQuery
-var slider = new Slider("#ex6");
-slider.on("slide", function(sliderValue) {
-	document.getElementById("ex6SliderVal").textContent = sliderValue;
-});
-
-function increment(sliderValue)
-{
-   return (sliderValue+0.01);
-}
-</script>
-
-

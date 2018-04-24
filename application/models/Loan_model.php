@@ -62,7 +62,7 @@ class Loan_model extends CI_Model {
     
      public function add_refinance($logData) {
 
-        $this->db->select('lend_id');
+        $this->db->select('ref_id');
         $this->db->from(REFINANCE);
         $this->db->where('email', $logData['email']);
         //$this->db->where("lastname", $logData['lastname']);

@@ -11,9 +11,9 @@
                     <div class="clearfix"></div>
                     <label class="control-label">How Much Do You Currently Owe?</label>
                     
-                    <span id="ex6CurrentSliderValLabel"> <span id="ex6SliderVal">0</span></span>
+                    <span id="ex6CurrentSliderValLabel"> <span id="ex6SliderVal"><?php if(isset($this->session->userdata['currently_owe'])) echo $this->session->userdata['currently_owe'] ; else echo '5000';?></span></span>
  <div class="clearfix"></div>
-                5000 &nbsp;  <input id="ex6"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="50000" data-slider-step="10000" data-slider-value="1"/> &nbsp; 50000+
+                5000 &nbsp;  <input id="ex6"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="50000" data-slider-step="5000" data-slider-value="<?php if(isset($this->session->userdata['currently_owe'])) echo $this->session->userdata['currently_owe'] ; else echo '5000';?>"/> &nbsp; 50000+
                
               
               
@@ -30,7 +30,15 @@
 </div>
 <!-- Banner ends here -->
 <link href="<?php echo BASE_URL; ?>public/dist/css/bootstrap-slider.css" rel="stylesheet">
+<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.js"></script>
+<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.min.js"></script>
+<script>
+ var slider = new Slider("#ex6");
+slider.on("slide", function(sliderValue) {
+	document.getElementById("ex6SliderVal").textContent = sliderValue;
+});
 
+</script>
 
 
 

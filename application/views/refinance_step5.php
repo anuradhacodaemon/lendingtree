@@ -9,19 +9,19 @@
                     <div class="clearfix"></div>
                     <label class="control-label">When Were You Born?</label>
                    
-
+ 
                     <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margbot_10">
                                            
                         
                         <select  id="selectMonth" name="month" class="form-control">
                             <option value="">Month</option>
                             <?php for ($i = 1; $i <= 12; $i++) { ?>
-                                <option class="" <?php
+                                <option  value="<?php echo $i ?>" <?php
                                 if (isset($this->session->userdata['userdata']['month'])) {
                                     if ($this->session->userdata['userdata']['month'] == $i)
                                         echo 'selected';
                                 }
-                                ?> ><?php echo $i ?></option>
+                                ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
 <?php } ?>
                         </select>
                     </div>
@@ -29,7 +29,7 @@
                         <select id="selectDate" name="day" class="form-control">
                             <option value="">Day</option>
                                     <?php for ($i = 1; $i <= 31; $i++) { ?>
-                                <option class="" <?php
+                                <option  value="<?php echo $i ?>"  <?php
                                     if (isset($this->session->userdata['userdata']['day'])) {
                                         if ($this->session->userdata['userdata']['day'] == $i)
                                             echo 'selected';
@@ -43,7 +43,7 @@
                         <select id="selectYear" name="year" class="form-control">
                             <option value="">Year</option>
 <?php for ($i = 1900; $i <= 2015; $i++) { ?>
-                                <option class="" <?php
+                                <option  value="<?php echo $i ?>" <?php
     if (isset($this->session->userdata['userdata']['years'])) {
         if ($this->session->userdata['userdata']['years'] == $i)
             echo 'selected';
@@ -51,8 +51,9 @@
     ?>><?php echo $i ?></option>
 <?php } ?>
                         </select>
+                        
                     </div>
-                      <span id="err" style="color: red"></span>
+                     <span id="err" style="color: red"></span>
                       <div class="col-xs-12 col-sm-6 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
                      <span id="err7" style="color: red"></span>

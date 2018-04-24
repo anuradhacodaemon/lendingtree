@@ -27,7 +27,7 @@
                    
 
                     <div class="col-xs-12 col-sm-12 margbot_10">
-                        <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['password'])) echo $this->session->userdata['password'] ?>" class="form-control" id="phone" maxlength="10">
+                        <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['phone'])) echo $this->session->userdata['phone'] ?>" class="form-control" id="phone" maxlength="10">
                     </div>
                     <span id="err2" style="color: red"></span>
                     <div class="col-xs-12 col-sm-12 margbot_10">
@@ -36,7 +36,7 @@
                         </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <button type="button" class="button" >Submit<span class="continueIcon sprites"></span></button>
+                        <button type="button" class="button" onclick="refinancestep7()">Submit<span class="continueIcon sprites"></span></button>
                         
 
                     </div>
