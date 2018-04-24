@@ -32,6 +32,7 @@
                             <span class="continueIcon sprites"></span>
                             <input type="radio" value="NewCarPurchase" onclick="step2(2)" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
+                    <!--
                     <div class="col-xs-12 col-sm-12 radio">
                         <label <?php if(isset($this->session->userdata['type'])) { if($this->session->userdata['type']== 3) echo 'class="button status"'; else echo 'class=button';} else  echo 'class="button"'; ?>>
                             <div class="label-text">Refinance</div>
@@ -44,6 +45,7 @@
                             <span class="continueIcon sprites"></span>
                             <input type="radio" value="NewCarPurchase" onclick="step2(4)" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
