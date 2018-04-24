@@ -694,6 +694,29 @@ input[type="radio"], input[type="checkbox"] {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+.top-value {
+    color: #000;
+    font-size: 28px;
+}
+.slider-box {
+    position: relative;
+    width: 320px;
+    text-align: center;
+    margin: 0 auto;
+}
+.min-value {
+    position: absolute;
+    left: -10px;
+    bottom: -30px;
+    font-size: 18px;
+}
+.max-value {
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    font-size: 18px;
+}
+
 
 
 

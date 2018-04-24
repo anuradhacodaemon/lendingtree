@@ -8,9 +8,11 @@
                     <div class="clearfix"></div>
                     <label class="control-label">What Is Your Current Monthly Payment?</label>
                     
-                    <span id="ex6CurrentSliderValLabel"> <span id="ex8SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '5000';?></span></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex8SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '5000';?></span></span>
  <div class="clearfix"></div>
-                5000 &nbsp;  <input id="ex8" name="monthly_payment" type="text" data-slider-min="5000" data-slider-max="50000" data-slider-step="5000" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '5000';?>"/> &nbsp; 50000+
+                <input id="ex8" name="monthly_payment" type="text" data-slider-min="5000" data-slider-max="50000" data-slider-step="5000" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '5000';?>"/>
+                <span class="min-value">5000 &nbsp;</span>
+                <span class="max-value">&nbsp; 50000+</span>
                
               
                 </div>
