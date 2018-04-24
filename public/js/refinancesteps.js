@@ -283,6 +283,7 @@ function refinancestep4() {
 }
 function refinancestep5() {
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
+    
     if ($('#selectMonth').val() === "") {
 
         $('#err').html('Month is empty');
@@ -325,7 +326,7 @@ function refinancestep5() {
     } else {
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep6/" + $('#selectYear').val() + '/' + $('#selectDate').val() + '/' + $('#selectMonth').val(),
+            url: base_url + "refinance/refinancestep6/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=6");

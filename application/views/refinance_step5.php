@@ -16,12 +16,12 @@
                         <select  id="selectMonth" name="month" class="form-control">
                             <option value="">Month</option>
                             <?php for ($i = 1; $i <= 12; $i++) { ?>
-                                <option class="" <?php
+                                <option  value="<?php echo $i ?>" <?php
                                 if (isset($this->session->userdata['userdata']['month'])) {
                                     if ($this->session->userdata['userdata']['month'] == $i)
                                         echo 'selected';
                                 }
-                                ?> ><?php echo $i ?></option>
+                                ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
 <?php } ?>
                         </select>
                     </div>
@@ -29,7 +29,7 @@
                         <select id="selectDate" name="day" class="form-control">
                             <option value="">Day</option>
                                     <?php for ($i = 1; $i <= 31; $i++) { ?>
-                                <option class="" <?php
+                                <option  value="<?php echo $i ?>"  <?php
                                     if (isset($this->session->userdata['userdata']['day'])) {
                                         if ($this->session->userdata['userdata']['day'] == $i)
                                             echo 'selected';
@@ -43,7 +43,7 @@
                         <select id="selectYear" name="year" class="form-control">
                             <option value="">Year</option>
 <?php for ($i = 1900; $i <= 2015; $i++) { ?>
-                                <option class="" <?php
+                                <option  value="<?php echo $i ?>" <?php
     if (isset($this->session->userdata['userdata']['years'])) {
         if ($this->session->userdata['userdata']['years'] == $i)
             echo 'selected';
