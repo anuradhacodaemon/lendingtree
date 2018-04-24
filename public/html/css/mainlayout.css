@@ -60,9 +60,10 @@ a {transition: all .3s;}
 }
 .banner-main .banner-left h1 {
 
-    font-size: 36px;
+    font-size: 28px;
     margin: 0;
-    font-family: loved_by_the_kingregular, Arial, Helvetica, sans-serif;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+
     color: #000;
     font-weight: 500;
 }
