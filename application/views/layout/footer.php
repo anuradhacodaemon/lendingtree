@@ -141,21 +141,15 @@ if ($this->session->flashdata('item')) {
  
 
 // Without JQuery
-var slider = new Slider("#ex6");
+$("#ex6").slider();
+$("#ex6").on("slide", function(slideEvt) {
+	$("#ex6SliderVal").text(slideEvt.value);
+});
 
+// Without JQuery
+var slider = new Slider("#ex6");
 slider.on("slide", function(sliderValue) {
-    
-  // sliderValue= Math.floor(sliderValue/100 % 10);
-    //sliderValue=sliderValue*10/100;
-    newValue=sliderValue+1;
-    //document.getElementById("ex6SliderVal").textContent ='';
-   sliderv= increment(Math.floor(sliderValue*10)/1000,newValue);
-   if( newValue > sliderv)
-   {
-       sliderv= newValue+increment(sliderv);
-   }
-   
-	document.getElementById("ex6SliderVal").textContent = sliderv.toFixed(2)+ "%";
+	document.getElementById("ex6SliderVal").textContent = sliderValue;
 });
 
 function increment(sliderValue)

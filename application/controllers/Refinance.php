@@ -38,46 +38,48 @@ class Refinance extends CI_Controller {
         $this->template->view('refinance_step1');
     }
 
-    public function step1() {
+    public function refinancestep1() {
 
         $this->load->view('refinance_step1');
     }
 
-    public function step2($id = 0) {
-       /* if ($id) {
+    public function refinancestep2($id = 0) {
+        if ($id) {
             $data = array(
-                'type' => $id
+                'currently_owe' => $id
             );
             $this->session->set_userdata( $data);
-        } */
+        } 
+         //echo '<pre>';
+         //print_r($this->session->userdata());
         $this->load->view('refinance_step2');
     }
 
-    public function step3($id = 0) {
-       /* if ($id) {
+    public function refinancestep3($id = 0) {
+        if ($id) {
             $data = array(
-                'requested_amount' => $id
+                'monthly_payment' => $id
                 
             );
 
             $this->session->set_userdata( $data);
-        } */
+        } 
         // echo '<pre>';
         // print_r($this->session->userdata());
         $this->load->view('refinance_step3');
     }
     
 
-    public function step4($id = 0, $pre_approved=0) {
-       /* if ($id) {
+    public function refinancestep4($id = 0) {
+        if ($id) {
             $data = array(
-                'current_employer' => $id,
-                'job_title' => $pre_approved
+                'vin' => $id
+               
             );
 
             $this->session->set_userdata( $data);
         }
-        * */
+        
         
         //echo '<pre>';
         // print_r($this->session->userdata());
@@ -88,26 +90,20 @@ class Refinance extends CI_Controller {
         $this->load->view('refinance_step4', $data);
     }
 
-    public function step5($pre_tax_income = 0) {
+    public function refinancestep5($firstname = '', $lastname = '', $address='', $city='', $state='') {
 
-        /*if ($pre_tax_income) {
-
-            //$num = explode('$', $pre_tax_income);
-           // $number = $num[1];
-            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+        if ($firstname) {
             $data = array(
-                'pre_tax_income' => $pre_tax_income
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'address' => $address,
+                'city' => $city,
+                'state' => $state
+               
             );
 
             $this->session->set_userdata( $data);
         }
-
-        $data['state'] = $this->loan_model->get_state();
-        if(isset($this->session->userdata['userdata']['state'])){
-        $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
-        } */
-//echo '<pre>';
-        // print_r($this->session->userdata());
         $this->load->view('refinance_step5');
     }
 
@@ -117,28 +113,23 @@ class Refinance extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function step6($firstname = '', $lastname = '', $address='', $city='', $state='', $zip='', $ssn='') {
-        /*if ($firstname) {
+    public function refinancestep6($month = 0, $day = 0, $year = 0,$ssn='') {
+         if ($email) {
             $data = array(
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'address' => $address,
-                'city' => $city,
-                'state' => $state,
-                'zip' => $zip,
-                'ssn' => $ssn
+                'month' => $month,
+                'day' => $day,
+                'years' => $year,
+                 'dob' => $year.'-'.$month.'-'.$day,
+                'ssn' =>$ssn
             );
 
             $this->session->set_userdata( $data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-*/
-        $this->load->view('step6_view');
+        $this->load->view('refinance_step6');
         //die;
     }
 
-    public function step7($email = '', $phone = '') {
+    public function refinancestep7($email = '', $phone = '') {
         if ($email) {
             $data = array(
                 'email' => $email,
@@ -156,7 +147,7 @@ class Refinance extends CI_Controller {
          unset($this->session->userdata['panel']);  
          unset($this->session->userdata['__ci_last_regenerate']); 
           unset($this->session->userdata['userdata']); 
-        $result = $this->loan_model->add_loan($this->session->userdata());
+        $result = $this->loan_model->add_refinance($this->session->userdata());
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
@@ -185,7 +176,7 @@ class Refinance extends CI_Controller {
             $error = 'Your email already exist';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
-            $this->load->view('step6_view');
+            $this->load->view('refinancestep6_view');
         }
     }
 

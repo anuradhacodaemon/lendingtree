@@ -8,8 +8,9 @@
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
     .banner-main .banner-left h2 {font-size: 22px;}
-    .products-main h1 {font-size: 20px;}
-    .offer-main {padding-top: 20px;}
+
+    .offer-main {padding-top: 20px; float: none;}
+
     .offer-cont {text-align: center;}
     .quicklinks-main {padding: 20px 0;}
     .quicklinks-main h1 {font-size: 17px;}
@@ -70,7 +71,7 @@
         right: 0;
     }
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
-    .offer-main {padding-top: 20px;}
+    .offer-main {padding-top: 20px; float: none;}
     .offer-cont {text-align: center;}
     .quicklinks-main {padding: 20px 0;}
     .footer-main {padding: 10px; text-align: center;}

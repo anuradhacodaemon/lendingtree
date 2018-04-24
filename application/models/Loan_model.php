@@ -59,6 +59,26 @@ class Loan_model extends CI_Model {
             return 0;
         }
     }
+    
+     public function add_refinance($logData) {
+
+        $this->db->select('lend_id');
+        $this->db->from(REFINANCE);
+        $this->db->where('email', $logData['email']);
+        //$this->db->where("lastname", $logData['lastname']);
+        $result = $this->db->get();
+        $num = $result->num_rows();
+        //echo $this->db->last_query();
+        if ($num == 0) {
+            $this->db->insert(REFINANCE, $logData);
+            $id = $this->db->insert_id();
+            if ($this->db->affected_rows() > 0) {
+                return $id;
+            }
+        } else {
+            return 0;
+        }
+    }
     public function addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost)
     {
         

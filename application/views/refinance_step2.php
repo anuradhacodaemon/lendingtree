@@ -10,7 +10,7 @@
                     
                     <span id="ex6CurrentSliderValLabel"> <span id="ex6SliderVal">0</span></span>
  <div class="clearfix"></div>
-                1 &nbsp;  <input id="ex6" type="text" data-slider-min="0" data-slider-max="25" data-slider-step=".01" data-slider-value="1"/> &nbsp; 25
+                5000 &nbsp;  <input id="ex6" name="monthly_payment" type="text" data-slider-min="5000" data-slider-max="50000" data-slider-step="5000" data-slider-value="1"/> &nbsp; 50000+
                
               
               
