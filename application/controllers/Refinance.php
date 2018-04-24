@@ -114,7 +114,7 @@ class Refinance extends CI_Controller {
     }
 
     public function refinancestep6($month = 0, $day = 0, $year = 0,$ssn='') {
-         if ($email) {
+         if ($ssn) {
             $data = array(
                 'month' => $month,
                 'day' => $day,
@@ -143,7 +143,7 @@ class Refinance extends CI_Controller {
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
-         //die;
+       
          unset($this->session->userdata['panel']);  
          unset($this->session->userdata['__ci_last_regenerate']); 
           unset($this->session->userdata['userdata']); 
@@ -155,17 +155,18 @@ class Refinance extends CI_Controller {
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
             $this->session->userdata['userdata']='';
-            $this->session->userdata['type']='';
-            $this->session->userdata['requested_amount']='';
-            $this->session->userdata['current_employer']='';
-            $this->session->userdata['job_title']='';
-            $this->session->userdata['pre_tax_income']='';
+            $this->session->userdata['currently_owe']='';
+            $this->session->userdata['monthly_payment']='';
+            $this->session->userdata['vin']='';
             $this->session->userdata['firstname']='';
             $this->session->userdata['lastname']='';
-            $this->session->userdata['address']='';
+            
             $this->session->userdata['state']='';
             $this->session->userdata['city']='';
-            $this->session->userdata['zip']='';
+            $this->session->userdata['month']='';
+            $this->session->userdata['day']='';
+            $this->session->userdata['years']='';
+            $this->session->userdata['dob']='';
             $this->session->userdata['ssn']='';
             $this->session->userdata['email']='';
             $this->session->userdata['phone']='';

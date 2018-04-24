@@ -9,7 +9,7 @@
                     <div class="clearfix"></div>
                     <label class="control-label">When Were You Born?</label>
                    
-
+ 
                     <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margbot_10">
                                            
                         
@@ -51,8 +51,9 @@
     ?>><?php echo $i ?></option>
 <?php } ?>
                         </select>
+                        
                     </div>
-                      <span id="err" style="color: red"></span>
+                     <span id="err" style="color: red"></span>
                       <div class="col-xs-12 col-sm-6 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
                      <span id="err7" style="color: red"></span>
