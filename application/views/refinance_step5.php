@@ -2,7 +2,7 @@
 <div class="clearfix">
     <div class="" id="containerrefinance">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 <div class="form-main clearfix">
                     <!-- <h1>Compare live auto rates</h1> -->
                     <a href="" class="disclosure-sec">Disclosures</a>
@@ -10,7 +10,7 @@
                     <label class="control-label">When Were You Born?</label>
                    
  
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margbot_10">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
                                            
                         
                         <select  id="selectMonth" name="month" class="form-control">
@@ -25,7 +25,7 @@
 <?php } ?>
                         </select>
                     </div>
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margbot_10">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
                         <select id="selectDate" name="day" class="form-control">
                             <option value="">Day</option>
                                     <?php for ($i = 1; $i <= 31; $i++) { ?>
@@ -39,7 +39,7 @@
                         </select>
                     </div>
                     
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margbot_10">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
                         <select id="selectYear" name="year" class="form-control">
                             <option value="">Year</option>
 <?php for ($i = 1900; $i <= 2015; $i++) { ?>
@@ -54,7 +54,7 @@
                         
                     </div>
                      <span id="err" style="color: red"></span>
-                      <div class="col-xs-12 col-sm-6 margbot_10">
+                      <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
                      <span id="err7" style="color: red"></span>
                     </div>

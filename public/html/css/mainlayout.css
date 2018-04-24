@@ -607,7 +607,8 @@ input[type="radio"], input[type="checkbox"] {
     text-align: center;
     height: 58px;
     margin: 0 auto;
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
 }
 .subtext {
     width: 550px;
