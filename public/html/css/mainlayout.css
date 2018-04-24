@@ -134,8 +134,8 @@ a {transition: all .3s;}
     background-position: center;
 }
 .offer-personal {
-    background-image: url(../img/tactile-personal-icon.svg);
-    background-size: 35%;
+    background-image: url(../img/auto-ref.svg);
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
