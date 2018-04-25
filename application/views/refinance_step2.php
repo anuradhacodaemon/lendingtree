@@ -8,11 +8,11 @@
                     <div class="clearfix"></div>
                     <label class="control-label">What Is Your Current Monthly Payment?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex8SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '5000';?></span></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '100';?></span></span>
  <div class="clearfix"></div> <div class="slider-box">
-                <input id="ex8" name="monthly_payment" type="text" data-slider-min="5000" data-slider-max="50000" data-slider-step="5000" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '5000';?>"/>
-                <span class="min-value">5000 &nbsp;</span>
-                <span class="max-value">&nbsp; 50000+</span>
+                <input id="ex8" name="monthly_payment" type="text" data-slider-min="100" data-slider-max="5000" data-slider-step="100" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '100';?>"/>
+                <span class="min-value">100 &nbsp;</span>
+                <span class="max-value">&nbsp; 5000</span>
                
               </div>
                 </div>
@@ -33,7 +33,7 @@
 <script>
  var slider = new Slider("#ex8");
 slider.on("slide", function(sliderValue) {
-	document.getElementById("ex8SliderVal").textContent = sliderValue;
+	document.getElementById("ex6SliderVal").textContent = sliderValue;
 });
 
 </script>

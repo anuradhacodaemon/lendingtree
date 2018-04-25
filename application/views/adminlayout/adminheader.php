@@ -32,6 +32,9 @@
                                     </li>
                                     <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Auto Loan User</a>
                                     </li>
+                                    
+                                     <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a>
+                                    </li>
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
                     </li>				

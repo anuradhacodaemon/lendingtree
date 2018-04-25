@@ -11,16 +11,15 @@
                         <input  type="text" id="pre_tax_income" name="pre_tax_income" value="<?php if (isset($this->session->userdata['pre_tax_income'])) echo '$'.number_format($this->session->userdata['pre_tax_income']) ?>" class="form-control"  >
                        <input  type="hidden" id="pre_tax_income1" name="pre_tax_income1"  class="form-control" value="<?php if (isset($this->session->userdata['pre_tax_income'])) echo $this->session->userdata['pre_tax_income'] ?>"  >
                        <input  type="hidden" id="err2" name="err2" value="0"  class="form-control"  >
-
-                    
+                        <span id="err1" style="color: red"></span>
                     </div>
-                    <span id="err1" style="color: red"></span>
+                    
                     
                     <div class="col-xs-12 col-sm-12 margbot_10">
                         <p class="subtext">
                             Alimony, child support, or separate maintenance income need not be revealed if you do not wish to have it considered as a basis for repaying this obligation.
                         </p>
-                    </div>
+                        </div>
                     <div class="col-xs-12 col-sm-12 radio">
                         <button type="button" class="button" onclick="step5()">Continue<span class="continueIcon sprites"></span></button>
                                             <!--     <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
