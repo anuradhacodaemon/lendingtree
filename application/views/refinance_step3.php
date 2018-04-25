@@ -15,8 +15,8 @@
               <label class="control-label">Vehicle VIN Number?</label>
               <div class="col-xs-12 col-sm-12 margbot_40">
                 <input  type="text" id="vin" name="vin" value="<?php if(isset($this->session->userdata['vin'])) echo $this->session->userdata['vin']?>" class="form-control text-uppercase"  >
+                <span id="err1" style="color: red"></span>
               </div>
-               <span id="err1" style="color: red"></span>
               <div class="clearfix"></div>
                     <label class="control-label">Current Milage?</label>
                     

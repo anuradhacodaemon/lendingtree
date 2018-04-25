@@ -611,6 +611,10 @@ input[type="radio"], input[type="checkbox"] {
     width: 100%;
     max-width: 360px;
 }
+.form-main .form-control-small {
+    font-size: 14px !important;
+    font-weight: bold;
+}
 .subtext {
     width: 550px;
     font-size: 13px;
