@@ -21,15 +21,17 @@
                         Let's create a login to view your rates.</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
                         <input  type="text" id="email" placeholder="you@example.com" name="email" value="<?php if (isset($this->session->userdata['email'])) echo $this->session->userdata['email'] ?>" class="form-control"  >
+                        <span id="err1" style="color: red"></span>
                     </div>
-                     <span id="err1" style="color: red"></span>
+                     
                     <label class="control-label">We take your privacy seriously </label>
                    
 
-                    <div class="col-xs-12 col-sm-12 margbot_10">
+<div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['password'])) echo $this->session->userdata['password'] ?>" class="form-control" id="phone" maxlength="10" >
+                        <span id="err2" style="color: red"></span>
                     </div>
-                    <span id="err2" style="color: red"></span>
+                    
                     <div class="col-xs-12 col-sm-12 margbot_10">
                         <p class="subtext">
                             Alimony, child support, or separate maintenance income need not be revealed if you do not wish to have it considered as a basis for repaying this obligation.

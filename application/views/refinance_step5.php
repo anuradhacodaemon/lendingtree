@@ -9,11 +9,11 @@
                     <div class="clearfix"></div>
                     <label class="control-label">When Were You Born?</label>
                    
- 
-                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
+ <div class="margbot_10 clearfix">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
                                            
                         
-                        <select  id="selectMonth" name="month" class="form-control">
+                        <select  id="selectMonth" name="month" class="form-control form-control-small">
                             <option value="">Month</option>
                             <?php for ($i = 1; $i <= 12; $i++) { ?>
                                 <option  value="<?php echo $i ?>" <?php
@@ -25,8 +25,8 @@
 <?php } ?>
                         </select>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
-                        <select id="selectDate" name="day" class="form-control">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                        <select id="selectDate" name="day" class="form-control form-control-small">
                             <option value="">Day</option>
                                     <?php for ($i = 1; $i <= 31; $i++) { ?>
                                 <option  value="<?php echo $i ?>"  <?php
@@ -39,8 +39,8 @@
                         </select>
                     </div>
                     
-                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
-                        <select id="selectYear" name="year" class="form-control">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                        <select id="selectYear" name="year" class="form-control form-control-small">
                             <option value="">Year</option>
 <?php for ($i = 1900; $i <= 2015; $i++) { ?>
                                 <option  value="<?php echo $i ?>" <?php
@@ -54,6 +54,7 @@
                         
                     </div>
                      <span id="err" style="color: red"></span>
+                     </div>
                       <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
                      <span id="err7" style="color: red"></span>

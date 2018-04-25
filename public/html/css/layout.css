@@ -8,6 +8,7 @@ a {transition: all .3s;}
 button, input:focus {outline: none;}
 .inner_container {min-height: auto;}
 .inner_height {min-height: 530px;}
+button, input:focus {outline: none;}
 /* margin css */
 .margbot_10 {margin-bottom: 10px !important;}
 .margbot_20 {margin-bottom: 20px !important;}
@@ -136,8 +137,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', e
     background-position: center;
 }
 .offer-personal {
-    background-image: url(../img/tactile-personal-icon.svg);
-    background-size: 35%;
+    background-image: url(../img/auto-ref.svg);
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -603,14 +604,19 @@ input[type="radio"], input[type="checkbox"] {
     text-align: center;
     height: 58px;
     width: 360px;
-    margin: 0 auto;
+    margin: 0 auto 2px;
 }
 .form-main select.form-control {
     font-size: 20px;
     text-align: center;
     height: 58px;
     margin: 0 auto;
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
+}
+.form-main .form-control-small {
+    font-size: 14px !important;
+    font-weight: bold;
 }
 .subtext {
     width: 550px;
@@ -696,4 +702,26 @@ input[type="radio"], input[type="checkbox"] {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+.slider-box {
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.top-value {
+    color: #000;
+    font-size: 28px;
+}
+.min-value {
+    position: absolute;
+    left: 0px;
+    bottom: -30px;
+    font-size: 18px;
+}
+.max-value {
+    position: absolute;
+    right: 0px;
+    bottom: -30px;
+    font-size: 18px;
 }

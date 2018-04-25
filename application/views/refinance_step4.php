@@ -21,7 +21,7 @@
                     <span id="err2" style="color: red"></span>
                     
                     </div>
-                        
+                    <div class="clearfix"></div>    
                    
 
                    
@@ -51,14 +51,14 @@
                     
                        <span id="err5" style="color: red"></span>
                     </div>
+                    <div class="clearfix"></div>
                  
                      <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="address" placeholder="Address" value="<?php if (isset($this->session->userdata['address'])) echo $this->session->userdata['address'] ?>" class="form-control width_100" id="address" >
+                        <span id="err3" style="color: red"></span>
                     </div>
-                    <span id="err3" style="color: red"></span>
-<div class="clearfix">
-
-                    </div>
+                    
+<div class="clearfix"></div>
                     
                    
                     
