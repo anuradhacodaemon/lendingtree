@@ -25,7 +25,7 @@
                     </div>
                     <div class="offer-cont">
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <a href="">
+                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
