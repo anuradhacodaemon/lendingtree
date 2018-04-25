@@ -704,7 +704,7 @@ input[type="radio"], input[type="checkbox"] {
     transform: rotate(45deg);
 }
 .slider-box {
-    width: 320px;
+    width: 380px;
     margin: 0 auto;
     text-align: center;
     position: relative;

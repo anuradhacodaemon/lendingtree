@@ -47,3 +47,4 @@ transform:translate(50%, -50%) rotate(180deg);
 background:rgba(0,0,0,1);
 text-decoration:none;
 }
+.popup-inner h1 font {color: #333 !important;}
