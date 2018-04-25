@@ -20,11 +20,11 @@
               <div class="clearfix"></div>
                     <label class="control-label">Current Milage?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex8SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '100';?></span></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex8SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?></span></span>
  <div class="clearfix"></div> <div class="slider-box">
-                <input id="ex8" name="current_milage" type="text" data-slider-min="100" data-slider-max="5000" data-slider-step="100" data-slider-value="<?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '100';?>"/>
-                <span class="min-value">100 &nbsp;</span>
-                <span class="max-value">&nbsp; 5000</span>
+                <input id="ex8" name="current_milage" type="text" data-slider-min="0" data-slider-max="500000" data-slider-step="10000" data-slider-value="<?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?>"/>
+                <span class="min-value">0 &nbsp;</span>
+                <span class="max-value">&nbsp; 500,000</span>
                
               </div>
  <div class="clearfix"></div>

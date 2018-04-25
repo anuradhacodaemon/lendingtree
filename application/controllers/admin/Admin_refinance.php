@@ -72,16 +72,27 @@ class Admin_refinance extends CI_Controller {
                 $filterData['email'] = '';
             }
 
-            if (isset($_GET['currently_owe'])) {
-                $filterData['currently_owe'] = $_GET['currently_owe'];
+            if (isset($_GET['currently_owe1'])) {
+                $filterData['currently_owe1'] = $_GET['currently_owe1'];
                 //$this->session->set_userdata('client_id', $_POST['client_id']);
             } else {
-                $filterData['currently_owe'] = '';
+                $filterData['currently_owe1'] = '';
             }
-            if (isset($_GET['monthly_payment'])) {
-                $filterData['monthly_payment'] = $_GET['monthly_payment'];
+            if (isset($_GET['currently_owe2'])) {
+                $filterData['currently_owe2'] = $_GET['currently_owe2'];
+                //$this->session->set_userdata('client_id', $_POST['client_id']);
             } else {
-                $filterData['monthly_payment'] = '';
+                $filterData['currently_owe2'] = '';
+            }
+            if (isset($_GET['monthly_payment1'])) {
+                $filterData['monthly_payment1'] = $_GET['monthly_payment1'];
+            } else {
+                $filterData['monthly_payment1'] = '';
+            }
+            if (isset($_GET['monthly_payment2'])) {
+                $filterData['monthly_payment2'] = $_GET['monthly_payment2'];
+            } else {
+                $filterData['monthly_payment2'] = '';
             }
 
             if (isset($_GET['domain'])) {
@@ -95,12 +106,17 @@ class Admin_refinance extends CI_Controller {
                 $filterData['vin'] = '';
             }
 
-            if (isset($_GET['current_milage'])) {
-                $filterData['current_milage'] = $_GET['current_milage'];
+            if (isset($_GET['current_milage1'])) {
+                $filterData['current_milage1'] = $_GET['current_milage1'];
             } else {
-                $filterData['current_milage'] = '';
+                $filterData['current_milage1'] = '';
             }
-           
+            if (isset($_GET['current_milage2'])) {
+                $filterData['current_milage2'] = $_GET['current_milage2'];
+            } else {
+                $filterData['current_milage2'] = '';
+            }
+
             if (isset($_GET['search'])) {
                 $filterData['search'] = $_GET['search'];
             } else {
@@ -177,16 +193,16 @@ class Admin_refinance extends CI_Controller {
           }
           else { */
 
-        $arr[] = "Type of Loan";
-        $arr[] = "Requested Amount";
-        $arr[] = "Current Employer";
-        $arr[] = "Gross Monthly Income";
-        $arr[] = "Work Experience";
+        $arr[] = "Amount Owe";
+        $arr[] = "Montly Payment";
+        $arr[] = "vin";
+        $arr[] = "Milage";
+        $arr[] = "DOB";
         $arr[] = "Domain";
         $arr[] = "Address";
         $arr[] = "State";
         $arr[] = "City";
-        $arr[] = "Zip";
+       
         $arr[] = "SSN";
         //}
         $arr = array($arr);
@@ -198,53 +214,7 @@ class Admin_refinance extends CI_Controller {
         $pre_approved = '';
         $a = array();
         foreach ($data2 as $k => $v) {
-            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email']);
-
-            if ($v['type'] == 1)
-                $type = 'New Car Purchase';
-            if ($v['type'] == 2)
-                $type = 'Used Car Purchase';
-            if ($v['type'] == 3)
-                $type = 'Refinance';
-            if ($v['type'] == 4)
-                $type = 'Lease Buy Out';
-            array_push($a, $type);
-            //if (!empty($this->session->userdata['export']['years_emt'])){
-            if ($v['requested_amount'] == 7)
-                $years = '$5,000-$10,000';
-            if ($v['requested_amount'] == 6)
-                $years = '$10,000-$15,000';
-            if ($v['requested_amount'] == 5)
-                $years = '$15,000-$20,000';
-            if ($v['requested_amount'] == 4)
-                $years = '$20,000-$30,000';
-            if ($v['requested_amount'] == 3)
-                $years = '$30,000- $40,000';
-            if ($v['requested_amount'] == 2)
-                $years = '$40,000 - $50,000';
-            if ($v['requested_amount'] == 1)
-                $years = '$50,000+';
-            array_push($a, $years);
-
-            // }
-            //if (!empty($this->session->userdata['export']['type'])){
-            //}
-            //if (!empty($this->session->userdata['export']['buying_from'])){
-            // }
-            //if ($this->session->userdata['export']['pre_tax_income1'] != '' || $this->session->userdata['export']['pre_tax_income2'] != '')
-            //{ 
-            array_push($a, $v['current_employer']);
-            $income='$'.number_format($v['pre_tax_income']);
-            array_push($a, $income);
-
-            //}
-            //// if ($this->session->userdata['export']['amount1'] != '' || $this->session->userdata['export']['amount2'] != '')
-            //{
-            array_push($a, $v['job_title']);
-            // }
-            //if ($this->session->userdata['export']['start_date'] != '' || $this->session->userdata['export']['end_date'] != '')
-            //{ 
-            array_push($a, $v['domain']);
+            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'], $v['email'], $v['domain']);
 
             array_push($a, $v['address']);
             array_push($a, $v['state']);
@@ -261,7 +231,7 @@ class Admin_refinance extends CI_Controller {
         //echo '<pre>';
         //print_r($arr);
         //die;
-        $filename = "loans.csv";
+        $filename = "refinance.csv";
         $fp = fopen('php://output', 'w');
         header('Content-type: application/csv');
         header('Content-Disposition: attachment; filename=' . $filename);
@@ -293,22 +263,18 @@ class Admin_refinance extends CI_Controller {
          */
     }
 
-    public function updatestatus()
-    {
-       $this->refinance->updateStatus($this->input->post('lendId'),$this->input->post('status'));
+    public function updatestatus() {
+        $this->refinance->updateStatus($this->input->post('lendId'), $this->input->post('status'));
     }
-    
-    public function delete_inactive($lend_id=0)
-    {
-               $this->refinance->updateactiveStatus($lend_id);
- 
+
+    public function delete_inactive($lend_id = 0) {
+        $this->refinance->updateactiveStatus($lend_id);
     }
-     public function deleteall()
-    {
-       
-        foreach($this->input->post('c') as $k=>$v)
-        {
-             $this->refinance->updateactiveStatus($v);
+
+    public function deleteall() {
+
+        foreach ($this->input->post('c') as $k => $v) {
+            $this->refinance->updateactiveStatus($v);
         }
     }
 

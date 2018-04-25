@@ -22,12 +22,7 @@ class Refinance extends CI_Model {
         if (!empty($filterData['email'])) {
             $this->db->where('user.email', $filterData['email']);
         }
-        if (!empty($filterData['currently_owe'])) {
-            $this->db->where('user.currently_owe', $filterData['currently_owe']);
-        }
-        if (!empty($filterData['monthly_payment'])) {
-            $this->db->where('user.monthly_payment', $filterData['monthly_payment']);
-        }
+        
 
         if (!empty($filterData['vin'])) {
             $this->db->where('user.vin', $filterData['vin']);
@@ -36,8 +31,56 @@ class Refinance extends CI_Model {
         if (!empty($filterData['domain'])) {
             $this->db->like('user.domain', $filterData['domain'], 'both');
         }
+        if (!empty($filterData['currently_owe1']) && empty($filterData['currently_owe2'])) {
+            if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
+                $this->db->group_start();
+            $this->db->where('user.currently_owe <=', $filterData['currently_owe1']);
+        }
+        if (!empty($filterData['currently_owe2']) && empty($filterData['currently_owe1'])) {
+            $this->db->where('user.currently_owe >=', $filterData['currently_owe2']);
+            if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2'])) {
 
-        
+            $this->db->group_start();
+            $this->db->where('currently_owe BETWEEN ' . $filterData['currently_owe1'] . ' and ' . $filterData['currently_owe2'] . '');
+            $this->db->group_end();
+        }
+        if (!empty($filterData['current_milage1']) && empty($filterData['current_milage2'])) {
+            if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2']))
+                $this->db->group_start();
+            $this->db->where('user.current_milage <=', $filterData['current_milage1']);
+        }
+        if (!empty($filterData['current_milage2']) && empty($filterData['current_milage1'])) {
+            $this->db->where('user.current_milage >=', $filterData['current_milage2']);
+            if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2'])) {
+
+            $this->db->group_start();
+            $this->db->where('current_milage BETWEEN ' . $filterData['current_milage1'] . ' and ' . $filterData['current_milage2'] . '');
+            $this->db->group_end();
+        }
+
+        if (!empty($filterData['monthly_payment1']) && empty($filterData['monthly_payment2'])) {
+            if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2']))
+                $this->db->group_start();
+            $this->db->where('user.monthly_payment <=', $filterData['monthly_payment1']);
+        }
+        if (!empty($filterData['monthly_payment2']) && empty($filterData['monthly_payment1'])) {
+            $this->db->where('user.monthly_payment >=', $filterData['monthly_payment2']);
+            if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2'])) {
+
+            $this->db->group_start();
+            $this->db->where('monthly_payment BETWEEN ' . $filterData['monthly_payment1'] . ' and ' . $filterData['monthly_payment2'] . '');
+            $this->db->group_end();
+        }
+
         if (!empty($filterData['search'])) {
             $this->db->group_start();
             $this->db->like('user.email', $filterData['search'], 'both');
@@ -77,12 +120,8 @@ class Refinance extends CI_Model {
         if (!empty($filterData['email'])) {
             $this->db->where('user.email', $filterData['email']);
         }
-        if (!empty($filterData['currently_owe'])) {
-            $this->db->where('user.currently_owe', $filterData['currently_owe']);
-        }
-        if (!empty($filterData['monthly_payment'])) {
-            $this->db->where('user.monthly_payment', $filterData['monthly_payment']);
-        }
+       
+        
 
         if (!empty($filterData['vin'])) {
             $this->db->where('user.vin', $filterData['vin']);
@@ -91,8 +130,57 @@ class Refinance extends CI_Model {
         if (!empty($filterData['domain'])) {
             $this->db->like('user.domain', $filterData['domain'], 'both');
         }
+        if (!empty($filterData['currently_owe1']) && empty($filterData['currently_owe2'])) {
+            if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
+                $this->db->group_start();
+            $this->db->where('user.currently_owe <=', $filterData['currently_owe1']);
+        }
+        if (!empty($filterData['currently_owe2']) && empty($filterData['currently_owe1'])) {
+            $this->db->where('user.currently_owe >=', $filterData['currently_owe2']);
+            if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2'])) {
 
-        
+            $this->db->group_start();
+            $this->db->where('currently_owe BETWEEN ' . $filterData['currently_owe1'] . ' and ' . $filterData['currently_owe2'] . '');
+            $this->db->group_end();
+        }
+        if (!empty($filterData['current_milage1']) && empty($filterData['current_milage2'])) {
+            if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2']))
+                $this->db->group_start();
+            $this->db->where('user.current_milage <=', $filterData['current_milage1']);
+        }
+        if (!empty($filterData['current_milage2']) && empty($filterData['current_milage1'])) {
+            $this->db->where('user.current_milage >=', $filterData['current_milage2']);
+            if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2'])) {
+
+            $this->db->group_start();
+            $this->db->where('current_milage BETWEEN ' . $filterData['current_milage1'] . ' and ' . $filterData['current_milage2'] . '');
+            $this->db->group_end();
+        }
+
+        if (!empty($filterData['monthly_payment1']) && empty($filterData['monthly_payment2'])) {
+            if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2']))
+                $this->db->group_start();
+            $this->db->where('user.monthly_payment <=', $filterData['monthly_payment1']);
+        }
+        if (!empty($filterData['monthly_payment2']) && empty($filterData['monthly_payment1'])) {
+            $this->db->where('user.monthly_payment >=', $filterData['monthly_payment2']);
+            if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2'])) {
+
+            $this->db->group_start();
+            $this->db->where('monthly_payment BETWEEN ' . $filterData['monthly_payment1'] . ' and ' . $filterData['monthly_payment2'] . '');
+            $this->db->group_end();
+        }
+
+
         if (!empty($filterData['search'])) {
             $this->db->group_start();
             $this->db->like('user.email', $filterData['search'], 'both');
@@ -153,48 +241,74 @@ class Refinance extends CI_Model {
     public function get_userall() {
 
         $filterData = $this->session->userdata['export'];
-        $filter = 'user.firstname,user.lastname,user.phone,user.email,user.type,user.requested_amount,user.current_employer,user.pre_tax_income,user.job_title,user.domain,user.address,s.name as state,c.name as city,user.zip,user.ssn';
+        $filter = 'user.firstname,user.lastname,user.phone,user.email,user.currently_owe,user.monthly_payment,user.vin,user.current_milage,user.dob,user.domain,user.address,s.name as state,c.name as city,user.ssn';
         //print_r($this->session->userdata['export']);
         if (!empty($this->session->userdata['export'])) {
 
 
-            if (!empty($filterData['email'])) {
-                $this->db->where('user.email', $filterData['email']);
-            }
-            if (!empty($filterData['type'])) {
-                $this->db->where('user.type', $filterData['type']);
-                // $filter .= 'user.type,';
-            }
-            if (!empty($filterData['requested_amount'])) {
-                $this->db->where('user.requested_amount', $filterData['requested_amount']);
-                //$filter .= 'user.requested_amount,';
-            }
-            if (!empty($filterData['pre_tax_income1']) && empty($filterData['pre_tax_income2'])) {
-                if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-                    $this->db->group_start();
-                $this->db->where('user.pre_tax_income <=', $filterData['pre_tax_income1']);
-            }
-            if (!empty($filterData['pre_tax_income2']) && empty($filterData['pre_tax_income1'])) {
-                $this->db->where('user.pre_tax_income >=', $filterData['pre_tax_income2']);
-                if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2']))
-                    $this->db->group_end();
-            }
-            if (!empty($filterData['pre_tax_income1']) && !empty($filterData['pre_tax_income2'])) {
+           if (!empty($filterData['email'])) {
+            $this->db->where('user.email', $filterData['email']);
+        }
+       
+        
 
+        if (!empty($filterData['vin'])) {
+            $this->db->where('user.vin', $filterData['vin']);
+        }
+
+        if (!empty($filterData['domain'])) {
+            $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        if (!empty($filterData['currently_owe1']) && empty($filterData['currently_owe2'])) {
+            if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
                 $this->db->group_start();
-                $this->db->where('pre_tax_income BETWEEN ' . $filterData['pre_tax_income2'] . ' and ' . $filterData['pre_tax_income1'] . '');
+            $this->db->where('user.currently_owe <=', $filterData['currently_owe1']);
+        }
+        if (!empty($filterData['currently_owe2']) && empty($filterData['currently_owe1'])) {
+            $this->db->where('user.currently_owe >=', $filterData['currently_owe2']);
+            if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
                 $this->db->group_end();
-            }
+        }
+        if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2'])) {
 
-            if (!empty($filterData['job_title'])) {
-                $this->db->where('user.job_title', $filterData['job_title']);
-                // $filter .= 'user.job_title,';
-            }
+            $this->db->group_start();
+            $this->db->where('currently_owe BETWEEN ' . $filterData['currently_owe1'] . ' and ' . $filterData['currently_owe2'] . '');
+            $this->db->group_end();
+        }
+        if (!empty($filterData['current_milage1']) && empty($filterData['current_milage2'])) {
+            if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2']))
+                $this->db->group_start();
+            $this->db->where('user.current_milage <=', $filterData['current_milage1']);
+        }
+        if (!empty($filterData['current_milage2']) && empty($filterData['current_milage1'])) {
+            $this->db->where('user.current_milage >=', $filterData['current_milage2']);
+            if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['current_milage1']) && !empty($filterData['current_milage2'])) {
 
-            if (!empty($filterData['domain'])) {
-                $this->db->where('user.domain', $filterData['domain']);
-                // $filter .= 'user.domain,';
-            }
+            $this->db->group_start();
+            $this->db->where('current_milage BETWEEN ' . $filterData['current_milage1'] . ' and ' . $filterData['current_milage2'] . '');
+            $this->db->group_end();
+        }
+
+        if (!empty($filterData['monthly_payment1']) && empty($filterData['monthly_payment2'])) {
+            if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2']))
+                $this->db->group_start();
+            $this->db->where('user.monthly_payment <=', $filterData['monthly_payment1']);
+        }
+        if (!empty($filterData['monthly_payment2']) && empty($filterData['monthly_payment1'])) {
+            $this->db->where('user.monthly_payment >=', $filterData['monthly_payment2']);
+            if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2']))
+                $this->db->group_end();
+        }
+        if (!empty($filterData['monthly_payment1']) && !empty($filterData['monthly_payment2'])) {
+
+            $this->db->group_start();
+            $this->db->where('monthly_payment BETWEEN ' . $filterData['monthly_payment1'] . ' and ' . $filterData['monthly_payment2'] . '');
+            $this->db->group_end();
+        }
+
         } else {
             //$filter .= 'user.type,user.requested_amount,user.pre_tax_income,user.job_title,user.domain,';
         }
@@ -204,8 +318,8 @@ class Refinance extends CI_Model {
 
         $this->db->select($filter);
 
-        $this->db->from(LOANS . ' as user');
-        $this->db->order_by('user.update_date', 'desc');
+        $this->db->from(REFINANCE . ' as user');
+        $this->db->order_by('user.add_date', 'desc');
         $this->db->join(STATE . ' as s', 's.id = user.state', 'left');
         $this->db->join(CITY . ' as c', 'c.id = user.city', 'left');
 
@@ -219,7 +333,7 @@ class Refinance extends CI_Model {
         $userData['status'] = $status;
         $this->db->where("ref_id", $lendid);
         $this->db->update(REFINANCE, $userData);
-       // echo $this->db->last_query();
+        // echo $this->db->last_query();
         return $this->db->affected_rows();
     }
 
@@ -263,7 +377,6 @@ class Refinance extends CI_Model {
         return $result->result_array();
     }
 
-    
 }
 ?>
 
