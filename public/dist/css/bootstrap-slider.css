@@ -45,7 +45,7 @@
   position: relative;
 }
 .slider.slider-horizontal {
-  width: 320px;
+  width: 380px;
   height: 30px;
 }
 .slider.slider-horizontal .slider-track {
@@ -319,4 +319,7 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8ac1ef', endColorstr='#ff82b3de', GradientType=0);
   opacity: 1;
+}
+@media only screen and (max-width:509px){ 
+    .slider.slider-horizontal {width: 100%;}
 }

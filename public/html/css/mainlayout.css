@@ -528,7 +528,7 @@ button, input:focus {outline: none;}
 }
 .radio .button_back {
     border-radius: 2px;
-    width: 320px;
+    width: 380px;
     display: inline-block;
     padding: 18px;
     color: #fff;
@@ -706,7 +706,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 .slider-box {
     position: relative;
-    width: 320px;
+    width: 380px;
     text-align: center;
     margin: 0 auto;
 }
