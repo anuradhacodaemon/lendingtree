@@ -64,8 +64,8 @@ class Refinance extends CI_Controller {
         //echo '<pre>';
         // print_r($this->session->userdata());
         $data['state'] = $this->loan_model->get_state();
-        if (isset($this->session->userdata['userdata']['state'])) {
-            $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
+        if (isset($this->session->userdata['state'])) {
+            $data['city'] = $this->loan_model->get_city($this->session->userdata['state']);
         }
         $this->load->view('refinance_step4', $data);
     }
