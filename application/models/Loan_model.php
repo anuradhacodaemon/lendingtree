@@ -63,7 +63,7 @@ class Loan_model extends CI_Model {
         $this->db->select('ref_id');
         $this->db->from(REFINANCE);
         $this->db->where('email', $logData['email']);
-        //$this->db->where("lastname", $logData['lastname']);
+        $this->db->where("lastname", $logData['lastname']);
         $result = $this->db->get();
         $num = $result->num_rows();
         //echo $this->db->last_query();

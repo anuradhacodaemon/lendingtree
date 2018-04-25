@@ -45,6 +45,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 <script src="<?php echo BASE_URL; ?>/public/js/lendingsteps.js"></script>
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
+<script src="<?php echo BASE_URL; ?>/public/js/refinancesteps.js"></script>
 
 
 <script> //$('input[name=amount]').val()
