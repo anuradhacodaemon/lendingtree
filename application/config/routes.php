@@ -71,3 +71,14 @@ $route['admin/user/mailsent'] = 'admin/admin_user/mailsent';
 $route['admin/user/updatestatus'] = 'admin/admin_user/updatestatus';
 $route['admin/user/delete_inactive/(:any)'] = 'admin/admin_user/delete_inactive/$1';
 $route['admin/user/deleteall'] = 'admin/admin_user/deleteall';
+
+$route['admin/refinance'] = 'admin/admin_refinance/index';
+$route['admin/refinance/(:num)'] = 'admin/admin_refinance/index/$1';
+$route['admin/refinance/details/(:num)'] = 'admin/admin_refinance/details/$1';
+$route['admin/refinance/export'] = 'admin/admin_refinance/export';
+
+$route['admin/refinance/mailsent'] = 'admin/admin_refinance/mailsent';
+
+$route['admin/refinance/updatestatus'] = 'admin/admin_refinance/updatestatus';
+$route['admin/refinance/delete_inactive/(:any)'] = 'admin/admin_refinance/delete_inactive/$1';
+$route['admin/refinance/deleteall'] = 'admin/admin_refinance/deleteall';
