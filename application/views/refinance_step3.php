@@ -20,7 +20,7 @@
               <div class="clearfix"></div>
                     <label class="control-label">Current Milage?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex8SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?></span></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex6SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?></span></span>
  <div class="clearfix"></div> <div class="slider-box">
                 <input id="ex8" name="current_milage" type="text" data-slider-min="0" data-slider-max="500000" data-slider-step="10000" data-slider-value="<?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?>"/>
                 <span class="min-value">0 &nbsp;</span>
@@ -46,7 +46,7 @@
 <script>
  var slider = new Slider("#ex8");
 slider.on("slide", function(sliderValue) {
-	document.getElementById("ex8SliderVal").textContent = sliderValue;
+	document.getElementById("ex6SliderVal").textContent = sliderValue;
 });
 
 </script>
