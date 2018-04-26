@@ -20,11 +20,11 @@
               <div class="clearfix"></div>
                     <label class="control-label">Current Milage?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value"> <span id="ex6SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?></span></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?></label></span>
  <div class="clearfix"></div> <div class="slider-box">
-                <input id="ex8" name="current_milage" type="text" data-slider-min="0" data-slider-max="500000" data-slider-step="10000" data-slider-value="<?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?>"/>
+                <input id="ex8" name="current_milage" type="text" data-slider-min="0" data-slider-max="200000" data-slider-step="100" data-slider-value="<?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?>"/>
                 <span class="min-value">0 &nbsp;</span>
-                <span class="max-value">&nbsp; 500,000</span>
+                <span class="max-value">&nbsp; 200,000</span>
                
               </div>
  <div class="clearfix"></div>
@@ -46,7 +46,19 @@
 <script>
  var slider = new Slider("#ex8");
 slider.on("slide", function(sliderValue) {
-	document.getElementById("ex6SliderVal").textContent = sliderValue;
+	document.getElementById("ex6SliderVal").textContent = numberWithCommas(sliderValue);
 });
-
+function numberWithCommas(x) {
+  x=String(x).toString();
+  var afterPoint = '';
+  if(x.indexOf('.') > 0)
+     afterPoint = x.substring(x.indexOf('.'),x.length);
+  x = Math.floor(x);
+  x=x.toString();
+  var lastThree = x.substring(x.length-3);
+  var otherNumbers = x.substring(0,x.length-3);
+  if(otherNumbers != '')
+      lastThree = ',' + lastThree;
+  return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+}
 </script>
