@@ -76,6 +76,8 @@ $route['admin/refinance'] = 'admin/admin_refinance/index';
 $route['admin/refinance/(:num)'] = 'admin/admin_refinance/index/$1';
 $route['admin/refinance/details/(:num)'] = 'admin/admin_refinance/details/$1';
 $route['admin/refinance/export'] = 'admin/admin_refinance/export';
+$route['admin/refinance/pdfRefinance/(:num)'] = 'admin/admin_refinance/pdfRefinance/$1';
+$route['admin/refinance/pdfLoan/(:num)'] = 'admin/admin_refinance/pdfLoan/$1';
 
 $route['admin/refinance/mailsent'] = 'admin/admin_refinance/mailsent';
 

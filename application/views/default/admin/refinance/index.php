@@ -328,6 +328,10 @@
                                                 </td>  -->
                                         <td class="last">
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/details/' . $v['ref_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
+                                                                                       <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/pdfRefinance/' . $v['ref_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
+
+                                            
+                                            
                                             &nbsp;&nbsp;
         <?php if ($v['active_status'] == 1) { ?>
                                                 <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['ref_id'] ?>)" style="color:#000" title="Delete"><i class="fa fa-times fa-cog-red" aria-hidden="true"></i></a>

@@ -172,6 +172,185 @@ class Admin_refinance extends CI_Controller {
         }
     }
 
+    public function pdfRefinance($id = 0) {
+        // $this->load->library('pdf');
+        $userDetails = $this->refinance->get_userdetails($id);
+        $pdf = new PDF();
+
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+
+       // $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+       // $pdf->setFontSubsetting(false);
+       // $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        $data=array();
+        //echo ' '.APPPATH . 'views/view_files.php';
+        $tbl = $this->load->view('view_file',$data, TRUE);
+        //echo $tbl;
+        //die;
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('refinance.pdf', 'I');
+    }
+
+    public function pdfLoan($id = 0) {
+        // $this->load->library('pdf');
+        $this->load->model('admin/users');
+        $userDetails = $this->users->get_userdetails($id);
+        $pdf = new PDF();
+
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+
+        $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(true, 20);
+        $pdf->setFontSubsetting(false);
+        $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        $tbl = '<div class="main-section inner_height clearfix" >
+    <div class="container" >
+    <strong>Consumer Loan Application </strong>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>All information sent to us is stored on a secure server for your safety.
+
+Submit this application today via our secured server, or stop by the credit union for more information. You may also print out this application and mail it or fax it in for processing.
+
+Notice: Married Applicants may apply for a separate account.</p>
+             
+                  <hr>
+                    
+                  
+                   
+                    
+                   
+                         <div class="col-xs-12 col-sm-6 margbot_10" >
+                   Applicant Account Number
+                      
+                      </div>
+                   
+
+                    <div class="col-xs-12 col-sm-6 margbot_10">
+                   Date ' . $userDetails[0]['add_date'] . '
+                      
+                      </div>
+                      CONSUMER LOAN TYPE
+                      <hr>
+                        
+                   <div class="col-xs-12 col-sm-6 margbot_10">
+                  Purpose of Loan
+                      
+                      </div>
+                   
+                    <div class="col-xs-12 col-sm-6 margbot_10">
+                  If refinance of vehicle, enter VIN:
+                      
+                      </div>
+                     <div class="col-xs-12 col-sm-6 margbot_10">
+                   Amount Requested $
+                      
+                      </div>
+                     <div class="col-xs-12 col-sm-6 margbot_10">
+                   Term (months)
+                      
+                      </div>
+                    <div class="col-xs-12 col-sm-6 margbot_10">
+                    Type of Application
+<div>
+ Individual Credit
+</div>
+<div>
+Applicant: Complete for secured credit or if you live in a community property state.
+</div>
+<div>
+Applicant Marital Status
+</div>
+<div>
+ Married
+</div>
+<div>
+ Separated
+</div>
+<div>
+ Unmarried (Single, Divorced, Widowed)
+ </div>
+  </div>
+                APPLICANT
+                <hr>
+                  <div class="col-xs-12 col-sm-6 margbot_10">
+                   First Name
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                  Last Name
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                  Home Phone
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                  SSN
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                  Driver License & status
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                   DOB
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                   Current Street Address
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                  Apt No
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                   Years There
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                 city
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                   state
+                      
+                      </div>
+                        <div class="col-xs-12 col-sm-6 margbot_10">
+                   zip
+                      
+                      </div>
+                       EMPLOYMENT AND INCOME
+
+If self-employed, attach financial statement and income tax return.
+<hr>
+  <div class="col-xs-12 col-sm-6 margbot_10">
+                  current employee
+                      
+                      </div>
+                    </div>
+                 
+                    
+              
+        </div>
+    </div>
+</div>';
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        $pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('refinance.pdf', 'I');
+    }
+
     public function export() {
         $arr = array();
         $arr[] = "First Name";
@@ -202,7 +381,7 @@ class Admin_refinance extends CI_Controller {
         $arr[] = "Address";
         $arr[] = "State";
         $arr[] = "City";
-       
+
         $arr[] = "SSN";
         //}
         $arr = array($arr);
@@ -214,12 +393,12 @@ class Admin_refinance extends CI_Controller {
         $pre_approved = '';
         $a = array();
         foreach ($data2 as $k => $v) {
-            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'], $v['email'], $v['domain']);
+            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'],  $v['domain']);
 
             array_push($a, $v['address']);
             array_push($a, $v['state']);
             array_push($a, $v['city']);
-            array_push($a, $v['zip']);
+           
             array_push($a, $v['ssn']);
             //}
             //$a= array_merge($a1,$a);

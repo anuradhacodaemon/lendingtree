@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> Loan User Details</h2>
+                <h2> Refinance User Details</h2>
 
                 <div class="clearfix"></div>
             </div><?php //$takenby = $this->jobs->get_dispatcher($userDetails[0]['dispatcherid']); ?>
@@ -12,7 +12,7 @@
     <div class="page-title">
         <div class="title_left">
 
-            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/user' ?>" class="dark_grey">User Listing</a> >Details
+            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/refinance' ?>" class="dark_grey"> Refinance User Listing</a> >Details
             <h3> <small> </small></h3>
         </div>
 
