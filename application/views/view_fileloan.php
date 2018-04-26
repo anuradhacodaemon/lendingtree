@@ -9,7 +9,7 @@
   </head>
   <table>
     <tr>
-        <td style="background-color:#f2f2f2; font-size:20px; color:#000; padding-bottom:40px; text-align:center; font-family:Arial;">Consumer Refinance Application</td>
+        <td style="background-color:#f2f2f2; font-size:20px; color:#000; padding-bottom:40px; text-align:center; font-family:Arial;">Consumer Loan Application</td>
     </tr> 
     <tr>
         <td>&nbsp;</td>
@@ -82,39 +82,37 @@
                         If refinance of vehicle, enter VIN :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails[0]['vin'] ?>
+                       --
                     </td>
                 </tr>
+                
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Amount Owe ($) :
+                       Request Amount ($):
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo number_format($userDetails[0]['currently_owe']); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Montly payment ($) :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo number_format($userDetails[0]['monthly_payment']); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Current Milage ($) :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo number_format($userDetails[0]['current_milage']); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Term (months) :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        --
+                      <?php  
+                                        if($userDetails[0]['requested_amount']>0){
+                                            $years='';
+                                        if($userDetails[0]['requested_amount']==7)
+                                    $years='$5,000-$10,000';
+                                        if($userDetails[0]['requested_amount']==6)
+                                    $years='$10,000-$15,000';
+                                        if($userDetails[0]['requested_amount']==5)
+                                    $years='$15,000-$20,000';
+                                        if($userDetails[0]['requested_amount']==4)
+                                    $years='$20,000-$30,000';
+                                        if($userDetails[0]['requested_amount']==3)
+                                    $years='$30,000- $40,000';
+                                        if($userDetails[0]['requested_amount']==2)
+                                    $years='$40,000 - $50,000';
+                                        if($userDetails[0]['requested_amount']==1)
+                                    $years='$50,000+';
+                                      
+                                        
+                                        echo $years;
+                                        }
+                                         ?>
                     </td>
                 </tr>
                 <tr>
@@ -122,7 +120,21 @@
                         Type of Application :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        --
+                        <?php 
+                                    if($userDetails[0]['type']>0)
+                                    {
+                                        $type='';
+                                if($userDetails[0]['type']==1)
+                                    $type='New Car Purchase';
+                                 if($userDetails[0]['type']==2)
+                                    $type='Used Car Purchase';
+                                  if($userDetails[0]['type']==3)
+                                    $type='Refinance';
+                                   if($userDetails[0]['type']==4)
+                                    $type='Lease Buy Out';
+                                
+                                
+                                    echo $type;} ?>
                     </td>
                 </tr>
             </table>
@@ -183,7 +195,7 @@
                         Birth Date :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo date('d-m-Y',strtotime($userDetails[0]['dob'])) ?>
+                       --
                     </td>
                 </tr>
                 <tr>
@@ -216,8 +228,9 @@
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                           <?php 
-                          $city=$this->refinance->get_city($userDetails[0]['city']);
-                          echo $city[0]['name']; ?>
+                          if($userDetails[0]['city']>0){
+                          $city=$this->users->get_city($userDetails[0]['city']);
+                          echo $city[0]['name'];} ?>
                     </td>
                 </tr>
                 <tr>
@@ -225,8 +238,10 @@
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php  $state=$this->refinance->get_state($userDetails[0]['state']);
-                          echo $state[0]['name']; ?>
+                        <?php  
+                        if($userDetails[0]['state']>0){
+                        $state=$this->users->get_state($userDetails[0]['state']);
+                        echo $state[0]['name']; }?>
                     </td>
                 </tr>
                 <tr>
@@ -234,7 +249,7 @@
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        --
+                         <?php echo $userDetails[0]['zip'] ?>
                     </td>
                 </tr>
             </table>
@@ -263,7 +278,7 @@
                         Current Employer :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        --
+                        <?php echo $userDetails[0]['current_employer'] ?>
                     </td>
                 </tr>
                 <tr>
@@ -271,15 +286,15 @@
                         Years There :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       --
+                      <?php echo $userDetails[0]['job_title'] ?>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Monthly Gross Income :
+                        Monthly Gross Income  ($):
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       --
+                       <?php echo number_format($userDetails[0]['pre_tax_income']) ?>
                     </td>
                 </tr>
                 <tr>
