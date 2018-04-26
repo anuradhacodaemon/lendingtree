@@ -10,14 +10,14 @@
                   <div class="row">
                     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                       <div class="col-xs-12 col-sm-6 margbot_10">
-                        <input type="text" name="firstname" placeholder="Firstname" value="<?php if (isset($this->session->userdata['firstname'])) echo $this->session->userdata['firstname'] ?>" class="form-control width_100" id="firstname" >
+                        <input type="text" name="firstname" placeholder="First name" value="<?php if (isset($this->session->userdata['firstname'])) echo $this->session->userdata['firstname'] ?>" class="form-control width_100" id="firstname" >
                     <span id="err1" style="color: red"></span>
                       
                       </div>
                    
 
                     <div class="col-xs-12 col-sm-6 margbot_10">
-                        <input type="text" name="lastname" placeholder="Lastname" value="<?php if (isset($this->session->userdata['lastname'])) echo $this->session->userdata['lastname'] ?>" class="form-control width_100" id="lastname" >
+                        <input type="text" name="lastname" placeholder="Last name" value="<?php if (isset($this->session->userdata['lastname'])) echo $this->session->userdata['lastname'] ?>" class="form-control width_100" id="lastname" >
                     <span id="err2" style="color: red"></span>
                     
                     </div>
