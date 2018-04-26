@@ -1,6 +1,9 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Refinance extends CI_Controller {
+
     /**
      * Index Page for this controller.
      *
@@ -21,16 +24,24 @@ class Refinance extends CI_Controller {
         parent::__construct();
         $this->load->model('loan_model');
     }
+
     public function index() {
+
+
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
+
         $this->session->set_userdata('panel', 'frontend');
+
         $this->template->view('refinance_step1');
     }
+
     public function refinancestep1() {
+
         $this->load->view('refinance_step1');
     }
+
     public function refinancestep2($id = 0) {
         if ($id) {
             $data = array(
@@ -42,25 +53,31 @@ class Refinance extends CI_Controller {
         //print_r($this->session->userdata());
         $this->load->view('refinance_step2');
     }
+
     public function refinancestep3($id = 0) {
         if ($id) {
             $data = array(
                 'monthly_payment' => $id
             );
+
             $this->session->set_userdata($data);
         }
         // echo '<pre>';
         // print_r($this->session->userdata());
         $this->load->view('refinance_step3');
     }
+
     public function refinancestep4($id = 0,$current_milage=0) {
         if ($id) {
             $data = array(
                 'vin' => $id,
                 'current_milage' =>$current_milage
             );
+
             $this->session->set_userdata($data);
         }
+
+
         //echo '<pre>';
         // print_r($this->session->userdata());
         $data['state'] = $this->loan_model->get_state();
@@ -69,7 +86,9 @@ class Refinance extends CI_Controller {
         }
         $this->load->view('refinance_step4', $data);
     }
+
     public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '') {
+
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
@@ -78,14 +97,19 @@ class Refinance extends CI_Controller {
                 'city' => $city,
                 'state' => $state
             );
+
             $this->session->set_userdata($data);
         }
+        
         $this->load->view('refinance_step5');
     }
+
     public function getcity($state_id = 0) {
+
         $city = $this->loan_model->get_city($state_id);
         echo json_encode($city);
     }
+
     public function refinancestep6($month = 0, $day = 0, $year = 0, $ssn = '') {
         if ($ssn) {
             $data = array(
@@ -95,6 +119,7 @@ class Refinance extends CI_Controller {
                 'dob' => $year . '-' . $month . '-' . $day,
                 'ssn' => $ssn
             );
+
             $this->session->set_userdata($data);
         }
         //echo '<pre>';
@@ -103,6 +128,7 @@ class Refinance extends CI_Controller {
         $this->load->view('refinance_step6');
         //die;
     }
+
     public function refinancestep7($email = '', $phone = '') {
         if ($email) {
             $data = array(
@@ -112,15 +138,19 @@ class Refinance extends CI_Controller {
                 'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
                 'status' => "2"
             );
+
             $this->session->set_userdata($data);
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
+
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
         $result = $this->loan_model->add_refinance($this->session->userdata());
+
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
+
         if ($result > 0) {
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
@@ -131,6 +161,7 @@ class Refinance extends CI_Controller {
             $this->session->userdata['current_milage'] = '';
             $this->session->userdata['firstname'] = '';
             $this->session->userdata['lastname'] = '';
+
             $this->session->userdata['state'] = '';
             $this->session->userdata['city'] = '';
             $this->session->userdata['month'] = '';
@@ -143,9 +174,12 @@ class Refinance extends CI_Controller {
             //redirect('/');
             echo 1;
         } else {
+
             $error = 'Your email already exist';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+
             $this->load->view('refinancestep6_view');
         }
     }
+
 }

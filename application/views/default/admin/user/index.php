@@ -205,7 +205,7 @@
                         <!--</div>-->
                     </div>
                     <div class="col-md-2 pull-right">
-                         <button class="btn btn-primary pull-right" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
+                        <button class="btn btn-primary pull-right" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
                         <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
                     </div>
                 </div>
@@ -217,30 +217,30 @@
                             <tr class="headings">
 
                                 <th class="column-title"># </th>
-<th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
-</th>
+                                <th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
+                                </th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-<?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                    <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.type" && $sort_direction == "desc") { ?> onClick="sortList('user.type', 'asc')"<?php } ?> <?php if ($sort_by != "user.type") { ?> onClick="sortList('user.type', 'asc')"<?php } ?><?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?> onClick="sortList('user.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-<?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                    <?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "user.requested_amount") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('user.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-<?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                    <?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Gross Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-<?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                    <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?> <?php if ($sort_by != "user.domain") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?><?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?> onClick="sortList('user.domain', 'desc')"<?php } ?>> Domain</a>&nbsp;<?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-<?php } if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                    <?php } if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-<?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                    <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <th class="column-title"><span class="nobr">View</span>
 
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
@@ -263,7 +263,7 @@
                                     <tr class="even pointer">
 
                                         <td class=" "><?php echo $i ?></td>
- <th >
+                                        <th >
                                             <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
 
                                         </th>
@@ -306,8 +306,8 @@
                                         <td><?php echo $v['job_title']; ?></td>
                                         <td><?php echo $v['domain']; ?></td>
                                         <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
-        <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)">Pending <?php } ?>
-        <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"> Denied<?php } ?>
+                                            <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)">Pending <?php } ?>
+                                                <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"> Denied<?php } ?>
                                                 </a>
 
                                         </td>
@@ -316,6 +316,8 @@
                                         <td > 
 
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/pdfLoan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
+
                                         </td> 
                                         <td class="last">
 
@@ -325,7 +327,7 @@
                                             <?php } else { ?>
                                                 <a href="javascript:"  onclick="activeFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
 
-        <?php } ?>    
+                                            <?php } ?>    
 
                                         </td>
 
@@ -365,7 +367,7 @@
                 }
                 ?> of <?php echo $total_rows; ?> entries</div>
             <div id="datatable-fixed-header_paginate" class="dataTables_paginate paging_simple_numbers">
-<?php echo $pagination; ?>
+                <?php echo $pagination; ?>
 
             </div>
         </div>
@@ -461,10 +463,10 @@
             {
                 $.ajax({
                     type: "GET",
-                    url: "<?php echo base_url()  . 'admin/user/delete_inactive/' ?>" + franchiseid,
+                    url: "<?php echo base_url() . 'admin/user/delete_inactive/' ?>" + franchiseid,
                     success: function (data)
                     {
-                        location.href = '<?php echo base_url()  . 'admin/user/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
                     }
                 });
             } else
@@ -474,25 +476,24 @@
         });
         //});
     }
-    
-     function inactiveFranchiseAll() {
+
+    function inactiveFranchiseAll() {
         bootbox.confirm("Do you want to delete all these lead?", function (result) {
             if (result)
             {
-               $.ajax({
+                $.ajax({
                     type: "POST",
                     data: $("#filter_form1").serialize(),
-                    url: "<?php echo base_url()  . 'admin/user/deleteall' ?>" ,
+                    url: "<?php echo base_url() . 'admin/user/deleteall' ?>",
                     success: function (data)
                     {
                         //alert(data);
-                        location.href = '<?php echo base_url()  . 'admin/user/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
                     }
-                });  
-                
-              
-            }
-            else
+                });
+
+
+            } else
             {
                 //alert('no');
             }
@@ -509,7 +510,7 @@
         $("#start_date").datepicker();
         $("#end_date").datepicker();
     });
-     $("#mainchk").click(function(){
-    $('input:checkbox').not(this).prop('checked', this.checked);
-}); 
+    $("#mainchk").click(function () {
+        $('input:checkbox').not(this).prop('checked', this.checked);
+    });
 </script>
