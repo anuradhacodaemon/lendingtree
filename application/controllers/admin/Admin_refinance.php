@@ -172,9 +172,10 @@ class Admin_refinance extends CI_Controller {
         }
     }
 
-    public function pdfRefinance($id = 0) {
+     public function pdfRefinance($id = 0) {
         // $this->load->library('pdf');
         $data['userDetails'] = $this->refinance->get_userdetails($id);
+        $name=$data['userDetails'][0]['firstname'].'_'.$data['userDetails'][0]['ref_id'];
         $pdf = new PDF();
 
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
@@ -193,13 +194,15 @@ class Admin_refinance extends CI_Controller {
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
-        $pdf->Output('refinance.pdf', 'D');
+        $pdf->Output(''.$name.'.pdf', 'D');
     }
 
     public function pdfLoan($id = 0) {
         // $this->load->library('pdf');
         $this->load->model('admin/users');
         $data['userDetails'] = $this->users->get_userdetails($id);
+        $name=$data['userDetails'][0]['firstname'].'_'.$data['userDetails'][0]['lend_id'];
+   
         $pdf = new PDF();
 
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
@@ -215,7 +218,7 @@ class Admin_refinance extends CI_Controller {
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
-        $pdf->Output('refinance.pdf', 'D');
+        $pdf->Output(''.$name.'.pdf', 'D');
     }
 
     public function export() {
