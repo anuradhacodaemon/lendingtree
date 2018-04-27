@@ -4,11 +4,11 @@
 <div class="banner-main clearfix">
     <div class="container">       
         <div class="row">
-            <div class="col-lg-5 col-lg-offset-7 col-md-5 col-md-offset-7 col-sm-7 col-sm-offset-5 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="offer-main clearfix">
                     <h1>How can we help you today?</h1>
                     <div class="offer-cont">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="offer-cont">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                             <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">

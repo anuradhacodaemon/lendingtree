@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     
     <!-- Custom CSS -->
-    <link href="<?php echo BASE_URL; ?>public/html/css/layout.css" rel="stylesheet">
-	<link href="<?php echo BASE_URL; ?>public/html/css/media.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL; ?>public/html/css/sw-layout.css" rel="stylesheet">
+	<link href="<?php echo BASE_URL; ?>public/html/css/sw-media.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
