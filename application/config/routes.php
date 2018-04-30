@@ -84,3 +84,19 @@ $route['admin/refinance/mailsent'] = 'admin/admin_refinance/mailsent';
 $route['admin/refinance/updatestatus'] = 'admin/admin_refinance/updatestatus';
 $route['admin/refinance/delete_inactive/(:any)'] = 'admin/admin_refinance/delete_inactive/$1';
 $route['admin/refinance/deleteall'] = 'admin/admin_refinance/deleteall';
+
+$route['admin/domain'] = 'admin/admin_domain/index';
+$route['admin/domain/(:num)'] = 'admin/admin_domain/index/$1';
+$route['admin/domain/add'] = 'admin/admin_domain/add';
+$route['admin/domain/edit/(:num)'] = 'admin/admin_domain/edit/$1';
+$route['admin/domain/view/(:num)'] = 'admin/admin_domain/view/$1';
+$route['admin/domain/delete_inactive/(:num)'] = 'admin/admin_domain/delete_inactive/$1';
+$route['admin/domain/delete_active/(:num)'] = 'admin/admin_domain/delete_active/$1';
+
+$route['admin/emails'] = 'admin/admin_emails/index';
+$route['admin/emails/(:num)'] = 'admin/admin_emails/index/$1';
+$route['admin/emails/add'] = 'admin/admin_emails/add';
+$route['admin/emails/edit/(:num)'] = 'admin/admin_emails/edit/$1';
+$route['admin/emails/view/(:num)'] = 'admin/admin_emails/view/$1';
+$route['admin/emails/delete_inactive/(:num)'] = 'admin/admin_emails/delete_inactive/$1';
+$route['admin/emails/delete_active/(:num)'] = 'admin/admin_emails/delete_active/$1';

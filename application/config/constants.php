@@ -95,3 +95,5 @@ define('TOTAL_ROWS', 2);
 define('MASTERADMIN', 'admin');
 define('VISITOR', 'lend_visitor');
 define('REFINANCE', 'lend_refinance');
+define('DOMAIN', 'lend_domain');
+define('EMAILS', 'lend_emails');
