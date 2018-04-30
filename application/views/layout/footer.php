@@ -124,6 +124,7 @@ if ($this->session->flashdata('item')) {
     <div class="popup" data-popup="popup-1">
         <div class="popup-inner">
             <h2>Thank you</h2>
+            <img src="<?php echo BASE_URL; ?>public/html/img/smile.png" />
             <p><h1> <?php echo $message['message'];
     ?></h1></p>
             <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
