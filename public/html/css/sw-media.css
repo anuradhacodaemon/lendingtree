@@ -1,7 +1,14 @@
 @media only screen and (max-width:509px){ 
-    .logo {text-align: center; width: 100%;}
+    .logo {
+        text-align: center;
+        width: 60%;
+        float: none;
+        margin: 5% auto 0;
+    }
     .number {
         text-align: center;
+        font-size: 12px;
+        line-height: 14px;
     }
     .number a {font-size: 13px;}
     .banner-main {padding-top: 0px; padding-bottom: 0px;}
@@ -55,7 +62,7 @@
     .inner_height {min-height:574px;}
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
-    .logo {width: 65%;}
+    .logo {width: 35%; margin: 3% auto 0; float: none;}
     .number a {font-size: 18px;}
     .banner-main {
         padding-top: 0px;
@@ -102,6 +109,11 @@
 @media only screen and (min-width:1024px) and (max-width:1024px) { 
     .inner_container {min-height: 570px;}
     .inner_height {min-height:570px;}
+    .logo {
+        float: left;
+        margin: 10% 0 0;
+        width: 65%;
+    }
     .banner-main {background-size: cover; min-height: auto;}
     .offer-main {margin: 0 0 40px;}
     .form-main .disclosure-sec {
