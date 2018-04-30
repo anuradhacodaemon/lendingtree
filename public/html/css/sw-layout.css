@@ -170,14 +170,14 @@ button, input:focus {outline: none;}
     position: absolute;
     right: 30px;
     bottom: 12px;
-    color: #ff5000;
+    color: #fff;
     font-size: 12px;
     text-decoration: none;
     text-align: right;
 }
 .disclosure a {
     font-weight: 700;
-    color: #ff5000;
+    color: #fff;
 }
 /* Other Popular Products Section CSS */
 .products-main {
@@ -241,7 +241,7 @@ button, input:focus {outline: none;}
 }
 /* Quicklinks Section CSS */
 .quicklinks-main {
-    background: #ff5000;
+    background: #003da6;
     padding: 40px 0;
     text-align: center;
 }
