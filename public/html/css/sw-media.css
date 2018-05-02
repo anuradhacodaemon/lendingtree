@@ -2,6 +2,7 @@
     .logo {text-align: center; width: 100%;}
     .number {
         text-align: center;
+        padding: 2px 0 0;
     }
     .number a {font-size: 13px;}
     .banner-main {padding-top: 0px; padding-bottom: 0px;}
