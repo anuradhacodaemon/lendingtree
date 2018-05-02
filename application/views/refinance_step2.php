@@ -8,7 +8,7 @@
                     <div class="clearfix"></div>
                     <label class="control-label">What Is Your Current Monthly Payment?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?></label></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value"> <label id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?></label></span>
  <div class="clearfix"></div> <div class="slider-box">
                 <input id="ex8" name="monthly_payment" type="text" data-slider-min="50" data-slider-max="5000" data-slider-step="100" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?>"/>
                 <span class="min-value">$1,000 &nbsp;</span>
@@ -36,16 +36,14 @@ slider.on("slide", function(sliderValue) {
 	document.getElementById("ex6SliderVal").textContent = numberWithCommas(sliderValue);
 });
 function numberWithCommas(x) {
-  x=String(x).toString();
-  var afterPoint = '';
-  if(x.indexOf('.') > 0)
-     afterPoint = x.substring(x.indexOf('.'),x.length);
-  x = Math.floor(x);
-  x=x.toString();
-  var lastThree = x.substring(x.length-3);
-  var otherNumbers = x.substring(0,x.length-3);
-  if(otherNumbers != '')
-      lastThree = ',' + lastThree;
-  return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+ var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+});
+
+// Use it.
+//var amount = document.getElementById('input').innerHTML;
+return formatter.format(x);  
 }
 </script>
