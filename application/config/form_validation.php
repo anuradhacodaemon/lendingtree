@@ -87,6 +87,17 @@ $config = array(
             )
         )
      
+    ),
+    'settings/insert' => array(
+        array(
+            'field' => 'phone',
+            'label' => 'phone',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Email is required field.'
+            )
+        )
+     
     )
      
 );

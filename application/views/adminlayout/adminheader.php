@@ -35,11 +35,12 @@
                                     
                                      <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a>
                                     </li>
-                                     <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Domain</a>
+                                     <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>
                                     </li>
                                     
-                                    <li><a href="<?php echo BASE_URL ?>admin/emails"><i class="fa fa-edit"></i>Email</a>
-                                    </li>
+                                    
+                                    
+                                   
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
                     </li>		

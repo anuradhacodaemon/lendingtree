@@ -23,20 +23,20 @@ class Loan_model extends CI_Model {
     public function get_state() {
 
         $this->db->from(STATE);
-        $this->db->where('country_id','231');
+        $this->db->where('country_id', '231');
         $result = $this->db->get();
-        
+
 
         return $result->result_array();
     }
 
-    public function get_city($state_id=0) {
+    public function get_city($state_id = 0) {
 //$this->db->select('id,name');
         $this->db->from(CITY);
-         $this->db->where('state_id',$state_id);
+        $this->db->where('state_id', $state_id);
         $result = $this->db->get();
-       //echo $this->db->last_query();
-      
+        //echo $this->db->last_query();
+
         return $result->result_array();
     }
 
@@ -59,8 +59,8 @@ class Loan_model extends CI_Model {
             return 0;
         }
     }
-    
-     public function add_refinance($logData) {
+
+    public function add_refinance($logData) {
 
         $this->db->select('ref_id');
         $this->db->from(REFINANCE);
@@ -79,16 +79,16 @@ class Loan_model extends CI_Model {
             return 0;
         }
     }
-    public function addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost)
-    {
-        
-        $logData=array('ip_address'=>$ipaddress,'page'=>$page,'referrer'=>$referrer,'datetime'=>$datetime,'useragent'=>$useragent,'remotehost'=>$remotehost);
-      
+
+    public function addvisitor($ipaddress, $page, $referrer, $datetime, $useragent, $remotehost) {
+
+        $logData = array('ip_address' => $ipaddress, 'page' => $page, 'referrer' => $referrer, 'datetime' => $datetime, 'useragent' => $useragent, 'remotehost' => $remotehost);
+
         $this->db->select('id');
         $this->db->from(VISITOR);
         $this->db->where('ip_address', $ipaddress);
         $this->db->where("remotehost", $remotehost);
-        
+
         $result = $this->db->get();
         $num = $result->num_rows();
         //echo $this->db->last_query();
@@ -100,9 +100,17 @@ class Loan_model extends CI_Model {
             }
         } else {
             return 0;
-        }  
+        }
     }
+
     /** user list * */
+    public function get_phone() {
+        $this->db->from(DOMAIN);
+        $this->db->where('domain', BASE_URL);
+        $result = $this->db->get();
+        return $result->result_array();
+    }
+
 }
 ?>
 

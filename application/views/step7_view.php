@@ -1,5 +1,5 @@
 <div class="clearfix">
-    <div class="" id="containerrefinance">
+    <div class="" id="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
@@ -27,8 +27,8 @@
                     <label class="control-label">We take your privacy seriously. </label>
                    
 
-                    <div class="col-xs-12 col-sm-12 margbot_10">
-                        <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['phone'])) echo $this->session->userdata['phone'] ?>" class="form-control" id="phone" maxlength="10">
+<div class="col-xs-12 col-sm-12 margbot_10">
+                        <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['password'])) echo $this->session->userdata['password'] ?>" class="form-control" id="phone" maxlength="10">
                         <span id="err2" style="color: red"></span>
                     </div>
                     
@@ -38,7 +38,7 @@
                         </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <button type="button" class="button" onclick="refinancestep7()">Submit<span class="continueIcon sprites"></span></button>
+                        <button type="button" class="button" onclick="step8()">Submit<span class="continueIcon sprites"></span></button>
                         
 
                     </div>

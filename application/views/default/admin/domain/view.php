@@ -2,7 +2,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Domain</h2>
+                    <h2>Settings</h2>
 
                     <div class="clearfix"></div>
                 </div>
@@ -16,8 +16,12 @@
                         <div class="form-group">
                            
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                 <strong><?php echo $this->lang->line('domain'); ?> : </strong>
+                                 <strong>Domain : </strong>
                                <?php if(isset($domain[0]['domain']))  echo $domain[0]['domain']?>
+                                   <strong>Phone : </strong>
+                               <?php if(isset($domain[0]['phone']))  echo $domain[0]['phone']?>
+                                     <strong>Emails : </strong>
+                               <?php if(isset($domain[0]['emails']))  echo $domain[0]['emails']?>
                             </div>
                         </div>
                        

@@ -120,17 +120,17 @@ class Admin_domain extends CI_Controller {
         if (!isset($this->session->userdata['userdata']['ud'])) { $this->load->view('admin/index', $data);
         } else {
 
-            $data["state_id"] = $id;
+            $data["domain_id"] = $id;
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $domainData = array();
 
-                if ($this->form_validation->run('state/insert') == true) {
+                if ($this->form_validation->run('domain/insert') == true) {
 
                     foreach ($this->input->post() as $k => $v) {
                         $domainData[$k] = $v;
                     }
-                    $domainData["state_id"] = $id;
+                    $domainData["domain_id"] = $id;
                     $result = $this->domain->edit_domain($domainData);
 
                     if ($result == 0) {

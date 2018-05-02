@@ -8,8 +8,8 @@
                     <div class="clearfix"></div>
                     <label class="control-label">Your Gross [Pre-Tax] Monthly Income?</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
-                        <input  type="text" id="pre_tax_income" name="pre_tax_income" value="<?php if (isset($this->session->userdata['pre_tax_income'])) echo '$'.number_format($this->session->userdata['pre_tax_income']) ?>" class="form-control"  >
-                       <input  type="hidden" id="pre_tax_income1" name="pre_tax_income1"  class="form-control" value="<?php if (isset($this->session->userdata['pre_tax_income'])) echo $this->session->userdata['pre_tax_income'] ?>"  >
+                        <input  type="text" id="pre_tax_income" name="pre_tax_income" value="<?php if (!empty($this->session->userdata['pre_tax_income'])) { echo '$'.number_format($this->session->userdata['pre_tax_income']); } ?>" class="form-control"  >
+                       <input  type="hidden" id="pre_tax_income1" name="pre_tax_income1"  class="form-control" value="<?php if (!empty($this->session->userdata['pre_tax_income'])) echo $this->session->userdata['pre_tax_income'] ?>"  >
                        <input  type="hidden" id="err2" name="err2" value="0"  class="form-control"  >
                         <span id="err1" style="color: red"></span>
                     </div>

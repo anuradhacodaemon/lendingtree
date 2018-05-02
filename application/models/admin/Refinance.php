@@ -376,6 +376,13 @@ class Refinance extends CI_Model {
         //die;
         return $result->result_array();
     }
+    public function valid_domain_allemail(){
+        $this->db->from(EMAILS . ' as e');
+        $this->db->join(DOMAIN . ' as d', 'd.domain_id = e.domain_id', 'LEFT');
+        $this->db->where('d.domain',BASE_URL);
+        $result = $this->db->get();
+        return $result->result_array();
+    }
 
 }
 ?>

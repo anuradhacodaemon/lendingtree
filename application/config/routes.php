@@ -84,6 +84,8 @@ $route['admin/refinance/mailsent'] = 'admin/admin_refinance/mailsent';
 $route['admin/refinance/updatestatus'] = 'admin/admin_refinance/updatestatus';
 $route['admin/refinance/delete_inactive/(:any)'] = 'admin/admin_refinance/delete_inactive/$1';
 $route['admin/refinance/deleteall'] = 'admin/admin_refinance/deleteall';
+$route['admin/refinance/sentemail'] = 'admin/admin_refinance/sentemail';
+$route['admin/refinance/getpdf'] = 'admin/admin_refinance/getpdf';
 
 $route['admin/domain'] = 'admin/admin_domain/index';
 $route['admin/domain/(:num)'] = 'admin/admin_domain/index/$1';
@@ -100,3 +102,4 @@ $route['admin/emails/edit/(:num)'] = 'admin/admin_emails/edit/$1';
 $route['admin/emails/view/(:num)'] = 'admin/admin_emails/view/$1';
 $route['admin/emails/delete_inactive/(:num)'] = 'admin/admin_emails/delete_inactive/$1';
 $route['admin/emails/delete_active/(:num)'] = 'admin/admin_emails/delete_active/$1';
+$route['admin/settings/(:num)'] = 'admin/admin_settings/edit/$1';

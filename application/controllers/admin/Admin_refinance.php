@@ -175,50 +175,50 @@ class Admin_refinance extends CI_Controller {
     public function pdfRefinance($id = 0) {
         // $this->load->library('pdf');
         $data['userDetails'] = $this->refinance->get_userdetails($id);
-        $name=$data['userDetails'][0]['firstname'].'_'.$data['userDetails'][0]['ref_id'];
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
         $pdf = new PDF();
 
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
 
-       // $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        // $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
         //$pdf->SetAutoPageBreak(true, 20);
-       // $pdf->setFontSubsetting(false);
-       // $pdf->SetFont('helvetica', '', 10);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
         // add a page
         $pdf->AddPage();
-       
+
         //echo ' '.APPPATH . 'views/view_files.php';
-        $tbl = $this->load->view('view_file',$data, TRUE);
+        $tbl = $this->load->view('view_file', $data, TRUE);
         //echo $tbl;
         //die;
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
-        $pdf->Output(''.$name.'.pdf', 'D');
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
     public function pdfLoan($id = 0) {
         // $this->load->library('pdf');
         $this->load->model('admin/users');
         $data['userDetails'] = $this->users->get_userdetails($id);
-        $name=$data['userDetails'][0]['firstname'].'_'.$data['userDetails'][0]['lend_id'];
-   
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+
         $pdf = new PDF();
 
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
 
         //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
         //$pdf->SetAutoPageBreak(true, 20);
-       // $pdf->setFontSubsetting(false);
-       // $pdf->SetFont('helvetica', '', 10);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
         // add a page
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan',$data, TRUE);
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
 
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
-        $pdf->Output(''.$name.'.pdf', 'D');
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
     public function export() {
@@ -263,12 +263,12 @@ class Admin_refinance extends CI_Controller {
         $pre_approved = '';
         $a = array();
         foreach ($data2 as $k => $v) {
-            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'],  $v['domain']);
+            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'], $v['domain']);
 
             array_push($a, $v['address']);
             array_push($a, $v['state']);
             array_push($a, $v['city']);
-           
+
             array_push($a, $v['ssn']);
             //}
             //$a= array_merge($a1,$a);
@@ -324,6 +324,37 @@ class Admin_refinance extends CI_Controller {
 
         foreach ($this->input->post('c') as $k => $v) {
             $this->refinance->updateactiveStatus($v);
+        }
+    }
+
+    public function sentemail() {
+        foreach ($this->input->post('c') as $k => $v) {
+            $data['userDetails'] = $this->refinance->get_userdetails($v);
+            $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+            $pdf = new PDF();
+            $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+            $pdf->AddPage();
+            $tbl = $this->load->view('view_file', $data, TRUE);
+            $pdf->writeHTML($tbl, true, false, false, false, '');
+            $path = PHYSICAL_PATH . 'download_pdf/';
+            $filename = '' . $name . '.pdf';
+            //ob_end_clean();
+            $pdf->Output($path . $filename, 'F');
+        }
+    }
+
+    public function getpdf() {
+
+        $dir = PHYSICAL_PATH . 'download_pdf/';
+
+// Open a directory, and read its contents
+        if (is_dir($dir)) {
+            if ($dh = opendir($dir)) {
+                while (($file = readdir($dh)) !== false) {
+                    echo "filename:" . $file . "<br>";
+                }
+                closedir($dh);
+            }
         }
     }
 
