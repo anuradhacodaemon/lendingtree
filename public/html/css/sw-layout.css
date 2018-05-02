@@ -59,6 +59,7 @@ button, input:focus {outline: none;}
     margin: 0;
     position: relative;
     background-size: cover;
+    min-height: 600px;
 }
 .banner-main .banner-left h2 {
     font-size: 30px;
@@ -191,6 +192,7 @@ button, input:focus {outline: none;}
     padding: 40px 0 10px;
     clear: both;
     text-align: center;
+    display: none;
 }
 .products-main h1 {
     margin: 0 0 30px;
@@ -251,6 +253,7 @@ button, input:focus {outline: none;}
     background: #026938;
     padding: 40px 0;
     text-align: center;
+    display: none;
 }
 .quicklinks-main h1 {
     font-size: 28px;
