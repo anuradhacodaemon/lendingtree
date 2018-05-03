@@ -158,7 +158,7 @@ function refinancestep2() {
 
     $.ajax({
         type: "GET",
-        url: base_url + "refinance/refinancestep3/" + +$('input[name=monthly_payment]').val(),
+        url: base_url + "refinance/refinancestep3/" + $('input[name=monthly_payment]').val(),
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=3");
@@ -191,7 +191,7 @@ function refinancestep3() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep4/" + $('input[name=vin]').val(),
+            url: base_url + "refinance/refinancestep4/" + $('input[name=vin]').val()+'/'+ $('input[name=current_milage]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=4");
@@ -398,7 +398,7 @@ function gtag_report_conversion(url) {
         }
     };
     gtag('event', 'conversion', {
-        'send_to': 'AW-829513051/iHhxCPeEpYABENu6xYsD',
+        'send_to': 'AW-829513051/jW-JCJCFrYEBENu6xYsD',
         'event_callback': callback
     });
     return false;

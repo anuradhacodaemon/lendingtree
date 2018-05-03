@@ -58,6 +58,20 @@ function numberWithCommas(x) {
 
 // Use it.
 //var amount = document.getElementById('input').innerHTML;
-return formatter.format(x);  
+return formatter.format(x).replace("$", "");  
 }
+ $(document).ready(function(){
+                 if( $('#ex6SliderVal').html()>0)
+                 {
+                  var formatter = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                                minimumFractionDigits: 2,
+                            });
+                 var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "");
+               $('#ex6SliderVal').html(x);  
+                 }
+               //alert( $('#ex6SliderVal').html());
+ 
+ });        
 </script>

@@ -8,7 +8,7 @@
                     <div class="clearfix"></div>
                     <label class="control-label">What Is Your Current Monthly Payment?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value"> <label id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?></label></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?></label></span>
  <div class="clearfix"></div> <div class="slider-box">
                 <input id="ex8" name="monthly_payment" type="text" data-slider-min="50" data-slider-max="5000" data-slider-step="100" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?>"/>
                 <span class="min-value">$1,000 &nbsp;</span>
@@ -44,6 +44,18 @@ function numberWithCommas(x) {
 
 // Use it.
 //var amount = document.getElementById('input').innerHTML;
-return formatter.format(x);  
+return formatter.format(x).replace("$", "");  
 }
+ $(document).ready(function(){
+                 
+                  var formatter = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                                minimumFractionDigits: 2,
+                            });
+                 var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "");
+               $('#ex6SliderVal').html(x);  
+               //alert( $('#ex6SliderVal').html());
+ 
+ });        
 </script>
