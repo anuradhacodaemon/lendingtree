@@ -228,18 +228,7 @@
                 </div> -->
                     <div class="col-md-12">
                         <button class="btn btn-primary pull-left" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
-                        <div class="col-md-8 text-center">                        
-                            Show
-                            <label> 
-                                <select name="record_limit" class="form-control input-sm" onchange="submitForm();">
-                                    <option <?php if ($record_limit == "10") { ?> selected="selected"<?php } ?> value="10">10</option>
-                                    <option <?php if ($record_limit == "20") { ?> selected="selected"<?php } ?> value="20">20</option>
-                                    <option <?php if ($record_limit == "50") { ?> selected="selected"<?php } ?> value="50">50</option>
-                                    <option <?php if ($record_limit == "100") { ?> selected="selected"<?php } ?> value="100">100</option>
-                                </select>
-                            </label>
-                            entries                        
-                        </div>                    
+
                         <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/refinance/export' ?>">Export as CSV</a>
                     </div>
                 </div>
@@ -474,7 +463,8 @@
             if (result)
             {
                 $.ajax({
-                    currently_owe: "GET",
+
+                    type: "GET",
                     url: "<?php echo base_url() . 'admin/refinance/delete_inactive/' ?>" + franchiseid,
                     success: function (data)
                     {
@@ -499,9 +489,39 @@
             if (result)
             {
                 $.ajax({
-                    currently_owe: "POST",
+
+                    type: "POST",
                     data: $("#filter_form1").serialize(),
                     url: "<?php echo base_url() . 'admin/refinance/deleteall' ?>",
+                    success: function (data)
+                    {
+                        //alert(data);
+                        location.href = '<?php echo base_url() . 'admin/refinance/' ?>';
+                    }
+                });
+
+
+            } else
+            {
+                //alert('no');
+            }
+        });
+        //});
+    }
+
+    function pdfemailAll() {
+        var checked = $("#filter_form1 input:checked").length > 0;
+        if (!checked) {
+            alert("Please select at least one checkbox");
+            return false;
+        }
+        bootbox.confirm("Do you want to sent email?", function (result) {
+            if (result)
+            {
+                $.ajax({
+                    type: "POST",
+                    data: $("#filter_form1").serialize(),
+                    url: "<?php echo base_url() . 'admin/refinance/sentemail' ?>",
                     success: function (data)
                     {
                         //alert(data);

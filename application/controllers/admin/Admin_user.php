@@ -1,10 +1,7 @@
 <?php
-
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-
 class Admin_user extends CI_Controller {
-
     /**
       @Name User Controller
       Description:  Class represents controller for dispatcher login
@@ -26,22 +23,15 @@ class Admin_user extends CI_Controller {
         $this->load->library('pagination');
         $this->load->helper('csv');
     }
-
     /* This method used view contact detail after login else redirect to login page.
-
      */
-
     public function index() {
-
         if (!isset($this->session->userdata['userdata']['ud'])) {
             $data = array();
             $this->load->view('admin', $data);
         } else {
-
-
             if (isset($_GET))
                 $this->session->set_userdata('export', $_GET);
-
             if (isset($_GET['start_date'])) {
                 if (!empty($_GET['start_date']))
                     $filterData['start_date'] = date('Y-m-d', strtotime($_GET['start_date']));
@@ -65,13 +55,11 @@ class Admin_user extends CI_Controller {
             } else {
                 $filterData['lastname'] = '';
             }
-
             if (isset($_GET['email'])) {
                 $filterData['email'] = $_GET['email'];
             } else {
                 $filterData['email'] = '';
             }
-
             if (isset($_GET['type'])) {
                 $filterData['type'] = $_GET['type'];
                 //$this->session->set_userdata('client_id', $_POST['client_id']);
@@ -83,7 +71,6 @@ class Admin_user extends CI_Controller {
             } else {
                 $filterData['requested_amount'] = '';
             }
-
             if (isset($_GET['domain'])) {
                 $filterData['domain'] = $_GET['domain'];
             } else {
@@ -94,7 +81,6 @@ class Admin_user extends CI_Controller {
             } else {
                 $filterData['job_title'] = '';
             }
-
             if (isset($_GET['amount1'])) {
                 $filterData['amount1'] = $_GET['amount1'];
             } else {
@@ -137,9 +123,7 @@ class Admin_user extends CI_Controller {
             }
             $last = $this->uri->total_segments();
             $record_num = $this->uri->segment($last);
-
             $config['base_url'] = BASE_URL . MASTERADMIN . '/user';
-
             $config['total_rows'] = $this->users->get_count_user($filterData);
             $page = ($record_num) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;
@@ -155,9 +139,7 @@ class Admin_user extends CI_Controller {
             $this->template->view('admin/user/index', array_merge($data, $filterData));
         }
     }
-
     /* This function is used from showing details in admin panel */
-
     public function details($userId = 0) {
         $data = array();
         if (!isset($this->session->userdata['userdata']['ud'])) {
@@ -169,7 +151,6 @@ class Admin_user extends CI_Controller {
             $this->template->view('admin/user/userdetails', $data);
         }
     }
-
     public function export() {
         $arr = array();
         $arr[] = "First Name";
@@ -181,7 +162,6 @@ class Admin_user extends CI_Controller {
           $arr[] = "Type of Loan";
           if (!empty($this->session->userdata['export']['requested_amount']))
           $arr[] = "Requested Amount";
-
           if (!empty($this->session->userdata['export']['pre_tax_income1']) || !empty($this->session->userdata['export']['pre_tax_income2']))
           $arr[] = "Yearly Income";
           if (!empty($this->session->userdata['export']['job_tile']))
@@ -190,7 +170,6 @@ class Admin_user extends CI_Controller {
           $arr[] = "Domain";
           }
           else { */
-
         $arr[] = "Type of Loan";
         $arr[] = "Requested Amount";
         $arr[] = "Current Employer";
@@ -213,7 +192,6 @@ class Admin_user extends CI_Controller {
         $a = array();
         foreach ($data2 as $k => $v) {
             $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email']);
-
             if ($v['type'] == 1)
                 $type = 'New Car Purchase';
             if ($v['type'] == 2)
@@ -239,7 +217,6 @@ class Admin_user extends CI_Controller {
             if ($v['requested_amount'] == 1)
                 $years = '$50,000+';
             array_push($a, $years);
-
             // }
             //if (!empty($this->session->userdata['export']['type'])){
             //}
@@ -250,7 +227,6 @@ class Admin_user extends CI_Controller {
             array_push($a, $v['current_employer']);
             $income='$'.number_format($v['pre_tax_income']);
             array_push($a, $income);
-
             //}
             //// if ($this->session->userdata['export']['amount1'] != '' || $this->session->userdata['export']['amount2'] != '')
             //{
@@ -259,7 +235,6 @@ class Admin_user extends CI_Controller {
             //if ($this->session->userdata['export']['start_date'] != '' || $this->session->userdata['export']['end_date'] != '')
             //{ 
             array_push($a, $v['domain']);
-
             array_push($a, $v['address']);
             array_push($a, $v['state']);
             array_push($a, $v['city']);
@@ -268,8 +243,6 @@ class Admin_user extends CI_Controller {
             //}
             //$a= array_merge($a1,$a);
             //$arr[]=array($v['firstname'],$v['lastname'],$v['email'],$type,$years,$buying_from,$pre_approved,$v['amount'],$v['pre_tax_income'],$v['dob']);
-
-
             $arr[] = $a;
         }
         //echo '<pre>';
@@ -306,7 +279,6 @@ class Admin_user extends CI_Controller {
          * 
          */
     }
-
     public function updatestatus()
     {
         $this->users->updateStatus($this->input->post('lendId'),$this->input->post('status'));
@@ -317,7 +289,7 @@ class Admin_user extends CI_Controller {
                $this->users->updateactiveStatus($lend_id);
  
     }
-    public function deleteall()
+     public function deleteall()
     {
        
         foreach($this->input->post('c') as $k=>$v)
@@ -326,6 +298,5 @@ class Admin_user extends CI_Controller {
         }
     }
 }
-
 /* End of file home.php */
 /* Location: ./application/controllers/home.php */

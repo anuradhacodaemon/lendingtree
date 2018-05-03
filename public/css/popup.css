@@ -6,12 +6,13 @@ position:fixed;
 top:0px;
 left:0px;
 background:rgba(0,0,0,0.75);
+z-index: 99;
 }
 /* Inner */
 .popup-inner {
 max-width:700px;
 width:90%;
-padding:40px;
+padding:20px;
 position:absolute;
 top:50%;
 left:50%;
@@ -47,4 +48,22 @@ transform:translate(50%, -50%) rotate(180deg);
 background:rgba(0,0,0,1);
 text-decoration:none;
 }
+<<<<<<< HEAD
 .popup-inner h1 font {color: #333 !important;}
+=======
+.popup-inner h2
+{
+    color: #000;
+    text-align: center;
+    margin: 0;
+}
+.popup-inner h1
+{
+    text-align: center;
+    font-size: 20px;
+    line-height: 26px;
+}
+.popup-inner h1 font {
+    color: #333 !important;
+}
+>>>>>>> origin/mct-new-front

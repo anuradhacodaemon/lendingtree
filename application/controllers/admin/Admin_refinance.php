@@ -1,10 +1,7 @@
 <?php
-
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-
 class Admin_refinance extends CI_Controller {
-
     /**
       @Name User Controller
       Description:  Class represents controller for dispatcher login
@@ -26,22 +23,15 @@ class Admin_refinance extends CI_Controller {
         $this->load->library('pagination');
         $this->load->helper('csv');
     }
-
     /* This method used view contact detail after login else redirect to login page.
-
      */
-
     public function index() {
-
         if (!isset($this->session->userdata['userdata']['ud'])) {
             $data = array();
             $this->load->view('admin', $data);
         } else {
-
-
             if (isset($_GET))
                 $this->session->set_userdata('export', $_GET);
-
             if (isset($_GET['start_date'])) {
                 if (!empty($_GET['start_date']))
                     $filterData['start_date'] = date('Y-m-d', strtotime($_GET['start_date']));
@@ -65,13 +55,11 @@ class Admin_refinance extends CI_Controller {
             } else {
                 $filterData['lastname'] = '';
             }
-
             if (isset($_GET['email'])) {
                 $filterData['email'] = $_GET['email'];
             } else {
                 $filterData['email'] = '';
             }
-
             if (isset($_GET['currently_owe1'])) {
                 $filterData['currently_owe1'] = $_GET['currently_owe1'];
                 //$this->session->set_userdata('client_id', $_POST['client_id']);
@@ -94,7 +82,6 @@ class Admin_refinance extends CI_Controller {
             } else {
                 $filterData['monthly_payment2'] = '';
             }
-
             if (isset($_GET['domain'])) {
                 $filterData['domain'] = $_GET['domain'];
             } else {
@@ -105,7 +92,6 @@ class Admin_refinance extends CI_Controller {
             } else {
                 $filterData['vin'] = '';
             }
-
             if (isset($_GET['current_milage1'])) {
                 $filterData['current_milage1'] = $_GET['current_milage1'];
             } else {
@@ -116,7 +102,6 @@ class Admin_refinance extends CI_Controller {
             } else {
                 $filterData['current_milage2'] = '';
             }
-
             if (isset($_GET['search'])) {
                 $filterData['search'] = $_GET['search'];
             } else {
@@ -139,9 +124,7 @@ class Admin_refinance extends CI_Controller {
             }
             $last = $this->uri->total_segments();
             $record_num = $this->uri->segment($last);
-
             $config['base_url'] = BASE_URL . MASTERADMIN . '/refinance';
-
             $config['total_rows'] = $this->refinance->get_count_user($filterData);
             $page = ($record_num) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;
@@ -157,9 +140,7 @@ class Admin_refinance extends CI_Controller {
             $this->template->view('admin/refinance/index', array_merge($data, $filterData));
         }
     }
-
     /* This function is used from showing details in admin panel */
-
     public function details($userId = 0) {
         $data = array();
         if (!isset($this->session->userdata['userdata']['ud'])) {
@@ -171,56 +152,46 @@ class Admin_refinance extends CI_Controller {
             $this->template->view('admin/refinance/userdetails', $data);
         }
     }
-
-     public function pdfRefinance($id = 0) {
+    public function pdfRefinance($id = 0) {
         // $this->load->library('pdf');
         $data['userDetails'] = $this->refinance->get_userdetails($id);
-        $name=$data['userDetails'][0]['firstname'].'_'.$data['userDetails'][0]['ref_id'];
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
         $pdf = new PDF();
-
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
-
-       // $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        // $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
         //$pdf->SetAutoPageBreak(true, 20);
-       // $pdf->setFontSubsetting(false);
-       // $pdf->SetFont('helvetica', '', 10);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
         // add a page
         $pdf->AddPage();
-       
         //echo ' '.APPPATH . 'views/view_files.php';
-        $tbl = $this->load->view('view_file',$data, TRUE);
+        $tbl = $this->load->view('view_file', $data, TRUE);
         //echo $tbl;
         //die;
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
-        $pdf->Output(''.$name.'.pdf', 'D');
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
-
     public function pdfLoan($id = 0) {
         // $this->load->library('pdf');
         $this->load->model('admin/users');
         $data['userDetails'] = $this->users->get_userdetails($id);
-        $name=$data['userDetails'][0]['firstname'].'_'.$data['userDetails'][0]['lend_id'];
-   
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
-
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
-
         //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
         //$pdf->SetAutoPageBreak(true, 20);
-       // $pdf->setFontSubsetting(false);
-       // $pdf->SetFont('helvetica', '', 10);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
         // add a page
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan',$data, TRUE);
-
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
-        $pdf->Output(''.$name.'.pdf', 'D');
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
-
     public function export() {
         $arr = array();
         $arr[] = "First Name";
@@ -232,7 +203,6 @@ class Admin_refinance extends CI_Controller {
           $arr[] = "Type of Loan";
           if (!empty($this->session->userdata['export']['requested_amount']))
           $arr[] = "Requested Amount";
-
           if (!empty($this->session->userdata['export']['pre_tax_income1']) || !empty($this->session->userdata['export']['pre_tax_income2']))
           $arr[] = "Yearly Income";
           if (!empty($this->session->userdata['export']['job_tile']))
@@ -241,7 +211,6 @@ class Admin_refinance extends CI_Controller {
           $arr[] = "Domain";
           }
           else { */
-
         $arr[] = "Amount Owe";
         $arr[] = "Montly Payment";
         $arr[] = "vin";
@@ -251,7 +220,6 @@ class Admin_refinance extends CI_Controller {
         $arr[] = "Address";
         $arr[] = "State";
         $arr[] = "City";
-
         $arr[] = "SSN";
         //}
         $arr = array($arr);
@@ -263,18 +231,14 @@ class Admin_refinance extends CI_Controller {
         $pre_approved = '';
         $a = array();
         foreach ($data2 as $k => $v) {
-            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'],  $v['domain']);
-
+            $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email'], $v['currently_owe'], $v['monthly_payment'], $v['vin'], $v['current_milage'], $v['dob'], $v['domain']);
             array_push($a, $v['address']);
             array_push($a, $v['state']);
             array_push($a, $v['city']);
-           
             array_push($a, $v['ssn']);
             //}
             //$a= array_merge($a1,$a);
             //$arr[]=array($v['firstname'],$v['lastname'],$v['email'],$type,$years,$buying_from,$pre_approved,$v['amount'],$v['pre_tax_income'],$v['dob']);
-
-
             $arr[] = $a;
         }
         //echo '<pre>';
@@ -311,23 +275,44 @@ class Admin_refinance extends CI_Controller {
          * 
          */
     }
-
     public function updatestatus() {
         $this->refinance->updateStatus($this->input->post('lendId'), $this->input->post('status'));
     }
-
     public function delete_inactive($lend_id = 0) {
         $this->refinance->updateactiveStatus($lend_id);
     }
-
     public function deleteall() {
-
         foreach ($this->input->post('c') as $k => $v) {
             $this->refinance->updateactiveStatus($v);
         }
     }
-
+    public function sentemail() {
+        foreach ($this->input->post('c') as $k => $v) {
+            $data['userDetails'] = $this->refinance->get_userdetails($v);
+            $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+            $pdf = new PDF();
+            $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+            $pdf->AddPage();
+            $tbl = $this->load->view('view_file', $data, TRUE);
+            $pdf->writeHTML($tbl, true, false, false, false, '');
+            $path = PHYSICAL_PATH . 'download_pdf/';
+            $filename = '' . $name . '.pdf';
+            //ob_end_clean();
+            $pdf->Output($path . $filename, 'F');
+        }
+    }
+    public function getpdf() {
+        $dir = PHYSICAL_PATH . 'download_pdf/';
+// Open a directory, and read its contents
+        if (is_dir($dir)) {
+            if ($dh = opendir($dir)) {
+                while (($file = readdir($dh)) !== false) {
+                    echo "filename:" . $file . "<br>";
+                }
+                closedir($dh);
+            }
+        }
+    }
 }
-
 /* End of file home.php */
 /* Location: ./application/controllers/home.php */

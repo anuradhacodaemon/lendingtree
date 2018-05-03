@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
         $useragent = $_SERVER['HTTP_USER_AGENT'];
         $remotehost = @getHostByAddr($ipaddress);
          
-        //$this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
+        $this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
         $this->template->view('welcome_message');
     }
 

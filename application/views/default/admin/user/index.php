@@ -139,7 +139,7 @@
 
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Gross Monthly Income less than" name="pre_tax_income1" value="<?php
+                            <input type="text" class="form-control" placeholder="Monthly Income less than" name="pre_tax_income1" value="<?php
                             if (isset($_REQUEST['pre_tax_income1'])) {
                                 echo $_REQUEST['pre_tax_income1'];
                             }
@@ -152,7 +152,7 @@
                     <div class="col-md-3 form-group ">
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Gross Monthly Income greater than" name="pre_tax_income2" value="<?php
+                            <input type="text" class="form-control" placeholder="Monthly Income greater than" name="pre_tax_income2" value="<?php
                             if (isset($_REQUEST['pre_tax_income2'])) {
                                 echo $_REQUEST['pre_tax_income2'];
                             }
@@ -190,33 +190,49 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <!--<div class="dataTables_length" id="datatable_length">-->
-                        show
-                        <label> 
-                            <select name="record_limit" class="form-control input-sm" onchange="submitForm();">
-                                <option <?php if ($record_limit == "10") { ?> selected="selected"<?php } ?> value="10">10</option>
-                                <option <?php if ($record_limit == "20") { ?> selected="selected"<?php } ?> value="20">20</option>
-                                <option <?php if ($record_limit == "50") { ?> selected="selected"<?php } ?> value="50">50</option>
-                                <option <?php if ($record_limit == "100") { ?> selected="selected"<?php } ?> value="100">100</option>
-                            </select>
-                        </label>
-                        entries
-                        <!--</div>-->
-                    </div>
-                    <div class="col-md-2 pull-right">
-                        <button class="btn btn-primary pull-right" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
+
+                    <!-- <div class="col-md-4">
+                    <!--<div class="dataTables_length" id="datatable_length">-/->
+                    Show
+                    <label> 
+                        <select name="record_limit" class="form-control input-sm" onchange="submitForm();">
+                            <option <?php if ($record_limit == "10") { ?> selected="selected"<?php } ?> value="10">10</option>
+                            <option <?php if ($record_limit == "20") { ?> selected="selected"<?php } ?> value="20">20</option>
+                            <option <?php if ($record_limit == "50") { ?> selected="selected"<?php } ?> value="50">50</option>
+                            <option <?php if ($record_limit == "100") { ?> selected="selected"<?php } ?> value="100">100</option>
+                        </select>
+                    </label>
+                    entries
+                    <!--</div>-/->
+                </div> -->
+                    <div class="col-md-12">
+                        <button class="btn btn-primary pull-left" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
+                        <div class="col-md-8 text-center">                        
+                            Show
+                            <label> 
+                                <select name="record_limit" class="form-control input-sm" onchange="submitForm();">
+                                    <option <?php if ($record_limit == "10") { ?> selected="selected"<?php } ?> value="10">10</option>
+                                    <option <?php if ($record_limit == "20") { ?> selected="selected"<?php } ?> value="20">20</option>
+                                    <option <?php if ($record_limit == "50") { ?> selected="selected"<?php } ?> value="50">50</option>
+                                    <option <?php if ($record_limit == "100") { ?> selected="selected"<?php } ?> value="100">100</option>
+                                </select>
+                            </label>
+                            entries                        
+                        </div>                    
+
                         <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
                     </div>
                 </div>
             </form>
-            <div class="x_content">
+
+            <div class="x_content1">
                 <form id="filter_form1" method="POST" action="">
                     <table class="table table-striped responsive-utilities jambo_table bulk_action">
                         <thead>
                             <tr class="headings">
 
-                                <th class="column-title"># </th>
+
+                                <!-- <th class="column-title"># </th> -->
                                 <th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
                                 </th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -229,7 +245,7 @@
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "user.requested_amount") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('user.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Gross Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -241,7 +257,8 @@
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><span class="nobr">View</span>
+
+                                <!-- <th class="column-title"><span class="nobr">View</span> -->
 
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
 
@@ -262,11 +279,11 @@
                                     ?>
                                     <tr class="even pointer">
 
-                                        <td class=" "><?php echo $i ?></td>
-                                        <th >
-                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
 
-                                        </th>
+                                                <!-- <td class=" "><?php echo $i ?></td> -->
+                                        <td>
+                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
+                                        </td>
                                         <td class=" "><?php echo $v['email'] ?></td>
                                         <td class=" "><?php
                                             $type = '';
@@ -304,26 +321,28 @@
                                         <td><?php echo '$' . number_format($v['pre_tax_income']); ?></td>
 
                                         <td><?php echo $v['job_title']; ?></td>
-                                        <td><?php echo $v['domain']; ?></td>
-                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
-                                            <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)">Pending <?php } ?>
-                                                <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)"> Denied<?php } ?>
+
+                                        <td><?php echo str_replace("http://", "", rtrim($v['domain'], "/")) ?></td>
+                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
+                                            <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
+                                                <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
                                                 </a>
 
                                         </td>
 
 
-                                        <td > 
 
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
+                                                <!-- <td > 
+
+                                                    <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
+                                                </td>  -->
+                                        <td class="last">
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/pdfLoan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
 
-                                        </td> 
-                                        <td class="last">
-
-                                            &nbsp;
+                                            &nbsp;&nbsp;
                                             <?php if ($v['active_status'] == 1) { ?>
-                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-check-circle fa-cog-green" aria-hidden="true"></i></a>
+                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000" title="Delete"><i class="fa fa-times fa-cog-red" aria-hidden="true"></i></a>
                                             <?php } else { ?>
                                                 <a href="javascript:"  onclick="activeFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
 
@@ -478,7 +497,13 @@
     }
 
     function inactiveFranchiseAll() {
-        bootbox.confirm("Do you want to delete all these lead?", function (result) {
+
+        var checked = $("#filter_form1 input:checked").length > 0;
+        if (!checked) {
+            alert("Please select at least one checkbox");
+            return false;
+        }
+        bootbox.confirm("Do you want to delete selected lead?", function (result) {
             if (result)
             {
                 $.ajax({
@@ -513,4 +538,5 @@
     $("#mainchk").click(function () {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
+
 </script>

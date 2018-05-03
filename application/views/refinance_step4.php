@@ -1,5 +1,6 @@
 <div class="clearfix">
-    <div class="" id="containerrefinance">
+
+    <div class="container" id="containerrefinance">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
@@ -21,8 +22,9 @@
                     <span id="err2" style="color: red"></span>
                     
                     </div>
-                    <div class="clearfix"></div>    
-                   
+
+                        
+                   <div class="clearfix"></div>
 
                    
                     <div class="col-xs-12 col-sm-6 margbot_10">
@@ -35,7 +37,8 @@
                                 <option value="<?php echo $v['id']; ?>" <?php if (isset($this->session->userdata['state'])) if($this->session->userdata['state']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
                             <?php } ?>
                         </select> 
- <span id="err4" style="color: red"></span>
+
+                        <span id="err4" style="color: red"></span>
                     </div>
                    
                     <div class="col-xs-12 col-sm-6 margbot_10">
@@ -47,8 +50,8 @@
 
                                 <option value="<?php echo $v['id']; ?>"<?php if (isset($this->session->userdata['city'])) if($this->session->userdata['city']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
                             <?php } ?>
-                        </select>            
-                    
+                   
+                        </select>
                        <span id="err5" style="color: red"></span>
                     </div>
                     <div class="clearfix"></div>
@@ -57,8 +60,8 @@
                         <input type="text" name="address" placeholder="Address" value="<?php if (isset($this->session->userdata['address'])) echo $this->session->userdata['address'] ?>" class="form-control width_100" id="address" >
                         <span id="err3" style="color: red"></span>
                     </div>
-                    
-<div class="clearfix"></div>
+
+                    <div class="clearfix"></div>
                     
                    
                     

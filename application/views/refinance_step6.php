@@ -1,5 +1,6 @@
 <div class="clearfix">
-    <div class="" id="containerrefinance">
+
+    <div class="container" id="containerrefinance">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
@@ -23,8 +24,9 @@
                         <input  type="text" id="email" placeholder="you@example.com" name="email" value="<?php if (isset($this->session->userdata['email'])) echo $this->session->userdata['email'] ?>" class="form-control"  >
                         <span id="err1" style="color: red"></span>
                     </div>
-                     
-                    <label class="control-label">We take your privacy seriously </label>
+ 
+
+                    <label class="control-label">We take your privacy seriously. </label>
                    
 
                     <div class="col-xs-12 col-sm-12 margbot_10">

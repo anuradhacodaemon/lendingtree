@@ -3,8 +3,9 @@ if (window.performance) {
   console.info("window.performance work's fine on this browser");
 }
   if (performance.navigation.type == 1) {
-    //alert( "This page is reloaded" );
+   
     if (window.location.search.indexOf('step=1') > -1) {
+         
       $.ajax({
             type: "GET",
             url: base_url +"auto/step1",
@@ -17,6 +18,7 @@ if (window.performance) {
         }); 
     }
     if (window.location.search.indexOf('step=2') > -1) {
+       
        $.ajax({
             type: "GET",
             url: base_url +"auto/step2",
@@ -66,12 +68,50 @@ if (window.performance) {
             }
         });
     }
-        
+   if (window.location.search.indexOf('step=6') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step6",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=7') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step7",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }    
      
   }
-window.onpopstate = function ()
-{
+  
+   window.addEventListener('popstate', function(event) {
+       /** if (event.state) {
+            //alert(event.state);
+        }
+         if (window.location.search.indexOf('step=1') > -1) {
+            alert(1);  
+         }
+         if (window.location.search.indexOf('step=2') > -1) {
+            alert(2);  
+         }
+       **/
+   
+//window.onpopstate = function ()
+//{
+   
     if (window.location.search.indexOf('step=1') > -1) {
+         
         $.ajax({
             type: "GET",
             url: base_url +"auto/step1",
@@ -84,6 +124,7 @@ window.onpopstate = function ()
         });
     }
     if (window.location.search.indexOf('step=2') > -1) {
+         
         $.ajax({
             type: "GET",
             url: base_url +"auto/step2",
@@ -131,7 +172,54 @@ window.onpopstate = function ()
             }
         });
     }
+     if (window.location.search.indexOf('step=6') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step6",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('step=7') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step7",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+   
     
+//}
+ }, false);
+function step1(id) {
+
+    var url = base_url + "auto/step1/" + id;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            
+           
+            window.history.pushState("Details", "Title", base_url + "auto?step=1");
+            
+            $('#container').html(data).effect("slide", {distance: 5});
+            
+             
+            
+        }
+    });
+
 }
 function step2(id) {
 
@@ -337,6 +425,45 @@ function step6() {
         $('#err4').html('');
         $('#err5').html('');
         return false;
+    } else
+    {
+        $('#err2').html('');
+        var city = 0;
+        if ($('#city').val() > 0)
+            city = $('#city').val();
+
+        $.ajax({
+            type: "GET",
+            url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "auto?step=6");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+    }
+}
+
+function step7(){
+     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
+    
+    if ($('#selectMonth').val() === "") {
+
+        $('#err').html('Month is empty');
+        $('#selectMonth').focus();
+        return false;
+    } else if ($('#selectDate').val() === "")
+    {
+
+        $('#err').html('Day is empty');
+        $('#selectDate').focus();
+        return false;
+    } else if ($('#selectYear').val() === "")
+    {
+
+        $('#err').html('Year is empty');
+        $('#selectYear').focus();
+        return false;
     } else if ($('input[name=ssn]').val() == '')
     {
 
@@ -359,26 +486,20 @@ function step6() {
         $('#err5').html('');
         $('#err6').html('');
         return false;
-    } else
-    {
-        $('#err2').html('');
-        var city = 0;
-        if ($('#city').val() > 0)
-            city = $('#city').val();
-
+    } else {
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
+            url: base_url + "auto/step7/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=6");
-                $('#container').html(data).effect("slide", {distance: 5});
+                  window.history.pushState("Details", "Title", base_url + "auto?step=7");
+               $('#container').html(data).effect("slide", {distance: 5});
             }
         });
     }
 }
 
-function step7() {
+function step8() {
 
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
@@ -413,7 +534,7 @@ function step7() {
 
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step7/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
+            url: base_url + "auto/step8/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
             success: function (data)
             {
                 // alert(data);

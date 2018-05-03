@@ -5,7 +5,8 @@
 
 ?>
   <div class="clearfix">
-      <div class="" id="containerrefinance">
+
+      <div class="container" id="containerrefinance">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="form-main clearfix">
@@ -48,17 +49,31 @@
 slider.on("slide", function(sliderValue) {
 	document.getElementById("ex6SliderVal").textContent = numberWithCommas(sliderValue);
 });
+
+
 function numberWithCommas(x) {
-  x=String(x).toString();
-  var afterPoint = '';
-  if(x.indexOf('.') > 0)
-     afterPoint = x.substring(x.indexOf('.'),x.length);
-  x = Math.floor(x);
-  x=x.toString();
-  var lastThree = x.substring(x.length-3);
-  var otherNumbers = x.substring(0,x.length-3);
-  if(otherNumbers != '')
-      lastThree = ',' + lastThree;
-  return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+  var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+});
+
+// Use it.
+//var amount = document.getElementById('input').innerHTML;
+return formatter.format(x).replace("$", "");  
 }
+ $(document).ready(function(){
+                 if( $('#ex6SliderVal').html()>0)
+                 {
+                  var formatter = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                                minimumFractionDigits: 2,
+                            });
+                 var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "");
+               $('#ex6SliderVal').html(x);  
+                 }
+               //alert( $('#ex6SliderVal').html());
+ 
+ });        
 </script>

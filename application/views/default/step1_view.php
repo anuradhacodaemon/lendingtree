@@ -35,7 +35,9 @@
                             <span class="continueIcon sprites"></span>
                             <input type="radio" value="NewCarPurchase" onclick="step2(4)" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
+<<<<<<< HEAD
                     -->
+
                 </div>
             </div>
         </div>

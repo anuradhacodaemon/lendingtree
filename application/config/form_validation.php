@@ -52,11 +52,53 @@ $config = array(
                 'required' => 'Dispatcher password is required field.',
             )
         )
-    )
+    ),
    
-   
+   'domain/insert' => array(
+        array(
+            'field' => 'domain',
+            'label' => 'Domain Name',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Domain Name is required field.'
+            )
+        )
      
-    
+    ),
+     'emails/insert' => array(
+        array(
+            'field' => 'domain',
+            'label' => 'Domain Name',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Domain Name is required field.'
+            )
+        )
+     
+    ),
+     'emails/insert' => array(
+        array(
+            'field' => 'emails',
+            'label' => 'Email',
+            'rules' => 'trim|required|valid_email',
+            'errors' => array(
+                'required' => 'Email is required field.',
+                'valid_email' => '%s must be valid. For example, johndoe@example.com'
+            )
+        )
+     
+    ),
+    'settings/insert' => array(
+        array(
+            'field' => 'phone',
+            'label' => 'phone',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Email is required field.'
+            )
+        )
+     
+    )
      
 );
 ?>

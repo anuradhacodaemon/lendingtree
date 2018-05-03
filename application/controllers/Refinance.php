@@ -152,7 +152,10 @@ class Refinance extends CI_Controller {
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {
-            $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call (409) 220-0612';
+
+             $getPhone = $this->loan_model->get_phone();
+            $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call '.$getPhone[0]['phone'];
+
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['currently_owe'] = '';

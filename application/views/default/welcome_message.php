@@ -2,9 +2,10 @@
 
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
-    <div class="container">       
+
+    <div class="container">      
         <div class="row">
-            <div class="col-lg-5 col-lg-offset-7 col-md-5 col-md-offset-7 col-sm-7 col-sm-offset-5 col-xs-12">
+          <div class="col-lg-5 col-lg-offset-7 col-md-5 col-md-offset-7 col-sm-7 col-sm-offset-5 col-xs-12">
                 <div class="offer-main clearfix">
                     <h1>How can we help you today?</h1>
                     <div class="offer-cont">
