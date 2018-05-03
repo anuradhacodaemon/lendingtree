@@ -169,6 +169,7 @@ class Auto extends CI_Controller {
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
+            $this->mailformat($this->session->userdata['firstname'],$this->session->userdata['lastname'],$this->session->userdata['email']);
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
             $this->session->userdata['userdata'] = '';
@@ -200,5 +201,51 @@ class Auto extends CI_Controller {
             $this->load->view('step6_view');
         }
     }
+    
+    /** Please dont change the mailformat because template is coming from database * */
+    public function mailformat($id, $firstname, $lastname, $email) {
+       
+        //$this->load->library('email');
+        //$this->email->set_mailtype("html");
+        $config = Array(
+            'protocol' => 'sendmail',
+            'smtp_host' => 'Smtp.gmail.com',
+            'smtp_port' => 25,
+            'smtp_user' => 'codaemon123',
+            'smtp_pass' => 'codaemon1234',
+            'smtp_timeout' => '4',
+            'mailtype' => 'html',
+            'charset' => 'iso-8859-1'
+        );
+
+        $this->load->library('email', $config);
+
+        $this->email->set_newline("\r\n");
+        //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
+        //$this->email->set_header('Content-type', 'text/html');
+        $this->email->from(ADMINEMAIL, ADMINNAME);
+        //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
+        $this->email->to('' . $email . '');
+        $this->email->subject("thank you for applying");
+        $emailtemplate = $this->loan_model->get_emailtemplate();
+        $token = array(
+            'firstname' => $firstname,
+            'lastname' => $lastname
+        );  // forming array to send in template
+        $pattern = '[%s]';
+        foreach ($token as $key => $val) {
+            $varMap[sprintf($pattern, $key)] = $val;
+        }
+
+        $emailContent = strtr($emailtemplate[0]['content'], $varMap);
+        $this->email->message($emailContent);
+        $emailSend = $this->email->send();
+        if ($emailSend) {
+            //echo $this->email->print_debugger();
+            return 1;
+        }
+        return 0;
+    }
+
 
 }
