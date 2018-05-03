@@ -116,6 +116,29 @@ class Loan_model extends CI_Model {
         $result = $this->db->get();
         return $result->result_array();
     }
+    
+    public function get_userdetailsrefinancepdf($shopId = 0) {
+        $this->db->select('shop.*');
+
+        $this->db->from(REFINANCE . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.ref_id', $shopId);
+
+        $result = $this->db->get();
+
+        return $result->result_array();
+    }
+     public function get_userdetailsloanpdf($shopId = 0) {
+        $this->db->select('shop.*');
+
+        $this->db->from(LOANS . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.lend_id', $shopId);
+
+        $result = $this->db->get();
+
+        return $result->result_array();
+    }
 
 }
 ?>

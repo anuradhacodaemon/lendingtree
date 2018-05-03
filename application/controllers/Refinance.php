@@ -155,7 +155,7 @@ class Refinance extends CI_Controller {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
-
+             
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['currently_owe'] = '';
@@ -229,5 +229,72 @@ class Refinance extends CI_Controller {
         }
         return 0;
     }
+    public function mail_format_pdf($id=0)
+    {
+         $link = explode('&', decode_url($id));
+        $this->load->model('details');
+        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_file', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
+        
+    }
+    
+    public function sent_mail($id=0)
+    {
+        $Link = $id . '&rand=' . rand(1, 10);
+        $url1 = encode_url($Link);
+       echo  $url = base_url() . "refinance/mail_format_pdf/" . $url1;
+        die;
+        $config = Array(
+            'protocol' => 'sendmail',
+            'smtp_host' => 'Smtp.gmail.com',
+            'smtp_port' => 25,
+            'smtp_user' => 'codaemon123',
+            'smtp_pass' => 'codaemon1234',
+            'smtp_timeout' => '4',
+            'mailtype' => 'html',
+            'charset' => 'iso-8859-1'
+        );
 
+        $this->load->library('email', $config);
+
+        $this->email->set_newline("\r\n");
+        //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
+        //$this->email->set_header('Content-type', 'text/html');
+        $this->email->from($this->session->userdata['userdata']['adminemail'], $this->session->userdata['userdata']['ud']);
+        //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
+        $this->email->to('' . $email1 . '');
+        $this->email->subject("Thank you for applying");
+
+        
+        $emailtemplate = $this->users->get_emailtemplate();
+        $token = array(
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'personal_phone' => $personal_phone,
+            'business_phone' => $business_phone,
+            'address' => $address,
+            'url' => $url
+        );  // forming array to send in template
+        $pattern = '[%s]';
+        foreach ($token as $key => $val) {
+            $varMap[sprintf($pattern, $key)] = $val;
+        }
+
+        $emailContent = strtr($emailtemplate[0]['message'], $varMap);
+        $this->email->message($emailContent);
+        $emailSend = $this->email->send();
+        $this->users->update_user_email($id);
+        if ($emailSend) {
+            //echo $this->email->print_debugger();
+            return 1;
+        }
+        return 0;
+    }
 }

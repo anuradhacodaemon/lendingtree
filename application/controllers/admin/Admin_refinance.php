@@ -174,6 +174,7 @@ class Admin_refinance extends CI_Controller {
 
     public function pdfRefinance($id = 0) {
         // $this->load->library('pdf');
+         $this->load->model('details');
         $data['userDetails'] = $this->refinance->get_userdetails($id);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
         $pdf = new PDF();

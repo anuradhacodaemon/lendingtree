@@ -11,13 +11,19 @@
                     <div class="clearfix"></div>
                     <label class="control-label">How Much Do Currently Owe?</label>
 
-                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if (isset($this->session->userdata['currently_owe'])) echo $this->session->userdata['currently_owe'];
-else echo '10000'; ?></label></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if (isset($this->session->userdata['currently_owe']))
+    echo $this->session->userdata['currently_owe'];
+else
+    echo '5000';
+?></label></span>
                     <div class="clearfix"></div>
                     <div class="slider-box">
-                        <input id="ex6"  name="currently_owe" type="text" data-slider-min="10000" data-slider-max="150000" data-slider-step="500" data-slider-value="<?php if (isset($this->session->userdata['currently_owe'])) echo $this->session->userdata['currently_owe'];
-else echo '10000'; ?>"/> 
-                        <span class="min-value">$10,000  &nbsp;</span>
+                        <input id="ex6"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="150000" data-slider-step="500" data-slider-value="<?php if (isset($this->session->userdata['currently_owe']))
+    echo $this->session->userdata['currently_owe'];
+else
+    echo '5000';
+?>"/> 
+                        <span class="min-value">$5,000  &nbsp;</span>
                         <span class="max-value">&nbsp; $150,000</span>
                     </div>
 
@@ -42,7 +48,7 @@ else echo '10000'; ?>"/>
 <script>
                         var slider = new Slider("#ex6");
                         slider.on("slide", function (sliderValue) {
-                           
+
                             document.getElementById("ex6SliderVal").textContent = numberWithCommas(sliderValue);
                         });
                         function numberWithCommas(x) {
@@ -59,7 +65,7 @@ else echo '10000'; ?>"/>
 
 
                         }
-                        $(document).ready(function(){
+   $(document).ready(function(){
                  
                   var formatter = new Intl.NumberFormat('en-US', {
                                 style: 'currency',
@@ -68,8 +74,9 @@ else echo '10000'; ?>"/>
                             });
                  var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "");
                $('#ex6SliderVal').html(x);  
+               //alert( $('#ex6SliderVal').html());
  
- });         
+ });                     
 </script>
 
 

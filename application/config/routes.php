@@ -103,3 +103,4 @@ $route['admin/emails/view/(:num)'] = 'admin/admin_emails/view/$1';
 $route['admin/emails/delete_inactive/(:num)'] = 'admin/admin_emails/delete_inactive/$1';
 $route['admin/emails/delete_active/(:num)'] = 'admin/admin_emails/delete_active/$1';
 $route['admin/settings/(:num)'] = 'admin/admin_settings/edit/$1';
+

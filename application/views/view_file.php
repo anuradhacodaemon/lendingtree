@@ -216,8 +216,12 @@
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                           <?php 
-                          $city=$this->refinance->get_city($userDetails[0]['city']);
-                          echo $city[0]['name']; ?>
+                          if($userDetails[0]['city'] >0)
+                          {
+                          $city=$this->details->get_city($userDetails[0]['city']);
+                          if($city[0]['name'])
+                          echo $city[0]['name']; 
+                          }?>
                     </td>
                 </tr>
                 <tr>
@@ -225,8 +229,14 @@
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php  $state=$this->refinance->get_state($userDetails[0]['state']);
-                          echo $state[0]['name']; ?>
+                        <?php  
+                        if($userDetails[0]['state']>0)
+                          {
+                        $state=$this->details->get_state($userDetails[0]['state']);
+                        if($state[0]['name'])
+                          echo $state[0]['name']; 
+                          
+                          }?>
                     </td>
                 </tr>
                 <tr>
