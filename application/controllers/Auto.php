@@ -203,7 +203,7 @@ class Auto extends CI_Controller {
     }
     
     /** Please dont change the mailformat because template is coming from database * */
-    public function mailformat($id, $firstname, $lastname, $email) {
+    public function mailformat( $firstname, $lastname, $email) {
        
         //$this->load->library('email');
         //$this->email->set_mailtype("html");
@@ -237,7 +237,7 @@ class Auto extends CI_Controller {
             $varMap[sprintf($pattern, $key)] = $val;
         }
 
-        $emailContent = strtr($emailtemplate[0]['content'], $varMap);
+        $emailContent = strtr($emailtemplate[0]['message'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
         if ($emailSend) {
