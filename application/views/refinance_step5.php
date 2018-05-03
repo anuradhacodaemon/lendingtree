@@ -1,6 +1,6 @@
 
 <div class="clearfix">
-    <div class="" id="containerrefinance">
+    <div class="container" id="containerrefinance">
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 <div class="form-main clearfix">
