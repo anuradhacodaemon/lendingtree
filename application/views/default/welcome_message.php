@@ -5,22 +5,11 @@
     <div class="container">
         
         <div class="row">
-          
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                
-                <div class="banner-left">
-                    <div class="banner-inner">
-                      
-                        <h1>How can we help you today?</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="offer-main clearfix">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="offer-cont">
+                    <h1>How can we help you today?</h1>
+                    <div class="offer-cont">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
@@ -35,8 +24,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="offer-cont">
+                    <div class="offer-cont">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                             <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
@@ -51,7 +40,6 @@
                             </a>
                         </div>
                     </div>
-                  </div>   
                 </div>
             </div>
             <div class="disclosure">

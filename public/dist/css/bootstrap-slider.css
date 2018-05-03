@@ -116,7 +116,7 @@
   transform: translateX(50%);
 }
 .slider.slider-vertical {
-  height: 210px;
+  height: 380px;
   width: 20px;
 }
 .slider.slider-vertical .slider-track {
@@ -124,7 +124,7 @@
   height: 100%;
   left: 25%;
   top: 0;
-}
+  }
 .slider.slider-vertical .slider-selection {
   width: 100%;
   left: 0;
@@ -219,12 +219,12 @@
 }
 .slider-selection {
   position: absolute;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#42e2d8+0,42e2d8+7,40dad0+19,3dccc3+33,309e97+72,2d908a+88,2b8c86+95,2b8c86+100 */
-    background: #42e2d8; /* Old browsers */
-    background: -moz-linear-gradient(top, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e2d8', endColorstr='#2b8c86',GradientType=0 ); /* IE6-9 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5000+0,ff5000+24,f04c01+36,c13f04+60,af3a05+72,ac3905+76,ac3905+100 */
+background: #ff5000; /* Old browsers */
+background: -moz-linear-gradient(top, #ff5000 0%, #ff5000 24%, #f04c01 36%, #c13f04 60%, #af3a05 72%, #ac3905 76%, #ac3905 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ff5000 0%,#ff5000 24%,#f04c01 36%,#c13f04 60%,#af3a05 72%,#ac3905 76%,#ac3905 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ff5000 0%,#ff5000 24%,#f04c01 36%,#c13f04 60%,#af3a05 72%,#ac3905 76%,#ac3905 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5000', endColorstr='#ac3905',GradientType=0 ); /* IE6-9 */
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-sizing: border-box;
@@ -254,12 +254,12 @@
   width: 30px;
   height: 30px;
   background-color: #6fb5ae;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#42e2d8+0,42e2d8+7,40dad0+19,3dccc3+33,309e97+72,2d908a+88,2b8c86+95,2b8c86+100 */
-    background: #42e2d8; /* Old browsers */
-    background: -moz-linear-gradient(top, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e2d8', endColorstr='#2b8c86',GradientType=0 ); /* IE6-9 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5000+0,ff5000+24,f04c01+36,c13f04+60,af3a05+72,ac3905+76,ac3905+100 */
+background: #ff5000; /* Old browsers */
+background: -moz-linear-gradient(top, #ff5000 0%, #ff5000 24%, #f04c01 36%, #c13f04 60%, #af3a05 72%, #ac3905 76%, #ac3905 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ff5000 0%,#ff5000 24%,#f04c01 36%,#c13f04 60%,#af3a05 72%,#ac3905 76%,#ac3905 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ff5000 0%,#ff5000 24%,#f04c01 36%,#c13f04 60%,#af3a05 72%,#ac3905 76%,#ac3905 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5000', endColorstr='#ac3905',GradientType=0 ); /* IE6-9 */
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   border: 0px solid transparent;
@@ -274,15 +274,15 @@
   background: transparent none;
 }
 .slider-handle.custom::before {
-  line-height: 20px;
+  line-height: 30px;
   font-size: 20px;
   content: '\2605';
   color: #726204;
 }
 .slider-tick {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
   background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%);
