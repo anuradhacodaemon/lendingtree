@@ -252,7 +252,7 @@ class Auto extends CI_Controller {
         $link = explode('&', decode_url($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
