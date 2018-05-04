@@ -113,7 +113,15 @@ if (!empty($this->session->flashdata('item'))) {
             e.preventDefault();
         });
     });
-
+$(document).ready(function () {
+                            var formatter = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                                minimumFractionDigits: 2,
+                            });
+                            var x = formatter.format($('#ex6SliderVal').html()).replace("$", "");
+                            $('#ex6SliderVal').html(x);
+                        });
 </script>
 
 
