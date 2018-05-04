@@ -71,6 +71,7 @@ class Loan_model extends CI_Model {
         //echo $this->db->last_query();
         if ($num == 0) {
             $this->db->insert(REFINANCE, $logData);
+           // echo $this->db->last_query();
             $id = $this->db->insert_id();
             if ($this->db->affected_rows() > 0) {
                 return $id;
@@ -137,6 +138,12 @@ class Loan_model extends CI_Model {
 
         $result = $this->db->get();
 
+        return $result->result_array();
+    }
+    
+     public function get_emailtemplatepdf() {
+        $this->db->from(EMAILTEMPLATEPDF . ' as email');
+        $result = $this->db->get();
         return $result->result_array();
     }
 

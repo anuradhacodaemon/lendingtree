@@ -141,21 +141,21 @@ class Refinance extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
+        
 
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
         $result = $this->loan_model->add_refinance($this->session->userdata());
-
+        
+         
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
-             
+            $this->sent_mail($result,$this->session->userdata['firstname'],$this->session->userdata['lastname']);
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['currently_owe'] = '';
@@ -231,7 +231,7 @@ class Refinance extends CI_Controller {
     }
     public function mail_format_pdf($id=0)
     {
-         $link = explode('&', decode_url($id));
+        $link = explode('&', decode_url($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
@@ -245,12 +245,14 @@ class Refinance extends CI_Controller {
         
     }
     
-    public function sent_mail($id=0)
+    public function sent_mail($id=0, $firstname, $lastname)
     {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
-       echo  $url = base_url() . "refinance/mail_format_pdf/" . $url1;
-        die;
+        $url = base_url() . "refinance/mail_format_pdf/" . $url1;
+        
+         $emails = $this->loan_model->get_phone();
+        
         $config = Array(
             'protocol' => 'sendmail',
             'smtp_host' => 'Smtp.gmail.com',
@@ -267,19 +269,16 @@ class Refinance extends CI_Controller {
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
-        $this->email->from($this->session->userdata['userdata']['adminemail'], $this->session->userdata['userdata']['ud']);
-        //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
-        $this->email->to('' . $email1 . '');
+         $this->email->from(ADMINEMAIL, ADMINNAME);
+ //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
+        $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
 
         
-        $emailtemplate = $this->users->get_emailtemplate();
+        $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
-            'firstname' => $firstname,
+           'firstname' => $firstname,
             'lastname' => $lastname,
-            'personal_phone' => $personal_phone,
-            'business_phone' => $business_phone,
-            'address' => $address,
             'url' => $url
         );  // forming array to send in template
         $pattern = '[%s]';
@@ -287,10 +286,9 @@ class Refinance extends CI_Controller {
             $varMap[sprintf($pattern, $key)] = $val;
         }
 
-        $emailContent = strtr($emailtemplate[0]['message'], $varMap);
+        $emailContent = strtr($emailtemplate[0]['content'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
-        $this->users->update_user_email($id);
         if ($emailSend) {
             //echo $this->email->print_debugger();
             return 1;

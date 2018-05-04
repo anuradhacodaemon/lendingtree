@@ -101,3 +101,5 @@ define('ADMINSETTING', 'lend_user');
 define('EMAILTEMPLATE', 'lend_email_message');
 define('ADMINEMAIL','anuradha.chakraborti@gmail.com');
 define('ADMINNAME','Codaemon');
+define('EMAILTEMPLATEPDF', 'lend_email_template');
+define('ENCRYPTKEY', 'loan1234');
