@@ -306,10 +306,10 @@ class Auto extends CI_Controller {
         $emailSend = $this->email->send();
         
         if ($emailSend) {
-            echo 'yes';
+           // echo 'yes';
             return 1;
         }
- else { echo 'no';}
+ 
         return 0;
     }
 
