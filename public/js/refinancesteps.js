@@ -66,6 +66,18 @@ if (performance.navigation.type == 1) {
             }
         });
     }
+    if (window.location.search.indexOf('refinancestep=6') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep6",
+            success: function (data)
+            {
+
+                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 
 
 }
@@ -123,6 +135,19 @@ window.onpopstate = function ()
         $.ajax({
             type: "GET",
             url: base_url + "refinance/refinancestep5",
+            success: function (data)
+            {
+
+                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    
+    if (window.location.search.indexOf('refinancestep=6') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep6",
             success: function (data)
             {
 
@@ -403,5 +428,3 @@ function gtag_report_conversion(url) {
     });
     return false;
 }
- 
- 
