@@ -208,7 +208,7 @@ class Auto extends CI_Controller {
 
         //$this->load->library('email');
         //$this->email->set_mailtype("html");
-        /** $config = Array(
+        $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
           'smtp_port' => 25,
@@ -217,8 +217,8 @@ class Auto extends CI_Controller {
           'smtp_timeout' => '4',
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
-          );  * */
-        $config['protocol'] = 'smtp';
+          ); 
+        /** $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://in.mailjet.com';
         $config['smtp_port'] = '465';
         $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
@@ -227,7 +227,7 @@ class Auto extends CI_Controller {
         $config['mailtype'] = 'html';
         $config['newline'] = "\r\n";
         $this->load->library('email', $config);
-
+        **/
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
@@ -275,7 +275,7 @@ class Auto extends CI_Controller {
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $emails = $this->loan_model->get_phone();
 
-        /**$config = Array(
+        $config = Array(
             'protocol' => 'sendmail',
             'smtp_host' => 'Smtp.gmail.com',
             'smtp_port' => 25,
@@ -285,7 +285,7 @@ class Auto extends CI_Controller {
             'mailtype' => 'html',
             'charset' => 'iso-8859-1'
         );
-       **/
+       /** 
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://in.mailjet.com';
         $config['smtp_port'] = '465';
@@ -295,7 +295,7 @@ class Auto extends CI_Controller {
         $config['mailtype'] = 'html';
         $config['newline'] = "\r\n";
         $this->load->library('email', $config);
-
+          **/
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
