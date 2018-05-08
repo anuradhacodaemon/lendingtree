@@ -27,6 +27,9 @@
     .slider-box {
         width: 100%;
     }
+    .bg .slider-box {
+        width: 83%;
+    }
 }
 @media only screen and (max-width:480px){ 
     .form-main h1 {
@@ -44,6 +47,9 @@
         line-height: 20px;
         min-height: 20px;
         font-size: 18px;
+    }
+    .bg .radio .button {
+        font-size: 11px;
     }
     .radio .button_back {
         width: 100%;

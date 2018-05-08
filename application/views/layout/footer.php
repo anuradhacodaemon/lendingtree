@@ -80,15 +80,15 @@ if (!empty($this->session->flashdata('item'))) {
             success: function (data)
             {
                 var len = data.length;
-                 $('#city').prop('disabled',false);
+                $('#city').prop('disabled', false);
 
                 if (JSON.parse(data) == '') {
                     $('#city').prop('disabled', 'disabled');
                     // array empty or does not exist
                 }
-                
-                  
-                
+
+
+
                 //$("#city").empty();
                 $("#city").html("<option value=''>select city</option>");
                 $.each(JSON.parse(data), function (key, value) {
@@ -113,17 +113,25 @@ if (!empty($this->session->flashdata('item'))) {
             e.preventDefault();
         });
     });
- $(document).ready(function () {
+    $(document).ready(function () {
 
-                            var formatter = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                                minimumFractionDigits: 2,
-                            });
-                            var x = formatter.format($('#ex6SliderVal').html()).replace("$", "");
-                            $('#ex6SliderVal').html(x);
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+        });
+        var x = formatter.format($('#ex6SliderVal').html()).replace("$", "");
+        $('#ex6SliderVal').html(x);
+        
+       
+        
+    });
+    
 
-                        });
+$('.slider-handle').on('change', function (ev) {
+    console.log("has changed");
+});
+  
 </script>
 
 
