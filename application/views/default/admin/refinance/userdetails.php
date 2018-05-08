@@ -88,9 +88,11 @@
                                         <?php echo $userDetails[0]['current_milage'] ?>
                                     </div>
                        
-                               
+                               <div class="col-sm-12"> <b>Birth Date: &nbsp;</b>
+                                    <?php echo date('d-m-Y',strtotime($userDetails[0]['dob'])); ?>
+                                </div>
                                <div class="col-sm-12"> <b>Address: &nbsp;</b>
-                                    <?php echo $userDetails[0]['address'] ?>
+                                    <?php echo str_replace("%20"," ",$userDetails[0]['address']) ?>
                                 </div>
                                
  <div class="col-sm-12"> <b>City: &nbsp;</b>
