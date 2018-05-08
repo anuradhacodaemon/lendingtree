@@ -7,16 +7,16 @@
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Loan Calculator</label>
-                    <div class="row">
-                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-                            <div class="radio-btn-sect">
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 marg_20">
-                                        <!--<input type="radio" name="type" /> -->
-                                        <label class="radio-container">New Car
-                                            <input type="radio" checked="checked" name="type">
-                                            <span class="checkmark"></span>
-                                        </label>
+
+                        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                        <div class="radio-btn-sect">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 marg_20">
+                                <!--<input type="radio" name="type" /> -->
+                                <label class="radio-container">New Car
+                                  <input type="radio" checked="checked" name="type">
+                                  <span class="checkmark"></span>
+                                </label>
 
                                     </div>
 
@@ -58,20 +58,22 @@
                             </div>
                             <div class="clearfix"></div>
 
-                            <div class="col-xs-12 col-sm-12 marg_5 bg">
-                                <label class="control-label">Where are you Financing</label>
-                                <div class="clearfix"></div>
 
-                                <div class="slider-box">
-                                    <input id="ex21" type="text"
-                                           data-provide="slider"
-                                           data-slider-ticks="[1.85, 4.15, 5.45]"
-                                           data-slider-ticks-labels='["Credit Union", "Bank", "Dealership"]'
-                                           data-slider-min="1"
-                                           data-slider-max="3"
-                                           data-slider-step="1"
-                                           data-slider-value="3"
-                                           data-slider-tooltip="hide" />                        
+                                    <div class="col-xs-12 col-sm-12 marg_5 bg">
+                                    <label class="control-label">Where are you Financing</label>
+                        
+                                        <div class="clearfix"></div>
+
+                                        <div class="slider-box">
+ <input id="ex21" type="text"
+                                                   data-provide="slider"
+                                                   data-slider-ticks="[1.85, 4.15, 5.45]"
+                                                   data-slider-ticks-labels='["Credit Union", "Bank", "Dealership"]'
+                                                   data-slider-min="1"
+                                                   data-slider-max="3"
+                                                   data-slider-step="1"
+                                                   data-slider-value="1"
+                                                   data-slider-tooltip="hide" />                        
 
                                 </div>
 
@@ -92,6 +94,7 @@
                                            data-slider-step="1"
                                            data-slider-value="3"
                                            data-slider-tooltip="hide"  />
+
 
                                 </div>
 

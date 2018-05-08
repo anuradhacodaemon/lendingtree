@@ -26,6 +26,7 @@ button, input:focus {outline: none;}
     border: 1px solid #dedede;
     border-radius: 10px;
 }
+.font_14 {font-size:14px !important;}
 /* Header */
 .header-main {
     overflow: hidden;
@@ -566,6 +567,12 @@ button, input:focus {outline: none;}
     background: -webkit-linear-gradient(top, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd5a03', endColorstr='#fe8215',GradientType=0 ); /* IE6-9 */
+}
+.radio .button_payment {
+    background: #3153ae;
+}
+.radio .button_payment:hover {
+    background: #7087c7;
 }
 .button_back .sprites.continueIcon {
     float: left;

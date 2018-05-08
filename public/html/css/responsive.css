@@ -30,6 +30,21 @@
     .bg .slider-box {
         width: 83%;
     }
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -8% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 47% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 88% !important;
+        margin-left: 0px !important;
+    }
 }
 @media only screen and (max-width:480px){ 
     .form-main h1 {
