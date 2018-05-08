@@ -8,7 +8,7 @@
                     <div class="clearfix"></div>
                     <label class="control-label">Loan Calculator</label>
                     <div class="row">
-                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
                         <div class="radio-btn-sect">
                           <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 marg_20">
@@ -47,12 +47,11 @@
                                 
                                 <div class="col-xs-12 col-sm-12 marg_5 bg">
                                 <label class="control-label">Loan Period</label>
-                                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex2SliderVal">5000</label></span>
+                                    <span id="ex6CurrentSliderValLabel" class="top-value"> <label id="ex2SliderVal">12</label></span>
                                     <div class="clearfix"></div>
 
                                     <div class="slider-box">
-                                        <input id="ex2"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="150000" data-slider-step="500" data-slider-value="5000"/> 
-
+  <input id="ex2"  name="loan_period" type="text" data-slider-min="12" data-slider-max="216" data-slider-step="12" data-slider-value="12"/> 
 
                                     </div>
 
@@ -61,25 +60,37 @@
 
                                     <div class="col-xs-12 col-sm-12 marg_5 bg">
                                     <label class="control-label">Where are you Financing</label>
-                                        <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex3SliderVal">5000</label></span>
+                        
                                         <div class="clearfix"></div>
 
                                         <div class="slider-box">
-                                            <input id="ex3"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="150000" data-slider-step="500" data-slider-value="5000"/> 
-                        
+ <input id="ex21" type="text"
+                                                   data-provide="slider"
+                                                   data-slider-ticks="[1.85, 4.15, 5.45]"
+                                                   data-slider-ticks-labels='["Credit Union", "Bank", "Dealership"]'
+                                                   data-slider-min="1"
+                                                   data-slider-max="3"
+                                                   data-slider-step="1"
+                                                   data-slider-value="1"
+                                                   data-slider-tooltip="hide" />                        
 
                                         </div>
 
 </div>
                                         <div class="clearfix"></div>
                                         <div class="col-xs-12 col-sm-12 marg_5 bg"> <label class="control-label">Interest Rate</label>
-                                            <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex4SliderVal">5000</label></span>
-
                                             <div class="clearfix"></div>
 
                                             <div class="slider-box">
-                                                <input id="ex4"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="150000" data-slider-step="500" data-slider-value="5000"/> 
-
+                                                <input id="ex22" type="text"
+                                                       data-provide="slider"
+                                                       data-slider-ticks="[1.85, 4.15, 5.45]"
+                                                       data-slider-ticks-labels='["1.85%", "4.15%", "5.45%"]'
+                                                       data-slider-min="1"
+                                                       data-slider-max="3"
+                                                       data-slider-step="1"
+                                                       data-slider-value="1"
+                                                       data-slider-tooltip="hide" onclick="getAmount(this.value)" />
 
                                             </div>
 
@@ -88,23 +99,23 @@
                                         <div class="col-xs-12 col-sm-12 marg_5 bg clearfix"> 
                                             <label class="control-label margbot_10">Estimated Monthly Payment</label>
                                             <div class="clearfix"></div>
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                                <label class="button">
-                                                    <div class="label-text width_auto">$483</div>
+                                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
+                                                <label class="button_payment button font_14">
+                                                    <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
                                                     <span class="continueIcon sprites"></span>
                                                     <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
                                                 </label>
                                             </div>
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                                <label class="button">
-                                                    <div class="label-text width_auto">$511</div>
+                                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
+                                                <label class="button_payment button font_14">
+                                                    <div class="label-text width_auto">$<span id="monthly_pay2">0</span></div>
                                                     <span class="continueIcon sprites"></span>
                                                     <input type="radio" value="$511" class="ng-pristine ng-invalid ng-invalid-required">
                                                 </label>
                                             </div>
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                                <label class="button">
-                                                    <div class="label-text width_auto">$527</div>
+                                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
+                                                <label class="button_payment button font_14">
+                                                    <div class="label-text width_auto">$<span id="monthly_pay3">0</span></div>
                                                     <span class="continueIcon sprites"></span>
                                                     <input type="radio" value="$527" class="ng-pristine ng-invalid ng-invalid-required">
                                                 </label>
@@ -134,6 +145,24 @@
             <script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.js"></script>
             <script src="<?php echo BASE_URL; ?>/public/dist/loan_bootstrap-slider.min.js"></script>
             <script>
+
+                                                function calculate()
+                                                {
+
+                                                    p = document.getElementById("ex1").value;
+                                                    n = document.getElementById("ex2").value; // no. of compoundings per year
+                                                    r = document.getElementById("ex22").value;
+                                                    //alert(r);
+                                                    result = document.getElementById("result");
+                                                    x = Math.pow((1 + r), n);
+                                                    // The equation is A = p * [[1 + (r/n)] ^ nt]
+                                                    //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
+                                                    A = (p * ((r * x)) / (x - 1));
+                                                    // toFixed is used for rounding the amount with two decimal places.
+                                                    result.innerHTML = "The total amount is " + A.toFixed(2);
+
+                                                    //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
+                                                }
                                                 var slider = new Slider("#ex1");
                                                 slider.on("slide", function (sliderValue) {
 
@@ -146,40 +175,38 @@
                                                     document.getElementById("ex2SliderVal").textContent = sliderValue;
                                                 });
 
-                                                var slider = new Slider("#ex3");
-                                                slider.on("slide", function (sliderValue) {
 
-                                                    document.getElementById("ex3SliderVal").textContent = sliderValue;
+
+
+                                                var slider = new Slider("#ex21", {
+                                                    ticks: [1, 2, 3],
+                                                    ticks_positions: [0, 50, 100],
+                                                    ticks_snap_bounds: 100,
+                                                    formatter: function (value) {
+                                                        return 'Current value: ' + value;
+                                                    },
+                                                    ticks_tooltip: true,
+                                                    step: 0.01
                                                 });
-                                                var slider = new Slider("#ex4");
-                                                slider.on("slide", function (sliderValue) {
 
-                                                    document.getElementById("ex4SliderVal").textContent = sliderValue;
+                                                var slider = new Slider("#ex22", {
+                                                    ticks: [1, 2, 3],
+                                                    ticks_positions: [0, 50, 100],
+                                                    ticks_snap_bounds: 100,
+                                                    formatter: function (value) {
+                                                       
+                                                        return 'Current value: ' + value;
+                                                    },
+                                                   
+                                                    ticks_tooltip: true,
+                                                    step: 0.01,
+                                                   
                                                 });
-                                                function numberWithCommas(x) {
-
-                                                    var formatter = new Intl.NumberFormat('en-US', {
-                                                        style: 'currency',
-                                                        currency: 'USD',
-                                                        minimumFractionDigits: 2,
-                                                    });
-
-                                                    // Use it.
-                                                    //var amount = document.getElementById('input').innerHTML;
-                                                    return formatter.format(x).replace("$", "");
+                                                
+                          function getAmount(x)
+                          {
+                              alert(x);
+                          }
 
 
-                                                }
-                                                $(document).ready(function () {
-
-                                                    var formatter = new Intl.NumberFormat('en-US', {
-                                                        style: 'currency',
-                                                        currency: 'USD',
-                                                        minimumFractionDigits: 2,
-                                                    });
-                                                    var x = formatter.format($('#ex6SliderVal').html()).replace("$", "");
-                                                    $('#ex6SliderVal').html(x);
-                                                    //alert( $('#ex6SliderVal').html());
-
-                                                });
             </script>
