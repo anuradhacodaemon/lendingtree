@@ -128,10 +128,7 @@ if (!empty($this->session->flashdata('item'))) {
     });
     
 
-$('.slider-handle').on('change', function (ev) {
-    console.log("has changed");
-});
-  
+
 </script>
 
 
