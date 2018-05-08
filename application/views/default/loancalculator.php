@@ -8,7 +8,7 @@
                     <div class="clearfix"></div>
                     <label class="control-label">Loan Calculator</label>
                     <div class="row">
-                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
                         <div class="radio-btn-sect">
                           <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 marg_20">
@@ -70,7 +70,7 @@
                                                    data-slider-min="1"
                                                    data-slider-max="3"
                                                    data-slider-step="1"
-                                                   data-slider-value="3"
+                                                   data-slider-value="1"
                                                    data-slider-tooltip="hide" />                        
 
                                         </div>
@@ -89,7 +89,7 @@
                                                        data-slider-min="1"
                                                        data-slider-max="3"
                                                        data-slider-step="1"
-                                                       data-slider-value="3"
+                                                       data-slider-value="1"
                                                        data-slider-tooltip="hide" onclick="getAmount(this.value)" />
 
                                             </div>
@@ -99,22 +99,22 @@
                                         <div class="col-xs-12 col-sm-12 marg_5 bg clearfix"> 
                                             <label class="control-label margbot_10">Estimated Monthly Payment</label>
                                             <div class="clearfix"></div>
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                                <label class="button">
+                                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
+                                                <label class="button_payment button font_14">
                                                     <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
                                                     <span class="continueIcon sprites"></span>
                                                     <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
                                                 </label>
                                             </div>
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                                <label class="button">
+                                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
+                                                <label class="button_payment button font_14">
                                                     <div class="label-text width_auto">$<span id="monthly_pay2">0</span></div>
                                                     <span class="continueIcon sprites"></span>
                                                     <input type="radio" value="$511" class="ng-pristine ng-invalid ng-invalid-required">
                                                 </label>
                                             </div>
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                                <label class="button">
+                                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
+                                                <label class="button_payment button font_14">
                                                     <div class="label-text width_auto">$<span id="monthly_pay3">0</span></div>
                                                     <span class="continueIcon sprites"></span>
                                                     <input type="radio" value="$527" class="ng-pristine ng-invalid ng-invalid-required">

@@ -87,7 +87,7 @@
 }
 .slider.slider-horizontal .slider-tick-label-container {
   white-space: nowrap;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 .slider.slider-horizontal .slider-tick-label-container .slider-tick-label {
   padding-top: 4px;
@@ -233,11 +233,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
   border-radius: 4px;
 }
 .slider-selection.tick-slider-selection {
-  background-image: -webkit-linear-gradient(top, #8ac1ef 0%, #82b3de 100%);
-  background-image: -o-linear-gradient(top, #8ac1ef 0%, #82b3de 100%);
-  background-image: linear-gradient(to bottom, #8ac1ef 0%, #82b3de 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8ac1ef', endColorstr='#ff82b3de', GradientType=0);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d71a21+0,d31a21+16,c21a20+35,951b1e+76,8b1b1e+90,8a1b1e+100 */
+background: rgb(215,26,33); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(215,26,33,1) 0%, rgba(211,26,33,1) 16%, rgba(194,26,32,1) 35%, rgba(149,27,30,1) 76%, rgba(139,27,30,1) 90%, rgba(138,27,30,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', endColorstr='#8a1b1e',GradientType=0 ); /* IE6-9 */
 }
 .slider-track-low,
 .slider-track-high {
@@ -318,7 +319,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
   background-image: linear-gradient(to bottom, #8ac1ef 0%, #82b3de 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8ac1ef', endColorstr='#ff82b3de', GradientType=0);
-  opacity: 1;
+  opacity: 0;
 }
 @media only screen and (max-width:509px){ 
     .slider.slider-horizontal {width: 100%;}

@@ -10,6 +10,7 @@ button, input:focus {outline: none;}
 .inner_height {min-height: 530px;}
 button, input:focus {outline: none;}
 /* margin css */
+.marg_5 {margin: 5px 0 !important;}
 .margbot_10 {margin-bottom: 10px !important;}
 .margbot_20 {margin-bottom: 20px !important;}
 .margbot_30 {margin-bottom: 30px !important;}
@@ -17,6 +18,13 @@ button, input:focus {outline: none;}
 .margtop_30 {margin-top: 30px !important;}
 /*width css*/
 .width_100 {width: 100% !important;}
+.bg {
+    background: #fff;
+    padding: 10px 0;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+.font_14 {font-size:14px !important;}
 /* Header */
 .header-main {
     overflow: hidden;
@@ -559,6 +567,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a1b1e', end
     background: linear-gradient(to bottom, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd5a03', endColorstr='#fe8215',GradientType=0 ); /* IE6-9 */
 }
+.radio .button_payment {
+    background: #8a1b1e;
+}
+.radio .button_payment:hover {
+    background: #a42327;
+}
 .button_back .sprites.continueIcon {
     float: left;
     width: 16px;
@@ -726,4 +740,91 @@ input[type="radio"], input[type="checkbox"] {
     right: 0px;
     bottom: -30px;
     font-size: 18px;
+}
+
+.radio-btn-sect {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+
+/* Custom radio buttons css here */
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    left: 6px;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #aeaeae;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d71a21+0,d31a21+16,c21a20+35,951b1e+76,8b1b1e+90,8a1b1e+100 */
+background: rgb(215,26,33); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(215,26,33,1) 0%, rgba(211,26,33,1) 16%, rgba(194,26,32,1) 35%, rgba(149,27,30,1) 76%, rgba(139,27,30,1) 90%, rgba(138,27,30,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', endColorstr='#8a1b1e',GradientType=0 ); /* IE6-9 */
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: white;
+}
+.width_auto {
+    width: auto !important;
+}
+.bg .radio+.radio {
+    margin-top: 0px !important;
 }
