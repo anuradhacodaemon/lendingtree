@@ -24,9 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p><strong>Third Party Link Disclaimer:</strong>&nbsp;Coastal Community FCU is not responsible for the content or availability of linked sites.&nbsp;Please be advised that Coastal Community FCU does not represent either the third party or you, the member, if you enter into a transaction. Further, the privacy and security policies of the linked site may differ from those practiced by the credit union.&nbsp;</p>
-            </div>
-        </div>
+                <p><strong>Third Party Link Disclaimer:</strong>&nbsp;<?php $getPhone=$this->loan_model->get_phone(); if(!empty($getPhone[0]['footer'])) { echo $getPhone[0]['footer']; } ?>        </div>
     </div>
 </div>
 <!-- Footer ends here -->
