@@ -47,11 +47,11 @@
 
                             <div class="col-xs-12 col-sm-12 marg_5 bg">
                                 <label class="control-label">Loan Period</label>
-                                <span id="ex6CurrentSliderValLabel" class="top-value"> <label id="ex2SliderVal">12</label></span>
+                                <span id="ex6CurrentSliderValLabel" class="top-value"> <label id="ex2SliderVal">3</label> &nbsp;Months</span>
                                 <div class="clearfix"></div>
 
                                 <div class="slider-box">
-                                    <input id="ex2"  name="loan_period" type="text" data-slider-min="12" data-slider-max="216" data-slider-step="12" data-slider-value="12"/> 
+                                    <input id="ex2"  name="loan_period" type="text" data-slider-min="3" data-slider-max="216" data-slider-step="3" data-slider-value="3"/> 
 
                                 </div>
 
@@ -160,10 +160,11 @@
                                         r = document.getElementById("r1").value;
                                         //alert(r);
                                         result = document.getElementById("monthly_pay1");
-                                        x = Math.pow((1 + r), n);
+                                        //x = Math.pow((1 + r), n);
+                                        x = (1 + r)*n;
                                         // The equation is A = p * [[1 + (r/n)] ^ nt]
                                         //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                        A = (p * ((r * x)) / (x - 1));
+                                        A = p * ((r * x) / (x - 1));
                                         // toFixed is used for rounding the amount with two decimal places.
                                         result.innerHTML = numberWithCommas(A);
 
@@ -177,10 +178,10 @@
                                         r = document.getElementById("r2").value;
                                         //alert(r);
                                         result = document.getElementById("monthly_pay2");
-                                        x = Math.pow((1 + r), n);
+                                       x = (1 + r)*n;
                                         // The equation is A = p * [[1 + (r/n)] ^ nt]
                                         //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                        A = (p * ((r * x)) / (x - 1));
+                                           A = p * ((r * x) / (x - 1));
                                         // toFixed is used for rounding the amount with two decimal places.
                                         //result.innerHTML = A.toFixed(2);
                                         result.innerHTML = numberWithCommas(A);
@@ -194,10 +195,10 @@
                                         r = document.getElementById("r3").value;
                                         //alert(r);
                                         result = document.getElementById("monthly_pay3");
-                                        x = Math.pow((1 + r), n);
+                                        x = (1 + r)*n;
                                         // The equation is A = p * [[1 + (r/n)] ^ nt]
                                         //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                        A = (p * ((r * x)) / (x - 1));
+                                           A = p * ((r * x) / (x - 1));
                                         // toFixed is used for rounding the amount with two decimal places.
                                         result.innerHTML = numberWithCommas(A);
 
