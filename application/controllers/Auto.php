@@ -172,16 +172,24 @@ class Auto extends CI_Controller {
     public function mailformat($firstname, $lastname, $email) {
         //$this->load->library('email');
         //$this->email->set_mailtype("html");
-        $config = Array(
-            'protocol' => 'sendmail',
-            'smtp_host' => 'Smtp.gmail.com',
-            'smtp_port' => 25,
-            'smtp_user' => 'codaemon123',
-            'smtp_pass' => 'codaemon1234',
-            'smtp_timeout' => '4',
-            'mailtype' => 'html',
-            'charset' => 'iso-8859-1'
-        );
+       /** $config = Array(
+          'protocol' => 'sendmail',
+          'smtp_host' => 'Smtp.gmail.com',
+          'smtp_port' => 25,
+          'smtp_user' => 'codaemon123',
+          'smtp_pass' => 'codaemon1234',
+          'smtp_timeout' => '4',
+          'mailtype' => 'html',
+          'charset' => 'iso-8859-1'
+          );  * */
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'ssl://in.mailjet.com';
+        $config['smtp_port'] = '25';
+        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
+        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+        $config['newline'] = "\r\n";
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
