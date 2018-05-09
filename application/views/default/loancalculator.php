@@ -106,21 +106,18 @@
                                 <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
                                     <label class="button">
                                         <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
-                                        <span class="continueIcon sprites"></span>
                                         <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
                                     <label class="button">
                                         <div class="label-text width_auto">$<span id="monthly_pay2">0</span></div>
-                                        <span class="continueIcon sprites"></span>
                                         <input type="radio" value="$511" class="ng-pristine ng-invalid ng-invalid-required">
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
                                     <label class="button">
                                         <div class="label-text width_auto">$<span id="monthly_pay3">0</span></div>
-                                        <span class="continueIcon sprites"></span>
                                         <input type="radio" value="$527" class="ng-pristine ng-invalid ng-invalid-required">
                                     </label>
                                 </div>

@@ -1,4 +1,5 @@
-  <?php $getPhone=$this->loan_model->get_phone();?>
+  <?php $getPhone=$this->loan_model->get_phone();
+  ?>
 <div class="header-main clearfix">
       <div class="container">
         <div class="row">
@@ -11,7 +12,9 @@
             <div class="number">
                 <?php if(!empty($getPhone[0]['phone'])) { ?>
               <a href="tel:<?php echo $getPhone[0]['phone']?>">Call us <strong><?php echo $getPhone[0]['phone']?></strong></a>
-                <?php } ?>
+                <?php } 
+            
+                ?>
             </div>
           </div>
         </div>
