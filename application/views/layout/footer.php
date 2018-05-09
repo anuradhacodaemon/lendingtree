@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p><strong>Third Party Link Disclaimer:</strong>&nbsp;<?php $getPhone=$this->loan_model->get_phone(); if(!empty($getPhone[0]['footer'])) { echo $getPhone[0]['footer']; } ?>&nbsp;</p>
+                <p><strong>Third Party Link Disclaimer:</strong>&nbsp;<?php if(!empty($getPhone[0]['footer'])) { echo $getPhone[0]['footer']; } ?>&nbsp;</p>
             </div>
         </div>
     </div>

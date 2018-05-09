@@ -1,4 +1,3 @@
-  <?php $getPhone=$this->loan_model->get_phone();?>
 <div class="header-main clearfix">
       <div class="container">
         <div class="row">
