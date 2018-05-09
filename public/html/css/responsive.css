@@ -32,6 +32,24 @@
     .form-main h2 {font-size: 16px;}
     .subtext {width: 100%;}
     .slider-box {width: 100%;}
+    .bg .slider-box {
+        width: 83%;
+    }
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -8% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 47% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 88% !important;
+        margin-left: 0px !important;
+    }
 }
 @media only screen and (max-width:480px){ 
     .form-main h1 {
@@ -60,6 +78,21 @@
     .checkbox-sec {font-size: 15px;}
     .form-main input.form-control {width: 100%;}
     .inner_height {min-height:574px;}
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -8% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 47% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 88% !important;
+        margin-left: 0px !important;
+    }
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
     .logo {width: 35%; margin: 3% auto 0; float: none;}
@@ -89,6 +122,21 @@
         margin: 0;
     }
     .subtext {width: 100%;}
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -4% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 48% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 96% !important;
+        margin-left: 0px !important;
+    }
 }
 @media only screen and (min-width:768px) and (max-width:1023px) { 
     .inner_container {min-height: 823px;}
@@ -104,6 +152,21 @@
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -6% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 48% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 95% !important;
+        margin-left: 0px !important;
     }
 }
 @media only screen and (min-width:1024px) and (max-width:1024px) { 
@@ -122,6 +185,21 @@
         right: 0;
     }
     .click-box.effect-sadie h5 {font-size: 14px;}
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -6% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 48% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 96% !important;
+        margin-left: 0px !important;
+    }
 }
 @media only screen and (max-width:411px){ 
     .inner_height {min-height:662px;}
