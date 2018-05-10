@@ -84,11 +84,10 @@
                                         </label>
                                     </div>
                                 </div>
-
+</div>
                         <div class="col-xs-12 col-sm-12 marg_5 bg">
-                            <label class="control-label">Where are you Financing</label>
+                            <label class="control-label">Interest Rate</label>
 
-                            <div class="clearfix"></div>
                                 <div class="clearfix"></div>
                             <div class="radio-main">
                                 <div class="line_bg"></div>
