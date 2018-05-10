@@ -176,13 +176,13 @@ class Refinance extends CI_Controller {
             $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
-        } else {
+        } /** else {
 
             $error = 'Your email already exist';
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
             $this->load->view('refinancestep6_view');
-        }
+        }**/
     }
 
     /** Please dont change the mailformat because template is coming from database * */
