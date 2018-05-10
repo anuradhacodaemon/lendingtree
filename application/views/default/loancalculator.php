@@ -236,14 +236,8 @@
 
 
                                 function addloan() {
-                                    $.ajax({
-                                        type: "GET",
-                                        url: '<?php echo BASE_URL . "loancalculator/page_landing/" ?>' + $('input[name=type]').val() + '/' + $('input[name=ex1]').val(),
-                                        success: function (data)
-                                        {
-                                            location.href = '<?php echo BASE_URL . 'auto?step=1' ?>';
-                                        }
-                                    });
+                                  
+                                    location.href='<?php echo BASE_URL . "loancalculator/page_landing/" ?>' + $("input:radio[name=type]:checked").val() + '/' + $('input[name=ex1]').val();
                                 }
 
 

@@ -57,10 +57,8 @@ class Loancalculator extends CI_Controller {
             'requested_amount' => $amt
         );
         $this->session->set_userdata($data);
-
-       // print_r($this->session->userdata());
-
-        //redirect('auto?step=1');
+        $url = base_url();
+        header('location:' . $url . 'auto?step=1&s=1');
     }
 
 }

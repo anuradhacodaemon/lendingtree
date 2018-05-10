@@ -35,6 +35,7 @@ class Auto extends CI_Controller {
         $this->session->set_userdata('panel', 'frontend');
 
         $this->template->view('step1_view');
+        
     }
 
     public function step1() {
