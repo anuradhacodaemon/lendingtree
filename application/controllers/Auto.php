@@ -219,7 +219,7 @@ class Auto extends CI_Controller {
           'charset' => 'iso-8859-1'
           );  * */
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://in.mailjet.com';
+        $config['smtp_host'] = 'in.mailjet.com';
         $config['smtp_port'] = '25';
         $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
         $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
@@ -274,24 +274,32 @@ class Auto extends CI_Controller {
         $url1 = encode_url($Link);
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $emails = $this->loan_model->get_phone();
-       
-        $config = Array(
-            'protocol' => 'sendmail',
-            'smtp_host' => 'Smtp.gmail.com',
-            'smtp_port' => 25,
-            'smtp_user' => 'codaemon123',
-            'smtp_pass' => 'codaemon1234',
-            'smtp_timeout' => '4',
-            'mailtype' => 'html',
-            'charset' => 'iso-8859-1'
-        );
+
+        /** $config = Array(
+          'protocol' => 'sendmail',
+          'smtp_host' => 'Smtp.gmail.com',
+          'smtp_port' => 25,
+          'smtp_user' => 'codaemon123',
+          'smtp_pass' => 'codaemon1234',
+          'smtp_timeout' => '4',
+          'mailtype' => 'html',
+          'charset' => 'iso-8859-1'
+          );  * */
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'in.mailjet.com';
+        $config['smtp_port'] = '25';
+        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
+        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+        $config['newline'] = "\r\n";
 
         $this->load->library('email', $config);
 
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
- $this->email->from(ADMINEMAIL, ADMINNAME);        
+        $this->email->from(ADMINEMAIL, ADMINNAME);
 //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
@@ -311,12 +319,12 @@ class Auto extends CI_Controller {
         $emailContent = strtr($emailtemplate[0]['content'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
-        
+
         if ($emailSend) {
-           // echo 'yes';
+            // echo 'yes';
             return 1;
         }
- 
+
         return 0;
     }
 
