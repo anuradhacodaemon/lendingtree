@@ -128,40 +128,7 @@ if (!empty($this->session->flashdata('item'))) {
     });
     
 
- var slider = new Slider("#ex21", {
-                                        ticks: [1, 2, 3],
-                                        ticks_positions: [0, 50, 100],
-                                        ticks_snap_bounds: 100,
-                                        formatter: function (value) {
- //alert($(this).attr("aria-valuenow"));
-
  
-
- 
- 
-                                            return  value;
-                                        },
-                                        change: function (value) {
-
-                                           // alert('h');
-                                        },
-                                        ticks_tooltip: true,
-                                        step: 0.01
-                                    });
-
-                                    var slider = new Slider("#ex22", {
-                                        ticks: [1, 2, 3],
-                                        ticks_positions: [0, 50, 100],
-                                        ticks_snap_bounds: 100,
-                                        formatter: function (value) {
-
-                                            return  value;
-                                        },
-
-                                        ticks_tooltip: true,
-                                        step: 1,
-
-                                    });
 </script>
 
 
