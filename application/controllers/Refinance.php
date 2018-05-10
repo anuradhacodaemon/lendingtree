@@ -190,7 +190,7 @@ class Refinance extends CI_Controller {
 
         //$this->load->library('email');
         //$this->email->set_mailtype("html");
-        $config = Array(
+        /**$config = Array(
             'protocol' => 'sendmail',
             'smtp_host' => 'Smtp.gmail.com',
             'smtp_port' => 25,
@@ -200,6 +200,15 @@ class Refinance extends CI_Controller {
             'mailtype' => 'html',
             'charset' => 'iso-8859-1'
         );
+       **/
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'in.mailjet.com';
+        $config['smtp_port'] = '25';
+        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
+        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+        $config['newline'] = "\r\n";
 
         $this->load->library('email', $config);
 
@@ -253,7 +262,7 @@ class Refinance extends CI_Controller {
         
          $emails = $this->loan_model->get_phone();
         
-        $config = Array(
+        /**$config = Array(
             'protocol' => 'sendmail',
             'smtp_host' => 'Smtp.gmail.com',
             'smtp_port' => 25,
@@ -263,6 +272,15 @@ class Refinance extends CI_Controller {
             'mailtype' => 'html',
             'charset' => 'iso-8859-1'
         );
+       **/
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'in.mailjet.com';
+        $config['smtp_port'] = '25';
+        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
+        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+        $config['newline'] = "\r\n";
 
         $this->load->library('email', $config);
 
