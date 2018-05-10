@@ -14,7 +14,7 @@
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="form-main clearfix">
-              <!-- <h1>Compare live auto rates</h1> -->
+              <h1>Refinance Your Vehicle</h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">Vehicle VIN Number?</label>
@@ -23,7 +23,7 @@
                 <span id="err1" style="color: red"></span>
               </div>
               <div class="clearfix"></div>
-                    <label class="control-label">Current Milage?</label>
+                    <label class="control-label">Current Mileage?</label>
                     
                     <span id="ex6CurrentSliderValLabel" class="top-value"> <label id="ex6SliderVal"><?php if(isset($this->session->userdata['current_milage'])) echo $this->session->userdata['current_milage'] ; else echo '0';?></label></span>
  <div class="clearfix"></div> <div class="slider-box">

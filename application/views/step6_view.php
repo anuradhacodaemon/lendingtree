@@ -9,7 +9,7 @@
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="form-main clearfix">
-                    <!-- <h1>Compare live auto rates</h1> -->
+                    <h1>Buying New Vehicle</h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">When Were You Born?</label>
