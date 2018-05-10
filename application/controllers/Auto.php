@@ -1,6 +1,9 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Auto extends CI_Controller {
+
     /**
      * Index Page for this controller.
      *
@@ -21,6 +24,7 @@ class Auto extends CI_Controller {
         parent::__construct();
         $this->load->model('loan_model');
     }
+
     public function index() {
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
@@ -28,9 +32,11 @@ class Auto extends CI_Controller {
         $this->session->set_userdata('panel', 'frontend');
         $this->template->view('step1_view');
     }
+
     public function step1() {
         $this->load->view('step1_view');
     }
+
     public function step2($id = 0) {
         if ($id) {
             $data = array(
@@ -40,6 +46,7 @@ class Auto extends CI_Controller {
         }
         $this->load->view('step2_view');
     }
+
     public function step3($id = 0) {
         if ($id) {
             $data = array(
@@ -51,6 +58,7 @@ class Auto extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('step3_view');
     }
+
     public function step4($id = 0, $pre_approved = 0) {
         if ($id) {
             $data = array(
@@ -63,6 +71,7 @@ class Auto extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('step4_view');
     }
+
     public function step5($pre_tax_income = 0) {
         if ($pre_tax_income) {
             //$num = explode('$', $pre_tax_income);
@@ -81,10 +90,12 @@ class Auto extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('step5_view', $data);
     }
+
     public function getcity($state_id = 0) {
         $city = $this->loan_model->get_city($state_id);
         echo json_encode($city);
     }
+
     public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
         if ($firstname) {
             $data = array(
@@ -101,6 +112,7 @@ class Auto extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('step6_view');
     }
+
     public function step7($month = 0, $day = 0, $year = 0, $ssn = '') {
         if ($ssn) {
             $data = array(
@@ -116,6 +128,7 @@ class Auto extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('step7_view');
     }
+
     public function step8($email = '', $phone = '') {
         if ($email) {
             $data = array(
@@ -168,6 +181,7 @@ class Auto extends CI_Controller {
             $this->load->view('step6_view');
         }
     }
+
     /** Please dont change the mailformat because template is coming from database * */
     public function mailformat($firstname, $lastname, $email) {
         //$this->load->library('email');
@@ -183,7 +197,7 @@ class Auto extends CI_Controller {
           'charset' => 'iso-8859-1'
           );  * */
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://in.mailjet.com';
+        $config['smtp_host'] = 'in.mailjet.com';
         $config['smtp_port'] = '25';
         $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
         $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
@@ -216,6 +230,7 @@ class Auto extends CI_Controller {
         }
         return 0;
     }
+
     public function mail_format_pdf($id = 0) {
         $link = explode('&', decode_url($id));
         $this->load->model('details');
@@ -229,27 +244,36 @@ class Auto extends CI_Controller {
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
     }
+
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $emails = $this->loan_model->get_phone();
-       
-        $config = Array(
-            'protocol' => 'sendmail',
-            'smtp_host' => 'Smtp.gmail.com',
-            'smtp_port' => 25,
-            'smtp_user' => 'codaemon123',
-            'smtp_pass' => 'codaemon1234',
-            'smtp_timeout' => '4',
-            'mailtype' => 'html',
-            'charset' => 'iso-8859-1'
-        );
+
+        /** $config = Array(
+          'protocol' => 'sendmail',
+          'smtp_host' => 'Smtp.gmail.com',
+          'smtp_port' => 25,
+          'smtp_user' => 'codaemon123',
+          'smtp_pass' => 'codaemon1234',
+          'smtp_timeout' => '4',
+          'mailtype' => 'html',
+          'charset' => 'iso-8859-1'
+          );  * */
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'in.mailjet.com';
+        $config['smtp_port'] = '25';
+        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
+        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+        $config['newline'] = "\r\n";
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
- $this->email->from(ADMINEMAIL, ADMINNAME);        
+        $this->email->from(ADMINEMAIL, ADMINNAME);
 //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
@@ -266,12 +290,13 @@ class Auto extends CI_Controller {
         $emailContent = strtr($emailtemplate[0]['content'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
-        
+
         if ($emailSend) {
-           // echo 'yes';
+            // echo 'yes';
             return 1;
         }
- 
+
         return 0;
     }
+
 }
