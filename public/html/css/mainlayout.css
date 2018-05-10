@@ -755,6 +755,7 @@ input[type="radio"], input[type="checkbox"] {
     display: block;
     position: relative;
     padding-left: 30px;
+    padding-top: 0px;
     margin-bottom: 12px;
     text-align: left;
     cursor: pointer;
@@ -827,4 +828,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
 }
 .bg .radio+.radio {
     margin-top: 0px !important;
+}
+.bg .radio-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 0px;
+    padding-top: 30px;
+    margin-left: 75px;
+    width: 55%;
+    margin-bottom: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.radio-main {position: relative;}
+.radio-main .line_bg {
+    position: absolute;
+    width: 69%;
+    height: 10px;
+    background: #ddd;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    top: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
 }
