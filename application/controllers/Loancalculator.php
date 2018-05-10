@@ -58,7 +58,7 @@ class Loancalculator extends CI_Controller {
         );
         $this->session->set_userdata($data);
         $url = base_url();
-        header('location:' . $url . 'auto?step=1&s=1');
+        header('location:' . $url . 'auto?step=1');
     }
 
 }
