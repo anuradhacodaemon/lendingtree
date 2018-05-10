@@ -1,10 +1,10 @@
 
 <div class="clearfix">
-    <div class="" id="containerrefinance">
+    <div class="conatiner" id="containerrefinance">
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 <div class="form-main clearfix">
-                    <!-- <h1>Compare live auto rates</h1> -->
+                    <h1>Refinance Your Vehicle</h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">When Were You Born?</label>
