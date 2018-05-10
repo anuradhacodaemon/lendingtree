@@ -261,7 +261,7 @@ class Auto extends CI_Controller {
           'charset' => 'iso-8859-1'
           );  * */
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://in.mailjet.com';
+        $config['smtp_host'] = 'in.mailjet.com';
         $config['smtp_port'] = '588';
         $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
         $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
