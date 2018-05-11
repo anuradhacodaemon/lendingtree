@@ -1,15 +1,15 @@
 
 <div class="clearfix">
-    <div class="container" id="containerrefinance">
+    <div class="" id="containerrefinance">
         <div class="row">
-            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                     <h1>Buying New Vehicle</h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
+                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                     <label class="control-label">When Were You Born?</label>
-                   
-                <div class="margbot_10 clearfix">
+                    <div class="margbot_10 clearfix">
                     <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
                                            
                         
