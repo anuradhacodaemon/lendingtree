@@ -5,7 +5,6 @@
           <div class="col-lg-5 col-md-5 col-sm-6 col-xs-7">
             <div class="logo">
               <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>public/html/img/logo.svg" alt="Logo" title="Coastal Community community federal credit union" class="img-responsive"/></a>
-              <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>public/html/img/tagline.svg" alt="Logo" title="Coastal Community community federal credit union" class="img-responsive margtop_5"/></a>
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">

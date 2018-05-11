@@ -7,7 +7,7 @@
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                      
-                                <?php
+                     <?php
                                 if ($this->session->flashdata('item')) {
                                     $message = $this->session->flashdata('item');
                                     ?><div class="alert">
@@ -17,7 +17,7 @@
                                 }
                                 ?>
                            
-                    <label class="control-label"> Great!Your rates are ready to view.<br>
+                    <label class="control-label"> Great! Your rates are ready to view.<br>
                         Let's create a login to view your rates.</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
                         <input  type="text" id="email" placeholder="you@example.com" name="email" value="<?php if (isset($this->session->userdata['email'])) echo $this->session->userdata['email'] ?>" class="form-control"  >

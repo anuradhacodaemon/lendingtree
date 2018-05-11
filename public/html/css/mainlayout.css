@@ -43,7 +43,7 @@ button, input:focus {outline: none;}
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .logo {
         width: 35%;
-        height: 58px;
+        height: 76px;
     }
 }
 .logo img {display: inline-block;}
