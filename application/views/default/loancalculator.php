@@ -64,21 +64,21 @@
                                 <div class="line_bg"></div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">Credit Union
+                                    <label class="radio-container">at the Credit Union
                                         <input type="radio" checked="checked" name="finance" onclick="calculateAll(1.85)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">Bank
+                                    <label class="radio-container">at the Bank
                                         <input type="radio" name="finance" onclick="calculateAll(4.15)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">Dealership
+                                    <label class="radio-container">at the Dealership
                                         <input type="radio" name="finance" onclick="calculateAll(5.45)">
                                         <span class="checkmark"></span>
                                     </label>
