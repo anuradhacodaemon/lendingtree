@@ -113,19 +113,19 @@
                                     <label class="button_payment button font_14">
                                         <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
                                         <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
-                                    </label>
+                                    </label><span class="text">at the Credit Union</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                     <label class="button_payment button font_14">
                                         <div class="label-text width_auto">$ <span id="monthly_pay2">0</span></div>
                                         <input type="radio" value="$511" class="ng-pristine ng-invalid ng-invalid-required">
-                                    </label>
+                                    </label><span class="text">at the Bank</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                     <label class="button_payment button font_14">
                                         <div class="label-text width_auto">$ <span id="monthly_pay3">0</span></div>
                                         <input type="radio" value="$527" class="ng-pristine ng-invalid ng-invalid-required">
-                                    </label>
+                                    </label><span class="text">at the Dealership</span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <label class="control-label margbot_10 margtop_30">Estimated Yearly Payment</label>

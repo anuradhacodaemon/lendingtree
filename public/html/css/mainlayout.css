@@ -494,6 +494,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', e
     display: block;
     margin-bottom: 10px;
 }
+.radio .text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000;
+}
 .radio .button {
     border-radius: 2px;
     width: 320px;
