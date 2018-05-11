@@ -44,6 +44,14 @@
         left: 88% !important;
         margin-left: 0px !important;
     }
+    .radio-main .line_bg {        
+        width: 76%;
+    }
+    .bg .radio-container {
+        margin-left: 15px;
+        width: 100%;
+        font-size: 10px;
+    }
 }
 @media only screen and (max-width:480px){ 
     .form-main h1 {
@@ -101,6 +109,7 @@
         margin: 0;
     }
     .subtext {width: 100%;}
+    .bg .radio-container {margin-left: 55px;}
 }
 @media only screen and (min-width:768px) and (max-width:1023px) { 
     .inner_container {min-height: 823px;}
