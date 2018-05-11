@@ -113,6 +113,7 @@
         margin: 0;
     }
     .subtext {width: 100%;}
+    .bg .radio-container {width: 65%; margin-left: 60px;}
 }
 @media only screen and (min-width:768px) and (max-width:1023px) { 
     .inner_container {min-height: 823px;}

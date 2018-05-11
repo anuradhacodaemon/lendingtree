@@ -64,21 +64,21 @@
                                 <div class="line_bg"></div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">at the Credit Union
+                                    <label class="radio-container">Credit Union
                                         <input type="radio" checked="checked" name="finance" onclick="calculateAll(1.85)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">at the Bank
+                                    <label class="radio-container">Bank
                                         <input type="radio" name="finance" onclick="calculateAll(4.15)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">at the Dealership
+                                    <label class="radio-container">Dealership
                                         <input type="radio" name="finance" onclick="calculateAll(5.45)">
                                         <span class="checkmark"></span>
                                     </label>
@@ -118,23 +118,23 @@
                         <div class="col-xs-12 col-sm-12 marg_5 bg clearfix"> 
                             <label class="control-label margbot_10">Estimated Monthly Payment</label>
                             <div class="clearfix"></div>
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                 <label class="button_payment button font_14">
                                     <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
                                     <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
-                                </label>
+                                </label><span class="text">at the Credit Union</span>
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                 <label class="button_payment button font_14">
                                     <div class="label-text width_auto">$ <span id="monthly_pay2">0</span></div>
                                     <input type="radio" value="$511" class="ng-pristine ng-invalid ng-invalid-required">
-                                </label>
+                                </label><span class="text">at the Bank</span>
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                 <label class="button_payment button font_14">
                                     <div class="label-text width_auto">$ <span id="monthly_pay3">0</span></div>
                                     <input type="radio" value="$527" class="ng-pristine ng-invalid ng-invalid-required">
-                                </label>
+                                </label><span class="text">at the Dealership</span>
                             </div>
                             <div class="clearfix"></div>
                             <label class="control-label margbot_10 margtop_30">Estimated Yearly Payment</label>

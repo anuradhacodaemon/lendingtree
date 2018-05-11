@@ -2,7 +2,7 @@
 
 
 <div class="main-section inner_height clearfix" id="container1">
-    <div class="" id="containerrefinance">
+    <div class="container" id="containerrefinance">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">

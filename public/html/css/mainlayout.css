@@ -495,6 +495,13 @@ button, input:focus {outline: none;}
     display: block;
     margin-bottom: 10px;
 }
+.radio .text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000;
+    display: block;
+}
 .radio .button {
     border-radius: 2px;
     width: 320px;
