@@ -37,5 +37,27 @@ class Loancalculator extends CI_Controller {
         $this->template->view('loancalculator');
     }
 
-    
+    public function page_landing($type, $id) {
+        if ($id >= 50000)
+            $amt = 1;
+        if ($id >= 40000 && $id <= 50000)
+            $amt = 2;
+        if ($id >= 30000 && $id <= 40000)
+            $amt = 3;
+        if ($id >= 20000 && $id <= 30000)
+            $amt = 4;
+        if ($id >= 15000 && $id <= 20000)
+            $amt = 5;
+        if ($id >= 10000 && $id <= 15000)
+            $amt = 6;
+        if ($id >= 5000 && $id <= 10000)
+            $amt = 7;
+        $data = array(
+            'type' => $type,
+            'requested_amount' => $amt
+        );
+        $this->session->set_userdata($data);
+        $url = base_url();
+        header('location:' . $url . 'auto?step=1');
+    }
 }

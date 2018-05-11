@@ -146,6 +146,12 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
+         unset($this->session->userdata['type']);
+        unset($this->session->userdata['requested_amount']);
+        unset($this->session->userdata['current_employer']);
+        unset($this->session->userdata['job_title']);
+        unset($this->session->userdata['pre_tax_income']);
+        unset($this->session->userdata['zip']);
         $result = $this->loan_model->add_refinance($this->session->userdata());
         
          

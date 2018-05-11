@@ -59,7 +59,7 @@
    <?php  $this->load->view('layout/footer', $data);
  ?>
     <!-- Footer ends here -->
-
+<?php  if(!empty($getPhone[0]['tagline'])) { echo $getPhone[0]['tagline']; } ?>
   
 
   </body>

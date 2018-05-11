@@ -163,6 +163,10 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
+         unset($this->session->userdata['currently_owe']);
+        unset($this->session->userdata['monthly_payment']);
+        unset($this->session->userdata['vin']);
+        unset($this->session->userdata['current_milage']);
         $result = $this->loan_model->add_loan($this->session->userdata());
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
