@@ -16,13 +16,16 @@
                     <div class="clearfix"></div>
                     <label class="control-label">Type Of Loan</label>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <label class="button">
+                        <label <?php if(isset($this->session->userdata['type']))
+                            { if($this->session->userdata['type']== 1)
+                                echo 'class="button status"'; else echo 'class="button"';} else  echo 'class="button"';
+                                ?>>
                             <div class="label-text">New Car Purchase</div>
                             <span class="continueIcon sprites"></span>
                             <input type="radio" value="NewCarPurchase"  onclick="step2(1)" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <label class="button">
+                        <label <?php if(isset($this->session->userdata['type'])) { if($this->session->userdata['type']== 2) echo 'class="button status"'; else echo 'class=button';} else  echo 'class="button"';?>>
                             <div class="label-text">Used Car Purchase</div>
                             <span class="continueIcon sprites"></span>
                             <input type="radio" value="NewCarPurchase" onclick="step2(2)" class="ng-pristine ng-invalid ng-invalid-required"></label>
