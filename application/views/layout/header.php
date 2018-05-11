@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="number">Welcome to our new website! Please call us at 
+            <div class="number">Please call us at 
                 <?php if(!empty($getPhone[0]['phone'])) { ?>
                     <a href="tel:<?php echo $getPhone[0]['phone']?>"><strong><?php echo $getPhone[0]['phone']?></strong></a> 
                 <?php } ?> if you have any questions. 
@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="tagline">Serving Members Since 1956</div>
+    <div class="tagline">Serving Jefferson County since 1956</div>
     <!-- Header ends here -->
     
     
