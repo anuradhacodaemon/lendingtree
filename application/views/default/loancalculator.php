@@ -1,14 +1,18 @@
 <div class="main-section inner_height clearfix">
     <div class="container" id="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="logo">
+                    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>public/html/img/logo.png" alt="Logo" title="Coastal Community community federal credit union" class="img-responsive"/></a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="form-main clearfix">
                     <!-- <h1>Compare live auto rates</h1> -->
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Loan Calculator</label>
 
-                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
                         <div class="radio-btn-sect">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 marg_20">
@@ -118,23 +122,23 @@
                         <div class="col-xs-12 col-sm-12 marg_5 bg clearfix"> 
                             <label class="control-label margbot_10">Estimated Monthly Payment</label>
                             <div class="clearfix"></div>
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                 <label class="button_payment button font_14">
                                     <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
                                     <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
-                                </label>
+                                </label><span class="text">at the Credit Union</span>
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                 <label class="button_payment button font_14">
                                     <div class="label-text width_auto">$ <span id="monthly_pay2">0</span></div>
                                     <input type="radio" value="$511" class="ng-pristine ng-invalid ng-invalid-required">
-                                </label>
+                                </label><span class="text">at the Bank</span>
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
                                 <label class="button_payment button font_14">
                                     <div class="label-text width_auto">$ <span id="monthly_pay3">0</span></div>
                                     <input type="radio" value="$527" class="ng-pristine ng-invalid ng-invalid-required">
-                                </label>
+                                </label><span class="text">at the Dealership</span>
                             </div>
                             <div class="clearfix"></div>
                             <label class="control-label margbot_10 margtop_30">Estimated Yearly Payment</label>
@@ -155,7 +159,6 @@
                             -->
 
                         </div>   
-                    </div>
                 </div>
             </div>
         </div>

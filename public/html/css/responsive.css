@@ -151,6 +151,7 @@
         left: 96% !important;
         margin-left: 0px !important;
     }
+    .bg .radio-container {width: 65%; margin-left: 60px;}
 }
 @media only screen and (min-width:768px) and (max-width:1023px) { 
     .inner_container {min-height: 823px;}
