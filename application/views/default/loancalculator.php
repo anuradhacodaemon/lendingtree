@@ -137,7 +137,7 @@
                                 </label><span class="text">at the Dealership</span>
                             </div>
                             <div class="clearfix"></div>
-                            <label class="control-label margbot_10 margtop_30">Estimated Yearly Payment</label>
+                            <label class="control-label margbot_10 margtop_30">Total Loan</label>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
                                 <div  class="label-text width_auto">$ <span id="year_pay1">0</span></div>
                             </div>
