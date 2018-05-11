@@ -60,7 +60,7 @@
  ?>
     <!-- Footer ends here -->
 
-  
+  <?php if(!empty($getPhone[0]['tagline'])) { echo $getPhone[0]['tagline']; } ?>
 
   </body>
 </html>

@@ -146,6 +146,10 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
+        unset($this->session->userdata['currently_owe']);
+        unset($this->session->userdata['monthly_payment']);
+        unset($this->session->userdata['vin']);
+        unset($this->session->userdata['current_milage']);
         $result = $this->loan_model->add_loan($this->session->userdata());
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
         if ($result > 0) {
@@ -175,11 +179,7 @@ class Auto extends CI_Controller {
             $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
-        } else {
-            $error = 'Your email already exist';
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-            $this->load->view('step6_view');
-        }
+        } 
     }
 
     /** Please dont change the mailformat because template is coming from database * */

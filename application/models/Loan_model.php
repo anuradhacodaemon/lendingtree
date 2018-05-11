@@ -28,41 +28,41 @@ class Loan_model extends CI_Model {
         return $result->result_array();
     }
     public function add_loan($logData) {
-        $this->db->select('lend_id');
+        /**$this->db->select('lend_id');
         $this->db->from(LOANS);
         $this->db->where('email', $logData['email']);
         //$this->db->where("lastname", $logData['lastname']);
         $result = $this->db->get();
         $num = $result->num_rows();
         //echo $this->db->last_query();
-        if ($num == 0) {
+        if ($num == 0) { **/
             $this->db->insert(LOANS, $logData);
             $id = $this->db->insert_id();
-            if ($this->db->affected_rows() > 0) {
+            //if ($this->db->affected_rows() > 0) {
                 return $id;
-            }
-        } else {
-            return 0;
-        }
+            //}
+       // } else {
+          //  return 0;
+        //}
     }
     public function add_refinance($logData) {
-        $this->db->select('ref_id');
+       /** $this->db->select('ref_id');
         $this->db->from(REFINANCE);
         $this->db->where('email', $logData['email']);
         //$this->db->where("lastname", $logData['lastname']);
         $result = $this->db->get();
         $num = $result->num_rows();
         //echo $this->db->last_query();
-        if ($num == 0) {
+        if ($num == 0) { **/
             $this->db->insert(REFINANCE, $logData);
            // echo $this->db->last_query();
             $id = $this->db->insert_id();
-            if ($this->db->affected_rows() > 0) {
+            //if ($this->db->affected_rows() > 0) {
                 return $id;
-            }
-        } else {
-            return 0;
-        }
+            //}
+        //} else {
+           // return 0;
+       // }
     }
     public function addvisitor($ipaddress, $page, $referrer, $datetime, $useragent, $remotehost) {
         $logData = array('ip_address' => $ipaddress, 'page' => $page, 'referrer' => $referrer, 'datetime' => $datetime, 'useragent' => $useragent, 'remotehost' => $remotehost);

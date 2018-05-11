@@ -403,7 +403,7 @@ function refinancestep7() {
                 if (data == 1)
                 {
                     //location.href = base_url;
-                    gtag_report_conversion(base_url);
+                    gtag_report_conversion_ref(base_url);
                 } else
                 {
                     $('#containerrefinance').html(data).effect("slide", {distance: 5});
@@ -416,7 +416,7 @@ function refinancestep7() {
 /* Event snippet for Completed Auto App conversion page
  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. */
 
-function gtag_report_conversion(url) {
+function gtag_report_conversion_ref(url) {
     var callback = function () {
         if (typeof (url) != 'undefined') {
             window.location = url;
