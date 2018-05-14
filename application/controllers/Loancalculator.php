@@ -33,8 +33,8 @@ class Loancalculator extends CI_Controller {
         }
 
         $this->session->set_userdata('panel', 'frontend');
-
-        $this->template->view('loancalculator');
+        $data['loandetails']=$this->loan_model->get_phone(); 
+        $this->template->view('loancalculator',$data);
     }
 
     public function page_landing($type, $id) {
