@@ -97,22 +97,22 @@
                                 <div class="line_bg"></div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">1.85%
-                                        <input type="radio" checked="checked" name="rate" onclick="calculateAll(1.85)">
+                                    <label class="radio-container"><?php echo $loandetails[0]['credit_union'] ?>%
+                                        <input type="radio" checked="checked" name="rate" onclick="calculateAll(<?php echo $loandetails[0]['credit_union'] ?>)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">4.15%
-                                        <input type="radio" name="rate" onclick="calculateAll(4.15)">
+                                    <label class="radio-container"><?php echo $loandetails[0]['dealership'] ?>%
+                                        <input type="radio" name="rate" onclick="calculateAll(<?php echo $loandetails[0]['bank'] ?>)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">5.45%
-                                        <input type="radio" name="rate" onclick="calculateAll(5.45)">
+                                    <label class="radio-container"><?php echo $loandetails[0]['dealership'] ?>%
+                                        <input type="radio" name="rate" onclick="calculateAll(<?php echo $loandetails[0]['dealership'] ?>)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -169,9 +169,9 @@
 </div>
 </div>
 
-<input id="r1" value="1.85" type="hidden"/>
-<input id="r2" value="4.14" type="hidden"/>
-<input id="r3" value="5.45" type="hidden"/>
+<input id="r1" value="<?php echo $loandetails[0]['credit_union'] ?>" type="hidden"/>
+<input id="r2" value="<?php echo $loandetails[0]['bank'] ?>" type="hidden"/>
+<input id="r3" value="<?php echo $loandetails[0]['dealership'] ?>" type="hidden"/>
 <!-- Banner ends here -->
 
 <link href="<?php echo BASE_URL; ?>public/dist/css/bootstrap-slider.css" rel="stylesheet">
@@ -279,10 +279,25 @@
 
                                 });
 
-                                var slider = new Slider("#ex2");
-                                slider.on("slide", function (sliderValue) {
+                               slider.on("change", function (sliderValue) {
+                                    // alert(JSON.stringify(sliderValue));
+                                    var obj = jQuery.parseJSON(JSON.stringify(sliderValue));
+//alert( obj.newValue );
+                                    document.getElementById("ex6SliderVal").textContent =  numberWithCommas(obj.newValue);
+
+                                });
+                                var slider2 = new Slider("#ex2");
+                                slider2.on("slide", function (sliderValue) {
 
                                     document.getElementById("ex2SliderVal").textContent = sliderValue;
+
+                                });
+
+                                slider2.on("change", function (sliderValue) {
+                                    // alert(JSON.stringify(sliderValue));
+                                    var obj = jQuery.parseJSON(JSON.stringify(sliderValue));
+//alert( obj.newValue );
+                                    document.getElementById("ex2SliderVal").textContent = obj.newValue;
 
                                 });
 

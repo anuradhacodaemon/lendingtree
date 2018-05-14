@@ -60,10 +60,34 @@
                             </div>
                         </div>
                          <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tag <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tag 
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="tagline" required name="tagline" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['tagline']))  echo $domain[0]['tagline']?>">
+                                
+                                <textarea id="tagline"  name="tagline" class="form-control col-md-7 col-xs-12" ><?php if(isset($domain[0]['tagline']))  echo $domain[0]['tagline']?></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Credit Union <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="credit_union" required name="credit_union" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['credit_union']))  echo $domain[0]['credit_union']?>">
+                            </div>
+                        </div>
+                       
+                       <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Bank <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="bank" required name="bank" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['bank']))  echo $domain[0]['bank']?>">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Dealershio <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="dealership" required name="dealership" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['dealership']))  echo $domain[0]['dealership']?>">
                             </div>
                         </div>
                         <div class="ln_solid"></div>
