@@ -58,9 +58,7 @@
                                         
                                         <td class=" last"><a href="<?php echo base_url() . 'admin/template/edit/' . $v['id']; ?>" style="color:#000"><i class="fa fa-pencil"></i></a>
                                            
-                                            &nbsp;
-                                            <a href="<?php echo base_url() . 'admin/template/view/' . $v['id']; ?>" style="color:#000"><i class="fa fa-eye"></i></a>
-                                        </td>
+                                            </td>
                                     </tr>
                                     <?php
                                     $i++;
