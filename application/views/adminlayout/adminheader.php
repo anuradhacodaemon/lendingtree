@@ -37,8 +37,10 @@
                                     </li>
                                      <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>
                                     </li>
-                                    
-                                    
+                                    <li><a href="<?php echo BASE_URL ?>admin/template"><i class="fa fa-edit"></i>Template for lead</a>
+                                    </li>
+                                     <li><a href="<?php echo BASE_URL ?>admin/template2/edit/0"><i class="fa fa-edit"></i>Template2 for admin</a>
+                                    </li>
                                     
                                    
 

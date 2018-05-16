@@ -65,6 +65,18 @@ $config = array(
         )
      
     ),
+    
+    'template/insert' => array(
+        array(
+            'field' => 'message',
+            'label' => 'Content',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Content is required field.'
+            )
+        )
+     
+    ),
      'emails/insert' => array(
         array(
             'field' => 'domain',
