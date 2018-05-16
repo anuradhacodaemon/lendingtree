@@ -104,3 +104,12 @@ $route['admin/emails/delete_inactive/(:num)'] = 'admin/admin_emails/delete_inact
 $route['admin/emails/delete_active/(:num)'] = 'admin/admin_emails/delete_active/$1';
 $route['admin/settings/(:num)'] = 'admin/admin_settings/edit/$1';
 
+$route['admin/template'] = 'admin/admin_template/index';
+$route['admin/template/(:num)'] = 'admin/admin_template/index/$1';
+$route['admin/template/add'] = 'admin/admin_template/add';
+$route['admin/template/edit/(:num)'] = 'admin/admin_template/edit/$1';
+$route['admin/template/view/(:num)'] = 'admin/admin_template/view/$1';
+$route['admin/template/delete_inactive/(:num)'] = 'admin/admin_template/delete_inactive/$1';
+$route['admin/template/delete_active/(:num)'] = 'admin/admin_template/delete_active/$1';
+
+$route['admin/template2/edit/(:num)'] = 'admin/admin_template2/edit/$1';

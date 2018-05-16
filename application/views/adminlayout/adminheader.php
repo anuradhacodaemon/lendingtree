@@ -39,7 +39,10 @@
                                     </li>
                                     
                                     
-                                    
+                                    <li><a href="<?php echo BASE_URL ?>admin/template"><i class="fa fa-edit"></i>Template for lead</a>
+                                    </li>
+                                     <li><a href="<?php echo BASE_URL ?>admin/template2/edit/0"><i class="fa fa-edit"></i>Template2 for admin</a>
+                                    </li> 
                                    
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
