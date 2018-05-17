@@ -152,6 +152,18 @@
                                 <div  class="label-text width_auto">$ <span id="year_pay3">0</span></div>
                             </div>
                             <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <label class="control-label margbot_10 margtop_30">Total interest</label>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                                <div  class="label-text width_auto">$ <span id="interest_pay1">0</span></div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                                <div  class="label-text width_auto">$ <span id="interest_pay2">0</span></div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                                <div  class="label-text width_auto">$ <span id="interest_pay3">0</span></div>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
                         <div class="col-xs-12 col-sm-12 radio margtop_30">
                             <button type="button" class="button" onclick="addloan()">Get Approved Now<span class="continueIcon sprites"></span></button>
@@ -180,8 +192,7 @@
 
 
 <script>
-
-                                  function calculate1()
+function calculate1()
                                 {
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
@@ -189,6 +200,7 @@
                                     //alert(r);
                                     result = document.getElementById("monthly_pay1");
                                     result1 = document.getElementById("year_pay1");
+                                    result2 = document.getElementById("interest_pay1");
                                     //x = Math.pow((1 + r), n);
                                     //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
@@ -202,9 +214,11 @@
                                     var x = Math.pow(1 + interest, payments); //Math.pow computes powers
                                     var A = (principal * x * interest) / (x - 1);
                                     var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
+                                    result2.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 function calculate2()
@@ -215,6 +229,7 @@
                                     //alert(r);
                                     result = document.getElementById("monthly_pay2");
                                     result1 = document.getElementById("year_pay2");
+                                    result2 = document.getElementById("interest_pay2");
                                     //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
@@ -227,10 +242,12 @@
                                     var x = Math.pow(1 + interest, payments); //Math.pow computes powers
                                     var A = (principal * x * interest) / (x - 1);
                                     var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     //result.innerHTML = A.toFixed(2);
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
+                                    result2.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 function calculate3()
@@ -241,6 +258,7 @@
                                     //alert(r);
                                     result = document.getElementById("monthly_pay3");
                                     result1 = document.getElementById("year_pay3");
+                                    result2 = document.getElementById("interest_pay3");
                                     //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
@@ -253,9 +271,11 @@
                                     var x = Math.pow(1 + interest, payments); //Math.pow computes powers
                                     var A = (principal * x * interest) / (x - 1);
                                     var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
+                                    result2.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 function calculateAll(rate)
@@ -270,6 +290,9 @@
                                     result4 = document.getElementById("year_pay2");
                                     result5 = document.getElementById("monthly_pay3");
                                     result6 = document.getElementById("year_pay3");
+                                    result7 = document.getElementById("interest_pay1");
+                                    result8 = document.getElementById("interest_pay2");
+                                    result9 = document.getElementById("interest_pay3");
                                     //x = Math.pow((1 + r), n);
                                     // x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
@@ -283,6 +306,7 @@
                                     var x = Math.pow(1 + interest, payments); //Math.pow computes powers
                                     var A = (principal * x * interest) / (x - 1);
                                     var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result1.innerHTML = numberWithCommas(A);
                                     result2.innerHTML = numberWithCommas(B);
@@ -290,6 +314,9 @@
                                     result4.innerHTML = numberWithCommas(B);
                                     result5.innerHTML = numberWithCommas(A);
                                     result6.innerHTML = numberWithCommas(B);
+                                    result7.innerHTML = numberWithCommas(C);
+                                    result8.innerHTML = numberWithCommas(C);
+                                    result9.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 var slider = new Slider("#ex1");
