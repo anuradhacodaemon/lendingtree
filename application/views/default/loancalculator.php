@@ -181,9 +181,8 @@
 
 <script>
 
-                                function calculate1()
+                                  function calculate1()
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = document.getElementById("r1").value;
@@ -191,31 +190,43 @@
                                     result = document.getElementById("monthly_pay1");
                                     result1 = document.getElementById("year_pay1");
                                     //x = Math.pow((1 + r), n);
-                                    x = (1 + r) * n;
+                                    //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                     B = A*n;
+                                    //A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A * n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
-
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 function calculate2()
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = document.getElementById("r2").value;
                                     //alert(r);
                                     result = document.getElementById("monthly_pay2");
                                     result1 = document.getElementById("year_pay2");
-                                    x = (1 + r) * n;
+                                    //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                   B = A*n;
+                                    //A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A * n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     //result.innerHTML = A.toFixed(2);
                                     result.innerHTML = numberWithCommas(A);
@@ -224,28 +235,31 @@
                                 }
                                 function calculate3()
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = document.getElementById("r3").value;
                                     //alert(r);
                                     result = document.getElementById("monthly_pay3");
                                     result1 = document.getElementById("year_pay3");
-                                    x = (1 + r) * n;
+                                    //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = A*n;
+                                    //A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A * n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
-
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
-                                
-                                 function calculateAll(rate)
+                                function calculateAll(rate)
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = rate;
@@ -257,11 +271,18 @@
                                     result5 = document.getElementById("monthly_pay3");
                                     result6 = document.getElementById("year_pay3");
                                     //x = Math.pow((1 + r), n);
-                                    x = (1 + r) * n;
+                                    // x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = A*n;
+                                    // A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A*n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result1.innerHTML = numberWithCommas(A);
                                     result2.innerHTML = numberWithCommas(B);
@@ -269,7 +290,6 @@
                                     result4.innerHTML = numberWithCommas(B);
                                     result5.innerHTML = numberWithCommas(A);
                                     result6.innerHTML = numberWithCommas(B);
-
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 var slider = new Slider("#ex1");
