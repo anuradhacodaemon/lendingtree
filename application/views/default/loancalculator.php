@@ -195,7 +195,7 @@
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
                                     A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                     B = A*n;
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
@@ -215,7 +215,7 @@
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
                                     A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                   B = A*n;
                                     // toFixed is used for rounding the amount with two decimal places.
                                     //result.innerHTML = A.toFixed(2);
                                     result.innerHTML = numberWithCommas(A);
@@ -235,7 +235,7 @@
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
                                     A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                    B = A*n;
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
@@ -261,7 +261,7 @@
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
                                     A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                    B = A*n;
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result1.innerHTML = numberWithCommas(A);
                                     result2.innerHTML = numberWithCommas(B);
