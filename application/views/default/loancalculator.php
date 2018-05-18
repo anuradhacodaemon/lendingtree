@@ -143,25 +143,25 @@
                             <div class="clearfix"></div>
                             <label class="control-label margbot_10 margtop_30">Total Loan</label>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="year_pay1">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="year_pay1">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="year_pay2">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="year_pay2">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="year_pay3">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="year_pay3">0</span></div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="clearfix"></div>
                             <label class="control-label margbot_10 margtop_30">Total interest</label>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="interest_pay1">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="interest_pay1">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="interest_pay2">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="interest_pay2">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="interest_pay3">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="interest_pay3">0</span></div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
