@@ -87,6 +87,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 marg_5 bg">
@@ -115,6 +116,7 @@
                                     <input type="radio" name="rate" id="I3" onclick="calculateAll3(<?php echo $loandetails[0]['dealership'] ?>)">
                                     <span class="checkmark"></span>
                                 </label>
+
                             </div>
                         </div>
                     </div>

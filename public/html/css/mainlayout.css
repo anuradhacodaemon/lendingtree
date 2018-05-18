@@ -606,7 +606,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#014625', end
 .radio .button_payment {
     background: #003671;
 }
-.radio .button_payment_current { background: #065e31 !important; }
+
+.radio .button_payment_current {
+    background: #065e31 !important;
+}
 .radio .button_payment:hover {
     background: #003671;
 }
