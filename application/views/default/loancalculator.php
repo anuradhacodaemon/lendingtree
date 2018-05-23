@@ -145,25 +145,25 @@
                         <div class="clearfix"></div>
                         <label class="control-label margbot_10 margtop_30">Total Loan</label>
                         <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                            <div  class="label-text text text_current width_auto">$ <span id="year_pay1">0</span></div>
+                            <div  class="label-text text text_current width_auto" id="total_loan1">$ <span id="year_pay1">0</span></div>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                            <div  class="label-text text width_auto">$ <span id="year_pay2">0</span></div>
+                            <div  class="label-text text width_auto" id="total_loan2">$ <span id="year_pay2">0</span></div>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                            <div  class="label-text text width_auto">$ <span id="year_pay3">0</span></div>
+                            <div  class="label-text text width_auto" id="total_loan3">$ <span id="year_pay3">0</span></div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="clearfix"></div>
                         <label class="control-label margbot_10 margtop_30">Total interest</label>
                         <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                            <div  class="label-text text text_current width_auto">$ <span id="interest_pay1">0</span></div>
+                            <div  class="label-text text text_current width_auto"  id="total_interest1">$ <span id="interest_pay1">0</span></div>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                            <div  class="label-text text width_auto">$ <span id="interest_pay2">0</span></div>
+                            <div  class="label-text text width_auto" id="total_interest2">$ <span id="interest_pay2">0</span></div>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                            <div  class="label-text text width_auto">$ <span id="interest_pay3">0</span></div>
+                            <div  class="label-text text width_auto" id="total_interest3">$ <span id="interest_pay3">0</span></div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -295,6 +295,13 @@
                                 $("#button1").addClass("button_payment_current");
                                 $("#button2").removeClass("button_payment_current");
                                 $("#button3").removeClass("button_payment_current");
+                                
+                                $("#total_loan1").addClass("text_current");
+                                $("#total_loan2").removeClass("text_current");
+                                $("#total_loan3").removeClass("text_current");
+                                $("#total_interest1").addClass("text_current");
+                                $("#total_interest2").removeClass("text_current");
+                                $("#total_interest3").removeClass("text_current");
                                 if ($("#C1").prop("checked", true))
                                 {
 
@@ -335,6 +342,12 @@
                                 $("#button2").addClass("button_payment_current");
                                 $("#button1").removeClass("button_payment_current");
                                 $("#button3").removeClass("button_payment_current");
+                                $("#total_loan2").addClass("text_current");
+                                $("#total_loan1").removeClass("text_current");
+                                $("#total_loan3").removeClass("text_current");
+                                $("#total_interest2").addClass("text_current");
+                                $("#total_interest1").removeClass("text_current");
+                                $("#total_interest3").removeClass("text_current");
                                 if ($("#C2").prop("checked", true))
                                 {
 
@@ -375,6 +388,12 @@
                                 $("#button3").addClass("button_payment_current");
                                 $("#button2").removeClass("button_payment_current");
                                 $("#button1").removeClass("button_payment_current");
+                                $("#total_loan3").addClass("text_current");
+                                $("#total_loan2").removeClass("text_current");
+                                $("#total_loan1").removeClass("text_current");
+                                $("#total_interest3").addClass("text_current");
+                                $("#total_interest2").removeClass("text_current");
+                                $("#total_interest1").removeClass("text_current");
                                 if ($("#C3").prop("checked", true))
                                 {
 

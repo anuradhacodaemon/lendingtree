@@ -212,6 +212,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
+        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
         $this->email->subject("thank you for applying");
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
@@ -278,6 +279,7 @@ class Auto extends CI_Controller {
 //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
+        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
