@@ -119,7 +119,7 @@
                             <label class="control-label margbot_10">Estimated Monthly Payment</label>
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 radio">
-                                <label class="button_payment button font_14">
+                                <label class="button_payment button font_14 button_payment_current">
                                     <div  class="label-text width_auto">$ <span id="monthly_pay1">0</span></div>
                                     <input type="radio" value="$483" class="ng-pristine ng-invalid ng-invalid-required">
                                 </label><span class="text">at the Credit Union</span>
@@ -139,25 +139,25 @@
                             <div class="clearfix"></div>
                             <label class="control-label margbot_10 margtop_30">Total Payment</label>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="year_pay1">0</span></div>
+                                <div  class="label-text text text_current width_auto">$ <span id="year_pay1">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="year_pay2">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="year_pay2">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="year_pay3">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="year_pay3">0</span></div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="clearfix"></div>
                             <label class="control-label margbot_10 margtop_30">Total interest</label>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="interest_pay1">0</span></div>
+                                <div  class="label-text text text_current width_auto">$ <span id="interest_pay1">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="interest_pay2">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="interest_pay2">0</span></div>
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
-                                <div  class="label-text width_auto">$ <span id="interest_pay3">0</span></div>
+                                <div  class="label-text text width_auto">$ <span id="interest_pay3">0</span></div>
                             </div>
                             <div class="clearfix"></div>
                         </div>

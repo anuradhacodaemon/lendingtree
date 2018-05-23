@@ -499,6 +499,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', e
     font-weight: 600;
     line-height: 24px;
     color: #000;
+    display: block;
+}
+.radio .text_current {
+    color: #d92027;
 }
 .radio .button {
     border-radius: 2px;
@@ -579,6 +583,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a1b1e', end
 }
 .radio .button_payment:hover {
     background: #a42327;
+}
+.radio .button_payment_current {
+    background: #d92027 !important;
 }
 .button_back .sprites.continueIcon {
     float: left;
