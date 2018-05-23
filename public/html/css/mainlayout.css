@@ -527,6 +527,7 @@ button, input:focus {outline: none;}
     color: #000;
     display: block;
 }
+.radio .text_current {color: #065e31 !important;}
 .radio .button {
     border-radius: 2px;
     width: 320px;
