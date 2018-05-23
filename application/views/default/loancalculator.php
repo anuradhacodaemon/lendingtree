@@ -93,22 +93,22 @@
                                 <div class="line_bg"></div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">1.85%
-                                        <input type="radio" checked="checked" name="rate" onclick="calculateAll(1.85)">
+                                    <label class="radio-container"><?php echo $loandetails[0]['credit_union'] ?>%
+                                        <input type="radio" checked="checked" name="rate" onclick="calculateAll(<?php echo $loandetails[0]['credit_union'] ?>)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">4.15%
-                                        <input type="radio" name="rate" onclick="calculateAll(4.15)">
+                                    <label class="radio-container"><?php echo $loandetails[0]['bank'] ?>%
+                                        <input type="radio" name="rate" onclick="calculateAll(<?php echo $loandetails[0]['bank'] ?>)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                     <!--<input type="radio" name="type" /> -->
-                                    <label class="radio-container">5.45%
-                                        <input type="radio" name="rate" onclick="calculateAll(5.45)">
+                                    <label class="radio-container"><?php echo $loandetails[0]['dealership'] ?>%
+                                        <input type="radio" name="rate" onclick="calculateAll(<?php echo $loandetails[0]['dealership'] ?>)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -137,7 +137,7 @@
                                 </label><span class="text">at the Dealership</span>
                             </div>
                             <div class="clearfix"></div>
-                            <label class="control-label margbot_10 margtop_30">Estimated Yearly Payment</label>
+                            <label class="control-label margbot_10 margtop_30">Total payment</label>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
                                 <div  class="label-text text text_current width_auto">$ <span id="year_pay1">0</span></div>
                             </div>
@@ -146,6 +146,18 @@
                             </div>
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
                                 <div  class="label-text text width_auto">$ <span id="year_pay3">0</span></div>
+                            </div>
+                            <div class="clearfix"></div>
+                             <div class="clearfix"></div>
+                            <label class="control-label margbot_10 margtop_30">Total interest</label>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                                <div  class="label-text width_auto">$ <span id="interest_pay1">0</span></div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                                <div  class="label-text width_auto">$ <span id="interest_pay2">0</span></div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 radio">
+                                <div  class="label-text width_auto">$ <span id="interest_pay3">0</span></div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -166,9 +178,9 @@
 </div>
 </div>
 
-<input id="r1" value="1.85" type="hidden"/>
-<input id="r2" value="4.14" type="hidden"/>
-<input id="r3" value="5.45" type="hidden"/>
+<input id="r1" value="<?php echo $loandetails[0]['credit_union'] ?>" type="hidden"/>
+<input id="r2" value="<?php echo $loandetails[0]['bank'] ?>" type="hidden"/>
+<input id="r3" value="<?php echo $loandetails[0]['dealership'] ?>" type="hidden"/>
 <!-- Banner ends here -->
 
 <link href="<?php echo BASE_URL; ?>public/dist/css/bootstrap-slider.css" rel="stylesheet">
@@ -178,71 +190,94 @@
 
 <script>
 
-                                function calculate1()
+                                 function calculate1()
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = document.getElementById("r1").value;
                                     //alert(r);
                                     result = document.getElementById("monthly_pay1");
                                     result1 = document.getElementById("year_pay1");
+                                    result2 = document.getElementById("interest_pay1");
                                     //x = Math.pow((1 + r), n);
-                                    x = (1 + r) * n;
+                                    //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                    //A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A * n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
-
+                                    result2.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 function calculate2()
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = document.getElementById("r2").value;
                                     //alert(r);
                                     result = document.getElementById("monthly_pay2");
                                     result1 = document.getElementById("year_pay2");
-                                    x = (1 + r) * n;
+                                    result2 = document.getElementById("interest_pay2");
+                                    //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                    //A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A * n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     //result.innerHTML = A.toFixed(2);
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
+                                    result2.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 function calculate3()
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = document.getElementById("r3").value;
                                     //alert(r);
                                     result = document.getElementById("monthly_pay3");
                                     result1 = document.getElementById("year_pay3");
-                                    x = (1 + r) * n;
+                                    result2 = document.getElementById("interest_pay3");
+                                    //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                    //A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A * n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
-
+                                    result2.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
-                                
-                                 function calculateAll(rate)
+                                function calculateAll(rate)
                                 {
-
                                     p = document.getElementById("ex1").value;
                                     n = document.getElementById("ex2").value; // no. of compoundings per year
                                     r = rate;
@@ -253,12 +288,23 @@
                                     result4 = document.getElementById("year_pay2");
                                     result5 = document.getElementById("monthly_pay3");
                                     result6 = document.getElementById("year_pay3");
+                                    result7 = document.getElementById("interest_pay1");
+                                    result8 = document.getElementById("interest_pay2");
+                                    result9 = document.getElementById("interest_pay3");
                                     //x = Math.pow((1 + r), n);
-                                    x = (1 + r) * n;
+                                    // x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
                                     //A = (p* Math.pow((1 + (r/(n*100))), (n*t)));
-                                    A = (p * ((r * x) / (x - 1))) / 12;
-                                    B = p * ((r * x) / (x - 1));
+                                    // A = (p * ((r * x) / (x - 1))) / 12;
+                                    //B = A*n;
+                                    var principal = parseFloat(p);
+                                    var interest = parseFloat(r) / 100 / 12;
+                                    var payments = parseFloat(n);
+// compute the monthly payment figure
+                                    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+                                    var A = (principal * x * interest) / (x - 1);
+                                    var B = (A * payments).toFixed(2);
+                                    var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     result1.innerHTML = numberWithCommas(A);
                                     result2.innerHTML = numberWithCommas(B);
@@ -266,7 +312,9 @@
                                     result4.innerHTML = numberWithCommas(B);
                                     result5.innerHTML = numberWithCommas(A);
                                     result6.innerHTML = numberWithCommas(B);
-
+                                    result7.innerHTML = numberWithCommas(C);
+                                    result8.innerHTML = numberWithCommas(C);
+                                    result9.innerHTML = numberWithCommas(C);
                                     //result.innerHTML += "<br> The interest is " + (A.toFixed(2) - p).toFixed(2);
                                 }
                                 var slider = new Slider("#ex1");
@@ -275,11 +323,25 @@
                                     document.getElementById("ex6SliderVal").textContent = numberWithCommas(sliderValue);
 
                                 });
+                                slider.on("change", function (sliderValue) {
+                                    // alert(JSON.stringify(sliderValue));
+                                    var obj = jQuery.parseJSON(JSON.stringify(sliderValue));
+//alert( obj.newValue );
+                                    document.getElementById("ex6SliderVal").textContent =  numberWithCommas(obj.newValue);
 
-                                var slider = new Slider("#ex2");
-                                slider.on("slide", function (sliderValue) {
+                                });
+                                var slider2 = new Slider("#ex2");
+                                slider2.on("slide", function (sliderValue) {
 
                                     document.getElementById("ex2SliderVal").textContent = sliderValue;
+
+                                });
+
+                                slider2.on("change", function (sliderValue) {
+                                    // alert(JSON.stringify(sliderValue));
+                                    var obj = jQuery.parseJSON(JSON.stringify(sliderValue));
+//alert( obj.newValue );
+                                    document.getElementById("ex2SliderVal").textContent = obj.newValue;
 
                                 });
 

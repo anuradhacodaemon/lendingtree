@@ -164,7 +164,7 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
-        unset($this->session->userdata['type']);
+       
         unset($this->session->userdata['currently_owe']);
         unset($this->session->userdata['monthly_payment']);
         unset($this->session->userdata['vin']);
