@@ -514,6 +514,10 @@ button, input:focus {outline: none;}
     font-weight: 600;
     line-height: 24px;
     color: #000;
+    display: block;
+}
+.radio .text_current {
+    color: #ff5000 !important;
 }
 .radio .button {
     border-radius: 2px;
@@ -594,6 +598,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac3905', end
 }
 .radio .button_payment:hover {
     background: #003da6;
+}
+.radio .button_payment_current {
+    background: #ff5000 !important;
 }
 .button_back .sprites.continueIcon {
     float: left;
