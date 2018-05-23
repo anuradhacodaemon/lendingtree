@@ -502,6 +502,9 @@ button, input:focus {outline: none;}
     color: #000;
     display: block;
 }
+.radio .text_current {
+    color: #6fb4ad !important;
+}
 .radio .button {
     border-radius: 2px;
     width: 320px;
@@ -580,7 +583,10 @@ button, input:focus {outline: none;}
     background: #3153ae;
 }
 .radio .button_payment:hover {
-    background: #7087c7;
+    background: #3153ae;
+}
+.radio .button_payment_current {
+    background: #42e2d8 !important;
 }
 .button_back .sprites.continueIcon {
     float: left;
