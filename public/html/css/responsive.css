@@ -53,6 +53,14 @@
         width: 100%;
         font-size: 10px;
     }
+    /* Home loan css */
+    .form-main .text-head {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .home-loan .radio .button {
+        font-size: 16px;
+    }
 }
 @media only screen and (max-width:480px){ 
     .form-main h1 {
@@ -127,6 +135,11 @@
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+}
+@media (min-width: 992px) {
+    .home-loan .col-md-2 {
+        width: 20%;
     }
 }
 @media only screen and (min-width:1024px) and (max-width:1024px) { 
