@@ -19,7 +19,7 @@
                 
                 <div class="offer-main clearfix">
                   <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="offer-cont">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
@@ -35,7 +35,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="offer-cont">
                             <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
                                 <button class="offer-circ">
@@ -44,6 +44,22 @@
                                             <div class="second-bevel">
                                                 <div class="offer-img offer-personal"></div>
                                                 <p class="title">AUTO REFINANCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="#">
+                                <button class="offer-circ">
+                                    <div class="outer-circ">
+                                        <div class="inner-bevel">
+                                            <div class="second-bevel">
+                                                <div class="offer-img offer-home-loan"></div>
+                                                <p class="title">HOME LOANS</p>
                                             </div>
                                         </div>
                                     </div>

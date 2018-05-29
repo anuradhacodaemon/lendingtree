@@ -146,6 +146,12 @@ button, input:focus {outline: none;}
     background-repeat: no-repeat;
     background-position: center;
 }
+.offer-home-loan {
+    background-image: url(../img/tactile-home.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .offer-personal {
     background-image: url(../img/auto-ref.svg);
     background-size: 80%;
