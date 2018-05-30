@@ -1,5 +1,163 @@
 var base_url = $('#domain').val();
+if (window.performance) {
+    console.info("window.performance work's fine on this browser");
+}
+if (performance.navigation.type == 1) {
+    //alert( "This page is reloaded" );
+    if (window.location.search.indexOf('homeloanstep=1') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step1",
+            success: function (data)
+            {
 
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=2') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step2",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=3') > -1) {
+
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step3",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=4') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step4",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=5') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step5",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=6') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step6",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+
+}
+window.onpopstate = function ()
+{
+    if (window.location.search.indexOf('homeloanstep=1') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step1",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=2') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step2",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=3') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step3",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=4') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step4",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloanstep=5') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step5",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    
+    if (window.location.search.indexOf('homeloanstep=6') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step6",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+}
 function home_step1(id) {
 
     var url = base_url + "homeloan/step1/" + id;
@@ -11,7 +169,7 @@ function home_step1(id) {
         {
             
            
-            window.history.pushState("Details", "Title", base_url + "homeloan?step=1");
+            window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=1");
             
             $('#container').html(data).effect("slide", {distance: 5});
             
@@ -32,7 +190,7 @@ function home_step2(id) {
         {
             
            
-            window.history.pushState("Details", "Title", base_url + "homeloan?step=2");
+            window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=2");
             
             $('#container').html(data).effect("slide", {distance: 5});
             
@@ -49,7 +207,7 @@ function home_step3(id) {
         url: base_url + "homeloan/step3/" + id,
         success: function (data)
         {
-            window.history.pushState("Details", "Title", base_url + "homeloan?step=3");
+            window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=3");
 
             $('#container').html(data).effect("slide", {distance: 5});
         }
@@ -57,15 +215,15 @@ function home_step3(id) {
 
 }
 
-function home_step4() {
+function home_step4(id) {
    
        
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
+            url: base_url + "homeloan/step4/" +id ,
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "homeloan?step=4");
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=4");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
@@ -75,95 +233,11 @@ function home_step4() {
 
 
 function home_step5() {
-    var RE = /^\d*\.?\d*$/;
    
-    if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
-    {
-
-        $('#err1').html('Your Pre-tax yearly income is empty');
-        $('#pre_tax_income').focus();
-        return false;
-    } else if ($('#err2').val() == 0 && $('#pre_tax_income1').val()=='')
-    {
-        $('#err1').html('Your Pre-tax yearly income should be number');
-        $('#pre_tax_income').focus();
-        return false;
-    } else
-    {
-        $('#err2').html('');
-        $.ajax({
-            type: "GET",
-            url: base_url + "homeloan/step5/" + $('input[name=pre_tax_income1]').val(),
-            success: function (data)
-            {
-                window.history.pushState("Details", "Title", base_url + "homeloan?step=5");
-                $('#container').html(data).effect("slide", {distance: 5});
-            }
-        });
-
-    }
-
-}
-function step6() {
-    var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
-    var RE = /^[A-Za-z]+$/;
+    var RE = /^\d*\.?\d*$/;
     var RE1 = /^\d*\.?\d*$/;
     var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
-
-    if ($('input[name=firstname]').val() == '')
-    {
-
-        $('#err1').html('firstname is empty');
-        $('#firstname').focus();
-        return false;
-    } else if (!RE.test($("#firstname").val()))
-    {
-
-        $('#err1').html('Your Firstname should have letter only ');
-        $('#firstname').focus();
-        return false;
-    } else if ($('input[name=lastname]').val() == '')
-    {
-
-        $('#err2').html('lastname is empty');
-        $('#lastname').focus();
-        $('#err1').html('');
-        return false;
-    } else if (!RE.test($("#lastname").val()))
-    {
-
-        $('#err2').html('Your Lastname should have letter only ');
-        $('#lastname').focus();
-        $('#err1').html('');
-        return false;
-    } else if ($('input[name=address]').val() == '')
-    {
-
-        $('#err3').html('address is empty');
-        $('#address').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        return false;
-    } else if ($('#state').val() == '')
-    {
-        //alert($(this).val());
-        // alert($('input[name=state]').has('option').length);
-        $('#err4').html('state is empty');
-        $('#state').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        return false;
-    } else if ($('#city').val() == '' && !$('#city').prop('disabled'))
-    {
-        $('#err5').html('city is empty');
-        $('#city').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        return false;
-    } else if ($('input[name=zip]').val() == '')
+     if ($('input[name=zip]').val() == '')
     {
 
         $('#err6').html('zip is empty');
@@ -199,20 +273,41 @@ function step6() {
     } else
     {
         $('#err2').html('');
-        var city = 0;
-        if ($('#city').val() > 0)
-            city = $('#city').val();
-
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
+            url: base_url + "homeloan/step5/" + $('input[name=zip]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "homeloan?step=6");
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=5");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
+
     }
+
+}
+function home_step6() {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step6/" + $('input[name=property_value]').val() ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=6");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+}
+
+function home_step7() {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/step7/" + $('input[name=mortgage_bal]').val() ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=7");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
 }
 
 function step7(){

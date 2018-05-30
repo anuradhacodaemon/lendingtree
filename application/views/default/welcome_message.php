@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'homeloan?step=1' ?>">
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloanstep=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">

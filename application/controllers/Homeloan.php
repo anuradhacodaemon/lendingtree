@@ -33,20 +33,24 @@ class Homeloan extends CI_Controller {
         }
 
         $this->session->set_userdata('panel', 'frontend');
-        
+
         $this->template->view('home_step1');
-        
     }
 
-    public function step1() {
-
+    public function step1($id = 0) {
+        if ($id) {
+            $data = array(
+                'loan_type' => $id
+            );
+            $this->session->set_userdata($data);
+        }
         $this->load->view('home_step1');
     }
 
     public function step2($id = 0) {
         if ($id) {
             $data = array(
-                'type' => $id
+                'property_type' => $id
             );
             $this->session->set_userdata($data);
         }
@@ -56,7 +60,7 @@ class Homeloan extends CI_Controller {
     public function step3($id = 0) {
         if ($id) {
             $data = array(
-                'requested_amount' => $id
+                'home_type' => $id
             );
 
             $this->session->set_userdata($data);
@@ -66,76 +70,43 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step3');
     }
 
-    public function step4($id = 0, $pre_approved = 0) {
+    public function step4($id = 0) {
         if ($id) {
             $data = array(
-                'current_employer' => $id,
-                'job_title' => $pre_approved
+                'plan_type' => $id,
             );
 
             $this->session->set_userdata($data);
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('home_step4');
+        $this->load->view('home_step5');
     }
 
-    public function step5($pre_tax_income = 0) {
+    public function step5($zip = 0) {
 
-        if ($pre_tax_income) {
+        if ($zip) {
 
             //$num = explode('$', $pre_tax_income);
             // $number = $num[1];
             //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
-                'pre_tax_income' => $pre_tax_income
-            );
-
-            $this->session->set_userdata($data);
-        }
-
-        $data['state'] = $this->loan_model->get_state();
-        if (isset($this->session->userdata['userdata']['state'])) {
-            $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
-        }
-//echo '<pre>';
-        // print_r($this->session->userdata());
-        $this->load->view('step5_view', $data);
-    }
-
-    public function getcity($state_id = 0) {
-
-        $city = $this->loan_model->get_city($state_id);
-        echo json_encode($city);
-    }
-
-    public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
-        if ($firstname) {
-            $data = array(
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'address' => $address,
-                'city' => $city,
-                'state' => $state,
                 'zip' => $zip
             );
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
 
-        $this->load->view('step6_view');
+    
+        $this->load->view('home_step6', $data);
     }
 
-    public function step7($month = 0, $day = 0, $year = 0, $ssn = '') {
-        if ($ssn) {
+
+    public function step6($id = '') {
+        if ($id) {
             $data = array(
-                'month' => $month,
-                'day' => $day,
-                'years' => $year,
-                'dob' => $year . '-' . $month . '-' . $day,
-                'ssn' => $ssn
+                'property_value' => $id
+                
             );
 
             $this->session->set_userdata($data);
@@ -143,7 +114,21 @@ class Homeloan extends CI_Controller {
         //echo '<pre>';
         // print_r($this->session->userdata());
 
-        $this->load->view('step7_view');
+        $this->load->view('home_step7', $data);
+    }
+
+    public function step7($id = 0) {
+        if ($id) {
+            $data = array(
+                'mortgage_bal' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step8',$data);
     }
 
     public function step8($email = '', $phone = '') {
@@ -164,7 +149,7 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
-       
+
         unset($this->session->userdata['currently_owe']);
         unset($this->session->userdata['monthly_payment']);
         unset($this->session->userdata['vin']);
@@ -200,13 +185,13 @@ class Homeloan extends CI_Controller {
             $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
-        } /**else {
+        } /*         * else {
 
-            $error = 'Your email already exist';
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+          $error = 'Your email already exist';
+          $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
-            $this->load->view('step6_view');
-        }**/
+          $this->load->view('step6_view');
+          }* */
     }
 
     /** Please dont change the mailformat because template is coming from database * */
@@ -282,17 +267,17 @@ class Homeloan extends CI_Controller {
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $emails = $this->loan_model->get_phone();
 
-        /**$config = Array(
-            'protocol' => 'sendmail',
-            'smtp_host' => 'Smtp.gmail.com',
-            'smtp_port' => 25,
-            'smtp_user' => 'codaemon123',
-            'smtp_pass' => 'codaemon1234',
-            'smtp_timeout' => '4',
-            'mailtype' => 'html',
-            'charset' => 'iso-8859-1'
-        );
-       **/
+        /*         * $config = Array(
+          'protocol' => 'sendmail',
+          'smtp_host' => 'Smtp.gmail.com',
+          'smtp_port' => 25,
+          'smtp_user' => 'codaemon123',
+          'smtp_pass' => 'codaemon1234',
+          'smtp_timeout' => '4',
+          'mailtype' => 'html',
+          'charset' => 'iso-8859-1'
+          );
+         * */
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'in.mailjet.com';
         $config['smtp_port'] = '25';

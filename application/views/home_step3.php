@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
-                            <a href="javascript:void(0);" onclick="home_step4(1)">
+                            <a href="javascript:void(0);" onclick="home_step4(2)">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
-                            <a href="javascript:void(0);" onclick="home_step4(1)">
+                            <a href="javascript:void(0);" onclick="home_step4(3)">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
