@@ -7,7 +7,7 @@ if (performance.navigation.type == 1) {
     if (window.location.search.indexOf('homeloanstep=1') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step1",
+            url: base_url + "homeloan/homestep1",
             success: function (data)
             {
 
@@ -19,7 +19,7 @@ if (performance.navigation.type == 1) {
     if (window.location.search.indexOf('homeloanstep=2') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step2",
+            url: base_url + "homeloan/homestep2",
             success: function (data)
             {
 
@@ -32,7 +32,7 @@ if (performance.navigation.type == 1) {
 
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step3",
+            url: base_url + "homeloan/homestep3",
             success: function (data)
             {
 
@@ -44,7 +44,7 @@ if (performance.navigation.type == 1) {
     if (window.location.search.indexOf('homeloanstep=4') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step4",
+            url: base_url + "homeloan/homestep4",
             success: function (data)
             {
 
@@ -57,7 +57,7 @@ if (performance.navigation.type == 1) {
     if (window.location.search.indexOf('homeloanstep=5') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step5",
+            url: base_url + "homeloan/homestep5",
             success: function (data)
             {
 
@@ -69,7 +69,7 @@ if (performance.navigation.type == 1) {
     if (window.location.search.indexOf('homeloanstep=6') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step6",
+            url: base_url + "homeloan/homestep6",
             success: function (data)
             {
 
@@ -86,7 +86,7 @@ window.onpopstate = function ()
     if (window.location.search.indexOf('homeloanstep=1') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step1",
+            url: base_url + "homeloan/homestep1",
             success: function (data)
             {
 
@@ -98,7 +98,7 @@ window.onpopstate = function ()
     if (window.location.search.indexOf('homeloanstep=2') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step2",
+            url: base_url + "homeloan/homestep2",
             success: function (data)
             {
 
@@ -110,7 +110,7 @@ window.onpopstate = function ()
     if (window.location.search.indexOf('homeloanstep=3') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step3",
+            url: base_url + "homeloan/homestep3",
             success: function (data)
             {
 
@@ -122,7 +122,7 @@ window.onpopstate = function ()
     if (window.location.search.indexOf('homeloanstep=4') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step4",
+            url: base_url + "homeloan/homestep4",
             success: function (data)
             {
 
@@ -134,7 +134,7 @@ window.onpopstate = function ()
     if (window.location.search.indexOf('homeloanstep=5') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step5",
+            url: base_url + "homeloan/homestep5",
             success: function (data)
             {
 
@@ -147,7 +147,7 @@ window.onpopstate = function ()
     if (window.location.search.indexOf('homeloanstep=6') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step6",
+            url: base_url + "homeloan/homestep6",
             success: function (data)
             {
 
@@ -160,7 +160,7 @@ window.onpopstate = function ()
 }
 function home_step1(id) {
 
-    var url = base_url + "homeloan/step1/" + id;
+    var url = base_url + "homeloan/homestep1/" + id;
     
     $.ajax({
         type: "GET",
@@ -181,7 +181,7 @@ function home_step1(id) {
 }
 function home_step2(id) {
 
-    var url = base_url + "homeloan/step2/" + id;
+    var url = base_url + "homeloan/homestep2/" + id;
     
     $.ajax({
         type: "GET",
@@ -204,7 +204,7 @@ function home_step3(id) {
 
     $.ajax({
         type: "GET",
-        url: base_url + "homeloan/step3/" + id,
+        url: base_url + "homeloan/homestep3/" + id,
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=3");
@@ -220,7 +220,7 @@ function home_step4(id) {
        
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step4/" +id ,
+            url: base_url + "homeloan/homestep4/" +id ,
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=4");
@@ -275,7 +275,7 @@ function home_step5() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step5/" + $('input[name=zip]').val(),
+            url: base_url + "homeloan/homestep5/" + $('input[name=zip]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=5");
@@ -289,7 +289,7 @@ function home_step5() {
 function home_step6() {
     $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step6/" + $('input[name=property_value]').val() ,
+            url: base_url + "homeloan/homestep6/" + $('input[name=property_value]').val() ,
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=6");
@@ -301,7 +301,19 @@ function home_step6() {
 function home_step7() {
     $.ajax({
             type: "GET",
-            url: base_url + "homeloan/step7/" + $('input[name=mortgage_bal]').val() ,
+            url: base_url + "homeloan/homestep7/" + $('input[name=mortgage_bal]').val() ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=7");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+}
+
+function home_step9() {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep9/0"  ,
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=7");
