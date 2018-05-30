@@ -31,7 +31,7 @@
                                     <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 2) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 1) echo 'class="offer-img offer-refinance_house selected"'; else   echo 'class="offer-img offer-purchase_house"';} else  echo 'class="offer-img offer-refinance_house"';?> ></div>
+                                                <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 2) echo 'class="offer-img offer-refinance_house selected"'; else   echo 'class="offer-img offer-purchase_house"';} else  echo 'class="offer-img offer-refinance_house"';?> ></div>
                                                 <p class="title">Refinance</p>
                                             </div>
                                         </div>
@@ -47,7 +47,7 @@
                                     <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 3) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 1) echo 'class="offer-img offer-home_equity_house selected"'; else   echo 'class="offer-img offer-home_equity_house"';} else  echo 'class="offer-img offer-home_equity_house"';?>> </div>
+                                                <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 3) echo 'class="offer-img offer-home_equity_house selected"'; else   echo 'class="offer-img offer-home_equity_house"';} else  echo 'class="offer-img offer-home_equity_house"';?>> </div>
                                                 <p class="title">Home Equity</p>
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                     <div <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 4) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div  <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 1) echo 'class="offer-img offer-reverse_mtg_house selected"'; else   echo 'class="offer-img offer-reverse_mtg_house"';} else  echo 'class="offer-img offer-reverse_mtg_house"';?> ></div>
+                                                <div  <?php if(isset($this->session->userdata['loan_type'])) { if($this->session->userdata['loan_type']== 4) echo 'class="offer-img offer-reverse_mtg_house selected"'; else   echo 'class="offer-img offer-reverse_mtg_house"';} else  echo 'class="offer-img offer-reverse_mtg_house"';?> ></div>
                                                 <p class="title">Reverse Mortgage</p>
                                             </div>
                                         </div>

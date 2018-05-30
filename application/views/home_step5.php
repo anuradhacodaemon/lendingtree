@@ -18,7 +18,7 @@
 
 							<div class="col-xs-12 col-sm-12 margbot_10">
                                 <div class="text-center font_14">
-									Virginia Beach, VA
+									<!--Virginia Beach, VA-->
 								</div>
                             </div>
 
