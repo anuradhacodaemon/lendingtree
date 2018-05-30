@@ -1018,7 +1018,53 @@ input[type="radio"], input[type="checkbox"] {
     background: linear-gradient(to bottom, #2b8c86 0%,#2b8c86 5%,#2d908a 12%,#309e97 28%,#3dccc3 67%,#40dad0 81%,#42e2d8 93%,#42e2d8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b8c86', endColorstr='#42e2d8',GradientType=0 ); /* IE6-9 */
 }
-
+.score .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .title {
+    font-family: 'Open Sans',sans-serif!important;
+    width: 80%;
+    font-size: 14px;
+    color: #31ada5;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 18px auto 0;
+}
+.offer-excellent_credit {
+    background-image: url(../img/excellent_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-good_credit {
+    background-image: url(../img/good_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-fair_credit {
+    background-image: url(../img/fair_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-poor_credit {
+    background-image: url(../img/poor_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-yes_check {
+    background-image: url(../img/yes_check.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-no_slash {
+    background-image: url(../img/no_slash.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 

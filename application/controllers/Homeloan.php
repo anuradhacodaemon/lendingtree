@@ -134,6 +134,21 @@ class Homeloan extends CI_Controller {
     public function homestep8($email = '', $phone = '') {
         
     }
+    
+    public function homestep9($id = '') {
+         if ($id) {
+            $data = array(
+                'mortgage_2' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step9');
+        
+    }
 
     /** Please dont change the mailformat because template is coming from database * */
     public function mailformat($firstname, $lastname, $email) {

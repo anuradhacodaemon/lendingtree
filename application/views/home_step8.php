@@ -13,7 +13,7 @@
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div class="offer-img offer-primary_home"></div>
+                                                <div class="offer-img offer-yes_check"></div>
                                                 <p class="title">Yes</p>
                                             </div>
                                         </div>
@@ -29,7 +29,7 @@
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div class="offer-img offer-secondary_home"></div>
+                                                <div class="offer-img offer-no_slash"></div>
                                                 <p class="title">No</p>
                                             </div>
                                         </div>

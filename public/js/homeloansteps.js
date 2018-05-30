@@ -316,7 +316,7 @@ function home_step9() {
             url: base_url + "homeloan/homestep9/0"  ,
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=7");
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloanstep=9");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
