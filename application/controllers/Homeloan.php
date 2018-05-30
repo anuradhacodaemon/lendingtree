@@ -37,7 +37,7 @@ class Homeloan extends CI_Controller {
         $this->template->view('home_step1');
     }
 
-    public function step1($id = 0) {
+    public function homestep1($id = 0) {
         if ($id) {
             $data = array(
                 'loan_type' => $id
@@ -47,20 +47,20 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step1');
     }
 
-    public function step2($id = 0) {
+    public function homestep2($id = 0) {
         if ($id) {
             $data = array(
-                'property_type' => $id
+                'loan_type' => $id
             );
             $this->session->set_userdata($data);
         }
         $this->load->view('home_step2');
     }
 
-    public function step3($id = 0) {
+    public function homestep3($id = 0) {
         if ($id) {
             $data = array(
-                'home_type' => $id
+                'property_type' => $id
             );
 
             $this->session->set_userdata($data);
@@ -70,10 +70,10 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step3');
     }
 
-    public function step4($id = 0) {
+    public function homestep4($id = 0) {
         if ($id) {
             $data = array(
-                'plan_type' => $id,
+                'property_type' => $id,
             );
 
             $this->session->set_userdata($data);
@@ -83,7 +83,7 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step5');
     }
 
-    public function step5($zip = 0) {
+    public function homestep5($zip = 0) {
 
         if ($zip) {
 
@@ -102,7 +102,7 @@ class Homeloan extends CI_Controller {
     }
 
 
-    public function step6($id = '') {
+    public function homestep6($id = '') {
         if ($id) {
             $data = array(
                 'property_value' => $id
@@ -117,7 +117,7 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step7', $data);
     }
 
-    public function step7($id = 0) {
+    public function homestep7($id = 0) {
         if ($id) {
             $data = array(
                 'mortgage_bal' => $id
@@ -131,67 +131,8 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step8',$data);
     }
 
-    public function step8($email = '', $phone = '') {
-        if ($email) {
-            $data = array(
-                'email' => $email,
-                'phone' => $phone,
-                'add_date' => date('Y-m-d H:i:s'),
-                'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
-                'status' => "2"
-            );
-
-            $this->session->set_userdata($data);
-        }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-        //die;
-        unset($this->session->userdata['panel']);
-        unset($this->session->userdata['__ci_last_regenerate']);
-        unset($this->session->userdata['userdata']);
-
-        unset($this->session->userdata['currently_owe']);
-        unset($this->session->userdata['monthly_payment']);
-        unset($this->session->userdata['vin']);
-        unset($this->session->userdata['current_milage']);
-        $result = $this->loan_model->add_loan($this->session->userdata());
-
-        //$this->loan_model->add_loan($this->session->userdata['userdata']);
-
-        if ($result > 0) {
-            $getPhone = $this->loan_model->get_phone();
-            $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
-            $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
-            $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-            $this->session->userdata['userdata'] = '';
-            $this->session->userdata['type'] = '';
-            $this->session->userdata['requested_amount'] = '';
-            $this->session->userdata['current_employer'] = '';
-            $this->session->userdata['job_title'] = '';
-            $this->session->userdata['pre_tax_income'] = '';
-            $this->session->userdata['firstname'] = '';
-            $this->session->userdata['lastname'] = '';
-            $this->session->userdata['address'] = '';
-            $this->session->userdata['state'] = '';
-            $this->session->userdata['city'] = '';
-            $this->session->userdata['zip'] = '';
-            $this->session->userdata['month'] = '';
-            $this->session->userdata['day'] = '';
-            $this->session->userdata['years'] = '';
-            $this->session->userdata['dob'] = '';
-            $this->session->userdata['ssn'] = '';
-            $this->session->userdata['email'] = '';
-            $this->session->userdata['phone'] = '';
-            //redirect('/');
-            echo 1;
-        } /*         * else {
-
-          $error = 'Your email already exist';
-          $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-
-          $this->load->view('step6_view');
-          }* */
+    public function homestep8($email = '', $phone = '') {
+        
     }
 
     /** Please dont change the mailformat because template is coming from database * */

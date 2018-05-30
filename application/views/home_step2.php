@@ -10,10 +10,10 @@
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step3(1)">
                                 <button class="offer-circ">
-                                    <div  <?php if(isset($this->session->userdata['home_type'])) { if($this->session->userdata['home_type']== 1) echo 'class="outer-circ selected-circ"'; else echo 'class=outer-circ';} else  echo 'class="outer-circ"';?>>
+                                    <div  <?php if(isset($this->session->userdata['property_type'])) { if($this->session->userdata['property_type']== 1) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div  <?php if(isset($this->session->userdata['home_type'])) { if($this->session->userdata['home_type']== 1) echo 'class="offer-img offer-home-loan selected"'; else echo 'class=offer-img offer-home-loan';} else  echo 'class="offer-img offer-home-loan"';?>></div>
+                                                <div  <?php if(isset($this->session->userdata['property_type'])) { if($this->session->userdata['property_type']== 1) echo 'class="offer-img offer-home-loan selected"'; else   echo 'class="offer-img offer-home-loan"';} else  echo 'class="offer-img offer-home-loan"';?>></div>
                                                 <p class="title">Single Family Home</p>
                                             </div>
                                         </div>
@@ -26,10 +26,10 @@
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step3(2)">
                                 <button class="offer-circ">
-                                    <div  <?php if(isset($this->session->userdata['home_type'])) { if($this->session->userdata['home_type']== 2) echo 'class="outer-circ selected-circ"'; else echo 'class=outer-circ';} else  echo 'class="outer-circ"';?>>
+                                    <div  <?php if(isset($this->session->userdata['property_type'])) { if($this->session->userdata['property_type']== 2) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div  <?php if(isset($this->session->userdata['home_type'])) { if($this->session->userdata['home_type']== 2) echo 'class="offer-img offer-townhouse selected"'; else echo 'class=offer-img offer-townhouse';} else  echo 'class="offer-img offer-townhouse"';?>></div>
+                                                <div  <?php if(isset($this->session->userdata['property_type'])) { if($this->session->userdata['property_type']== 2) echo 'class="offer-img offer-townhouse selected"'; else echo 'class="offer-img offer-townhouse"';} else  echo 'class="offer-img offer-townhouse"';?>></div>
                                                 <p class="title">Townhome</p>
                                             </div>
                                         </div>
@@ -42,10 +42,10 @@
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step3(3)">
                                 <button class="offer-circ">
-                                    <div  <?php if(isset($this->session->userdata['home_type'])) { if($this->session->userdata['home_type']== 3) echo 'class="outer-circ selected-circ"'; else echo 'class=outer-circ';} else  echo 'class="outer-circ"';?>>
+                                    <div  <?php if(isset($this->session->userdata['property_type'])) { if($this->session->userdata['property_type']== 3) echo 'class="outer-circ selected-circ"'; else echo 'class=outer-circ';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div  <?php if(isset($this->session->userdata['home_type'])) { if($this->session->userdata['home_type']== 3) echo 'class="offer-img offer-condminium selected"'; else echo 'class=offer-img offer-condminium';} else  echo 'class="offer-img offer-condminium"';?>></div>
+                                                <div  <?php if(isset($this->session->userdata['property_type'])) { if($this->session->userdata['property_type']== 3) echo 'class="offer-img offer-condminium selected"'; else echo 'class="offer-img offer-condminium"';} else  echo 'class="offer-img offer-condminium"';?>></div>
                                                 <p class="title">Condominium</p>
                                             </div>
                                         </div>
