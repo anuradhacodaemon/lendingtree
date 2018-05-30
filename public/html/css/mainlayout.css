@@ -945,23 +945,14 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 /*selected bevel css*/
-.offer-cont .offer-circ .selected-circ .inner-bevel {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: #7bc043;
-    box-shadow: 0 5px 10px 2px rgba(70,70,70,.2);
-    padding: 8px;
+.selected-circ .inner-bevel {
+    background: #7bc043 !important;
 }
-.offer-cont .offer-circ .selected-circ .inner-bevel:hover {
-    background: #7bc043;
+.selected-circ .inner-bevel:hover {
+    background: #7bc043 !important;
 }
-.offer-cont .offer-circ .selected-circ .inner-bevel .second-bevel {
-    width: 135px;
-    height: 135px;
-    border-radius: 50%;
-    background: #7bc043;
-    padding: 10px 0 0;
+.selected-circ .inner-bevel .second-bevel {
+    background: #7bc043 !important;
 }
 .selected {
     background-image: url(../img/white_yes_check.png);
@@ -969,8 +960,8 @@ input[type="radio"], input[type="checkbox"] {
     background-repeat: no-repeat;
     background-position: center;
 }
-.offer-cont .offer-circ .selected-circ .inner-bevel .second-bevel .title {
-    color: #fff;
+.selected-circ .inner-bevel .second-bevel .title {
+    color: #fff !important;
 }
 .offer-primary_home {
     background-image: url(../img/primary_home.png);
