@@ -131,8 +131,18 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step8',$data);
     }
 
-    public function homestep8($email = '', $phone = '') {
-        
+    public function homestep8($id = '') {
+        if ($id) {
+            $data = array(
+                'mortgage_2' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step10');
     }
     
     public function homestep9($id = '') {
@@ -147,6 +157,203 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step9');
+        
+    }
+    public function homestep10($id = '') {
+         if ($id) {
+            $data = array(
+                'remaining_mortgage_bal' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step11');
+        
+    }
+    
+    public function homestep11($id = '') {
+         if ($id) {
+            $data = array(
+                'close_mortgage_bal' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step12');
+        
+    }
+    
+    public function homestep12($id = '') {
+         if ($id) {
+            $data = array(
+                'credit_score' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step13');
+        
+    }
+    
+    public function homestep13($month = 0, $day = 0, $year = 0) {
+         if ($month) {
+            $data = array(
+                'month' => $month,
+                'day' => $day,
+                'years' => $year,
+                'dob' => $year . '-' . $month . '-' . $day,
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step14');
+        
+    }
+    
+    public function homestep14($id = '') {
+         if ($id) {
+            $data = array(
+                'military_served' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step15');
+        
+    }
+    public function homestep15($id = '') {
+         if ($id) {
+            $data = array(
+                'military_served' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step16');
+        
+    }
+    
+     public function homestep17($id = '') {
+         if ($id) {
+            $data = array(
+                'bankruptcy_or_foreclosure' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step17');
+        
+    }
+    
+    public function homestep18($id = '') {
+         if ($id) {
+            $data = array(
+                'bankruptcy_or_foreclosure' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step18');
+        
+    }
+    public function homestep19($id = '') {
+         if ($id) {
+            $data = array(
+                'bankruptcy_or_foreclosure' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step19');
+        
+    }
+    
+     public function homestep20($id = '') {
+         if ($id) {
+            $data = array(
+                'bankruptcy_or_foreclosure' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step20');
+        
+    }
+    
+    public function homestep21($id = '') {
+         if ($id) {
+            $data = array(
+                'bankruptcy_or_foreclosure' => $id
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step21');
+        
+    }
+    public function homestep22($zip = '',$city='',$address='') {
+         if ($zip) {
+            $data = array(
+                'zip' => $zip,
+                'city' =>$city,
+                'address' =>$address
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step22');
+        
+    }
+    
+    public function homestep23($firstname = '',$lastname='') {
+         if ($firstname) {
+            $data = array(
+                'firstname' => $firstname,
+                'lastname' =>$lastname
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('home_step23');
         
     }
 
