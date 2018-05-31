@@ -93,7 +93,7 @@ if (!empty($this->session->flashdata('item'))) {
                   
                 
                 //$("#city").empty();
-                $("#city").html("<option value=''>select city</option>");
+                $("#city").html("<option value=''>Select City</option>");
                 $.each(JSON.parse(data), function (key, value) {
                     $('select[name="city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
                 });
