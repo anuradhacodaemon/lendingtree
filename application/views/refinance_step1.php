@@ -58,7 +58,7 @@ else
                             });
 // Use it.
 //var amount = document.getElementById('input').innerHTML;
-                            return formatter.format(x).replace("$", "");
+                            return formatter.format(x).replace("$", "").replace(/\.00$/,'');
                         }
    $(document).ready(function(){
                  
@@ -67,7 +67,7 @@ else
                                 currency: 'USD',
                                 minimumFractionDigits: 2,
                             });
-                 var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "");
+                 var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "").replace(/\.00$/,'');
                $('#ex6SliderVal').html(x);  
                //alert( $('#ex6SliderVal').html());
  

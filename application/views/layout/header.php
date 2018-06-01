@@ -10,7 +10,7 @@
           <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
             <div class="number">
                 <?php if(!empty($getPhone[0]['phone'])) { ?>
-              <a href="tel:<?php echo $getPhone[0]['phone']?>">Call us <strong><?php echo $getPhone[0]['phone']?></strong></a>
+                <a href="tel:<?php echo $getPhone[0]['phone']?>">Call Us <strong><?php echo $getPhone[0]['phone']?></strong></a> &nbsp; <span style="color: white;font-size: 14px;"><strong>Option 3</strong> </span>
                 <?php } ?>
             </div>
           </div>
