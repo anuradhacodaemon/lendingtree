@@ -955,8 +955,8 @@ input[type="radio"], input[type="checkbox"] {
     background: #7bc043 !important;
 }
 .selected {
-    background-image: url(../img/white_yes_check.png);
-    background-size: 44%;
+    background-image: url(../img/white_yes_check.png) !important;
+    background-size: 44% !important;
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -1,12 +1,12 @@
 <div class="clearfix" id="container1">
     <div class="" id="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 <div class="form-main home-loan clearfix">
                     <h1 class="text-head">Do you have a second mortgage?</h1>
                     <!--<a href="" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step8(1)">
                                 <button class="offer-circ">
@@ -22,7 +22,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step9(2)">
                                 <button class="offer-circ">
