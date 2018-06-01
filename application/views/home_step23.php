@@ -38,7 +38,7 @@
                         </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <button type="button" class="button" onclick="step8()">Submit<span class="continueIcon sprites"></span></button>
+                        <button type="button" class="button" onclick="home_step24()">Submit<span class="continueIcon sprites"></span></button>
                         
 
                     </div>

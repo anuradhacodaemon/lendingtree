@@ -9,7 +9,7 @@
                     <h1></h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Would you like to borrow additional cash??</label>
+                    <label class="control-label">Would you like to borrow additional cash?</label>
 
                     <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php
                             if (isset($this->session->userdata['additional_cash']))
@@ -39,7 +39,7 @@
 
                 </div>
                 <div class="col-xs-12 col-sm-12 radio">
-                    <button type="button" class="button" onclick="home_step7()">Continue<span class="continueIcon sprites"></span></button>
+                    <button type="button" class="button" onclick="home_step11(1)">Continue<span class="continueIcon sprites"></span></button>
                                   <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
                     -->
 

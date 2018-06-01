@@ -32,7 +32,7 @@ else
 
                 </div>
                 <div class="col-xs-12 col-sm-12 radio">
-                    <button type="button" class="button" onclick="home_step17(1)">Continue<span class="continueIcon sprites"></span></button>
+                    <button type="button" class="button" onclick="home_step172(1)">Continue<span class="continueIcon sprites"></span></button>
                                   <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
                     -->
 
