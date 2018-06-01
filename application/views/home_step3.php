@@ -1,3 +1,5 @@
+<?php //echo '<pre>';
+//print_r($this->session->userdata());?>
 <div class="clearfix" id="container1">
     <div class="" id="container">
         <div class="row">

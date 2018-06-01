@@ -38,12 +38,7 @@ class Homeloan extends CI_Controller {
     }
 
     public function homestep1($id = 0) {
-        if ($id) {
-            $data = array(
-                'loan_type' => $id
-            );
-            $this->session->set_userdata($data);
-        }
+       
         $this->load->view('home_step1');
     }
 
@@ -73,7 +68,7 @@ class Homeloan extends CI_Controller {
     public function homestep4($id = 0) {
         if ($id) {
             $data = array(
-                'property_type' => $id,
+                'home_type' => $id,
             );
 
             $this->session->set_userdata($data);
@@ -98,7 +93,7 @@ class Homeloan extends CI_Controller {
         }
 
     
-        $this->load->view('home_step6', $data);
+        $this->load->view('home_step6');
     }
 
 
@@ -114,7 +109,7 @@ class Homeloan extends CI_Controller {
         //echo '<pre>';
         // print_r($this->session->userdata());
 
-        $this->load->view('home_step7', $data);
+        $this->load->view('home_step7');
     }
 
     public function homestep7($id = 0) {
@@ -128,7 +123,7 @@ class Homeloan extends CI_Controller {
         //echo '<pre>';
         // print_r($this->session->userdata());
 
-        $this->load->view('home_step8',$data);
+        $this->load->view('home_step8');
     }
 
     public function homestep8($id = '') {

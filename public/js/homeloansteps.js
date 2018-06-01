@@ -78,7 +78,210 @@ if (performance.navigation.type == 1) {
             }
         });
     }
+     if (window.location.search.indexOf('homeloan=7') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep7",
+            success: function (data)
+            {
 
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=8') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep8",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=9') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=10') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep10",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=11') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep11",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=12') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep12",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=13') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep13",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=14') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep14",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=15') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep15",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=16') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep16",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=17') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep17",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=18') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep18",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=19') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep19",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=20') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep20",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=21') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep21",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=22') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep22",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=23') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep23",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 
 }
 window.addEventListener('popstate', function(event) {
@@ -157,7 +360,198 @@ window.addEventListener('popstate', function(event) {
             }
         });
     }
+    if (window.location.search.indexOf('homeloan=7') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep7",
+            success: function (data)
+            {
 
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=8') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep8",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=9') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=10') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep10",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=11') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep11",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=12') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep12",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=13') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep13",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=14') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep14",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+ if (window.location.search.indexOf('homeloan=15') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep15",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=16') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep16",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=18') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep18",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=19') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep19",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=20') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep20",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=21') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep21",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=22') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep22",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=23') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep23",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 //}
  }, false);
 function home_step1(id) {
