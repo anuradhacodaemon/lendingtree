@@ -561,12 +561,12 @@ class Homeloan extends CI_Controller {
     public function mail_format_pdf($id = 0) {
         $link = explode('&', decode_url($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $data['userDetails'] = $this->loan_model->get_userdetailshomeloanpdf($link[0]);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('view_homeloanfile', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
@@ -575,7 +575,7 @@ class Homeloan extends CI_Controller {
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
-        $url = base_url() . "auto/mail_format_pdf/" . $url1;
+        $url = base_url() . "homeloan/mail_format_pdf/" . $url1;
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(

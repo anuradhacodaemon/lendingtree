@@ -163,6 +163,18 @@ class Loan_model extends CI_Model {
         return $result->result_array();
     }
     
+    public function get_userdetailshomeloanpdf($shopId = 0) {
+        $this->db->select('shop.*');
+
+        $this->db->from(HOMELOAN . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.Loan_id', $shopId);
+
+        $result = $this->db->get();
+
+        return $result->result_array();
+    }
+    
      public function get_emailtemplatepdf() {
         $this->db->from(EMAILTEMPLATEPDF . ' as email');
         $result = $this->db->get();
