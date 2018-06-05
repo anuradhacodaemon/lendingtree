@@ -906,7 +906,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
 }
 .offer-home_equity_house {
     background-image: url(../img/home_equity_house.png);
-    background-size: 36%;
+    background-size: 28%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -962,7 +962,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
 }
 .offer-primary_home {
     background-image: url(../img/primary_home.png);
-    background-size: 28%;
+    background-size: 24%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -974,7 +974,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
 }
 .offer-rental_property {
     background-image: url(../img/rental_property.png);
-    background-size: 32%;
+    background-size: 30%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -1010,7 +1010,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
     font-family: 'Open Sans',sans-serif!important;
     width: 80%;
     font-size: 14px;
-    color: #31ada5;
+    color: #D92027;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;

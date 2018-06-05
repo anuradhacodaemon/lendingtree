@@ -125,6 +125,11 @@
         right: 0;
     }
 }
+@media (min-width: 992px) {
+	.home-loan .col-md-2 {
+		width: 20%;
+	}
+}
 @media only screen and (min-width:1024px) and (max-width:1024px) { 
     .inner_container {min-height: 570px;}
     .inner_height {min-height:570px;}
