@@ -10,10 +10,10 @@
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step8(1)">
                                 <button class="offer-circ">
-                                    <div class="outer-circ">
+                                    <div <?php if(isset($this->session->userdata['mortgage_2'])) { if($this->session->userdata['mortgage_2']== 1) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div class="offer-img offer-yes_check"></div>
+                                                <div   <?php if(isset($this->session->userdata['mortgage_2'])) { if($this->session->userdata['mortgage_2']== 1) echo 'class="offer-img offer-yes_check selected"'; else   echo 'class="offer-img offer-yes_check"';} else  echo 'class="offer-img offer-yes_check"';?> ></div>
                                                 <p class="title">Yes</p>
                                             </div>
                                         </div>
@@ -26,10 +26,10 @@
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step9(2)">
                                 <button class="offer-circ">
-                                    <div class="outer-circ">
+                                    <div <?php if(isset($this->session->userdata['mortgage_2'])) { if($this->session->userdata['mortgage_2']== 2) echo 'class="outer-circ selected-circ"'; else echo 'class="outer-circ"';} else  echo 'class="outer-circ"';?>>
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
-                                                <div class="offer-img offer-no_slash"></div>
+                                                <div <?php if(isset($this->session->userdata['mortgage_2'])) { if($this->session->userdata['mortgage_2']== 2) echo 'class="offer-img offer-no_slash selected"'; else   echo 'class="offer-img offer-no_slash"';} else  echo 'class="offer-img offer-no_slash"';?> ></div>
                                                 <p class="title">No</p>
                                             </div>
                                         </div>

@@ -8,7 +8,7 @@
                     <div class="clearfix"></div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="offer-cont">
-                            <a href="javascript:void(0);" onclick="home_step11(1)">
+                            <a href="javascript:void(0);" onclick="home_step111(1)">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="offer-cont">
-                            <a href="javascript:void(0);" onclick="home_step9(2)">
+                            <a href="javascript:void(0);" onclick="home_step111(2)">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
