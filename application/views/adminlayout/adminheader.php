@@ -35,13 +35,17 @@
                                     
                                      <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a>
                                     </li>
+                                    
+                                     <li><a href="<?php echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a>
+                                    </li>
                                      <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>
                                     </li>
+                                    
+                                    
                                     <li><a href="<?php echo BASE_URL ?>admin/template"><i class="fa fa-edit"></i>Template for lead</a>
                                     </li>
                                      <li><a href="<?php echo BASE_URL ?>admin/template2/edit/0"><i class="fa fa-edit"></i>Template2 for admin</a>
-                                    </li>
-                                    
+                                    </li> 
                                    
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
