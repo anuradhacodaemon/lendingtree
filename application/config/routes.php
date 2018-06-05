@@ -113,3 +113,17 @@ $route['admin/template/delete_inactive/(:num)'] = 'admin/admin_template/delete_i
 $route['admin/template/delete_active/(:num)'] = 'admin/admin_template/delete_active/$1';
 
 $route['admin/template2/edit/(:num)'] = 'admin/admin_template2/edit/$1';
+$route['admin/homeloan'] = 'admin/admin_homeloan/index';
+$route['admin/homeloan/(:num)'] = 'admin/admin_homeloan/index/$1';
+$route['admin/homeloan/details/(:num)'] = 'admin/admin_homeloan/details/$1';
+$route['admin/homeloan/export'] = 'admin/admin_homeloan/export';
+$route['admin/homeloan/pdfhomeloan/(:num)'] = 'admin/admin_homeloan/pdfhomeloan/$1';
+$route['admin/homeloan/pdfLoan/(:num)'] = 'admin/admin_homeloan/pdfLoan/$1';
+
+$route['admin/homeloan/mailsent'] = 'admin/admin_homeloan/mailsent';
+
+$route['admin/homeloan/updatestatus'] = 'admin/admin_homeloan/updatestatus';
+$route['admin/homeloan/delete_inactive/(:any)'] = 'admin/admin_homeloan/delete_inactive/$1';
+$route['admin/homeloan/deleteall'] = 'admin/admin_homeloan/deleteall';
+$route['admin/homeloan/sentemail'] = 'admin/admin_homeloan/sentemail';
+$route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
