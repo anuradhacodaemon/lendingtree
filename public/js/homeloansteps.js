@@ -54,6 +54,19 @@ if (performance.navigation.type == 1) {
             }
         });
     }
+    if (window.location.search.indexOf('homeloan=41') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep41",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
     if (window.location.search.indexOf('homeloan=5') > -1) {
         $.ajax({
             type: "GET",
@@ -138,6 +151,18 @@ if (performance.navigation.type == 1) {
             }
         });
     }
+     if (window.location.search.indexOf('homeloan=111') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep111",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
      if (window.location.search.indexOf('homeloan=12') > -1) {
         $.ajax({
             type: "GET",
@@ -202,6 +227,30 @@ if (performance.navigation.type == 1) {
         $.ajax({
             type: "GET",
             url: base_url + "homeloan/homestep17",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=171') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep171",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=172') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep172",
             success: function (data)
             {
 
@@ -284,9 +333,9 @@ if (performance.navigation.type == 1) {
     }
 
 }
-window.addEventListener('popstate', function(event) {
-//window.onpopstate = function ()
-//{
+//window.addEventListener('popstate', function(event) {
+window.onpopstate = function ()
+{
     if (window.location.search.indexOf('homeloan=1') > -1) {
         $.ajax({
             type: "GET",
@@ -327,6 +376,18 @@ window.addEventListener('popstate', function(event) {
         $.ajax({
             type: "GET",
             url: base_url + "homeloan/homestep4",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=41') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep41",
             success: function (data)
             {
 
@@ -420,6 +481,18 @@ window.addEventListener('popstate', function(event) {
             }
         });
     }
+    if (window.location.search.indexOf('homeloan=111') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep111",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
     if (window.location.search.indexOf('homeloan=12') > -1) {
         $.ajax({
             type: "GET",
@@ -472,6 +545,42 @@ window.addEventListener('popstate', function(event) {
         $.ajax({
             type: "GET",
             url: base_url + "homeloan/homestep16",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('homeloan=17') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep17",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=171') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep171",
+            success: function (data)
+            {
+
+                $('#container').html(data).effect("slide", {distance: 5});
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+     if (window.location.search.indexOf('homeloan=172') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep172",
             success: function (data)
             {
 
@@ -552,8 +661,8 @@ window.addEventListener('popstate', function(event) {
             }
         });
     }
-//}
- }, false);
+}
+ //}, false);
 function home_step1(id) {
 
     var url = base_url + "homeloan/homestep1/" + id;
@@ -620,6 +729,22 @@ function home_step4(id) {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=4");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+    
+
+}
+
+function home_step41(id) {
+   
+      
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep41/" +id ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=41");
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
@@ -752,6 +877,17 @@ function home_step11() {
             }
         });
 }
+function home_step111(id) {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep111/" +id ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=111");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+}
 function home_step12(id) {
     $.ajax({
             type: "GET",
@@ -819,6 +955,18 @@ function home_step15() {
         });
 }
 
+function home_step16(id) {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep16/" +id ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=11");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+}
+
 function home_step17() {
     $.ajax({
             type: "GET",
@@ -831,6 +979,28 @@ function home_step17() {
         });
 }
 
+function home_step171() {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep171/"+ $('input[name=bankruptcy_years]').val() ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=171");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+}
+function home_step172() {
+    $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep172/"+ $('input[name=foreclosure_years]').val() ,
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=172");
+                $('#container').html(data).effect("slide", {distance: 5});
+            }
+        });
+}
 function home_step18() {
     $.ajax({
             type: "GET",
@@ -845,7 +1015,7 @@ function home_step18() {
 function home_step19() {
     $.ajax({
             type: "GET",
-            url: base_url + "homeloan/homestep17/3" ,
+            url: base_url + "homeloan/homestep19/3" ,
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=19");
@@ -868,7 +1038,7 @@ function home_step20() {
 function home_step21() {
     $.ajax({
             type: "GET",
-            url: base_url + "homeloan/homestep21/3" ,
+            url: base_url + "homeloan/homestep21/"+ $('input[name=bankruptcy_years]').val() ,
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=21");
@@ -936,6 +1106,58 @@ function home_step23() {
                 $('#container').html(data).effect("slide", {distance: 5});
             }
         });
+}
+
+function home_step24() {
+
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var RE1 = /^[0-9]{10}/;
+    if ($('input[name=email]').val() == '')
+    {
+
+        $('#err1').html('Your email is empty');
+        $('#email').focus();
+        return false;
+    } else if (!regex.test($('input[name=email]').val()))
+    {
+        $('#err1').html('Your email is not valid');
+        $('#email').focus();
+        return false;
+    } else if ($('input[name=phone]').val() == '')
+    {
+
+        $('#err2').html('Your phone is empty');
+        $('#phone').focus();
+        $('#err1').html('');
+        return false;
+    } else if (!RE1.test($('#phone').val()))
+    {
+
+        $('#err2').html('Your phone number should be atleast 10 digit');
+        $('#phone').focus();
+        $('#err1').html('');
+        return false;
+    } else
+    {
+        $('#err2').html('');
+
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep24/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
+            success: function (data)
+            {
+                
+                if (data == 1)
+                {
+                    //location.href = base_url;
+                    gtag_report_conversion_ref(base_url);
+                } else
+                {
+                    $('#container').html(data).effect("slide", {distance: 5});
+                }
+            }
+        });
+    }
 }
 /* Event snippet for Completed Auto App conversion page
  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. */
