@@ -12,8 +12,8 @@
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="offer-main clearfix">
                     <h1>How can we help you today?</h1>
-                    <div class="offer-cont">
-                        <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="offer-cont" style="display:block">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
@@ -28,8 +28,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="offer-cont">
-                        <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="offer-cont" style="display:block">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
@@ -37,6 +37,22 @@
                                             <div class="second-bevel">
                                                 <div class="offer-img offer-personal"></div>
                                                 <p class="title">AUTO REFINANCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+					<div class="offer-cont" style="display:block">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>">
+                                <button class="offer-circ">
+                                    <div class="outer-circ">
+                                        <div class="inner-bevel">
+                                            <div class="second-bevel">
+                                                <div class="offer-img offer-home-loan"></div>
+                                                <p class="title">HOME LOANS</p>
                                             </div>
                                         </div>
                                     </div>
