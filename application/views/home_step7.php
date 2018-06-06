@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
-                    <h1></h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <h1 class="text-head">What is the remaining 1st mortgage balance?</h1>
+                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
-                    <label class="control-label">What is the remaining 1st mortgage balance?</label>
+                    <!--<label class="control-label">What is the remaining 1st mortgage balance?</label>-->
 
                     <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php
                             if (isset($this->session->userdata['mortgage_bal']))

@@ -3,8 +3,9 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
-                    <h1></h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <h1 class="text-head">Great!Your rates are ready to view.<br>
+                        Let's create a login to view your rates.</h1>
+                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
                      
                                 <?php
@@ -17,8 +18,8 @@
                                 }
                                 ?>
                            
-                    <label class="control-label"> Great!Your rates are ready to view.<br>
-                        Let's create a login to view your rates.</label>
+                    <!--<label class="control-label"> Great!Your rates are ready to view.<br>
+                        Let's create a login to view your rates.</label>-->
                     <div class="col-xs-12 col-sm-12 margbot_40">
                         <input  type="text" id="email" placeholder="you@example.com" name="email" value="<?php if (isset($this->session->userdata['email'])) echo $this->session->userdata['email'] ?>" class="form-control"  >
                         <span id="err1" style="color: red"></span>
