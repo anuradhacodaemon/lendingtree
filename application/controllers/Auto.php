@@ -324,7 +324,8 @@ class Auto extends CI_Controller {
         $token = array(
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'url' => $url
+            'url' => $url,
+            'domain'=>$_SERVER['SERVER_NAME']
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {
