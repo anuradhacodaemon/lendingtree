@@ -1,5 +1,5 @@
 <?php //echo '<pre>';
-//print_r($this->session->userdata());?>
+//print_r($this->session->userdata);?>
 <div class="main-section inner_height clearfix" id="container1">
     <div class="container" id="container">
         <div class="row">

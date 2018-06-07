@@ -38,7 +38,7 @@ class Homeloan extends CI_Controller {
     }
 
     public function homestep1($id = 0) {
-       
+
         $this->load->view('home_step1');
     }
 
@@ -77,8 +77,8 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('home_step4');
     }
-    
-     public function homestep41($id = 0) {
+
+    public function homestep41($id = 0) {
         if ($id) {
             $data = array(
                 'plan_type' => $id,
@@ -105,16 +105,14 @@ class Homeloan extends CI_Controller {
             $this->session->set_userdata($data);
         }
 
-    
+
         $this->load->view('home_step6');
     }
-
 
     public function homestep6($id = '') {
         if ($id) {
             $data = array(
                 'property_value' => $id
-                
             );
 
             $this->session->set_userdata($data);
@@ -152,9 +150,9 @@ class Homeloan extends CI_Controller {
 
         $this->load->view('home_step10');
     }
-    
+
     public function homestep9($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'mortgage_2' => $id
             );
@@ -165,10 +163,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step9');
-        
     }
+
     public function homestep10($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'remaining_mortgage_bal' => $id
             );
@@ -179,11 +177,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step11');
-        
     }
-    
+
     public function homestep11($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'additional_cash' => $id
             );
@@ -194,10 +191,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step12');
-        
     }
+
     public function homestep111($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'close_mortgage' => $id
             );
@@ -206,15 +203,14 @@ class Homeloan extends CI_Controller {
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
-       if($id==1)
-        $this->load->view('home_step12');
-        if($id==2)
-        $this->load->view('home_step9');
-        
+        if ($id == 1)
+            $this->load->view('home_step12');
+        if ($id == 2)
+            $this->load->view('home_step9');
     }
-    
+
     public function homestep12($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'credit_score' => $id
             );
@@ -225,11 +221,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step13');
-        
     }
-    
+
     public function homestep13($month = 0, $day = 0, $year = 0) {
-         if ($month) {
+        if ($month) {
             $data = array(
                 'month' => $month,
                 'day' => $day,
@@ -243,11 +238,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step14');
-        
     }
-    
+
     public function homestep14($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'military_served' => $id
             );
@@ -258,10 +252,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step15');
-        
     }
+
     public function homestep15($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'military_served' => $id
             );
@@ -272,11 +266,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step16');
-        
     }
-    
+
     public function homestep16($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'va_loan' => $id
             );
@@ -285,14 +278,12 @@ class Homeloan extends CI_Controller {
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
-      
+
         $this->load->view('home_step16');
-       
-        
     }
-    
-     public function homestep17($id = '') {
-         if ($id) {
+
+    public function homestep17($id = '') {
+        if ($id) {
             $data = array(
                 'bankruptcy_or_foreclosure' => $id
             );
@@ -303,10 +294,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step17');
-        
     }
-     public function homestep171($id = '') {
-         if ($id) {
+
+    public function homestep171($id = '') {
+        if ($id) {
             $data = array(
                 'bankruptcy_years' => $id
             );
@@ -317,10 +308,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step17');
-        
     }
-     public function homestep172($id = '') {
-         if ($id) {
+
+    public function homestep172($id = '') {
+        if ($id) {
             $data = array(
                 'foreclosure_years' => $id
             );
@@ -331,11 +322,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step17');
-        
     }
-    
+
     public function homestep18($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'bankruptcy_or_foreclosure' => $id
             );
@@ -346,10 +336,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step18');
-        
     }
+
     public function homestep19($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'bankruptcy_or_foreclosure' => $id
             );
@@ -360,11 +350,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step19');
-        
     }
-    
-     public function homestep20($id = '') {
-         if ($id) {
+
+    public function homestep20($id = '') {
+        if ($id) {
             $data = array(
                 'bankruptcy_or_foreclosure' => $id
             );
@@ -375,11 +364,10 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step20');
-        
     }
-    
+
     public function homestep21($id = '') {
-         if ($id) {
+        if ($id) {
             $data = array(
                 'bankruptcy_years' => $id
             );
@@ -390,14 +378,14 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step21');
-        
     }
-    public function homestep22($zip = '',$city='',$address='') {
-         if ($zip) {
+
+    public function homestep22($zip = '', $city = '', $address = '') {
+        if ($zip) {
             $data = array(
                 'zip' => $zip,
-                'city' =>$city,
-                'address' =>$address
+                'city' => $city,
+                'address' => $address
             );
 
             $this->session->set_userdata($data);
@@ -406,14 +394,13 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step22');
-        
     }
-    
-    public function homestep23($firstname = '',$lastname='') {
-         if ($firstname) {
+
+    public function homestep23($firstname = '', $lastname = '') {
+        if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
-                'lastname' =>$lastname
+                'lastname' => $lastname
             );
 
             $this->session->set_userdata($data);
@@ -422,9 +409,8 @@ class Homeloan extends CI_Controller {
         // print_r($this->session->userdata());
 
         $this->load->view('home_step23');
-        
     }
-    
+
     public function homestep24($email = '', $phone = '') {
         if ($email) {
             $data = array(
@@ -443,7 +429,7 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
-       
+
         unset($this->session->userdata['currently_owe']);
         unset($this->session->userdata['monthly_payment']);
         unset($this->session->userdata['vin']);
@@ -453,9 +439,9 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['current_employer']);
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
-        
+
         $result = $this->loan_model->add_homeloan($this->session->userdata());
-       
+
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {
@@ -483,7 +469,7 @@ class Homeloan extends CI_Controller {
             $this->session->userdata['military_served'] = '';
             $this->session->userdata['va_loan'] = '';
             $this->session->userdata['bankruptcy_or_foreclosure'] = '';
-            
+
             $this->session->userdata['city'] = '';
             $this->session->userdata['address'] = '';
             $this->session->userdata['bankruptcy_years'] = '';
@@ -496,13 +482,13 @@ class Homeloan extends CI_Controller {
             $this->session->userdata['close_mortgage'] = '';
             //redirect('/');
             echo 1;
-        } /**else {
+        } /*         * else {
 
-            $error = 'Your email already exist';
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+          $error = 'Your email already exist';
+          $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
-            $this->load->view('step6_view');
-        }**/
+          $this->load->view('step6_view');
+          }* */
     }
 
     /** Please dont change the mailformat because template is coming from database * */
@@ -612,8 +598,7 @@ class Homeloan extends CI_Controller {
             'firstname' => $firstname,
             'lastname' => $lastname,
             'url' => $url,
-            'domain'=>$_SERVER['SERVER_NAME']
-                
+            'domain' => $_SERVER['SERVER_NAME']
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {
@@ -630,6 +615,23 @@ class Homeloan extends CI_Controller {
         }
 
         return 0;
+    }
+
+    public function ajaxZipcode($zipcode = 0) {
+        $result = $this->loan_model->get_zip($zipcode);
+        if (!empty($result)) {
+            echo $result[0]['city'] . " " . $result[0]['state'];
+            $this->session->userdata['city'] = $result[0]['city'];
+        } else {
+            echo 'Please enter a valid property zip code.';
+        }
+    }
+     public function ajaxZipcode1($zipcode = 0) {
+        $result = $this->loan_model->get_zip($zipcode);
+        if (!empty($result)) {
+            echo $result[0]['city'] ;
+            $this->session->userdata['city'] = $result[0]['city'];
+        } 
     }
 
 }

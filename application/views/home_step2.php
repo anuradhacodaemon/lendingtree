@@ -1,5 +1,5 @@
 <?php //echo '<pre>';
-//print_r($this->session->userdata());?><div class="clearfix" id="container1">
+//print_r($this->session->userdata);?><div class="clearfix" id="container1">
     <div class="" id="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

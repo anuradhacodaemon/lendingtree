@@ -180,6 +180,16 @@ class Loan_model extends CI_Model {
         $result = $this->db->get();
         return $result->result_array();
     }
+    
+     public function get_zip($zipcode = 0) {
+//$this->db->select('id,name');
+        $this->db->from(ZIPCODE);
+        $this->db->where('zipcode', $zipcode);
+        $result = $this->db->get();
+        //echo $this->db->last_query();
+
+        return $result->result_array();
+    }
 
 }
 ?>

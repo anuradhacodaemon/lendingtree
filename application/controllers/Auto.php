@@ -169,14 +169,26 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['vin']);
         unset($this->session->userdata['current_milage']);
         unset($this->session->userdata['property_type']);
+        unset($this->session->userdata['userdata']);
         unset($this->session->userdata['loan_type']);
+        unset($this->session->userdata['property_type']);
         unset($this->session->userdata['home_type']);
         unset($this->session->userdata['plan_type']);
-        unset($this->session->userdata['zip']);
         unset($this->session->userdata['property_value']);
-        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['mortgage_2']);
+        unset($this->session->userdata['remaining_mortgage_bal']);
         unset($this->session->userdata['additional_cash']);
+        unset($this->session->userdata['close_mortgage_bal']);
         unset($this->session->userdata['credit_score']);
+        unset($this->session->userdata['military_served']);
+        unset($this->session->userdata['va_loan']);
+        unset($this->session->userdata['bankruptcy_or_foreclosure']);
+        unset($this->session->userdata['bankruptcy_years']);
+        unset($this->session->userdata['foreclosure_years']);
+        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['close_mortgage']);
+        
+        
 
         $result = $this->loan_model->add_loan($this->session->userdata());
 
@@ -325,7 +337,7 @@ class Auto extends CI_Controller {
             'firstname' => $firstname,
             'lastname' => $lastname,
             'url' => $url,
-            'domain'=>$_SERVER['SERVER_NAME']
+            'domain' => $_SERVER['SERVER_NAME']
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {

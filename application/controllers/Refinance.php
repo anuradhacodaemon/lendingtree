@@ -152,15 +152,24 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['zip']);
-        unset($this->session->userdata['property_type']);
         unset($this->session->userdata['loan_type']);
+        unset($this->session->userdata['property_type']);
         unset($this->session->userdata['home_type']);
         unset($this->session->userdata['plan_type']);
-        unset($this->session->userdata['zip']);
         unset($this->session->userdata['property_value']);
-        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['mortgage_2']);
+        unset($this->session->userdata['remaining_mortgage_bal']);
         unset($this->session->userdata['additional_cash']);
+        unset($this->session->userdata['close_mortgage_bal']);
         unset($this->session->userdata['credit_score']);
+        unset($this->session->userdata['military_served']);
+        unset($this->session->userdata['va_loan']);
+        unset($this->session->userdata['bankruptcy_or_foreclosure']);
+        unset($this->session->userdata['bankruptcy_years']);
+        unset($this->session->userdata['foreclosure_years']);
+        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['close_mortgage']);
+        
         $result = $this->loan_model->add_refinance($this->session->userdata());
 
 
