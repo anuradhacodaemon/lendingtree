@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Loancalculator extends CI_Controller {
+class Mortgagecalculator extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -34,7 +34,7 @@ class Loancalculator extends CI_Controller {
 
         $this->session->set_userdata('panel', 'frontend');
         $data['loandetails']=$this->loan_model->get_phone(); 
-        $this->template->view('loancalculator',$data);
+        $this->template->view('mortgagecalculator',$data);
     }
 
     public function page_landing($type, $id) {

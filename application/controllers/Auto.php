@@ -163,19 +163,33 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
+
         unset($this->session->userdata['currently_owe']);
         unset($this->session->userdata['monthly_payment']);
         unset($this->session->userdata['vin']);
         unset($this->session->userdata['current_milage']);
         unset($this->session->userdata['property_type']);
+        unset($this->session->userdata['userdata']);
         unset($this->session->userdata['loan_type']);
+        unset($this->session->userdata['property_type']);
         unset($this->session->userdata['home_type']);
         unset($this->session->userdata['plan_type']);
-        unset($this->session->userdata['zip']);
         unset($this->session->userdata['property_value']);
-        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['mortgage_2']);
+        unset($this->session->userdata['remaining_mortgage_bal']);
         unset($this->session->userdata['additional_cash']);
+        unset($this->session->userdata['close_mortgage_bal']);
         unset($this->session->userdata['credit_score']);
+        unset($this->session->userdata['military_served']);
+        unset($this->session->userdata['va_loan']);
+        unset($this->session->userdata['bankruptcy_or_foreclosure']);
+        unset($this->session->userdata['bankruptcy_years']);
+        unset($this->session->userdata['foreclosure_years']);
+        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['close_mortgage']);
+        
+        
+
         $result = $this->loan_model->add_loan($this->session->userdata());
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
@@ -207,13 +221,13 @@ class Auto extends CI_Controller {
             $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
-        } else {
+        } /*         * else {
 
-            $error = 'Your email already exist';
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+          $error = 'Your email already exist';
+          $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
-            $this->load->view('step6_view');
-        }
+          $this->load->view('step6_view');
+          }* */
     }
 
     /** Please dont change the mailformat because template is coming from database * */
@@ -247,8 +261,8 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
-        $this->email->subject("thank you for applying");
-        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
+        $this->email->subject("Thank you for applying");
+        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
             'firstname' => $firstname,
@@ -289,7 +303,7 @@ class Auto extends CI_Controller {
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $emails = $this->loan_model->get_phone();
 
-        /** $config = Array(
+        /*         * $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
           'smtp_port' => 25,
@@ -298,7 +312,8 @@ class Auto extends CI_Controller {
           'smtp_timeout' => '4',
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
-          );  * */
+          );
+         * */
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'in.mailjet.com';
         $config['smtp_port'] = '25';
@@ -307,7 +322,6 @@ class Auto extends CI_Controller {
         $config['charset'] = 'utf-8';
         $config['mailtype'] = 'html';
         $config['newline'] = "\r\n";
-
         $this->load->library('email', $config);
 
         $this->email->set_newline("\r\n");
@@ -317,12 +331,13 @@ class Auto extends CI_Controller {
 //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
-        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
+        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'url' => $url
+            'url' => $url,
+            'domain' => $_SERVER['SERVER_NAME']
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {
