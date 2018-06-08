@@ -1,15 +1,15 @@
 <!-- Banner starts here -->
 
 
-<div class="main-section inner_height clearfix" id="container1">
-    <div class="container" id="containerrefinance">
+<div class="clearfix" id="container1">
+    <div class="" id="containerrefinance">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
-                    <h1></h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <h1 class="text-head">What is the remaining balance on the 2nd mortgage?</h1>
+                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
-                    <label class="control-label">What is the remaining balance on the 2nd mortgage?</label>
+                    <!--<label class="control-label"></label>-->
 
                     <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php
                             if (isset($this->session->userdata['remaining_mortgage_bal']))

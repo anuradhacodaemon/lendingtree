@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
-                    <h1></h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <h1 class="text-head">When Were You Born?</h1>
+                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
-                    <label class="control-label">When Were You Born?</label>
+                    <!--<label class="control-label"></label>-->
 			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                     <div class="margbot_10 clearfix">
                         <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">

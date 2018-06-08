@@ -3,20 +3,11 @@
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
     <div class="container">
-        
         <div class="row">
-          
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                
-                <div class="banner-left">
-                    <div class="banner-inner">
-                      
-                        <h1>How can we help you today?</h1>
-                    </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <div class="banner-inner">
+                    <h1>How can we help you today?</h1>
                 </div>
-            </div>
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                
                 <div class="offer-main clearfix">
                   <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
