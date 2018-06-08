@@ -4,7 +4,7 @@
         text-align: center;
     }
     .number a {font-size: 9px;}
-    .banner-main {background: #feffff url(../img/bg-line.png) no-repeat 10% -46px; padding-top: 30px; padding-bottom: 30px;}
+    .banner-main {background: #fff url(../img/bg.jpg) no-repeat center top; padding-top: 30px; padding-bottom: 30px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
     .banner-main .banner-left h2 {font-size: 22px;}
@@ -19,7 +19,7 @@
     .panel .logo-list {text-align: center;}
     .footer-main {padding: 10px; text-align: center;}
     .panel .block-frame .logo-list {float: none; margin: 0; padding: 0;}
-    .main-section {background: #feffff url(../img/bg-line.png) no-repeat 10% -46px; padding: 10px 0 0;}
+    .main-section {background: #fff url(../img/bg.jpg) no-repeat center top; padding: 10px 0 0;}
     .form-main {padding: 0 0 110px;}
     .form-main .control-label {font-size: 18px; margin-top: 10px;}
     .form-main h2 {font-size: 16px;}
@@ -61,6 +61,7 @@
     .home-loan .radio .button {
         font-size: 16px;
     }
+	.banner-main .banner-inner {margin: 0px;}
 }
 @media only screen and (max-width:480px){ 
     .form-main h1 {
@@ -92,12 +93,13 @@
     .checkbox-sec {font-size: 15px;}
     .form-main input.form-control {width: 100%;}
     .inner_height {min-height:574px;}
+	.banner-main .banner-inner {margin: 0px;}
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
     .logo {width: 65%;}
     .number a {font-size: 18px;}
     .banner-main {
-        background: #feffff url(../img/bg-line.png) no-repeat 97% -4px;
+        background: #fff url(../img/bg.jpg) no-repeat center top;
         padding-top: 35px;
         padding-bottom: 30px;
         margin: 0;
@@ -116,12 +118,13 @@
     .quicklinks-main {padding: 20px 0;}
     .footer-main {padding: 10px; text-align: center;}
     .main-section {
-        background: #feffff url(../img/bg-line.png) no-repeat 97% -4px;
+        background: #fff url(../img/bg.jpg) no-repeat center top;
         padding: 0;
         margin: 0;
     }
     .subtext {width: 100%;}
     .bg .radio-container {width: 65%; margin-left: 60px;}
+	.banner-main .banner-inner {margin: 0px;}
 }
 @media only screen and (min-width:768px) and (max-width:1023px) { 
     .inner_container {min-height: 823px;}
@@ -130,12 +133,13 @@
     .quicklinks-main {padding: 20px 0;}
     .quicklinks-main h1 {font-size: 24px;}
     .quicklinks-main h3 {font-size: 18px;}
-    .inner_height {min-height:823px;}
+    .inner_height {min-height:850px;}
     .form-main .disclosure-sec {
         position: absolute;
         bottom: 0;
         right: 0;
     }
+	.banner-main {min-height: 850px;}
 }
 @media (min-width: 992px) {
     .home-loan .col-md-2 {
@@ -162,6 +166,8 @@
 }
 @media only screen and (max-width:320px){ 
     .inner_height {min-height:400px;}
+	.refinance {min-height: 470px;}
+	.inner_container {min-height: 470px;}
 }
 @media only screen and (min-width: 812px) and (max-width: 823px) {
     .inner_height {
