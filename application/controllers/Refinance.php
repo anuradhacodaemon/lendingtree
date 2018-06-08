@@ -26,14 +26,19 @@ class Refinance extends CI_Controller {
     }
 
     public function index() {
+
+
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
+
         $this->session->set_userdata('panel', 'frontend');
+
         $this->template->view('refinance_step1');
     }
 
     public function refinancestep1() {
+
         $this->load->view('refinance_step1');
     }
 
@@ -54,6 +59,7 @@ class Refinance extends CI_Controller {
             $data = array(
                 'monthly_payment' => $id
             );
+
             $this->session->set_userdata($data);
         }
         // echo '<pre>';
@@ -67,8 +73,11 @@ class Refinance extends CI_Controller {
                 'vin' => $id,
                 'current_milage' => $current_milage
             );
+
             $this->session->set_userdata($data);
         }
+
+
         //echo '<pre>';
         // print_r($this->session->userdata());
         $data['state'] = $this->loan_model->get_state();
@@ -79,6 +88,7 @@ class Refinance extends CI_Controller {
     }
 
     public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '') {
+
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
@@ -87,12 +97,15 @@ class Refinance extends CI_Controller {
                 'city' => $city,
                 'state' => $state
             );
+
             $this->session->set_userdata($data);
         }
+
         $this->load->view('refinance_step5');
     }
 
     public function getcity($state_id = 0) {
+
         $city = $this->loan_model->get_city($state_id);
         echo json_encode($city);
     }
@@ -106,10 +119,12 @@ class Refinance extends CI_Controller {
                 'dob' => $year . '-' . $month . '-' . $day,
                 'ssn' => $ssn
             );
+
             $this->session->set_userdata($data);
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
+
         $this->load->view('refinance_step6');
         //die;
     }
@@ -123,8 +138,10 @@ class Refinance extends CI_Controller {
                 'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
                 'status' => "2"
             );
+
             $this->session->set_userdata($data);
         }
+
 
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
@@ -135,19 +152,29 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['zip']);
-        unset($this->session->userdata['property_type']);
         unset($this->session->userdata['loan_type']);
+        unset($this->session->userdata['property_type']);
         unset($this->session->userdata['home_type']);
         unset($this->session->userdata['plan_type']);
-        unset($this->session->userdata['zip']);
         unset($this->session->userdata['property_value']);
-        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['mortgage_2']);
+        unset($this->session->userdata['remaining_mortgage_bal']);
         unset($this->session->userdata['additional_cash']);
+        unset($this->session->userdata['close_mortgage_bal']);
         unset($this->session->userdata['credit_score']);
+        unset($this->session->userdata['military_served']);
+        unset($this->session->userdata['va_loan']);
+        unset($this->session->userdata['bankruptcy_or_foreclosure']);
+        unset($this->session->userdata['bankruptcy_years']);
+        unset($this->session->userdata['foreclosure_years']);
+        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['close_mortgage']);
+        
         $result = $this->loan_model->add_refinance($this->session->userdata());
 
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
+
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
@@ -161,6 +188,7 @@ class Refinance extends CI_Controller {
             $this->session->userdata['current_milage'] = '';
             $this->session->userdata['firstname'] = '';
             $this->session->userdata['lastname'] = '';
+
             $this->session->userdata['state'] = '';
             $this->session->userdata['city'] = '';
             $this->session->userdata['month'] = '';
@@ -172,14 +200,21 @@ class Refinance extends CI_Controller {
             $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
-        } 
+        } /** else {
+
+          $error = 'Your email already exist';
+          $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+
+          $this->load->view('refinancestep6_view');
+          }* */
     }
 
     /** Please dont change the mailformat because template is coming from database * */
     public function mailformat($firstname, $lastname, $email) {
+
         //$this->load->library('email');
         //$this->email->set_mailtype("html");
-        /** $config = Array(
+        /*         * $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
           'smtp_port' => 25,
@@ -188,16 +223,19 @@ class Refinance extends CI_Controller {
           'smtp_timeout' => '4',
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
-          );  * */
+          );
+         * */
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '588';
+        $config['smtp_port'] = '25';
         $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
         $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
         $config['charset'] = 'utf-8';
         $config['mailtype'] = 'html';
         $config['newline'] = "\r\n";
+
         $this->load->library('email', $config);
+
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
@@ -205,7 +243,7 @@ class Refinance extends CI_Controller {
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
         $this->email->subject("thank you for applying");
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
             'firstname' => $firstname,
@@ -215,6 +253,7 @@ class Refinance extends CI_Controller {
         foreach ($token as $key => $val) {
             $varMap[sprintf($pattern, $key)] = $val;
         }
+
         $emailContent = strtr($emailtemplate[0]['message'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
@@ -245,7 +284,8 @@ class Refinance extends CI_Controller {
         $url = base_url() . "refinance/mail_format_pdf/" . $url1;
 
         $emails = $this->loan_model->get_phone();
-/** $config = Array(
+
+        /*         * $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
           'smtp_port' => 25,
@@ -254,16 +294,19 @@ class Refinance extends CI_Controller {
           'smtp_timeout' => '4',
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
-          );  * */
+          );
+         * */
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '588';
+        $config['smtp_port'] = '25';
         $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
         $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
         $config['charset'] = 'utf-8';
         $config['mailtype'] = 'html';
         $config['newline'] = "\r\n";
+
         $this->load->library('email', $config);
+
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         //$this->email->set_header('Content-type', 'text/html');
@@ -271,17 +314,19 @@ class Refinance extends CI_Controller {
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'url' => $url
+            'url' => $url,
+            'domain'=>$_SERVER['SERVER_NAME']
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {
             $varMap[sprintf($pattern, $key)] = $val;
         }
+
         $emailContent = strtr($emailtemplate[0]['content'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();

@@ -104,3 +104,4 @@ define('ADMINEMAIL','support@culoanportal.com');
 define('ADMINNAME','MCT');
 define('EMAILTEMPLATEPDF', 'lend_email_template');
 define('ENCRYPTKEY', 'loan1234');
+define('ZIPCODE','lend_zipcode');
