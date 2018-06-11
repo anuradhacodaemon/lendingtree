@@ -10,7 +10,7 @@
                 </div>
                 <div class="offer-main clearfix">
                   <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>">
                                 <button class="offer-circ">
@@ -26,7 +26,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
                             <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
                                 <button class="offer-circ">
@@ -42,7 +42,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
                             <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>">
                                 <button class="offer-circ">

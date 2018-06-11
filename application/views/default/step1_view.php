@@ -2,12 +2,12 @@
 
 
 <div class="main-section inner_height clearfix" id="container1">
-    <div class="container" id="container">
+    <div class="container inner_container" id="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                      <h1>Buying New Vehicle</h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
                     <label class="control-label">Type Of Loan</label>
                     <div class="col-xs-12 col-sm-12 radio">

@@ -10,7 +10,7 @@
                     <!--<label class="control-label"></label>-->
 			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                     <div class="margbot_10 clearfix">
-                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
 
 
                             <select  id="selectMonth" name="month" class="form-control form-control-small">
@@ -25,7 +25,7 @@
                                          <?php } ?>
                             </select>
                         </div>
-                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
                             <select id="selectDate" name="day" class="form-control form-control-small">
                                 <option value="">Day</option>
                                 <?php for ($i = 1; $i <= 31; $i++) { ?>
@@ -39,7 +39,7 @@
                             </select>
                         </div>
 
-                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 margbot_10">
                             <select id="selectYear" name="year" class="form-control form-control-small">
                                 <option value="">Year</option>
                                 <?php for ($i = 1900; $i <= 2015; $i++) { ?>
