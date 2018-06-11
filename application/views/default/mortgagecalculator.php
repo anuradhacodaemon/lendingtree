@@ -1,6 +1,17 @@
 <div class="main-section inner_height clearfix" id="container1">
     <div class="container" id="container">
         <div class="row">
+		
+		
+		<!-- Static calc ui starts here -->
+		<div class="col-lg-12 col-md-12 col-sm-12 colxs-12">
+			<div class="calc-main clearfix">
+				<h1>Mortgage Calculator</h1>
+			
+		<!-- Static calc ui ends here -->
+		
+		
+		
 <?php
     /*
         PHP Mortgage Calculator
@@ -77,8 +88,8 @@
        // print("<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'><HTML>");
        // print("<head><title>Mortgage Calculator</title></HEAD><BODY>");
        // print("<body bgcolor='#ffffff'>");
-       print("<H1 style='margin-bottom: 35px;'> Mortgage Calculator</h1>");
-        print("<hr>\n\n");
+       //print("<H1 style='margin-bottom: 35px;'> Mortgage Calculator</h1>");
+        //print("<hr>\n\n");
         $print_footer = TRUE;
     } else {
        $print_footer = FALSE;
@@ -156,84 +167,159 @@
 
 <form method="GET" name="information" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <input type="hidden" name="form_complete" value="1">
-<table cellpadding="2" cellspacing="0" border="0" >
-    <tr valign="top">
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="top-head">
+			Purchase &amp; Financing Information
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="white-box">
+			<label>Sale Price of Home:</label>
+			<input type="text" class="input" size="10" name="sale_price" value="<?php echo $sale_price; ?>"><span class="value-sec">(In $)</span>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="white-box">
+			<label>Percentage Down:</label>
+			<input type="text" class="input" size="5" name="down_percent" value="<?php echo $down_percent; ?>"><span class="value-sec">%</span>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="white-box">
+			<label>Length of Mortgage:</label>
+			<input type="text" class="input" size="3" name="year_term" value="<?php echo $year_term; ?>"><span class="value-sec">years</span>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="white-box">
+			<label>Annual Interest Rate:</label>
+			<input type="text" class="input" size="5" name="annual_interest_percent" value="<?php echo $annual_interest_percent; ?>"><span class="value-sec">%</span>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="chk-box">
+			<label>Explain Calculations:</label>
+			<input type="checkbox" class="chk-input" name="show_progress" value="1" <?php if ($show_progress) { print("checked"); } ?>> 
+			<span class="value-sec">Show me the calculations and amortization</span>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="chk-box text-right">
+			<input type="submit" value="Calculate" class="btn-calc"/>
+		</div>
+	</div>
+</div>
+<!--<table cellpadding="2" cellspacing="0" border="0" >-->
+    <!--<tr valign="top">
         <td align="right"><img src="/images/clear.gif" width="225" height="1" border="0" alt=""></td>
         <td align="smalltext" ><img src="/images/clear.gif" width="250" height="1" border="0" alt=""></td>
     </tr>
-    <tr valign="top" bgcolor="#cccccc">
-        <td align="center" colspan="2"><b>Purchase &amp; Financing Information</b></td>
+    <tr valign="top">
+        <td colspan="2" class="top-head">Purchase &amp; Financing Information</td>
     </tr>
-    <tr valign="top" bgcolor="#eeeeee">
-        <td align="right">Sale Price of Home:</td>
-        <td ><input type="text" size="10" name="sale_price" value="<?php echo $sale_price; ?>">(In Dollars)</td>
+    <tr valign="top">
+        <td align="left">Sale Price of Home:</td>
+        <td><input type="text" size="10" name="sale_price" value="<?php //echo $sale_price; ?>">(In Dollars)</td>
     </tr>
-    <tr valign="top" bgcolor="#eeeeee">
-        <td align="right">Percentage Down:</td>
-        <td><input type="text" size="5" name="down_percent" value="<?php echo $down_percent; ?>">%</td>
+    <tr valign="top">
+        <td align="left">Percentage Down:</td>
+        <td><input type="text" size="5" name="down_percent" value="<?php //echo $down_percent; ?>">%</td>
     </tr>
-    <tr valign="top" bgcolor="#eeeeee">
-        <td align="right">Length of Mortgage:</td>
-        <td><input type="text" size="3" name="year_term" value="<?php echo $year_term; ?>">years</td>
+    <tr valign="top">
+        <td align="left">Length of Mortgage:</td>
+        <td><input type="text" size="3" name="year_term" value="<?php //echo $year_term; ?>">years</td>
     </tr>
-    <tr valign="top" bgcolor="#eeeeee">
-        <td align="right">Annual Interest Rate:</td>
-        <td><input type="text" size="5" name="annual_interest_percent" value="<?php echo $annual_interest_percent; ?>">%</td>
+    <tr valign="top">
+        <td align="left">Annual Interest Rate:</td>
+        <td><input type="text" size="5" name="annual_interest_percent" value="<?php //echo $annual_interest_percent; ?>">%</td>
     </tr>
-    <tr valign="top" bgcolor="#eeeeee">
-        <td align="right">Explain Calculations:</td>
-        <td><input type="checkbox" name="show_progress" value="1" <?php if ($show_progress) { print("checked"); } ?>> 
+    <tr valign="top">
+        <td align="left">Explain Calculations:</td>
+        <td><input type="checkbox" name="show_progress" value="1" <?php //if ($show_progress) { print("checked"); } ?>> 
         Show me the calculations and amortization</td>
     </tr>
-    <tr valign="top" bgcolor="#eeeeee">
+    <tr valign="top" >
         <td>&nbsp;</td>
         <td><input type="submit" value="Calculate"><br>
-        <?php if ($form_complete) { print("<a href=\"" . $_SERVER['PHP_SELF'] . "\">Start Over</a><br>"); } ?><br></td>
-    </tr>
+        <?php //if ($form_complete) { print("<a href=\"" . $_SERVER['PHP_SELF'] . "\">Start Over</a><br>"); } ?><br></td>
+    </tr>-->
 <?php
     // If the form has already been calculated, the $down_payment
     // and $monthly_payment variables will be figured out, so we
     // can show them in this table
     if ($form_complete && $monthly_payment) {
-?>
-        <tr valign="top">
-            <td align="center" colspan="2" bgcolor="#000000"><font color="#ffffff"><b>Mortgage Payment Information</b></font></td>
+?>	
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="top-head">
+				Mortgage Payment Information
+			</div>
+			<div class="cont-box clearfix">
+				<label>Down Payment:</label>
+				<div class="cont"><?php echo "\$" . number_format($down_payment, "2", ".", ","); ?></div>
+			</div>
+			<div class="cont-box clearfix">
+				<label>Amount Financed:</label>
+				<div class="cont"><?php echo "\$" . number_format($financing_price, "2", ".", ","); ?></div>
+			</div>
+			<div class="cont-box clearfix">
+				<label>Monthly Payment (Principal &amp; Interest only):</label>
+				<div class="cont"><?php echo "\$" . number_format($monthly_payment, "2", ".", ","); ?></div>
+			</div>
+			<?php
+				if ($down_percent < 20) {
+					$pmi_per_month = 55 * ($financing_price / 100000);
+			?>
+					<div class="cont-box clearfix">
+						<label><?php echo "\$" . number_format($pmi_per_month, "2", ".", ","); ?> to your monthly payment.</label>
+					</div>
+					<div class="cont-box clearfix">
+						<label>Monthly Payment (Principal &amp; Interest, and PMI):</label>
+						<div class="cont"><?php echo "\$" . number_format(($monthly_payment + $pmi_per_month), "2", ".", ","); ?></div>
+					</div>
+			<?php
+				}
+			?>
+		
+        <!--<tr valign="top">
+            <td align="center" colspan="2" class="top-head">Mortgage Payment Information</td>
         </tr>
-        <tr valign="top" bgcolor="#eeeeee">
+        <tr valign="top" >
             <td align="right">Down Payment:</td>
-            <td><b><?php echo "\$" . number_format($down_payment, "2", ".", ","); ?></b></td>
+            <td><b><?php //echo "\$" . number_format($down_payment, "2", ".", ","); ?></b></td>
         </tr>
-        <tr valign="top" bgcolor="#eeeeee">
+        <tr valign="top" >
             <td align="right">Amount Financed:</td>
-            <td><b><?php echo "\$" . number_format($financing_price, "2", ".", ","); ?></b></td>
+            <td><b><?php //echo "\$" . number_format($financing_price, "2", ".", ","); ?></b></td>
         </tr>
-        <tr valign="top" bgcolor="#cccccc">
+        <tr valign="top">
             <td align="right">Monthly Payment:</td>
-            <td><b><?php echo "\$" . number_format($monthly_payment, "2", ".", ","); ?></b><br><font>(Principal &amp; Interest ONLY)</font></td>
-        </tr>
+            <td><b><?php //echo "\$" . number_format($monthly_payment, "2", ".", ","); ?></b><br><font>(Principal &amp; Interest ONLY)</font></td>
+        </tr>-->
         <?php
-            if ($down_percent < 20) {
-                $pmi_per_month = 55 * ($financing_price / 100000);
+            //if ($down_percent < 20) {
+                //$pmi_per_month = 55 * ($financing_price / 100000);
         ?>
-                <tr valign="top" bgcolor="#FFFFCC">
+                <!--<tr valign="top">
                     <td align="right">&nbsp;</td>
                     <td>
                         <br>
-                        <?php echo "\$" . number_format($pmi_per_month, "2", ".", ","); ?> to your monthly payment.
+                        <?php //echo "\$" . number_format($pmi_per_month, "2", ".", ","); ?> to your monthly payment.
                     </td>
                 </tr>
-                <tr valign="top" bgcolor="#FFFF99">
+                <tr valign="top">
                     <td align="right">Monthly Payment:</td>
-                    <td><b><?php echo "\$" . number_format(($monthly_payment + $pmi_per_month), "2", ".", ","); ?></b><br><font>
+                    <td><b><?php //echo "\$" . number_format(($monthly_payment + $pmi_per_month), "2", ".", ","); ?></b><br><font>
                     (Principal &amp; Interest, and PMI)</td>
-                </tr>
+                </tr>-->
         <?php
-            }
+            //}
         ?>
-        <tr valign="top" bgcolor="#CCCCFF">
-            <td align="right">&nbsp;</td>
-            <td>
-                <br>
+        <!--<tr valign="top">-->
+            <!--<td align="right">&nbsp;</td>-->
+            <!--<td>-->
+                <!--<br>-->
                 <?php
                     $assessed_price          = ($sale_price * .85);
                     $residential_yearly_tax  = ($assessed_price / 1000) * 14;
@@ -243,24 +329,42 @@
                         $pmi_text = "PMI and ";
                     }
                 ?>
-                Residential (or Property) Taxes are a little harder to figure out... In Massachusetts, the average resedential tax rate seems
+				<div class="cont-box clearfix">
+					<label>
+						Residential (or Property) Taxes are a little harder to figure out... In Massachusetts, the average resedential tax rate seems
+						 to be around $14 per year for every $1,000 of your property's assessed value.
+						<br><br>
+						Let's say that your property's <i>assessed value</i> is 85% of what you actually paid for it - 
+						<?php echo "\$" . number_format($assessed_price, "2", ".", ","); ?>. This would mean that your yearly residential taxes will be around
+						 <?php echo "\$" . number_format($residential_yearly_tax, "2", ".", ","); ?>
+						This could add <?php echo "\$" . number_format($residential_monthly_tax, "2", ".", ","); ?> to your monthly payment.
+					</label>
+				</div>
+                <!--Residential (or Property) Taxes are a little harder to figure out... In Massachusetts, the average resedential tax rate seems
                  to be around $14 per year for every $1,000 of your property's assessed value.
                 <br><br>
                 Let's say that your property's <i>assessed value</i> is 85% of what you actually paid for it - 
-                <?php echo "\$" . number_format($assessed_price, "2", ".", ","); ?>. This would mean that your yearly residential taxes will be around
-                 <?php echo "\$" . number_format($residential_yearly_tax, "2", ".", ","); ?>
-                This could add <?php echo "\$" . number_format($residential_monthly_tax, "2", ".", ","); ?> to your monthly payment.
-            </td>
-        </tr>
-        <tr valign="top" bgcolor="#9999FF">
+                <?php //echo "\$" . number_format($assessed_price, "2", ".", ","); ?>. This would mean that your yearly residential taxes will be around
+                 <?php //echo "\$" . number_format($residential_yearly_tax, "2", ".", ","); ?>
+                This could add <?php //echo "\$" . number_format($residential_monthly_tax, "2", ".", ","); ?> to your monthly payment.-->
+            <!--</td>
+        </tr>-->
+			<div class="cont-box total clearfix">
+				<label>TOTAL Monthly Payment (including <?php echo $pmi_text; ?> residential tax):</label>
+				<div class="cont"><?php echo "\$" . number_format(($monthly_payment + $pmi_per_month + $residential_monthly_tax), "2", ".", ","); ?>
+            </div>
+			</div>
+        <!--<tr valign="top">
             <td align="right">TOTAL Monthly Payment:</td>
             <td><b><?php echo "\$" . number_format(($monthly_payment + $pmi_per_month + $residential_monthly_tax), "2", ".", ","); ?></b><br><font>
             (including <?php echo $pmi_text; ?> residential tax)</font></td>
-        </tr>
+        </tr>-->
+		</div>
+	</div>
 <?php    
     }
 ?>
-</table>
+<!--</table>-->
 </form>
 <?php
     // This prints the calculation progress and 
@@ -269,47 +373,37 @@
     if ($form_complete && $show_progress) {
         $step = 1;
 ?>
-        <br><br>
-        <table cellpadding="5" cellspacing="0" border="1" >
-            <tr valign="top">
-                <td><b><?php echo $step++; ?></b></td>
-                <td>
-                    The <b>down payment</b>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="formula-sec">
+				<div class="formula-inner">
+					<span><?php echo $step++; ?>.</span>
+					The <b>down payment</b>
                      = The price of the home multiplied by the percentage down divided by 100 (for 5% down becomes 5/100 or 0.05)<br><br>
                     $<?php echo number_format($down_payment,"2",".",","); ?> = $<?php echo number_format($sale_price,"2",".",","); ?> X 
                     (<?php echo $down_percent; ?> / 100)
-                </td>
-            </tr>
-            <tr valign="top">
-                <td><b><?php echo $step++; ?></b></td>
-                <td>
-                    The <b>interest rate</b> = The annual interest percentage divided by 100<br><br>
+				</div>
+				<div class="formula-inner">
+					<span><?php echo $step++; ?>.</span>
+					The <b>interest rate</b> = The annual interest percentage divided by 100<br><br>
                     <?php echo $annual_interest_rate; ?> = <?php echo $annual_interest_percent; ?>% / 100
-                </td>
-            </tr>
-            <tr valign="top" bgcolor="#cccccc">
-                <td colspan="2">
-                    The <b>monthly factor</b> = The result of the following formula:
-                </td>
-            </tr>
-            <tr valign="top">
-                <td><b><?php echo $step++; ?></b></td>
-                <td>
-                    The <b>monthly interest rate</b> = The annual interest rate divided by 12 (for the 12 months in a year)<br><br>
+				</div>
+				<div class="formula-inner-head">
+					The <b>monthly factor</b> = The result of the following formula:
+				</div>
+				<div class="formula-inner">
+					<span><?php echo $step++; ?>.</span>
+					The <b>monthly interest rate</b> = The annual interest rate divided by 12 (for the 12 months in a year)<br><br>
                     <?php echo $monthly_interest_rate; ?> = <?php echo $annual_interest_rate; ?> / 12
-                </td>
-            </tr>
-            <tr valign="top">
-                <td><b><?php echo $step++; ?></b></td>
-                <td>
-                    The <b>month term</b> of the loan in months = The number of years you've taken the loan out for times 12<br><br>
-                    <?php echo $month_term; ?> Months = <?php echo $year_term; ?> Years X 12
-                </td>
-            </tr>
-            <tr valign="top">
-                <td><b><?php echo $step++; ?></b></td>
-                <td>
-                    The montly payment is figured out using the following formula:<br>
+				</div>
+				<div class="formula-inner">
+					<span><?php echo $step++; ?>.</span>
+					The <b>monthly interest rate</b> = The annual interest rate divided by 12 (for the 12 months in a year)<br><br>
+                    <?php echo $monthly_interest_rate; ?> = <?php echo $annual_interest_rate; ?> / 12
+				</div>
+				<div class="formula-inner">
+					<span><?php echo $step++; ?>.</span>
+					The montly payment is figured out using the following formula:<br>
                     Monthly Payment = <?php echo number_format($financing_price, "2", "", ""); ?> * 
                     (<?php echo number_format($monthly_interest_rate, "4", "", ""); ?> / 
                     (1 - ((1 + <?php echo number_format($monthly_interest_rate, "4", "", ""); ?>)
@@ -317,10 +411,62 @@
                     <br><br>
                     The <a href="#amortization">amortization</a> breaks down how much of your monthly payment goes towards the bank's interest,
                      and how much goes into paying off the principal of your loan.
+				</div>
+			</div>
+		</div>
+	</div>
+        
+        <!--<table cellpadding="5" cellspacing="0" border="1" >-->
+            <!--<tr valign="top">
+                <td><b><?php //echo $step++; ?></b></td>
+                <td>
+                    The <b>down payment</b>
+                     = The price of the home multiplied by the percentage down divided by 100 (for 5% down becomes 5/100 or 0.05)<br><br>
+                    $<?php //echo number_format($down_payment,"2",".",","); ?> = $<?php //echo number_format($sale_price,"2",".",","); ?> X 
+                    (<?php //echo $down_percent; ?> / 100)
                 </td>
             </tr>
-        </table>
-        <br>
+            <tr valign="top">
+                <td><b><?php //echo $step++; ?></b></td>
+                <td>
+                    The <b>interest rate</b> = The annual interest percentage divided by 100<br><br>
+                    <?php //echo $annual_interest_rate; ?> = <?php //echo $annual_interest_percent; ?>% / 100
+                </td>
+            </tr>
+            <tr valign="top">
+                <td colspan="2">
+                    The <b>monthly factor</b> = The result of the following formula:
+                </td>
+            </tr>
+            <tr valign="top">
+                <td><b><?php //echo $step++; ?></b></td>
+                <td>
+                    The <b>monthly interest rate</b> = The annual interest rate divided by 12 (for the 12 months in a year)<br><br>
+                    <?php //echo $monthly_interest_rate; ?> = <?php //echo $annual_interest_rate; ?> / 12
+                </td>
+            </tr>
+            <tr valign="top">
+                <td><b><?php //echo $step++; ?></b></td>
+                <td>
+                    The <b>month term</b> of the loan in months = The number of years you've taken the loan out for times 12<br><br>
+                    <?php //echo $month_term; ?> Months = <?php //echo $year_term; ?> Years X 12
+                </td>
+            </tr>
+            <tr valign="top">
+                <td><b><?php //echo $step++; ?></b></td>
+                <td>
+                    The montly payment is figured out using the following formula:<br>
+                    Monthly Payment = <?php //echo number_format($financing_price, "2", "", ""); ?> * 
+                    (<?php //echo number_format($monthly_interest_rate, "4", "", ""); ?> / 
+                    (1 - ((1 + <?php //echo number_format($monthly_interest_rate, "4", "", ""); ?>)
+                    <sup>-(<?php //echo $month_term; ?>)</sup>)))
+                    <br><br>
+                    The <a href="#amortization">amortization</a> breaks down how much of your monthly payment goes towards the bank's interest,
+                     and how much goes into paying off the principal of your loan.
+                </td>
+            </tr>
+        </table>-->
+        
 <?php
         // Set some base variables
         $principal     = $financing_price;
@@ -355,7 +501,7 @@
             $this_year_principal_paid = $this_year_principal_paid + $principal_paid;
             
             print("\t<tr valign=\"top\" bgcolor=\"#eeeeee\">\n");
-            print("\t\t<td align=\"right\">" . $current_month . "</td>\n");
+            print("\t\t<td align=\"left\">" . $current_month . "</td>\n");
             print("\t\t<td align=\"right\">\$" . number_format($interest_paid, "2", ".", ",") . "</td>\n");
             print("\t\t<td align=\"right\">\$" . number_format($principal_paid, "2", ".", ",") . "</td>\n");
             print("\t\t<td align=\"right\">\$" . number_format($remaining_balance, "2", ".", ",") . "</td>\n");
@@ -440,5 +586,7 @@
 */
 ?> 
         </div>
+		</div>
+		</div>
     </div>
 </div>
