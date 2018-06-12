@@ -476,13 +476,16 @@
         $power = -($month_term);
         $denom = pow((1 + $monthly_interest_rate), $power);
         $monthly_payment = $principal * ($monthly_interest_rate / (1 - $denom));
-        
-        print("<br><br><a name=\"amortization\"></a>Amortization For Monthly Payment: <b>\$" . number_format($monthly_payment, "2", ".", ",") . "</b> over " . $year_term . " years<br>\n");
-        print("<table cellpadding=\"5\" cellspacing=\"0\" bgcolor=\"#eeeeee\" border=\"1\" width=\"100%\">\n");
-        
+?>		
+     <div class="top-head margtop_30">
+		<a name="amortization"></a>Amortization For Monthly Payment: <b>$<?php echo number_format($monthly_payment, "2", ".", ","); ?> </b> over <?php echo $year_term; ?> years</div><br>
+	
+	<div class="table-responsive">	
+        <table class="table table-striped table-hover" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\">
+<?php        
         // This LEGEND will get reprinted every 12 months
-        $legend  = "\t<tr valign=\"top\" bgcolor=\"#cccccc\">\n";
-        $legend .= "\t\t<td align=\"right\"><b>Month</b></td>\n";
+        $legend  = "\t<tr valign=\"top\">\n";
+        $legend .= "\t\t<td align=\"center\"><b>Month</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Interest Paid</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Principal Paid</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Remaing Balance</b></td>\n";
@@ -500,8 +503,8 @@
             $this_year_interest_paid  = $this_year_interest_paid + $interest_paid;
             $this_year_principal_paid = $this_year_principal_paid + $principal_paid;
             
-            print("\t<tr valign=\"top\" bgcolor=\"#eeeeee\">\n");
-            print("\t\t<td align=\"left\">" . $current_month . "</td>\n");
+            print("\t<tr valign=\"top\">\n");
+            print("\t\t<td align=\"center\">" . $current_month . "</td>\n");
             print("\t\t<td align=\"right\">\$" . number_format($interest_paid, "2", ".", ",") . "</td>\n");
             print("\t\t<td align=\"right\">\$" . number_format($principal_paid, "2", ".", ",") . "</td>\n");
             print("\t\t<td align=\"right\">\$" . number_format($remaining_balance, "2", ".", ",") . "</td>\n");
@@ -510,22 +513,24 @@
             ($current_month % 12) ? $show_legend = FALSE : $show_legend = TRUE;
     
             if ($show_legend) {
-                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\">\n");
-                print("\t\t<td colspan=\"4\"><b>Totals for year " . $current_year . "</td>\n");
-                print("\t</tr>\n");
-                
-                $total_spent_this_year = $this_year_interest_paid + $this_year_principal_paid;
-                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\">\n");
-                print("\t\t<td>&nbsp;</td>\n");
-                print("\t\t<td colspan=\"3\">\n");
+                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\" style=\"background-color:#ffffcc !important;\">\n");
+                print("\t\t<td align=\"center\"><b>Totals for year " . $current_year . "</td>\n");
+				$total_spent_this_year = $this_year_interest_paid + $this_year_principal_paid;
+				print("\t\t<td colspan=\"3\">\n");
                 print("\t\t\tYou will spend \$" . number_format($total_spent_this_year, "2", ".", ",") . " on your house in year " . $current_year . "<br>\n");
                 print("\t\t\t\$" . number_format($this_year_interest_paid, "2", ".", ",") . " will go towards INTEREST<br>\n");
                 print("\t\t\t\$" . number_format($this_year_principal_paid, "2", ".", ",") . " will go towards PRINCIPAL<br>\n");
                 print("\t\t</td>\n");
                 print("\t</tr>\n");
+                
+                
+                //print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\">\n");
+                //print("\t\t<td>&nbsp;</td>\n");
+                
+                //print("\t</tr>\n");
     
-                print("\t<tr valign=\"top\" bgcolor=\"#ffffff\">\n");
-                print("\t\t<td colspan=\"4\">&nbsp;<br><br></td>\n");
+                print("\t<tr valign=\"top\" bgcolor=\"#ffffff\" border=\"0\">\n");
+                print("\t\t<td colspan=\"4\" border=\"0\">&nbsp;<br><br></td>\n");
                 print("\t</tr>\n");
                 
                 $current_year++;
@@ -543,6 +548,7 @@
         print("</table>\n");
     }
 ?>
+	</div>
 <br>
 
 <!-- END BODY -->

@@ -20,6 +20,7 @@ button, input:focus {outline: none;}
 .marg_40 {margin: 40px 0 !important;}
 /*width css*/
 .width_100 {width: 100% !important;}
+.border_none {border: 0 none !important;}
 .bg {
     background: #f5f5f5;
     padding: 10px 0;
@@ -1083,9 +1084,10 @@ input[type="radio"], input[type="checkbox"] {
 	text-align: left;
 }
 .calc-main table {width: 100%;}
+.calc-main table {border: 0 none;}
 .calc-main table tr td {
-	font-size: 15px;
-	padding: 10px;
+	font-size: 13px;
+	border: 1px solid #ccc;
 }
 .white-box {
 	background: #fff;
@@ -1243,6 +1245,27 @@ input[type="radio"], input[type="checkbox"] {
 	border-bottom: 1px solid #435175;
 	padding: 10px 0 5px;
 	margin: 10px 0 10px;
+}
+.value-box {
+	background: rgba(197, 207, 234, 0.6);
+	padding: 10px;
+	color: #52618a;
+	font-size: 16px;
+	line-height: 22px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+.value-inner {
+    border-bottom: 1px dashed #435175;
+    padding: 0 0 5px;
+    margin: 0 0 5px;
+}
+.value-inner .value {
+    font-size: 14px;
+    color: #000;
 }
 
 
