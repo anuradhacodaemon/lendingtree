@@ -18,6 +18,7 @@ button, input:focus {outline: none;}
 .margtop_30 {margin-top: 30px !important;}
 /*width css*/
 .width_100 {width: 100% !important;}
+.border_none {border: 0 none !important;}
 .bg {
     background: #fff;
     padding: 10px 0;
@@ -1052,4 +1053,216 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', end
     background-size: 44%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+/* Mortgage calc page css here */
+.calc-main {
+    padding: 10px 0 0px;
+    position: relative;
+    margin: 0 auto;
+}
+.calc-main h1 {
+	text-align: center;
+	font-size: 28px;
+    margin: 10px 0 20px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    color: #000;
+    font-weight: 500;
+}
+.top-head {
+	background: #8a1b1e;
+	padding: 10px;
+	color: #fff;
+	font-size: 18px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+.calc-main table {width: 100%;}
+.calc-main table {border: 0 none;}
+.calc-main table tr td {
+	font-size: 13px;
+	border: 1px solid #ccc;
+}
+.white-box {
+	background: #fff;
+	padding: 10px;
+	border: 1px solid #e3e3e3;
+	margin: 15px 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	position: relative;
+}
+.white-box label {
+	font-size: 15px;
+	display: block;
+	color: #8a1b1e;
+}
+.white-box .input {
+	background: #fff;
+	border: 0 none;
+	width: 100%;
+	padding: 6px 35px 6px 0;
+	font-size: 14px;
+	color: #a0a0a0;
+}
+.white-box .value-sec {
+	position: absolute;
+	right: 10px;
+	bottom: 18px;
+	vertical-align: middle;
+	font-size: 14px;
+	color: #8a1b1e;
+}
+.chk-box {
+	padding: 10px 0;
+	margin: 15px 0;
+}
+.chk-box label {
+	font-size: 15px;
+	display: block;
+}
+.chk-box .chk-input {
+	
+	color: #a0a0a0;
+}
+.chk-box .value-sec {
+	vertical-align: bottom;
+	font-size: 14px;
+	color: #000;
+}
+.btn-calc {
+    border-radius: 2px;
+    width: 100%;
+    display: inline-block;
+    padding: 18px;
+    color: #fff;
+    line-height: 20px;
+    min-height: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    border: 0 none;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d71a21+0,d31a21+16,c21a20+35,951b1e+76,8b1b1e+90,8a1b1e+100 */
+	background: rgb(215,26,33); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(215,26,33,1) 0%, rgba(211,26,33,1) 16%, rgba(194,26,32,1) 35%, rgba(149,27,30,1) 76%, rgba(139,27,30,1) 90%, rgba(138,27,30,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', endColorstr='#8a1b1e',GradientType=0 ); /* IE6-9 */
+}
+.btn-calc:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8a1b1e+0,8e1b1e+16,9f1b1f+35,cc1a21+76,d61a21+90,d71a21+100 */
+	background: rgb(138,27,30); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(138,27,30,1) 0%, rgba(142,27,30,1) 16%, rgba(159,27,31,1) 35%, rgba(204,26,33,1) 76%, rgba(214,26,33,1) 90%, rgba(215,26,33,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(138,27,30,1) 0%,rgba(142,27,30,1) 16%,rgba(159,27,31,1) 35%,rgba(204,26,33,1) 76%,rgba(214,26,33,1) 90%,rgba(215,26,33,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(138,27,30,1) 0%,rgba(142,27,30,1) 16%,rgba(159,27,31,1) 35%,rgba(204,26,33,1) 76%,rgba(214,26,33,1) 90%,rgba(215,26,33,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a1b1e', endColorstr='#d71a21',GradientType=0 ); /* IE6-9 */
+}
+.cont-box {
+	padding: 10px 0;
+	border-bottom: 1px dashed #ccc;
+	margin: 0;
+	font-size: 14px;
+	color: #919191;
+}
+.cont-box:last-child {border-bottom: 1px solid #ccc;}
+.cont-box label {
+	font-size: 15px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	margin: 0;
+	line-height: 22px;
+}
+.cont-box .cont {
+	background: transparent;
+	border: 0 none;
+	display: inline-block;
+	font-size: 14px;
+	text-align: right;
+	color: #919191;
+	float: right;
+}
+.total {
+	padding: 10px 0;
+	border-bottom: 1px dashed #ccc;
+	margin: 0 0 20px;
+	font-size: 16px;
+	color: #333;
+}
+.total label {
+	font-size: 16px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	margin: 0;
+	line-height: 24px;
+}
+.total .cont {
+	background: transparent;
+	border: 0 none;
+	display: inline-block;
+	font-size: 16px;
+	text-align: right;
+	font-weight: bold;
+	color: #333;
+	float: right;
+}
+.formula-sec {
+	background: rgba(138, 27, 30, 0.2);
+	padding: 10px;
+	color: #8a1b1e;
+	font-size: 16px;
+	line-height: 22px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+.formula-inner {
+	border-bottom: 1px dashed #8a1b1e;
+	padding: 0 0 10px;
+	margin: 0 0 10px;
+}
+.formula-inner:last-child {
+	border-bottom: 0 none;
+	padding: 0;
+	margin: 0;
+}
+.formula-inner span {
+	font-size: 24px;
+	color: #8a1b1e;
+}
+.formula-inner a {color: #8a1b1e; font-weight: bold; text-decoration: underline;}
+.formula-inner-head {
+	border-bottom: 1px solid #8a1b1e;
+	padding: 10px 0 5px;
+	margin: 10px 0 10px;
+}
+.value-box {
+	background: rgba(197, 207, 234, 0.6);
+	padding: 10px;
+	color: #8a1b1e;
+	font-size: 16px;
+	line-height: 22px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+.value-inner {
+    border-bottom: 1px dashed #435175;
+    padding: 0 0 5px;
+    margin: 0 0 5px;
+}
+.value-inner .value {
+    font-size: 14px;
+    color: #000;
 }
