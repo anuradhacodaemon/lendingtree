@@ -17,6 +17,7 @@ class AdminLogin_model extends CI_Model {
 
         $this->db->where("(email = '$username' or username = '$username' )");
         $this->db->where('password', $password);
+        $this->db->where('domain', base_url());
         // Run the query
         $query = $this->db->get(LOGIN);
         // Let's check if there are any results
