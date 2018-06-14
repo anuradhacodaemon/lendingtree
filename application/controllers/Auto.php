@@ -187,8 +187,8 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
-        
-        
+
+
 
         $result = $this->loan_model->add_loan($this->session->userdata());
 
@@ -297,10 +297,43 @@ class Auto extends CI_Controller {
         $pdf->Output('' . $name . '.pdf', 'D');
     }
 
+    public function mail_format_pdfdownload($id = 0) {
+        $link = explode('&', decode_url($id));
+        $this->load->model('details');
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        ob_end_clean();
+        $path = PHYSICAL_PATH . 'download_pdf/';
+        $filename = '' . $name . '.pdf';
+        $pdf->Output($path . $filename, 'F');
+    }
+
+    public function getpdf() {
+        $dir = PHYSICAL_PATH . 'download_pdf/';
+// Open a directory, and read its contents
+        if (is_dir($dir)) {
+            if ($dh = opendir($dir)) {
+                while (($file = readdir($dh)) !== false) {
+                    echo $dir . $file;
+                }
+                closedir($dh);
+            }
+        }
+    }
+
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
+        $this->mail_format_pdfdownload($url1);
+        $dir = PHYSICAL_PATH . 'download_pdf/';
+        $dh = scandir($dir);
+       
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(
@@ -331,7 +364,10 @@ class Auto extends CI_Controller {
 //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->attach($dir . $dh[2]);
+        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com');
+
+        //$this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
@@ -349,6 +385,7 @@ class Auto extends CI_Controller {
         $emailSend = $this->email->send();
 
         if ($emailSend) {
+            unlink($dir . $dh[2]);
             // echo 'yes';
             return 1;
         }
