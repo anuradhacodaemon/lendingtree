@@ -151,6 +151,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', e
     background-repeat: no-repeat;
     background-position: center;
 }
+.offer-loan-calc {
+    background-image: url(../img/loan-calculator.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-mortgage-calc {
+    background-image: url(../img/mortgage-calc.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .offer-personal {
     background-image: url(../img/auto-ref.svg);
     background-size: 80%;
@@ -186,6 +198,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', e
 .disclosure a {
     font-weight: 700;
     color: #D92027;
+}
+/* Other Popular Calculator Section CSS */
+.calculator-main {
+    background: #fff;
+    padding: 40px 0 10px;
+    clear: both;
+    text-align: center;
+}
+.calculator-main h1 {
+    margin: 0 0 30px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    font-size: 28px;
 }
 /* Other Popular Products Section CSS */
 .products-main {
