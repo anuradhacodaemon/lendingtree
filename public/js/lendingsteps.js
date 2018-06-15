@@ -263,7 +263,7 @@ function step4() {
     if ($('input[name=cemployer]').val() == '')
     {
 
-        $('#err1').html('Your Current Employer is empty');
+        $('#err1').html('Your Current Employe is empty');
         $('#cemployer').focus();
         return false;
     } else if (!RE.test($("#cemployer").val()))
