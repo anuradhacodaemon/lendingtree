@@ -313,19 +313,6 @@ class Auto extends CI_Controller {
         $pdf->Output($path . $filename, 'F');
     }
 
-    public function getpdf() {
-        $dir = PHYSICAL_PATH . 'download_pdf/';
-// Open a directory, and read its contents
-        if (is_dir($dir)) {
-            if ($dh = opendir($dir)) {
-                while (($file = readdir($dh)) !== false) {
-                    echo $dir . $file;
-                }
-                closedir($dh);
-            }
-        }
-    }
-
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
