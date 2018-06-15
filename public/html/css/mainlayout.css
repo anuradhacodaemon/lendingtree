@@ -22,9 +22,9 @@ button, input:focus {outline: none;}
 .width_100 {width: 100% !important;}
 .border_none {border: 0 none !important;}
 .bg {
-    background: #f5f5f5;
+    background: transparent;
     padding: 10px 0;
-    border: 1px solid #dedede;
+    border: 1px solid #fff;
     border-radius: 10px;
 }
 .font_14 {font-size:14px !important;}
@@ -508,7 +508,7 @@ button, input:focus {outline: none;}
     display: block;
 }
 .radio .text_current {
-    color: #6fb4ad !important;
+    color: #fff !important;
 }
 .radio .button {
     border-radius: 50px;
