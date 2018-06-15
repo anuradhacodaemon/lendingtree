@@ -79,7 +79,7 @@
             </div>
             <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
                 <div class="offer-cont">
-                    <a href="http://www.culoanportal.com/loancalculator">
+                    <a href="<?php echo BASE_URL . 'loancalculator' ?>">
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
@@ -95,7 +95,7 @@
             </div>
 			<div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="offer-cont">
-                    <a href="http://www.culoanportal.com/mortgagecalculator">
+                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>">
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
