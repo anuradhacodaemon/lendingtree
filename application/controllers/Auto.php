@@ -296,11 +296,29 @@ class Auto extends CI_Controller {
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
     }
+    public function mail_format_pdfdownload($id = 0) {
+        $link = explode('&', decode_url($id));
+        $this->load->model('details');
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        ob_end_clean();
+        $path = PHYSICAL_PATH . 'download_pdf/';
+        $filename = '' . $name . '.pdf';
+        $pdf->Output($path . $filename, 'F');
+    }
 
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
+         $this->mail_format_pdfdownload($url1);
+        $dir = PHYSICAL_PATH . 'download_pdf/';
+        $dh = scandir($dir);
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(
@@ -350,6 +368,7 @@ class Auto extends CI_Controller {
 
         if ($emailSend) {
             // echo 'yes';
+             unlink($dir . $dh[2]);
             return 1;
         }
 
