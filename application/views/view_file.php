@@ -219,7 +219,7 @@
                           if($userDetails[0]['city'] >0)
                           {
                           $city=$this->details->get_city($userDetails[0]['city']);
-                          if($city[0]['name'])
+                           if(!empty($city[0]['name']))
                           echo $city[0]['name']; 
                           }?>
                     </td>
@@ -233,7 +233,7 @@
                         if($userDetails[0]['state']>0)
                           {
                         $state=$this->details->get_state($userDetails[0]['state']);
-                        if($state[0]['name'])
+                       if(!empty($state[0]['name']))
                           echo $state[0]['name']; 
                           
                           }?>
