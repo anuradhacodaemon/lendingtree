@@ -89,6 +89,30 @@
                                 <input id="dealership" required name="dealership" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['dealership']))  echo $domain[0]['dealership']?>">
                             </div>
                         </div>
+                       
+                       <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Author <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="title" required name="author" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['author']))  echo $domain[0]['author']?>">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Description <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="mega_description" required name="mega_description" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['mega_description']))  echo $domain[0]['mega_description']?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">keywords <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="keywords" required name="keywords" class="form-control col-md-7 col-xs-12" type="text" value="<?php if(isset($domain[0]['keywords']))  echo $domain[0]['keywords']?>">
+                            </div>
+                        </div>
+                       
                         <div class="ln_solid"></div>
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
