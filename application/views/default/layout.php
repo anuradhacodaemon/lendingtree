@@ -100,7 +100,7 @@ if ($this->session->userdata['panel'] == 'frontend') {
     <!-- Footer ends here -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script>
@@ -139,7 +139,7 @@ if (isset($this->session->userdata['userdata']['panel'])) {
                 <link href="<?php echo BASE_URL; ?>public/admin/fonts/icomoon/styles.css" rel="stylesheet" type="text/css">
                 <link href="<?php echo BASE_URL; ?>public/admin/css/components.css" rel="stylesheet">
                 <link href="<?php echo BASE_URL; ?>public/admin/css/icheck/flat/green.css" rel="stylesheet">
-                <script src="<?php echo BASE_URL; ?>public/admin/js/jquery.min.js"></script>
+                <script async src="<?php echo BASE_URL; ?>public/admin/js/jquery.min.js"></script>
 
             </head>
 
@@ -177,15 +177,15 @@ if (isset($this->session->userdata['userdata']['panel'])) {
                 </div>
 
                 <!-- Bootstrap -->
-                <script src="<?php echo BASE_URL; ?>public/admin/js/bootstrap.min.js" data-semver="3.1.1" data-require="bootstrap"></script>
-                <script src="<?php echo BASE_URL; ?>public/admin/js/bootbox.js"></script>
+                <script async src="<?php echo BASE_URL; ?>public/admin/js/bootstrap.min.js" data-semver="3.1.1" data-require="bootstrap"></script>
+                <script async src="<?php echo BASE_URL; ?>public/admin/js/bootbox.js"></script>
 
                        <!-- <script src="<?php echo BASE_URL; ?>public/admin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>-->
                 <!-- FastClick -->
 
                 <!-- Custom Theme Scripts -->
-                <script src="<?php echo BASE_URL; ?>public/admin/build/js/custom.min.js"></script>
-                <script src="<?php echo BASE_URL; ?>public/admin/js/pace/pace.min.js"></script> 
+                <script async src="<?php echo BASE_URL; ?>public/admin/build/js/custom.min.js"></script>
+                <script async src="<?php echo BASE_URL; ?>public/admin/js/pace/pace.min.js"></script> 
                 <script>
 
 

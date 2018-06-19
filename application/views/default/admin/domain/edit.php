@@ -128,7 +128,7 @@
         </div>
     </div>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script async src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
 <script type="text/javascript">
