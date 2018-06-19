@@ -100,18 +100,20 @@ if ($this->session->userdata['panel'] == 'frontend') {
     <!-- Footer ends here -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script>
-                var winWidth = $(window).width();
-                $(document).ready(function () {
-                    if (winWidth >= 767)
-                    {
-                        var bannerHeight = $('.offer-main').height();
-                        $('.banner-left').css("height", bannerHeight + 100);
-                    }
-                });
+		$(document).ready(function () {
+            var winWidth = $(window).width();
+            $(document).ready(function () {
+                if (winWidth >= 767)
+                {
+                    var bannerHeight = $('.offer-main').height();
+                    $('.banner-left').css("height", bannerHeight + 100);
+                }
+            });
+		});
     </script>
 
     <?php
