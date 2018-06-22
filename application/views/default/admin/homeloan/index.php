@@ -5,6 +5,11 @@
 ?>
 
 <!-- iCheck -->
+<?php
+$lead_approved = $this->homeloan->checklead_approved_forDomain();
+$lend_pending = $this->homeloan->checklead_pending_forDomain();
+$visitor = $this->homeloan->checklead_denied_forDomain();
+?>
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -14,6 +19,22 @@
 
                 <div class="clearfix"></div>
             </div>
+            <div class="row tile_count">
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i> Number of Pending Applications</span>
+                    <div class="count"><?php echo $lend_pending[0]['numLead'] ?></div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i>  Number of Approved Applications</span>
+                    <div class="count"><?php echo $lead_approved[0]['numLead'] ?></div>
+                </div>
+
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i> Number of Denied Applications</span>
+                    <div class="count"><?php echo $visitor[0]['numLead'] ?></div>
+                </div>
+            </div>
+            
             <form id="filter_form" method="get" action="">
                 <input type="hidden" id="sort_by" name="sort_by" value="<?php echo $sort_by; ?>">
                 <input type="hidden" id="sort_direction" name="sort_direction" value="<?php echo $sort_direction; ?>">

@@ -11,6 +11,8 @@ class Homeloan extends CI_Model {
 
     public function get_user($id = 0, $limit, $start, $filterData, $sortData = "") {
 
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -23,9 +25,9 @@ class Homeloan extends CI_Model {
             $this->db->where('user.email', $filterData['email']);
         }
 
-        if (!empty($filterData['domain'])) {
-            $this->db->like('user.domain', $filterData['domain'], 'both');
-        }
+//        if (!empty($filterData['domain'])) {
+//            $this->db->like('user.domain', $filterData['domain'], 'both');
+//        }
 
         if (!empty($filterData['loan_type'])) {
             $this->db->where('user.loan_type', $filterData['loan_type']);
@@ -65,6 +67,7 @@ class Homeloan extends CI_Model {
         $this->db->select('*,user.add_date as date');
         $this->db->from(HOMELOAN . ' as user');
         $this->db->where('active_status', 1);
+        $this->db->where('user.domain', $domain);
         if (!is_array($sortData) || ($sortData['sort_by'] == "" && $sortData['sort_direction'] == ""))
             $this->db->order_by('user.add_date', 'desc');
         else
@@ -79,6 +82,8 @@ class Homeloan extends CI_Model {
 
     public function get_count_user($filterData = array()) {
 
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -91,9 +96,9 @@ class Homeloan extends CI_Model {
             $this->db->where('user.email', $filterData['email']);
         }
 
-        if (!empty($filterData['domain'])) {
-            $this->db->like('user.domain', $filterData['domain'], 'both');
-        }
+//        if (!empty($filterData['domain'])) {
+//            $this->db->like('user.domain', $filterData['domain'], 'both');
+//        }
 
 
         if (!empty($filterData['loan_type'])) {
@@ -131,6 +136,7 @@ class Homeloan extends CI_Model {
         }
 
         $this->db->where('active_status', 1);
+        $this->db->where('user.domain', $domain);
         $this->db->from(HOMELOAN . ' as user');
 
         $result = $this->db->get();
@@ -179,6 +185,8 @@ class Homeloan extends CI_Model {
 
     public function get_userall() {
 
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        
         $filterData = $this->session->userdata['export'];
         $filter = 'user.firstname,user.lastname,user.phone,user.email,user.loan_type,user.property_type,user.home_type,user.plan_type,user.dob,user.domain,user.address,user.city,user.zip';
         //print_r($this->session->userdata['export']);
@@ -226,7 +234,7 @@ class Homeloan extends CI_Model {
         //$filter = substr($filter, 0, -1);
 
 
-
+        $this->db->where('user.domain', $domain);
         $this->db->select($filter);
 
         $this->db->from(HOMELOAN . ' as user');
@@ -281,6 +289,47 @@ class Homeloan extends CI_Model {
         $this->db->select('count(loan_id) as numLead');
         $this->db->like("add_date", date("Y-m-d"), "both");
         $this->db->where("status", 1);
+        $this->db->from(HOMELOAN);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    
+    public function checklead_pending_forDomain() {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        
+        $this->db->select('count(loan_id) as numLead');
+        $this->db->where("status", '2');
+        $this->db->where('domain', $domain);
+        $this->db->where('active_status', 1);
+        $this->db->from(HOMELOAN);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+
+    public function checklead_approved_forDomain() {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        
+        $this->db->select('count(loan_id) as numLead');
+        $this->db->where("status", '1');
+        $this->db->where('domain', $domain);
+        $this->db->where('active_status', 1);
+        $this->db->from(HOMELOAN);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    
+    public function checklead_denied_forDomain() {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        $this->db->select('count(loan_id) as numLead');
+        $this->db->where("status", '0');
+        $this->db->where('domain', $domain);
+        $this->db->where('active_status', 1);
         $this->db->from(HOMELOAN);
         $result = $this->db->get();
         // echo $this->db->last_query();
