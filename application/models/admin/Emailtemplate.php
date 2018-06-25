@@ -10,8 +10,13 @@ class Emailtemplate extends CI_Model {
     }
 
     public function get_domain($id = 0, $limit, $start, $filterData, $sortData = "") {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] != 'superadmin' ) {
+            $this->db->where('domain.domain_name', $domain);
+        }
         $this->db->from(EMAILTEMPLATE . ' as domain');
-       
+        
         $this->db->limit($limit, $start);
 
         
@@ -21,7 +26,14 @@ class Emailtemplate extends CI_Model {
     }
 
     public function get_count_domain($filterData = array()) {
+        
+        $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] != 'superadmin' ) {
+            $this->db->where('domain.domain_name', $domain);
+        }
+        
         $this->db->from(EMAILTEMPLATE . ' as domain');
+        
         //echo $this->db->db_last_query();
         //$this->db->order_by('domain.created_date', 'DESC');
         $result = $this->db->get();

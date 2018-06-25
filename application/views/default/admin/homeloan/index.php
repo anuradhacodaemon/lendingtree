@@ -98,6 +98,7 @@ $visitor = $this->homeloan->checklead_denied_forDomain();
                     ?>">
                       </div>
                   </div>-->
+                    <?php if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) { ?>
                     <div class="col-md-2 form-group ">
 
 
@@ -116,6 +117,7 @@ $visitor = $this->homeloan->checklead_denied_forDomain();
                         </div>
 
                     </div>   
+                    <?php } ?>
                     <div class="col-md-3 form-group ">
 
 

@@ -68,6 +68,14 @@ class Homeloan extends CI_Model {
         $this->db->from(HOMELOAN . ' as user');
         $this->db->where('active_status', 1);
         $this->db->where('user.domain', $domain);
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+                $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        else
+        {
+            $this->db->where('user.domain', $domain);
+        }
         if (!is_array($sortData) || ($sortData['sort_by'] == "" && $sortData['sort_direction'] == ""))
             $this->db->order_by('user.add_date', 'desc');
         else
@@ -136,7 +144,14 @@ class Homeloan extends CI_Model {
         }
 
         $this->db->where('active_status', 1);
-        $this->db->where('user.domain', $domain);
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+                $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        else
+        {
+            $this->db->where('user.domain', $domain);
+        }
         $this->db->from(HOMELOAN . ' as user');
 
         $result = $this->db->get();
@@ -207,9 +222,9 @@ class Homeloan extends CI_Model {
             }
 
 
-            if (!empty($filterData['domain'])) {
-                $this->db->like('user.domain', $filterData['domain'], 'both');
-            }
+//            if (!empty($filterData['domain'])) {
+//                $this->db->like('user.domain', $filterData['domain'], 'both');
+//            }
 
 
             if (!empty($filterData['property_value1']) && empty($filterData['property_value2'])) {
@@ -233,8 +248,14 @@ class Homeloan extends CI_Model {
         }
         //$filter = substr($filter, 0, -1);
 
-
-        $this->db->where('user.domain', $domain);
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+                $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        else
+        {
+            $this->db->where('user.domain', $domain);
+        }
         $this->db->select($filter);
 
         $this->db->from(HOMELOAN . ' as user');
@@ -299,6 +320,16 @@ class Homeloan extends CI_Model {
     public function checklead_pending_forDomain() {
         $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
         
+        $filterData = $this->session->userdata['export'];
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+               $this->db->like('domain', $filterData['domain'], 'both');     
+        }
+        else
+        {
+            $this->db->where('domain', $domain);
+        }
+        
         $this->db->select('count(loan_id) as numLead');
         $this->db->where("status", '2');
         $this->db->where('domain', $domain);
@@ -313,6 +344,16 @@ class Homeloan extends CI_Model {
     public function checklead_approved_forDomain() {
         $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
         
+        $filterData = $this->session->userdata['export'];
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+               $this->db->like('domain', $filterData['domain'], 'both');     
+        }
+        else
+        {
+            $this->db->where('domain', $domain);
+        }
+        
         $this->db->select('count(loan_id) as numLead');
         $this->db->where("status", '1');
         $this->db->where('domain', $domain);
@@ -326,6 +367,16 @@ class Homeloan extends CI_Model {
     
     public function checklead_denied_forDomain() {
         $domain = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        $filterData = $this->session->userdata['export'];
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+               $this->db->like('domain', $filterData['domain'], 'both');     
+        }
+        else
+        {
+            $this->db->where('domain', $domain);
+        }
+        
         $this->db->select('count(loan_id) as numLead');
         $this->db->where("status", '0');
         $this->db->where('domain', $domain);

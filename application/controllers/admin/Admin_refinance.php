@@ -41,6 +41,8 @@ class Admin_refinance extends CI_Controller {
 
             if (isset($_GET))
                 $this->session->set_userdata('export', $_GET);
+            else
+                $this->session->unset_userdata('export');
 
             if (isset($_GET['start_date'])) {
                 if (!empty($_GET['start_date']))

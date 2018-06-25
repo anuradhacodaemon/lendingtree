@@ -14,14 +14,16 @@ class AdminLogin_model extends CI_Model {
 
     public function validate($username, $password) {
 
-
+        $string = "CASE WHEN user_type = 'superadmin' THEN TRUE ELSE domain = '".base_url()."' END";
         $this->db->where("(email = '$username' or username = '$username' )");
-        $this->db->where('password', $password);
-        $this->db->where('domain', base_url());
+        $this->db->where("password", $password);
+        //$this->db->where('domain', base_url());
+        $this->db->where($string);
         // Run the query
         $query = $this->db->get(LOGIN);
         // Let's check if there are any results
-        //echo $this->db->last_query();
+//        echo $this->db->last_query();
+//                die();
 
         $count = $query->num_rows();
         if ($count > 0) {

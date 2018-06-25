@@ -98,6 +98,7 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                     ?>">
                       </div>
                   </div>-->
+                    <?php if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) { ?>
                     <div class="col-md-2 form-group ">
 
 
@@ -109,10 +110,14 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                 <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
                                 <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
                                 <option value="http://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
+                                <option value="http://swfinancial.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://swfinancial.culoanportal.com/") echo 'selected' ?>>swfinancial.culoanportal.com</option>
+                                <option value="http://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
+                            
                             </select>
                         </div>
 
-                    </div>   
+                    </div> 
+                    <?php } ?>
                     <div class="col-md-3 form-group ">
 
 
