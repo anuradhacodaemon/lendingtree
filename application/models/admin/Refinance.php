@@ -11,6 +11,7 @@ class Refinance extends CI_Model {
 
     public function get_user($id = 0, $limit, $start, $filterData, $sortData = "") {
 
+        $domain = 'http://' . $_SERVER['SERVER_NAME'];
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -26,10 +27,6 @@ class Refinance extends CI_Model {
 
         if (!empty($filterData['vin'])) {
             $this->db->where('user.vin', $filterData['vin']);
-        }
-
-        if (!empty($filterData['domain'])) {
-            $this->db->like('user.domain', $filterData['domain'], 'both');
         }
         if (!empty($filterData['currently_owe1']) && empty($filterData['currently_owe2'])) {
             if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
@@ -95,6 +92,17 @@ class Refinance extends CI_Model {
         $this->db->select('*,user.add_date as date');
         $this->db->from(REFINANCE . ' as user');
         $this->db->where('active_status', 1);
+        /* Domain Filter For admin and superadmin
+         * 
+         */
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+                $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        else
+        {
+            $this->db->like('user.domain', $domain,'both');
+        }
         if (!is_array($sortData) || ($sortData['sort_by'] == "" && $sortData['sort_direction'] == ""))
             $this->db->order_by('user.add_date', 'desc');
         else
@@ -109,6 +117,7 @@ class Refinance extends CI_Model {
 
     public function get_count_user($filterData = array()) {
 
+        $domain = 'http://' . $_SERVER['SERVER_NAME'];
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -127,9 +136,6 @@ class Refinance extends CI_Model {
             $this->db->where('user.vin', $filterData['vin']);
         }
 
-        if (!empty($filterData['domain'])) {
-            $this->db->like('user.domain', $filterData['domain'], 'both');
-        }
         if (!empty($filterData['currently_owe1']) && empty($filterData['currently_owe2'])) {
             if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
                 $this->db->group_start();
@@ -192,6 +198,17 @@ class Refinance extends CI_Model {
         }
 
         $this->db->where('active_status', 1);
+        /* Domain Filter For admin and superadmin
+         * 
+         */
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+                $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        else
+        {
+            $this->db->like('user.domain', $domain,'both');
+        }
         $this->db->from(REFINANCE . ' as user');
 
         $result = $this->db->get();
@@ -240,6 +257,7 @@ class Refinance extends CI_Model {
 
     public function get_userall() {
 
+        $domain = 'http://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         $filter = 'user.firstname,user.lastname,user.phone,user.email,user.currently_owe,user.monthly_payment,user.vin,user.current_milage,user.dob,user.domain,user.address,s.name as state,c.name as city,user.ssn';
         //print_r($this->session->userdata['export']);
@@ -256,9 +274,6 @@ class Refinance extends CI_Model {
             $this->db->where('user.vin', $filterData['vin']);
         }
 
-        if (!empty($filterData['domain'])) {
-            $this->db->like('user.domain', $filterData['domain'], 'both');
-        }
         if (!empty($filterData['currently_owe1']) && empty($filterData['currently_owe2'])) {
             if (!empty($filterData['currently_owe1']) && !empty($filterData['currently_owe2']))
                 $this->db->group_start();
@@ -314,7 +329,17 @@ class Refinance extends CI_Model {
         }
         //$filter = substr($filter, 0, -1);
 
-
+        /* Domain Filter For admin and superadmin
+         * 
+         */
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+                $this->db->like('user.domain', $filterData['domain'], 'both');
+        }
+        else
+        {
+            $this->db->like('user.domain', $domain,'both');
+        }
 
         $this->db->select($filter);
 
@@ -376,6 +401,82 @@ class Refinance extends CI_Model {
         //die;
         return $result->result_array();
     }
+    
+    public function checklead_pending_forDomain() {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $filterData = $this->session->userdata['export'];
+        
+        $this->db->select('count(ref_id) as numLead');
+        $this->db->where("status", '2');
+        /* Domain Filter For admin and superadmin
+         * 
+         */
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+               $this->db->like('domain', $filterData['domain'], 'both');     
+        }
+        else
+        {
+            $this->db->like('domain', $domain, 'both');
+        }
+        $this->db->where('active_status', 1);
+        $this->db->from(REFINANCE);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+
+    public function checklead_approved_forDomain() {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $filterData = $this->session->userdata['export'];
+        
+        $this->db->select('count(ref_id) as numLead');
+        $this->db->where("status", '1');
+        /* Domain Filter For admin and superadmin
+         * 
+         */
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+               $this->db->like('domain', $filterData['domain'], 'both');     
+        }
+        else
+        {
+            $this->db->like('domain', $domain, 'both');
+        }
+        $this->db->where('active_status', 1);
+        $this->db->from(REFINANCE);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    
+    public function checklead_denied_forDomain() {
+        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $filterData = $this->session->userdata['export'];
+        
+        $this->db->select('count(ref_id) as numLead');
+        $this->db->where("status", '0');
+        /* Domain Filter For admin and superadmin
+         * 
+         */
+        if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
+            if(!empty($filterData['domain']))
+               $this->db->like('domain', $filterData['domain'], 'both');     
+        }
+        else
+        {
+            $this->db->like('domain', $domain, 'both');
+        }
+        $this->db->where('active_status', 1);
+        $this->db->from(REFINANCE);
+        $result = $this->db->get();
+        // echo $this->db->last_query();
+        //die;
+        return $result->result_array();
+    }
+    
     public function valid_domain_allemail(){
         $this->db->from(EMAILS . ' as e');
         $this->db->join(DOMAIN . ' as d', 'd.domain_id = e.domain_id', 'LEFT');
