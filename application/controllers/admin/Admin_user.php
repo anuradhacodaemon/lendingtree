@@ -41,6 +41,8 @@ class Admin_user extends CI_Controller {
 
             if (isset($_GET))
                 $this->session->set_userdata('export', $_GET);
+            else
+                $this->session->unset_userdata('export');
 
             if (isset($_GET['start_date'])) {
                 if (!empty($_GET['start_date']))
@@ -216,28 +218,32 @@ class Admin_user extends CI_Controller {
 
             if ($v['type'] == 1)
                 $type = 'New Car Purchase';
-            if ($v['type'] == 2)
+            elseif ($v['type'] == 2)
                 $type = 'Used Car Purchase';
-            if ($v['type'] == 3)
+            elseif ($v['type'] == 3)
                 $type = 'Refinance';
-            if ($v['type'] == 4)
+            elseif ($v['type'] == 4)
                 $type = 'Lease Buy Out';
+            else
+                $type = '';
             array_push($a, $type);
             //if (!empty($this->session->userdata['export']['years_emt'])){
             if ($v['requested_amount'] == 7)
                 $years = '$5,000-$10,000';
-            if ($v['requested_amount'] == 6)
+            elseif ($v['requested_amount'] == 6)
                 $years = '$10,000-$15,000';
-            if ($v['requested_amount'] == 5)
+            elseif ($v['requested_amount'] == 5)
                 $years = '$15,000-$20,000';
-            if ($v['requested_amount'] == 4)
+            elseif ($v['requested_amount'] == 4)
                 $years = '$20,000-$30,000';
-            if ($v['requested_amount'] == 3)
+            elseif ($v['requested_amount'] == 3)
                 $years = '$30,000- $40,000';
-            if ($v['requested_amount'] == 2)
+            elseif ($v['requested_amount'] == 2)
                 $years = '$40,000 - $50,000';
-            if ($v['requested_amount'] == 1)
+            elseif ($v['requested_amount'] == 1)
                 $years = '$50,000+';
+            else
+                $years = '';
             array_push($a, $years);
 
             // }
