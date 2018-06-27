@@ -5,6 +5,11 @@
 ?>
 
 <!-- iCheck -->
+<?php
+$lead_approved = $this->users->checklead_approved_forDomain();
+$lend_pending = $this->users->checklead_pending_forDomain();
+$visitor = $this->users->checklead_denied_forDomain();
+?>
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -13,6 +18,21 @@
                 <h2> User Listing</h2>
 
                 <div class="clearfix"></div>
+            </div>
+            <div class="row tile_count">
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i> Number of Pending Applications</span>
+                    <div class="count"><?php echo $lend_pending[0]['numLead']; ?></div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i>  Number of Approved Applications</span>
+                    <div class="count"><?php echo $lead_approved[0]['numLead']; ?></div>
+                </div>
+
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i> Number of Denied Applications</span>
+                    <div class="count"><?php echo $visitor[0]['numLead']; ?></div>
+                </div>
             </div>
             <form id="filter_form" method="get" action="">
                 <input type="hidden" id="sort_by" name="sort_by" value="<?php echo $sort_by; ?>">
@@ -106,6 +126,7 @@
                     ?>">
                       </div>
                   </div>-->
+                    <?php if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) { ?>
                     <div class="col-md-2 form-group ">
 
 
@@ -116,11 +137,14 @@
                                 <option value="">Select domain </option>
                                 <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
                                 <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
-
+                                <option value="http://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
+                                <option value="http://swfinancial.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://swfinancial.culoanportal.com/") echo 'selected' ?>>swfinancial.culoanportal.com</option>
+                                <option value="http://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
                             </select>
                         </div>
 
-                    </div>   
+                    </div> 
+                    <?php } ?>
                     <div class="col-md-3 form-group ">
 
 
