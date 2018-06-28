@@ -11,13 +11,9 @@ class Emailtemplate2 extends CI_Model {
 
     public function get_domain($id = 0, $limit, $start, $filterData, $sortData = "") {
         $this->db->from(EMAILTEMPLATEPDF . ' as domain');
-       
         $this->db->limit($limit, $start);
-
-       
         $result = $this->db->get();
         // echo $this->db->last_query();
-
         return $result->result_array();
     }
 
@@ -26,7 +22,6 @@ class Emailtemplate2 extends CI_Model {
         //echo $this->db->db_last_query();
         //$this->db->order_by('domain.created_date', 'DESC');
         $result = $this->db->get();
-
         return $result->num_rows();
     }
 

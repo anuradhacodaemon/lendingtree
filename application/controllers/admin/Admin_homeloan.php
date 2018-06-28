@@ -41,6 +41,8 @@ class Admin_homeloan extends CI_Controller {
 
             if (isset($_GET))
                 $this->session->set_userdata('export', $_GET);
+            else
+                $this->session->unset_userdata('export');
 
             if (isset($_GET['start_date'])) {
                 if (!empty($_GET['start_date']))
@@ -251,42 +253,50 @@ class Admin_homeloan extends CI_Controller {
             $a = array($v['firstname'], $v['lastname'], $v['phone'], $v['email']);
             if ($v['loan_type'] == 1)
                 $loan_type = 'Purchase';
-            if ($v['loan_type'] == 2)
+            elseif ($v['loan_type'] == 2)
                 $loan_type = 'Refinance';
-            if ($v['loan_type'] == 3)
+            elseif ($v['loan_type'] == 3)
                 $loan_type = 'Home Equity';
-            if ($v['loan_type'] == 4)
+            elseif ($v['loan_type'] == 4)
                 $loan_type = 'Reverse Mortgage';
+            else
+                $loan_type = '';
             array_push($a, $loan_type);
             if ($v['property_type'] == 1)
                 $property_type = 'Single Family Home';
-            if ($v['property_type'] == 2)
+            elseif ($v['property_type'] == 2)
                 $property_type = 'Townhome';
-            if ($v['property_type'] == 3)
+            elseif ($v['property_type'] == 3)
                 $property_type = 'Condominium';
-            if ($v['property_type'] == 4)
+            elseif ($v['property_type'] == 4)
                 $property_type = 'Multi Family Home';
-            if ($v['property_type'] == 5)
+            elseif ($v['property_type'] == 5)
                 $property_type = 'Manufactured or Mobile Home';
+            else
+                $property_type = '';
 
             array_push($a, $property_type);
             if ($v['home_type'] == 1)
                 $home_type = 'Primary Home';
-            if ($v['home_type'] == 2)
+            elseif ($v['home_type'] == 2)
                 $home_type = 'Secondary Home';
-            if ($v['home_type'] == 3)
+            elseif ($v['home_type'] == 3)
                 $home_type = 'Rental Property';
+            else
+                $home_type = '';
             array_push($a, $home_type);
             if ($v['plan_type'] == 1)
                 $plan_type = 'Already under contract';
-            if ($v['plan_type'] == 2)
+            elseif ($v['plan_type'] == 2)
                 $plan_type = 'Immediately – I’m making an offer';
-            if ($v['plan_type'] == 3)
+            elseif ($v['plan_type'] == 3)
                 $plan_type = 'I’m shopping & am considering a few options';
-            if ($v['plan_type'] == 4)
+            elseif ($v['plan_type'] == 4)
                 $plan_type = 'Within next couple month';
-            if ($v['plan_type'] == 5)
+            elseif ($v['plan_type'] == 5)
                 $plan_type = 'Not sure – I want to know what I can afford';
+            else
+                $plan_type = '';
             array_push($a, $plan_type);
 
             array_push($a, $v['dob']);
