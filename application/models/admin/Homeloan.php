@@ -331,7 +331,6 @@ class Homeloan extends CI_Model {
         
         $this->db->select('count(loan_id) as numLead');
         $this->db->where("status", '2');
-        $this->db->where('domain', $domain);
         $this->db->where('active_status', 1);
         $this->db->from(HOMELOAN);
         $result = $this->db->get();
@@ -355,7 +354,6 @@ class Homeloan extends CI_Model {
         
         $this->db->select('count(loan_id) as numLead');
         $this->db->where("status", '1');
-        $this->db->where('domain', $domain);
         $this->db->where('active_status', 1);
         $this->db->from(HOMELOAN);
         $result = $this->db->get();
@@ -378,7 +376,6 @@ class Homeloan extends CI_Model {
         
         $this->db->select('count(loan_id) as numLead');
         $this->db->where("status", '0');
-        $this->db->where('domain', $domain);
         $this->db->where('active_status', 1);
         $this->db->from(HOMELOAN);
         $result = $this->db->get();
