@@ -100,7 +100,7 @@ $visit = ((int) $visitor[0]['numVisitor'] * 10) / 100;
                         <div class="count"><?php echo $sessiondata['sessioncount']['rows']['7']; ?></div>
                     </div>
                     <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i>  Total time spent on website</span>
+                        <span class="count_top"><i class="fa fa-hourglass-2"></i>  Total time spent on website</span>
                         <div class="count">
                             <?php $iSeconds = $sessiondata['sessioncount']['rows']['4']; 
                             echo date('H:i:s', mktime(0, 0, $iSeconds));
@@ -109,7 +109,7 @@ $visit = ((int) $visitor[0]['numVisitor'] * 10) / 100;
                     </div>
 
                     <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Top 5 most viewed pages</span>
+                        <span class="count_top"><i class="fa fa-newspaper-o"></i> Top 5 most viewed pages</span>
                         <div class="">
                             <?php
                             $sino = 1;
