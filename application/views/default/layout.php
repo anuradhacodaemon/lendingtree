@@ -71,6 +71,7 @@ if ($this->session->userdata['panel'] == 'frontend') {
                 gtag('js', new Date());
                 gtag('config', 'AW-829513051');
             </script>
+            
         </head>
         <body >
             <!-- Header starts here -->
@@ -93,7 +94,14 @@ if ($this->session->userdata['panel'] == 'frontend') {
         echo $getPhone[0]['tagline'];
     }
     ?>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122398377-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
+                gtag('config', 'UA-122398377-1');
+            </script>
         </body>
     </html>
 

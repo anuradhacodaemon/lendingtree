@@ -78,7 +78,7 @@ $visit = ((int) $visitor[0]['numVisitor'] * 10) / 100;
 
 
             <div class="x_content">
-                <div class="row tile_count">
+<!--                <div class="row tile_count">
                     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                         <span class="count_top"><i class="fa fa-user"></i> Number of Pending Applications today</span>
                         <div class="count"><?php echo $lend_pending[0]['numLead'] ?></div>
@@ -92,7 +92,43 @@ $visit = ((int) $visitor[0]['numVisitor'] * 10) / 100;
                         <span class="count_top"><i class="fa fa-user"></i> Total Portal Visitors today</span>
                         <div class="count"><?php echo $visitor[0]['numVisitor'] ?></div>
                     </div>
-                </div>   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                </div>-->
+                <h4>Google Analytics Report</h4>
+                <div class="row tile_count">
+                    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Total website visitors</span>
+                        <div class="count"><?php echo $sessiondata['sessioncount']['rows']['7']; ?></div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i>  Total time spent on website</span>
+                        <div class="count">
+                            <?php $iSeconds = $sessiondata['sessioncount']['rows']['4']; 
+                            echo date('H:i:s', mktime(0, 0, $iSeconds));
+                        ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Top 5 most viewed pages</span>
+                        <div class="">
+                            <?php
+                            $sino = 1;
+                            $counreywisedata = $topPages['rows'];
+                            if (count($counreywisedata) > 0) {
+                                foreach ($counreywisedata as $valuearray) {
+                                    echo $sino." - ".$valuearray[1]."<br>"; 
+                                    $sino++;
+                                }
+                            }
+                            else
+                            {
+                                echo 0;
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div id="barchart_values" ></div> </div> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div id="myPieChart"></div></div>     
             </div>
