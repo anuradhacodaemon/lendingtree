@@ -439,9 +439,9 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['current_employer']);
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
-
+        unset($this->session->userdata['state']);
+        unset($this->session->userdata['ssn']);
         $result = $this->loan_model->add_homeloan($this->session->userdata());
-
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {
@@ -506,15 +506,7 @@ class Homeloan extends CI_Controller {
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
           );  * */
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '25';
-        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
-        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
-        $config['charset'] = 'utf-8';
-        $config['mailtype'] = 'html';
-        $config['newline'] = "\r\n";
-        $this->load->library('email', $config);
+        $this->load->library('email');
 
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
@@ -523,7 +515,7 @@ class Homeloan extends CI_Controller {
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
         $this->email->subject("Thank you for applying");
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
             'firstname' => $firstname,
@@ -594,27 +586,14 @@ class Homeloan extends CI_Controller {
           'charset' => 'iso-8859-1'
           );
          * */
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '25';
-        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
-        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
-        $config['charset'] = 'utf-8';
-        $config['mailtype'] = 'html';
-        $config['newline'] = "\r\n";
-        $this->load->library('email', $config);
+        $this->load->library('email');
 
         $this->email->set_newline("\r\n");
-        //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
-        //$this->email->set_header('Content-type', 'text/html');
         $this->email->from(ADMINEMAIL, ADMINNAME);
-//$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
          $this->email->attach($dir . $dh[2]);
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com');
-
-        //$this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
