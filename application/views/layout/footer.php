@@ -1,30 +1,9 @@
 <!-- Footer starts here -->
-<div class="footer-main">
-    <!-- <ul class="sub-nav">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <li><a href="/index.php">Home</a></li>|
-            <li><a href="/online-banking/guide-to-services.php">Home Banking</a></li>|
-            <li><a href="/about/index.php">About</a></li>|
-            <li><a href="/about/contact.php">Contact</a></li>|
-            <li><a href="/resources/applications-employment.php">Careers</a></li>|
-            <li><a href="/checking/index.php">Checking</a></li>|
-            <li><a href="/savings/index.php">Savings</a></li>|
-            <li><a href="/loans/index.php">Loans</a></li>|
-            <li><a href="/rates/index.php">Rates</a></li>|
-            <li><a href="/resources/index.php">Resources</a></li>|
-            <li><a href="/resources/atms.php">ATM/Branch Locator </a></li>|
-            <li><a href="docs/2015-03-19-privacy-policy.pdf">Privacy Policy</a></li>|
-            <li><a href="#">Routing # 313182181</a></li>
-          </div>
-        </div>
-      </div>
-    </ul> -->
+<div class="footer-main wow fadeIn clearfix">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p><strong>Third Party Link Disclaimer:</strong>&nbsp;<?php $getPhone=$this->loan_model->get_phone(); if(!empty($getPhone[0]['footer'])) { echo $getPhone[0]['footer']; } ?>&nbsp;</p>
+                Third Party Link Disclaimer:&nbsp;<?php $getPhone=$this->loan_model->get_phone(); if(!empty($getPhone[0]['footer'])) { echo $getPhone[0]['footer']; } ?>&nbsp;
             </div>
         </div>
     </div>
@@ -40,13 +19,17 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">
+<!--<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">-->
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 <script src="<?php echo BASE_URL; ?>/public/js/lendingsteps.js"></script>
 <script src="<?php echo BASE_URL; ?>/public/js/refinancesteps.js"></script>
 <script src="<?php echo BASE_URL; ?>/public/js/homeloansteps.js"></script>
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
+<script src="<?php echo BASE_URL; ?>/public/js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 
 
 <script> //$('input[name=amount]').val()

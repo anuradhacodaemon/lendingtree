@@ -11,7 +11,7 @@
     <title><?php if(!empty($getPhone[0]['title'])) { echo $getPhone[0]['title']; } ?></title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <link href="<?php echo BASE_URL; ?>public/html/css/font.css" rel="stylesheet" />
 	<link href="<?php echo BASE_URL; ?>public/html/css/font-awesome.min.css" rel="stylesheet" />
     
@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link href="<?php echo BASE_URL; ?>public/html/css/mainlayout.css" rel="stylesheet">
 	<link href="<?php echo BASE_URL; ?>public/html/css/responsive.css" rel="stylesheet">
+	<link href="<?php echo BASE_URL; ?>public/html/css/animate.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

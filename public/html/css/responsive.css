@@ -2,20 +2,16 @@
     .logo {text-align: center;}
     .number {
         text-align: center;
+		margin-top: 7px;
     }
-    .number a {font-size: 13px;}
-    .banner-main {background: #fff; padding-top: 0px; padding-bottom: 0px;}
-    .banner-main .banner-left {margin: 0 auto; text-align: center;}
-    .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
-    .banner-main .banner-left h2 {font-size: 22px;}
-    .products-main h1 {font-size: 20px;}
-    .offer-main {padding-top: 20px; margin: 10px 0 40px;}
-    .offer-main h1 {font-size: 20px;}
-    .offer-cont {text-align: center;}
-    .quicklinks-main {padding: 20px 0;}
-    .quicklinks-main h1 {font-size: 17px;}
-    .quicklinks-main h3 {font-size: 14px; line-height: 20px;}
-    .footer-main .sub-nav li {display: inline;}
+    .number a {font-size: 14px;}
+	.banner-main {padding: 20px 0;}
+	.banner-main h1 {font-size: 26px; margin: 0 0 15px;}
+	.banner-inner {margin-bottom: 20px;}
+	.banner-inner h2 {font-size: 26px;}
+	.popular-main h1 {font-size: 24px;}
+	.popular-inner {margin-bottom: 20px;}
+	.popular-inner .title h2 {font-size: 22px;}
     .panel .logo-list {text-align: center;}
     .footer-main {padding: 10px; text-align: center;}
     .panel .block-frame .logo-list {float: none; margin: 0; padding: 0;}
@@ -81,14 +77,19 @@
     .inner_height {min-height:574px;}
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
-    .logo {width: 65%;}
-    .number a {font-size: 18px;}
-    .banner-main {
-        background: #fff;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        margin: 0;
+    .logo {text-align: center;}
+    .number {
+        text-align: center;
+		margin-top: 7px;
     }
+    .number a {font-size: 14px;}
+	.banner-main {padding: 20px 0;}
+	.banner-main h1 {font-size: 26px; margin: 0 0 15px;}
+	.banner-inner {margin-bottom: 20px;}
+	.banner-inner h2 {font-size: 26px;}
+	.popular-main h1 {font-size: 24px;}
+	.popular-inner {margin-bottom: 20px;}
+	.popular-inner .title h2 {font-size: 22px;}
     .form-main {
         padding: 0 0 110px;
     }
@@ -111,13 +112,10 @@
 }
 @media only screen and (min-width:768px) and (max-width:1023px) { 
     .inner_container {min-height: 823px;}
-    .banner-main {background-size: 142%;}
-    .offer-main {margin: 0 0 40px;}
-    .banner-main .banner-left h1 {font-size: 30px;}
-    .banner-main .banner-left h2 {font-size: 26px;}
-    .quicklinks-main {padding: 20px 0;}
-    .quicklinks-main h1 {font-size: 24px;}
-    .quicklinks-main h3 {font-size: 18px;}
+    .banner-main h1 {font-size: 30px;}
+	.banner-inner h2 {font-size: 24px;}
+	.popular-main h1 {font-size: 30px;}
+	.popular-inner .title h2 {font-size: 24px;}
     .inner_height {min-height:823px;}
     .form-main .disclosure-sec {
         position: absolute;
@@ -147,12 +145,16 @@
 }
 @media only screen and (min-width:375px) and (max-width:375px){
     .inner_height {min-height:500px;}
+	.number {margin-top: 5px;}
+    .number a {font-size: 12px;}
 }
 @media only screen and (min-width:360px) and (max-width:360px){ 
     .inner_height {min-height:476px;}
 }
 @media only screen and (max-width:320px){ 
     .inner_height {min-height:400px;}
+	.number {margin-top: 0px;}
+    .number a {font-size: 10px;}
 }
 @media only screen and (min-width: 812px) and (max-width: 823px) {
     .inner_height {

@@ -1,10 +1,24 @@
 body {
-    margin: 0;
-    color: #000;
-    font: 1em source_sans_proregular, Arial, Helvetica, sans-serif !important;
     background: #fff;
+    color: #333333;
+    margin: 0; 
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+	letter-spacing: 0.5px;
+	position: relative;
 }
-a {transition: all .3s;}
+a {
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+a:focus {
+	outline: none;
+	border: 0 none;
+}
 button, input:focus {outline: none;}
 .inner_container {min-height: auto;}
 .inner_height {min-height: 530px;}
@@ -16,6 +30,8 @@ button, input:focus {outline: none;}
 .margbot_30 {margin-bottom: 30px !important;}
 .margbot_40 {margin-bottom: 40px !important;}
 .margtop_30 {margin-top: 30px !important;}
+/* padding css */
+.padd_0 {padding: 0px !important;}
 /*width css*/
 .width_100 {width: 100% !important;}
 .border_none {border: 0 none !important;}
@@ -29,11 +45,15 @@ button, input:focus {outline: none;}
 /* Header */
 .header-main {
     overflow: hidden;
+    width: 100%;
     background: #fff;
     margin: 0 auto;
     position: relative;
     z-index: 10;
     padding: 10px 0;
+	-webkit-box-shadow: 0px -8px 26px 4px rgba(163,163,163,1);
+	-moz-box-shadow: 0px -8px 26px 4px rgba(163,163,163,1);
+	box-shadow: 0px -8px 26px 4px rgba(163,163,163,1);
 }
 .logo {
     float: left;
@@ -43,173 +63,167 @@ button, input:focus {outline: none;}
 .number {
     float: right;
     padding: 0;
+	margin-top: 20px;
 }
 .number a {
-    color: #8a1b1e;
-    font-size: 17px;
-    line-height: 40px;
-    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    color: #002649;
+    font-size: 18px;
+    font-weight: 400;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	transition: all .3s ease;
 }
-.number a strong {font-family: source_sans_proregular, Arial, Helvetica, sans-serif;}
+.number a:hover {
+	color: #000;
+}
 
 /* Banner */
 .banner-main {
-    background: #fff url(../img/banner.jpg) no-repeat center top -74px;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    background-size: cover;
-    min-height: 540px;
+	background: #fff;
+	margin: 0;
+	padding: 40px 0;
 }
-.banner-main .banner-left h2 {
-    font-size: 30px;
-    margin: 0 0 15px;
-    font-family: loved_by_the_kingregular, Arial, Helvetica, sans-serif;
-    color: #000;
-    font-weight: 400;
+.banner-main a {text-decoration: none;}
+.banner-main a:focus {
+	outline: none;
+	border: 0 none;
 }
-.offer-main {
-    padding: 20px 0; 
-    margin: 40px 0; 
-    border-radius: 4px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#891a1d+0,891a1d+20,761417+77,751417+100&0.5+0,0.5+100 */
-background: -moz-linear-gradient(top, rgba(137,26,29,0.5) 0%, rgba(137,26,29,0.5) 20%, rgba(118,20,23,0.5) 77%, rgba(117,20,23,0.5) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(137,26,29,0.5) 0%,rgba(137,26,29,0.5) 20%,rgba(118,20,23,0.5) 77%,rgba(117,20,23,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(137,26,29,0.5) 0%,rgba(137,26,29,0.5) 20%,rgba(118,20,23,0.5) 77%,rgba(117,20,23,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', endColorstr='#80751417',GradientType=0 ); /* IE6-9 */
+.banner-main h1 {
+	color: #002649;
+	font-size: 36px;
+	font-weight: 500;
+	text-align: center;
+	margin: 0 0 30px;
 }
-.offer-main h1 {
-    font-size: 28px;
-    margin: 0 0 25px;
-    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
-    color: #fff;
-    font-weight: 500;
-    text-align: center;
+.banner-inner {
+	min-height: 400px;
+	padding: 20px;
+	position: relative;
 }
-.offer-cont .offer-circ {
-    background: 0 0;
-    border: 0;
-    margin-bottom: 20px;
+.auto_bg {
+	background: url(../img/banner1.png) no-repeat center top;
+	background-size: cover;
 }
-.offer-cont .offer-circ .outer-circ {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: rgba(0,0,0,.1);
-    padding: 12px;
+.refinance_bg {
+	background: url(../img/banner2.png) no-repeat center top;
+	background-size: cover;
 }
-.offer-cont .offer-circ .outer-circ .inner-bevel {
-    width: 135px;
-    height: 135px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom,#fdfdfd 0%,#d8d0ce 100%);
-    box-shadow: 0 5px 10px 2px rgba(70,70,70,.2);
-    padding: 8px;
+.home_bg {
+	background: url(../img/banner3.png) no-repeat center top;
+	background-size: cover;
 }
-.offer-cont .offer-circ .outer-circ .inner-bevel:hover {
-    background: linear-gradient(to bottom,#fdfdfd 0%,#e9e5e4 100%);
+.banner-inner h2 {
+	color: #002649;
+	margin: 20px 0 20px;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 1;
+	text-align: center;
+	text-transform: uppercase;
 }
-.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #ece8e7;
-    padding: 10px 0 0;
-}
-.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    height: 52px;
-}
-.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .title {
-    font-family: 'Open Sans',sans-serif!important;
-    width: 80%;
-    font-size: 12px;
-    color: #D92027;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 6px auto 0;
-}
-.offer-refinance {
-    background-image: url(../img/tactile-refinance.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-home {
-    background-image: url(../img/tactile-home-loan.svg);
-    background-size: 44%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-home-loan {
-    background-image: url(../img/tactile-home-loan.svg);
-    background-size: 44%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-loan-calc {
-    background-image: url(../img/loan-calculator.svg);
-    background-size: 44%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-mortgage-calc {
-    background-image: url(../img/mortgage-calc.svg);
-    background-size: 44%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-personal {
-    background-image: url(../img/auto-ref.svg);
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-home-equity {
-    background-image: url(../img/tactile-home-equity.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-auto {
-    background-image: url(../img/tactile-auto.svg);
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.offer-business {
-    background-image: url(../img/tactile-business-icon.svg);
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.disclosure {
-    position: absolute;
-    right: 30px;
-    bottom: 12px;
-    color: #D92027;
-    font-size: 12px;
+.btn-primary {
+	background-color: #002649;
+	color: #fff;
+    font-size: 14px;
     text-decoration: none;
-    text-align: right;
+	text-transform: uppercase;
+    border: 2px solid #002649;
+    font-weight: 500;
+    line-height: 32px;
+	letter-spacing: 1px;
+    height: auto;
+    cursor: pointer;
+	white-space: nowrap;
+    vertical-align: middle;
+	text-align: center;
+    padding: 6px 20px;
+	margin: auto;
+	background-image: none;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	transition: all .3s ease;
 }
-.disclosure a {
-    font-weight: 700;
-    color: #D92027;
+.btn-primary:hover, :focus {
+	background-color: #fff; 
+	color: #002649; 
+	border: 2px solid #002649; 
+	outline: none;
+	font-weight: 500;
 }
-/* Other Popular Calculator Section CSS */
-.calculator-main {
-    background: #fff;
-    padding: 40px 0 10px;
-    clear: both;
-    text-align: center;
+.banner-inner .btn-box {
+	position: absolute;
+	bottom: 30px;
+	text-align: center;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
-.calculator-main h1 {
-    margin: 0 0 30px;
-    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
-    font-size: 28px;
+.banner-inner .btn-primary {
+	
+}
+/* Popular section css here */
+.popular-main {
+	background: #f5f5f5;
+	padding: 30px 0;
+}
+.popular-main a {text-decoration: none;}
+.popular-main a:focus {
+	outline: none;
+	border: 0 none;
+}
+.popular-main h1 {
+	color: #002649;
+	font-size: 36px;
+	font-weight: 500;
+	text-align: center;
+	margin: 0 0 30px;
+}
+.popular-inner {
+	min-height: 400px;
+	padding: 0;
+	position: relative;
+}
+.loan_bg {
+	background: url(../img/banner4.png) no-repeat center top;
+	background-size: cover;
+}
+.mortgage_bg {
+	background: url(../img/banner5.png) no-repeat center top;
+	background-size: cover;
+}
+.popular-inner .title {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	background: rgba(183, 183, 183, .8);
+}
+.popular-inner .title h2 {
+	color: #002649;
+	font-size: 30px;
+	font-weight: 500;
+	margin: 0;
+	padding: 15px 0;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	transition: all .3s ease;
+}
+.popular-inner .title h2:hover {
+	color: #000;
 }
 /* Other Popular Products Section CSS */
 .products-main {
@@ -401,75 +415,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', e
 }
 /* Footer CSS */
 .footer-main {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
-    background: #751417;
-}
-.footer-main .sub-nav {
-    margin: 0;
-    padding: 12px 0 8px;
-    list-style: none;
-    overflow: hidden;
-    width: 100%;
-    text-align: center;
-    background: #fada7f;
-    font: 12px/12px source_sans_proregular, Arial, Helvetica, sans-serif;
-    color: #bd5a03;
-}
-.footer-main .sub-nav li {
-    display: inline-block;
-    background: url(../img/separator-03.gif) no-repeat 0 55%;
-    padding: 0 6px;
-}
-.footer-main .sub-nav li a {
-    color: #bd5a03;
-    line-height: 20px;
-}
-.footer-main .panel {
-    margin: 0 auto;
-    padding: 8px 0 0;
-    background: transparent;
-    box-shadow: none;
-}
-.panel .logo-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.panel .logo-list li {
-    display: inline-block;
-    margin: 0 0 0 21px;
-    vertical-align: middle;
-}
-.panel .logo-list li:first-child {
-    margin: 0;
-}
-.panel .logo-list li a {
-    display: block;
-}
-.block-frame {
-    float: right;
-    color: #cdf6f3;
-    padding: 26px 0 0;
-    margin: 0 -9px 0 0;
-    font: 10px/13px source_sans_proregular, Arial, Helvetica, sans-serif;
-}
-.panel .block-frame .logo-list {
-    float: right;
-    padding: 0 3px 0 0;
-    margin: -5px 0 0;
-    list-style: none;
-}
-.panel .logo-list li {
-    display: inline-block;
-    margin: 0 0 0 12px;
-    vertical-align: middle;
-}
-.footer-main p {
-    margin: 0;
-    color: #cdf6f3;
-    line-height: 13px;
+	background: #002649;
+	padding: 15px 0;
+	text-align: left;
+	font-weight: 400;
+	color: #fff;
+	font-size: 12px;
+    line-height: 1.67;
 }
 /* Section main css */
 .main-section {
