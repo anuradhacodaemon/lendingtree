@@ -58,10 +58,10 @@
                     </div>
                 </div>
             </div>
-            <div class="disclosure">
+            <!--<div class="disclosure">
                 <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a id="promodisclosure" rel="nofollow" class="disclosures-link" href="">Advertising Disclosures</a>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

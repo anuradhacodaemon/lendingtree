@@ -488,7 +488,7 @@
         $legend .= "\t\t<td align=\"center\"><b>Month</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Interest Paid</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Principal Paid</b></td>\n";
-        $legend .= "\t\t<td align=\"right\"><b>Remaing Balance</b></td>\n";
+        $legend .= "\t\t<td align=\"right\"><b>Remaining Balance</b></td>\n";
         $legend .= "\t</tr>\n";
         
         echo $legend;
@@ -513,7 +513,7 @@
             ($current_month % 12) ? $show_legend = FALSE : $show_legend = TRUE;
     
             if ($show_legend) {
-                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\" style=\"background-color:#e8787d !important;\">\n");
+                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\" style=\"background-color:#c5e1fb !important;\">\n");
                 print("\t\t<td align=\"center\"><b>Totals for year " . $current_year . "</td>\n");
 				$total_spent_this_year = $this_year_interest_paid + $this_year_principal_paid;
 				print("\t\t<td colspan=\"3\">\n");
