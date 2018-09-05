@@ -19,10 +19,14 @@ a:focus {
 	outline: none;
 	border: 0 none;
 }
-button, input:focus {outline: none;}
+.btn:focus {
+	outline: none;
+	border: 0 none;
+}
+button, input:focus {outline: none; border: 0 none;}
 .inner_container {min-height: auto;}
 .inner_height {min-height: 530px;}
-button, input:focus {outline: none;}
+button, input:focus {outline: none border: 0 none;;}
 /* margin css */
 .marg_5 {margin: 5px 0 !important;}
 .margbot_10 {margin-bottom: 10px !important;}
@@ -122,7 +126,7 @@ button, input:focus {outline: none;}
 	text-align: center;
 	text-transform: uppercase;
 }
-.btn-primary {
+.banner-inner .btn-primary {
 	background-color: #002649;
 	color: #fff;
     font-size: 14px;
@@ -153,7 +157,7 @@ button, input:focus {outline: none;}
 	-ms-transition: all .3s ease;
 	transition: all .3s ease;
 }
-.btn-primary:hover, :focus {
+.banner-inner .btn-primary:hover, :focus {
 	background-color: #fff; 
 	color: #002649; 
 	border: 2px solid #002649; 
@@ -168,10 +172,137 @@ button, input:focus {outline: none;}
 	right: 0;
 	margin: auto;
 }
-.banner-inner .btn-primary {
-	
+.offer-main {
+    padding: 20px 0; 
+    margin: 40px 0; 
+    border-radius: 4px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#891a1d+0,891a1d+20,761417+77,751417+100&0.5+0,0.5+100 */
+background: -moz-linear-gradient(top, rgba(137,26,29,0.5) 0%, rgba(137,26,29,0.5) 20%, rgba(118,20,23,0.5) 77%, rgba(117,20,23,0.5) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(137,26,29,0.5) 0%,rgba(137,26,29,0.5) 20%,rgba(118,20,23,0.5) 77%,rgba(117,20,23,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(137,26,29,0.5) 0%,rgba(137,26,29,0.5) 20%,rgba(118,20,23,0.5) 77%,rgba(117,20,23,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80891a1d', endColorstr='#80751417',GradientType=0 ); /* IE6-9 */
 }
-/* Popular section css here */
+.offer-main h1 {
+    font-size: 28px;
+    margin: 0 0 25px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+.offer-cont .offer-circ {
+    background: 0 0;
+    border: 0;
+    margin-bottom: 20px;
+}
+.offer-cont .offer-circ .outer-circ {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.1);
+    padding: 12px;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom,#fdfdfd 0%,#d8d0ce 100%);
+    box-shadow: 0 5px 10px 2px rgba(70,70,70,.2);
+    padding: 8px;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel:hover {
+    background: linear-gradient(to bottom,#fdfdfd 0%,#e9e5e4 100%);
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ece8e7;
+    padding: 10px 0 0;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    height: 52px;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .title {
+    font-family: 'Open Sans',sans-serif!important;
+    width: 80%;
+    font-size: 12px;
+    color: #D92027;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 6px auto 0;
+}
+.offer-refinance {
+    background-image: url(../img/tactile-refinance.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home {
+    background-image: url(../img/tactile-home-loan.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home-loan {
+    background-image: url(../img/tactile-home-loan.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-loan-calc {
+    background-image: url(../img/loan-calculator.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-mortgage-calc {
+    background-image: url(../img/mortgage-calc.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-personal {
+    background-image: url(../img/auto-ref.svg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home-equity {
+    background-image: url(../img/tactile-home-equity.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-auto {
+    background-image: url(../img/tactile-auto.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-business {
+    background-image: url(../img/tactile-business-icon.svg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.disclosure {
+    position: absolute;
+    right: 30px;
+    bottom: 12px;
+    color: #D92027;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: right;
+}
+.disclosure a {
+    font-weight: 700;
+    color: #D92027;
+}
+/* Other Popular Calculator Section CSS */
 .popular-main {
 	background: #f5f5f5;
 	padding: 30px 0;
@@ -224,6 +355,17 @@ button, input:focus {outline: none;}
 }
 .popular-inner .title h2:hover {
 	color: #000;
+}
+.calculator-main {
+    background: #fff;
+    padding: 40px 0 10px;
+    clear: both;
+    text-align: center;
+}
+.calculator-main h1 {
+    margin: 0 0 30px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    font-size: 28px;
 }
 /* Other Popular Products Section CSS */
 .products-main {
@@ -422,6 +564,7 @@ button, input:focus {outline: none;}
 	color: #fff;
 	font-size: 12px;
     line-height: 1.67;
+	clear: both;
 }
 /* Section main css */
 .main-section {
@@ -500,20 +643,18 @@ button, input:focus {outline: none;}
     text-align: center;
     font-size: 24px;
     border: 0 none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d71a21+0,d31a21+16,c21a20+35,951b1e+76,8b1b1e+90,8a1b1e+100 */
-background: rgb(215,26,33); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(215,26,33,1) 0%, rgba(211,26,33,1) 16%, rgba(194,26,32,1) 35%, rgba(149,27,30,1) 76%, rgba(139,27,30,1) 90%, rgba(138,27,30,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(215,26,33,1) 0%,rgba(211,26,33,1) 16%,rgba(194,26,32,1) 35%,rgba(149,27,30,1) 76%,rgba(139,27,30,1) 90%,rgba(138,27,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', endColorstr='#8a1b1e',GradientType=0 ); /* IE6-9 */
+	background: #87e0fd;
+	background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+	background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); 
+	background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 );
 }
 .radio .button:hover {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8a1b1e+0,8e1b1e+16,9f1b1f+35,cc1a21+76,d61a21+90,d71a21+100 */
-background: rgb(138,27,30); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(138,27,30,1) 0%, rgba(142,27,30,1) 16%, rgba(159,27,31,1) 35%, rgba(204,26,33,1) 76%, rgba(214,26,33,1) 90%, rgba(215,26,33,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(138,27,30,1) 0%,rgba(142,27,30,1) 16%,rgba(159,27,31,1) 35%,rgba(204,26,33,1) 76%,rgba(214,26,33,1) 90%,rgba(215,26,33,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(138,27,30,1) 0%,rgba(142,27,30,1) 16%,rgba(159,27,31,1) 35%,rgba(204,26,33,1) 76%,rgba(214,26,33,1) 90%,rgba(215,26,33,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a1b1e', endColorstr='#d71a21',GradientType=0 ); /* IE6-9 */
+	background: #05abe0;
+	background: -moz-linear-gradient(top, #05abe0 0%, #53cbf1 60%, #87e0fd 100%);
+	background: -webkit-linear-gradient(top, #05abe0 0%,#53cbf1 60%,#87e0fd 100%); 
+	background: linear-gradient(to bottom, #05abe0 0%,#53cbf1 60%,#87e0fd 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#87e0fd',GradientType=0 ); 
 }
 .status {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbeaba+0,fbeaba+18,fbe9b5+26,fadb85+75,fada80+84,fada80+100 */

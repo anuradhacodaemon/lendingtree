@@ -25,9 +25,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	{
-		$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree/';
-		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/lendingtree/');
-		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/lendingtree/');
+		$config['base_url']	= 'http://localhost/lendingtree/';
+		define('BASE_URL','http://localhost/lendingtree/');
+		define('PHYSICAL_PATH','localhost/lendingtree/');
 	}
 	else
 	{
