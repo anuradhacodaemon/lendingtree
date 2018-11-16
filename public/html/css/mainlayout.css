@@ -57,18 +57,28 @@ button, input:focus {outline: none;}
 
 /* Banner */
 .banner-main {
-    background: #fff url(../img/bg.jpg) no-repeat center top;
+    background: #fff url(../img/bg.png) no-repeat center top;
 	background-size: cover;
     width: 100%;
     padding: 0;
     margin: 0;
     position: relative;
     min-height: 540px;
+	border-bottom: 8px solid #f26726;
 }
 .banner-main .banner-inner {
     vertical-align: middle;
 	text-align: center;
+}
+.banner-inner-main {
+	background: #f26726;
+	padding: 30px;
 	margin: 80px 0 0;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
 }
 .banner-main h1 {
     font-size: 28px;
@@ -82,6 +92,13 @@ button, input:focus {outline: none;}
     background: 0 0;
     border: 0;
     margin-bottom: 20px;
+}
+.banner-inner-main .offer-cont .offer-circ .outer-circ {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.4);
+    padding: 12px;
 }
 .offer-cont .offer-circ .outer-circ {
     width: 175px;
@@ -181,14 +198,14 @@ button, input:focus {outline: none;}
     position: absolute;
     right: 30px;
     bottom: 12px;
-    color: #f26726;
+    color: #373737;
     font-size: 12px;
     text-decoration: none;
     text-align: right;
 }
 .disclosure a {
     font-weight: 700;
-    color: #f26726;
+    color: #373737;
 }
 /* Other Popular Calculator Section CSS */
 .calculator-main {
@@ -201,6 +218,7 @@ button, input:focus {outline: none;}
     margin: 0 0 30px;
     font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
     font-size: 28px;
+	color: #f26726;
 }
 /* Other Popular Products Section CSS */
 .products-main {
@@ -394,7 +412,7 @@ button, input:focus {outline: none;}
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
-    background: #1a4d8e;
+    background: #373737;
 }
 .footer-main .sub-nav {
     margin: 0;
@@ -458,7 +476,7 @@ button, input:focus {outline: none;}
 }
 .footer-main p {
     margin: 0;
-    color: #c4deff;
+    color: #fff;
     line-height: 13px;
 }
 /* Section main css */

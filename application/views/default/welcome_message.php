@@ -4,7 +4,8 @@
 <div class="banner-main clearfix">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-10 col-sm-offset-2 col-xs-12">
+			  <div class="banner-inner-main">
                 <div class="banner-inner">
                     <h1>How can we help you today?</h1>
                 </div>
@@ -60,6 +61,7 @@
                     </div>
                   </div>   
                 </div>
+			  </div>
             </div>
             <div class="disclosure">
                 <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
