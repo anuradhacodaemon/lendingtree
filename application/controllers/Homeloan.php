@@ -446,10 +446,12 @@ class Homeloan extends CI_Controller {
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
-            $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
-            $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+            
+            $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
+            $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
+            
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['loan_type'] = '';
             $this->session->userdata['property_type'] = '';
