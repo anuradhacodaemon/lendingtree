@@ -220,6 +220,7 @@ class Auto extends CI_Controller {
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
             //redirect('/');
+            echo 1;die();
         } /*         * else {
 
           $error = 'Your email already exist';
@@ -354,7 +355,7 @@ class Auto extends CI_Controller {
             return 1;
         }
 
-        return 0;
+        return 1;
     }
 
 }
