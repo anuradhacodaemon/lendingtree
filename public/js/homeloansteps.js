@@ -1218,7 +1218,7 @@ function home_step24() {
                 if (data == 1)
                 {
                     //location.href = base_url;
-                    gtag_report_conversion_ref(base_url);
+                    gtag_report_conversion(base_url);
                 } else
                 {
                     $('#container').html(data).effect("slide", {distance: 5});
