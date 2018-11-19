@@ -59,9 +59,7 @@ if (!empty($this->session->flashdata('item'))) {
             }, 4000);
             $(".forgot_section").hide();
 <?php } ?>
-     calculate1();
-      calculate2();
-       calculate3();
+     
     });
 
 </script>
