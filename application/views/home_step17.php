@@ -12,7 +12,7 @@
                            
                              <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="address" placeholder="Street Address" value="<?php if (isset($this->session->userdata['address'])) echo $this->session->userdata['address'] ?>" class="form-control" id="address" maxlength="5">
+                                <input type="text" name="address" placeholder="Street Address" value="<?php if (isset($this->session->userdata['address'])) echo $this->session->userdata['address'] ?>" class="form-control" id="address">
                                 <span id="err5" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
@@ -23,7 +23,7 @@
                             
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="city" placeholder="City" value="<?php if (isset($this->session->userdata['city'])) echo $this->session->userdata['city'] ?>" class="form-control" id="city" maxlength="5">
+                                <input type="text" name="city" placeholder="City" value="<?php if (isset($this->session->userdata['city'])) echo $this->session->userdata['city'] ?>" class="form-control" id="city">
                                 <span id="err7" style="color: red"></span>
                             </div>
 
