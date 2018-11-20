@@ -439,6 +439,8 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['current_employer']);
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
+        unset($this->session->userdata['state']);
+        unset($this->session->userdata['ssn']);
 
         $result = $this->loan_model->add_homeloan($this->session->userdata());
 
@@ -451,7 +453,9 @@ class Homeloan extends CI_Controller {
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
             
             $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
+
             $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
+            
             
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['loan_type'] = '';
@@ -509,24 +513,15 @@ class Homeloan extends CI_Controller {
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
           );  * */
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '25';
-        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
-        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
-        $config['charset'] = 'utf-8';
-        $config['mailtype'] = 'html';
-        $config['newline'] = "\r\n";
-        $this->load->library('email', $config);
+        
+        $this->load->library('email');
 
         $this->email->set_newline("\r\n");
-        //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
-        //$this->email->set_header('Content-type', 'text/html');
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
         $this->email->subject("Thank you for applying");
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
             'firstname' => $firstname,
@@ -560,7 +555,6 @@ class Homeloan extends CI_Controller {
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
     }
-    
     public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', decode_url($id));
         $this->load->model('details');
@@ -577,13 +571,15 @@ class Homeloan extends CI_Controller {
         $pdf->Output($path . $filename, 'F');
     }
 
+
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
         $url = base_url() . "homeloan/mail_format_pdf/" . $url1;
-         $this->mail_format_pdfdownload($url1);
+        $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
         $dh = scandir($dir);
+        $emails = $this->loan_model->get_phone();
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(
@@ -597,26 +593,14 @@ class Homeloan extends CI_Controller {
           'charset' => 'iso-8859-1'
           );
          * */
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '25';
-        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
-        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
-        $config['charset'] = 'utf-8';
-        $config['mailtype'] = 'html';
-        $config['newline'] = "\r\n";
-        $this->load->library('email', $config);
+        $this->load->library('email');
 
         $this->email->set_newline("\r\n");
-        //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
-        //$this->email->set_header('Content-type', 'text/html');
         $this->email->from(ADMINEMAIL, ADMINNAME);
-//$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
         $this->email->attach($dir . $dh[2]);
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com');
-        //$this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
@@ -634,8 +618,8 @@ class Homeloan extends CI_Controller {
         $emailSend = $this->email->send();
 
         if ($emailSend) {
+            unlink($dir . $dh[2]);
             // echo 'yes';
-             unlink($dir . $dh[2]);
             return 1;
         }
 

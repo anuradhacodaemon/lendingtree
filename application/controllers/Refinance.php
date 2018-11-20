@@ -227,16 +227,8 @@ class Refinance extends CI_Controller {
           'charset' => 'iso-8859-1'
           );
          * */
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '25';
-        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
-        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
-        $config['charset'] = 'utf-8';
-        $config['mailtype'] = 'html';
-        $config['newline'] = "\r\n";
 
-        $this->load->library('email', $config);
+        $this->load->library('email');
 
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
@@ -245,7 +237,7 @@ class Refinance extends CI_Controller {
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
         $this->email->subject("thank you for applying");
-        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
+        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
             'firstname' => $firstname,
@@ -279,7 +271,7 @@ class Refinance extends CI_Controller {
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
     }
-     public function mail_format_pdfdownload($id = 0) {
+    public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', decode_url($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
@@ -315,16 +307,8 @@ class Refinance extends CI_Controller {
           'charset' => 'iso-8859-1'
           );
          * */
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'in.mailjet.com';
-        $config['smtp_port'] = '25';
-        $config['smtp_user'] = '0cfe4bcb34b75be431f70ec4a8e2d7c0';
-        $config['smtp_pass'] = '4477c06d14710371d226cbe4d93fb993';
-        $config['charset'] = 'utf-8';
-        $config['mailtype'] = 'html';
-        $config['newline'] = "\r\n";
 
-        $this->load->library('email', $config);
+        $this->load->library('email');
 
         $this->email->set_newline("\r\n");
         //$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
@@ -333,8 +317,8 @@ class Refinance extends CI_Controller {
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Thank you for applying");
-        $this->email->attach($dir . $dh[2]);
-        $this->email->bcc('anuradha.chakraborti@codaemonsoftwares.com');
+         $this->email->attach($dir . $dh[2]);
+        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         //$this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
@@ -352,8 +336,8 @@ class Refinance extends CI_Controller {
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
         if ($emailSend) {
-            unlink($dir . $dh[2]);
             //echo $this->email->print_debugger();
+             unlink($dir . $dh[2]);
             return 1;
         }
         return 0;

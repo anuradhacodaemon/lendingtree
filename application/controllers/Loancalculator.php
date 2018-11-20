@@ -33,10 +33,9 @@ class Loancalculator extends CI_Controller {
         }
 
         $this->session->set_userdata('panel', 'frontend');
-        $data['loandetails']=$this->loan_model->get_phone(); 
-        $this->template->view('loancalculator',$data);
+         $data['loandetails']=$this->loan_model->get_phone(); 
+        $this->template->view('loancalculator', $data);
     }
-
     public function page_landing($type, $id) {
         if ($id >= 50000)
             $amt = 1;
@@ -60,5 +59,5 @@ class Loancalculator extends CI_Controller {
         $url = base_url();
         header('location:' . $url . 'auto?step=1');
     }
-
+    
 }

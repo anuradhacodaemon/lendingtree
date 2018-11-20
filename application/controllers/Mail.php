@@ -36,9 +36,9 @@ echo 'The HTTP code was: ' . $http_code;
 echo '</pre>';  **/
         
         
-        $apiKey = 'b3a36af907c09950600a33f4b9247871-us18';
+        $apikey = 'b3a36af907c09950600a33f4b9247871-us18';
  
-$campaignId = "20857";
+$campaignId = "your campaign id, you need to create one. Use the playground to get the id";
 
 $memberId = md5(strtolower("membermail"));
 $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
