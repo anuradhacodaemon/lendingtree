@@ -12,7 +12,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         }); 
@@ -25,7 +25,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -38,7 +38,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -50,7 +50,7 @@ if (window.performance) {
             success: function (data)
             {
                 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
@@ -63,7 +63,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -75,7 +75,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -87,7 +87,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -118,7 +118,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -131,7 +131,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -143,7 +143,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -155,7 +155,7 @@ if (window.performance) {
             success: function (data)
             {
                
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -167,7 +167,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -179,7 +179,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -191,7 +191,7 @@ if (window.performance) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -213,7 +213,7 @@ function step1(id) {
            
             window.history.pushState("Details", "Title", base_url + "auto?step=1");
             
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
             
              
             
@@ -234,7 +234,7 @@ function step2(id) {
            
             window.history.pushState("Details", "Title", base_url + "auto?step=2");
             
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
             
              
             
@@ -251,7 +251,7 @@ function step3(id) {
         {
             window.history.pushState("Details", "Title", base_url + "auto?step=3");
 
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 
@@ -295,7 +295,7 @@ function step4() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=4");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
     }
@@ -326,7 +326,7 @@ function step5() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=5");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
 
@@ -438,7 +438,7 @@ function step6() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=6");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
     }
@@ -493,7 +493,7 @@ function step7(){
             success: function (data)
             {
                   window.history.pushState("Details", "Title", base_url + "auto?step=7");
-               $('#container').html(data).effect("slide", {distance: 5});
+               $('#container').html(data);
             }
         });
     }
@@ -544,7 +544,7 @@ function step8() {
                     gtag_report_conversion(base_url);
                 } else
                 {
-                    $('#container').html(data).effect("slide", {distance: 5});
+                    $('#container').html(data);
                 }
             }
         });
