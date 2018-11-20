@@ -260,6 +260,9 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                 <!-- <th class="column-title"># </th> -->
                                 <th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
                                 </th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.firstname" && $sort_direction == "desc") { ?> onClick="sortList('user.firstname', 'asc')"<?php } ?> <?php if ($sort_by != "user.firstname") { ?> onClick="sortList('user.firstname', 'asc')"<?php } ?><?php if ($sort_by == "user.firstname" && $sort_direction == "asc") { ?> onClick="sortList('user.firstname', 'desc')"<?php } ?>> Full Name</a>&nbsp;<?php if ($sort_by == "user.firstname" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.firstname" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
@@ -275,12 +278,6 @@ $visitor = $this->refinance->checklead_denied_forDomain();
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.current_milage" && $sort_direction == "desc") { ?> onClick="sortList('user.current_milage', 'asc')"<?php } ?> <?php if ($sort_by != "user.current_milage") { ?> onClick="sortList('user.current_milage', 'asc')"<?php } ?><?php if ($sort_by == "user.current_milage" && $sort_direction == "asc") { ?> onClick="sortList('user.current_milage', 'desc')"<?php } ?>> Current Milage</a>&nbsp;<?php if ($sort_by == "user.current_milage" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.current_milage" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-
-
-
-
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?> <?php if ($sort_by != "user.domain") { ?> onClick="sortList('user.domain', 'asc')"<?php } ?><?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?> onClick="sortList('user.domain', 'desc')"<?php } ?>> Domain</a>&nbsp;<?php if ($sort_by == "user.domain" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.domain" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -309,6 +306,7 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                         <td>
                                             <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['ref_id'] ?>" class="flat" >
                                         </td>
+                                        <td class=" "><?php echo $v['firstname']." ".$v['lastname'] ?></td>
                                         <td class=" "><?php echo $v['email'] ?></td>
                                         <td class=" "><?php
                                             echo $v['currently_owe'];
@@ -320,7 +318,6 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                         <td><?php echo $v['vin'] ?></td>
 
                                         <td><?php echo $v['current_milage']; ?></td>
-                                        <td><?php echo str_replace("http://", "", rtrim($v['domain'], "/")) ?></td>
                                         <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
         <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
                                             <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>

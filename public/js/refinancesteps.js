@@ -11,7 +11,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -23,7 +23,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -36,7 +36,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -48,7 +48,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
 
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
@@ -61,7 +61,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -73,7 +73,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -90,7 +90,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -102,7 +102,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -114,7 +114,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -126,7 +126,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -138,7 +138,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -151,7 +151,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -171,7 +171,7 @@ function refinancestep1() {
 
             window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=2");
 
-            $('#containerrefinance').html(data).effect("slide", {distance: 5});
+            $('#containerrefinance').html(data);
 
 
 
@@ -188,7 +188,7 @@ function refinancestep2() {
         {
             window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=3");
 
-            $('#containerrefinance').html(data).effect("slide", {distance: 5});
+            $('#containerrefinance').html(data);
         }
     });
 
@@ -220,7 +220,7 @@ function refinancestep3() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=4");
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
             }
         });
     }
@@ -299,7 +299,7 @@ function refinancestep4() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
             }
         });
 
@@ -355,7 +355,7 @@ function refinancestep5() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=6");
-                $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                $('#containerrefinance').html(data);
             }
         });
     }
@@ -406,7 +406,7 @@ function refinancestep7() {
                     gtag_report_conversion_ref(base_url);
                 } else
                 {
-                    $('#containerrefinance').html(data).effect("slide", {distance: 5});
+                    $('#containerrefinance').html(data);
                 }
             }
         });
