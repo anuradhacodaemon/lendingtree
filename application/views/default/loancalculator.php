@@ -189,7 +189,9 @@
 
 
 <script>
-
+calculate1();
+calculate2();
+calculate3();
                                 
                                 function calculate1()
                                 {
