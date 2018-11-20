@@ -50,7 +50,8 @@ class Admin_template2 extends CI_Controller {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $domainData = array();
 
-              
+//                if ($this->form_validation->run('template/insert') == true) {
+
                     foreach ($this->input->post() as $k => $v) {
                         $domainData[$k] = $v;
                     }
@@ -64,7 +65,11 @@ class Admin_template2 extends CI_Controller {
                         /* template the view using template */
                         redirect('admin/template2/edit/0', $data);
                     }
-               
+//                } else {
+//                   
+//                     $this->session->set_flashdata('item', array('message' => '<font color=red>' . validation_errors() . '</font>', 'class' => 'success'));
+//                    redirect('admin/template2/edit/' . $id, $data);
+//                }
               
             } else {
                 $last = $this->uri->total_segments();
