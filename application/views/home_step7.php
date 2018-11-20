@@ -24,14 +24,14 @@
                             ?></label></span>
                     <div class="clearfix"></div>
                     <div class="slider-box">
-                        <input id="ex6"  name="mortgage_bal" type="text" data-slider-min="5000" data-slider-max="150000" data-slider-step="500" data-slider-value="<?php
+                        <input id="ex6"  name="mortgage_bal" type="text" data-slider-min="5000" data-slider-max="2000000" data-slider-step="500" data-slider-value="<?php
                         if (isset($this->session->userdata['mortgage_bal']))
                             echo $this->session->userdata['mortgage_bal'];
                         else
                             echo '5000';
                         ?>"/> 
                         <span class="min-value">$5,000  &nbsp;</span>
-                        <span class="max-value">&nbsp; $150,000</span>
+                        <span class="max-value">&nbsp; $2,000,000</span>
                     </div>
 
 
