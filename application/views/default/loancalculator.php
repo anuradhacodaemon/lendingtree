@@ -189,8 +189,10 @@
 
 
 <script>
+calculate1();
+calculate2();
+calculate3();
 
-                                
                                 function calculate1()
                                 {
                                     p = document.getElementById("ex1").value;

@@ -11,7 +11,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -23,7 +23,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -36,7 +36,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -48,7 +48,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
 
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
@@ -61,7 +61,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
 
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
@@ -74,7 +74,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -86,7 +86,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -98,7 +98,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -110,7 +110,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -122,7 +122,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -134,7 +134,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -146,7 +146,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -158,7 +158,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -170,7 +170,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -182,7 +182,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -194,7 +194,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -206,7 +206,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -218,7 +218,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -230,7 +230,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -242,7 +242,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -254,7 +254,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -266,7 +266,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -278,7 +278,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -290,7 +290,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -302,7 +302,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -314,7 +314,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -326,7 +326,7 @@ if (performance.navigation.type == 1) {
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -343,7 +343,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -355,7 +355,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -367,7 +367,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -379,7 +379,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -391,7 +391,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -403,7 +403,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -416,7 +416,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -428,7 +428,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -440,7 +440,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -452,7 +452,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -464,7 +464,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -476,7 +476,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -488,7 +488,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -500,7 +500,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -512,7 +512,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -524,7 +524,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -536,7 +536,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -548,7 +548,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -560,7 +560,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -572,7 +572,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -584,7 +584,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -596,7 +596,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -608,7 +608,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -620,7 +620,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -632,7 +632,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -644,7 +644,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -656,7 +656,7 @@ window.onpopstate = function ()
             success: function (data)
             {
 
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -676,7 +676,7 @@ function home_step1(id) {
 
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=1");
 
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
 
 
 
@@ -697,7 +697,7 @@ function home_step2(id) {
 
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=2");
 
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
 
 
 
@@ -714,7 +714,7 @@ function home_step3(id) {
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=3");
 
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 
@@ -729,7 +729,7 @@ function home_step4(id) {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=4");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 
@@ -745,7 +745,7 @@ function home_step41(id) {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=41");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 
@@ -800,7 +800,7 @@ function home_step5() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=5");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
 
@@ -814,7 +814,7 @@ function home_step6() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=6");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -826,7 +826,7 @@ function home_step7() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=7");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -838,7 +838,7 @@ function home_step8() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=8");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -850,7 +850,7 @@ function home_step9() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=9");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -861,7 +861,7 @@ function home_step10() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=10");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -873,7 +873,7 @@ function home_step11() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=11");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -884,7 +884,7 @@ function home_step111(id) {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=111");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -895,7 +895,7 @@ function home_step12(id) {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=12");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -927,7 +927,7 @@ function home_step13() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=13");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
     }
@@ -939,7 +939,7 @@ function home_step14() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=14");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -950,7 +950,7 @@ function home_step15() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=15");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -962,7 +962,7 @@ function home_step16(id) {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=11");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -974,7 +974,7 @@ function home_step17() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=17");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -986,7 +986,7 @@ function home_step171() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=171");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -997,7 +997,7 @@ function home_step172() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=172");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -1008,7 +1008,7 @@ function home_step18() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=18");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -1019,7 +1019,7 @@ function home_step19() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=19");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -1030,7 +1030,7 @@ function home_step20() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=20");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -1042,7 +1042,7 @@ function home_step21() {
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=21");
-            $('#container').html(data).effect("slide", {distance: 5});
+            $('#container').html(data);
         }
     });
 }
@@ -1121,7 +1121,7 @@ function home_step22() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=22");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
     }
@@ -1170,7 +1170,7 @@ function home_step23() {
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "homeloan?homeloan=23");
-                $('#container').html(data).effect("slide", {distance: 5});
+                $('#container').html(data);
             }
         });
     }
@@ -1218,10 +1218,10 @@ function home_step24() {
                 if (data == 1)
                 {
                     //location.href = base_url;
-                    gtag_report_conversion_ref(base_url);
+                    gtag_report_conversion(base_url);
                 } else
                 {
-                    $('#container').html(data).effect("slide", {distance: 5});
+                    $('#container').html(data);
                 }
             }
         });
