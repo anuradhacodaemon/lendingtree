@@ -920,6 +920,28 @@ function home_step13() {
         $('#err').html('Year is empty');
         $('#selectYear').focus();
         return false;
+    } else if ($('input[name=ssn]').val() == '')
+    {
+
+        $('#err7').html('ssn is empty');
+        $('#ssn').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+        $('#err4').html('');
+        $('#err5').html('');
+        $('#err6').html('');
+        return false;
+    } else if (!regex.test($('#ssn').val())) {
+        $('#err7').html('ssn is not valid');
+        $('#ssn').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+        $('#err4').html('');
+        $('#err5').html('');
+        $('#err6').html('');
+        return false;
     } else {
         $.ajax({
             type: "GET",

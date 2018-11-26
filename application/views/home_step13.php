@@ -56,6 +56,11 @@
                         <span id="err" style="color: red"></span>
                     </div>
 
+                    <div class="col-xs-12 col-sm-12 margbot_10">
+                        <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
+                        <span id="err7" style="color: red"></span>
+                    </div>
+
 
                     <div class="col-xs-12 col-sm-12 radio">
                         <button type="button" class="button" onclick="home_step13()">Continue<span class="continueIcon sprites"></span></button>
