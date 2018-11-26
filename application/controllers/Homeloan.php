@@ -223,13 +223,14 @@ class Homeloan extends CI_Controller {
         $this->load->view('home_step13');
     }
 
-    public function homestep13($month = 0, $day = 0, $year = 0) {
+    public function homestep13($month = 0, $day = 0, $year = 0, $ssn = '') {
         if ($month) {
             $data = array(
                 'month' => $month,
                 'day' => $day,
                 'years' => $year,
                 'dob' => $year . '-' . $month . '-' . $day,
+                'ssn' => $ssn
             );
 
             $this->session->set_userdata($data);
@@ -440,7 +441,6 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['state']);
-        unset($this->session->userdata['ssn']);
 
         $result = $this->loan_model->add_homeloan($this->session->userdata());
 
@@ -487,6 +487,7 @@ class Homeloan extends CI_Controller {
             $this->session->userdata['phone'] = '';
             $this->session->userdata['mortgage_bal'] = '';
             $this->session->userdata['close_mortgage'] = '';
+            $this->session->userdata['ssn'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {
