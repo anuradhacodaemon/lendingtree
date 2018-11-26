@@ -484,7 +484,7 @@ class Homeloan extends CI_Controller {
             $this->session->userdata['phone'] = '';
             $this->session->userdata['mortgage_bal'] = '';
             $this->session->userdata['close_mortgage'] = '';
-            $this->session->userdata['ssn']
+            $this->session->userdata['ssn'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {
