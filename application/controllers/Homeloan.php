@@ -517,7 +517,7 @@ class Homeloan extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
-        $this->email->subject("Coastal Community FCU New Digital Application");
+        $this->email->subject("Culoan Portal New Digital Application");
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
@@ -594,7 +594,7 @@ class Homeloan extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("Coastal Community FCU New Digital Application");
+        $this->email->subject("Culoan Portal New Digital Application");
          $this->email->attach($dir . $dh[2]);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
