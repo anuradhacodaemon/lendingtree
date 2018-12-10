@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <a class="btn btn-primary pull-right" target="_blank" href="<?php echo BASE_URL . 'admin/loanofficer/add' ?>">Add</a>
+                    <a class="btn btn-primary pull-right" href="<?php echo BASE_URL . 'admin/loanofficer/add' ?>">Add</a>
                 </div>
             </div>
             <div class="x_content1">
