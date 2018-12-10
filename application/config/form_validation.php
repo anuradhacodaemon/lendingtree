@@ -109,6 +109,25 @@ $config = array(
             )
         )
      
+    ),
+    'admin/loanofficer' => array(
+        array(
+            'field' => 'name',
+            'label' => 'name',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Name is required field.'
+            )
+        ),
+        array(
+            'field' => 'email',
+            'label' => 'email',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Email is required field.'
+            )
+        )
+     
     )
      
 );
