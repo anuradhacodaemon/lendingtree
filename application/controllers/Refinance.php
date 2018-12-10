@@ -236,7 +236,7 @@ class Refinance extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
-        $this->email->subject("thank you for applying");
+        $this->email->subject("Bay Equity New Digital Application");
         $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
@@ -316,7 +316,7 @@ class Refinance extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("Thank you for applying");
+        $this->email->subject("Bay Equity New Digital Application");
          $this->email->attach($dir . $dh[2]);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         //$this->email->bcc('nisar.shaikh@codaemonsoftwares.com,anuradha.chakraborti@codaemonsoftwares.com');
