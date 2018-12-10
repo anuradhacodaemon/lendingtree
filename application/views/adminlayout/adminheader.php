@@ -46,9 +46,11 @@
                                     </li>
                                      <li><a href="<?php echo BASE_URL ?>admin/template2/edit/0"><i class="fa fa-edit"></i>Template2 for admin</a>
                                     </li> 
+                                    <?php if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin') {
+                                     ?>
                                     <li><a href="<?php echo BASE_URL ?>admin/loanofficer"><i class="fa fa-edit"></i>Add Loan Officer</a>
                                     </li>
-                                   
+                                    <?php } ?>
 
 					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
                     </li>		
