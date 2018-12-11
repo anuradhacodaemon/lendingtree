@@ -331,6 +331,46 @@ class Admin_user extends CI_Controller {
              $this->users->updateactiveStatus($v);
         }
     }
+    
+    public function assign_officer() {
+        $this->load->model('admin/loanofficer_model');
+        $data = array();
+        if (!isset($this->session->userdata['userdata']['ud'])) { $this->load->view('admin/index', $data);
+        } else {
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                echo "<pre>";
+                                print_r($this->input->post());die();
+                $officerData = array();
+
+                if ($this->form_validation->run('admin/loanofficer') == true) {
+                    $id = $this->input->post('id');
+                    foreach ($this->input->post() as $k => $v) {
+                        $officerData[$k] = $v;
+                    }
+                    $result = $this->loanofficer_model->edit_domain($officerData);
+
+                    if ($result == 0) {
+                        $this->session->set_flashdata('item', array('message' => '<font color=red>You havenot change anything</font>', 'class' => 'success'));
+                        redirect('admin/loanofficer/edit/' . $id);
+                    } else {
+                        /* template the view using template */
+                        redirect('admin/loanofficer', $data);
+                    }
+                } else {
+                     $this->session->set_flashdata('item', array('message' => '<font color=red>' . validation_errors() . '</font>', 'class' => 'success'));
+                    redirect('admin/loanofficer/edit/' . $id, $data);
+                }
+              
+            } else {
+                $last = $this->uri->total_segments();
+                $id = $this->uri->segment($last);
+                $data["userDetails"] = $this->loanofficer_model->get_all_loanofficer();
+                //print_r($data["userDetails"]);exit;
+                $this->template->view('admin/user/assign_officer', $data);
+            }
+        }
+    }
 
 }
 
