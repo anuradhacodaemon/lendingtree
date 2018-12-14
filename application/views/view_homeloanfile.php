@@ -404,10 +404,10 @@
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Monthly Gross Income  ($):
+                        Estimated monthly income  ($):
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                      --
+                      <?php echo $userDetails[0]['pre_tax_income'] ?>
                     </td>
                 </tr>
                 <tr>
