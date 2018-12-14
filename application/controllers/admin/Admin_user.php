@@ -335,38 +335,50 @@ class Admin_user extends CI_Controller {
     public function assign_officer() {
         $this->load->model('admin/loanofficer_model');
         $data = array();
-        if (!isset($this->session->userdata['userdata']['ud'])) { $this->load->view('admin/index', $data);
+        if (!isset($this->session->userdata['userdata']['ud'])) { 
+            $this->load->view('admin/index', $data);
         } else {
-
+            $last = $this->uri->total_segments();
+            $id = $this->uri->segment($last);
+            
+            $loanOficcerAssigned = $this->loanofficer_model->loanOficcerAssigned($id,1);
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo "<pre>";
-                                print_r($this->input->post());die();
-                $officerData = array();
-
-                if ($this->form_validation->run('admin/loanofficer') == true) {
-                    $id = $this->input->post('id');
-                    foreach ($this->input->post() as $k => $v) {
-                        $officerData[$k] = $v;
+                $id = $this->input->post('id');
+                $loanOficcerAssigned = $this->loanofficer_model->loanOficcerAssigned($id,1);
+                if ($this->form_validation->run('admin/asign_loanofficer') == true) {
+                     $insert_data = array(
+                        'loan_type' => 1,
+                        'officer_id' => $this->input->post('officer_id'),
+                        'user_name' => $this->input->post('name'),
+                        'loan_id' => $id,
+                        'initiated_contact' => $this->input->post('optradio'),
+                        'notes' => $this->input->post('notes'),
+                        'status' => 1,
+                    );
+                    if($loanOficcerAssigned){
+                       $result = $this->loanofficer_model->update_asign_loanofficer($insert_data);
+                    }else{
+                         $result = $this->loanofficer_model->asign_loanofficer($insert_data);
                     }
-                    $result = $this->loanofficer_model->edit_domain($officerData);
-
-                    if ($result == 0) {
-                        $this->session->set_flashdata('item', array('message' => '<font color=red>You havenot change anything</font>', 'class' => 'success'));
-                        redirect('admin/loanofficer/edit/' . $id);
+                    if ($result) {
+                        $this->session->set_flashdata('item', array('message' => '<font color=green>Loan officer assigned successfully.</font>', 'class' => 'success'));
+                        
                     } else {
-                        /* template the view using template */
-                        redirect('admin/loanofficer', $data);
+                        $this->session->set_flashdata('item', array('message' => '<font color=red>Loan officer not assigned please try again.</font>', 'class' => 'success'));
                     }
+                    redirect(base_url().'admin/admin_user/assign_officer/' . $id, $data);
                 } else {
                      $this->session->set_flashdata('item', array('message' => '<font color=red>' . validation_errors() . '</font>', 'class' => 'success'));
-                    redirect('admin/loanofficer/edit/' . $id, $data);
+                    redirect(base_url().'admin/admin_user/assign_officer/' . $id, $data);
                 }
               
             } else {
-                $last = $this->uri->total_segments();
-                $id = $this->uri->segment($last);
-                $data["userDetails"] = $this->loanofficer_model->get_all_loanofficer();
-                //print_r($data["userDetails"]);exit;
+                $loanOfficerDetails = $this->loanofficer_model->getLoanOficcerDetails($id,1);
+                $data['userDetails'][0] = $this->users->get_userdetails($id);
+                $data["userDetails"][1] = $this->loanofficer_model->get_all_loanofficer();
+                $data["userDetails"][2] = $loanOfficerDetails;
+                $data["userDetails"][3] = $id;
+//                print_r($data["userDetails"]);die();
                 $this->template->view('admin/user/assign_officer', $data);
             }
         }

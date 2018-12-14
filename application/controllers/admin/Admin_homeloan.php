@@ -392,7 +392,68 @@ class Admin_homeloan extends CI_Controller {
             }
         }
     }
+    
+    public function assign_officer() {
+        $this->load->model('admin/loanofficer_model');
+        $this->load->model('admin/homeloan');
+        $data = array();
+        if (!isset($this->session->userdata['userdata']['ud'])) { 
+            $this->load->view('admin/index', $data);
+        } else {
+            
+            
+            
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                
+                $id = $this->input->post('id');
+                $loanOficcerAssigned = $this->loanofficer_model->loanOficcerAssigned($id,3);
+                if ($this->form_validation->run('admin/asign_loanofficer') == true) {
+                     $insert_data = array(
+                        'loan_type' => 3,
+                        'officer_id' => $this->input->post('officer_id'),
+                        'user_name' => $this->input->post('name'),
+                        'loan_id' => $id,
+                        'initiated_contact' => $this->input->post('optradio'),
+                        'notes' => $this->input->post('notes'),
+                        'status' => 1,
+                    );
+                     
+                    if($loanOficcerAssigned){
+                       $result = $this->loanofficer_model->update_asign_loanofficer($insert_data);
+                    }else{
+                         $result = $this->loanofficer_model->asign_loanofficer($insert_data);
+                    }
+                    if ($result) {
+                        $this->session->set_flashdata('item', array('message' => '<font color=green>Loan officer assigned successfully.</font>', 'class' => 'success'));
+                        
+                    } else {
+                        $this->session->set_flashdata('item', array('message' => '<font color=red>Loan officer not assigned please try again.</font>', 'class' => 'success'));
+                        
+                    }
+                    redirect(base_url().'admin/admin_homeloan/assign_officer/' . $id, $data);
+                } else {
+                     $this->session->set_flashdata('item', array('message' => '<font color=red>' . validation_errors() . '</font>', 'class' => 'success'));
+                    redirect(base_url().'admin/admin_homeloan/assign_officer/' . $id, $data);
+                }
+              
+            } else {
+                $last = $this->uri->total_segments();
+                $id = $this->uri->segment($last);
 
+                $loanOfficerDetails = $this->loanofficer_model->getLoanOficcerDetails($id,3);
+                $data['userDetails'][0] = $this->homeloan->get_userdetails($id);
+                
+                $data["userDetails"][1] = $this->loanofficer_model->get_all_loanofficer();
+                
+                $data["userDetails"][2] = $loanOfficerDetails;
+                $data["userDetails"][3] = $id;
+                
+//                print_r($data["userDetails"]);die();
+                $this->template->view('admin/homeloan/assign_officer', $data);
+                
+            }
+        }
+    }
 }
 
 /* End of file home.php */

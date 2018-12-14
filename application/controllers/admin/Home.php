@@ -35,13 +35,11 @@ class Home extends CI_Controller {
      * @see 
      */
     public function index() {
-
         $data = array();
         if (!isset($this->session->userdata['userdata']['ud'])) {
             $this->load->view('admin', $data);
         } else {
             // redirect('admin/pages', 'refresh');
-
             $this->template->view('admin/user/index', $data);
         }
     }

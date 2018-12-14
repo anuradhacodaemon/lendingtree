@@ -638,5 +638,7 @@ class Homeloan extends CI_Controller {
             $this->session->userdata['city'] = $result[0]['city'];
         } 
     }
+    
+    
 
 }
