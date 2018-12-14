@@ -752,6 +752,37 @@ function home_step41(id) {
 
 }
 
+function homestep25() {
+    var RE = /^\d*\.?\d*$/;
+   
+    if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
+    {
+
+        $('#err1').html('Your Pre-tax yearly income is empty');
+        $('#pre_tax_income').focus();
+        return false;
+    } else if ($('#err2').val() == 0 && $('#pre_tax_income1').val()=='')
+    {
+        $('#err1').html('Your Pre-tax yearly income should be number');
+        $('#pre_tax_income').focus();
+        return false;
+    } else
+    {
+        $('#err2').html('');
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep25/" + $('input[name=pre_tax_income1]').val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "hoamloan?homeloan=25");
+                $('#container').html(data);
+            }
+        });
+
+    }
+
+}
+
 
 function home_step5() {
 

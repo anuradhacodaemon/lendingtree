@@ -88,9 +88,26 @@ class Homeloan extends CI_Controller {
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
+        $this->load->view('home_step25');
+    }
+    
+    public function homestep25($pre_tax_income = 0) {
+        if ($pre_tax_income) {
+
+            //$num = explode('$', $pre_tax_income);
+            // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+            $data = array(
+                'pre_tax_income' => $pre_tax_income
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
         $this->load->view('home_step5');
     }
-
+    
     public function homestep5($zip = 0) {
 
         if ($zip) {
@@ -439,7 +456,7 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['requested_amount']);
         unset($this->session->userdata['current_employer']);
         unset($this->session->userdata['job_title']);
-        unset($this->session->userdata['pre_tax_income']);
+//        unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['state']);
         $result = $this->loan_model->add_homeloan($this->session->userdata());
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
@@ -493,6 +510,8 @@ class Homeloan extends CI_Controller {
           $this->load->view('step6_view');
           }* */
     }
+    
+    
 
     /** Please dont change the mailformat because template is coming from database * */
     public function mailformat($firstname, $lastname, $email) {
