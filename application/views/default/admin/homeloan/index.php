@@ -339,7 +339,9 @@ $visitor = $this->homeloan->checklead_denied_forDomain();
                                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/homeloan/details/' . $v['loan_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
                                                         </td>  -->
                                         <td class="last">
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/admin_homeloan/assign_officer/' . $v['loan_id'] ?>" style="color:#000" title="Asign Loan Officer"><i class="fa fa-pencil"></i></a>
+                                            <?php if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin') { ?>
+                                                <a href="<?php echo BASE_URL . MASTERADMIN . '/admin_homeloan/assign_officer/' . $v['loan_id'] ?>" style="color:#000" title="Asign Loan Officer"><i class="fa fa-pencil"></i></a>
+                                            <?php } ?>
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/homeloan/details/' . $v['loan_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/homeloan/pdfhomeloan/' . $v['loan_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
 

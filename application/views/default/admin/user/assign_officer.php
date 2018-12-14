@@ -20,11 +20,9 @@
                 }
                 ?>
                 <form action="<?php echo base_url() ?>admin/admin_user/assign_officer" method="POST">
-                    <div class="form-group">
-                        <label for="city">User Name:</label>
+                    
                         <input type="hidden" name="id" value="<?php echo ($userDetails[3]) ? $userDetails[3] : '' ?>">
-                        <input type="text" class="form-control" placeholder="John Doe" value="<?php echo ($userDetails[2][0]['user_name']) ? $userDetails[2][0]['user_name'] : '' ?>" name="name" required="required">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="officer_id">Assign Loan Officer:</label>
                         <select name="officer_id" class="form-control">
@@ -45,6 +43,10 @@
                     </div>
                     <div class="row invoice-info">
                         <div class="col-sm-12 invoice-col padding_0">
+                            <div class="col-sm-12"><span> <b>User Name:</b>&nbsp;
+                                    <?php echo $userDetails[0][0]['firstname']." ".$userDetails[0][0]['lastname']; ?>
+                                </span>
+                            </div>
                             <div class="col-sm-12"><span> <b>Request Amount:</b>&nbsp;
                                 <?php
                                 if ($userDetails[0][0]['requested_amount'] > 0) {

@@ -131,14 +131,6 @@ $config = array(
     ),
     'admin/asign_loanofficer' => array(
         array(
-            'field' => 'name',
-            'label' => 'name',
-            'rules' => 'trim|required',
-            'errors' => array(
-                'required' => 'Name is required field.'
-            )
-        ),
-        array(
             'field' => 'officer_id',
             'label' => 'officer_id',
             'rules' => 'trim|required',
