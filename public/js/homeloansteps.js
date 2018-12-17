@@ -664,7 +664,7 @@ window.onpopstate = function ()
 }
 //}, false);
 function home_step1(id) {
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'home_step1');
     var url = base_url + "homeloan/homestep1/" + id;
 
     $.ajax({
@@ -685,7 +685,7 @@ function home_step1(id) {
 
 }
 function home_step2(id) {
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'What type of home loan are you looking for');
     var url = base_url + "homeloan/homestep2/" + id;
 
     $.ajax({
@@ -706,7 +706,7 @@ function home_step2(id) {
 
 }
 function home_step3(id) {
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'What type of property are you refinancing');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep3/" + id,
@@ -722,7 +722,7 @@ function home_step3(id) {
 
 function home_step4(id) {
 
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'How will this property be used');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep4/" + id,
@@ -738,7 +738,7 @@ function home_step4(id) {
 
 function home_step41(id) {
 
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'When do you plan to buy a home');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep41/" + id,
@@ -752,9 +752,43 @@ function home_step41(id) {
 
 }
 
+function homestep25() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Gross Pre-Tax Monthly Income');
+    
+    var RE = /^\d*\.?\d*$/;
+   
+    if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
+    {
+
+        $('#err1').html('Your Pre-tax yearly income is empty');
+        $('#pre_tax_income').focus();
+        return false;
+    } else if ($('#err2').val() == 0 && $('#pre_tax_income1').val()=='')
+    {
+        $('#err1').html('Your Pre-tax yearly income should be number');
+        $('#pre_tax_income').focus();
+        return false;
+    } else
+    {
+        $('#err2').html('');
+        $.ajax({
+            type: "GET",
+            url: base_url + "homeloan/homestep25/" + $('input[name=pre_tax_income1]').val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "hoamloan?homeloan=25");
+                $('#container').html(data);
+            }
+        });
+
+    }
+
+}
+
 
 function home_step5() {
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'ZIP code of the property');
+    
     var RE = /^\d*\.?\d*$/;
     var RE1 = /^\d*\.?\d*$/;
     var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
@@ -808,6 +842,8 @@ function home_step5() {
 
 }
 function home_step6() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'estimate value of the property');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep6/" + $('input[name=property_value]').val(),
@@ -820,6 +856,8 @@ function home_step6() {
 }
 
 function home_step7() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'What is the remaining 1st mortgage balance');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep7/" + $('input[name=mortgage_bal]').val(),
@@ -832,6 +870,8 @@ function home_step7() {
 }
 
 function home_step8() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'second mortgage - yes');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep8/1",
@@ -844,6 +884,8 @@ function home_step8() {
 }
 
 function home_step9() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'second mortgage - NO');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep9/0",
@@ -855,6 +897,7 @@ function home_step9() {
     });
 }
 function home_step10() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'What is the remaining balance on the 2nd mortgage');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep10/" + $('input[name=remaining_mortgage_bal]').val(),
@@ -867,6 +910,8 @@ function home_step10() {
 }
 
 function home_step11() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Would you like to borrow additional cash');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep11/1",
@@ -878,6 +923,8 @@ function home_step11() {
     });
 }
 function home_step111(id) {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Did you close on your mortgage');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep111/" + id,
@@ -889,6 +936,8 @@ function home_step111(id) {
     });
 }
 function home_step12(id) {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Estimate your credit score');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep12/" + id,
@@ -901,6 +950,7 @@ function home_step12(id) {
 }
 
 function home_step13() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Date Of Birth');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
 
     if ($('#selectMonth').val() === "") {
@@ -955,6 +1005,8 @@ function home_step13() {
     }
 }
 function home_step14() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Have you or your spouse served in the military - Yes');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep14/1",
@@ -966,6 +1018,8 @@ function home_step14() {
     });
 }
 function home_step15() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Have you or your spouse served in the military - NO');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep15/0",
@@ -978,6 +1032,8 @@ function home_step15() {
 }
 
 function home_step16(id) {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Do you currently have a VA loan');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep16/" + id,
@@ -990,6 +1046,9 @@ function home_step16(id) {
 }
 
 function home_step17() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-NO');
+    
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep17/1",
@@ -1002,6 +1061,8 @@ function home_step17() {
 }
 
 function home_step171() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'How long ago was the bankruptcy');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep171/" + $('input[name=bankruptcy_years]').val(),
@@ -1013,6 +1074,8 @@ function home_step171() {
     });
 }
 function home_step172() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'How long ago was the foreclosure');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep172/" + $('input[name=foreclosure_years]').val(),
@@ -1024,6 +1087,8 @@ function home_step172() {
     });
 }
 function home_step18() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-bankruptcy');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep18/2",
@@ -1035,6 +1100,8 @@ function home_step18() {
     });
 }
 function home_step19() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-Forcloser');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep19/3",
@@ -1046,6 +1113,9 @@ function home_step19() {
     });
 }
 function home_step20() {
+    ga('send', 'event', 'culoanportal', 'auto loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-Both');
+    
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep20/3",
@@ -1058,6 +1128,8 @@ function home_step20() {
 }
 
 function home_step21() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'How long ago was the bankruptcy');
+    
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep21/" + $('input[name=bankruptcy_years]').val(),
@@ -1070,7 +1142,8 @@ function home_step21() {
 }
 
 function home_step22() {
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'current street address');
+    
     var RE = /^\d*\.?\d*$/;
     var RE1 = /^\d*\.?\d*$/;
     var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
@@ -1151,6 +1224,9 @@ function home_step22() {
 
 
 function home_step23() {
+    ga('send', 'event', 'culoanportal', 'home loan', 'Customer Details');
+    
+    
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -1199,7 +1275,8 @@ function home_step23() {
 }
 
 function home_step24() {
-
+    ga('send', 'event', 'culoanportal', 'home loan', 'Submit');
+    
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
     if ($('input[name=email]').val() == '')
