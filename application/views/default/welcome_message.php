@@ -1,76 +1,116 @@
-
-
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
-    <div class="container">      
+    <div class="container">
         <div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeIn">
-				<h1>How can we help you today?</h1>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 padd_0 wow fadeIn">
-				<a href="<?php echo BASE_URL . 'auto?step=1' ?>">
-					<div class="banner-inner auto_bg">
-						<h2>AUTO LOANS</h2>
-						<div class="btn-box">
-							<button type="button" class="btn btn-primary">Get Started</button>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 padd_0 wow fadeIn">
-				<a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>">
-					<div class="banner-inner refinance_bg">
-						<h2>AUTO REFINANCE</h2>
-						<div class="btn-box">
-							<button type="button" class="btn btn-primary">Get Started</button>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 padd_0 wow fadeIn">
-				<a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>">
-					<div class="banner-inner home_bg">
-						<h2>HOME LOANS</h2>
-						<div class="btn-box">
-							<button type="button" class="btn btn-primary">Get Started</button>
-						</div>
-					</div>
-				</a>
-			</div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <div class="banner-inner">
+                    <h1>How can we help you today?</h1>
+                </div>
+                <div class="offer-main clearfix">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'auto loan');" >
+                                <button class="offer-circ">
+                                    <div class="outer-circ">
+                                        <div class="inner-bevel">
+                                            <div class="second-bevel">
+                                                <div class="offer-img offer-auto"></div>
+                                                <p class="title">AUTO LOANS</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'auto refinance');" >
+                                <button class="offer-circ">
+                                    <div class="outer-circ">
+                                        <div class="inner-bevel">
+                                            <div class="second-bevel">
+                                                <div class="offer-img offer-personal"></div>
+                                                <p class="title">AUTO REFINANCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'home loan');" >
+                                <button class="offer-circ">
+                                    <div class="outer-circ">
+                                        <div class="inner-bevel">
+                                            <div class="second-bevel">
+                                                <div class="offer-img offer-home-loan"></div>
+                                                <p class="title">HOME LOANS</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                  </div>   
+                </div>
+            </div>
+            <div class="disclosure">
+                <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="promodisclosure" rel="nofollow" class="disclosures-link" href="">Advertising Disclosures</a>
+            </div>
         </div>
     </div>
 </div>
 <!-- Banner ends here -->
 
-<!-- Popular section starts here -->
-<div class="popular-main">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInDown">
-				<h1>Other Popular Calculators</h1>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padd_0 wow fadeIn">
-				<a href="<?php echo BASE_URL . 'loancalculator' ?>">
-					<div class="popular-inner loan_bg">
-						<div class="title">
-							<h2>LOAN CALCULATOR</h2>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padd_0 wow fadeIn">
-				<a href="<?php echo BASE_URL . 'mortgagecalculator' ?>">
-					<div class="popular-inner mortgage_bg">
-						<div class="title">
-							<h2>MORTGAGE CALCULATOR</h2>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
+<!-- Popular calculator section starts here -->
+<div class="calculator-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1>Other Popular Calculators</h1>
+            </div>
+            <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+                <div class="offer-cont">
+                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'loan calculator');" >
+                        <button class="offer-circ">
+                            <div class="outer-circ">
+                                <div class="inner-bevel">
+                                    <div class="second-bevel">
+                                        <div class="offer-img offer-loan-calc"></div>
+                                        <p class="title">LOAN CALCULATOR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+			<div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="offer-cont">
+                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'mortgage calculator');" >
+                        <button class="offer-circ">
+                            <div class="outer-circ">
+                                <div class="inner-bevel">
+                                    <div class="second-bevel">
+                                        <div class="offer-img offer-mortgage-calc"></div>
+                                        <p class="title">MORTGAGE CALCULATOR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Popular section ends here -->
+<!-- Popular calculator section ends here -->
 
 <!-- Popular products section starts here -->
 <div class="products-main">

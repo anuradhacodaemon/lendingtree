@@ -159,7 +159,7 @@ window.onpopstate = function ()
 
 }
 function refinancestep1() {
-
+    ga('send', 'event', 'culoanportal', 'auto refinance', 'How Much Do Currently Owe');
     var url = base_url + "refinance/refinancestep2/" + $('input[name=currently_owe]').val();
 
     $.ajax({
@@ -180,7 +180,7 @@ function refinancestep1() {
 
 }
 function refinancestep2() {
-
+    ga('send', 'event', 'culoanportal', 'auto refinance', 'What Is Your Current Monthly Payment');
     $.ajax({
         type: "GET",
         url: base_url + "refinance/refinancestep3/" + $('input[name=monthly_payment]').val(),
@@ -198,6 +198,7 @@ function validateVin(vin) {
     return vin.match(re);
 }
 function refinancestep3() {
+    ga('send', 'event', 'culoanportal', 'auto refinance', 'Vehicle VIN Number');
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
     if ($('input[name=vin]').val() == '')
@@ -229,6 +230,7 @@ function refinancestep3() {
 
 
 function refinancestep4() {
+    ga('send', 'event', 'culoanportal', 'auto refinance', 'custmer details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -307,6 +309,7 @@ function refinancestep4() {
 
 }
 function refinancestep5() {
+    ga('send', 'event', 'culoanportal', 'auto refinance', 'Date Of Birth');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
     if ($('#selectMonth').val() === "") {
@@ -362,7 +365,7 @@ function refinancestep5() {
 }
 
 function refinancestep7() {
-
+    ga('send', 'event', 'culoanportal', 'auto refinance', 'Submit');
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
     if ($('input[name=email]').val() == '')
@@ -428,3 +431,5 @@ function gtag_report_conversion_ref(url) {
     });
     return false;
 }
+ 
+ 

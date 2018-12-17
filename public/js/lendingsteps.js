@@ -201,7 +201,7 @@ if (window.performance) {
 //}
  }, false);
 function step1(id) {
-
+    ga('send', 'event', 'culoanportal', 'auto loan', 'type of loan');
     var url = base_url + "auto/step1/" + id;
     
     $.ajax({
@@ -222,7 +222,7 @@ function step1(id) {
 
 }
 function step2(id) {
-
+    ga('send', 'event', 'culoanportal', 'auto loan', 'type of loan');
     var url = base_url + "auto/step2/" + id;
     
     $.ajax({
@@ -243,7 +243,7 @@ function step2(id) {
 
 }
 function step3(id) {
-
+    ga('send', 'event', 'culoanportal', 'auto loan', 'Requested Amount');
     $.ajax({
         type: "GET",
         url: base_url + "auto/step3/" + id,
@@ -258,12 +258,13 @@ function step3(id) {
 }
 
 function step4() {
+    ga('send', 'event', 'culoanportal', 'auto loan', 'Current Employer');
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
     if ($('input[name=cemployer]').val() == '')
     {
 
-        $('#err1').html('Your Current Employe is empty');
+        $('#err1').html('Your Current Employer is empty');
         $('#cemployer').focus();
         return false;
     } else if (!RE.test($("#cemployer").val()))
@@ -304,6 +305,7 @@ function step4() {
 
 
 function step5() {
+    ga('send', 'event', 'culoanportal', 'auto loan', 'Pre-Tax Monthly Income');
     var RE = /^\d*\.?\d*$/;
    
     if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
@@ -334,6 +336,7 @@ function step5() {
 
 }
 function step6() {
+    ga('send', 'event', 'culoanportal', 'auto loan', 'Your Details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -445,6 +448,7 @@ function step6() {
 }
 
 function step7(){
+    ga('send', 'event', 'culoanportal', 'auto loan', 'When Were You Born');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
     if ($('#selectMonth').val() === "") {
@@ -500,7 +504,7 @@ function step7(){
 }
 
 function step8() {
-
+    ga('send', 'event', 'culoanportal', 'auto loan', 'Submit');
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
     if ($('input[name=email]').val() == '')
