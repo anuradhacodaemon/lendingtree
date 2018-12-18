@@ -1,8 +1,11 @@
+
+
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-10 col-sm-offset-2 col-xs-12">
+			  <div class="banner-inner-main">
                 <div class="banner-inner">
                     <h1>How can we help you today?</h1>
                 </div>
@@ -42,7 +45,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'bay-equity', 'click', 'home loan');" >
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'bay-equity', 'click', 'home loan');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -58,6 +61,7 @@
                     </div>
                   </div>   
                 </div>
+			  </div>
             </div>
             <div class="disclosure">
                 <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -77,7 +81,7 @@
             </div>
             <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
                 <div class="offer-cont">
-                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'bay-equity', 'click', 'loan calculator');" >
+                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'bay-equity', 'click', 'loan calculator');">
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
@@ -93,7 +97,7 @@
             </div>
 			<div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="offer-cont">
-                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'bay-equity', 'click', 'mortgage calculator');" >
+                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'bay-equity', 'click', 'mortgage calculator');">
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
