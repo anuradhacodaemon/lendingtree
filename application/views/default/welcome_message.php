@@ -1,16 +1,20 @@
+
+
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
-    <div class="container">
+    <div class="container">       
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-                <div class="banner-inner">
-                    <h1>How can we help you today?</h1>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="logo">
+                    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>public/html/img/logo.png" alt="Logo" title="Coastal Community community federal credit union" class="img-responsive"/></a>
                 </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="offer-main clearfix">
-                  <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto loan');" >
+                    <h1>How can we help you today?</h1>
+                    <div class="offer-cont" style="display:block">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto loan');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -24,9 +28,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto refinance');" >
+                    <div class="offer-cont" style="display:block">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto refinance');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -40,9 +44,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'home loan');" >
+					<div class="offer-cont" style="display:block">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'home loan');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -56,7 +60,6 @@
                             </a>
                         </div>
                     </div>
-                  </div>   
                 </div>
             </div>
             <div class="disclosure">
@@ -77,7 +80,7 @@
             </div>
             <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
                 <div class="offer-cont">
-                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'loan calculator');" >
+                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'loan calculator');">
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
