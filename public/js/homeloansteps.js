@@ -664,7 +664,7 @@ window.onpopstate = function ()
 }
 //}, false);
 function home_step1(id) {
-    ga('send', 'event', 'culoanportal', 'home loan', 'home_step1');
+    ga('send', 'event', 'bay-equity', 'home loan', 'home_step1');
     var url = base_url + "homeloan/homestep1/" + id;
 
     $.ajax({
@@ -685,7 +685,7 @@ function home_step1(id) {
 
 }
 function home_step2(id) {
-    ga('send', 'event', 'culoanportal', 'home loan', 'What type of home loan are you looking for');
+    ga('send', 'event', 'bay-equity', 'home loan', 'What type of home loan are you looking for');
     var url = base_url + "homeloan/homestep2/" + id;
 
     $.ajax({
@@ -706,7 +706,7 @@ function home_step2(id) {
 
 }
 function home_step3(id) {
-    ga('send', 'event', 'culoanportal', 'home loan', 'What type of property are you refinancing');
+    ga('send', 'event', 'bay-equity', 'home loan', 'What type of property are you refinancing');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep3/" + id,
@@ -722,7 +722,7 @@ function home_step3(id) {
 
 function home_step4(id) {
 
-    ga('send', 'event', 'culoanportal', 'home loan', 'How will this property be used');
+    ga('send', 'event', 'bay-equity', 'home loan', 'How will this property be used');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep4/" + id,
@@ -738,7 +738,7 @@ function home_step4(id) {
 
 function home_step41(id) {
 
-    ga('send', 'event', 'culoanportal', 'home loan', 'When do you plan to buy a home');
+    ga('send', 'event', 'bay-equity', 'home loan', 'When do you plan to buy a home');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep41/" + id,
@@ -753,7 +753,7 @@ function home_step41(id) {
 }
 
 function homestep25() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Gross Pre-Tax Monthly Income');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Gross Pre-Tax Monthly Income');
     
     var RE = /^\d*\.?\d*$/;
    
@@ -787,7 +787,7 @@ function homestep25() {
 
 
 function home_step5() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'ZIP code of the property');
+    ga('send', 'event', 'bay-equity', 'home loan', 'ZIP code of the property');
     
     var RE = /^\d*\.?\d*$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -842,7 +842,7 @@ function home_step5() {
 
 }
 function home_step6() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'estimate value of the property');
+    ga('send', 'event', 'bay-equity', 'home loan', 'estimate value of the property');
     
     $.ajax({
         type: "GET",
@@ -856,7 +856,7 @@ function home_step6() {
 }
 
 function home_step7() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'What is the remaining 1st mortgage balance');
+    ga('send', 'event', 'bay-equity', 'home loan', 'What is the remaining 1st mortgage balance');
     
     $.ajax({
         type: "GET",
@@ -870,7 +870,7 @@ function home_step7() {
 }
 
 function home_step8() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'second mortgage - yes');
+    ga('send', 'event', 'bay-equity', 'home loan', 'second mortgage - yes');
     
     $.ajax({
         type: "GET",
@@ -884,7 +884,7 @@ function home_step8() {
 }
 
 function home_step9() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'second mortgage - NO');
+    ga('send', 'event', 'bay-equity', 'home loan', 'second mortgage - NO');
     
     $.ajax({
         type: "GET",
@@ -897,7 +897,7 @@ function home_step9() {
     });
 }
 function home_step10() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'What is the remaining balance on the 2nd mortgage');
+    ga('send', 'event', 'bay-equity', 'home loan', 'What is the remaining balance on the 2nd mortgage');
     $.ajax({
         type: "GET",
         url: base_url + "homeloan/homestep10/" + $('input[name=remaining_mortgage_bal]').val(),
@@ -910,7 +910,7 @@ function home_step10() {
 }
 
 function home_step11() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Would you like to borrow additional cash');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Would you like to borrow additional cash');
     
     $.ajax({
         type: "GET",
@@ -923,7 +923,7 @@ function home_step11() {
     });
 }
 function home_step111(id) {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Did you close on your mortgage');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Did you close on your mortgage');
     
     $.ajax({
         type: "GET",
@@ -936,7 +936,7 @@ function home_step111(id) {
     });
 }
 function home_step12(id) {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Estimate your credit score');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Estimate your credit score');
     
     $.ajax({
         type: "GET",
@@ -950,7 +950,7 @@ function home_step12(id) {
 }
 
 function home_step13() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Date Of Birth');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Date Of Birth');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
 
     if ($('#selectMonth').val() === "") {
@@ -1005,7 +1005,7 @@ function home_step13() {
     }
 }
 function home_step14() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Have you or your spouse served in the military - Yes');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Have you or your spouse served in the military - Yes');
     
     $.ajax({
         type: "GET",
@@ -1018,7 +1018,7 @@ function home_step14() {
     });
 }
 function home_step15() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Have you or your spouse served in the military - NO');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Have you or your spouse served in the military - NO');
     
     $.ajax({
         type: "GET",
@@ -1032,7 +1032,7 @@ function home_step15() {
 }
 
 function home_step16(id) {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Do you currently have a VA loan');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Do you currently have a VA loan');
     
     $.ajax({
         type: "GET",
@@ -1046,7 +1046,7 @@ function home_step16(id) {
 }
 
 function home_step17() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-NO');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-NO');
     
     
     $.ajax({
@@ -1061,7 +1061,7 @@ function home_step17() {
 }
 
 function home_step171() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'How long ago was the bankruptcy');
+    ga('send', 'event', 'bay-equity', 'home loan', 'How long ago was the bankruptcy');
     
     $.ajax({
         type: "GET",
@@ -1074,7 +1074,7 @@ function home_step171() {
     });
 }
 function home_step172() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'How long ago was the foreclosure');
+    ga('send', 'event', 'bay-equity', 'home loan', 'How long ago was the foreclosure');
     
     $.ajax({
         type: "GET",
@@ -1087,7 +1087,7 @@ function home_step172() {
     });
 }
 function home_step18() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-bankruptcy');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-bankruptcy');
     
     $.ajax({
         type: "GET",
@@ -1100,7 +1100,7 @@ function home_step18() {
     });
 }
 function home_step19() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-Forcloser');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-Forcloser');
     
     $.ajax({
         type: "GET",
@@ -1113,7 +1113,7 @@ function home_step19() {
     });
 }
 function home_step20() {
-    ga('send', 'event', 'culoanportal', 'auto loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-Both');
+    ga('send', 'event', 'bay-equity', 'auto loan', 'Have you had a bankruptcy or foreclosure in the last 7 years-Both');
     
     
     $.ajax({
@@ -1128,7 +1128,7 @@ function home_step20() {
 }
 
 function home_step21() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'How long ago was the bankruptcy');
+    ga('send', 'event', 'bay-equity', 'home loan', 'How long ago was the bankruptcy');
     
     $.ajax({
         type: "GET",
@@ -1142,7 +1142,7 @@ function home_step21() {
 }
 
 function home_step22() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'current street address');
+    ga('send', 'event', 'bay-equity', 'home loan', 'current street address');
     
     var RE = /^\d*\.?\d*$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -1224,7 +1224,7 @@ function home_step22() {
 
 
 function home_step23() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Customer Details');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Customer Details');
     
     
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
@@ -1275,7 +1275,7 @@ function home_step23() {
 }
 
 function home_step24() {
-    ga('send', 'event', 'culoanportal', 'home loan', 'Submit');
+    ga('send', 'event', 'bay-equity', 'home loan', 'Submit');
     
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
