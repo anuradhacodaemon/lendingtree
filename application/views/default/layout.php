@@ -37,12 +37,31 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google AdWords: 829513051 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117121524-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());  gtag('config', 'UA-117121524-1');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google AdWords: 829513051 
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-829513051"></script>
     <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());  gtag('config', 'AW-829513051');
+    </script>    
+   Google Analytics -->
+    <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-117121524-1', 'auto'); 
+    ga('send', 'pageview');
     </script>
+    <!-- End Google Analytics --> 
   </head>
   <body >
     <!-- Header starts here -->
@@ -110,17 +129,7 @@ if($this->session->userdata['userdata']['panel']=='admin')
         <link href="<?php echo BASE_URL; ?>public/admin/css/icheck/flat/green.css" rel="stylesheet">
         <script src="<?php echo BASE_URL; ?>public/admin/js/jquery.min.js"></script>
 
-        <!-- Google Analytics -->
-    <script> 
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','
-        https://www.google-analytics.com/analytics.js','ga'
-        ); 
-
-            ga('create', 'UA-117121524-1', 'auto');
-             ga('send', 'pageview'); 
-
-    </script> 
-    <!-- End Google Analytics --> 
+        
 
     </head>
     
