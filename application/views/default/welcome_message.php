@@ -12,7 +12,7 @@
                   <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'auto loan');" >
+                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'coastal', 'click', 'auto loan');" >
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'auto refinance');" >
+                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'coastal', 'click', 'auto refinance');" >
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="offer-cont">
-                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'home loan');" >
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'coastal', 'click', 'home loan');" >
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -79,7 +79,7 @@
             </div>
             <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
                 <div class="offer-cont">
-                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'loan calculator');" >
+                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'coastal', 'click', 'loan calculator');" >
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
@@ -95,7 +95,7 @@
             </div>
 			<div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="offer-cont">
-                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'culoanportal', 'click', 'mortgage calculator');" >
+                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'coastal', 'click', 'mortgage calculator');" >
                         <button class="offer-circ">
                             <div class="outer-circ">
                                 <div class="inner-bevel">
