@@ -251,6 +251,9 @@
     if ($form_complete && $monthly_payment) {
 ?>	
 	<div class="row">
+                <div class="col-xs-12 col-sm-12 radio margtop_30">
+                    <button type="button" class="button" onclick="addloan()">Get Approved Now<span class="continueIcon sprites"></span></button>
+                </div>  
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="top-head">
 				Mortgage Payment Information
@@ -360,6 +363,7 @@
             (including <?php echo $pmi_text; ?> residential tax)</font></td>
         </tr>-->
 		</div>
+            
 	</div>
 <?php    
     }
@@ -488,7 +492,7 @@
         $legend .= "\t\t<td align=\"center\"><b>Month</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Interest Paid</b></td>\n";
         $legend .= "\t\t<td align=\"right\"><b>Principal Paid</b></td>\n";
-        $legend .= "\t\t<td align=\"right\"><b>Remaining Balance</b></td>\n";
+        $legend .= "\t\t<td align=\"right\"><b>Remaing Balance</b></td>\n";
         $legend .= "\t</tr>\n";
         
         echo $legend;
@@ -513,7 +517,7 @@
             ($current_month % 12) ? $show_legend = FALSE : $show_legend = TRUE;
     
             if ($show_legend) {
-                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\" style=\"background-color:#c5e1fb !important;\">\n");
+                print("\t<tr valign=\"top\" bgcolor=\"#ffffcc\" style=\"background-color:#ffffcc !important;\">\n");
                 print("\t\t<td align=\"center\"><b>Totals for year " . $current_year . "</td>\n");
 				$total_spent_this_year = $this_year_interest_paid + $this_year_principal_paid;
 				print("\t\t<td colspan=\"3\">\n");
@@ -548,6 +552,15 @@
         print("</table>\n");
     }
 ?>
+            <?php
+    if ($form_complete) {
+?>	
+	<div class="col-xs-12 col-sm-12 radio margtop_30">
+            <button type="button" class="button" onclick="addloan()">Get Approved Now<span class="continueIcon sprites"></span></button>
+        </div>  
+<?php
+    }
+?>	
 	</div>
 <br>
 
@@ -596,3 +609,10 @@
 		</div>
     </div>
 </div>
+<script>
+    function addloan() {
+        location.href = '<?php echo BASE_URL . "homeloan?homeloan=1" ?>';
+    }
+
+
+</script>
