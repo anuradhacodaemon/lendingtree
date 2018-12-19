@@ -251,6 +251,9 @@
     if ($form_complete && $monthly_payment) {
 ?>	
 	<div class="row">
+                <div class="col-xs-12 col-sm-12 radio margtop_30">
+                    <button type="button" class="button" onclick="addloan()">Get Approved Now<span class="continueIcon sprites"></span></button>
+                </div>  
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="top-head">
 				Mortgage Payment Information
@@ -360,6 +363,7 @@
             (including <?php echo $pmi_text; ?> residential tax)</font></td>
         </tr>-->
 		</div>
+            
 	</div>
 <?php    
     }
@@ -548,6 +552,15 @@
         print("</table>\n");
     }
 ?>
+            <?php
+    if ($form_complete) {
+?>	
+	<div class="col-xs-12 col-sm-12 radio margtop_30">
+            <button type="button" class="button" onclick="addloan()">Get Approved Now<span class="continueIcon sprites"></span></button>
+        </div>  
+<?php
+    }
+?>	
 	</div>
 <br>
 
@@ -596,3 +609,10 @@
 		</div>
     </div>
 </div>
+<script>
+    function addloan() {
+        location.href = '<?php echo BASE_URL . "homeloan?homeloan=1" ?>';
+    }
+
+
+</script>
