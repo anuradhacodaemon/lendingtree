@@ -1,0 +1,1324 @@
+body {
+    margin: 0;
+    color: #000;
+    font: 1em source_sans_proregular, Arial, Helvetica, sans-serif !important;
+    background: #fff;
+}
+a {transition: all .3s;}
+.inner_container {min-height: auto;}
+.inner_height {min-height: 480px;}
+button, input:focus {outline: none;}
+/* margin css */
+.margbot_10 {margin-bottom: 10px !important;}
+.margbot_20 {margin-bottom: 20px !important;}
+.margbot_30 {margin-bottom: 30px !important;}
+.margbot_40 {margin-bottom: 40px !important;}
+.margtop_30 {margin-top: 30px !important;}
+.marg_5 {margin: 5px 0 !important;}
+.marg_10 {margin: 10px 0 !important;}
+.marg_20 {margin: 20px 0 !important;}
+.marg_40 {margin: 40px 0 !important;}
+/*width css*/
+.width_100 {width: 100% !important;}
+.border_none {border: 0 none !important;}
+.bg {
+    background: transparent;
+    padding: 10px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.font_14 {font-size:14px !important;}
+/* Header */
+.header-main {
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 15px 0;
+}
+.logo {
+    float: left;
+    width: 100%;
+}
+.logo img {display: inline-block;}
+.number {
+    float: right;
+    padding: 0;
+}
+.number a {
+    color: #0896c6;
+    font-size: 17px;
+    line-height: 40px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+}
+.number a strong {font-family: source_sans_proregular, Arial, Helvetica, sans-serif;}
+
+/* Banner */
+.banner-main {
+    background: #fff url(../img/bg.png) no-repeat center top;
+	background-size: cover;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-height: 540px;
+	border-bottom: 8px solid #f26726;
+}
+.banner-main .banner-inner {
+    vertical-align: middle;
+	text-align: center;
+}
+.banner-inner-main {
+	background: #f26726;
+	padding: 30px;
+	margin: 80px 0 0;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+}
+.banner-main h1 {
+    font-size: 28px;
+    margin: 0;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: 500;
+}
+.offer-main {padding-top: 75px;}
+.offer-cont .offer-circ {
+    background: 0 0;
+    border: 0;
+    margin-bottom: 20px;
+}
+.banner-inner-main .offer-cont .offer-circ .outer-circ {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.4);
+    padding: 12px;
+}
+.offer-cont .offer-circ .outer-circ {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background: rgba(242,103,38,.7);
+    padding: 12px;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom,#fdfdfd 0%,#d8d0ce 100%);
+    box-shadow: 0 5px 10px 2px rgba(70,70,70,.2);
+    padding: 8px;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel:hover {
+    background: linear-gradient(to bottom,#fdfdfd 0%,#e9e5e4 100%);
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    background: #ece8e7;
+    padding: 10px 0 0;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    height: 67px;
+}
+.offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .title {
+    font-family: 'Open Sans',sans-serif!important;
+    width: 80%;
+    font-size: 12px;
+    color: #f26726;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 6px auto 0;
+}
+.offer-refinance {
+    background-image: url(../img/tactile-refinance.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home {
+    background-image: url(../img/tactile-home-loan.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home-loan {
+    background-image: url(../img/tactile-home.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-loan-calc {
+    background-image: url(../img/loan-calculator.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-mortgage-calc {
+    background-image: url(../img/mortgage-calc.svg);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-personal {
+    background-image: url(../img/auto-ref.svg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home-equity {
+    background-image: url(../img/tactile-home-equity.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-auto {
+    background-image: url(../img/tactile-auto.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-business {
+    background-image: url(../img/tactile-business-icon.svg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.disclosure {
+    position: absolute;
+    right: 30px;
+    bottom: 12px;
+    color: #373737;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: right;
+}
+.disclosure a {
+    font-weight: 700;
+    color: #373737;
+}
+/* Other Popular Calculator Section CSS */
+.calculator-main {
+    background: #fff;
+    padding: 40px 0 10px;
+    clear: both;
+    text-align: center;
+}
+.calculator-main h1 {
+    margin: 0 0 30px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+	color: #f26726;
+}
+/* Other Popular Products Section CSS */
+.products-main {
+    background: #fcf8ed url(../img/bg-wrapper.gif) repeat-x 0 -423px;
+    padding: 40px 0 10px;
+    clear: both;
+    text-align: center;
+    display: none;
+}
+.products-main h1 {
+    margin: 0 0 30px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+.prod-sec {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.prod-sec a {
+    color: #31ada5;
+    text-decoration: none;
+}
+.prod-sec .prodicon {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto;
+}
+.prod-sec a .fa {
+    font-size: 40px;
+    position: relative;
+    top: 10px;
+}
+.prod-sec a .prodname {
+    font-size: 15px;
+    text-align: center;
+    color: #bd5a03;
+    padding-top: 10px;
+}
+.prod-sec a .outerborder {
+    /* background: url('../img/blue-ring_old.svg') no-repeat center; */
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    line-height: 116px;
+    border: 7px solid #31ada5;
+    -webkit-border-radius: 100px;
+    -o-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    border-radius: 100px;
+}
+.prod-sec a .outerborder img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.prod-sec a .outerborder-120 {
+    width: 120px;
+    height: 120px;
+    line-height: 110px;
+}
+/* Quicklinks Section CSS */
+.quicklinks-main {
+    background: #f5f5f5;
+    padding: 40px 0;
+    text-align: center;
+    display: none;
+}
+.quicklinks-main h1 {
+    font-size: 28px;
+    margin: 0 0 10px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+}
+.quicklinks-main h3 {
+    font-size: 20px;
+    margin: 0 0 30px;
+    font-weight: 400;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+}
+.click-box {
+    width: 100%;
+    margin: 15px 0;
+}
+.click-box.effect-sadie {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: .3s;
+    transition-property: transform;
+    -webkit-box-shadow: 0 1px 14px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 14px 0 rgba(0,0,0,.1);
+    -o-box-shadow: 0 1px 14px 0 rgba(0,0,0,.1);
+    -ms-box-shadow: 0 1px 14px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 14px 0 rgba(0,0,0,.1);
+    padding: 30px;
+    color: #333;
+}
+.click-box.effect-sadie:hover {
+    transform: scale(1.1);
+}
+.click-box.effect-sadie .icon-ring, .click-box.effect-sadie p {
+    opacity: 1;
+    transition: opacity .35s,transform .35s;
+}
+.click-box.effect-sadie:hover .icon-ring {
+    background-image: none;
+    transform: translate3d(0,0,0);
+}
+.click-box.effect-sadie:hover i {
+    fill: #2cace3;
+    transform: translate3d(0,-50%,0) translate3d(0,-15px,0);
+}
+.click-box.effect-sadie:hover h5 {
+    color: #333;
+    transform: translate3d(0,-50%,0) translate3d(0,-50px,0);
+}
+.click-box.effect-sadie:hover p {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transform: translateZ(0) scale(1,1);
+    font-size: 14px;
+}
+.click-box .icon-ring {
+    width: 75px;
+    height: 75px;
+    display: block;
+    margin: 0 auto 20px;
+    position: relative;
+}
+.icon-ring {
+    min-width: 50px;
+    min-height: 50px;
+    background-image: url(../img/icon-color-ring.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+}
+.click-box.effect-sadie .icon-ring img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15px;
+    display: inline-block;
+}
+.click-box.effect-sadie:hover .icon-ring img {opacity: 1; top: -15px;}
+.click-box i {
+    top: 56px;
+    font-size: 35px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.click-box.effect-sadie h5 {
+    transition: transform .35s,color .35s;
+    transform: translate3d(0,0,0);
+    color: #2cace3;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.click-box.effect-sadie p {
+    line-height: 1.35em;
+    color: #666;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px 20px;
+    width: 100%;
+    opacity: 0;
+    transform: translate3d(0,10px,0);
+}
+.blue {
+    background: 0 0;
+    color: #00aeef!important;
+    fill: #00aeef;
+}
+/* Footer CSS */
+.footer-main {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background: #373737;
+}
+.footer-main .sub-nav {
+    margin: 0;
+    padding: 12px 0 8px;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    background: #fada7f;
+    font: 12px/12px source_sans_proregular, Arial, Helvetica, sans-serif;
+    color: #bd5a03;
+}
+.footer-main .sub-nav li {
+    display: inline-block;
+    background: url(../img/separator-03.gif) no-repeat 0 55%;
+    padding: 0 6px;
+}
+.footer-main .sub-nav li a {
+    color: #bd5a03;
+    line-height: 20px;
+}
+.footer-main .panel {
+    margin: 0 auto;
+    padding: 8px 0 0;
+    background: transparent;
+    box-shadow: none;
+}
+.panel .logo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.panel .logo-list li {
+    display: inline-block;
+    margin: 0 0 0 21px;
+    vertical-align: middle;
+}
+.panel .logo-list li:first-child {
+    margin: 0;
+}
+.panel .logo-list li a {
+    display: block;
+}
+.block-frame {
+    float: right;
+    color: #cdf6f3;
+    padding: 26px 0 0;
+    margin: 0 -9px 0 0;
+    font: 10px/13px source_sans_proregular, Arial, Helvetica, sans-serif;
+}
+.panel .block-frame .logo-list {
+    float: right;
+    padding: 0 3px 0 0;
+    margin: -5px 0 0;
+    list-style: none;
+}
+.panel .logo-list li {
+    display: inline-block;
+    margin: 0 0 0 12px;
+    vertical-align: middle;
+}
+.footer-main p {
+    margin: 0;
+    color: #fff;
+    line-height: 13px;
+}
+/* Section main css */
+.main-section {
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0;
+    position: relative;
+	min-height: 540px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#499bea+0,207ce5+100;Blue+3d+%237 */
+background: #499bea; /* Old browsers */
+background: -moz-linear-gradient(left, #499bea 0%, #207ce5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #499bea 0%,#207ce5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #499bea 0%,#207ce5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=1 ); /* IE6-9 */
+}
+/* Form CSS */
+.form-main {
+    padding: 60px 0 60px;
+    position: relative;
+    text-align: center; 
+    margin: 0 auto;
+	/* background: rgba(255, 255, 255, 0.5); */
+}
+.form-main h1 {
+    float: left;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+	color: #fff;
+}
+.form-main  .disclosure-sec {
+    float: right;
+    color: #f26726;
+    margin-top: 20px;
+    font-size: 16px;
+	text-decoration: underline;
+    letter-spacing: 1px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+}
+.form-main .control-label {
+    padding: 1% 0;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+}
+.form-main h2 {
+    padding: 0;
+    margin: 0 0 10px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-family: loved_by_the_kingregular, Arial, Helvetica, sans-serif;
+}
+.radio {
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+.radio .text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000;
+    display: block;
+}
+.radio .text_current {
+    color: #fff !important;
+}
+.radio .button {
+    border-radius: 50px;
+	background: transparent;
+    width: 320px;
+    display: inline-block;
+    padding: 18px;
+    color: #fff;
+    line-height: 20px;
+    min-height: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid #fff;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+	
+}
+.radio .button:hover {
+    background: #fff;
+	color: #215fad;
+}
+.status {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbeaba+0,fbeaba+18,fbe9b5+26,fadb85+75,fada80+84,fada80+100 */
+    background: #fbeaba !important; /* Old browsers */
+    background: -moz-linear-gradient(top, #fbeaba 0%, #fbeaba 18%, #fbe9b5 26%, #fadb85 75%, #fada80 84%, #fada80 100%) !important; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fbeaba 0%,#fbeaba 18%,#fbe9b5 26%,#fadb85 75%,#fada80 84%,#fada80 100%) !important; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fbeaba 0%,#fbeaba 18%,#fbe9b5 26%,#fadb85 75%,#fada80 84%,#fada80 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbeaba', endColorstr='#fada80',GradientType=0 ) !important; /* IE6-9 */
+    color: #000 !important;
+	border: 2px solid #fbeaba !important;
+}
+.status:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fada80+0,fada80+16,fadb85+25,fbe9b5+74,fbeaba+82,fbeaba+100 */
+    background: #fada80 !important; /* Old browsers */
+    background: -moz-linear-gradient(top, #fada80 0%, #fada80 16%, #fadb85 25%, #fbe9b5 74%, #fbeaba 82%, #fbeaba 100%) !important; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fada80 0%,#fada80 16%,#fadb85 25%,#fbe9b5 74%,#fbeaba 82%,#fbeaba 100%) !important; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fada80 0%,#fada80 16%,#fadb85 25%,#fbe9b5 74%,#fbeaba 82%,#fbeaba 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fada80', endColorstr='#fbeaba',GradientType=0 ) !important; /* IE6-9 */
+    color: #000 !important;
+	border: 2px solid #fbeaba !important;
+}
+.radio .button_back {
+    border-radius: 2px;
+    width: 380px;
+    display: inline-block;
+    padding: 18px;
+    color: #fff;
+    line-height: 20px;
+    min-height: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+    border: 0 none;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fe8215+0,fe8215+18,fa7f14+25,c45e05+74,bd5a03+84,bd5a03+100 */
+    background: #fe8215; /* Old browsers */
+    background: -moz-linear-gradient(top, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fe8215 0%,#fe8215 18%,#fa7f14 25%,#c45e05 74%,#bd5a03 84%,#bd5a03 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fe8215 0%,#fe8215 18%,#fa7f14 25%,#c45e05 74%,#bd5a03 84%,#bd5a03 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe8215', endColorstr='#bd5a03',GradientType=0 ); /* IE6-9 */
+}
+.radio .button_back:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bd5a03+0,bd5a03+16,c45e05+26,fa7f14+75,fe8215+82,fe8215+100 */
+    background: #bd5a03; /* Old browsers */
+    background: -moz-linear-gradient(top, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #bd5a03 0%,#bd5a03 16%,#c45e05 26%,#fa7f14 75%,#fe8215 82%,#fe8215 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd5a03', endColorstr='#fe8215',GradientType=0 ); /* IE6-9 */
+}
+.radio .button_payment {
+    background: #3153ae;
+}
+.radio .button_payment:hover {
+    background: #3153ae;
+}
+.radio .button_payment_current {
+    background: #42e2d8 !important;
+}
+.button_back .sprites.continueIcon {
+    float: left;
+    width: 16px;
+    height: 23px;
+}
+.button_back .continueIcon {
+    background-position: 0 -58px !important;
+    transform: rotate(180deg);
+}
+.status .continueIcon {
+    background-position: 0 -58px !important;
+}
+.radio .button .label-text {
+    display: inline-block;
+    width: 100%;
+}
+.sprites.continueIcon {
+    float: right;
+    width: 16px;
+    height: 23px;
+}
+.continueIcon {
+    background-position: 0 -83px;
+}
+.sprites {
+    background-image: url(../img/sprites-mobile.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+	display: none;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    position: absolute;
+    margin-top: 4px \9;
+    margin-left: -20px;
+}
+.radio input {
+    display: none;
+}
+input[type="radio"], input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+.form-main input.form-control {
+    font-size: 20px;
+    text-align: center;
+    height: 58px;
+    width: 360px;
+    margin: 0 auto 2px;
+}
+.form-main select.form-control {
+    font-size: 20px;
+    text-align: center;
+    height: 58px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+}
+.form-main .form-control-small {
+    font-size: 14px !important;
+    font-weight: bold;
+}
+.subtext {
+    width: 550px;
+    font-size: 13px;
+    color: #f5ce5f;
+    text-align: center;
+    margin: 0 auto 20px;
+    font-family: 'Open Sans',sans-serif;
+}
+/*custom checkbox */
+.checkbox-sec {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-sec input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-sec:hover input ~ .checkmark {
+    background-color: transparent;
+    border: 1px solid #31ada5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-sec input:checked ~ .checkmark {
+    background-color: #31ada5;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-sec input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-sec .checkmark:after {
+    left: 10px;
+    top: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.top-value {
+    color: #fff;
+    font-size: 28px;
+}
+.slider-box {
+    position: relative;
+    width: 380px;
+    text-align: center;
+    margin: 0 auto;
+}
+.min-value {
+    position: absolute;
+    left: -10px;
+    bottom: -30px;
+    font-size: 18px;
+	color: #fff;
+}
+.max-value {
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    font-size: 18px;
+	color: #fff;
+}
+
+.radio-btn-sect {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+
+/* Custom radio buttons css here */
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    padding-top: 0px;
+    margin-bottom: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    left: 6px;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#42e2d8+0,42e2d8+7,40dad0+19,3dccc3+33,309e97+72,2d908a+88,2b8c86+95,2b8c86+100 */
+    background: #42e2d8; /* Old browsers */
+    background: -moz-linear-gradient(top, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #42e2d8 0%,#42e2d8 7%,#40dad0 19%,#3dccc3 33%,#309e97 72%,#2d908a 88%,#2b8c86 95%,#2b8c86 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e2d8', endColorstr='#2b8c86',GradientType=0 ); /* IE6-9 */
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: white;
+}
+.width_auto {
+    width: auto !important;
+}
+.bg .radio+.radio {
+    margin-top: 0px !important;
+}
+.bg .radio-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 0px;
+    padding-top: 30px;
+    margin-left: 75px;
+    width: 55%;
+    margin-bottom: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.radio-main {position: relative;}
+.radio-main .line_bg {
+    position: absolute;
+    width: 69%;
+    height: 10px;
+    background: #ddd;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    top: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Home loan css */
+.form-main .text-head {
+    float: none;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.offer-purchase_house {
+    background-image: url(../img/purchase_house.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-refinance_house {
+    background-image: url(../img/refinance_house.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-home_equity_house {
+    background-image: url(../img/home_equity_house.png);
+    background-size: 36%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-reverse_mtg_house {
+    background-image: url(../img/reverse_mtg_house.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-townhouse {
+    background-image: url(../img/townhouse.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-condminium {
+    background-image: url(../img/condo.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-multi_family_home {
+    background-image: url(../img/duplex.png);
+    background-size: 72%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-mobile_home {
+    background-image: url(../img/mobile_home.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*selected bevel css*/
+.selected-circ .inner-bevel {
+    background: #7bc043 !important;
+}
+.selected-circ .inner-bevel:hover {
+    background: #7bc043 !important;
+}
+.selected-circ .inner-bevel .second-bevel {
+    background: #7bc043 !important;
+}
+.selected {
+    background-image: url(../img/white_yes_check.png) !important;
+    background-size: 44% !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.selected-circ .inner-bevel .second-bevel .title {
+    color: #fff !important;
+}
+.offer-primary_home {
+    background-image: url(../img/primary_home.png);
+    background-size: 28%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-secondary_home {
+    background-image: url(../img/secondary_home.png);
+    background-size: 56%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-rental_property {
+    background-image: url(../img/rental_property.png);
+    background-size: 32%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.home-loan .radio .button {
+    border-radius: 50px;
+    width: 520px;
+    display: inline-block;
+    padding: 18px;
+    color: #fff;
+    line-height: 20px;
+    min-height: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid #fff;
+    background: transparent;
+}
+.home-loan .radio .button:hover {
+    background: #fff;
+	color: #215fad;
+}
+.score .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .title {
+    font-family: 'Open Sans',sans-serif!important;
+    width: 80%;
+    font-size: 14px;
+    color: #31ada5;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 18px auto 0;
+}
+.offer-excellent_credit {
+    background-image: url(../img/excellent_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-good_credit {
+    background-image: url(../img/good_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-fair_credit {
+    background-image: url(../img/fair_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-poor_credit {
+    background-image: url(../img/poor_credit.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-yes_check {
+    background-image: url(../img/yes_check.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.offer-no_slash {
+    background-image: url(../img/no_slash.png);
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Mortgage calc page css here */
+.calc-main {
+    padding: 10px 0 0px;
+    position: relative;
+    margin: 0 auto;
+}
+.calc-main h1 {
+	text-align: center;
+	font-size: 28px;
+    margin: 10px 0 20px;
+    font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: 500;
+}
+.top-head {
+	background: rgba(197, 207, 234, 0.6);
+	padding: 10px;
+	color: #fff;
+	font-size: 18px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+.calc-main table {width: 100%;}
+.calc-main table {border: 0 none;}
+.calc-main table tr td {
+	font-size: 13px;
+	border: 1px solid #ccc;
+}
+.white-box {
+	background: #fff;
+	padding: 10px;
+	border: 1px solid #e3e3e3;
+	margin: 15px 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	position: relative;
+}
+.white-box label {
+	font-size: 15px;
+	display: block;
+}
+.white-box .input {
+	background: #fff;
+	border: 0 none;
+	width: 100%;
+	padding: 6px 35px 6px 0;
+	font-size: 14px;
+	color: #a0a0a0;
+}
+.white-box .value-sec {
+	position: absolute;
+	right: 10px;
+	bottom: 18px;
+	vertical-align: middle;
+	font-size: 14px;
+	color: #000;
+}
+.chk-box {
+	padding: 10px 0;
+	margin: 15px 0;
+}
+.chk-box label {
+	font-size: 15px;
+	display: block;
+}
+.chk-box .chk-input {
+	
+	color: #a0a0a0;
+}
+.chk-box .value-sec {
+	vertical-align: bottom;
+	font-size: 14px;
+	color: #000;
+}
+.btn-calc {
+    border-radius: 50px;
+	background: transparent;
+    width: 100%;
+    display: inline-block;
+    padding: 18px;
+    color: #fff;
+    line-height: 20px;
+    min-height: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid #fff;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+}
+.btn-calc:hover {
+    background: #fff;
+	color: #0896c6;
+}
+.cont-box {
+	padding: 10px 0;
+	border-bottom: 1px dashed #e3e3e3;
+	margin: 0;
+	font-size: 14px;
+	color: #fff;
+}
+.cont-box:last-child {border-bottom: 1px solid #e3e3e3;}
+.cont-box label {
+	font-size: 15px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	margin: 0;
+	line-height: 22px;
+}
+.cont-box .cont {
+	background: transparent;
+	border: 0 none;
+	display: inline-block;
+	font-size: 14px;
+	text-align: right;
+	color: #fff;
+	float: right;
+}
+.total {
+	padding: 10px 0;
+	border-bottom: 1px dashed #e3e3e3;
+	margin: 0 0 20px;
+	font-size: 16px;
+	color: #fff;
+}
+.total label {
+	font-size: 16px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	margin: 0;
+	line-height: 24px;
+}
+.total .cont {
+	background: transparent;
+	border: 0 none;
+	display: inline-block;
+	font-size: 16px;
+	text-align: right;
+	font-weight: bold;
+	color: #fff;
+	float: right;
+}
+.formula-sec {
+	padding: 10px;
+	color: #fff;
+	font-size: 16px;
+	line-height: 22px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+	background: #f26726;
+}
+.formula-inner {
+	border-bottom: 1px dashed #953102;
+	padding: 0 0 10px;
+	margin: 0 0 10px;
+}
+.formula-inner:last-child {
+	border-bottom: 0 none;
+	padding: 0;
+	margin: 0;
+}
+.formula-inner span {
+	font-size: 24px;
+	color: #953102;
+}
+.formula-inner a {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #953102;
+}
+.formula-inner-head {
+	border-bottom: 1px solid #953102;
+	padding: 10px 0 5px;
+	margin: 10px 0 10px;
+}
+.value-box {
+	background: rgba(197, 207, 234, 0.6);
+	padding: 10px;
+	color: #52618a;
+	font-size: 16px;
+	line-height: 22px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+.value-inner {
+    border-bottom: 1px dashed #435175;
+    padding: 0 0 5px;
+    margin: 0 0 5px;
+}
+.value-inner .value {
+    font-size: 14px;
+    color: #000;
+}
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

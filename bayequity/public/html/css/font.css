@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'loved_by_the_kingregular';
+    src: url('../font/lovedbytheking-webfont.eot');
+    src: url('../font/lovedbytheking-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/lovedbytheking-webfont.woff2') format('woff2'),
+         url('../font/lovedbytheking-webfont.woff') format('woff'),
+         url('../font/lovedbytheking-webfont.svg#loved_by_the_kingregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

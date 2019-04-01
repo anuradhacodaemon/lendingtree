@@ -1,0 +1,88 @@
+@media only screen and (max-width:509px){ 
+	.header-main {min-height: auto;}
+	.logo {
+		width: 140px;
+		height: 48px;
+	}
+	.logo a {
+		font-size: 20px;
+		margin-top: 14px;
+	}
+	.call-main a {font-size: 15px;}
+    .header-main h1 {
+		font-size: 24px;
+		line-height: 32px;
+		margin: 25px 0 30px;
+	}
+	.btn-primary {
+		margin: 0 auto;
+		width: 280px;
+	}
+	.icon-main h2 {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.icon-main {
+		padding: 30px 0;
+	}
+	.quote-main .quote-cont {
+		padding: 35px 30px;
+	}
+	.quote-main .quote-cont h4 {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	.quote-banner {display: none;}
+	.info-cont:before {display: none;}
+	.info-cont h4 {width:83%;}
+	.info-cont p {width:83%;}
+	.trial-main {min-height: auto;}
+	.trial-main h1 {
+		font-size: 26px;
+		line-height: 38px;
+		margin: 0 0 40px;
+	}
+}
+@media only screen and (max-width:480px){ 
+    
+}
+@media only screen and (min-width:510px) and (max-width:767px) { 
+    
+}
+@media only screen and (min-width:768px) and (max-width:1023px) { 
+    .icon-main .width_20 {
+		width: 20%;
+	}
+	.quote-banner {
+		min-height: 714px;
+	}
+	.info-cont h4 {width:85%;}
+	.info-cont p {width:85%;}
+}
+@media only screen and (min-width:1024px) and (max-width:1024px) { 
+    .icon-main .width_20 {
+		width: 20%;
+	}
+	.quote-banner {
+		min-height: 522px;
+	}
+}
+@media only screen and (max-width:411px){ 
+    
+}
+@media only screen and (max-width:375px){ 
+    
+}
+@media only screen and (max-width:320px){ 
+    
+}
+@media (min-width: 992px) {
+	.col-md-2 {
+		width: 20%;
+	}
+}
+@media (min-width: 1200px) {
+    .icon-main .width_20 {
+		width: 20%;
+	}
+}

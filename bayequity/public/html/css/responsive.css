@@ -1,0 +1,196 @@
+@media only screen and (max-width:509px){ 
+    .logo {text-align: center;}
+    .number {
+        text-align: center;
+    }
+    .number a {font-size: 9px;}
+    .banner-main {background: #fff url(../img/bg.jpg) no-repeat center top; padding-top: 30px; padding-bottom: 30px;}
+    .banner-main .banner-left {margin: 0 auto; text-align: center;}
+    .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
+    .banner-main .banner-left h2 {font-size: 22px;}
+
+    .offer-main {padding-top: 20px; float: none;}
+    .products-main h1 {font-size: 20px;}
+    .offer-cont {text-align: center;}
+    .quicklinks-main {padding: 20px 0;}
+    .quicklinks-main h1 {font-size: 17px;}
+    .quicklinks-main h3 {font-size: 14px; line-height: 20px;}
+    .footer-main .sub-nav li {display: inline;}
+    .panel .logo-list {text-align: center;}
+    .footer-main {padding: 10px; text-align: center;}
+    .panel .block-frame .logo-list {float: none; margin: 0; padding: 0;}
+    .main-section {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#07a9c6+0,11b1bf+47,25c1b0+100 */
+		background: rgb(7,169,198); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(7,169,198,1) 0%, rgba(17,177,191,1) 47%, rgba(37,193,176,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(7,169,198,1) 0%,rgba(17,177,191,1) 47%,rgba(37,193,176,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(7,169,198,1) 0%,rgba(17,177,191,1) 47%,rgba(37,193,176,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07a9c6', endColorstr='#25c1b0',GradientType=0 ); /* IE6-9 */
+		padding: 10px 0 0;
+	}
+    .form-main {padding: 0 0 110px;}
+    .form-main .control-label {font-size: 18px; margin-top: 10px;}
+    .form-main h2 {font-size: 16px;}
+    .subtext {width: 100%;}
+    .slider-box {
+        width: 100%;
+    }
+    .bg .slider-box {
+        width: 83%;
+    }
+    .slider-tick-label-container > .slider-tick-label:first-child {
+        width: auto !important;
+        left: -8% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(2n) {
+        width: auto !important;
+        left: 47% !important;
+        margin-left: 0px !important;
+    }
+    .slider-tick-label-container > .slider-tick-label:nth-child(3n) {
+        width: auto !important;
+        left: 88% !important;
+        margin-left: 0px !important;
+    }
+    .radio-main .line_bg {        
+        width: 76%;
+    }
+    .bg .radio-container {
+        margin-left: 15px;
+        width: 100%;
+        font-size: 10px;
+    }
+    /* Home loan css */
+    .form-main .text-head {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .home-loan .radio .button {
+        font-size: 16px;
+    }
+	.banner-main .banner-inner {margin: 0px;}
+	.btn-calc {width:100%;}
+}
+@media only screen and (max-width:480px){ 
+    .form-main h1 {
+        float: none;
+        text-align: center;
+    }
+    .form-main .disclosure-sec {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .radio .button {
+        width: 100%;
+        padding: 12px;
+        line-height: 20px;
+        min-height: 20px;
+        font-size: 18px;
+    }
+    .bg .radio .button {
+        font-size: 11px;
+    }
+    .radio .button_back {
+        width: 100%;
+        padding: 12px;
+        line-height: 20px;
+        min-height: 20px;
+        font-size: 18px;
+    }
+    .checkbox-sec {font-size: 15px;}
+    .form-main input.form-control {width: 100%;}
+    .inner_height {min-height:574px;}
+	.banner-main .banner-inner {margin: 0px;}
+	.btn-calc {width:100%;}
+}
+@media only screen and (min-width:510px) and (max-width:767px) { 
+    .logo {width: 65%;}
+    .number a {font-size: 18px;}
+    .banner-main {
+        background: #fff url(../img/bg.jpg) no-repeat center top;
+        padding-top: 35px;
+        padding-bottom: 30px;
+        margin: 0;
+    }
+    .form-main {
+        padding: 0 0 110px;
+    }
+    .form-main .disclosure-sec {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .banner-main .banner-left {margin: 0 auto; text-align: center;}
+    .offer-main {padding-top: 20px; float: none;}
+    .offer-cont {text-align: center;}
+    .quicklinks-main {padding: 20px 0;}
+    .footer-main {padding: 10px; text-align: center;}
+    .main-section {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#07a9c6+0,11b1bf+47,25c1b0+100 */
+		background: rgb(7,169,198); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(7,169,198,1) 0%, rgba(17,177,191,1) 47%, rgba(37,193,176,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(7,169,198,1) 0%,rgba(17,177,191,1) 47%,rgba(37,193,176,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(7,169,198,1) 0%,rgba(17,177,191,1) 47%,rgba(37,193,176,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07a9c6', endColorstr='#25c1b0',GradientType=0 ); /* IE6-9 */
+        padding: 0;
+        margin: 0;
+    }
+    .subtext {width: 100%;}
+    .bg .radio-container {width: 65%; margin-left: 60px;}
+	.banner-main .banner-inner {margin: 0px;}
+}
+@media only screen and (min-width:768px) and (max-width:1023px) { 
+    .inner_container {min-height: 823px;}
+    .banner-main .banner-left h1 {font-size: 30px;}
+    .banner-main .banner-left h2 {font-size: 26px;}
+    .quicklinks-main {padding: 20px 0;}
+    .quicklinks-main h1 {font-size: 24px;}
+    .quicklinks-main h3 {font-size: 18px;}
+    .inner_height {min-height:850px;}
+    .form-main .disclosure-sec {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+	.banner-main {min-height: 850px;}
+}
+@media (min-width: 992px) {
+    .home-loan .col-md-2 {
+        width: 20%;
+    }
+}
+@media only screen and (min-width:1024px) and (max-width:1024px) { 
+    .inner_container {min-height: 570px;}
+    .inner_height {min-height:570px;}
+    .form-main .disclosure-sec {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+@media only screen and (max-width:411px){ 
+    .inner_height {min-height:662px;}
+}
+@media only screen and (min-width:375px) and (max-width:375px){
+    .inner_height {min-height:500px;}
+}
+@media only screen and (min-width:360px) and (max-width:360px){ 
+    .inner_height {min-height:476px;}
+}
+@media only screen and (max-width:320px){ 
+    .inner_height {min-height:400px;}
+	.refinance {min-height: 470px;}
+	.inner_container {min-height: 470px;}
+}
+@media only screen and (min-width: 812px) and (max-width: 823px) {
+    .inner_height {
+        min-height: auto;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1051px;
+    }
+}
