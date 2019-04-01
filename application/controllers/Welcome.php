@@ -23,11 +23,12 @@ class Welcome extends CI_Controller {
     public function __construct() {
         // Construct the parent class
         parent::__construct();
+
         $this->load->model('loan_model');
+        //$this->template = 'default/layout2';
     }
 
     public function index() {
-
         $this->session->set_userdata('panel', 'frontend');
 
         $ipaddress = $_SERVER['REMOTE_ADDR'];
@@ -39,7 +40,7 @@ class Welcome extends CI_Controller {
         $remotehost = @getHostByAddr($ipaddress);
          
         $this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
-        $this->template->view('welcome_message');
+        $this->template->view('welcome_message2');
     }
 
 }
