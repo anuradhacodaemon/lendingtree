@@ -207,12 +207,7 @@ function refinancestep3() {
         $('#err1').html('Your VIN is empty');
         $('#vin').focus();
         return false;
-    } else if (!validateVin($("#vin").val()))
-    {
-        $('#err1').html('Your VIN is not valid');
-        $('#vin').focus();
-        return false;
-    } else
+    }  else
     {
         $('#err2').html('');
         $.ajax({
