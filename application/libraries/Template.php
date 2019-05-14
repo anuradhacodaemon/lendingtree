@@ -88,7 +88,10 @@ class Template {
         }
 
         if(!$no_skeleton) {
-            $this->ci->load->view($template_name . '/' . 'layout', array('data' => $data, 'view' => $template_name . '/' . $view));
+            if($view== 'welcome_message2')
+            $this->ci->load->view($template_name . '/' . 'layout2', array('data' => $data, 'view' => $template_name . '/' . $view));
+            else
+            $this->ci->load->view($template_name . '/' . 'layout2', array('data' => $data, 'view' => $template_name . '/' . $view));
             return;
         }
         $this->ci->load->view($template_name . '/' . $view, array('data' => $data));
