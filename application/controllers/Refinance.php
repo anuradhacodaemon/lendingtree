@@ -27,7 +27,6 @@ class Refinance extends CI_Controller {
 
     public function index() {
 
-
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
@@ -87,6 +86,8 @@ class Refinance extends CI_Controller {
         $this->load->view('refinance_step4', $data);
     }
 
+
+
     public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '') {
 
         if ($firstname) {
@@ -101,8 +102,29 @@ class Refinance extends CI_Controller {
             $this->session->set_userdata($data);
         }
 
-        $this->load->view('refinance_step5');
+        $this->load->view('refinance_step5_new');
     }
+
+
+    public function refinancestep6($cemployer = '',$job_title = '') {
+
+        if ($cemployer) {
+
+            //$num = explode('$', $pre_tax_income);
+            // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+            $data = array(
+                'cemployer' => $cemployer,
+                'job_title' => $job_title
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+      
+        $this->load->view('refinance_step5', $data);
+    }
+
 
     public function getcity($state_id = 0) {
 
@@ -110,7 +132,7 @@ class Refinance extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function refinancestep6($month = 0, $day = 0, $year = 0, $ssn = '') {
+    public function refinancestep7($month = 0, $day = 0, $year = 0, $ssn = '') {
         if ($ssn) {
             $data = array(
                 'month' => $month,
@@ -129,7 +151,7 @@ class Refinance extends CI_Controller {
         //die;
     }
 
-    public function refinancestep7($email = '', $phone = '') {
+    public function refinancestep8($email = '', $phone = '') {
         if ($email) {
             $data = array(
                 'email' => $email,
@@ -140,6 +162,7 @@ class Refinance extends CI_Controller {
             );
 
             $this->session->set_userdata($data);
+
         }
 
 
@@ -149,7 +172,7 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['type']);
         unset($this->session->userdata['requested_amount']);
         unset($this->session->userdata['current_employer']);
-        unset($this->session->userdata['job_title']);
+        //unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['zip']);
         unset($this->session->userdata['loan_type']);
