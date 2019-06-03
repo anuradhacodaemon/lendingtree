@@ -219,7 +219,7 @@
                           if($userDetails[0]['city'] >0)
                           {
                           $city=$this->details->get_city($userDetails[0]['city']);
-                          if(!empty($city[0]['name']))
+                           if(!empty($city[0]['name']))
                           echo $city[0]['name']; 
                           }?>
                     </td>
@@ -233,7 +233,7 @@
                         if($userDetails[0]['state']>0)
                           {
                         $state=$this->details->get_state($userDetails[0]['state']);
-                        if(!empty($state[0]['name']))
+                       if(!empty($state[0]['name']))
                           echo $state[0]['name']; 
                           
                           }?>
@@ -273,7 +273,7 @@
                         Current Employer :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        --
+                        <?php echo !empty($userDetails[0]['cemployer'])?str_replace("%20"," ",$userDetails[0]['cemployer']):'--'; ?>
                     </td>
                 </tr>
                 <tr>
@@ -281,7 +281,7 @@
                         Years There :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       --
+                        <?php echo !empty($userDetails[0]['job_title'])?$userDetails[0]['job_title']:'--'; ?>
                     </td>
                 </tr>
                 <tr>
