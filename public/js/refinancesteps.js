@@ -339,12 +339,6 @@ function refinancestep5_new() {
         $('#err1').html('Your Current Employer is empty');
         $('#cemployer').focus();
         return false;
-    } else if (!RE.test($("#cemployer").val()))
-    {
-
-        $('#err1').html('Your Current Employer should have letter only ');
-        $('#cemployer').focus();
-        return false;
     } else if ($('input[name=job_title]').val() == '')
     {
 
@@ -374,6 +368,14 @@ function refinancestep5_new() {
     }
 
 }
+
+/* else if (!RE.test($("#cemployer").val()))
+    {
+
+        $('#err1').html('Your Current Employer should have letter only ');
+        $('#cemployer').focus();
+        return false;
+    }*/
 
 
 function refinancestep5() {

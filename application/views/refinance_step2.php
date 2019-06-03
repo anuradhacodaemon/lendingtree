@@ -1,18 +1,23 @@
 <div class="main-section inner_height clearfix" id="container1">
     <div class="container" id="containerrefinance">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="logo">
+                    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>public/html/img/logo.png" alt="Logo" title="Coastal Community community federal credit union" class="img-responsive"/></a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="form-main clearfix">
                     <h1>Refinance Your Vehicle</h1>
-                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
+                    <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">What Is Your Current Monthly Payment?</label>
                     
-                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?></label></span>
+                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '50';?></label></span>
  <div class="clearfix"></div> <div class="slider-box">
-                <input id="ex8" name="monthly_payment" type="text" data-slider-min="50" data-slider-max="5000" data-slider-step="100" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '1000';?>"/>
-                <span class="min-value">$1,000 &nbsp;</span>
-                <span class="max-value">&nbsp; $5,000</span>
+                <input id="ex8" name="monthly_payment" type="text" data-slider-min="50" data-slider-max="2000" data-slider-step="5" data-slider-value="<?php if(isset($this->session->userdata['monthly_payment'])) echo $this->session->userdata['monthly_payment'] ; else echo '50';?>"/>
+                <span class="min-value">$50 &nbsp;</span>
+                <span class="max-value">&nbsp; $2,000</span>
                
               </div>
                 </div>

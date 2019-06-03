@@ -11,14 +11,14 @@
                     <div class="clearfix"></div>
                     <label class="control-label">How Much Do Currently Owe?</label>
 
-                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php echo (!empty($this->session->userdata['currently_owe']))?$this->session->userdata['currently_owe']:5000;
+                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php echo (!empty($this->session->userdata['currently_owe']))?$this->session->userdata['currently_owe']:10000;
 ?></label></span>
                     <div class="clearfix"></div>
                     <div class="slider-box">
-                        <input id="ex6"  name="currently_owe" type="text" data-slider-min="5000" data-slider-max="150000" data-slider-step="500" data-slider-value="<?php echo (!empty($this->session->userdata['currently_owe']))?$this->session->userdata['currently_owe']:5000 ;
+                        <input id="ex6"  name="currently_owe" type="text" data-slider-min="10000" data-slider-max="80000" data-slider-step="50" data-slider-value="<?php echo (!empty($this->session->userdata['currently_owe']))?$this->session->userdata['currently_owe']:10000 ;
 ?>"/> 
-                        <span class="min-value">$5,000  &nbsp;</span>
-                        <span class="max-value">&nbsp; $150,000</span>
+                        <span class="min-value">$10,000  &nbsp;</span>
+                        <span class="max-value">&nbsp; $80,000</span>
                     </div>
 
 
