@@ -27,7 +27,6 @@ class Refinance extends CI_Controller {
 
     public function index() {
 
-
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
@@ -87,6 +86,8 @@ class Refinance extends CI_Controller {
         $this->load->view('refinance_step4', $data);
     }
 
+
+
     public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '') {
 
         if ($firstname) {
@@ -101,8 +102,29 @@ class Refinance extends CI_Controller {
             $this->session->set_userdata($data);
         }
 
-        $this->load->view('refinance_step5');
+        $this->load->view('refinance_step5_new');
     }
+
+
+    public function refinancestep6($cemployer = '',$job_title = '') {
+
+        if ($cemployer) {
+
+            //$num = explode('$', $pre_tax_income);
+            // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+            $data = array(
+                'cemployer' => $cemployer,
+                'job_title' => $job_title
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+      
+        $this->load->view('refinance_step5', $data);
+    }
+
 
     public function getcity($state_id = 0) {
 
@@ -110,7 +132,7 @@ class Refinance extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function refinancestep6($month = 0, $day = 0, $year = 0, $ssn = '') {
+    public function refinancestep7($month = 0, $day = 0, $year = 0, $ssn = '') {
         if ($ssn) {
             $data = array(
                 'month' => $month,
@@ -129,7 +151,7 @@ class Refinance extends CI_Controller {
         //die;
     }
 
-    public function refinancestep7($email = '', $phone = '') {
+    public function refinancestep8($email = '', $phone = '') {
         if ($email) {
             $data = array(
                 'email' => $email,
@@ -140,6 +162,7 @@ class Refinance extends CI_Controller {
             );
 
             $this->session->set_userdata($data);
+
         }
 
 
@@ -149,7 +172,7 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['type']);
         unset($this->session->userdata['requested_amount']);
         unset($this->session->userdata['current_employer']);
-        unset($this->session->userdata['job_title']);
+        //unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['zip']);
         unset($this->session->userdata['loan_type']);
@@ -179,7 +202,6 @@ class Refinance extends CI_Controller {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-            
             $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
             $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
             
@@ -233,7 +255,7 @@ class Refinance extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("SW Financial FCU New Digital Application");
+        $this->email->subject("Space City New Digital Application");
         $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         $token = array(
@@ -268,8 +290,7 @@ class Refinance extends CI_Controller {
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
     }
-
-     public function mail_format_pdfdownload($id = 0) {
+    public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', decode_url($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
@@ -284,6 +305,7 @@ class Refinance extends CI_Controller {
         $filename = '' . $name . '.pdf';
         $pdf->Output($path . $filename, 'F');
     }
+
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = encode_url($Link);
@@ -310,8 +332,8 @@ class Refinance extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("SW Financial FCU New Digital Application");
-        $this->email->attach($dir . $dh[2]);
+        $this->email->subject("Space City New Digital Application");
+         $this->email->attach($dir . $dh[2]);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
@@ -329,8 +351,8 @@ class Refinance extends CI_Controller {
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
         if ($emailSend) {
-            //echo $this->email->print_debugger();
             unlink($dir . $dh[2]);
+            //echo $this->email->print_debugger();
             return 1;
         }
         return 0;

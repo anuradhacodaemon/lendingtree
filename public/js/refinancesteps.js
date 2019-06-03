@@ -78,6 +78,18 @@ if (performance.navigation.type == 1) {
             }
         });
     }
+    if (window.location.search.indexOf('refinancestep=7') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep7",
+            success: function (data)
+            {
+
+                $('#containerrefinance').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 
 
 }
@@ -155,11 +167,24 @@ window.onpopstate = function ()
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
+    }   
+
+    if (window.location.search.indexOf('refinancestep=7') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep7",
+            success: function (data)
+            {
+
+                $('#containerrefinance').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
     }
 
 }
 function refinancestep1() {
-    ga('send', 'event', 'sw-financial', 'auto refinance', 'How Much Do Currently Owe');
+    ga('send', 'event', 'spececity', 'auto refinance', 'How Much Do Currently Owe');
     var url = base_url + "refinance/refinancestep2/" + $('input[name=currently_owe]').val();
 
     $.ajax({
@@ -180,7 +205,7 @@ function refinancestep1() {
 
 }
 function refinancestep2() {
-    ga('send', 'event', 'sw-financial', 'auto refinance', 'What Is Your Current Monthly Payment');
+    ga('send', 'event', 'spececity', 'auto refinance', 'What Is Your Current Monthly Payment');
     $.ajax({
         type: "GET",
         url: base_url + "refinance/refinancestep3/" + $('input[name=monthly_payment]').val(),
@@ -198,7 +223,7 @@ function validateVin(vin) {
     return vin.match(re);
 }
 function refinancestep3() {
-    ga('send', 'event', 'sw-financial', 'auto refinance', 'Vehicle VIN Number');
+    ga('send', 'event', 'spececity', 'auto refinance', 'Vehicle VIN Number');
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
     if ($('input[name=vin]').val() == '')
@@ -225,7 +250,7 @@ function refinancestep3() {
 
 
 function refinancestep4() {
-    ga('send', 'event', 'sw-financial', 'auto refinance', 'custmer details');
+    ga('send', 'event', 'spececity', 'auto refinance', 'custmer details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -303,8 +328,58 @@ function refinancestep4() {
     }
 
 }
+
+function refinancestep5_new() {
+    ga('send', 'event', 'spececity', 'auto refinance', 'Current Employer');
+    var RE = /^[A-Za-z]+$/;
+    var RE1 = /^\d*\.?\d*$/;
+    if ($('input[name=cemployer]').val() == '')
+    {
+
+        $('#err1').html('Your Current Employer is empty');
+        $('#cemployer').focus();
+        return false;
+    } else if ($('input[name=job_title]').val() == '')
+    {
+
+        $('#err2').html('How many years have you worked there is empty');
+        $('#job_title').focus();
+        $('#err1').html('');
+        return false;
+    } else if (!RE1.test($("#job_title").val()))
+    {
+
+        $('#err2').html('Only digits allowed ');
+        $('#job_title').focus();
+        $('#err1').html('');
+        return false;
+    } else
+    {
+        $('#err2').html('');
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep6/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=7");
+                 $('#containerrefinance').html(data);
+            }
+        });
+    }
+
+}
+
+/* else if (!RE.test($("#cemployer").val()))
+    {
+
+        $('#err1').html('Your Current Employer should have letter only ');
+        $('#cemployer').focus();
+        return false;
+    }*/
+
+
 function refinancestep5() {
-    ga('send', 'event', 'sw-financial', 'auto refinance', 'Date Of Birth');
+    ga('send', 'event', 'spececity', 'auto refinance', 'Date Of Birth');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
     if ($('#selectMonth').val() === "") {
@@ -349,10 +424,10 @@ function refinancestep5() {
     } else {
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep6/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
+            url: base_url + "refinance/refinancestep7/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=6");
+                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=8");
                 $('#containerrefinance').html(data);
             }
         });
@@ -360,7 +435,7 @@ function refinancestep5() {
 }
 
 function refinancestep7() {
-    ga('send', 'event', 'sw-financial', 'auto refinance', 'Submit');
+    ga('send', 'event', 'spececity', 'auto refinance', 'Submit');
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
     if ($('input[name=email]').val() == '')
@@ -394,7 +469,7 @@ function refinancestep7() {
 
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep7/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
+            url: base_url + "refinance/refinancestep8/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
             success: function (data)
             {
                 // alert(data);
