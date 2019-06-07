@@ -8,10 +8,10 @@ class Refinance extends CI_Controller {
      * Index Page for this controller.
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
+     *      http://example.com/index.php/welcome
+     *  - or -
+     *      http://example.com/index.php/welcome/index
+     *  - or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
@@ -84,6 +84,17 @@ class Refinance extends CI_Controller {
             $data['city'] = $this->loan_model->get_city($this->session->userdata['state']);
         }
         $this->load->view('refinance_step4', $data);
+    }
+
+
+    public function sha(){
+
+         $dir = PHYSICAL_PATH . 'download_pdf/';
+        $dh = scandir($dir);
+        echo '<pre>';
+        echo PHYSICAL_PATH;
+        echo '<br>';
+        print_r($dh);
     }
 
 
@@ -312,7 +323,10 @@ class Refinance extends CI_Controller {
         $url = base_url() . "refinance/mail_format_pdf/" . $url1;
          $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $dh = scandir($dir);
+        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        // $dh = scandir($dir);
+        $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(
@@ -333,8 +347,8 @@ class Refinance extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Space City New Digital Application");
-         $this->email->attach($dir . $dh[2]);
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
+         $this->email->attach($dir . $dh);
+        $this->email->bcc('shashank.c@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
             'firstname' => $firstname,
