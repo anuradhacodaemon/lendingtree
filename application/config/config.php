@@ -32,10 +32,10 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	else
 	{
 		$config['base_url']	= 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']). '/';
-		define('BASE_URL','http://'.str_replace('www.', '', $_SERVER['HTTP_HOST']).'/');
-		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/');
+		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/cuportal/');
+		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/cuportal/');
 	}
-//$config['base_url'] = '';
+//$config['base_url'] = 'http://54.145.182.176/cuportal/';
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
