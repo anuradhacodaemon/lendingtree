@@ -16,7 +16,8 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
     $setURL = 'http://' . $_SERVER['SERVER_NAME'] . '/';
 }
 ?>	
-<input type="hidden" id="domain" value="<?php echo $setURL; ?>cuportal/" />
+<!--<input type="hidden" id="domain" value="<?php //echo $setURL; ?>cuportal/" />-->
+<input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
 <!--<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">-->
@@ -26,7 +27,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <script src="<?php echo BASE_URL; ?>/public/js/refinancesteps.js"></script>
 <script src="<?php echo BASE_URL; ?>/public/js/homeloansteps.js"></script>
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
-<script src="<?php echo BASE_URL; ?>/public/js/wow.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>
