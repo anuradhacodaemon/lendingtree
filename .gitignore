@@ -30,7 +30,8 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 #local files
 #-------------------
-application/config/database.php
-application/config/config.php
+/application/config/database.php
+/application/config/config.php
 application/config/*
 download_pdf/*
+.htaccess
