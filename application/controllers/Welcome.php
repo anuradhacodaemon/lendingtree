@@ -27,7 +27,11 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-
+    //echo "check this>>>";exit;
+    $data = array();
+    if ($this->session->userdata['userdata']['ud']) {
+        redirect(base_url().'admin/dashboard');
+    }else{
         $this->session->set_userdata('panel', 'frontend');
 
         $ipaddress = $_SERVER['REMOTE_ADDR'];
@@ -40,6 +44,7 @@ class Welcome extends CI_Controller {
          
         $this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
         $this->template->view('welcome_message');
+    }
     }
 
 }
