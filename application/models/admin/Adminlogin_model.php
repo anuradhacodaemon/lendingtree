@@ -18,11 +18,11 @@ class AdminLogin_model extends CI_Model {
         $this->db->where("(email = '$username' or username = '$username' )");
         $this->db->where('password', $password);
         //$this->db->where('domain', base_url());
-        $this->db->where($string);
+        $this->db->or_where($string);
         // Run the query
         $query = $this->db->get(LOGIN);
         // Let's check if there are any results
-        //echo $this->db->last_query();
+        //echo $this->db->last_query();exit;
 
         $count = $query->num_rows();
         if ($count > 0) {
