@@ -203,6 +203,7 @@ calculate3();
                                     result = document.getElementById("monthly_pay1");
                                     result1 = document.getElementById("year_pay1");
                                     result2 = document.getElementById("interest_pay1");
+                                    //alert("this is month1>>>" + result);
                                     //x = Math.pow((1 + r), n);
                                     //x = (1 + r) * n;
                                     // The equation is A = p * [[1 + (r/n)] ^ nt]
@@ -218,6 +219,10 @@ calculate3();
                                     var B = (A * payments).toFixed(2);
                                     var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
+                                    //alert("this is month1>>>" + A);
+                                    A = isNaN(A) ? 0 : A;
+                                    B = isNaN(B) ? 0 : B;
+                                    C = isNaN(C) ? 0 : C;
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
                                     result2.innerHTML = numberWithCommas(C);
@@ -247,6 +252,9 @@ calculate3();
                                     var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
                                     //result.innerHTML = A.toFixed(2);
+                                    A = isNaN(A) ? 0 : A;
+                                    B = isNaN(B) ? 0 : B;
+                                    C = isNaN(C) ? 0 : C;
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
                                     result2.innerHTML = numberWithCommas(C);
@@ -275,6 +283,9 @@ calculate3();
                                     var B = (A * payments).toFixed(2);
                                     var C = ((A * payments) - principal).toFixed(2);
                                     // toFixed is used for rounding the amount with two decimal places.
+                                    A = isNaN(A) ? 0 : A;
+                                    B = isNaN(B) ? 0 : B;
+                                    C = isNaN(C) ? 0 : C;
                                     result.innerHTML = numberWithCommas(A);
                                     result1.innerHTML = numberWithCommas(B);
                                     result2.innerHTML = numberWithCommas(C);
