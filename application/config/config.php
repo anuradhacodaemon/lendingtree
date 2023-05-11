@@ -36,7 +36,7 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 		define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/');
 		define('PHYSICAL_PATH',$_SERVER['DOCUMENT_ROOT'].'/');
 	}
-//$config['base_url'] = 'http://54.145.182.176/cuportal/';
+//$config['base_url'] = 'http://54.145.182.176/';
 
 /*
 |--------------------------------------------------------------------------
