@@ -10,13 +10,13 @@
         <title><?php echo (isset($title)) ? $title : 'culoanportal'; ?></title>
 
         <!-- Bootstrap -->
-        <link href="<?php echo BASE_URL; ?>public/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
-        <link href="<?php echo BASE_URL; ?>public/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/fonts/css/font-awesome.min.css" rel="stylesheet">
         <!-- NProgress -->
-        <link href="<?php echo BASE_URL; ?>public/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/css/nprogress.css" rel="stylesheet">
         <!-- Animate.css -->
-        <link href="<?php echo BASE_URL; ?>public/admin/vendors/animate.css/animate.min.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL; ?>public/admin/css/animate.min.css" rel="stylesheet">
 
         <!-- Custom Theme Style -->
         <link href="<?php echo BASE_URL; ?>public/admin/css/custom.css" rel="stylesheet">

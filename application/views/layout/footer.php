@@ -26,7 +26,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <script src="<?php echo BASE_URL; ?>/public/js/refinancesteps.js"></script>
 <script src="<?php echo BASE_URL; ?>/public/js/homeloansteps.js"></script>
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
-<script src="<?php echo BASE_URL; ?>public/js/wow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>

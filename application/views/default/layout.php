@@ -177,6 +177,7 @@ if($this->session->userdata['userdata']['panel']=='admin')
         <!-- Custom Theme Scripts -->
         <script src="<?php echo BASE_URL; ?>public/admin/build/js/custom.min.js"></script>
         <script src="<?php echo BASE_URL; ?>public/admin/js/pace/pace.min.js"></script> 
+        <script src="<?php echo BASE_URL; ?>public/admin/js/icheck/icheck.min.js"></script>
         <script>
 
 
