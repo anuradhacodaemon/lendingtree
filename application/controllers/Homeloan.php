@@ -557,10 +557,10 @@ class Homeloan extends CI_Controller {
     }
 
     public function mail_format_pdf($id = 0) {
-        $link = explode('&', decode_url($id));
+        $link = explode('&', urldecode($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailshomeloanpdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['loan_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
@@ -570,10 +570,10 @@ class Homeloan extends CI_Controller {
         $pdf->Output('' . $name . '.pdf', 'D');
     }
 public function mail_format_pdfdownload($id = 0) {
-        $link = explode('&', decode_url($id));
+        $link = explode('&', urldecode($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailshomeloanpdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['loan_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
@@ -587,7 +587,7 @@ public function mail_format_pdfdownload($id = 0) {
 
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
-        $url1 = encode_url($Link);
+        $url1 = urlencode($Link);
         $url = base_url() . "homeloan/mail_format_pdf/" . $url1;
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
