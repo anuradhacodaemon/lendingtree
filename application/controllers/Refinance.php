@@ -125,7 +125,7 @@ class Refinance extends CI_Controller {
             // $number = $num[1];
             //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
-                'cemployer' => $cemployer,
+                'current_employer' => $cemployer,
                 'job_title' => $job_title
             );
 

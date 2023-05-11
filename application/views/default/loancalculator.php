@@ -220,6 +220,10 @@
                                 var A = (principal * x * interest) / (x - 1);
                                 var B = (A * payments).toFixed(2);
                                 var C = ((A * payments) - principal).toFixed(2);
+                               //alert("this is month1>>>" + A);
+                                A = isNaN(A) ? 0 : A;
+                                B = isNaN(B) ? 0 : B;
+                                C = isNaN(C) ? 0 : C;
                                 // toFixed is used for rounding the amount with two decimal places.
                                 result.innerHTML = numberWithCommas(A);
                                 result1.innerHTML = numberWithCommas(B);
@@ -250,6 +254,9 @@
                                 var C = ((A * payments) - principal).toFixed(2);
                                 // toFixed is used for rounding the amount with two decimal places.
                                 //result.innerHTML = A.toFixed(2);
+                                A = isNaN(A) ? 0 : A;
+                                B = isNaN(B) ? 0 : B;
+                                C = isNaN(C) ? 0 : C;
                                 result.innerHTML = numberWithCommas(A);
                                 result1.innerHTML = numberWithCommas(B);
                                 result2.innerHTML = numberWithCommas(C);
@@ -278,6 +285,9 @@
                                 var B = (A * payments).toFixed(2);
                                 var C = ((A * payments) - principal).toFixed(2);
                                 // toFixed is used for rounding the amount with two decimal places.
+                                A = isNaN(A) ? 0 : A;
+                                B = isNaN(B) ? 0 : B;
+                                C = isNaN(C) ? 0 : C;
                                 result.innerHTML = numberWithCommas(A);
                                 result1.innerHTML = numberWithCommas(B);
                                 result2.innerHTML = numberWithCommas(C);
