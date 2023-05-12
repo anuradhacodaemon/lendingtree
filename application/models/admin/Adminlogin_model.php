@@ -22,7 +22,7 @@ class AdminLogin_model extends CI_Model {
         // Run the query
         $query = $this->db->get(LOGIN);
         // Let's check if there are any results
-        //echo $this->db->last_query();
+        //echo $this->db->last_query();exit;
 
         $count = $query->num_rows();
         if ($count > 0) {
