@@ -125,7 +125,7 @@ class Refinance extends CI_Controller {
             // $number = $num[1];
             //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
-                'cemployer' => $cemployer,
+                'current_employer' => $cemployer,
                 'job_title' => $job_title
             );
 
@@ -289,7 +289,7 @@ class Refinance extends CI_Controller {
     }
 
     public function mail_format_pdf($id = 0) {
-        $link = explode('&', decode_url($id));
+        $link = explode('&', urldecode($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
@@ -302,7 +302,7 @@ class Refinance extends CI_Controller {
         $pdf->Output('' . $name . '.pdf', 'D');
     }
     public function mail_format_pdfdownload($id = 0) {
-        $link = explode('&', decode_url($id));
+        $link = explode('&', urldecode($id));
         $this->load->model('details');
         $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
@@ -319,7 +319,7 @@ class Refinance extends CI_Controller {
 
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
-        $url1 = encode_url($Link);
+        $url1 = urlencode($Link);
         $url = base_url() . "refinance/mail_format_pdf/" . $url1;
          $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
