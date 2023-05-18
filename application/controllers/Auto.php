@@ -309,7 +309,10 @@ class Auto extends CI_Controller {
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $dh = scandir($dir);
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        // $dh = scandir($dir);
+        $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(
@@ -329,7 +332,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Bay Equity New Digital Application");
-        $this->email->attach($dir . $dh[2]);
+        $this->email->attach($dir . $dh);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
@@ -349,7 +352,7 @@ class Auto extends CI_Controller {
 
         if ($emailSend) {
             // echo 'yes';
-              unlink($dir . $dh[2]);
+              unlink($dir . $dh);
             return 1;
         }
 
