@@ -347,7 +347,7 @@ class Refinance extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Space City New Digital Application");
-         $this->email->attach($dir . $dh);
+        $this->email->attach($dir . $dh);
         $this->email->bcc('shashank.c@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(

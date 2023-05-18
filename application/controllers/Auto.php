@@ -308,9 +308,12 @@ class Auto extends CI_Controller {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = urlencode($Link);
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
-         $this->mail_format_pdfdownload($url1);
+        $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $dh = scandir($dir);
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        // $dh = scandir($dir);
+        $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
         /*         * $config = Array(
@@ -330,6 +333,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("SW Financial FCU New Digital Application");
+        $this->email->attach($dir . $dh);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
