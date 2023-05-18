@@ -321,7 +321,7 @@ class Refinance extends CI_Controller {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = urlencode($Link);
         $url = base_url() . "refinance/mail_format_pdf/" . $url1;
-         $this->mail_format_pdfdownload($url1);
+        $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
         $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($id);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
@@ -347,7 +347,7 @@ class Refinance extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Space City New Digital Application");
-         $this->email->attach($dir . $dh);
+        $this->email->attach($dir . $dh);
         $this->email->bcc('shashank.c@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         $token = array(
@@ -365,7 +365,7 @@ class Refinance extends CI_Controller {
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
         if ($emailSend) {
-            unlink($dir . $dh[2]);
+            unlink($dir . $dh);
             //echo $this->email->print_debugger();
             return 1;
         }
