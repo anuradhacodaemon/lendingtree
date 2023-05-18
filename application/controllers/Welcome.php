@@ -27,19 +27,23 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
+        $data = array();
+        if ($this->session->userdata['userdata']['ud']) {
+            redirect(base_url().'admin/dashboard');
+        }else{
+            $this->session->set_userdata('panel', 'frontend');
 
-        $this->session->set_userdata('panel', 'frontend');
-
-        $ipaddress = $_SERVER['REMOTE_ADDR'];
-        $page = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}";
-      
-        $referrer = $_SERVER['HTTP_HOST'];
-        $datetime = date('Y-m-d h:i:s');
-        $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $remotehost = @getHostByAddr($ipaddress);
-         
-        $this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
-        $this->template->view('welcome_message');
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
+            $page = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}";
+        
+            $referrer = $_SERVER['HTTP_HOST'];
+            $datetime = date('Y-m-d h:i:s');
+            $useragent = $_SERVER['HTTP_USER_AGENT'];
+            $remotehost = @getHostByAddr($ipaddress);
+            
+            $this->loan_model->addvisitor($ipaddress,$page,$referrer,$datetime,$useragent,$remotehost);
+            $this->template->view('welcome_message');
+        }
     }
 
 }
