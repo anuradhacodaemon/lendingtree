@@ -256,9 +256,20 @@ class Auto extends CI_Controller {
         $this->email->subject("Coastal Community FCU New Digital Application");
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
+        if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
+	    {
+            $url = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
+        }   
+        else{
+                $url = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            }
+
         $token = array(
             'firstname' => $firstname,
-            'lastname' => $lastname
+            'lastname' => $lastname,
+            'url' => $url,
+            'domain' => BASE_URL,
+            'copyright' => date('Y')
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {
@@ -336,11 +347,19 @@ class Auto extends CI_Controller {
         $this->email->attach($dir . $dh);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
+        if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
+	    {
+            $url_name = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
+        }   
+        else{
+            $url_name = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            }
         $token = array(
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'url' => $url,
-            'domain' => $_SERVER['SERVER_NAME']
+            'url' => $url_name,
+            'domain' => $_SERVER['SERVER_NAME'],
+            'copyright' => date('Y')
         );  // forming array to send in template
         $pattern = '[%s]';
         foreach ($token as $key => $val) {
