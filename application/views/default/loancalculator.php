@@ -189,8 +189,8 @@
 <!-- Banner ends here -->
 
 <link href="<?php echo BASE_URL; ?>public/dist/css/bootstrap-slider.css" rel="stylesheet">
-<script src="<?php echo BASE_URL; ?>/public/dist/bootstrap-slider.js"></script>
-<script src="<?php echo BASE_URL; ?>/public/dist/loan_bootstrap-slider.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/dist/bootstrap-slider.js"></script>
+<script src="<?php echo BASE_URL; ?>public/dist/loan_bootstrap-slider.min.js"></script>
 
 
 <script>
