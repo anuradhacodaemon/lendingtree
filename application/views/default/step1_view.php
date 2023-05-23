@@ -45,7 +45,49 @@
     </div>
 </div>
 <!-- Banner ends here -->
-
+<!-- Popular calculator section starts here -->
+<div class="calculator-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1>Other Popular Calculators</h1>
+            </div>
+            <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+                <div class="offer-cont">
+                    <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'loan calculator');" >
+                        <button class="offer-circ">
+                            <div class="outer-circ">
+                                <div class="inner-bevel">
+                                    <div class="second-bevel">
+                                        <div class="offer-img offer-loan-calc"></div>
+                                        <p class="title">LOAN CALCULATOR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+			<div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="offer-cont">
+                    <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'mortgage calculator');" >
+                        <button class="offer-circ">
+                            <div class="outer-circ">
+                                <div class="inner-bevel">
+                                    <div class="second-bevel">
+                                        <div class="offer-img offer-mortgage-calc"></div>
+                                        <p class="title">MORTGAGE CALCULATOR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popular calculator section ends here -->
 
 
 

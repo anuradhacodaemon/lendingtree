@@ -43,7 +43,7 @@
             </div>
             <div class="disclosure">
                 <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a id="promodisclosure" rel="nofollow" class="disclosures-link" href="">Advertising Disclosures</a>
+                <a id="promodisclosure" rel="nofollow" class="disclosures-link">Advertising Disclosures</a>
             </div>
         </div>
     </div>
