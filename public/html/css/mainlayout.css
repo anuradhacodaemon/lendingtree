@@ -72,7 +72,7 @@ button, input:focus {outline: none;}
 
 /* Banner */
 .banner-main {
-    background: #fff url(../img/banner.png) no-repeat center;
+    background: #fff url(../img/mccu_banner.jpg) no-repeat center;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -120,7 +120,7 @@ button, input:focus {outline: none;}
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background: rgba(2,105,56,.5);
+    background: rgba(45, 90, 158, 0.726);
     padding: 12px;
 }
 .offer-cont .offer-circ .outer-circ .inner-bevel {
