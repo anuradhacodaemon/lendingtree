@@ -110,7 +110,7 @@ $visitor = $this->homeloan->checklead_denied_forDomain();
                                 <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
                                 <option value="http://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
                                 <option value="http://swfinancial.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://swfinancial.culoanportal.com/") echo 'selected' ?>>swfinancial.culoanportal.com</option>
-                              <option value="http://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
+                                <option value="http://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
                             
                             </select>
                         </div>
@@ -233,7 +233,6 @@ $visitor = $this->homeloan->checklead_denied_forDomain();
                                 <!-- <th class="column-title"># </th> -->
                                 <th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
                                 </th>
-
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.firstname" && $sort_direction == "desc") { ?> onClick="sortList('user.firstname', 'asc')"<?php } ?> <?php if ($sort_by != "user.firstname") { ?> onClick="sortList('user.firstname', 'asc')"<?php } ?><?php if ($sort_by == "user.firstname" && $sort_direction == "asc") { ?> onClick="sortList('user.firstname', 'desc')"<?php } ?>> Full Name</a>&nbsp;<?php if ($sort_by == "user.firstname" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.firstname" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 

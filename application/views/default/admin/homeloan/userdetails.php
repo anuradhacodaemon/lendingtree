@@ -101,6 +101,15 @@
                                         echo 'Rental Property';
                                           ?>
                                     </div>
+                                    <div class="col-sm-12"><span> <b>Estimated monthly income:</b>&nbsp;
+                                            <?php  
+
+
+
+                                            echo $userDetails[0]['pre_tax_income'];
+
+                                             ?></span>
+                                    </div>
                                     <div class="col-sm-12"><b>Plan Type: &nbsp</b>
                                         <<?php if($userDetails[0]['plan_type']==1) 
                                             echo 'Already under contract';
