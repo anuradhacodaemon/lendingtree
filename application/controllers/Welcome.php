@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
             $this->session->set_userdata('panel', 'frontend');
 
             $ipaddress = $_SERVER['REMOTE_ADDR'];
-            $page = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}";
+            $page = $_SERVER['REQUEST_SCHEME']."://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}?{$_SERVER['QUERY_STRING']}";
         
             $referrer = $_SERVER['HTTP_HOST'];
             $datetime = date('Y-m-d h:i:s');

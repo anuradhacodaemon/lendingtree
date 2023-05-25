@@ -11,7 +11,7 @@ class Refinance extends CI_Model {
 
     public function get_user($id = 0, $limit, $start, $filterData, $sortData = "") {
 
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -117,7 +117,7 @@ class Refinance extends CI_Model {
 
     public function get_count_user($filterData = array()) {
 
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -257,7 +257,7 @@ class Refinance extends CI_Model {
 
     public function get_userall() {
 
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         $filter = 'user.firstname,user.lastname,user.phone,user.email,user.currently_owe,user.monthly_payment,user.vin,user.current_milage,user.dob,user.domain,user.address,s.name as state,c.name as city,user.ssn';
         //print_r($this->session->userdata['export']);
@@ -403,7 +403,7 @@ class Refinance extends CI_Model {
     }
     
     public function checklead_pending_forDomain() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         
         $this->db->select('count(ref_id) as numLead');
@@ -428,7 +428,7 @@ class Refinance extends CI_Model {
     }
 
     public function checklead_approved_forDomain() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         
         $this->db->select('count(ref_id) as numLead');
@@ -453,7 +453,7 @@ class Refinance extends CI_Model {
     }
     
     public function checklead_denied_forDomain() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         
         $this->db->select('count(ref_id) as numLead');
