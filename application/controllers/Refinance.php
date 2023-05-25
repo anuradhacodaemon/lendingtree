@@ -168,7 +168,7 @@ class Refinance extends CI_Controller {
                 'email' => $email,
                 'phone' => $phone,
                 'add_date' => date('Y-m-d H:i:s'),
-                'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
+                'domain' => $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'] . '/',
                 'status' => "2"
             );
 
@@ -212,7 +212,7 @@ class Refinance extends CI_Controller {
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+            $this->session->set_flashdata('item', array('message' => '<font>' . $error . '</font>', 'class' => 'success'));
             $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
             $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
             
@@ -274,7 +274,7 @@ class Refinance extends CI_Controller {
             $url = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-                $url = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+                $url = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
 
         $token = array(
@@ -366,7 +366,7 @@ class Refinance extends CI_Controller {
             $url_name = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-            $url_name = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
             'firstname' => $firstname,
