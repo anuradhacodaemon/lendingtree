@@ -72,7 +72,7 @@
                                 {
                                     
                                     $('#container').html(data);
-                                    //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+                                    //location.href = '<?php echo $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
                                 }
                             });
 
