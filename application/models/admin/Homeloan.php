@@ -11,7 +11,7 @@ class Homeloan extends CI_Model {
 
     public function get_user($id = 0, $limit, $start, $filterData, $sortData = "") {
 
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -87,7 +87,7 @@ class Homeloan extends CI_Model {
 
     public function get_count_user($filterData = array()) {
 
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         if (!empty($filterData['firstname'])) {
             $this->db->like('user.firstname', $filterData['firstname'], 'both');
         }
@@ -193,7 +193,7 @@ class Homeloan extends CI_Model {
 
     public function get_userall() {
 
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         $filter = 'user.firstname,user.lastname,user.phone,user.email,user.loan_type,user.property_type,user.home_type,user.plan_type,user.dob,user.domain,user.address,user.city,user.zip';
         //print_r($this->session->userdata['export']);
@@ -307,7 +307,7 @@ class Homeloan extends CI_Model {
     }
 
     public function checklead_pending_forDomain() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         
         $filterData = $this->session->userdata['export'];
         if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
@@ -330,7 +330,7 @@ class Homeloan extends CI_Model {
     }
 
     public function checklead_approved_forDomain() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         
         $filterData = $this->session->userdata['export'];
         if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
@@ -353,7 +353,7 @@ class Homeloan extends CI_Model {
     }
     
     public function checklead_denied_forDomain() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $filterData = $this->session->userdata['export'];
         if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin' ) {
             if(!empty($filterData['domain']))
