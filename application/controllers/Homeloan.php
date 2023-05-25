@@ -435,7 +435,7 @@ class Homeloan extends CI_Controller {
                 'email' => $email,
                 'phone' => $phone,
                 'add_date' => date('Y-m-d H:i:s'),
-                'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
+                'domain' => $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'] . '/',
                 'status' => "2"
             );
 
@@ -541,7 +541,7 @@ class Homeloan extends CI_Controller {
             $url = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-                $url = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+                $url = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
 
         $token = array(
@@ -632,7 +632,7 @@ class Homeloan extends CI_Controller {
             $url_name = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-            $url_name = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
             'firstname' => $firstname,
