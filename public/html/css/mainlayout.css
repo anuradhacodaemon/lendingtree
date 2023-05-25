@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro:wght@400;600;700&display=swap");
+:root {
+  --primary: #8a1b1e;
+}
 body {
   margin: 0;
   color: #000;
@@ -30,7 +33,6 @@ button,
 input:focus {
   outline: none;
 }
-/* margin css */
 .marg_5 {
   margin: 5px 0 !important;
 }
@@ -49,7 +51,6 @@ input:focus {
 .margtop_30 {
   margin-top: 30px !important;
 }
-/*width css*/
 .width_100 {
   width: 100% !important;
 }
@@ -65,7 +66,6 @@ input:focus {
 .font_14 {
   font-size: 14px !important;
 }
-/* Header */
 .header-main {
   overflow: hidden;
   background: #fff;
@@ -86,14 +86,12 @@ input:focus {
   padding: 0;
 }
 .number a {
-  color: #8a1b1e;
+  color: var(--primary);
   font-size: 17px;
   line-height: 40px;
 }
 .number a strong {
 }
-
-/* Banner */
 .banner-inner h1 {
   color: #fff;
   margin: 0 0 30px;
@@ -121,13 +119,15 @@ input:focus {
 .offer-main h1 {
   font-size: 28px;
   margin: 0 0 25px;
-
   color: #fff;
   font-weight: 500;
   text-align: center;
 }
 .offer-cont > a {
   display: block;
+  width: 320px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .offer-cont .offer-circ {
   background: none;
@@ -146,8 +146,8 @@ input:focus {
   padding: 5px 8px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8a1b1e;
-  background: #8a1b1e;
+  border: 2px solid var(--primary);
+  background: var(--primary);
 }
 .offer-cont > a:hover {
   text-decoration: none;
@@ -160,6 +160,8 @@ input:focus {
   display: block;
   width: 50px;
   background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   height: 50px;
   filter: brightness(0) invert(1);
   margin-right: 15px;
@@ -228,7 +230,7 @@ input:focus {
   position: absolute;
   right: 30px;
   bottom: 12px;
-  color: #d92027;
+  color: var(--primary);
   font-size: 12px;
   text-decoration: none;
   text-align: right;
@@ -236,7 +238,7 @@ input:focus {
 }
 .disclosure a {
   font-weight: 700;
-  color: #d92027;
+  color: var(--primary);
 }
 .btn-calc,
 .radio .button {
@@ -247,12 +249,12 @@ input:focus {
   line-height: 20px;
   min-height: 20px;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8a1b1e;
-  background: #8a1b1e;
+  border: 2px solid var(--primary);
+  background: var(--primary);
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -269,14 +271,11 @@ input:focus {
 .btn-calc.status,
 .radio .button.status {
   background: #d92027;
-  pointer-events: none;
 }
 .radio .button:hover {
   background: #333;
   color: #fff;
 }
-
-/* Other Popular Calculator Section CSS */
 .calculator-main {
   background: #fff;
   padding: 60px 0;
@@ -285,7 +284,6 @@ input:focus {
 }
 .calculator-main h1 {
   margin: 0 0 30px;
-
   font-size: 28px;
 }
 .center-btns {
@@ -298,7 +296,6 @@ input:focus {
   margin-left: 5px;
   margin-right: 5px;
 }
-/* Other Popular Products Section CSS */
 .products-main {
   background: #fff;
   padding: 40px 0 10px;
@@ -308,7 +305,6 @@ input:focus {
 }
 .products-main h1 {
   margin: 0 0 30px;
-
   font-size: 28px;
 }
 .prod-sec {
@@ -336,13 +332,12 @@ input:focus {
   padding-top: 10px;
 }
 .prod-sec a .outerborder {
-  /* background: url('../img/blue-ring_old.svg') no-repeat center; */
   display: inline-block;
   text-align: center;
   width: 120px;
   height: 120px;
   line-height: 116px;
-  border: 7px solid #891a1d;
+  border: 7px solid var(--primary);
   -webkit-border-radius: 100px;
   -o-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -359,9 +354,8 @@ input:focus {
   height: 120px;
   line-height: 110px;
 }
-/* Quicklinks Section CSS */
 .quicklinks-main {
-  background: #891a1d url("../img/bg-footer.png") 50% 100% no-repeat;
+  background: var(--primary) url("../img/bg-footer.png") 50% 100% no-repeat;
   padding: 40px 0;
   text-align: center;
   display: none;
@@ -385,13 +379,10 @@ input:focus {
   display: inline-block;
   vertical-align: middle;
   transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
   transition-property: transform;
-  -webkit-box-shadow: 0px 1px 14px 0px rgba(117, 20, 23, 1);
-  -moz-box-shadow: 0px 1px 14px 0px rgba(117, 20, 23, 1);
   box-shadow: 0px 1px 14px 0px rgba(117, 20, 23, 1);
   padding: 30px;
   color: #333;
@@ -410,7 +401,7 @@ input:focus {
   transform: translate3d(0, 0, 0);
 }
 .click-box.effect-sadie:hover i {
-  fill: #8a1b1e;
+  fill: var(--primary);
   transform: translate3d(0, -50%, 0) translate3d(0, -15px, 0);
 }
 .click-box.effect-sadie:hover h5 {
@@ -420,8 +411,6 @@ input:focus {
 .click-box.effect-sadie:hover p {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-transform: translateZ(0) scale(1, 1);
   font-size: 14px;
 }
 .click-box .icon-ring {
@@ -467,7 +456,7 @@ input:focus {
 .click-box.effect-sadie h5 {
   transition: transform 0.35s, color 0.35s;
   transform: translate3d(0, 0, 0);
-  color: #8a1b1e;
+  color: var(--primary);
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -485,10 +474,9 @@ input:focus {
 }
 .blue {
   background: 0 0;
-  color: #8a1b1e !important;
-  fill: #8a1b1e;
+  color: var(--primary) !important;
+  fill: var(--primary);
 }
-/* Footer CSS */
 .footer-main {
   padding: 20px 0;
   background: #333;
@@ -559,7 +547,6 @@ input:focus {
   color: #cdf6f3;
   line-height: 13px;
 }
-/* Section main css */
 .main-section {
   background: #f2f2f2;
   width: 100%;
@@ -568,7 +555,6 @@ input:focus {
   margin: 0;
   position: relative;
 }
-/* Form CSS */
 .form-main {
   padding: 60px 0 60px;
   position: relative;
@@ -577,7 +563,6 @@ input:focus {
 }
 .form-main h1 {
   float: left;
-
   font-size: 28px;
 }
 .form-main .disclosure-sec {
@@ -616,29 +601,34 @@ input:focus {
   text-align: center;
   font-size: 24px;
   border: 0 none;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fe8215+0,fe8215+18,fa7f14+25,c45e05+74,bd5a03+84,bd5a03+100 */
-  background: #fe8215; /* Old browsers */
-  background: -moz-linear-gradient(top, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe8215', endColorstr='#bd5a03',GradientType=0 ); /* IE6-9 */
+  background: #fe8215;
+  background: -moz-linear-gradient(top, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%);
+  background: -webkit-linear-gradient(top, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%);
+  background: linear-gradient(to bottom, #fe8215 0%, #fe8215 18%, #fa7f14 25%, #c45e05 74%, #bd5a03 84%, #bd5a03 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe8215', endColorstr='#bd5a03',GradientType=0 );
 }
 .radio .button_back:hover {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bd5a03+0,bd5a03+16,c45e05+26,fa7f14+75,fe8215+82,fe8215+100 */
-  background: #bd5a03; /* Old browsers */
-  background: -moz-linear-gradient(top, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd5a03', endColorstr='#fe8215',GradientType=0 ); /* IE6-9 */
+  background: #bd5a03;
+  background: -moz-linear-gradient(top, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%);
+  background: -webkit-linear-gradient(top, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%);
+  background: linear-gradient(to bottom, #bd5a03 0%, #bd5a03 16%, #c45e05 26%, #fa7f14 75%, #fe8215 82%, #fe8215 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd5a03', endColorstr='#fe8215',GradientType=0 );
 }
 .radio .button_payment {
-  background: #8a1b1e;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  font-size: 22px;
+  background: none;
+  color: var(--primary);
 }
-.radio .button_payment:hover {
-  background: #a42327;
+.radio .text {
+  font-size: 16px;
+  font-weight: 600;
 }
 .radio .button_payment_current {
-  background: #d92027 !important;
+  background: var(--primary);
+  color: #fff;
 }
 .button_back .sprites.continueIcon {
   float: left;
@@ -699,7 +689,7 @@ input[type="checkbox"] {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8a1b1e;
+  border: 2px solid var(--primary);
   padding: 0 15px;
 }
 .form-main select.form-control {
@@ -711,7 +701,7 @@ input[type="checkbox"] {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8a1b1e;
+  border: 2px solid var(--primary);
   padding: 0 15px;
 }
 .subtext {
@@ -721,7 +711,6 @@ input[type="checkbox"] {
   text-align: center;
   margin: 0 auto 20px;
 }
-/*custom checkbox */
 .checkbox-sec {
   display: inline-block;
   position: relative;
@@ -735,15 +724,11 @@ input[type="checkbox"] {
   -ms-user-select: none;
   user-select: none;
 }
-
-/* Hide the browser's default checkbox */
 .checkbox-sec input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
-
-/* Create a custom checkbox */
 .checkmark {
   position: absolute;
   top: 0;
@@ -757,8 +742,6 @@ input[type="checkbox"] {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-
-/* On mouse-over, add a grey background color */
 .checkbox-sec:hover input ~ .checkmark {
   background-color: transparent;
   border: 1px solid #31ada5;
@@ -768,25 +751,17 @@ input[type="checkbox"] {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-
-/* When the checkbox is checked, add a blue background */
 .checkbox-sec input:checked ~ .checkmark {
   background-color: #31ada5;
 }
-
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
-/* Show the checkmark when checked */
 .checkbox-sec input:checked ~ .checkmark:after {
   display: block;
 }
-
-/* Style the checkmark/indicator */
 .checkbox-sec .checkmark:after {
   left: 10px;
   top: 7px;
@@ -820,15 +795,12 @@ input[type="checkbox"] {
   bottom: -30px;
   font-size: 18px;
 }
-
 .radio-btn-sect {
   margin: 0 auto;
   text-align: center;
   display: inline-block;
   width: 100%;
 }
-
-/* Custom radio buttons css here */
 .radio-container {
   display: block;
   position: relative;
@@ -845,61 +817,42 @@ input[type="checkbox"] {
   -ms-user-select: none;
   user-select: none;
 }
-
-/* Hide the browser's default radio button */
 .radio-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   left: 6px;
 }
-
-/* Create a custom radio button */
 .checkmark {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #aeaeae;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border: 2px solid var(--primary);
   border-radius: 50%;
+  transition: all 0.3s;
 }
-
-/* On mouse-over, add a grey background color */
 .radio-container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #e7e7e7;
 }
-
-/* When the radio button is checked, add a blue background */
-.radio-container input:checked ~ .checkmark {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d71a21+0,d31a21+16,c21a20+35,951b1e+76,8b1b1e+90,8a1b1e+100 */
-  background: rgb(215, 26, 33); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(215, 26, 33, 1) 0%, rgba(211, 26, 33, 1) 16%, rgba(194, 26, 32, 1) 35%, rgba(149, 27, 30, 1) 76%, rgba(139, 27, 30, 1) 90%, rgba(138, 27, 30, 1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(215, 26, 33, 1) 0%, rgba(211, 26, 33, 1) 16%, rgba(194, 26, 32, 1) 35%, rgba(149, 27, 30, 1) 76%, rgba(139, 27, 30, 1) 90%, rgba(138, 27, 30, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(215, 26, 33, 1) 0%, rgba(211, 26, 33, 1) 16%, rgba(194, 26, 32, 1) 35%, rgba(149, 27, 30, 1) 76%, rgba(139, 27, 30, 1) 90%, rgba(138, 27, 30, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d71a21', endColorstr='#8a1b1e',GradientType=0 ); /* IE6-9 */
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.radio-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
 .radio-container .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 7px;
-  height: 7px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: white;
+  opacity: 0;
+  background: var(--primary);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-out;
+}
+.radio-container input:checked ~ .checkmark:after {
+  opacity: 1;
 }
 .width_auto {
   width: auto !important;
@@ -930,86 +883,74 @@ input[type="checkbox"] {
 }
 .radio-main .line_bg {
   position: absolute;
-  width: 69%;
-  height: 10px;
+  width: calc(100% - 200px);
+  height: 6px;
   background: #ddd;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  border-radius: 25px;
-  top: 8px;
+  border-radius: 3px;
+  top: 7px;
   left: 0;
   right: 0;
   text-align: center;
   margin: 0 auto;
 }
-/* Home loan css */
+.slider-box .slider.slider-horizontal .slider-track {
+  background: none;
+  box-shadow: none;
+}
+.slider-box .slider.slider-horizontal .slider-selection,
+.slider-box .slider.slider-horizontal .slider-track-low,
+.slider-box .slider.slider-horizontal .slider-track-high {
+  height: 6px;
+  top: 3px;
+  background: #ddd;
+  box-shadow: none;
+}
+.slider-box .slider.slider-horizontal .slider-selection {
+  background: #d92027;
+}
+.slider-box .slider.slider-horizontal .slider-handle {
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  background: var(--primary);
+  cursor: grab;
+}
+.slider-box .slider.slider-horizontal .slider-handle:active {
+  cursor: grabbing;
+}
 .form-main .text-head {
   float: none;
-
   font-size: 28px;
   text-align: center;
   margin-bottom: 40px;
 }
 .offer-purchase_house {
-  background-image: url(../img/purchase_house.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/real-estate.png);
 }
 .offer-refinance_house {
-  background-image: url(../img/refinance_house.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/home2.png);
 }
 .offer-home_equity_house {
-  background-image: url(../img/home_equity_house.png);
-  background-size: 28%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/buy-home.png);
 }
 .offer-reverse_mtg_house {
-  background-image: url(../img/reverse_mtg_house.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/transaction.png);
 }
 .offer-townhouse {
-  background-image: url(../img/townhouse.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/townhouse2.png);
 }
 .offer-condminium {
-  background-image: url(../img/condo.png);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/condominium.png);
 }
 .offer-multi_family_home {
-  background-image: url(../img/duplex.png);
-  background-size: 72%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/duplexx.png);
 }
 .offer-mobile_home {
-  background-image: url(../img/mobile_home.png);
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/*selected bevel css*/
-.selected-circ .inner-bevel {
-  background: #7bc043 !important;
-}
-.selected-circ .inner-bevel:hover {
-  background: #7bc043 !important;
+  background-image: url(../img/tiny-house2.png);
 }
 .selected-circ .inner-bevel .second-bevel {
   background: #7bc043 !important;
+  pointer-events: none;
 }
 .selected {
   background-image: url(../img/white_yes_check.png) !important;
@@ -1021,99 +962,35 @@ input[type="checkbox"] {
   color: #fff !important;
 }
 .offer-primary_home {
-  background-image: url(../img/primary_home.png);
-  background-size: 24%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/primary.png);
 }
 .offer-secondary_home {
-  background-image: url(../img/secondary_home.png);
-  background-size: 56%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/mail-box.png);
 }
 .offer-rental_property {
-  background-image: url(../img/rental_property.png);
+  background-image: url(../img/rent.png);
   background-size: 30%;
   background-repeat: no-repeat;
   background-position: center;
 }
-.home-loan .radio .button {
-  border-radius: 2px;
-  width: 520px;
-  display: inline-block;
-  padding: 18px;
-  color: #fff;
-  line-height: 20px;
-  min-height: 20px;
-  margin-bottom: 0;
-  cursor: pointer;
-  text-align: center;
-  font-size: 20px;
-  border: 0 none;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#42e2d8+0,42e2d8+7,40dad0+19,3dccc3+33,309e97+72,2d908a+88,2b8c86+95,2b8c86+100 */
-  background: #42e2d8; /* Old browsers */
-  background: -moz-linear-gradient(top, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #42e2d8 0%, #42e2d8 7%, #40dad0 19%, #3dccc3 33%, #309e97 72%, #2d908a 88%, #2b8c86 95%, #2b8c86 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e2d8', endColorstr='#2b8c86',GradientType=0 ); /* IE6-9 */
-}
-.home-loan .radio .button:hover {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2b8c86+0,2b8c86+5,2d908a+12,309e97+28,3dccc3+67,40dad0+81,42e2d8+93,42e2d8+100 */
-  background: #2b8c86; /* Old browsers */
-  background: -moz-linear-gradient(top, #2b8c86 0%, #2b8c86 5%, #2d908a 12%, #309e97 28%, #3dccc3 67%, #40dad0 81%, #42e2d8 93%, #42e2d8 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #2b8c86 0%, #2b8c86 5%, #2d908a 12%, #309e97 28%, #3dccc3 67%, #40dad0 81%, #42e2d8 93%, #42e2d8 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #2b8c86 0%, #2b8c86 5%, #2d908a 12%, #309e97 28%, #3dccc3 67%, #40dad0 81%, #42e2d8 93%, #42e2d8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b8c86', endColorstr='#42e2d8',GradientType=0 ); /* IE6-9 */
-}
-.score .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .title {
-  width: 80%;
-  font-size: 14px;
-  color: #d92027;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 18px auto 0;
-}
 .offer-excellent_credit {
-  background-image: url(../img/excellent_credit.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/cool.png);
 }
 .offer-good_credit {
-  background-image: url(../img/good_credit.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/smiley.png);
 }
 .offer-fair_credit {
-  background-image: url(../img/fair_credit.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/straight.png);
 }
 .offer-poor_credit {
-  background-image: url(../img/poor_credit.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/meh.png);
 }
 .offer-yes_check {
-  background-image: url(../img/yes_check.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/yes.png);
 }
 .offer-no_slash {
-  background-image: url(../img/no_slash.png);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/forbidden.png);
 }
-
-/* Mortgage calc page css here */
 .calc-main {
   padding: 10px 0 0px;
   position: relative;
@@ -1123,12 +1000,11 @@ input[type="checkbox"] {
   text-align: center;
   font-size: 28px;
   margin: 10px 0 20px;
-
   color: #000;
   font-weight: 500;
 }
 .top-head {
-  background: #8a1b1e;
+  background: var(--primary);
   padding: 10px;
   color: #fff;
   font-size: 18px;
@@ -1163,7 +1039,7 @@ input[type="checkbox"] {
 .white-box label {
   font-size: 15px;
   display: block;
-  color: #8a1b1e;
+  color: var(--primary);
 }
 .white-box .input {
   background: #fff;
@@ -1179,7 +1055,7 @@ input[type="checkbox"] {
   bottom: 18px;
   vertical-align: middle;
   font-size: 14px;
-  color: #8a1b1e;
+  color: var(--primary);
 }
 .chk-box {
   padding: 10px 0;
@@ -1209,8 +1085,8 @@ input[type="checkbox"] {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8a1b1e;
-  background: #8a1b1e;
+  border: 2px solid var(--primary);
+  background: var(--primary);
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -1282,14 +1158,14 @@ input[type="checkbox"] {
 .formula-sec {
   background: rgba(138, 27, 30, 0.1);
   padding: 10px;
-  color: #8a1b1e;
+  color: var(--primary);
   font-size: 16px;
   line-height: 22px;
   border-radius: 5px;
   text-align: left;
 }
 .formula-inner {
-  border-bottom: 1px dashed #8a1b1e;
+  border-bottom: 1px dashed var(--primary);
   padding: 0 0 10px;
   margin: 0 0 10px;
 }
@@ -1300,22 +1176,22 @@ input[type="checkbox"] {
 }
 .formula-inner span {
   font-size: 24px;
-  color: #8a1b1e;
+  color: var(--primary);
 }
 .formula-inner a {
-  color: #8a1b1e;
+  color: var(--primary);
   font-weight: bold;
   text-decoration: underline;
 }
 .formula-inner-head {
-  border-bottom: 1px solid #8a1b1e;
+  border-bottom: 1px solid var(--primary);
   padding: 10px 0 5px;
   margin: 10px 0 10px;
 }
 .value-box {
   background: rgba(197, 207, 234, 0.6);
   padding: 10px;
-  color: #8a1b1e;
+  color: var(--primary);
   font-size: 16px;
   line-height: 22px;
   -webkit-border-radius: 5px;
@@ -1332,4 +1208,10 @@ input[type="checkbox"] {
 .value-inner .value {
   font-size: 14px;
   color: #000;
+}
+.popup-inner h2 {
+  margin-bottom: 20px;
+}
+.popup-inner p {
+  font-size: 15px;
 }
