@@ -36,12 +36,13 @@ class Auto extends CI_Controller {
 
         $this->session->set_userdata('panel', 'frontend');
 
-        $this->template->view('step1_view');
+        $this->template->view('mccu/auto/auto_step1_view');
     }
 
     public function step1() {
 
-        $this->load->view('step1_view');
+        //$this->load->view('step1_view');
+        $this->load->view('default/mccu/auto/auto_step1_view');
     }
 
     public function step2($id = 0) {
@@ -62,9 +63,8 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        // echo '<pre>';
-        // print_r($this->session->userdata());
-        $this->load->view('step3_view');
+        //$this->load->view('step3_view');
+        $this->load->view('default/mccu/auto/auto_step3_view');
     }
 
     public function step4($id = 0, $pre_approved = 0) {
@@ -76,12 +76,12 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-        $this->load->view('step4_view');
+        //$this->load->view('step4_view');
+        $this->load->view('default/mccu/auto/auto_step4_view');
     }
 
-    public function step5($pre_tax_income = 0) {
+    public function step5($pre_tax_income = 0) 
+    {
 
         if ($pre_tax_income) {
 
@@ -99,9 +99,8 @@ class Auto extends CI_Controller {
         if (isset($this->session->userdata['userdata']['state'])) {
             $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
         }
-//echo '<pre>';
-        // print_r($this->session->userdata());
-        $this->load->view('step5_view', $data);
+        //$this->load->view('step5_view', $data);
+        $this->load->view('default/mccu/auto/auto_step5_view');
     }
 
     public function getcity($state_id = 0) {
@@ -123,10 +122,8 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-
-        $this->load->view('step6_view');
+        //$this->load->view('step6_view');
+        $this->load->view('default/mccu/auto/auto_step6_view');
     }
 
     public function step7($month = 0, $day = 0, $year = 0, $ssn = '') {
@@ -141,13 +138,14 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-
-        $this->load->view('step7_view');
+        
+        //$this->load->view('step7_view');
+        //$this->load->view('default/mccu/auto/auto_step7_view');
+        $this->load->view('default/mccu/auto/auto_step8_view');
     }
 
     public function step8($email = '', $phone = '') {
+        $this->load->view('default/mccu/auto/auto_step8_view');
         if ($email) {
             $data = array(
                 'email' => $email,

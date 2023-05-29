@@ -224,7 +224,7 @@ input:focus {
   background-repeat: no-repeat;
   background-position: center;
 }
-.offer-personal {
+.offer-recreational{
   background-image: url(../img/auto-ref.svg);
   background-size: 80%;
   background-repeat: no-repeat;
@@ -244,6 +244,12 @@ input:focus {
 .offer-business {
   background-image: url(../img/tactile-business-icon.svg);
   background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.offer-personal {
+  background-image: url(../img/tactile-personal-icon.svg);
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
 }

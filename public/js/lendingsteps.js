@@ -258,41 +258,60 @@ function step3(id) {
 }
 
 function step4() {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Current Employer');
+    alert('i am here');
+    //ga('send', 'event', 'BMTCCU', 'auto loan', 'Current Employer');
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
-    if ($('input[name=cemployer]').val() == '')
+    if ($('input[name=firstname]').val() == '')
     {
 
-        $('#err1').html('Your Current Employer is empty');
-        $('#cemployer').focus();
+        $('#err1').html('Your First Name is empty');
+        $('#firstname').focus();
         return false;
-    } else if (!RE.test($("#cemployer").val()))
+    } else if (!RE.test($("#firstname").val()))
     {
 
-        $('#err1').html('Your Current Employer should have letter only ');
-        $('#cemployer').focus();
+        $('#err1').html('Your First Name should have letter only ');
+        $('#firstname').focus();
         return false;
-    } else if ($('input[name=job_title]').val() == '')
+    }
+    else if ($('input[name=lastname]').val() == '')
     {
 
-        $('#err2').html('How many years have you worked there is empty');
-        $('#job_title').focus();
+        $('#err2').html('Your First Name is empty');
+        $('#lastname').focus();
+        $('#err_lastname').html('');
+        return false;
+    } 
+    else if ($('input[name=lastname]').val() == '')
+    {
+
+        $('#err2').html('Your Last Name should have letter only ');
+        $('#lastname').focus();
+        return false;
+    } 
+    else if ($('input[name=phone]').val() == '')
+    {
+
+        $('#err3').html('Your phone is empty');
+        $('#phone').focus();
         $('#err1').html('');
+        $('#err2').html('');
         return false;
-    } else if (!RE1.test($("#job_title").val()))
+    } else if (!RE1.test($('#phone').val()))
     {
 
-        $('#err2').html('Only digits allowed ');
-        $('#job_title').focus();
+        $('#err3').html('Your phone number should be atleast 10 digit');
+        $('#phone').focus();
         $('#err1').html('');
+        $('#err2').html('');
         return false;
     } else
     {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
+            url: base_url + "auto/step4/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=4");
