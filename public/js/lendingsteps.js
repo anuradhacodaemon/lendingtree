@@ -2,10 +2,14 @@ var base_url = $('#domain').val();
 if (window.performance) {
   console.info("window.performance work's fine on this browser");
 }
+    var urlParams = new URLSearchParams(window.location.search);
+    var step = parseInt(urlParams.get('step'));
+
+    console.log("The step from lending>>>"+ step);
   if (performance.navigation.type == 1) {
-   
+    
     if (window.location.search.indexOf('step=1') > -1) {
-         
+    $('#step_count').val(1);    
       $.ajax({
             type: "GET",
             url: base_url +"auto/step1",
@@ -18,7 +22,7 @@ if (window.performance) {
         }); 
     }
     if (window.location.search.indexOf('step=2') > -1) {
-       
+        $('#step_count').val(2); 
        $.ajax({
             type: "GET",
             url: base_url +"auto/step2",
@@ -30,20 +34,21 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=3') > -1) {
-       
-        $.ajax({
-            type: "GET",
-            url: base_url +"auto/step3",
-            success: function (data)
-            {
+     if (window.location.search.indexOf('step=3') > -1) {
+        $('#step_count').val(3); 
+         $.ajax({
+             type: "GET",
+             url: base_url +"auto/step3",
+             success: function (data)
+             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
+                 $('#container').html(data);
+                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+             }
+         });
+     }
     if (window.location.search.indexOf('step=4') > -1) {
+      $('#step_count').val(4);  
        $.ajax({
             type: "GET",
             url: base_url +"auto/step4",
@@ -57,6 +62,7 @@ if (window.performance) {
         });
     }
     if (window.location.search.indexOf('step=5') > -1) {
+    $('#step_count').val(5);  
        $.ajax({
             type: "GET",
             url: base_url +"auto/step5",
@@ -69,6 +75,7 @@ if (window.performance) {
         });
     }
    if (window.location.search.indexOf('step=6') > -1) {
+       $('#step_count').val(6);  
        $.ajax({
             type: "GET",
             url: base_url +"auto/step6",
@@ -81,9 +88,49 @@ if (window.performance) {
         });
     }
     if (window.location.search.indexOf('step=7') > -1) {
+        $('#step_count').val(7);   
        $.ajax({
             type: "GET",
             url: base_url +"auto/step7",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }    
+    if (window.location.search.indexOf('step=8') > -1) {
+        $('#step_count').val(8);   
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }   
+    if (window.location.search.indexOf('step=9') > -1) {
+        $('#step_count').val(9);   
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    } 
+    if (window.location.search.indexOf('step=10') > -1) {
+        $('#step_count').val(9);   
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step10",
             success: function (data)
             {
 
@@ -160,7 +207,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=5') > -1) {
+   /* if (window.location.search.indexOf('step=5') > -1) {
         $.ajax({
             type: "GET",
             url: base_url +"auto/step5",
@@ -171,7 +218,7 @@ if (window.performance) {
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
-    }
+    }*/
      if (window.location.search.indexOf('step=6') > -1) {
         $.ajax({
             type: "GET",
@@ -242,7 +289,7 @@ function step2(id) {
     });
 
 }
-function step3(id) {
+/*function step3(id) {
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     $.ajax({
         type: "GET",
@@ -255,10 +302,9 @@ function step3(id) {
         }
     });
 
-}
+}*/
 
 function step4() {
-    alert('i am here');
     //ga('send', 'event', 'BMTCCU', 'auto loan', 'Current Employer');
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -323,7 +369,7 @@ function step4() {
 }
 
 
-function step5() {
+/*function step5() {
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Pre-Tax Monthly Income');
     var RE = /^\d*\.?\d*$/;
    
@@ -353,7 +399,7 @@ function step5() {
 
     }
 
-}
+}*/
 function step6() {
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Your Details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;

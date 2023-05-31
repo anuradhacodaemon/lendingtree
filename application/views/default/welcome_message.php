@@ -1,6 +1,5 @@
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
-<<<<<<< HEAD
     <div class="container">       
         <div class="row">
             <!--<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
@@ -74,66 +73,7 @@
                                 </button>
                             </a>
                         </div>
-=======
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-        <div class="logo">
-          <a href="<?php echo BASE_URL; ?>">
-            <img src="<?php echo BASE_URL; ?>public/html/img/mccu_logo.png" alt="Logo"
-              title="Coastal Community community federal credit union" class="img-responsive" />
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-        <div class="offer-main clearfix">
-          <h1>How can we help you today?</h1>
-          <div class="offer-cont" style="display:block">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <a href="<?php echo BASE_URL . 'auto?step=1' ?>"
-                onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto loan');">
-                <button class="offer-circ">
-                  <div class="outer-circ">
-                    <div class="inner-bevel">
-                      <div class="second-bevel">
-                        <div class="offer-img offer-auto"></div>
-                        <p class="title">AUTO LOANS</p>
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              </a>
-            </div>
-          </div>
-          <div class="offer-cont" style="display:block">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>"
-                onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto refinance');">
-                <button class="offer-circ">
-                  <div class="outer-circ">
-                    <div class="inner-bevel">
-                      <div class="second-bevel">
-                        <div class="offer-img offer-personal"></div>
-                        <p class="title">AUTO REFINANCE</p>
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              </a>
-            </div>
-          </div>
-          <div class="offer-cont" style="display:block">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>"
-                onClick="ga('send', 'event', 'BMTCCU', 'click', 'home loan');">
-                <button class="offer-circ">
-                  <div class="outer-circ">
-                    <div class="inner-bevel">
-                      <div class="second-bevel">
-                        <div class="offer-img offer-home-loan"></div>
-                        <p class="title">HOME LOANS</p>
-                      </div>
->>>>>>> 32763dcf694f400f2e72e01a52f824524410f076
+
                     </div>
                   </div>
                 </button>

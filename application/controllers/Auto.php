@@ -43,9 +43,519 @@ class Auto extends CI_Controller {
 
         //$this->load->view('step1_view');
         $this->load->view('default/mccu/auto/auto_step1_view');
+        //$this->load->view('default/mccu/auto/auto_step8_view');
+        //$this->load->view('default/mccu/auto/auto_step9_view');
+        //$this->load->view('default/mccu/auto/auto_step10_view');
+        //$this->load->view('default/mccu/auto/auto_step10_1_view');
+        //$this->load->view('default/mccu/auto/auto_step11_view');
+        //$this->load->view('default/mccu/auto/auto_step11_1_view');
+        //$this->load->view('default/mccu/auto/auto_step12_view');
+        //$this->load->view('default/mccu/auto/auto_step13_view');
+        //$this->load->view('default/mccu/auto/auto_step14_view');
+        //$this->load->view('default/mccu/auto/auto_step15_view');
+        //$this->load->view('default/mccu/auto/auto_step16_view');
+        //$this->load->view('default/mccu/auto/auto_step17_view');
+        //$this->load->view('default/mccu/auto/auto_step18_view');
+        //$this->load->view('default/mccu/auto/auto_step19_view');
+        //$this->load->view('default/mccu/auto/auto_step20_view');
+        //$this->load->view('default/mccu/auto/auto_step21_view');
+        //$this->load->view('default/mccu/auto/auto_step22_view');
+        //$this->load->view('default/mccu/auto/auto_step22_1_view');
+        //$this->load->view('default/mccu/auto/auto_step23_view');
+        //$this->load->view('default/mccu/auto/auto_step24_view');
+        //$this->load->view('default/mccu/auto/auto_step25_view');
+        //$this->load->view('default/mccu/auto/auto_step26_view');
+        //$this->load->view('default/mccu/auto/auto_step27_view');
+        //$this->load->view('default/mccu/auto/auto_step28_view');
+        //$this->load->view('default/mccu/auto/auto_step29_view');
+        //$this->load->view('default/mccu/auto/auto_step30_view');
+        //$this->load->view('default/mccu/auto/auto_step31_view');
+        //$this->load->view('default/mccu/auto/auto_step32_view');
+        //$this->load->view('default/mccu/auto/auto_step32_1_view');
+        //$this->load->view('default/mccu/auto/auto_step33_view');
+        //$this->load->view('default/mccu/auto/auto_step34_view');
+        //$this->load->view('default/mccu/auto/auto_step35_view');
+        //$this->load->view('default/mccu/auto/auto_step36_view');
+        //$this->load->view('default/mccu/auto/auto_step37_view');
+        //$this->load->view('default/mccu/auto/auto_step38_view');
+        //$this->load->view('default/mccu/auto/auto_step39_view');
+        //$this->load->view('default/mccu/auto/auto_step40_view');
+        //$this->load->view('default/mccu/auto/auto_step41_view');
+        //$this->load->view('default/mccu/auto/auto_step42_view');
+        //$this->load->view('default/mccu/auto/auto_step43_view');
+    }
+    /**
+     * My code starts from here
+     * 
+     * 
+    */
+    public function auto_step()
+    {
+        $step = $this->input->post('auto_step');
+        if($step == 1)
+        {
+            $rules = array(
+                array('field'=>'type_loan','label'=>'Loan Type','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('type_loan')) 
+                {
+                    $data = array(
+                        'type' => $this->input->post('type_loan')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=2';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                'type_loan' => form_error('type_loan')
+                );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 2)
+        {
+            $rules = array(
+                array('field'=>'req_amt','label'=>'Required Amount','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('req_amt')) 
+                {
+                    $data = array(
+                        'requested_amount ' => $this->input->post('req_amt')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=3';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                'req_amt' => form_error('req_amt')
+                );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 3)
+        {
+            $rules = array(
+                    array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
+                    array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
+                    array('field'=>'phone','label'=>'phone','rules'=>'required|numeric')
+                    );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('firstname')) 
+                {
+                    $data = array(
+                        'first_name' => $this->input->post('firstname'),
+                        'last_name' => $this->input->post('lastname'),
+                        'p_phone' => $this->input->post('phone')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=4';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                'firstname' => form_error('firstname'),
+                'lastname' => form_error('lastname'),
+                'phone' => form_error('phone'),
+                );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 4)
+        {
+            //echo $this->input->post('marital_status');
+            $this->form_validation->set_rules('marital_status', 'Radio Button', 'required');
+            //$this->form_validation->set_rules('marital_status', 'Radio Button', 'required');
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('marital_status')) 
+                {
+                    $data = array(
+                        'marital_status' => $this->input->post('marital_status')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=5';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'marital_status' => form_error('marital_status')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 5)
+        {
+            $rules = array(
+                array('field'=>'address','label'=>'Address','rules'=>'required'),
+                array('field'=>'living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
+                array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required|numeric')
+                );
+                $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('address')) 
+                {
+                    $data = array(
+                        'p_address' => $this->input->post('address'),
+                        'monthly_pay ' => $this->input->post('monthly_pay'),
+                        'p_years_been_there_on_address' => $this->input->post('living_there_years')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=6';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'address' => form_error('address'),
+                            'living_there_years' => form_error('living_there_years'),
+                            'monthly_pay' => form_error('monthly_pay'),
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 6)
+        {
+            //echo $this->input->post('home_status');
+            $this->form_validation->set_rules('home_status', 'Radio Button', 'required');
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('home_status')) 
+                {
+                    $data = array(
+                        'buying_own_rent' => $this->input->post('home_status')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=7';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'home_status' => form_error('home_status')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 7)
+        {
+            $rules = array(
+                array('field'=>'relative_firstname','label'=>'Relative Name','rules'=>'required'),
+                array('field'=>'relative_relation','label'=>'Relative Relation','rules'=>'required'),
+                array('field'=>'relative_address','label'=>'Relative Address','rules'=>'required'),
+                array('field'=>'relatives_phone','label'=>'Relative Phone','rules'=>'required|numeric')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('relative_firstname')) 
+                {
+                    $data = array(
+                        'nearest_relative' => $this->input->post('relative_firstname'),
+                        'relation_with_relative' => $this->input->post('relative_relation'),
+                        'relatives_live_address' => $this->input->post('relative_address'),
+                        'relatives_phone' => $this->input->post('relatives_phone')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=8';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'relative_firstname' => form_error('relative_firstname'),
+                            'relative_relation' => form_error('relative_relation'),
+                            'relative_address' => form_error('relative_address'),
+                            'relatives_phone' => form_error('relatives_phone')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 8)
+        {
+            $rules = array(
+                array('field'=>'personal_refrence','label'=>'Personal Refrence','rules'=>'required'),
+                array('field'=>'personal_refrence_phone','label'=>'Personal Refrence Phone','rules'=>'required|numeric'),
+                array('field'=>'personal_refrence_address','label'=>'Personal Refrence Address','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('personal_refrence')) 
+                {
+                    $data = array(
+                        'personal_refrence' => $this->input->post('personal_refrence'),
+                        'personal_refrence_phone' => $this->input->post('personal_refrence_phone'),
+                        'personal_refrence_address' => $this->input->post('personal_refrence_address')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=9';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'personal_refrence' => form_error('personal_refrence'),
+                            'personal_refrence_phone' => form_error('personal_refrence_phone'),
+                            'personal_refrence_address' => form_error('personal_refrence_address')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 9)
+        {
+            $rules = array(
+                array('field'=>'employer_name','label'=>'Employer Name','rules'=>'required'),
+                array('field'=>'employer_job_title','label'=>'Employer Job title','rules'=>'required'),
+                array('field'=>'supervisor_name','label'=>'Supervisor name','rules'=>'required'),
+                array('field'=>'working_years','label'=>'Working years','rules'=>'required|numeric'),
+                array('field'=>'business_address','label'=>'Business address','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('employer_name')) 
+                {
+                    $data = array(
+                        'current_employer' => $this->input->post('employer_name'),
+                        'job_title' => $this->input->post('employer_job_title'),
+                        'supervisor_name' => $this->input->post('supervisor_name'),
+                        'how_long_your_working' => $this->input->post('working_years'),
+                        'address_of_business' => $this->input->post('business_address')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=10';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'employer_name' => form_error('employer_name'),
+                            'employer_job_title' => form_error('employer_job_title'),
+                            'supervisor_name' => form_error('supervisor_name'),
+                            'working_years' => form_error('working_years'),
+                            'business_address' => form_error('business_address')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 10)
+        {
+            $rules = array(
+                array('field'=>'monthly_income_pre_tax','label'=>'Monthly Income','rules'=>'required|numeric')
+                );
+
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                $config['upload_path'] = './userDocuments/'; // Specify the directory to save the uploaded files
+                $config['allowed_types'] = 'pdf|png|txt'; // Specify the allowed file types
+                $this->load->library('upload', $config);
+                $Cfile = $_FILES['upload_user_doc']['name'];
+                $name = explode(".", $_FILES['upload_user_doc']['name']);
+                $file_ext = strtolower(end($name));
+                $time = time();
+                $new_name = $time . '.' . $file_ext;
+                //success
+                if ($this->input->post('monthly_income_pre_tax')) 
+                {
+                    $data = array(
+                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax'),
+                        'upload_document_proof' => $new_name
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+              
+                if(!empty($Cfile))
+                {
+                    if(!$this->upload->do_upload('upload_user_doc')) 
+                    {
+                        $error = $this->upload->display_errors();
+                        $errors = array(
+                            'monthly_income_pre_tax' => $error
+                            );
+                        $data['error'] = 1;
+                        $data['error_messages'] = $errors;
+                        echo json_encode($data);
+                    }
+                    else{
+                            $upload_data = $this->upload->data();
+                            $file_name = $upload_data['file_name'];
+                            $file_path = $upload_data['full_path'];
+                            $new_file_path = $upload_data['file_path'] . $new_name;
+                            rename($file_path, $new_file_path);
+                        }
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=10_1';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'monthly_income_pre_tax' => form_error('monthly_income_pre_tax')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }    
+        }
+        if($step == 10.1)
+        {
+            //echo $this->input->post('waiver_payment_value');
+            $rules = array(
+                array('field'=>'waiver_payment_value','label'=>'Waiver laid off','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('waiver_payment_value')) 
+                {
+                    $value = $this->input->post('waiver_payment_value');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'laid_off_for_payment_waived' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=11';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'waiver_payment_value' => form_error('waiver_payment_value')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        //END OF FUnction
     }
 
-    public function step2($id = 0) {
+    /**
+     * These functions only shows the view to the users
+     * 
+     * 
+     */
+    public function step2()
+    {
+        $this->load->view('default/mccu/auto/auto_step2_view');
+    }
+    //
+    public function step3() 
+    {
+        $this->load->view('default/mccu/auto/auto_step3_view');
+    }
+    //
+    public function step4()
+    {
+        $this->load->view('default/mccu/auto/auto_step4_view');
+    }
+    //
+    public function step5()
+    {
+        $this->load->view('default/mccu/auto/auto_step5_view');
+    }
+    public function step6()
+    {
+        $this->load->view('default/mccu/auto/auto_step6_view');
+    }
+    public function step7()
+    {
+        $this->load->view('default/mccu/auto/auto_step7_view');
+    }
+    public function step8()
+    {
+        $this->load->view('default/mccu/auto/auto_step8_view');
+    }
+    public function step9()
+    {
+        $this->load->view('default/mccu/auto/auto_step9_view');
+    }
+    public function step10()
+    {
+        $this->load->view('default/mccu/auto/auto_step10_view');
+    }
+    public function step10_1()
+    {
+        $this->load->view('default/mccu/auto/auto_step10_1_view');
+    }
+    public function step11()
+    {
+        $this->load->view('default/mccu/auto/auto_step11_view');
+    }
+
+    /**
+     * My code ends here
+     * 
+     * 
+    */
+   
+
+    /*public function step2($id = 0) {
         if ($id) {
             $data = array(
                 'type' => $id
@@ -53,21 +563,11 @@ class Auto extends CI_Controller {
             $this->session->set_userdata($data);
         }
         $this->load->view('step2_view');
-    }
+    }*/
 
-    public function step3($id = 0) {
-        if ($id) {
-            $data = array(
-                'requested_amount' => $id
-            );
+   
 
-            $this->session->set_userdata($data);
-        }
-        //$this->load->view('step3_view');
-        $this->load->view('default/mccu/auto/auto_step3_view');
-    }
-
-    public function step4($id = 0, $pre_approved = 0) {
+    /*public function step4($id = 0, $pre_approved = 0) {
         if ($id) {
             $data = array(
                 'current_employer' => $id,
@@ -78,9 +578,9 @@ class Auto extends CI_Controller {
         }
         //$this->load->view('step4_view');
         $this->load->view('default/mccu/auto/auto_step4_view');
-    }
+    }*/
 
-    public function step5($pre_tax_income = 0) 
+    /*public function step5($pre_tax_income = 0) 
     {
 
         if ($pre_tax_income) {
@@ -230,7 +730,7 @@ class Auto extends CI_Controller {
 
           $this->load->view('step6_view');
           }* */
-    }
+   /* }*/
 
     /** Please dont change the mailformat because template is coming from database * */
     public function mailformat($firstname, $lastname, $email) {

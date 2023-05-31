@@ -1,8 +1,10 @@
-<?php $getPhone=$this->loan_model->get_phone();?>
+<?php $getPhone=$this->loan_model->get_phone();
+
+?>
 <div class="header-main clearfix">
   <div class="container">
-    <a href="https://mccu.culoanportal.com/">
-      <img src="https://mccu.culoanportal.com/public/html/img/mccu_logo.png" alt="Logo"
+    <a href="<?php echo BASE_URL; ?>">
+      <img src="<?php echo BASE_URL; ?>public/html/img/mccu_logo.png" alt="Logo"
         title="Coastal Community community federal credit union">
     </a>
     <div class="number">Please call us at

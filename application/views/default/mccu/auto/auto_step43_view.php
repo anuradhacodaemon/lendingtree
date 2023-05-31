@@ -9,26 +9,28 @@
                     <div class="clearfix"></div>
                     <label class="control-label">Relative's Details</label>
                     <div class="row">
-                        <form id="user_docs" method="POST" enctype="multipart/form-data" onsubmit="return getFormId(this)">
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
-                        <input type="hidden" name="auto_step" value="10" id="auto_step" >
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['employment_monthly_income'])) echo $this->session->userdata['employment_monthly_income'] ?>" class="form-control width_100" id="monthly_income_pre_tax" >
+                                <input type="checkbox" name="i_represnt_accurate" value="<?php if (isset($this->session->userdata['i_represnt_accurate'])) echo $this->session->userdata['i_represnt_accurate'] ?>" class="form-control width_100" id="i_represnt_accurate" >
                                 <span id="err1" style="color: red"></span>
-                            </div>                           
+
+                            </div>
+                           
+                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="file" name="upload_user_doc"  value="<?php if (isset($this->session->userdata['upload_document_proof'])) echo $this->session->userdata['upload_document_proof'] ?>" class="form-control width_100" id="employer_job_title" >
-                                <span id="err2" style="color: red"></span>
+                                <input type="text" name="date_of_application" readonly="readonly" value="<?php echo date('m-d-Y') ?>" class="form-control width_100" id="date_of_application" >
+                                <span id="err4" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
+                           
+
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
-                            <input type="submit" value="Continue" class="button" >
+                                <button type="button" class="button" onclick="step6()">Continue<span class="continueIcon sprites"></span></button>
                                               <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
                                 -->
 
                             </div>   
                         </div>
-                        </
                     </div>
                 </div>
             </div>

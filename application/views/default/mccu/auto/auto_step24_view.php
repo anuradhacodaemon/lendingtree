@@ -10,33 +10,31 @@
                     <label class="control-label">Your Details</label>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <form id="p_details" method="post" onsubmit="return getFormId(this)">
-                        <input type="hidden" name="auto_step" value="3" id="auto_step" >
-                        <input type="hidden" name="formID" value="p_details" id="formID" >
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="firstname" placeholder="First name" value="<?php if (isset($this->session->userdata['first_name'])) echo $this->session->userdata['first_name'] ?>" class="form-control width_100" id="firstname" >
+                                <input type="text" name="cosigner_firstname" placeholder="Cosigner First name" value="<?php if (isset($this->session->userdata['cosigner_firstname'])) echo $this->session->userdata['cosigner_firstname'] ?>" class="form-control width_100" id="cosigner_firstname" >
                                 <span id="err1" style="color: red"></span>
 
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="lastname" placeholder="Last name" value="<?php if (isset($this->session->userdata['last_name'])) echo $this->session->userdata['last_name'] ?>" class="form-control width_100" id="lastname" >
+                                <input type="text" name="cosigner_lastname" placeholder="Cosigner Last name" value="<?php if (isset($this->session->userdata['cosigner_lastname'])) echo $this->session->userdata['cosigner_lastname'] ?>" class="form-control width_100" id="cosigner_lastname" >
                                 <span id="err2" style="color: red"></span>
 
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="phone" placeholder="phone" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone" maxlength="10">
+                                <input type="text" name="cosigner_phone" placeholder="Cosigner phone" value="<?php if (isset($this->session->userdata['cosigner_phone'])) echo $this->session->userdata['cosigner_phone'] ?>" class="form-control width_100" id="cosigner_phone" maxlength="10">
                                 <span id="err3" style="color: red"></span>
                             </div>
 
                     
                            
                             <div class="col-xs-12 col-sm-6 radio margbot_10">
-                                <input type="submit" value="Continue" class="button" >
+                                <button type="button" class="button" onclick="step4()">Continue<span class="continueIcon sprites"></span></button>
+                                              <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
+                                -->
 
-                            </div>  
-                            </form> 
+                            </div>   
                         </div>
                     </div>
                 </div>
