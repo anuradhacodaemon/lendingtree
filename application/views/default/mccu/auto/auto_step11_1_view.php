@@ -9,27 +9,24 @@
                     <div class="clearfix"></div>
                     <label class="control-label">Second Source of Income</label>
                     <div class="row">
+                    <form id="second_income" method="POST" onsubmit="return getFormId(this)">
+                        <input type="hidden" name="auto_step" value="11.1" id="auto_step" >
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="second_income_source" placeholder="Income source" value="<?php if (isset($this->session->userdata['second_income_source'])) echo $this->session->userdata['second_income_source'] ?>" class="form-control width_100" id="second_income_source" >
+                                <input type="text" name="second_income_source" placeholder="What Is Income source" value="<?php if (isset($this->session->userdata['second_income_source'])) echo $this->session->userdata['second_income_source'] ?>" class="form-control width_100" id="second_income_source" >
                                 <span id="err1" style="color: red"></span>
-
-                            </div>
-                           
-                           
+                            </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="second_monthly_income" placeholder="Monthly Income" value="<?php if (isset($this->session->userdata['second_monthly_income'])) echo $this->session->userdata['second_monthly_income'] ?>" class="form-control width_100" id="second_monthly_income" >
-                                <span id="err4" style="color: red"></span>
+                                <input type="text" name="second_monthly_income" placeholder="Monthly Income Amount" value="<?php if (isset($this->session->userdata['second_monthly_income'])) echo $this->session->userdata['second_monthly_income'] ?>" class="form-control width_100" id="second_monthly_income" >
+                                <span id="err2" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
                            
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
-                                <button type="button" class="button" onclick="step6()">Continue<span class="continueIcon sprites"></span></button>
-                                              <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
-                                -->
-
+                                <input type="submit" value="Continue" class="button" >
                             </div>   
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

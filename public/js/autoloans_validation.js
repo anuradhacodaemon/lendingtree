@@ -149,6 +149,15 @@ function reqAmountLoan(value)
     formData.append('req_amt', value);
     getFormId(form);
 }
+//step 11
+function anotherSourceIncome(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('p_another_source_income');
+    var formData = new FormData(form);
+    formData.append('p_another_source', value);
+    getFormId(form);
+}
 
  
 
@@ -187,6 +196,11 @@ function reqAmountLoan(value)
         {
             var selected_home_status = $('input[name="waiver_payment_value"]:checked').val();
             formData.append('waiver_payment_value', selected_home_status);
+        }
+        if(step == 11)
+        {
+            var selected_home_status = $('input[name="p_another_source"]:checked').val();
+            formData.append('p_another_source', selected_home_status);
         }
             
         //console.log(formData);
@@ -254,6 +268,16 @@ function reqAmountLoan(value)
                       //alert('you are in 10.1');
                       autoloan_step11();
                   }
+                  if(step == 11)
+                  {
+                      alert('you are in 11 '+ selected_home_status);
+                      if(selected_home_status == 'yes')
+                      {
+                        autoloan_step11_1();
+                      }
+                        
+                      
+                  }
                   
                              
               }
@@ -315,6 +339,11 @@ function reqAmountLoan(value)
                     {
                         //alert('you are in 10.1');
                         $('#err1').append(obj['error_messages']['waiver']);
+                    }
+                    if(step == 11)
+                    {
+                        //alert('you are in 10.1');
+                        $('#err1').append(obj['error_messages']['p_another_source']);
                     }
               }   
             },
@@ -489,6 +518,21 @@ function autoloan_step11()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=11");
+            //window.location.pathname =  "auto?step=5";
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step11_1()
+{  
+    $('#step_count').val(11.1);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step11_1/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=11.1");
             //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }

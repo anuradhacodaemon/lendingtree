@@ -492,6 +492,39 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
+        if($step == 11)
+        {
+            //echo $this->input->post('p_another_source');
+            $rules = array(
+                array('field'=>'p_another_source','label'=>'Waiver laid off','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('p_another_source')) 
+                {
+                    $value = $this->input->post('p_another_source');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'having_any_other_source_income' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=11';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'p_another_source' => form_error('p_another_source')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
         //END OF FUnction
     }
 
@@ -546,6 +579,10 @@ class Auto extends CI_Controller {
     public function step11()
     {
         $this->load->view('default/mccu/auto/auto_step11_view');
+    }
+    public function step11_1()
+    {
+        $this->load->view('default/mccu/auto/auto_step11_1_view');
     }
 
     /**
