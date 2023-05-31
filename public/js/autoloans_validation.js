@@ -9,7 +9,7 @@ $(document).ready(function() {
         var step = parseInt(urlParams.get('step'));;
 
         //var step = $("#step_count").val();
-        alert(step);
+        //alert(step);
 
         //console.log("The urlParams>>>"+ urlParams);
         console.log("The step>>>"+ step);
@@ -157,7 +157,7 @@ function reqAmountLoan(value)
     function getFormId(form)
     {
         event.preventDefault();
-        alert('you are1');
+       // alert('you are1');
         var step = $('#auto_step').val();
         //var formId = document.getElementById('formID');
         //console.log("the form is here>>> "+ formId);
@@ -216,42 +216,42 @@ function reqAmountLoan(value)
                   }
                   if(step == 4)
                   {
-                      alert('you are in 4');
+                      //alert('you are in 4');
                       autoloan_step5();
                   }
                   if(step == 5)
                   {
-                      alert('you are in 5');
+                      //alert('you are in 5');
                       autoloan_step6();
                   }
                   if(step == 6)
                   {
-                      alert('you are in 6');
+                      //alert('you are in 6');
                       autoloan_step7();
                   }
                   if(step == 7)
                   {
-                      alert('you are in 7');
+                      //alert('you are in 7');
                       autoloan_step8();
                   }
                   if(step == 8)
                   {
-                      alert('you are in 8');
+                      //alert('you are in 8');
                       autoloan_step9();
                   }
                   if(step == 9)
                   {
-                      alert('you are in 9');
+                      //alert('you are in 9');
                       autoloan_step10();
                   }
                   if(step == 10)
                   {
-                      alert('you are in 10');
+                      //alert('you are in 10');
                       autoloan_step10_1();
                   }
                   if(step == 10.1)
                   {
-                      alert('you are in 10.1');
+                      //alert('you are in 10.1');
                       autoloan_step11();
                   }
                   
@@ -267,24 +267,24 @@ function reqAmountLoan(value)
                     }
                     if(step == 4)
                     {
-                        alert('you are in 4');
+                        //alert('you are in 4');
                         $('#err1').append(obj['error_messages']['marital_status']);
                     }
                     if(step == 5)
                     {
-                        alert('you are in 5');
+                        //alert('you are in 5');
                         $('#err1').append(obj['error_messages']['address']);
                         $('#err2').append(obj['error_messages']['living_there_years']);
                         $('#err3').append(obj['error_messages']['monthly_pay']);
                     }
                     if(step == 6)
                     {
-                        alert('you are in 6');
+                        //alert('you are in 6');
                         $('#err1').append(obj['error_messages']['home_status']);
                     }
                     if(step == 7)
                     {
-                        alert('you are in 7');
+                        //alert('you are in 7');
                         $('#err1').append(obj['error_messages']['relative_firstname']);
                         $('#err2').append(obj['error_messages']['relative_relation']);
                         $('#err3').append(obj['error_messages']['relative_address']);
@@ -292,14 +292,14 @@ function reqAmountLoan(value)
                     }
                     if(step == 8)
                     {
-                        alert('you are in 8');
+                        //alert('you are in 8');
                         $('#err1').append(obj['error_messages']['personal_refrence']);
                         $('#err2').append(obj['error_messages']['personal_refrence_phone']);
                         $('#err3').append(obj['error_messages']['personal_refrence_address']);
                     }
                     if(step == 9)
                     {
-                        alert('you are in 9');
+                        //alert('you are in 9');
                         $('#err1').append(obj['error_messages']['employer_name']);
                         $('#err2').append(obj['error_messages']['employer_job_title']);
                         $('#err3').append(obj['error_messages']['supervisor_name']);
@@ -308,12 +308,12 @@ function reqAmountLoan(value)
                     }
                     if(step == 10)
                     {
-                        alert('you are in 10');
+                        //alert('you are in 10');
                         $('#err1').append(obj['error_messages']['monthly_income_pre_tax']);
                     }
                     if(step == 10.1)
                     {
-                        alert('you are in 10.1');
+                        //alert('you are in 10.1');
                         $('#err1').append(obj['error_messages']['waiver']);
                     }
               }   

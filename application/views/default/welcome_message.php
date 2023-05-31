@@ -28,7 +28,7 @@
                     </div>
                     <div class="offer-cont" style="display:block">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto loan');">
+                            <a href="javascript:void(0)" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto loan');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="offer-cont" style="display:block">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto refinance');">
+                            <a href="javascript:void(0)" onClick="ga('send', 'event', 'BMTCCU', 'click', 'auto refinance');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
