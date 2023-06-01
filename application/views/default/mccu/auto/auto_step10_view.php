@@ -4,7 +4,27 @@
             
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
-                    <h1>Buying New Vehicle</h1>
+                <h1>
+              <?php   if(isset($this->session->userdata['type']))
+                      { 
+                        if($this->session->userdata['type']== 1)
+                        {
+                          echo 'Buying New Vehicle';
+                        }
+                        elseif($this->session->userdata['type']== 2)
+                        {
+                          echo 'Buying Used Vehicle';
+                        }
+                        elseif($this->session->userdata['type']== 3)
+                        {
+                          echo 'Buying Refinance For Vehicle';
+                        }
+                      }
+                      else{
+                          echo 'Buying New Vehicle';
+                          }
+              ?>
+              </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Relative's Details</label>

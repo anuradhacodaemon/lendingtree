@@ -158,8 +158,105 @@ function anotherSourceIncome(value)
     formData.append('p_another_source', value);
     getFormId(form);
 }
-
- 
+//step 13
+function coMaker(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('co_maker');
+    var formData = new FormData(form);
+    formData.append('co_maker', value);
+    getFormId(form);
+}
+//step 14
+function miltaryInvolve(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('miltry_involve');
+    var formData = new FormData(form);
+    formData.append('miltary_involve', value);
+    getFormId(form);
+}
+//step 15
+function memberCredit(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('member_credit');
+    var formData = new FormData(form);
+    formData.append('member_credit', value);
+    getFormId(form);
+}
+//step 16
+function OutstandingJudge(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('outstanding_judgement');
+    var formData = new FormData(form);
+    formData.append('outstanding_judgement', value);
+    getFormId(form);
+}
+//step 17
+function BankruptcyJudge(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('bankruptcy_adjustmnt');
+    var formData = new FormData(form);
+    formData.append('bankruptcy_adjustmnt', value);
+    getFormId(form);
+}
+//step 18
+function ForceClosure(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('force_closure');
+    var formData = new FormData(form);
+    formData.append('force_closure', value);
+    getFormId(form);
+}
+//step 19
+function PartyToLawSuit(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('any_law_suit');
+    var formData = new FormData(form);
+    formData.append('any_law_suit', value);
+    getFormId(form);
+}
+//step 20
+function CitizenOtherThanUS(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('other_than_us_citizen');
+    var formData = new FormData(form);
+    formData.append('other_than_us_citizen', value);
+    getFormId(form);
+}
+//step 21
+function IncomeGetReducedInNxt2Y(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('income_get_reduce_nxt_2y');
+    var formData = new FormData(form);
+    formData.append('income_get_reduce_nxt_2y', value);
+    getFormId(form);
+}
+//step 22.1
+function onDieCancelLoan(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('on_die_cancel_loan');
+    var formData = new FormData(form);
+    formData.append('on_die_cancel_loan', value);
+    getFormId(form);
+}
+//step 23
+function addCosigner(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('add_cosigner');
+    var formData = new FormData(form);
+    formData.append('add_cosigner', value);
+    getFormId(form);
+}
 
 //
 //INSERT OR UPDATE DATA THROUGH AJAX
@@ -201,6 +298,61 @@ function anotherSourceIncome(value)
         {
             var selected_home_status = $('input[name="p_another_source"]:checked').val();
             formData.append('p_another_source', selected_home_status);
+        }
+        if(step == 13)
+        {
+            var selected_home_status = $('input[name="co_maker"]:checked').val();
+            formData.append('co_maker', selected_home_status);
+        }
+        if(step == 14)
+        {
+            var selected_home_status = $('input[name="miltary_involve"]:checked').val();
+            formData.append('miltary_involve', selected_home_status);
+        }
+        if(step == 15)
+        {
+            var selected_home_status = $('input[name="member_credit"]:checked').val();
+            formData.append('member_credit', selected_home_status);
+        }
+        if(step == 16)
+        {
+            var selected_home_status = $('input[name="outstanding_judgement"]:checked').val();
+            formData.append('outstanding_judgement', selected_home_status);
+        }
+        if(step == 17)
+        {
+            var selected_home_status = $('input[name="bankruptcy_adjustmnt"]:checked').val();
+            formData.append('bankruptcy_adjustmnt', selected_home_status);
+        }
+        if(step == 18)
+        {
+            var selected_home_status = $('input[name="force_closure"]:checked').val();
+            formData.append('force_closure', selected_home_status);
+        }
+        if(step == 19)
+        {
+            var selected_home_status = $('input[name="any_law_suit"]:checked').val();
+            formData.append('any_law_suit', selected_home_status);
+        }
+        if(step == 20)
+        {
+            var selected_home_status = $('input[name="other_than_us_citizen"]:checked').val();
+            formData.append('other_than_us_citizen', selected_home_status);
+        }
+        if(step == 21)
+        {
+            var selected_home_status = $('input[name="income_get_reduce_nxt_2y"]:checked').val();
+            formData.append('income_get_reduce_nxt_2y', selected_home_status);
+        }
+        if(step == 22.1)
+        {
+            var selected_home_status = $('input[name="on_die_cancel_loan"]:checked').val();
+            formData.append('on_die_cancel_loan', selected_home_status);
+        }
+        if(step == 23)
+        {
+            var selected_home_status = $('input[name="add_cosigner"]:checked').val();
+            formData.append('add_cosigner', selected_home_status);
         }
             
         //console.log(formData);
@@ -270,13 +422,93 @@ function anotherSourceIncome(value)
                   }
                   if(step == 11)
                   {
-                      alert('you are in 11 '+ selected_home_status);
+                      //alert('you are in 11 >>>'+ selected_home_status);
                       if(selected_home_status == 'yes')
                       {
                         autoloan_step11_1();
                       }
-                        
-                      
+                      else{
+                            //alert('you are in 11 >>>'+ selected_home_status);
+                            autoloan_step12();
+                          }
+                  }
+                  if(step == 11.1)
+                  {
+                    //alert('you are in 11.1');
+                    autoloan_step12();
+                  }
+                  if(step == 12)
+                  {
+                    //alert('you are in 12');
+                    autoloan_step13();
+                  }
+                  if(step == 13)
+                  {
+                    //alert('you are in 13');
+                    autoloan_step14();
+                  }
+                  if(step == 14)
+                  {
+                    //alert('you are in 14');
+                    autoloan_step15();
+                  }
+                  if(step == 15)
+                  {
+                    //alert('you are in 15');
+                    autoloan_step16();
+                  }
+                  if(step == 16)
+                  {
+                    //alert('you are in 16');
+                    autoloan_step17();
+                  }
+                  if(step == 17)
+                  {
+                    //alert('you are in 17');
+                    autoloan_step18();
+                  }
+                  if(step == 18)
+                  {
+                    //alert('you are in 18');
+                    autoloan_step19();
+                  }
+                  if(step == 19)
+                  {
+                    //alert('you are in 19');
+                    autoloan_step20();
+                  }
+                  if(step == 20)
+                  {
+                    //alert('you are in 20');
+                    autoloan_step21();
+                  }
+                  if(step == 21)
+                  {
+                    //alert('you are in 21');
+                    autoloan_step22();
+                  }
+                  if(step == 22)
+                  {
+                    //alert('you are in 22');
+                    autoloan_step22_1();
+                  }
+                  if(step == 22.1)
+                  {
+                    //alert('you are in 22.1');
+                    autoloan_step23();
+                  }
+                  if(step == 23)
+                  {
+                      //alert('you are in 23 >>>'+ selected_home_status);
+                      alert('Next Part is yet to done');
+                      /*if(selected_home_status == 'yes')
+                      {
+                        autoloan_step11_1();
+                      }
+                      else{
+                            alert('you are in 23 >>>'+ selected_home_status);
+                            autoloan_step12();
+                          }*/
                   }
                   
                              
@@ -345,6 +577,78 @@ function anotherSourceIncome(value)
                         //alert('you are in 10.1');
                         $('#err1').append(obj['error_messages']['p_another_source']);
                     }
+                    if(step == 11.1)
+                    {
+                        //alert('you are in 11.1');
+                        $('#err1').append(obj['error_messages']['second_income_source']);
+                        $('#err2').append(obj['error_messages']['second_monthly_income']);
+                    }
+                    if(step == 12)
+                    {
+                        //alert('you are in 12');
+                        $('#err1').append(obj['error_messages']['previous_employer_name']);
+                        $('#err2').append(obj['error_messages']['previous_working_years']);
+                    }
+                    if(step == 13)
+                    {
+                        //alert('you are in 13');
+                        $('#err1').append(obj['error_messages']['co_maker']);
+                    }
+                    if(step == 14)
+                    {
+                        //alert('you are in 14');
+                        $('#err1').append(obj['error_messages']['miltary_involve']);
+                    }
+                    if(step == 15)
+                    {
+                        //alert('you are in 15');
+                        $('#err1').append(obj['error_messages']['member_credit']);
+                    }
+                    if(step == 16)
+                    {
+                        //alert('you are in 16');
+                        $('#err1').append(obj['error_messages']['outstanding_judgement']);
+                    }
+                    if(step == 17)
+                    {
+                        //alert('you are in 17');
+                        $('#err1').append(obj['error_messages']['bankruptcy_adjustmnt']);
+                    }
+                    if(step == 18)
+                    {
+                        //alert('you are in 18');
+                        $('#err1').append(obj['error_messages']['force_closure']);
+                    }
+                    if(step == 19)
+                    {
+                        //alert('you are in 19');
+                        $('#err1').append(obj['error_messages']['any_law_suit']);
+                    }
+                    if(step == 20)
+                    {
+                        //alert('you are in 20');
+                        $('#err1').append(obj['error_messages']['other_than_us_citizen']);
+                    }
+                    if(step == 21)
+                    {
+                        //alert('you are in 21');
+                        $('#err1').append(obj['error_messages']['income_get_reduce_nxt_2y']);
+                    }
+                    if(step == 22)
+                    {
+                        //alert('you are in 22');
+                        $('#err1').append(obj['error_messages']['i_represnt_accurate']);
+                    }
+                    if(step == 22.1)
+                    {
+                        //alert('you are in 22.1');
+                        $('#err1').append(obj['error_messages']['on_die_cancel_loan']);
+                    }
+                    if(step == 23)
+                    {
+                        //alert('you are in 23');
+                        $('#err1').append(obj['error_messages']['add_cosigner']);
+                    }
               }   
             },
             error: function(jqXHR, text, error){
@@ -366,7 +670,6 @@ function autoloan_step2()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=2");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -381,7 +684,6 @@ function autoloan_step3()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=3");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -397,7 +699,6 @@ function autoloan_step4()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=4");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -413,7 +714,6 @@ function autoloan_step5()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=5");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -428,7 +728,6 @@ function autoloan_step6()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=6");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -443,7 +742,6 @@ function autoloan_step7()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=7");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -458,7 +756,6 @@ function autoloan_step8()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=8");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -473,7 +770,6 @@ function autoloan_step9()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=9");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -488,7 +784,6 @@ function autoloan_step10()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=10");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -503,7 +798,6 @@ function autoloan_step10_1()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=10.1");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -518,7 +812,6 @@ function autoloan_step11()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=11");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
@@ -533,11 +826,198 @@ function autoloan_step11_1()
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=11.1");
-            //window.location.pathname =  "auto?step=5";
             $('#container').html(data);                
         }
     });
 }
+function autoloan_step12()
+{  
+    $('#step_count').val(12);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step12/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=12");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step13()
+{  
+    $('#step_count').val(13);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step13/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=13");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step14()
+{  
+    $('#step_count').val(14);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step14/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=14");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step15()
+{  
+    $('#step_count').val(15);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step15/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=15");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step16()
+{  
+    $('#step_count').val(16);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step16/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=16");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step17()
+{  
+    $('#step_count').val(17);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step17/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=17");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step18()
+{  
+    $('#step_count').val(18);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step18/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=18");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step19()
+{  
+    $('#step_count').val(19);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step19/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=19");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step20()
+{  
+    $('#step_count').val(20);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step20/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=20");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step21()
+{  
+    $('#step_count').val(21);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step21/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=21");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step22()
+{  
+    $('#step_count').val(22);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step22/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=22");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step22_1()
+{  
+    $('#step_count').val(22.1);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step22_1/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=22.1");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step23()
+{  
+    $('#step_count').val(23);
+    $.ajax({
+        type: "POST",
+        url:  base_url + "auto/step23/",
+        data:{},
+        success: function (data)
+        {      
+            window.history.pushState("Details", "Title", base_url + "auto?step=23");
+            $('#container').html(data);                
+        }
+    });
+}
+
+
+
+
+
+
 
 
 //
