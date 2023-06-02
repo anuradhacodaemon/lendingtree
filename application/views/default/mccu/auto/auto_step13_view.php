@@ -31,16 +31,16 @@
               <form id="co_maker" method="POST">
               <input type="hidden" name="auto_step" value="13" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['are_you_co_maker_endoser']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                  <label <?php if(isset($this->session->userdata['are_you_co_maker_endoser'])) { if($this->session->userdata['are_you_co_maker_endoser']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                     <div class="label-text">YES</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="yes" name="co_maker"  onclick="coMaker('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="yes" name="co_maker"  onclick="coMaker(13, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['are_you_co_maker_endoser']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                  <label <?php if(isset($this->session->userdata['are_you_co_maker_endoser'])) { if($this->session->userdata['are_you_co_maker_endoser']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                     <div class="label-text">NO</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="no" name="co_maker" onclick="coMaker('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="no" name="co_maker" onclick="coMaker(13, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <span id="err1" style="color: red"></span>
               </form>

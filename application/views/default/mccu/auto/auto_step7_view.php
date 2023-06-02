@@ -65,9 +65,7 @@
 
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <input type="submit" value="Continue" class="button" >
-                                              <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
-                                -->
-
+                                            
                             </div>   
                         </div>
                         </form>

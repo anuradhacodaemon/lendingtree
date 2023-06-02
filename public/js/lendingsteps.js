@@ -295,6 +295,237 @@ if (window.performance) {
                 $('#container').html(data);
             }
         });
+    }
+    if (window.location.search.indexOf('step=24') > -1) {
+        $('#step_count').val(24); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step24",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=25') > -1) {
+        $('#step_count').val(25); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step25",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=26') > -1) {
+        $('#step_count').val(26); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step26",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=27') > -1) {
+        $('#step_count').val(27); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step27",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=28') > -1) {
+        $('#step_count').val(28); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step28",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=29') > -1) {
+        $('#step_count').val(29); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step29",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=30') > -1) {
+        $('#step_count').val(30); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step30",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=31') > -1) {
+        $('#step_count').val(31); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step31",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=32') > -1) {
+        $('#step_count').val(32); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step32",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=32.1') > -1) {
+        $('#step_count').val(32.1); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step32_1",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=33') > -1) {
+        $('#step_count').val(33); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step33",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=34') > -1) {
+        $('#step_count').val(34); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step34",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=35') > -1) {
+        $('#step_count').val(35); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step35",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=36') > -1) {
+        $('#step_count').val(36); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step36",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=37') > -1) {
+        $('#step_count').val(37); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step37",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=38') > -1) {
+        $('#step_count').val(38); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step38",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=39') > -1) {
+        $('#step_count').val(39); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step39",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=40') > -1) {
+        $('#step_count').val(40); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step40",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=41') > -1) {
+        $('#step_count').val(41); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step41",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=42') > -1) {
+        $('#step_count').val(42); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step42",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=43') > -1) {
+        $('#step_count').val(43); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step43",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
     }                                
      
     //This is the END for user directly PUT step value in URL
@@ -589,8 +820,240 @@ if (window.performance) {
             }
         });
     }
-   
-    
+    if (window.location.search.indexOf('step=24') > -1) {
+        $('#step_count').val(24); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step24",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=25') > -1) {
+        $('#step_count').val(25); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step25",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=26') > -1) {
+        $('#step_count').val(26); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step26",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=27') > -1) {
+        $('#step_count').val(27); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step27",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=28') > -1) {
+        $('#step_count').val(28); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step28",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=29') > -1) {
+        $('#step_count').val(29); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step29",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=30') > -1) {
+        $('#step_count').val(30); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step30",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=31') > -1) {
+        $('#step_count').val(31); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step31",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=32') > -1) {
+        $('#step_count').val(32); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step32",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=32.1') > -1) {
+        $('#step_count').val(32.1); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step32_1",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=33') > -1) {
+        $('#step_count').val(33); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step33",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=34') > -1) {
+        $('#step_count').val(34); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step34",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=35') > -1) {
+        $('#step_count').val(35); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step35",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=36') > -1) {
+        $('#step_count').val(36); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step36",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=37') > -1) {
+        $('#step_count').val(37); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step37",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=38') > -1) {
+        $('#step_count').val(38); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step38",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=39') > -1) {
+        $('#step_count').val(39); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step39",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=40') > -1) {
+        $('#step_count').val(40); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step40",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=41') > -1) {
+        $('#step_count').val(41); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step41",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=42') > -1) {
+        $('#step_count').val(42); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step42",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=43') > -1) {
+        $('#step_count').val(43); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step43",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+
+
+
     //Browser Back condition Ends below
  }, false);
 

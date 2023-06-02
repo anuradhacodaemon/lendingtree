@@ -35,13 +35,13 @@
                                 <label <?php if(isset($this->session->userdata['a_u_s_citizen_permanant_alien'])) { if($this->session->userdata['a_u_s_citizen_permanant_alien']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="other_than_us_citizen"  onclick="CitizenOtherThanUS('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="other_than_us_citizen"  onclick="CitizenOtherThanUS(20, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
                                 <label <?php if(isset($this->session->userdata['a_u_s_citizen_permanant_alien'])) { if($this->session->userdata['a_u_s_citizen_permanant_alien']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="other_than_us_citizen" onclick="CitizenOtherThanUS('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="other_than_us_citizen" onclick="CitizenOtherThanUS(20, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form> 

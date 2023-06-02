@@ -89,6 +89,21 @@ define('LOGIN', 'lend_user');
 define('COUNTRY', 'lend_countries');
 define('STATE', 'lend_states');
 define('CITY', 'lend_cities');
+/**
+ * This costants Usedin MCCU
+ * 
+ * 
+*/
+define('AUTO_MMCU_LOAN', 'lend_mccu_loan');
+//define('LOGIN', 'lend_user');
+//define('COUNTRY', 'lend_countries');
+//define('STATE', 'lend_states');
+//define('CITY', 'lend_cities');
+/**
+ * 
+ * 
+ * 
+ */
 
 define('RECORD_LIMIT', 10);
 define('TOTAL_ROWS', 2);

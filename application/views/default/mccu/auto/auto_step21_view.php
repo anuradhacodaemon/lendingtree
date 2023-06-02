@@ -35,13 +35,13 @@
                                 <label <?php if(isset($this->session->userdata['any_income_listed_tobe_reduced_in_next_2_year'])) { if($this->session->userdata['any_income_listed_tobe_reduced_in_next_2_year']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="income_get_reduce_nxt_2y"  onclick="IncomeGetReducedInNxt2Y('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="income_get_reduce_nxt_2y"  onclick="IncomeGetReducedInNxt2Y(21, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
                                 <label <?php if(isset($this->session->userdata['any_income_listed_tobe_reduced_in_next_2_year'])) { if($this->session->userdata['any_income_listed_tobe_reduced_in_next_2_year']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="income_get_reduce_nxt_2y" onclick="IncomeGetReducedInNxt2Y('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="income_get_reduce_nxt_2y" onclick="IncomeGetReducedInNxt2Y(21, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form>

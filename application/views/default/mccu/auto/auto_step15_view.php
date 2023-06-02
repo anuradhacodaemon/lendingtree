@@ -35,13 +35,13 @@
                             <label <?php if(isset($this->session->userdata['member_of_other_credit_unioin'])) { if($this->session->userdata['member_of_other_credit_unioin']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                 <div class="label-text">Yes</div>
                                 <span class="continueIcon sprites"></span>
-                            <input type="radio" value="yes" name="member_credit"  onclick="memberCredit('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="yes" name="member_credit"  onclick="memberCredit(15, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                         </div>
                         <div class="col-xs-12 col-sm-12 radio">
                             <label <?php if(isset($this->session->userdata['member_of_other_credit_unioin'])) { if($this->session->userdata['member_of_other_credit_unioin']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                 <div class="label-text">No</div>
                                 <span class="continueIcon sprites"></span>
-                            <input type="radio" value="no" name="member_credit" onclick="memberCredit('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="no" name="member_credit" onclick="memberCredit(15, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                         </div>
                         <span id="err1" style="color: red"></span>
                     </form> 

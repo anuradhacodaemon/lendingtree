@@ -39,7 +39,7 @@
                                 <span id="err1" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="date_of_application" readonly="readonly" value="<?php echo date('m-d-Y') ?>" class="form-control width_100" id="date_of_application" >
+                                <input type="text" name="date_of_application" readonly="readonly" value="<?php echo date('d-m-Y') ?>" class="form-control width_100" id="date_of_application" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
