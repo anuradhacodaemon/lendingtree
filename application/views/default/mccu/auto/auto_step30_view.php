@@ -33,7 +33,7 @@
                         <input type="hidden" name="auto_step" value="30" id="auto_step" >
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigners_employer_name" placeholder="Employer Name" value="<?php if (isset($this->session->userdata['cosigner_employer '])) echo $this->session->userdata['cosigner_employer '] ?>" class="form-control width_100" id="cosigners_employer_name" >
+                                <input type="text" name="cosigners_employer_name" placeholder="Employer Name" value="<?php if (isset($this->session->userdata['cosigner_employer'])) echo $this->session->userdata['cosigner_employer'] ?>" class="form-control width_100" id="cosigners_employer_name" >
                                 <span id="err1" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">

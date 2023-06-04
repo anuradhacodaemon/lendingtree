@@ -686,13 +686,13 @@ function addCosigner(value)
                         }
                         if(step == 32)
                         {
-                            alert('you are in 32.1 >>>'+ selected_home_status);
+                            //alert('you are in 32.1 >>>'+ selected_home_status);
                             if(selected_home_status == 'yes')
                             {
                                 autoloan_step32_1();
                             }
                             else{
-                                    alert('you are in 33 >>>'+ selected_home_status);
+                                    //alert('you are in 33 >>>'+ selected_home_status);
                                     autoloan_step33();
                                 }
                         }
@@ -850,23 +850,39 @@ function addCosigner(value)
                         //alert('you are in 23 >>>'+ selected_home_status);
                         if(selected_home_status == 'yes')
                         {
-                            //$('#exampleModal').modal('show'); 
                             autoloan_step24();
                         }
                         else{
-                                alert('you are in 23 >>> Success is coming soon');
-                                //alert('you are in 23 >>>'+ selected_home_status);
-                                //autoloan_step12();
+                                //alert('you are in 23 >>> Success is coming soon');
+                                if(obj['message'] != "")
+                                {
+                                    let text = obj['message'];
+                                    let newText = text.replace(/\./g, ".<br>");
+                                    $('#showMsgToApplicant').html(newText);
+                                    $('#exampleModal').modal('show');
+                                    setInterval(function() {
+                                        $('#exampleModal').modal('hide');
+                                        $('#showMsgToApplicant').html('');
+                                        window.location.href = base_url;
+                                    }, 5000);
+                                }
                             }
                     }
                     if(step == 43)
                     {
-                        alert('you are in 43 >>> Success is coming soon');
-                        /*if(selected_home_status == 'yes')
+                        //alert('you are in 43 >>> Success is coming soon');
+                        if(obj['message'] != "")
                         {
-                            //$('#exampleModal').modal('show'); 
-                            
-                        }*/
+                            let text = obj['message'];
+                            let newText = text.replace(/\./g, ".<br>");
+                            $('#showMsgToApplicant').html(newText);
+                            $('#exampleModal').modal('show');
+                            setInterval(function() {
+                                $('#exampleModal').modal('hide');
+                                $('#showMsgToApplicant').html('');
+                                window.location.href = base_url;
+                            }, 5000);
+                        }
                     }
                       
                   }

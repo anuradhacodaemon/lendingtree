@@ -16,10 +16,15 @@ class AutoLoanMccu_model extends CI_Model {
         /*echo "from model";
         echo "<pre>";
         print_r($logData);*/
-        $logData['p_email'] = 'johntest@gmail.com';
         $logData['status'] = 1;
         $logData['date_of_application'] = date('Y-m-d', strtotime($logData['date_of_application']));
+        unset($logData['cosigner_email']);
         if(isset($logData['final_step']) && !empty($logData['final_step']) && $logData['final_step'] == 23)
+        {
+            $logData['user_did_last_step'] = $logData['final_step'];
+            unset($logData['final_step']);
+        }
+        if(isset($logData['final_step']) && !empty($logData['final_step']) && $logData['final_step'] == 43)
         {
             $logData['user_did_last_step'] = $logData['final_step'];
             unset($logData['final_step']);
@@ -28,6 +33,15 @@ class AutoLoanMccu_model extends CI_Model {
         //echo $this->db->last_query();exit;
         $id = $this->db->insert_id();
         return $id;
+    }
+    //
+    public function get_userdetailsloanpdf($shopId = 0) {
+        $this->db->select('shop.*');
+        $this->db->from(AUTO_MMCU_LOAN . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.lend_id', $shopId);
+        $result = $this->db->get();
+        return $result->row_array();
     }
 
 

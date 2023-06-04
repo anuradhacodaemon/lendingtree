@@ -159,7 +159,8 @@ class Auto extends CI_Controller {
             $rules = array(
                     array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
                     array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
-                    array('field'=>'phone','label'=>'phone','rules'=>'required|numeric')
+                    array('field'=>'phone','label'=>'phone','rules'=>'required|numeric'),
+                    array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email')
                     );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -170,7 +171,8 @@ class Auto extends CI_Controller {
                     $data = array(
                         'first_name' => $this->input->post('firstname'),
                         'last_name' => $this->input->post('lastname'),
-                        'p_phone' => $this->input->post('phone')
+                        'p_phone' => $this->input->post('phone'),
+                        'p_email' => $this->input->post('p_email')
                     );
 
                     $this->session->set_userdata($data);
@@ -184,6 +186,7 @@ class Auto extends CI_Controller {
                 'firstname' => form_error('firstname'),
                 'lastname' => form_error('lastname'),
                 'phone' => form_error('phone'),
+                'p_email' => form_error('p_email')
                 );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -421,20 +424,22 @@ class Auto extends CI_Controller {
                 if ($this->input->post('monthly_income_pre_tax')) 
                 {
                     $data = array(
-                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax'),
-                        'upload_document_proof' => $new_name
+                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax')
                     );
-
                     $this->session->set_userdata($data);
                 }
               
                 if(!empty($Cfile))
                 {
+                    $data = array(
+                        'upload_document_proof' => $new_name
+                    );
+                    $this->session->set_userdata($data);
                     if(!$this->upload->do_upload('upload_user_doc')) 
                     {
                         $error = $this->upload->display_errors();
                         $errors = array(
-                            'monthly_income_pre_tax' => $error
+                            'upload_user_doc' => $error
                             );
                         $data['error'] = 1;
                         $data['error_messages'] = $errors;
@@ -454,7 +459,8 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'monthly_income_pre_tax' => form_error('monthly_income_pre_tax')
+                            'monthly_income_pre_tax' => form_error('monthly_income_pre_tax'),
+                            'upload_user_doc' => form_error('upload_user_doc')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -978,7 +984,21 @@ class Auto extends CI_Controller {
                     if($value == 'no')
                     {
 
-                        //$this->final_step($this->session->userdata());
+                        $ret_values = $this->final_step($this->session->userdata());
+                        if($ret_values['message'] !== false)
+                        {
+                            //$this->session->sess_destroy();
+                            session_destroy();
+                            $data['success'] = 1;
+                            $data['message'] = $ret_values['message'];
+                            $data['url'] = 'auto?step=1';
+                            echo json_encode($data);
+                        }
+                        else{
+                                $data['error'] = 1;
+                                $data['error_messages'] = 'something went wrong';
+                                echo json_encode($data);
+                            }   
                     }
                     else{
                             $data['success'] = 1;
@@ -1009,7 +1029,7 @@ class Auto extends CI_Controller {
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('firstname')) 
+                if ($this->input->post('cosigner_firstname')) 
                 {
                     $data = array(
                         'cosigner_first_name' => $this->input->post('cosigner_firstname'),
@@ -1076,10 +1096,10 @@ class Auto extends CI_Controller {
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('address')) 
+                if ($this->input->post('cosigner_home_address')) 
                 {
                     $data = array(
-                        'cosigner_addres' => $this->input->post('cosigner_home_address'),
+                        'cosigner_address' => $this->input->post('cosigner_home_address'),
                         'cosigner_monthly_pay ' => $this->input->post('cosigner_monthly_pay'),
                         'cosigner_years_been_there' => $this->input->post('cosigner_living_there_years')
                     );
@@ -1179,7 +1199,7 @@ class Auto extends CI_Controller {
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('personal_refrence')) 
+                if ($this->input->post('cosigners_personal_refrence')) 
                 {
                     $data = array(
                         'cosigner_personal_refrence' => $this->input->post('cosigners_personal_refrence'),
@@ -1220,11 +1240,11 @@ class Auto extends CI_Controller {
                 if ($this->input->post('cosigners_employer_name')) 
                 {
                     $data = array(
-                        'current_employer' => $this->input->post('cosigners_employer_name'),
-                        'job_title' => $this->input->post('cosigners_employer_job_title'),
-                        'supervisor_name' => $this->input->post('co_supervisor_name'),
-                        'how_long_your_working' => $this->input->post('cosigners_working_years'),
-                        'address_of_business' => $this->input->post('cosigners_business_address')
+                        'cosigner_employer' => $this->input->post('cosigners_employer_name'),
+                        'cosigner_job_title' => $this->input->post('cosigners_employer_job_title'),
+                        'cosigner_supervisor_name' => $this->input->post('co_supervisor_name'),
+                        'cosigner_how_long_working_years' => $this->input->post('cosigners_working_years'),
+                        'cosigner_business_address' => $this->input->post('cosigners_business_address')
                     );
                     $this->session->set_userdata($data);
                 }
@@ -1266,8 +1286,7 @@ class Auto extends CI_Controller {
                 if ($this->input->post('cosigner_monthly_income_pre_tax')) 
                 {
                     $data = array(
-                        'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax'),
-                        'cosigner_documant' => $new_name
+                        'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax')
                     );
 
                     $this->session->set_userdata($data);
@@ -1275,11 +1294,15 @@ class Auto extends CI_Controller {
               
                 if(!empty($Cfile))
                 {
+                    $data = array(
+                        'cosigner_documant' => $new_name
+                    );
+                    $this->session->set_userdata($data);
                     if(!$this->upload->do_upload('cosigner_upload_user_doc')) 
                     {
                         $error = $this->upload->display_errors();
                         $errors = array(
-                            'cosigner_monthly_income_pre_tax' => $error
+                            'cosigner_upload_user_doc' => $error
                             );
                         $data['error'] = 1;
                         $data['error_messages'] = $errors;
@@ -1299,7 +1322,8 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'cosigner_monthly_income_pre_tax' => form_error('cosigner_monthly_income_pre_tax')
+                            'cosigner_monthly_income_pre_tax' => form_error('cosigner_monthly_income_pre_tax'),
+                            'cosigner_upload_user_doc' => form_error('cosigner_upload_user_doc')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -1701,7 +1725,6 @@ class Auto extends CI_Controller {
         }
         if($step == 43)
         {
-            echo "loading...!";exit;
             //echo $this->input->post('p_another_source');
             $rules = array(
                 array('field'=>'co_i_represnt_accurate','label'=>'Consent','rules'=>'required')
@@ -1722,11 +1745,25 @@ class Auto extends CI_Controller {
                     );
 
                     $this->session->set_userdata($data);
+                    /*echo "<pre>";
+                    print_r($this->session->userdata());exit;*/
+                    $ret_values = $this->final_step($this->session->userdata());
+                    if($ret_values['message'] !== false)
+                    {
+                        //$this->session->sess_destroy();
+                        session_destroy();
+                        $data['success'] = 1;
+                        $data['message'] = $ret_values['message'];
+                        $data['url'] = 'auto?step=1';
+                        echo json_encode($data);
+                    }
+                    else{
+                            $data['error'] = 1;
+                            $data['error_messages'] = 'something went wrong';
+                            echo json_encode($data);
+                        }   
                 }
-                $data['success'] = 1;
-                $data['message'] = 'final';
-                $data['url'] = 'auto?step=1';
-                echo json_encode($data);
+               
             }else{
                 //fail
                 $errors = array(
@@ -1949,14 +1986,19 @@ class Auto extends CI_Controller {
             unset($array['__ci_last_regenerate']);
             unset($array['type']);
             $result = $this->AutoLoanMccu_model->add_auto_loan($array);
-            /*if($result > 0)
+            if($result > 0)
             {
                 $getPhone = $this->loan_model->get_phone();
-                $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
-                $this->session->set_flashdata('item', array('message' => '<font>' . $error . '</font>', 'class' => 'success'));
-                //send emails
+                $sucess_msg = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
                 //Use Existing EMail functions
-            }*/
+                $this->mailformat($array['first_name'], $array['last_name'], $array['p_email']);
+                $this->sent_mail($result, $array['first_name'], $array['last_name']);
+                return ['message' => $sucess_msg];
+            }
+            else{
+                    return ['message' => false];
+                }
+                
         }
     }
 
@@ -2162,7 +2204,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("Beaumont Community Credit Union New Digital Application");
+        $this->email->subject("MCCU Community Credit Union New Digital Application");
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
@@ -2198,12 +2240,13 @@ class Auto extends CI_Controller {
     public function mail_format_pdf($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        //$data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $data['userDetails'] = $this->AutoLoanMccu_model->get_userdetailsloanpdf($link[0]);
+        $name = $data['userDetails']['first_name'] . '_' . $data['userDetails']['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('mccu_auto_view_fileloan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
@@ -2211,12 +2254,13 @@ class Auto extends CI_Controller {
     public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        //$data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $data['userDetails'] = $this->AutoLoanMccu_model->get_userdetailsloanpdf($link[0]);
+        $name = $data['userDetails']['first_name'] . '_' . $data['userDetails']['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('mccu_auto_view_fileloan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $path = PHYSICAL_PATH . 'download_pdf/';
@@ -2230,8 +2274,9 @@ class Auto extends CI_Controller {
         $url = base_url() . "auto/mail_format_pdf/" . $url1;
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        //$data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $data['userDetails'] = $this->AutoLoanMccu_model->get_userdetailsloanpdf($id);
+        $name = $data['userDetails']['first_name'] . '_' . $data['userDetails']['lend_id'];
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
@@ -2252,7 +2297,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("Beaumont Community Credit Union New Digital Application");
+        $this->email->subject("MCCU Community Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
         $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
