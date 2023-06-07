@@ -28,9 +28,10 @@
                                 <h3>&nbsp; </h3>
                                 <ul class="nav side-menu">
                                     <li><a href="<?php echo BASE_URL ?>admin/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-user"></i>Auto Loan User</a></li>
-                                    <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a></li>
-                                    <li><a href="<?php echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a></li>
+
+                                    <!--<li><a href="<?php //echo BASE_URL ?>admin/user"><i class="fa fa-user"></i>Auto Loan User</a></li>-->
+                                    <!--<li><a href="<?php //echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a></li>-->
+                                    <!--<li><a href="<?php //echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a></li>-->
                                     <!--New Code-->
                                     <li><a href="<?php echo BASE_URL ?>admin/autoloanmccu"><i class="fa fa-car"></i>Auto Loan</a></li>
                                     <li><a href="<?php echo BASE_URL ?>admin/personalloanmccu"><i class="fa fa-bank"></i>Personal Loan</a></li>

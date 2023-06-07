@@ -6,16 +6,16 @@
 
 <!-- iCheck -->
 <?php
-$lead_approved = $this->refinance->checklead_approved_forDomain();
-$lend_pending = $this->refinance->checklead_pending_forDomain();
-$visitor = $this->refinance->checklead_denied_forDomain();
+$lead_approved = $this->users->checklead_approved_forDomain();
+$lend_pending = $this->users->checklead_pending_forDomain();
+$visitor = $this->users->checklead_denied_forDomain();
 ?>
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> User Refinance Listing</h2>
+                <h2> User Listing</h2>
 
                 <div class="clearfix"></div>
             </div>
@@ -76,6 +76,35 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                     ?>">
                     </div> -->
 
+                    <div class="col-md-2 form-group ">
+
+                        <select name="type" class="form-control">
+                            <option value="">Type of Loan</option>
+                            <option value="1" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 1) echo 'selected'; ?>>New Car Purchase</option>
+                            <option value="2" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 2) echo 'selected'; ?>>Used Car Purchase</option>
+                            <option value="3" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 3) echo 'selected'; ?>>Refinance</option>
+                            <option value="4"<?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 4) echo 'selected'; ?>>Lease Buy Out</option>
+
+                        </select>
+
+
+                    </div>
+                    <div class="col-md-2 form-group ">
+
+                        <select name="requested_amount" class="form-control">
+                            <option value="">Request Amount</option>
+                            <option value="7"<?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 7) echo 'selected'; ?>>$5,000-$10,000</option>
+                            <option value="6" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 6) echo 'selected'; ?>>$10,000-$15,000</option>
+                            <option value="5" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 5) echo 'selected'; ?>>$15,000-$20,000</option>
+                            <option value="4" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 4) echo 'selected'; ?>>$20,000-$30,000</option>
+                            <option value="3" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 3) echo 'selected'; ?>>$30,000- $40,000</option>
+                            <option value="2" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 2) echo 'selected'; ?>>$40,000 - $50,000</option> 
+                            <option value="1" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 1) echo 'selected'; ?>>$50,000+</option>
+
+                        </select>
+
+
+                    </div>
 
 
                     <!--  
@@ -105,7 +134,7 @@ $visitor = $this->refinance->checklead_denied_forDomain();
 
 
                             <select class="form-control" placeholder="Domain" name="domain" >
-                            <option value="">Select domain </option>
+                                <option value="">Select domain </option>
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
@@ -114,15 +143,15 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                             </select>
                         </div>
 
-                    </div>   
+                    </div>  
                     <?php } ?>
                     <div class="col-md-3 form-group ">
 
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="VIN" name="vin" value="<?php
-                            if (isset($_REQUEST['vin'])) {
-                                echo $_REQUEST['vin'];
+                            <input type="text" class="form-control" placeholder="Work experience (in years)" name="job_title" value="<?php
+                            if (isset($_REQUEST['job_title'])) {
+                                echo $_REQUEST['job_title'];
                             }
                             ?>">
                         </div>
@@ -133,9 +162,9 @@ $visitor = $this->refinance->checklead_denied_forDomain();
 
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Monthly Payment less than" name="monthly_payment1" value="<?php
-                            if (isset($_REQUEST['monthly_payment1'])) {
-                                echo $_REQUEST['monthly_payment1'];
+                            <input type="text" class="form-control" placeholder="Monthly Income less than" name="pre_tax_income1" value="<?php
+                            if (isset($_REQUEST['pre_tax_income1'])) {
+                                echo $_REQUEST['pre_tax_income1'];
                             }
                             ?>">
                         </div>
@@ -146,9 +175,9 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                     <div class="col-md-3 form-group ">
 
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Monthly Payment greater than" name="monthly_payment2" value="<?php
-                            if (isset($_REQUEST['monthly_payment2'])) {
-                                echo $_REQUEST['monthly_payment2'];
+                            <input type="text" class="form-control" placeholder="Monthly Income greater than" name="pre_tax_income2" value="<?php
+                            if (isset($_REQUEST['pre_tax_income2'])) {
+                                echo $_REQUEST['pre_tax_income2'];
                             }
                             ?>">
                         </div>
@@ -156,59 +185,7 @@ $visitor = $this->refinance->checklead_denied_forDomain();
 
                     </div>
 
-<div class="col-md-3 form-group ">
 
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Amount Owe less than" name="currently_owe1" value="<?php
-                            if (isset($_REQUEST['currently_owe1'])) {
-                                echo $_REQUEST['currently_owe1'];
-                            }
-                            ?>">
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-3 form-group ">
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Amount Owe greater than" name="currently_owe2" value="<?php
-                            if (isset($_REQUEST['currently_owe2'])) {
-                                echo $_REQUEST['currently_owe2'];
-                            }
-                            ?>">
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-3 form-group ">
-
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Milage less than" name="current_milage1" value="<?php
-                            if (isset($_REQUEST['current_milage1'])) {
-                                echo $_REQUEST['current_milage1'];
-                            }
-                            ?>">
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-3 form-group ">
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Milage greater than" name="current_milage2" value="<?php
-                            if (isset($_REQUEST['current_milage2'])) {
-                                echo $_REQUEST['current_milage2'];
-                            }
-                            ?>">
-                        </div>
-
-
-                    </div>
 
                     <!--    <div class="col-md-2 form-group ">
                         <div class="input-group">
@@ -252,7 +229,19 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                 </div> -->
                     <div class="col-md-12">
                         <button class="btn btn-primary pull-left" type="button" onclick="inactiveFranchiseAll();"> Delete</button>
-                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/refinance/export' ?>">Export as CSV</a>
+                        <div class="col-md-8 text-center">                        
+                            Show
+                            <label> 
+                                <select name="record_limit" class="form-control input-sm" onchange="submitForm();">
+                                    <option <?php if ($record_limit == "10") { ?> selected="selected"<?php } ?> value="10">10</option>
+                                    <option <?php if ($record_limit == "20") { ?> selected="selected"<?php } ?> value="20">20</option>
+                                    <option <?php if ($record_limit == "50") { ?> selected="selected"<?php } ?> value="50">50</option>
+                                    <option <?php if ($record_limit == "100") { ?> selected="selected"<?php } ?> value="100">100</option>
+                                </select>
+                            </label>
+                            entries                        
+                        </div>                    
+                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
                     </div>
                 </div>
             </form>
@@ -271,18 +260,17 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.currently_owe" && $sort_direction == "desc") { ?> onClick="sortList('user.currently_owe', 'asc')"<?php } ?> <?php if ($sort_by != "user.currently_owe") { ?> onClick="sortList('user.currently_owe', 'asc')"<?php } ?><?php if ($sort_by == "user.currently_owe" && $sort_direction == "asc") { ?> onClick="sortList('user.currently_owe', 'desc')"<?php } ?>> Amount Owe</a>&nbsp;<?php if ($sort_by == "user.currently_owe" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.currently_owe" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.type" && $sort_direction == "desc") { ?> onClick="sortList('user.type', 'asc')"<?php } ?> <?php if ($sort_by != "user.type") { ?> onClick="sortList('user.type', 'asc')"<?php } ?><?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?> onClick="sortList('user.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.monthly_payment" && $sort_direction == "desc") { ?> onClick="sortList('user.monthly_payment', 'asc')"<?php } ?> <?php if ($sort_by != "user.monthly_payment") { ?> onClick="sortList('user.monthly_payment', 'asc')"<?php } ?><?php if ($sort_by == "user.monthly_payment" && $sort_direction == "asc") { ?> onClick="sortList('user.monthly_payment', 'desc')"<?php } ?>>Monthly payment</a>&nbsp;<?php if ($sort_by == "user.monthly_payment" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.monthly_payment" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "user.requested_amount") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('user.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.vin" && $sort_direction == "desc") { ?> onClick="sortList('user.vin', 'asc')"<?php } ?> <?php if ($sort_by != "user.vin") { ?> onClick="sortList('user.vin', 'asc')"<?php } ?><?php if ($sort_by == "user.vin" && $sort_direction == "asc") { ?> onClick="sortList('user.vin', 'desc')"<?php } ?>>VIN</a>&nbsp;<?php if ($sort_by == "user.vin" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.vin" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.current_milage" && $sort_direction == "desc") { ?> onClick="sortList('user.current_milage', 'asc')"<?php } ?> <?php if ($sort_by != "user.current_milage") { ?> onClick="sortList('user.current_milage', 'asc')"<?php } ?><?php if ($sort_by == "user.current_milage" && $sort_direction == "asc") { ?> onClick="sortList('user.current_milage', 'desc')"<?php } ?>> Current Milage</a>&nbsp;<?php if ($sort_by == "user.current_milage" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.current_milage" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -309,23 +297,49 @@ $visitor = $this->refinance->checklead_denied_forDomain();
 
                                                 <!-- <td class=" "><?php echo $i ?></td> -->
                                         <td>
-                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['ref_id'] ?>" class="flat" >
+                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
                                         </td>
                                         <td class=" "><?php echo $v['firstname']." ".$v['lastname'] ?></td>
                                         <td class=" "><?php echo $v['email'] ?></td>
                                         <td class=" "><?php
-                                            echo $v['currently_owe'];
+                                            $type = '';
+                                            if ($v['type'] == 1)
+                                                $type = 'New Car Purchase';
+                                            if ($v['type'] == 2)
+                                                $type = 'Used Car Purchase';
+                                            if ($v['type'] == 3)
+                                                $type = 'Refinance';
+                                            if ($v['type'] == 4)
+                                                $type = 'Lease Buy Out';
+                                            echo $type;
                                             ?></td>
                                         <td> <?php
-                                    echo $v['monthly_payment'];
+                                            $years = '';
+                                            if ($v['requested_amount'] == 7)
+                                                $years = '$5,000-$10,000';
+                                            if ($v['requested_amount'] == 6)
+                                                $years = '$10,000-$15,000';
+                                            if ($v['requested_amount'] == 5)
+                                                $years = '$15,000-$20,000';
+                                            if ($v['requested_amount'] == 4)
+                                                $years = '$20,000-$30,000';
+                                            if ($v['requested_amount'] == 3)
+                                                $years = '$30,000- $40,000';
+                                            if ($v['requested_amount'] == 2)
+                                                $years = '$40,000 - $50,000';
+                                            if ($v['requested_amount'] == 1)
+                                                $years = '$50,000+';
+                                            if ($v['requested_amount'] == 0)
+                                                $years = '0';
+                                            echo $years;
                                             ?></td>
 
-                                        <td><?php echo $v['vin'] ?></td>
+                                        <td><?php echo '$' . number_format($v['pre_tax_income']); ?></td>
 
-                                        <td><?php echo $v['current_milage']; ?></td>
-                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
-        <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
-                                            <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
+                                        <td><?php echo $v['job_title']; ?></td>
+                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
+                                            <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
+                                                <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
                                                 </a>
 
                                         </td>
@@ -333,38 +347,36 @@ $visitor = $this->refinance->checklead_denied_forDomain();
 
                                                 <!-- <td > 
 
-                                                    <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/details/' . $v['ref_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
+                                                    <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
                                                 </td>  -->
                                         <td class="last">
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/details/' . $v['ref_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
-                                                                                       <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/pdfRefinance/' . $v['ref_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/pdfLoan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
 
-                                            
-                                            
                                             &nbsp;&nbsp;
-        <?php if ($v['active_status'] == 1) { ?>
-                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['ref_id'] ?>)" style="color:#000" title="Delete"><i class="fa fa-times fa-cog-red" aria-hidden="true"></i></a>
+                                            <?php if ($v['active_status'] == 1) { ?>
+                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000" title="Delete"><i class="fa fa-times fa-cog-red" aria-hidden="true"></i></a>
                                             <?php } else { ?>
-                                                <a href="javascript:"  onclick="activeFranchise(<?php echo $v['ref_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
+                                                <a href="javascript:"  onclick="activeFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
 
-        <?php } ?>    
+                                            <?php } ?>    
 
                                         </td>
 
                                     </tr>
-        <?php
-        $i++;
-    }
-} else {
-    ?>
+                                    <?php
+                                    $i++;
+                                }
+                            } else {
+                                ?>
 
                                 <tr class="even pointer">
 
                                     <td class="text-center" colspan="6">No user found</td>
                                 </tr>
-    <?php
-}
-?>
+                                <?php
+                            }
+                            ?>
 
 
 
@@ -374,12 +386,12 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                 </form>
             </div>
             <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite"><?php echo $this->lang->line('showing'); ?> <?php
-                            if ($total_rows > 0) {
-                                echo ($page_no + 1);
-                            } else {
-                                echo "0";
-                            }
-?> to <?php
+                if ($total_rows > 0) {
+                    echo ($page_no + 1);
+                } else {
+                    echo "0";
+                }
+                ?> to <?php
                 if (($page_no + $record_limit) < $total_rows) {
                     echo ($page_no + $record_limit);
                 } else {
@@ -434,17 +446,16 @@ $visitor = $this->refinance->checklead_denied_forDomain();
     $("#cPrice").click(function () {
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url() . '/admin/refinance/updatestatus' ?>",
+            url: "<?php echo base_url() . '/admin/user/updatestatus' ?>",
             data: $("#antoform2").serialize(), // serializes the form's elements.
             success: function (data)
             {
-                // alert(data);
                 $('.modal-backdrop').removeClass('modal-backdrop fade in');
                 $("#CalenderModalView").attr('class', 'modal fade');
                 $("#CalenderModalView").attr("aria-hidden", "true");
                 /*$("#CalenderModalEdit").css('display', 'none');*/
                 $("body").attr('class', 'nav-md  pace-done');
-                location.href = "<?php echo base_url() . '/admin/refinance' ?>";
+                location.href = "<?php echo base_url() . '/admin/user' ?>";
             }
         });
     });
@@ -458,7 +469,7 @@ $visitor = $this->refinance->checklead_denied_forDomain();
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
-        $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/refinance?' ?>' + vars);
+        $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/user?' ?>' + vars);
         $("#filter_form").submit();
     }
     function submitForm1()
@@ -466,7 +477,7 @@ $visitor = $this->refinance->checklead_denied_forDomain();
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
-        $("#filter_form1").attr('action', '<?php echo BASE_URL . 'admin/refinance/mailsent' ?>');
+        $("#filter_form1").attr('action', '<?php echo BASE_URL . 'admin/user/mailsent' ?>');
         $("#filter_form1").submit();
     }
     function sortList(sortBy, sortDirection)
@@ -484,10 +495,10 @@ $visitor = $this->refinance->checklead_denied_forDomain();
             {
                 $.ajax({
                     type: "GET",
-                    url: "<?php echo base_url() . 'admin/refinance/delete_inactive/' ?>" + franchiseid,
+                    url: "<?php echo base_url() . 'admin/user/delete_inactive/' ?>" + franchiseid,
                     success: function (data)
                     {
-                        location.href = '<?php echo base_url() . 'admin/refinance/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
                     }
                 });
             } else
@@ -510,39 +521,11 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                 $.ajax({
                     type: "POST",
                     data: $("#filter_form1").serialize(),
-                    url: "<?php echo base_url() . 'admin/refinance/deleteall' ?>",
+                    url: "<?php echo base_url() . 'admin/user/deleteall' ?>",
                     success: function (data)
                     {
                         //alert(data);
-                        location.href = '<?php echo base_url() . 'admin/refinance/' ?>';
-                    }
-                });
-
-
-            } else
-            {
-                //alert('no');
-            }
-        });
-        //});
-    }
-    function pdfemailAll() {
-        var checked = $("#filter_form1 input:checked").length > 0;
-        if (!checked) {
-            alert("Please select at least one checkbox");
-            return false;
-        }
-        bootbox.confirm("Do you want to sent email?", function (result) {
-            if (result)
-            {
-                $.ajax({
-                    type: "POST",
-                    data: $("#filter_form1").serialize(),
-                    url: "<?php echo base_url() . 'admin/refinance/sentemail' ?>",
-                    success: function (data)
-                    {
-                        //alert(data);
-                        location.href = '<?php echo base_url() . 'admin/refinance/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
                     }
                 });
 

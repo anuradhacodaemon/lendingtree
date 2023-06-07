@@ -43,7 +43,7 @@ class AutoLoanMccu_model extends CI_Model {
         $result = $this->db->get();
         return $result->row_array();
     }
-
+   
 
 
 

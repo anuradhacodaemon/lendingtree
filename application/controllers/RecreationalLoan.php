@@ -66,7 +66,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=2';
+                $data['url'] = 'recreationalLoan?step=2';
                 echo json_encode($data);
             }else{
                 //fail
@@ -98,7 +98,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=3';
+                $data['url'] = 'recreationalLoan?step=3';
                 echo json_encode($data);
             }else{
                 //fail
@@ -134,7 +134,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=4';
+                $data['url'] = 'recreationalLoan?step=4';
                 echo json_encode($data);
             }else{
                 //fail
@@ -166,7 +166,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=5';
+                $data['url'] = 'recreationalLoan?step=5';
                 echo json_encode($data);
             }else{
                 //fail
@@ -200,7 +200,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=6';
+                $data['url'] = 'recreationalLoan?step=6';
                 echo json_encode($data);
             }else{
                 //fail
@@ -230,7 +230,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=7';
+                $data['url'] = 'recreationalLoan?step=7';
                 echo json_encode($data);
             }else{
                 //fail
@@ -266,7 +266,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=8';
+                $data['url'] = 'recreationalLoan?step=8';
                 echo json_encode($data);
             }else{
                 //fail
@@ -303,7 +303,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=9';
+                $data['url'] = 'recreationalLoan?step=9';
                 echo json_encode($data);
             }else{
                 //fail
@@ -343,7 +343,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=10';
+                $data['url'] = 'recreationalLoan?step=10';
                 echo json_encode($data);
             }else{
                 //fail
@@ -410,7 +410,7 @@ class RecreationalLoan extends CI_Controller
                         }
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=10_1';
+                $data['url'] = 'recreationalLoan?step=10_1';
                 echo json_encode($data);
             }else{
                 //fail
@@ -444,7 +444,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=11';
+                $data['url'] = 'recreationalLoan?step=11';
                 echo json_encode($data);
             }else{
                 //fail
@@ -477,7 +477,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=11';
+                $data['url'] = 'recreationalLoan?step=11';
                 echo json_encode($data);
             }else{
                 //fail
@@ -509,7 +509,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=12';
+                $data['url'] = 'recreationalLoan?step=12';
                 echo json_encode($data);
             }else{
                 //fail
@@ -542,7 +542,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=13';
+                $data['url'] = 'recreationalLoan?step=13';
                 echo json_encode($data);
             }else{
                 //fail
@@ -576,7 +576,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=14';
+                $data['url'] = 'recreationalLoan?step=14';
                 echo json_encode($data);
             }else{
                 //fail
@@ -607,7 +607,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=15';
+                $data['url'] = 'recreationalLoan?step=15';
                 echo json_encode($data);
             }else{
                 //fail
@@ -640,7 +640,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=16';
+                $data['url'] = 'recreationalLoan?step=16';
                 echo json_encode($data);
             }else{
                 //fail
@@ -673,7 +673,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=17';
+                $data['url'] = 'recreationalLoan?step=17';
                 echo json_encode($data);
             }else{
                 //fail
@@ -706,7 +706,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=18';
+                $data['url'] = 'recreationalLoan?step=18';
                 echo json_encode($data);
             }else{
                 //fail
@@ -739,7 +739,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=19';
+                $data['url'] = 'recreationalLoan?step=19';
                 echo json_encode($data);
             }else{
                 //fail
@@ -772,7 +772,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=20';
+                $data['url'] = 'recreationalLoan?step=20';
                 echo json_encode($data);
             }else{
                 //fail
@@ -805,7 +805,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=21';
+                $data['url'] = 'recreationalLoan?step=21';
                 echo json_encode($data);
             }else{
                 //fail
@@ -838,7 +838,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=22';
+                $data['url'] = 'recreationalLoan?step=22';
                 echo json_encode($data);
             }else{
                 //fail
@@ -873,7 +873,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=22.1';
+                $data['url'] = 'recreationalLoan?step=22.1';
                 echo json_encode($data);
             }else{
                 //fail
@@ -906,7 +906,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=23';
+                $data['url'] = 'recreationalLoan?step=23';
                 echo json_encode($data);
             }else{
                 //fail
@@ -947,7 +947,7 @@ class RecreationalLoan extends CI_Controller
                             session_destroy();
                             $data['success'] = 1;
                             $data['message'] = $ret_values['message'];
-                            $data['url'] = 'personalLoan?step=1';
+                            $data['url'] = 'recreationalLoan?step=1';
                             echo json_encode($data);
                         }
                         else{
@@ -958,7 +958,7 @@ class RecreationalLoan extends CI_Controller
                     }
                     else{
                             $data['success'] = 1;
-                            $data['url'] = 'personalLoan?step=24';
+                            $data['url'] = 'recreationalLoan?step=24';
                             echo json_encode($data);
                         }
                 }
@@ -997,7 +997,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=25';
+                $data['url'] = 'recreationalLoan?step=25';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1029,7 +1029,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=26';
+                $data['url'] = 'recreationalLoan?step=26';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1063,7 +1063,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=27';
+                $data['url'] = 'recreationalLoan?step=27';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1093,7 +1093,7 @@ class RecreationalLoan extends CI_Controller
                      $this->session->set_userdata($data);
                  }
                  $data['success'] = 1;
-                 $data['url'] = 'personalLoan?step=28';
+                 $data['url'] = 'recreationalLoan?step=28';
                  echo json_encode($data);
              }else{
                  //fail
@@ -1129,7 +1129,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=29';
+                $data['url'] = 'recreationalLoan?step=29';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1166,7 +1166,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=30';
+                $data['url'] = 'recreationalLoan?step=30';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1205,7 +1205,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=31';
+                $data['url'] = 'recreationalLoan?step=31';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1273,7 +1273,7 @@ class RecreationalLoan extends CI_Controller
                         }
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=10_1';
+                $data['url'] = 'recreationalLoan?step=10_1';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1307,7 +1307,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=33';
+                $data['url'] = 'recreationalLoan?step=33';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1339,7 +1339,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=33';
+                $data['url'] = 'recreationalLoan?step=33';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1371,7 +1371,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=34';
+                $data['url'] = 'recreationalLoan?step=34';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1405,7 +1405,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=35';
+                $data['url'] = 'recreationalLoan?step=35';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1436,7 +1436,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=36';
+                $data['url'] = 'recreationalLoan?step=36';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1469,7 +1469,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=37';
+                $data['url'] = 'recreationalLoan?step=37';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1502,7 +1502,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=38';
+                $data['url'] = 'recreationalLoan?step=38';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1535,7 +1535,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=39';
+                $data['url'] = 'recreationalLoan?step=39';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1568,7 +1568,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=40';
+                $data['url'] = 'recreationalLoan?step=40';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1601,7 +1601,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=41';
+                $data['url'] = 'recreationalLoan?step=41';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1634,7 +1634,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=42';
+                $data['url'] = 'recreationalLoan?step=42';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1667,7 +1667,7 @@ class RecreationalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=43';
+                $data['url'] = 'recreationalLoan?step=43';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1710,7 +1710,7 @@ class RecreationalLoan extends CI_Controller
                         session_destroy();
                         $data['success'] = 1;
                         $data['message'] = $ret_values['message'];
-                        $data['url'] = 'personalLoan?step=1';
+                        $data['url'] = 'recreationalLoan?step=1';
                         echo json_encode($data);
                     }
                     else{

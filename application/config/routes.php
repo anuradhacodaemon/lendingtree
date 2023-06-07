@@ -133,6 +133,12 @@ $route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
  * 
  */
 $route['admin/autoloanmccu'] = 'admin/autoLoanMccu/index';
+$route['admin/autoloanmccu/details/(:num)'] = 'admin/autoLoanMccu/details/$1';
+$route['admin/autoloanmccu/pdfloan/(:num)'] = 'admin/autoLoanMccu/pdfLoan/$1';
+$route['admin/autoloanmccu/export'] = 'admin/autoLoanMccu/export';
+$route['admin/autoloanmccu/delete_inactive/(:any)'] = 'admin/autoLoanMccu/delete_inactive/$1';
+$route['admin/autoloanmccu/deleteall'] = 'admin/autoLoanMccu/deleteall';
+$route['admin/autoloanmccu/updatestatus'] = 'admin/autoLoanMccu/updatestatus';
 
 
 $route['admin/personalloanmccu'] = 'admin/personalLoanMccu/index';
