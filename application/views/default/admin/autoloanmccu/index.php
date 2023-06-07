@@ -15,7 +15,7 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> User Listing</h2>
+                <h2> Auto Loan Listing</h2>
 
                 <div class="clearfix"></div>
             </div>
@@ -83,7 +83,7 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
                             <option value="1" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 1) echo 'selected'; ?>>New Car Purchase</option>
                             <option value="2" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 2) echo 'selected'; ?>>Used Car Purchase</option>
                             <option value="3" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 3) echo 'selected'; ?>>Refinance</option>
-                            <option value="4"<?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 4) echo 'selected'; ?>>Lease Buy Out</option>
+                            <!--<option value="4"<?php //if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 4) echo 'selected'; ?>>Lease Buy Out</option>-->
 
                         </select>
 

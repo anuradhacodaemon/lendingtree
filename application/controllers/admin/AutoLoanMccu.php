@@ -31,10 +31,7 @@ class AutoLoanMccu extends CI_Controller {
     /* This method used view contact detail after login else redirect to login page.
      */
 
-     public function index() {
-        ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+    public function index() {
     if (!isset($this->session->userdata['userdata']['ud'])) {
         $data = array();
         $this->load->view('admin', $data);

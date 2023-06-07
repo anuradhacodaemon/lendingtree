@@ -142,10 +142,21 @@ $route['admin/autoloanmccu/updatestatus'] = 'admin/autoLoanMccu/updatestatus';
 
 
 $route['admin/personalloanmccu'] = 'admin/personalLoanMccu/index';
+$route['admin/personalloanmccu/details/(:num)'] = 'admin/personalLoanMccu/details/$1';
+$route['admin/personalloanmccu/pdfloan/(:num)'] = 'admin/personalLoanMccu/pdfLoan/$1';
+$route['admin/personalloanmccu/export'] = 'admin/personalLoanMccu/export';
+$route['admin/personalloanmccu/delete_inactive/(:any)'] = 'admin/personalLoanMccu/delete_inactive/$1';
+$route['admin/personalloanmccu/deleteall'] = 'admin/personalLoanMccu/deleteall';
+$route['admin/personalloanmccu/updatestatus'] = 'admin/personalLoanMccu/updatestatus';
 
 
 $route['admin/recreationalloanmccu'] = 'admin/recreationalLoanMccu/index';
-
+$route['admin/recreationalloanmccu/details/(:num)'] = 'admin/recreationalLoanMccu/details/$1';
+$route['admin/recreationalloanmccu/pdfloan/(:num)'] = 'admin/recreationalLoanMccu/pdfLoan/$1';
+$route['admin/recreationalloanmccu/export'] = 'admin/recreationalLoanMccu/export';
+$route['admin/recreationalloanmccu/delete_inactive/(:any)'] = 'admin/recreationalLoanMccu/delete_inactive/$1';
+$route['admin/recreationalloanmccu/deleteall'] = 'admin/recreationalLoanMccu/deleteall';
+$route['admin/recreationalloanmccu/updatestatus'] = 'admin/recreationalLoanMccu/updatestatus';
 /**
  * This is for new code Ends here
  * 

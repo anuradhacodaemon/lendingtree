@@ -6,16 +6,16 @@
 
 <!-- iCheck -->
 <?php
-$lead_approved = $this->users->checklead_approved_forDomain();
-$lend_pending = $this->users->checklead_pending_forDomain();
-$visitor = $this->users->checklead_denied_forDomain();
+$lead_approved = $this->Personalloanmccu_model->checklead_approved_forDomain();
+$lend_pending = $this->Personalloanmccu_model->checklead_pending_forDomain();
+$visitor = $this->Personalloanmccu_model->checklead_denied_forDomain();
 ?>
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> User Listing</h2>
+                <h2> Personal Loan Listing</h2>
 
                 <div class="clearfix"></div>
             </div>
@@ -80,10 +80,11 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                         <select name="type" class="form-control">
                             <option value="">Type of Loan</option>
-                            <option value="1" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 1) echo 'selected'; ?>>New Car Purchase</option>
-                            <option value="2" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 2) echo 'selected'; ?>>Used Car Purchase</option>
-                            <option value="3" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 3) echo 'selected'; ?>>Refinance</option>
-                            <option value="4"<?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 4) echo 'selected'; ?>>Lease Buy Out</option>
+                            <!--<option value="1" <?php //if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 1) echo 'selected'; ?>>New Car Purchase</option>
+                            <option value="2" <?php //if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 2) echo 'selected'; ?>>Used Car Purchase</option>
+                            <option value="3" <?php //if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 3) echo 'selected'; ?>>Refinance</option>
+                            <option value="4"<?php //if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 4) echo 'selected'; ?>>Lease Buy Out</option>-->
+                            <option value="5"<?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 5) echo 'selected'; ?>>Personal Loan</option>
 
                         </select>
 
@@ -93,13 +94,13 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                         <select name="requested_amount" class="form-control">
                             <option value="">Request Amount</option>
-                            <option value="7"<?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 7) echo 'selected'; ?>>$5,000-$10,000</option>
-                            <option value="6" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 6) echo 'selected'; ?>>$10,000-$15,000</option>
-                            <option value="5" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 5) echo 'selected'; ?>>$15,000-$20,000</option>
-                            <option value="4" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 4) echo 'selected'; ?>>$20,000-$30,000</option>
-                            <option value="3" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 3) echo 'selected'; ?>>$30,000- $40,000</option>
-                            <option value="2" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 2) echo 'selected'; ?>>$40,000 - $50,000</option> 
-                            <option value="1" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 1) echo 'selected'; ?>>$50,000+</option>
+                            <option value="$5,000 - $10,000"<?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$5,000 - $10,000') echo 'selected'; ?>>$5,000-$10,000</option>
+                            <option value="$10,000 - $15,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$10,000 - $15,000') echo 'selected'; ?>>$10,000-$15,000</option>
+                            <option value="$15,000 - $20,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$15,000 - $20,000') echo 'selected'; ?>>$15,000-$20,000</option>
+                            <option value="$20,000 - $30,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$20,000 - $30,000') echo 'selected'; ?>>$20,000-$30,000</option>
+                            <option value="$30,000 - $40,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$30,000 - $40,000') echo 'selected'; ?>>$30,000-$40,000</option>
+                            <option value="$40,000 - $50,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$40,000 - $50,000') echo 'selected'; ?>>$40,000-$50,000</option> 
+                            <option value="$50,000+" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$50,000+') echo 'selected'; ?>>$50,000+</option>
 
                         </select>
 
@@ -131,8 +132,6 @@ $visitor = $this->users->checklead_denied_forDomain();
 
 
                         <div class="input-group">
-
-
                             <select class="form-control" placeholder="Domain" name="domain" >
                                 <option value="">Select domain </option>
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
@@ -147,9 +146,8 @@ $visitor = $this->users->checklead_denied_forDomain();
                     <?php } ?>
                     <div class="col-md-3 form-group ">
 
-
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Work experience (in years)" name="job_title" value="<?php
+                            <input type="text" class="form-control" placeholder="Job Title" name="job_title" value="<?php
                             if (isset($_REQUEST['job_title'])) {
                                 echo $_REQUEST['job_title'];
                             }
@@ -159,7 +157,6 @@ $visitor = $this->users->checklead_denied_forDomain();
                     </div>
 
                     <div class="col-md-3 form-group ">
-
 
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Monthly Income less than" name="pre_tax_income1" value="<?php
@@ -241,7 +238,7 @@ $visitor = $this->users->checklead_denied_forDomain();
                             </label>
                             entries                        
                         </div>                    
-                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
+                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/personalloanmccu/export' ?>">Export as CSV</a>
                     </div>
                 </div>
             </form>
@@ -269,7 +266,7 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Job Title</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -297,49 +294,37 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                                                 <!-- <td class=" "><?php echo $i ?></td> -->
                                         <td>
-                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['lend_id'] ?>" class="flat" >
+                                            <input type="checkbox" id="check-all" name="c[]" value="<?php echo $v['p_id'] ?>" class="flat" >
                                         </td>
-                                        <td class=" "><?php echo $v['firstname']." ".$v['lastname'] ?></td>
-                                        <td class=" "><?php echo $v['email'] ?></td>
+                                        <td class=" "><?php echo $v['first_name']." ".$v['last_name'] ?></td>
+                                        <td class=" "><?php echo $v['p_email'] ?></td>
                                         <td class=" "><?php
                                             $type = '';
-                                            if ($v['type'] == 1)
+                                            if ($v['loan_type'] == 1)
                                                 $type = 'New Car Purchase';
-                                            if ($v['type'] == 2)
+                                            if ($v['loan_type'] == 2)
                                                 $type = 'Used Car Purchase';
-                                            if ($v['type'] == 3)
+                                            if ($v['loan_type'] == 3)
                                                 $type = 'Refinance';
-                                            if ($v['type'] == 4)
+                                            if ($v['loan_type'] == 4)
+                                                $type = 'Lease Buy Out';
+                                            if ($v['loan_type'] == 5)
+                                                $type = 'Personal Loan';
+                                            if ($v['loan_type'] == 4)
                                                 $type = 'Lease Buy Out';
                                             echo $type;
                                             ?></td>
                                         <td> <?php
-                                            $years = '';
-                                            if ($v['requested_amount'] == 7)
-                                                $years = '$5,000-$10,000';
-                                            if ($v['requested_amount'] == 6)
-                                                $years = '$10,000-$15,000';
-                                            if ($v['requested_amount'] == 5)
-                                                $years = '$15,000-$20,000';
-                                            if ($v['requested_amount'] == 4)
-                                                $years = '$20,000-$30,000';
-                                            if ($v['requested_amount'] == 3)
-                                                $years = '$30,000- $40,000';
-                                            if ($v['requested_amount'] == 2)
-                                                $years = '$40,000 - $50,000';
-                                            if ($v['requested_amount'] == 1)
-                                                $years = '$50,000+';
-                                            if ($v['requested_amount'] == 0)
-                                                $years = '0';
+                                            $years = $v['requested_amount'];
                                             echo $years;
                                             ?></td>
 
-                                        <td><?php echo '$' . number_format($v['pre_tax_income']); ?></td>
+                                        <td><?php echo '$' . number_format($v['employment_monthly_income']); ?></td>
 
                                         <td><?php echo $v['job_title']; ?></td>
-                                        <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
-                                            <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
-                                                <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
+                                        <td><a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['p_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
+                                            <?php if ($v['status'] == 2) { ?> <a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['p_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
+                                                <?php if ($v['status'] == 0) { ?><a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['p_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
                                                 </a>
 
                                         </td>
@@ -347,17 +332,17 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                                                 <!-- <td > 
 
-                                                    <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
+                                                    <a href="<?php //echo BASE_URL . MASTERADMIN . '/personalloanmccu/details/' . $v['p_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
                                                 </td>  -->
                                         <td class="last">
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/refinance/pdfLoan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/personalloanmccu/details/' . $v['p_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/personalloanmccu/pdfloan/' . $v['p_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
 
                                             &nbsp;&nbsp;
                                             <?php if ($v['active_status'] == 1) { ?>
-                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000" title="Delete"><i class="fa fa-times fa-cog-red" aria-hidden="true"></i></a>
+                                                <a href="javascript:" onclick="inactiveFranchise(<?php echo $v['p_id'] ?>)" style="color:#000" title="Delete"><i class="fa fa-times fa-cog-red" aria-hidden="true"></i></a>
                                             <?php } else { ?>
-                                                <a href="javascript:"  onclick="activeFranchise(<?php echo $v['lend_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
+                                                <a href="javascript:"  onclick="activeFranchise(<?php echo $v['p_id'] ?>)" style="color:#000"><i class="fa fa-times-circle-o fa-cog-red" aria-hidden="true"></i></a>
 
                                             <?php } ?>    
 
@@ -372,7 +357,7 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                                 <tr class="even pointer">
 
-                                    <td class="text-center" colspan="6">No user found</td>
+                                    <td class="text-center" colspan="6">No Auto-loan Records found</td>
                                 </tr>
                                 <?php
                             }
@@ -422,7 +407,7 @@ $visitor = $this->users->checklead_denied_forDomain();
                         <input id="statusId" name="statusId" type="hidden">
                         <input id="lendId" name="lendId" type="hidden">
                         <div class="form-group">
-                            <label class="col-sm-9" control-label">Status</label>
+                            <label class="col-sm-9 control-label">Status</label>
                             <div class="col-sm-9">
                                 <select name="status" id="status" >
                                     <option value="">select status</option> 
@@ -446,7 +431,7 @@ $visitor = $this->users->checklead_denied_forDomain();
     $("#cPrice").click(function () {
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url() . '/admin/user/updatestatus' ?>",
+            url: "<?php echo base_url() . 'admin/personalloanmccu/updatestatus' ?>",
             data: $("#antoform2").serialize(), // serializes the form's elements.
             success: function (data)
             {
@@ -455,7 +440,7 @@ $visitor = $this->users->checklead_denied_forDomain();
                 $("#CalenderModalView").attr("aria-hidden", "true");
                 /*$("#CalenderModalEdit").css('display', 'none');*/
                 $("body").attr('class', 'nav-md  pace-done');
-                location.href = "<?php echo base_url() . '/admin/user' ?>";
+                location.href = "<?php echo base_url() . 'admin/personalloanmccu' ?>";
             }
         });
     });
@@ -469,7 +454,7 @@ $visitor = $this->users->checklead_denied_forDomain();
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
-        $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/user?' ?>' + vars);
+        $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/personalloanmccu?' ?>' + vars);
         $("#filter_form").submit();
     }
     function submitForm1()
@@ -495,10 +480,10 @@ $visitor = $this->users->checklead_denied_forDomain();
             {
                 $.ajax({
                     type: "GET",
-                    url: "<?php echo base_url() . 'admin/user/delete_inactive/' ?>" + franchiseid,
+                    url: "<?php echo base_url() . 'admin/personalloanmccu/delete_inactive/' ?>" + franchiseid,
                     success: function (data)
                     {
-                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/personalloanmccu/' ?>';
                     }
                 });
             } else
@@ -521,11 +506,11 @@ $visitor = $this->users->checklead_denied_forDomain();
                 $.ajax({
                     type: "POST",
                     data: $("#filter_form1").serialize(),
-                    url: "<?php echo base_url() . 'admin/user/deleteall' ?>",
+                    url: "<?php echo base_url() . 'admin/personalloanmccu/deleteall' ?>",
                     success: function (data)
                     {
                         //alert(data);
-                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/personalloanmccu/' ?>';
                     }
                 });
 
