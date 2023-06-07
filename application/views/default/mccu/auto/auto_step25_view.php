@@ -23,7 +23,7 @@
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
+                          echo 'Refinance For Vehicle';
                         }
                       }
                       else{
