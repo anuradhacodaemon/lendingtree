@@ -30,6 +30,10 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/autoloans_validation.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/personal_loan.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/personalsteps.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/recreational_loan.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/recreationalsteps.js"></script>
 
 <script>
     new WOW().init();

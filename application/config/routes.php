@@ -128,3 +128,19 @@ $route['admin/homeloan/delete_inactive/(:any)'] = 'admin/admin_homeloan/delete_i
 $route['admin/homeloan/deleteall'] = 'admin/admin_homeloan/deleteall';
 $route['admin/homeloan/sentemail'] = 'admin/admin_homeloan/sentemail';
 $route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
+/**
+ * This is for new code
+ * 
+ */
+$route['admin/autoloanmccu'] = 'admin/autoLoanMccu/index';
+
+
+$route['admin/personalloanmccu'] = 'admin/personalLoanMccu/index';
+
+
+$route['admin/recreationalloanmccu'] = 'admin/recreationalLoanMccu/index';
+
+/**
+ * This is for new code Ends here
+ * 
+ */

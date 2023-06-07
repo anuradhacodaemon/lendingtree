@@ -38,52 +38,13 @@ class Auto extends CI_Controller {
         $this->session->set_userdata('panel', 'frontend');
 
         $this->template->view('mccu/auto/auto_step1_view');
+        //$this->template->view('mccu/auto/demo');
     }
 
     public function step1() {
 
         //$this->load->view('step1_view');
         $this->load->view('default/mccu/auto/auto_step1_view');
-        //$this->load->view('default/mccu/auto/auto_step8_view');
-        //$this->load->view('default/mccu/auto/auto_step9_view');
-        //$this->load->view('default/mccu/auto/auto_step10_view');
-        //$this->load->view('default/mccu/auto/auto_step10_1_view');
-        //$this->load->view('default/mccu/auto/auto_step11_view');
-        //$this->load->view('default/mccu/auto/auto_step11_1_view');
-        //$this->load->view('default/mccu/auto/auto_step12_view');
-        //$this->load->view('default/mccu/auto/auto_step13_view');
-        //$this->load->view('default/mccu/auto/auto_step14_view');
-        //$this->load->view('default/mccu/auto/auto_step15_view');
-        //$this->load->view('default/mccu/auto/auto_step16_view');
-        //$this->load->view('default/mccu/auto/auto_step17_view');
-        //$this->load->view('default/mccu/auto/auto_step18_view');
-        //$this->load->view('default/mccu/auto/auto_step19_view');
-        //$this->load->view('default/mccu/auto/auto_step20_view');
-        //$this->load->view('default/mccu/auto/auto_step21_view');
-        //$this->load->view('default/mccu/auto/auto_step22_view');
-        //$this->load->view('default/mccu/auto/auto_step22_1_view');
-        //$this->load->view('default/mccu/auto/auto_step23_view');
-        //$this->load->view('default/mccu/auto/auto_step24_view');
-        //$this->load->view('default/mccu/auto/auto_step25_view');
-        //$this->load->view('default/mccu/auto/auto_step26_view');
-        //$this->load->view('default/mccu/auto/auto_step27_view');
-        //$this->load->view('default/mccu/auto/auto_step28_view');
-        //$this->load->view('default/mccu/auto/auto_step29_view');
-        //$this->load->view('default/mccu/auto/auto_step30_view');
-        //$this->load->view('default/mccu/auto/auto_step31_view');
-        //$this->load->view('default/mccu/auto/auto_step32_view');
-        //$this->load->view('default/mccu/auto/auto_step32_1_view');
-        //$this->load->view('default/mccu/auto/auto_step33_view');
-        //$this->load->view('default/mccu/auto/auto_step34_view');
-        //$this->load->view('default/mccu/auto/auto_step35_view');
-        //$this->load->view('default/mccu/auto/auto_step36_view');
-        //$this->load->view('default/mccu/auto/auto_step37_view');
-        //$this->load->view('default/mccu/auto/auto_step38_view');
-        //$this->load->view('default/mccu/auto/auto_step39_view');
-        //$this->load->view('default/mccu/auto/auto_step40_view');
-        //$this->load->view('default/mccu/auto/auto_step41_view');
-        //$this->load->view('default/mccu/auto/auto_step42_view');
-        //$this->load->view('default/mccu/auto/auto_step43_view');
     }
     /**
      * My code starts from here
@@ -106,7 +67,8 @@ class Auto extends CI_Controller {
                 {
                     $data = array(
                         'type' => $this->input->post('type_loan'),
-                        'loan_type' => $this->input->post('type_loan')
+                        'loan_type' => $this->input->post('type_loan'),
+                        'domain' => $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME']
                     );
 
                     $this->session->set_userdata($data);

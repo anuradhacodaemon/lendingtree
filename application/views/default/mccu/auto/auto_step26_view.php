@@ -33,7 +33,7 @@
                         <input type="hidden" name="auto_step" value="26" id="auto_step" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['cosigner_addres'])) echo $this->session->userdata['cosigner_addres'] ?>" class="form-control width_100" id="cosigner_home_address" >
+                                <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['cosigner_address'])) echo $this->session->userdata['cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
                                 <span id="err1" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">

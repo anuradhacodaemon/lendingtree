@@ -104,7 +104,7 @@ jQuery.validator.addMethod("noSpace", function(value, element) {
   }, "No space please and don't leave it empty");
 
 
-//for marital status  
+//for marital status 4 or 25 
 function getMaritalRadioBtn(step, value)
 {
     if(step == 4)
@@ -416,6 +416,7 @@ function addCosigner(value)
         {
             var selected_marital_status = $('input[name="type_loan"]:checked').val();
             formData.append('type_loan', selected_marital_status);
+            window.history.pushState("Details", "Title", base_url + "auto?step=1");
         }
         if(step == 2)
         {
@@ -1267,11 +1268,14 @@ function autoloan_step2()
 {   
     $('#step_count').val(2);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step2/",
-        data:{},
         success: function (data)
-        {      
+        {    
+            /*var data = { key: 'value' };
+            var url = 'auto?step=2';
+            window.history.pushState(data, '', base_url + "auto?step=2");*/
+            //alert('you are in the function');
             window.history.pushState("Details", "Title", base_url + "auto?step=2");
             $('#container').html(data);                
         }
@@ -1281,9 +1285,8 @@ function autoloan_step3()
 {   
     $('#step_count').val(3);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step3/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=3");
@@ -1296,9 +1299,8 @@ function autoloan_step4()
 {   
     $('#step_count').val(4);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step4/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=4");
@@ -1311,9 +1313,8 @@ function autoloan_step5()
 {  
     $('#step_count').val(5);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step5/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=5");
@@ -1325,9 +1326,8 @@ function autoloan_step6()
 {  
     $('#step_count').val(6);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step6/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=6");
@@ -1339,9 +1339,8 @@ function autoloan_step7()
 {  
     $('#step_count').val(7);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step7/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=7");
@@ -1353,9 +1352,8 @@ function autoloan_step8()
 {  
     $('#step_count').val(8);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step8/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=8");
@@ -1367,9 +1365,8 @@ function autoloan_step9()
 {  
     $('#step_count').val(9);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step9/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=9");
@@ -1381,9 +1378,8 @@ function autoloan_step10()
 {  
     $('#step_count').val(10);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step10/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=10");
@@ -1395,9 +1391,8 @@ function autoloan_step10_1()
 {  
     $('#step_count').val(10.1);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step10_1/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=10.1");
@@ -1409,9 +1404,8 @@ function autoloan_step11()
 {  
     $('#step_count').val(11);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step11/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=11");
@@ -1423,9 +1417,8 @@ function autoloan_step11_1()
 {  
     $('#step_count').val(11.1);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step11_1/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=11.1");
@@ -1437,9 +1430,8 @@ function autoloan_step12()
 {  
     $('#step_count').val(12);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step12/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=12");
@@ -1451,9 +1443,8 @@ function autoloan_step13()
 {  
     $('#step_count').val(13);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step13/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=13");
@@ -1465,9 +1456,8 @@ function autoloan_step14()
 {  
     $('#step_count').val(14);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step14/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=14");
@@ -1479,9 +1469,8 @@ function autoloan_step15()
 {  
     $('#step_count').val(15);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step15/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=15");
@@ -1493,9 +1482,8 @@ function autoloan_step16()
 {  
     $('#step_count').val(16);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step16/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=16");
@@ -1507,9 +1495,8 @@ function autoloan_step17()
 {  
     $('#step_count').val(17);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step17/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=17");
@@ -1521,9 +1508,8 @@ function autoloan_step18()
 {  
     $('#step_count').val(18);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step18/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=18");
@@ -1535,9 +1521,8 @@ function autoloan_step19()
 {  
     $('#step_count').val(19);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step19/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=19");
@@ -1549,9 +1534,8 @@ function autoloan_step20()
 {  
     $('#step_count').val(20);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step20/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=20");
@@ -1563,9 +1547,8 @@ function autoloan_step21()
 {  
     $('#step_count').val(21);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step21/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=21");
@@ -1577,9 +1560,8 @@ function autoloan_step22()
 {  
     $('#step_count').val(22);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step22/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=22");
@@ -1591,9 +1573,8 @@ function autoloan_step22_1()
 {  
     $('#step_count').val(22.1);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step22_1/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=22.1");
@@ -1605,9 +1586,8 @@ function autoloan_step23()
 {  
     $('#step_count').val(23);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step23/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=23");
@@ -1619,9 +1599,8 @@ function autoloan_step24()
 {  
     $('#step_count').val(24);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step24/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=24");
@@ -1633,9 +1612,8 @@ function autoloan_step25()
 {  
     $('#step_count').val(25);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step25/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=25");
@@ -1647,9 +1625,8 @@ function autoloan_step26()
 {  
     $('#step_count').val(26);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step26/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=26");
@@ -1661,9 +1638,8 @@ function autoloan_step27()
 {  
     $('#step_count').val(27);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step27/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=27");
@@ -1675,9 +1651,8 @@ function autoloan_step28()
 {  
     $('#step_count').val(28);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step28/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=28");
@@ -1689,9 +1664,8 @@ function autoloan_step29()
 {  
     $('#step_count').val(29);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step29/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=29");
@@ -1703,9 +1677,8 @@ function autoloan_step30()
 {  
     $('#step_count').val(30);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step30/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=30");
@@ -1717,9 +1690,8 @@ function autoloan_step31()
 {  
     $('#step_count').val(31);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step31/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=31");
@@ -1731,9 +1703,8 @@ function autoloan_step32()
 {  
     $('#step_count').val(32);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step32/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=32");
@@ -1745,9 +1716,8 @@ function autoloan_step32_1()
 {  
     $('#step_count').val(32.1);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step32_1/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=32.1");
@@ -1759,9 +1729,8 @@ function autoloan_step33()
 {  
     $('#step_count').val(33);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step33/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=33");
@@ -1773,9 +1742,8 @@ function autoloan_step34()
 {  
     $('#step_count').val(34);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step34/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=34");
@@ -1787,9 +1755,8 @@ function autoloan_step35()
 {  
     $('#step_count').val(35);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step35/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=35");
@@ -1801,9 +1768,8 @@ function autoloan_step36()
 {  
     $('#step_count').val(36);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step36/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=36");
@@ -1815,9 +1781,8 @@ function autoloan_step37()
 {  
     $('#step_count').val(37);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step37/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=37");
@@ -1829,9 +1794,8 @@ function autoloan_step38()
 {  
     $('#step_count').val(38);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step38/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=38");
@@ -1843,9 +1807,8 @@ function autoloan_step39()
 {  
     $('#step_count').val(39);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step39/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=39");
@@ -1857,9 +1820,8 @@ function autoloan_step40()
 {  
     $('#step_count').val(40);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step40/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=40");
@@ -1871,9 +1833,8 @@ function autoloan_step41()
 {  
     $('#step_count').val(41);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step41/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=41");
@@ -1885,9 +1846,8 @@ function autoloan_step42()
 {  
     $('#step_count').val(42);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step42/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=42");
@@ -1899,9 +1859,8 @@ function autoloan_step43()
 {  
     $('#step_count').val(43);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url:  base_url + "auto/step43/",
-        data:{},
         success: function (data)
         {      
             window.history.pushState("Details", "Title", base_url + "auto?step=43");

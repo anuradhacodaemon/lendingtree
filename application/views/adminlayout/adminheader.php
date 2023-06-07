@@ -24,36 +24,22 @@
 
                         <!-- sidebar menu -->
                         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
                             <div class="menu_section">
                                 <h3>&nbsp; </h3>
                                 <ul class="nav side-menu">
-                                       <li><a href="<?php echo BASE_URL ?>admin/dashboard"><i class="fa fa-edit"></i>Dashboard</a>
-                                    </li>
-                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-edit"></i>Auto Loan User</a>
-                                    </li>
-                                    
-                                     <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a>
-                                    </li>
-                                    
-                                     <li><a href="<?php echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a>
-                                    </li>
-                                     <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>
-                                    </li>
-                                    
-                                    
-                                    <li><a href="<?php echo BASE_URL ?>admin/template"><i class="fa fa-edit"></i>Template for lead</a>
-                                    </li>
-                                     <li><a href="<?php echo BASE_URL ?>admin/template2/edit/0"><i class="fa fa-edit"></i>Template2 for admin</a>
-                                    </li> 
-                                   
-
-					<li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a>
-                    </li>		
-                    
-                    
-                                </ul>
-                                </li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/user"><i class="fa fa-user"></i>Auto Loan User</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a></li>
+                                    <!--New Code-->
+                                    <li><a href="<?php echo BASE_URL ?>admin/autoloanmccu"><i class="fa fa-car"></i>Auto Loan</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/personalloanmccu"><i class="fa fa-bank"></i>Personal Loan</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/recreationalloanmccu"><i class="fa fa-car"></i>Recreational Loan</a></li>
+                                    <!--New Code End here-->
+                                    <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-cogs"></i>Settings</a></li>                                    
+                                    <li><a href="<?php echo BASE_URL ?>admin/template"><i class="fa fa-file"></i>Template for lead</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>admin/template2/edit/0"><i class="fa fa-edit"></i>Template2 for admin</a></li> 
+					                <li><a href="<?php echo BASE_URL ?>admin/home/logout"><i class="fa fa-power-off">   </i> Logout</a></li>		
                                 </ul>
                             </div>
 

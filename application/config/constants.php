@@ -95,8 +95,8 @@ define('CITY', 'lend_cities');
  * 
 */
 define('AUTO_MMCU_LOAN', 'lend_mccu_loan');
-//define('LOGIN', 'lend_user');
-//define('COUNTRY', 'lend_countries');
+define('PERSONAL_MMCU_LOAN', 'lend_mccu_personal');
+define('RECREATIONAL_MMCU_LOAN', 'lend_mccu_recreational');
 //define('STATE', 'lend_states');
 //define('CITY', 'lend_cities');
 /**
