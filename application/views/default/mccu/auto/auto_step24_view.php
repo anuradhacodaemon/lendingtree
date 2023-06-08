@@ -49,9 +49,11 @@
                                 <span id="err4" style="color: red"></span>
                             </div>  
                             <div class="clearfix"></div>                         
-                            <div class="col-xs-12 col-sm-6 radio">
+                            
+                            <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <input type="submit" value="Continue" class="button" >
-                            </div>   
+                                            
+                            </div> 
                         </div>
                         </form>
                     </div>

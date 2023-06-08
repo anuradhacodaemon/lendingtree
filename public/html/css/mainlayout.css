@@ -567,6 +567,9 @@ input:focus {
   text-align: center;
   margin: 0 auto;
 }
+.form-main .optional-file{
+  color: red;
+}
 .form-main .input-text{
   display: flex;
 }
@@ -640,9 +643,9 @@ input:focus {
   background: var(--colo1);
   border: 2px solid var(--colo1);
 }
-radio.button-selected{
+/* radio.button-selected{
   background-color: green;
-}
+} */
 .radio .button:hover {
   background: var(--colo2);
 }
@@ -742,7 +745,7 @@ input[type="checkbox"] {
   margin: 0 auto;
   width: 100%;
   max-width: 475px;
-  border-radius: 2rem;
+  border-radius: 10px;
 }
 .form-main .form-control-small {
   font-size: 14px !important;

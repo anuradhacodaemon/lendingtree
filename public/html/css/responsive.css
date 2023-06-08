@@ -124,6 +124,9 @@
     float: none;
     text-align: center;
   }
+  .form-main .input-text{
+    display: block;
+  }
   .form-main .disclosure-sec {
     position: absolute;
     bottom: 0;
