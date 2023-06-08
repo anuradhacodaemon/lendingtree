@@ -42,7 +42,7 @@ class Home extends CI_Controller {
         } else {
             // redirect('admin/pages', 'refresh');
 
-            $this->template->view('admin/user/index', $data);
+            $this->template->view('admin/autoloanmccu/index', $data);
         }
     }
 
@@ -84,7 +84,7 @@ class Home extends CI_Controller {
 
                 $this->session->userdata['panel'] = '';
                 /* Load the view using template */
-                redirect('admin/user', 'refresh');
+                redirect('admin/autoloanmccu', 'refresh');
             }
         } else {
 

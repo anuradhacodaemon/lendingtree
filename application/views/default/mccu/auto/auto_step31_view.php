@@ -37,7 +37,7 @@
                                 <span id="err1" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="file" name="cosigner_upload_user_doc"  value="<?php if (isset($this->session->userdata['cosigner_documant'])) echo $this->session->userdata['cosigner_documant'] ?>" class="form-control width_100" id="cosigner_documant" >
+                                <input type="file" name="cosigner_upload_user_doc" accept=".png, .txt, .pdf"  value="<?php if (isset($this->session->userdata['cosigner_documant'])) echo $this->session->userdata['cosigner_documant'] ?>" class="form-control width_100" id="cosigner_documant" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>

@@ -85,6 +85,11 @@
                         slider.on("slide", function (sliderValue) {
                             document.getElementById("ex6SliderVal").textContent = sliderValue;//numberWithCommas(parseInt(sliderValue));
                         });
+                        //my added code 
+                        slider.on("change", function (sliderValue) {
+                            //console.log(sliderValue.newValue);
+                            document.getElementById("ex6SliderVal").textContent = sliderValue.newValue;//numberWithCommas(parseInt(sliderValue));
+                        });
                         function numberWithCommas(x) {
                             var formatter = new Intl.NumberFormat('en-US', {
                                 style: 'currency',

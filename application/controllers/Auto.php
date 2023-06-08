@@ -400,12 +400,16 @@ class Auto extends CI_Controller {
                     if(!$this->upload->do_upload('upload_user_doc')) 
                     {
                         $error = $this->upload->display_errors();
+                        $this->session->unset_userdata('upload_document_proof');
+                        /*echo "<pre>";
+                        print_r($error);exit;*/
+                        $str_replace = ['<p>', '</p>'];
                         $errors = array(
-                            'upload_user_doc' => $error
+                            'upload_user_doc' => str_replace($str_replace, '', $error)
                             );
                         $data['error'] = 1;
                         $data['error_messages'] = $errors;
-                        echo json_encode($data);
+                        echo json_encode($data);exit;
                     }
                     else{
                             $upload_data = $this->upload->data();
@@ -949,7 +953,7 @@ class Auto extends CI_Controller {
                         $ret_values = $this->final_step($this->session->userdata());
                         if($ret_values['message'] !== false)
                         {
-                            //$this->session->sess_destroy();
+                            $this->session->sess_destroy();
                             session_destroy();
                             $data['success'] = 1;
                             $data['message'] = $ret_values['message'];
@@ -1263,12 +1267,14 @@ class Auto extends CI_Controller {
                     if(!$this->upload->do_upload('cosigner_upload_user_doc')) 
                     {
                         $error = $this->upload->display_errors();
+                        $this->session->unset_userdata('cosigner_documant');
+                        $str_replace = ['<p>', '</p>'];
                         $errors = array(
-                            'cosigner_upload_user_doc' => $error
+                            'cosigner_upload_user_doc' => str_replace($str_replace, '', $error)
                             );
                         $data['error'] = 1;
                         $data['error_messages'] = $errors;
-                        echo json_encode($data);
+                        echo json_encode($data);exit;
                     }
                     else{
                             $upload_data = $this->upload->data();
@@ -1712,7 +1718,7 @@ class Auto extends CI_Controller {
                     $ret_values = $this->final_step($this->session->userdata());
                     if($ret_values['message'] !== false)
                     {
-                        //$this->session->sess_destroy();
+                        $this->session->sess_destroy();
                         session_destroy();
                         $data['success'] = 1;
                         $data['message'] = $ret_values['message'];

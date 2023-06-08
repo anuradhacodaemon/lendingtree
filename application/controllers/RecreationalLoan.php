@@ -394,12 +394,14 @@ class RecreationalLoan extends CI_Controller
                     if(!$this->upload->do_upload('upload_user_doc')) 
                     {
                         $error = $this->upload->display_errors();
+                        $this->session->unset_userdata('upload_document_proof');
+                        $str_replace = ['<p>', '</p>'];
                         $errors = array(
-                            'upload_user_doc' => $error
+                            'upload_user_doc' => str_replace($str_replace, '', $error)
                             );
                         $data['error'] = 1;
                         $data['error_messages'] = $errors;
-                        echo json_encode($data);
+                        echo json_encode($data);exit;
                     }
                     else{
                             $upload_data = $this->upload->data();
@@ -943,7 +945,7 @@ class RecreationalLoan extends CI_Controller
                         $ret_values = $this->final_step($this->session->userdata());
                         if($ret_values['message'] !== false)
                         {
-                            //$this->session->sess_destroy();
+                            $this->session->sess_destroy();
                             session_destroy();
                             $data['success'] = 1;
                             $data['message'] = $ret_values['message'];
@@ -1257,12 +1259,14 @@ class RecreationalLoan extends CI_Controller
                     if(!$this->upload->do_upload('cosigner_upload_user_doc')) 
                     {
                         $error = $this->upload->display_errors();
+                        $this->session->unset_userdata('cosigner_documant');
+                        $str_replace = ['<p>', '</p>'];
                         $errors = array(
-                            'cosigner_upload_user_doc' => $error
+                            'cosigner_upload_user_doc' => str_replace($str_replace, '', $error)
                             );
                         $data['error'] = 1;
                         $data['error_messages'] = $errors;
-                        echo json_encode($data);
+                        echo json_encode($data);exit;
                     }
                     else{
                             $upload_data = $this->upload->data();
@@ -1706,7 +1710,7 @@ class RecreationalLoan extends CI_Controller
                     $ret_values = $this->final_step($this->session->userdata());
                     if($ret_values['message'] !== false)
                     {
-                        //$this->session->sess_destroy();
+                        $this->session->sess_destroy();
                         session_destroy();
                         $data['success'] = 1;
                         $data['message'] = $ret_values['message'];
@@ -2037,7 +2041,7 @@ class RecreationalLoan extends CI_Controller
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = urlencode($Link);
-        $url = base_url() . "auto/mail_format_pdf/" . $url1;
+        $url = base_url() . "recreationalLoan/mail_format_pdf/" . $url1;
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
         //$data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);

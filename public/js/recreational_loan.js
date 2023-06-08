@@ -863,88 +863,89 @@ function addCosigner(value)
               {
                     if(step == 3)
                     {
-                        $('#err1').append(obj['error_messages']['firstname']);
-                        $('#err2').append(obj['error_messages']['lastname']);
-                        $('#err3').append(obj['error_messages']['phone']);
+                        $('#err1').html(obj['error_messages']['firstname']);
+                        $('#err2').html(obj['error_messages']['lastname']);
+                        $('#err3').html(obj['error_messages']['phone']);
                     }
                     if(step == 4 || step == 25)
                     {
                         //alert('you are in 4');
                         if(step == 4)
                         {
-                            $('#err1').append(obj['error_messages']['marital_status']);
+                            $('#err1').html(obj['error_messages']['marital_status']);
                         }
                         if(step == 25)
                         {
-                            $('#err1').append(obj['error_messages']['co_marital_status']);
+                            $('#err1').html(obj['error_messages']['co_marital_status']);
                         }
                         
                     }
                     if(step == 5)
                     {
                         //alert('you are in 5');
-                        $('#err1').append(obj['error_messages']['address']);
-                        $('#err2').append(obj['error_messages']['living_there_years']);
-                        $('#err3').append(obj['error_messages']['monthly_pay']);
+                        $('#err1').html(obj['error_messages']['address']);
+                        $('#err2').html(obj['error_messages']['living_there_years']);
+                        $('#err3').html(obj['error_messages']['monthly_pay']);
                     }
                     if(step == 6 || step == 27)
                     {
                         //alert('you are in 6');
                         if(step == 6)
                         {
-                            $('#err1').append(obj['error_messages']['home_status']);
+                            $('#err1').html(obj['error_messages']['home_status']);
                         }
                         if(step == 27)
                         {
-                            $('#err1').append(obj['error_messages']['co_home_status']);
+                            $('#err1').html(obj['error_messages']['co_home_status']);
                         }
                         
                     }
                     if(step == 7)
                     {
                         //alert('you are in 7');
-                        $('#err1').append(obj['error_messages']['relative_firstname']);
-                        $('#err2').append(obj['error_messages']['relative_relation']);
-                        $('#err3').append(obj['error_messages']['relative_address']);
-                        $('#err4').append(obj['error_messages']['relatives_phone']);
+                        $('#err1').html(obj['error_messages']['relative_firstname']);
+                        $('#err2').html(obj['error_messages']['relative_relation']);
+                        $('#err3').html(obj['error_messages']['relative_address']);
+                        $('#err4').html(obj['error_messages']['relatives_phone']);
                     }
                     if(step == 8)
                     {
                         //alert('you are in 8');
-                        $('#err1').append(obj['error_messages']['personal_refrence']);
-                        $('#err2').append(obj['error_messages']['personal_refrence_phone']);
-                        $('#err3').append(obj['error_messages']['personal_refrence_address']);
+                        $('#err1').html(obj['error_messages']['personal_refrence']);
+                        $('#err2').html(obj['error_messages']['personal_refrence_phone']);
+                        $('#err3').html(obj['error_messages']['personal_refrence_address']);
                     }
                     if(step == 9)
                     {
                         //alert('you are in 9');
-                        $('#err1').append(obj['error_messages']['employer_name']);
-                        $('#err2').append(obj['error_messages']['employer_job_title']);
-                        $('#err3').append(obj['error_messages']['supervisor_name']);
-                        $('#err4').append(obj['error_messages']['working_years']);
-                        $('#err5').append(obj['error_messages']['business_address']);
+                        $('#err1').html(obj['error_messages']['employer_name']);
+                        $('#err2').html(obj['error_messages']['employer_job_title']);
+                        $('#err3').html(obj['error_messages']['supervisor_name']);
+                        $('#err4').html(obj['error_messages']['working_years']);
+                        $('#err5').html(obj['error_messages']['business_address']);
                     }
                     if(step == 10)
                     {
                         //alert('you are in 10');
-                        $('#err1').append(obj['error_messages']['monthly_income_pre_tax']);
+                        $('#err1').html(obj['error_messages']['monthly_income_pre_tax']);
+                        $('#err2').html(obj['error_messages']['upload_user_doc']);
                     }
                     if(step == 10.1)
                     {
                         //alert('you are in 10.1');
-                        $('#err1').append(obj['error_messages']['waiver']);
+                        $('#err1').html(obj['error_messages']['waiver']);
                     }
                     if(step == 11 || step == 32)
                     {
                         if(step == 11)
                         {
                             //alert('you are in 10.1');
-                            $('#err1').append(obj['error_messages']['p_another_source']);
+                            $('#err1').html(obj['error_messages']['p_another_source']);
                         }
                         if(step == 32)
                         {
                             //alert('you are in 10.1');
-                            $('#err1').append(obj['error_messages']['co_p_another_source']);
+                            $('#err1').html(obj['error_messages']['co_p_another_source']);
                         }
                         
                     }
@@ -953,14 +954,14 @@ function addCosigner(value)
                         if(step == 11.1)
                         {
                             //alert('you are in 11.1');
-                            $('#err1').append(obj['error_messages']['second_income_source']);
-                            $('#err2').append(obj['error_messages']['second_monthly_income']);
+                            $('#err1').html(obj['error_messages']['second_income_source']);
+                            $('#err2').html(obj['error_messages']['second_monthly_income']);
                         }
                         if(step == 32.1)
                         {
                             //alert('you are in 11.1');
-                            $('#err1').append(obj['error_messages']['cosigner_second_income_source']);
-                            $('#err2').append(obj['error_messages']['cosigner_second_monthly_income']);
+                            $('#err1').html(obj['error_messages']['cosigner_second_income_source']);
+                            $('#err2').html(obj['error_messages']['cosigner_second_monthly_income']);
                         }
                         
                     }
@@ -969,14 +970,14 @@ function addCosigner(value)
                         if(step == 12)
                         {
                             //alert('you are in 12');
-                            $('#err1').append(obj['error_messages']['previous_employer_name']);
-                            $('#err2').append(obj['error_messages']['previous_working_years']);
+                            $('#err1').html(obj['error_messages']['previous_employer_name']);
+                            $('#err2').html(obj['error_messages']['previous_working_years']);
                         }
                         if(step == 33)
                         {
                             //alert('you are in 12');
-                            $('#err1').append(obj['error_messages']['cosigner_previous_employer_name']);
-                            $('#err2').append(obj['error_messages']['cosigner_previous_working_years']);
+                            $('#err1').html(obj['error_messages']['cosigner_previous_employer_name']);
+                            $('#err2').html(obj['error_messages']['cosigner_previous_working_years']);
                         }
                        
                     }
@@ -985,12 +986,12 @@ function addCosigner(value)
                         if(step == 13)
                         {
                             //alert('you are in 13');
-                            $('#err1').append(obj['error_messages']['co_maker']);
+                            $('#err1').html(obj['error_messages']['co_maker']);
                         }
                         if(step == 34)
                         {
                             //alert('you are in 13');
-                            $('#err1').append(obj['error_messages']['co_co_maker']);
+                            $('#err1').html(obj['error_messages']['co_co_maker']);
                         }
                         
                     }
@@ -999,12 +1000,12 @@ function addCosigner(value)
                         if(step == 14)
                         {
                             //alert('you are in 14');
-                            $('#err1').append(obj['error_messages']['miltary_involve']);
+                            $('#err1').html(obj['error_messages']['miltary_involve']);
                         }
                         if(step == 35)
                         {
                             //alert('you are in 14');
-                            $('#err1').append(obj['error_messages']['co_miltary_involve']);
+                            $('#err1').html(obj['error_messages']['co_miltary_involve']);
                         }
                     }
                     if(step == 15 || step == 36)
@@ -1012,12 +1013,12 @@ function addCosigner(value)
                         if(step == 15)
                         {
                             //alert('you are in 15');
-                            $('#err1').append(obj['error_messages']['member_credit']);
+                            $('#err1').html(obj['error_messages']['member_credit']);
                         }
                         if(step == 36)
                         {
-                            alert('you are in 36');
-                            $('#err1').append(obj['error_messages']['co_member_credit']);
+                            //alert('you are in 36');
+                            $('#err1').html(obj['error_messages']['co_member_credit']);
                         }
                     }
                     if(step == 16 || step == 37)
@@ -1025,12 +1026,12 @@ function addCosigner(value)
                         if(step == 16)
                         {
                             //alert('you are in 16');
-                            $('#err1').append(obj['error_messages']['outstanding_judgement']);
+                            $('#err1').html(obj['error_messages']['outstanding_judgement']);
                         }
                         if(step == 37)
                         {
                             //alert('you are in 16');
-                            $('#err1').append(obj['error_messages']['co_outstanding_judgement']);
+                            $('#err1').html(obj['error_messages']['co_outstanding_judgement']);
                         }
                         
                     }
@@ -1039,12 +1040,12 @@ function addCosigner(value)
                         if(step == 17)
                         {
                             //alert('you are in 17');
-                            $('#err1').append(obj['error_messages']['bankruptcy_adjustmnt']);
+                            $('#err1').html(obj['error_messages']['bankruptcy_adjustmnt']);
                         }
                         if(step == 38)
                         {
                             //alert('you are in 17');
-                            $('#err1').append(obj['error_messages']['co_bankruptcy_adjustmnt']);
+                            $('#err1').html(obj['error_messages']['co_bankruptcy_adjustmnt']);
                         }
                         
                     }
@@ -1053,12 +1054,12 @@ function addCosigner(value)
                         if(step == 18)
                         {
                             //alert('you are in 18');
-                            $('#err1').append(obj['error_messages']['force_closure']);
+                            $('#err1').html(obj['error_messages']['force_closure']);
                         }
                         if(step == 39)
                         {
                             //alert('you are in 18');
-                            $('#err1').append(obj['error_messages']['co_force_closure']);
+                            $('#err1').html(obj['error_messages']['co_force_closure']);
                         }
                         
                     }
@@ -1067,12 +1068,12 @@ function addCosigner(value)
                         if(step == 19)
                         {
                             //alert('you are in 19');
-                            $('#err1').append(obj['error_messages']['any_law_suit']);
+                            $('#err1').html(obj['error_messages']['any_law_suit']);
                         }
                         if(step == 40)
                         {
                             //alert('you are in 19');
-                            $('#err1').append(obj['error_messages']['co_any_law_suit']);
+                            $('#err1').html(obj['error_messages']['co_any_law_suit']);
                         }
                         
                     }
@@ -1081,12 +1082,12 @@ function addCosigner(value)
                         if(step == 20)
                         {
                             //alert('you are in 20');
-                            $('#err1').append(obj['error_messages']['other_than_us_citizen']);
+                            $('#err1').html(obj['error_messages']['other_than_us_citizen']);
                         }
                         if(step == 41)
                         {
                             //alert('you are in 41');
-                            $('#err1').append(obj['error_messages']['co_other_than_us_citizen']);
+                            $('#err1').html(obj['error_messages']['co_other_than_us_citizen']);
                         }
                         
                     }
@@ -1095,12 +1096,12 @@ function addCosigner(value)
                         if(step == 21)
                         {
                             //alert('you are in 21');
-                            $('#err1').append(obj['error_messages']['income_get_reduce_nxt_2y']);
+                            $('#err1').html(obj['error_messages']['income_get_reduce_nxt_2y']);
                         }
                         if(step == 42)
                         {
                             //alert('you are in 21');
-                            $('#err1').append(obj['error_messages']['co_income_get_reduce_nxt_2y']);
+                            $('#err1').html(obj['error_messages']['co_income_get_reduce_nxt_2y']);
                         }
                     }
                     if(step == 22 || step == 43)
@@ -1108,68 +1109,69 @@ function addCosigner(value)
                         if(step == 22)
                         {
                             //alert('you are in 22');
-                            $('#err1').append(obj['error_messages']['i_represnt_accurate']);
+                            $('#err1').html(obj['error_messages']['i_represnt_accurate']);
                         }
                         if(step == 43)
                         {
                             //alert('you are in 43');
-                            $('#err1').append(obj['error_messages']['co_i_represnt_accurate']);
+                            $('#err1').html(obj['error_messages']['co_i_represnt_accurate']);
                         }
                         
                     }
                     if(step == 22.1)
                     {
                         //alert('you are in 22.1');
-                        $('#err1').append(obj['error_messages']['on_die_cancel_loan']);
+                        $('#err1').html(obj['error_messages']['on_die_cancel_loan']);
                     }
                     if(step == 23)
                     {
                         //alert('you are in 23');
-                        $('#err1').append(obj['error_messages']['add_cosigner']);
+                        $('#err1').html(obj['error_messages']['add_cosigner']);
                     }
                     if(step == 24)
                     {
                         //alert('you are in 24');
-                        $('#err1').append(obj['error_messages']['cosigner_firstname']);
-                        $('#err2').append(obj['error_messages']['cosigner_lastname']);
-                        $('#err3').append(obj['error_messages']['cosigner_phone']);
-                        $('#err4').append(obj['error_messages']['cosigner_email']);
+                        $('#err1').html(obj['error_messages']['cosigner_firstname']);
+                        $('#err2').html(obj['error_messages']['cosigner_lastname']);
+                        $('#err3').html(obj['error_messages']['cosigner_phone']);
+                        $('#err4').html(obj['error_messages']['cosigner_email']);
                     }
                     if(step == 26)
                     {
                         //alert('you are in 26');
-                        $('#err1').append(obj['error_messages']['cosigner_home_address']);
-                        $('#err2').append(obj['error_messages']['cosigner_living_there_years']);
-                        $('#err3').append(obj['error_messages']['cosigner_monthly_pay']);
+                        $('#err1').html(obj['error_messages']['cosigner_home_address']);
+                        $('#err2').html(obj['error_messages']['cosigner_living_there_years']);
+                        $('#err3').html(obj['error_messages']['cosigner_monthly_pay']);
                     }
                     if(step == 28)
                     {
                         //alert('you are in 28');
-                        $('#err1').append(obj['error_messages']['co_relatives_firstname']);
-                        $('#err2').append(obj['error_messages']['co_relative_relation']);
-                        $('#err3').append(obj['error_messages']['cosigners_relative_address']);
-                        $('#err4').append(obj['error_messages']['cosigners_relatives_phone']);
+                        $('#err1').html(obj['error_messages']['co_relatives_firstname']);
+                        $('#err2').html(obj['error_messages']['co_relative_relation']);
+                        $('#err3').html(obj['error_messages']['cosigners_relative_address']);
+                        $('#err4').html(obj['error_messages']['cosigners_relatives_phone']);
                     }
                     if(step == 29)
                     {
                         //alert('you are in 8');
-                        $('#err1').append(obj['error_messages']['cosigners_personal_refrence']);
-                        $('#err2').append(obj['error_messages']['cosigners_personal_refrence_phone']);
-                        $('#err3').append(obj['error_messages']['cosigners_personal_refrence_address']);
+                        $('#err1').html(obj['error_messages']['cosigners_personal_refrence']);
+                        $('#err2').html(obj['error_messages']['cosigners_personal_refrence_phone']);
+                        $('#err3').html(obj['error_messages']['cosigners_personal_refrence_address']);
                     }
                     if(step == 30)
                     {
                         //alert('you are in 30');
-                        $('#err1').append(obj['error_messages']['cosigners_employer_name']);
-                        $('#err2').append(obj['error_messages']['cosigners_employer_job_title']);
-                        $('#err3').append(obj['error_messages']['co_supervisor_name']);
-                        $('#err4').append(obj['error_messages']['cosigners_working_years']);
-                        $('#err5').append(obj['error_messages']['cosigners_business_address']);
+                        $('#err1').html(obj['error_messages']['cosigners_employer_name']);
+                        $('#err2').html(obj['error_messages']['cosigners_employer_job_title']);
+                        $('#err3').html(obj['error_messages']['co_supervisor_name']);
+                        $('#err4').html(obj['error_messages']['cosigners_working_years']);
+                        $('#err5').html(obj['error_messages']['cosigners_business_address']);
                     }
                     if(step == 31)
                     {
                         //alert('you are in 10');
-                        $('#err1').append(obj['error_messages']['cosigner_monthly_income_pre_tax']);
+                        $('#err1').html(obj['error_messages']['cosigner_monthly_income_pre_tax']);
+                        $('#err2').html(obj['error_messages']['cosigner_upload_user_doc']);
                     }
                     
               }   
