@@ -49,11 +49,11 @@
                                 <input type="text" name="p_email" placeholder="email@example.com" value="<?php if (isset($this->session->userdata['p_email'])) echo $this->session->userdata['p_email'] ?>" class="form-control width_100" id="p_email">
                                 <span id="err4" style="color: red"></span>
                             </div>
-                    
-                            <div class="col-xs-12 col-sm-6 radio margbot_10">
-                                <input type="submit" value="Continue" class="button" >
+                            
+                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                                <input type="submit" value="Continue" class="button" >       
+                            </div>   
 
-                            </div>  
                             </form> 
                         </div>
                     </div>

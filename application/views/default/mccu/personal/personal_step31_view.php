@@ -41,10 +41,12 @@
                         <input type="hidden" name="auto_step" value="31" id="auto_step" >
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
+                                <span style = "color:black;"> $ </span>
                                 <input type="text" name="cosigner_monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['cosigner_monthly_income_pre_tax'])) echo $this->session->userdata['cosigner_monthly_income_pre_tax'] ?>" class="form-control width_100" id="cosigner_monthly_income_pre_tax" >
                                 <span id="err1" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
+                            <span class="optional-file">Accepting File type [.png, .txt, .pdf] (Optional) </span>     
                                 <input type="file" name="cosigner_upload_user_doc" accept=".png, .txt, .pdf" value="<?php if (isset($this->session->userdata['cosigner_documant'])) echo $this->session->userdata['cosigner_documant'] ?>" class="form-control width_100" id="cosigner_documant" >
                                 <span id="err2" style="color: red"></span>
                             </div>

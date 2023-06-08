@@ -40,6 +40,7 @@
                         <form id="p_details" method="post" onsubmit="return getFormId(this)">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <input type="hidden" name="auto_step" value="5" id="auto_step" >
+                        <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text" name="address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_address'])) echo $this->session->userdata['p_address'] ?>" class="form-control width_100" id="address" >
                                 <span id="err1" style="color: red"></span>
@@ -50,7 +51,7 @@
                                 <input type="text" name="living_there_years" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
                                 <span id="err2" style="color: red"></span>
                             </div>
-
+                        </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <div class="form-main clearfix">   
                                     <label class="control-label">Monthly Payment</label>               
