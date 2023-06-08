@@ -7,7 +7,8 @@ body {
   margin: 0;
   color: #000;
   font: 1em source_sans_proregular, Arial, Helvetica, sans-serif !important;
-  background: #fff;
+  /* background: #fff; */
+  background-color: #f2f2f2;
 }
 a {
   transition: all 0.3s;
@@ -470,11 +471,16 @@ input:focus {
   fill: var(--colo1);
 }
 .footer-main {
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   overflow: hidden;
-  padding: 20px 0;
+  /* padding: 20px 0; */
+  padding: 0.7%;
   color: #fff;
-  background: #222;
+  /* background: #222; */
+  background: var(--colo2);
 }
 .footer-main .sub-nav {
   margin: 0;
@@ -561,6 +567,9 @@ input:focus {
   text-align: center;
   margin: 0 auto;
 }
+.form-main .input-text{
+  display: flex;
+}
 .form-main h1 {
   float: left;
   font-size: 28px;
@@ -569,6 +578,7 @@ input:focus {
 .form-main .disclosure-sec {
   float: right;
   border: 1px solid black;
+  border-radius: 10px;
   padding: 1%;
   color: #000;
   margin-top: 20px;
@@ -576,7 +586,7 @@ input:focus {
   letter-spacing: 1px;
 }
 .form-main .control-label {
-  padding: 2% 0;
+  padding: 1% 0;
   display: block;
   color: #000;
   text-align: center;
@@ -610,7 +620,7 @@ input:focus {
   color: var(--colo3) !important;
 }
 .radio .button {
-  border-radius: 0;
+  border-radius: 10px;
   /* width: 320px; */
   width: 350px;
   display: flex;
@@ -629,6 +639,9 @@ input:focus {
   transition: all 0.3s;
   background: var(--colo1);
   border: 2px solid var(--colo1);
+}
+radio.button-selected{
+  background-color: green;
 }
 .radio .button:hover {
   background: var(--colo2);
@@ -720,7 +733,7 @@ input[type="checkbox"] {
   height: 58px;
   width: 360px;
   margin: 0 auto 2px;
-  border-radius: 2rem;
+  border-radius: 10px;
 }
 .form-main select.form-control {
   font-size: 20px;
