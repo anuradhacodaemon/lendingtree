@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Your Details</label>
+                    <label class="control-label">Your Primary Residence</label>
                     <div class="row">
                         <form id="p_details" method="post" onsubmit="return getFormId(this)">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="living_there_years" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
+                                <input type="text" name="living_there_years" pattern="^\d+\.{0,1}\d{0,2}$" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                         </div>

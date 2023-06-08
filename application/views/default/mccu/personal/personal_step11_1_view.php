@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Second Source of Income</label>
+                    <label class="control-label">Other Income</label>
                     <div class="row">
                     <form id="second_income" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="11.1" id="auto_step" >

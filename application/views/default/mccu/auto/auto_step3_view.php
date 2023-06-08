@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Your Details</label>
+                    <label class="control-label">Contact Information</label>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <form id="p_details" method="post" onsubmit="return getFormId(this)">

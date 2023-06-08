@@ -42,7 +42,7 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Do You have any other sources of income?</label>
+              <label class="control-label">Other Income</label>
               <form id="p_another_source_income" method="POST">
               <input type="hidden" name="auto_step" value="11" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Personal Reference</label>
+                    <label class="control-label">Personal Reference Details</label>
                     <div class="row">
                         <form id="personal_ref" method="POST" onsubmit="return getFormId(this)"> 
                         <input type="hidden" name="auto_step" value="8" id="auto_step" >

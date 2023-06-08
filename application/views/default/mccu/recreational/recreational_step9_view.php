@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Relative's Details</label>
+                    <label class="control-label">Current Employment</label>
                     <div class="row">
                         <form id="work_details" method="POST" onsubmit="return getFormId(this)">
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">

@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Relative's Details</label>
+                    <label class="control-label">Family Reference Member</label>
                     <div class="row">
                         <form id="relative" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="7" id="auto_step" >

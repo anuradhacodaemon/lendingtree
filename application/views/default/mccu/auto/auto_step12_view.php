@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Previous working Details</label>
+                    <label class="control-label">Previous Employment</label>
                     <div class="row">
                     <form id="pre_emp_details" method="POST" onsubmit="return getFormId(this)">
                     <input type="hidden" name="auto_step" value="12" id="auto_step" >

@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Relative's Details</label>
+                    <label class="control-label">Current Income</label>
                     <div class="row">
                         <form id="user_docs" method="POST" enctype="multipart/form-data" onsubmit="return getFormId(this)">
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
