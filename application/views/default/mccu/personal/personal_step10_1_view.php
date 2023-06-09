@@ -28,7 +28,8 @@
                         }
                         elseif($this->session->userdata['type']== 5)
                         {
-                          echo 'Personal Loan';
+                          //echo 'Personal Loan';
+                          echo "Involuntary Unemployment Protection";
                         }
                         elseif($this->session->userdata['type']== 6)
                         {
@@ -42,7 +43,7 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Involuntary Unemployment Protection</label>
+              <label class="control-label">If you are laid off and lose this income source, would you like to have your loan payments waived?</label>
               <form id="waiver_form" method="POST">
               <input type="hidden" name="auto_step" value="10.1" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

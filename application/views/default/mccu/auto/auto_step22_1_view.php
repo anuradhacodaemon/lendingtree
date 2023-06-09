@@ -9,15 +9,18 @@
                       { 
                         if($this->session->userdata['type']== 1)
                         {
-                          echo 'Buying New Vehicle';
+                          //echo 'Buying New Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 2)
                         {
-                          echo 'Buying Used Vehicle';
+                          //echo 'Buying Used Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Refinance For Vehicle';
+                          //echo 'Refinance For Vehicle';
+                          echo "Loan Protection";
                         }
                       }
                       else{
@@ -27,7 +30,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Loan Protection</label>
+                    <label class="control-label">If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan?</label>
                     <div class="row">
                         <form id="on_die_cancel_loan" method="POST">
                             <input type="hidden" name="auto_step" value="22.1" id="auto_step" >

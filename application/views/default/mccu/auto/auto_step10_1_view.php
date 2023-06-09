@@ -16,15 +16,18 @@
                       { 
                         if($this->session->userdata['type']== 1)
                         {
-                          echo 'Buying New Vehicle';
+                          //echo 'Buying New Vehicle';
+                          echo "Involuntary Unemployment Protection";
                         }
                         elseif($this->session->userdata['type']== 2)
                         {
-                          echo 'Buying Used Vehicle';
+                          //echo 'Buying Used Vehicle';
+                          echo "Involuntary Unemployment Protection";
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Refinance For Vehicle';
+                          //echo 'Refinance For Vehicle';
+                          echo "Involuntary Unemployment Protection";
                         }
                       }
                       else{
@@ -34,7 +37,7 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Involuntary Unemployment Protection</label>
+              <label class="control-label">If you are laid off and lose this income source, would you like to have your loan payments waived?</label>
               <form id="waiver_form" method="POST">
               <input type="hidden" name="auto_step" value="10.1" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

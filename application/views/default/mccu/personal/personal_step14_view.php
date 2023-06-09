@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Military Involcement</label>
+                    <label class="control-label">Military Involvement</label>
                     <div class="row">
                     <form id="miltry_involve" method="POST">
                         <input type="hidden" name="auto_step" value="14" id="auto_step" >
