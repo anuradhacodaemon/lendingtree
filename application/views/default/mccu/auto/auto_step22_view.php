@@ -32,15 +32,17 @@
                         <form id="user_consnt" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="22" id="auto_step" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="checkbox" name="i_represnt_accurate" value="consent"
-                                <?php if(isset($this->session->userdata['i_represent_stated'])) { if($this->session->userdata['i_represent_stated']== 'Y') echo 'checked="checked"'; else echo '';}  ?>
-                                 class="form-control width_100 button" id="i_represnt_accurate" >
-                                <span id="err1" style="color: red"></span>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="date_of_application" readonly="readonly" value="<?php echo date('d-m-Y') ?>" class="form-control width_100" id="date_of_application" >
-                                <span id="err2" style="color: red"></span>
+                            <div class="check">
+                                <div class="col-xs-12 col-sm-1 margbot_10">
+                                    <input type="checkbox" name="i_represnt_accurate" value="consent"
+                                    <?php if(isset($this->session->userdata['i_represent_stated'])) { if($this->session->userdata['i_represent_stated']== 'Y') echo 'checked="cehcked"'; else echo '';}  ?>
+                                    class="form-control width_100 button" id="i_represnt_accurate" >
+                                    <span id="err1" style="color: red"></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 margbot_10">
+                                    <input type="text" name="date_of_application" readonly="readonly" value="<?php echo date('d-m-Y') ?>" class="form-control width_100" id="date_of_application" >
+                                    <span id="err2" style="color: red"></span>
+                                </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
