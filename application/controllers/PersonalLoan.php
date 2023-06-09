@@ -90,7 +90,7 @@ class PersonalLoan extends CI_Controller
                 if ($this->input->post('req_amt')) 
                 {
                     $data = array(
-                        'requested_amount ' => $this->input->post('req_amt'),
+                        'requested_amount' => $this->input->post('req_amt'),
                         'loan_type' => 5,
                         'domain' => $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME']
                     );

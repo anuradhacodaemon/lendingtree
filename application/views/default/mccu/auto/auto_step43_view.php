@@ -34,7 +34,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="checkbox" name="co_i_represnt_accurate" value="consent"
-                                <?php if(isset($this->session->userdata['cosigner_i_represent_everything_correct'])) { if($this->session->userdata['cosigner_i_represent_everything_correct']== 'consent') echo 'checked=checked'; else echo '';}  ?>
+                                <?php if(isset($this->session->userdata['cosigner_i_represent_everything_correct'])) { if($this->session->userdata['cosigner_i_represent_everything_correct']== 'Y') echo 'checked="checked"'; else echo '';}  ?>
                                  class="form-control width_100 button" id="i_represnt_accurate" >
                                 <span id="err1" style="color: red"></span>
                             </div>

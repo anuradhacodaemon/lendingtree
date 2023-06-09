@@ -98,7 +98,7 @@ class Auto extends CI_Controller {
                 if ($this->input->post('req_amt')) 
                 {
                     $data = array(
-                        'requested_amount ' => $this->input->post('req_amt')
+                        'requested_amount' => $this->input->post('req_amt')
                     );
 
                     $this->session->set_userdata($data);
