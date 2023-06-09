@@ -18,7 +18,7 @@ class PersonalLoan_model extends CI_Model {
         print_r($logData);*/
         $logData['status'] = 1;
         $logData['date_of_application'] = date('Y-m-d', strtotime($logData['date_of_application']));
-        unset($logData['cosigner_email']);
+        //unset($logData['cosigner_email']);
         if(isset($logData['final_step']) && !empty($logData['final_step']) && $logData['final_step'] == 23)
         {
             $logData['user_did_last_step'] = $logData['final_step'];

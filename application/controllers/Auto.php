@@ -36,7 +36,7 @@ class Auto extends CI_Controller {
         }
 
         $this->session->set_userdata('panel', 'frontend');
-
+        echo "<script> window.history.pushState('Details', 'Title','" . BASE_URL ."auto?step=1');</script>";
         $this->template->view('mccu/auto/auto_step1_view');
         //$this->template->view('mccu/auto/demo');
     }
@@ -44,6 +44,7 @@ class Auto extends CI_Controller {
     public function step1() {
 
         //$this->load->view('step1_view');
+        echo "<script> window.history.pushState('Details', 'Title','" . BASE_URL . "auto?step=1');</script>";
         $this->load->view('default/mccu/auto/auto_step1_view');
     }
     /**

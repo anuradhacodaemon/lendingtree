@@ -948,6 +948,7 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['firstname']);
                         $('#err2').html(obj['error_messages']['lastname']);
                         $('#err3').html(obj['error_messages']['phone']);
+                        $('#err4').html(obj['error_messages']['p_email']);
                     }
                     if(step == 4 || step == 25)
                     {
