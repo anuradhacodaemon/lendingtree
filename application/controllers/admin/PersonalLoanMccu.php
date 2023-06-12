@@ -187,22 +187,7 @@ class PersonalLoanMccu extends CI_Controller {
     public function export() {
         
         $arr = array();
-        $arr[] = "First Name";
-        $arr[] = "Last Name";
-        $arr[] = "Phone";
-        $arr[] = "Email";
-        $arr[] = "Type of Loan";
-        $arr[] = "Requested Amount";
-        $arr[] = "Current Employer";
-        $arr[] = "Gross Monthly Income";
-        $arr[] = "Job Title";
-        $arr[] = "Domain";
-        $arr[] = "Address";
-       /* $arr[] = "State";
-        $arr[] = "City";
-        $arr[] = "Zip";
-        $arr[] = "SSN";*/
-        //}
+        $arr = $this->get_header(); //this is the Header of CSV file
         $arr = array($arr);
         $data2 = $this->Personalloanmccu_model->get_userall();
         // die;
@@ -219,6 +204,10 @@ class PersonalLoanMccu extends CI_Controller {
                 $type = 'Refinance';
             elseif ($v['loan_type'] == 4)
                 $type = 'Lease Buy Out';
+            elseif ($v['loan_type'] == 5)
+                $type = "Personal Loan";
+            elseif ($v['loan_type'] == 6)
+                $type = 'Recreational Loan';
             else
                 $type = '';
         
@@ -235,19 +224,41 @@ class PersonalLoanMccu extends CI_Controller {
             $a[6] = $v['current_employer'];
             $a[7] = '$'.number_format($v['employment_monthly_income']);
             $a[8] = $v['job_title'];
-            $a[9] = $v['domain'];
-            $a[10] = $v['p_address'];
-            
-            /*array_push($a, $v['state']);
-            array_push($a, $v['city']);
-            array_push($a, $v['zip']);
-            array_push($a, $v['ssn']);*/
+            $a[9] = $v['p_address'];
+            //
+            $a[10] = $v['personal_refrence'];
+            $a[11] = $v['personal_refrence_address'];
+            $a[12] = $v['personal_refrence_phone'];
+            $a[13] = $v['supervisor_name'];
+            $a[14] = $v['how_long_your_working'];
+            $a[15] = $v['address_of_business'];
+            $a[16] = $v['military_involvement'];
+            $a[17] = $v['previous_working_years'];
+            $a[18] = $v['nearest_relative'];
+            $a[19] = $v['relation_with_relative'];
+            $a[20] = $v['relatives_live_address'];
+            $a[21] = $v['laid_off_for_payment_waived'];
+            $a[22] = $v['having_any_other_source_income'];
+            $a[23] = $v['if_source_income_yes_what_isit'];
+            $a[24] = $v['if_source_income_yes_monthly_income'];
+            $a[25] = date('d-m-Y',strtotime($v['date_of_application']));
+            $a[26] = $v['add_co_signers_onto_loan'];
+            $a[27] = $v['cosigner_first_name'] . ' ' . $v['cosigner_last_name'];
+            $a[28] = $v['cosigner_phone'];
+            $a[29] = $v['cosigner_email'];
+            $a[30] = $v['cosigner_marital_status'];
+            $a[31] = $v['cosigner_address'];
+            $a[32] = $v['cosigner_years_been_there'];
+            $a[33] = $v['cosigner_monthly_pay'];
+            $a[34] = $v['cosigner_nearest_relative'];
+            $a[35] = $v['cosigner_relationship'];
+            $a[36] = $v['domain'];
             $arr[] = $a;
         }
         /*echo '<pre>';
         print_r($arr);
         exit;*/
-        $filename = "autoloans.csv";
+        $filename = "personalloan.csv";
         $fp = fopen('php://output', 'w');       
         fputcsv($fp, $arr[0]);
         unset($arr[0]);
@@ -277,7 +288,21 @@ class PersonalLoanMccu extends CI_Controller {
     {
         $this->Personalloanmccu_model->updateStatus($this->input->post('lendId'),$this->input->post('status'));
     }
+    //
+    public function get_header()
+    {
+        $arr = ["First Name", "Last Name", "Phone", "Email", "Type of Loan", "Requested Amount", "Current Employer", "Gross Monthly Income", "Job Title"
+        ,"Address", "Personal Reference", "Personal Reference Address", "Personal Reference Phone", "Supervisor Name", "Working Years", "Address of Business",
+        "Miltary Involvement", "Previous Employment Years",
+        "Nearest Relative", "Relatives Relation", "Relative Address", "Payment Laid Off | Payment Waived", "Having Second Income", "Income Source Name",
+        "Second Income Source Monthly", "Date Of Application", "Added Cosigner", "Cosigner's Full Name", "Cosigner's Phone", 
+        "Cosigner's Email", "Cosigner's Marital Status", "Cosigner's Adress", "Cosigner's Living there", "Cosginer's Monthly Pay", "Cosigner's Nearest Relative",
+        "Cosigner's Relationship with",
+        "Domain"
+            ];
+        return $arr;    
 
+    }
 
 
     //========================================END OF FILE=====================================================

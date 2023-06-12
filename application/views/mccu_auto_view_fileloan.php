@@ -37,7 +37,20 @@
                         Applicant Account Number :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       --
+                    <?php   if(isset($userDetails['lend_id']))
+                            {
+                                echo $userDetails['lend_id'];
+                            } 
+                            elseif(isset($userDetails['p_id']))
+                            {
+                                echo $userDetails['p_id'];
+                            }
+                            elseif(isset($userDetails['rc_id']))
+                            {
+                                echo $userDetails['rc_id'];
+                            }
+                            
+                        ?>
                     </td>
                 </tr>
                 <tr>
