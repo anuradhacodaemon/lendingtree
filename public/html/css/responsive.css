@@ -64,7 +64,8 @@
     text-align: center;
   }
   .footer-main {
-    padding: 10px;
+    /* padding: 10px; */
+    padding: 5px;
     text-align: center;
   }
   .panel .block-frame .logo-list {
@@ -209,7 +210,8 @@
     padding: 20px 0;
   }
   .footer-main {
-    padding: 10px;
+    /* padding: 10px; */
+    padding: 5px;
     text-align: center;
   }
   .main-section {

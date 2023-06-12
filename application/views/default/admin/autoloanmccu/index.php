@@ -402,7 +402,7 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
                         <input id="statusId" name="statusId" type="hidden">
                         <input id="lendId" name="lendId" type="hidden">
                         <div class="form-group">
-                            <label class="col-sm-9 control-label">Status</label>
+                            <label class="col-sm-3 control-label" style = "padding-top:0px;">Status</label>
                             <div class="col-sm-9">
                                 <select name="status" id="status" >
                                     <option value="">select status</option> 
