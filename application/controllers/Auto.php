@@ -2172,7 +2172,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
         $this->email->subject("MCCU Community Credit Union New Digital Application");
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('haroon.m@codaemonsoftwares.com','nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -2247,26 +2247,25 @@ class Auto extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
-
-        /*         * $config = Array(
-          'protocol' => 'sendmail',
-          'smtp_host' => 'Smtp.gmail.com',
-          'smtp_port' => 25,
-          'smtp_user' => 'codaemon123',
-          'smtp_pass' => 'codaemon1234',
-          'smtp_timeout' => '4',
-          'mailtype' => 'html',
-          'charset' => 'iso-8859-1'
-          );
-         * */
         $this->load->library('email');
-
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("MCCU Community Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
+        $this->email->bcc('haroon.m@codaemonsoftwares.com');
+        //this is user
+        if(!empty($data['userDetails']['upload_document_proof']))
+        {
+            $usrDoc = PHYSICAL_PATH. 'userDocuments/'.$data['userDetails']['upload_document_proof'];
+            $this->email->attach($usrDoc);
+        }
+        //this is cosigner
+        if(!empty($data['userDetails']['cosigner_documant']))
+        {
+            $csrDoc = PHYSICAL_PATH. 'cosignerDocuments/'.$data['userDetails']['cosigner_documant'];
+            $this->email->attach($csrDoc);
+        }
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {

@@ -1974,7 +1974,7 @@ class RecreationalLoan extends CI_Controller
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
         $this->email->subject("MCCU Community Credit Union New Digital Application");
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->bcc('haroon.m@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -2000,7 +2000,7 @@ class RecreationalLoan extends CI_Controller
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
         if ($emailSend) {
-            //echo $this->email->print_debugger();
+            //echo $this->email->print_debugger();exit;
             return 1;
         }
         return 0;
@@ -2058,7 +2058,19 @@ class RecreationalLoan extends CI_Controller
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("MCCU Community Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
+        $this->email->bcc('haroon.m@codaemonsoftwares.com');
+        //this is user
+        if(!empty($data['userDetails']['upload_document_proof']))
+        {
+            $usrDoc = PHYSICAL_PATH. 'userDocuments/'.$data['userDetails']['upload_document_proof'];
+            $this->email->attach($usrDoc);
+        }
+        //this is cosigner
+        if(!empty($data['userDetails']['cosigner_documant']))
+        {
+            $csrDoc = PHYSICAL_PATH. 'cosignerDocuments/'.$data['userDetails']['cosigner_documant'];
+            $this->email->attach($csrDoc);
+        }
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
