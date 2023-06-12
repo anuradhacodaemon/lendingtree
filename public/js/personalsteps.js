@@ -4,12 +4,11 @@ if (window.performance) {
 }
     var urlParams = new URLSearchParams(window.location.search);
     var step = parseInt(urlParams.get('step'));
-
     console.log("The step from lending>>>"+ step);
     //This condition works when user directly put the step value in it
   if (performance.navigation.type == 1) {
     
-    if (window.location.search.indexOf('step=1') > -1) {
+    if (step==1) {
     $('#step_count').val(1);    
       $.ajax({
             type: "GET",
@@ -21,7 +20,7 @@ if (window.performance) {
             }
         }); 
     }
-    if (window.location.search.indexOf('step=2') > -1) {
+    if (step==2) {
         $('#step_count').val(2); 
        $.ajax({
             type: "GET",
@@ -32,7 +31,7 @@ if (window.performance) {
             }
         });
     }
-     if (window.location.search.indexOf('step=3') > -1) {
+     if (step==3) {
         $('#step_count').val(3); 
          $.ajax({
              type: "GET",
@@ -43,7 +42,7 @@ if (window.performance) {
              }
          });
      }
-    if (window.location.search.indexOf('step=4') > -1) {
+    if (step==4) {
       $('#step_count').val(4);  
        $.ajax({
             type: "GET",
@@ -54,7 +53,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=5') > -1) {
+    if (step==5) {
         $('#step_count').val(5);  
         $.ajax({
             type: "GET",
@@ -65,7 +64,7 @@ if (window.performance) {
             }
         });
     }
-   if (window.location.search.indexOf('step=6') > -1) {
+   if (step==6) {
        $('#step_count').val(6);  
        $.ajax({
             type: "GET",
@@ -76,7 +75,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=7') > -1) {
+    if (step==7) {
         $('#step_count').val(7);   
        $.ajax({
             type: "GET",
@@ -87,7 +86,7 @@ if (window.performance) {
             }
         });
     }    
-    if (window.location.search.indexOf('step=8') > -1) {
+    if (step==8) {
         $('#step_count').val(8);   
        $.ajax({
             type: "GET",
@@ -98,7 +97,7 @@ if (window.performance) {
             }
         });
     }   
-    if (window.location.search.indexOf('step=9') > -1) {
+    if (step==9) {
         $('#step_count').val(9);   
        $.ajax({
             type: "GET",
@@ -109,7 +108,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=10') > -1) {
+    if (step==10) {
         $('#step_count').val(10);   
        $.ajax({
             type: "GET",
@@ -120,7 +119,7 @@ if (window.performance) {
             }
         });
     }  
-    if (window.location.search.indexOf('step=10.1') > -1) {
+    if (step==10.1) {
         $('#step_count').val(10.1);   
        $.ajax({
             type: "GET",
@@ -131,7 +130,7 @@ if (window.performance) {
             }
         });
     }   
-    if (window.location.search.indexOf('step=11') > -1) {
+    if (step==11) {
         $('#step_count').val(11);   
        $.ajax({
             type: "GET",
@@ -142,7 +141,7 @@ if (window.performance) {
             }
         });
     }    
-    if (window.location.search.indexOf('step=11.1') > -1) {
+    if (step==11.1) {
         $('#step_count').val(11.1);   
        $.ajax({
             type: "GET",
@@ -153,7 +152,7 @@ if (window.performance) {
             }
         });
     }   
-    if (window.location.search.indexOf('step=12') > -1) {
+    if (step==12) {
         $('#step_count').val(12);   
        $.ajax({
             type: "GET",
@@ -164,7 +163,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=13') > -1) {
+    if (step==13) {
         $('#step_count').val(13);   
        $.ajax({
             type: "GET",
@@ -175,7 +174,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=14') > -1) {
+    if (step==14) {
         $('#step_count').val(14);   
        $.ajax({
             type: "GET",
@@ -186,7 +185,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=15') > -1) {
+    if (step==15) {
         $('#step_count').val(15);   
        $.ajax({
             type: "GET",
@@ -197,7 +196,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=16') > -1) {
+    if (step==16) {
         $('#step_count').val(16);   
        $.ajax({
             type: "GET",
@@ -208,7 +207,7 @@ if (window.performance) {
             }
         });
     }  
-    if (window.location.search.indexOf('step=17') > -1) {
+    if (step==17) {
         $('#step_count').val(17);   
        $.ajax({
             type: "GET",
@@ -219,7 +218,7 @@ if (window.performance) {
             }
         });
     }   
-    if (window.location.search.indexOf('step=18') > -1) {
+    if (step==18) {
         $('#step_count').val(18);   
        $.ajax({
             type: "GET",
@@ -230,7 +229,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=19') > -1) {
+    if (step==19) {
         $('#step_count').val(19);   
        $.ajax({
             type: "GET",
@@ -241,7 +240,7 @@ if (window.performance) {
             }
         });
     }   
-    if (window.location.search.indexOf('step=20') > -1) {
+    if (step==20) {
         $('#step_count').val(20);   
        $.ajax({
             type: "GET",
@@ -252,7 +251,7 @@ if (window.performance) {
             }
         });
     }    
-    if (window.location.search.indexOf('step=21') > -1) {
+    if (step==21) {
         $('#step_count').val(21);   
        $.ajax({
             type: "GET",
@@ -263,7 +262,7 @@ if (window.performance) {
             }
         });
     } 
-    if (window.location.search.indexOf('step=22') > -1) {
+    if (step==22) {
         $('#step_count').val(22);   
        $.ajax({
             type: "GET",
@@ -274,7 +273,7 @@ if (window.performance) {
             }
         });
     }   
-    if (window.location.search.indexOf('step=22.1') > -1) {
+    if (step==22.1) {
         $('#step_count').val(22.1);   
        $.ajax({
             type: "GET",
@@ -285,7 +284,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=23') > -1) {
+    if (step==23) {
         $('#step_count').val(23);   
        $.ajax({
             type: "GET",
@@ -296,7 +295,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=24') > -1) {
+    if (step==24) {
         $('#step_count').val(24); 
         $.ajax({
             type: "GET",
@@ -307,7 +306,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=25') > -1) {
+    if (step==25) {
         $('#step_count').val(25); 
         $.ajax({
             type: "GET",
@@ -318,7 +317,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=26') > -1) {
+    if (step==26) {
         $('#step_count').val(26); 
         $.ajax({
             type: "GET",
@@ -329,7 +328,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=27') > -1) {
+    if (step==27) {
         $('#step_count').val(27); 
         $.ajax({
             type: "GET",
@@ -340,7 +339,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=28') > -1) {
+    if (step==28) {
         $('#step_count').val(28); 
         $.ajax({
             type: "GET",
@@ -351,7 +350,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=29') > -1) {
+    if (step==29) {
         $('#step_count').val(29); 
         $.ajax({
             type: "GET",
@@ -362,7 +361,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=30') > -1) {
+    if (step==30) {
         $('#step_count').val(30); 
         $.ajax({
             type: "GET",
@@ -373,7 +372,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=31') > -1) {
+    if (step==31) {
         $('#step_count').val(31); 
         $.ajax({
             type: "GET",
@@ -384,7 +383,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=32') > -1) {
+    if (step==32) {
         $('#step_count').val(32); 
         $.ajax({
             type: "GET",
@@ -395,7 +394,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=32.1') > -1) {
+    if (step==32.1) {
         $('#step_count').val(32.1); 
         $.ajax({
             type: "GET",
@@ -406,7 +405,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=33') > -1) {
+    if (step==33) {
         $('#step_count').val(33); 
         $.ajax({
             type: "GET",
@@ -417,7 +416,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=34') > -1) {
+    if (step==34) {
         $('#step_count').val(34); 
         $.ajax({
             type: "GET",
@@ -428,7 +427,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=35') > -1) {
+    if (step==35) {
         $('#step_count').val(35); 
         $.ajax({
             type: "GET",
@@ -439,7 +438,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=36') > -1) {
+    if (step==36) {
         $('#step_count').val(36); 
         $.ajax({
             type: "GET",
@@ -450,7 +449,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=37') > -1) {
+    if (step==37) {
         $('#step_count').val(37); 
         $.ajax({
             type: "GET",
@@ -461,7 +460,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=38') > -1) {
+    if (step==38) {
         $('#step_count').val(38); 
         $.ajax({
             type: "GET",
@@ -472,7 +471,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=39') > -1) {
+    if (step==39) {
         $('#step_count').val(39); 
         $.ajax({
             type: "GET",
@@ -483,7 +482,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=40') > -1) {
+    if (step==40) {
         $('#step_count').val(40); 
         $.ajax({
             type: "GET",
@@ -494,7 +493,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=41') > -1) {
+    if (step==41) {
         $('#step_count').val(41); 
         $.ajax({
             type: "GET",
@@ -505,7 +504,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=42') > -1) {
+    if (step==42) {
         $('#step_count').val(42); 
         $.ajax({
             type: "GET",
@@ -516,7 +515,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=43') > -1) {
+    if (step==43) {
         $('#step_count').val(43); 
         $.ajax({
             type: "GET",
@@ -536,27 +535,28 @@ if (window.performance) {
     /*window.onpopstate = function (event)
     {
         console.log("This is state>>" + event.state);
-        if (window.location.search.indexOf('step=1') > -1) {
+        if (pageId==1') > -1) {
         alert('check this');
         }
     }*/
     window.addEventListener('popstate', function(event) {
         //console.log("This is state>>" + event.state);
         var currentState = window.history.state;
-        console.log(currentState);
-    if (window.location.search.indexOf('step=1') > -1) {
+        console.log(currentState.id);
+        let pageId = currentState.id;
+    if (pageId==1) {
         $('#step_count').val(1);  
         $.ajax({
             type: "GET",
             url: base_url +"personalLoan/step1",
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=1");
+                //window.history.pushState("Details", "Title", base_url + "auto?step=1");
                 $('#container').html(data);
             }
         });
     }
-    if (window.location.search.indexOf('step=2') > -1) {
+    if (pageId==2) {
         $('#step_count').val(2); 
         $.ajax({
             type: "GET",
@@ -567,7 +567,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=3') > -1) {
+    if (pageId==3) {
         $('#step_count').val(3); 
         $.ajax({
             type: "GET",
@@ -578,7 +578,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=4') > -1) {
+    if (pageId==4) {
         $('#step_count').val(4); 
        $.ajax({
             type: "GET",
@@ -589,7 +589,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=5') > -1) {
+    if (pageId==5) {
         $('#step_count').val(5); 
         $.ajax({
             type: "GET",
@@ -600,7 +600,7 @@ if (window.performance) {
             }
         });
     }
-     if (window.location.search.indexOf('step=6') > -1) {
+     if (pageId==6) {
         $('#step_count').val(6); 
         $.ajax({
             type: "GET",
@@ -611,7 +611,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=7') > -1) {
+    if (pageId==7) {
         $('#step_count').val(7); 
         $.ajax({
             type: "GET",
@@ -622,7 +622,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=8') > -1) {
+    if (pageId==8) {
         $('#step_count').val(8); 
         $.ajax({
             type: "GET",
@@ -633,7 +633,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=9') > -1) {
+    if (pageId==9) {
         $('#step_count').val(9); 
         $.ajax({
             type: "GET",
@@ -644,7 +644,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=10') > -1) {
+    if (pageId==10) {
         $('#step_count').val(10); 
         $.ajax({
             type: "GET",
@@ -655,7 +655,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=10.1') > -1) {
+    if (pageId==10.1) {
         $('#step_count').val(10.1); 
         $.ajax({
             type: "GET",
@@ -666,7 +666,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=11') > -1) {
+    if (pageId==11) {
         $('#step_count').val(11); 
         $.ajax({
             type: "GET",
@@ -677,7 +677,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=11.1') > -1) {
+    if (pageId==11.1) {
         $('#step_count').val(11.1); 
         $.ajax({
             type: "GET",
@@ -688,7 +688,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=12') > -1) {
+    if (pageId==12) {
         $('#step_count').val(12); 
         $.ajax({
             type: "GET",
@@ -699,7 +699,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=13') > -1) {
+    if (pageId==13) {
         $('#step_count').val(13); 
         $.ajax({
             type: "GET",
@@ -710,7 +710,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=14') > -1) {
+    if (pageId==14) {
         $('#step_count').val(14); 
         $.ajax({
             type: "GET",
@@ -721,7 +721,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=15') > -1) {
+    if (pageId==15) {
         $('#step_count').val(15); 
         $.ajax({
             type: "GET",
@@ -732,7 +732,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=16') > -1) {
+    if (pageId==16) {
         $('#step_count').val(16); 
         $.ajax({
             type: "GET",
@@ -743,7 +743,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=17') > -1) {
+    if (pageId==17) {
         $('#step_count').val(17); 
         $.ajax({
             type: "GET",
@@ -754,7 +754,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=18') > -1) {
+    if (pageId==18) {
         $('#step_count').val(18); 
         $.ajax({
             type: "GET",
@@ -765,7 +765,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=19') > -1) {
+    if (pageId==19) {
         $('#step_count').val(19); 
         $.ajax({
             type: "GET",
@@ -776,7 +776,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=20') > -1) {
+    if (pageId==20) {
         $('#step_count').val(20); 
         $.ajax({
             type: "GET",
@@ -787,7 +787,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=21') > -1) {
+    if (pageId==21) {
         $('#step_count').val(21); 
         $.ajax({
             type: "GET",
@@ -798,7 +798,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=22') > -1) {
+    if (pageId==22) {
         $('#step_count').val(22); 
         $.ajax({
             type: "GET",
@@ -809,7 +809,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=22.1') > -1) {
+    if (pageId==22.1) {
         $('#step_count').val(22.1); 
         $.ajax({
             type: "GET",
@@ -820,7 +820,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=23') > -1) {
+    if (pageId==23) {
         $('#step_count').val(23); 
         $.ajax({
             type: "GET",
@@ -831,7 +831,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=24') > -1) {
+    if (pageId==24) {
         $('#step_count').val(24); 
         $.ajax({
             type: "GET",
@@ -842,7 +842,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=25') > -1) {
+    if (pageId==25) {
         $('#step_count').val(25); 
         $.ajax({
             type: "GET",
@@ -853,7 +853,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=26') > -1) {
+    if (pageId==26) {
         $('#step_count').val(26); 
         $.ajax({
             type: "GET",
@@ -864,7 +864,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=27') > -1) {
+    if (pageId==27) {
         $('#step_count').val(27); 
         $.ajax({
             type: "GET",
@@ -875,7 +875,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=28') > -1) {
+    if (pageId==28) {
         $('#step_count').val(28); 
         $.ajax({
             type: "GET",
@@ -886,7 +886,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=29') > -1) {
+    if (pageId==29) {
         $('#step_count').val(29); 
         $.ajax({
             type: "GET",
@@ -897,7 +897,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=30') > -1) {
+    if (pageId==30) {
         $('#step_count').val(30); 
         $.ajax({
             type: "GET",
@@ -908,7 +908,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=31') > -1) {
+    if (pageId==31) {
         $('#step_count').val(31); 
         $.ajax({
             type: "GET",
@@ -919,7 +919,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=32') > -1) {
+    if (pageId==32) {
         $('#step_count').val(32); 
         $.ajax({
             type: "GET",
@@ -930,7 +930,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=32.1') > -1) {
+    if (pageId==32.1) {
         $('#step_count').val(32.1); 
         $.ajax({
             type: "GET",
@@ -941,7 +941,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=33') > -1) {
+    if (pageId==33) {
         $('#step_count').val(33); 
         $.ajax({
             type: "GET",
@@ -952,7 +952,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=34') > -1) {
+    if (pageId==34) {
         $('#step_count').val(34); 
         $.ajax({
             type: "GET",
@@ -963,7 +963,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=35') > -1) {
+    if (pageId==35) {
         $('#step_count').val(35); 
         $.ajax({
             type: "GET",
@@ -974,7 +974,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=36') > -1) {
+    if (pageId==36) {
         $('#step_count').val(36); 
         $.ajax({
             type: "GET",
@@ -985,7 +985,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=37') > -1) {
+    if (pageId==37) {
         $('#step_count').val(37); 
         $.ajax({
             type: "GET",
@@ -996,7 +996,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=38') > -1) {
+    if (pageId==38) {
         $('#step_count').val(38); 
         $.ajax({
             type: "GET",
@@ -1007,7 +1007,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=39') > -1) {
+    if (pageId==39) {
         $('#step_count').val(39); 
         $.ajax({
             type: "GET",
@@ -1018,7 +1018,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=40') > -1) {
+    if (pageId==40) {
         $('#step_count').val(40); 
         $.ajax({
             type: "GET",
@@ -1029,7 +1029,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=41') > -1) {
+    if (pageId==41) {
         $('#step_count').val(41); 
         $.ajax({
             type: "GET",
@@ -1040,7 +1040,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=42') > -1) {
+    if (pageId==42) {
         $('#step_count').val(42); 
         $.ajax({
             type: "GET",
@@ -1051,7 +1051,7 @@ if (window.performance) {
             }
         });
     }
-    if (window.location.search.indexOf('step=43') > -1) {
+    if (pageId==43) {
         $('#step_count').val(43); 
         $.ajax({
             type: "GET",
@@ -1063,10 +1063,8 @@ if (window.performance) {
         });
     }
 
-
-
     //Browser Back condition Ends below
- }, false);
+ });
 
 
 

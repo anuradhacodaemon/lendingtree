@@ -334,13 +334,13 @@ function addCosigner(value)
         {
             var selected_marital_status = $('input[name="type_loan"]:checked').val();
             formData.append('type_loan', selected_marital_status);
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=1");
+            window.history.pushState({id:1}, "Title", base_url + "recreationalLoan?step=1");
         }
         if(step == 2)
         {
             var selected_marital_status = $('input[name="req_amt"]:checked').val();
             formData.append('req_amt', selected_marital_status);
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=2");
+            window.history.pushState({id:2}, "Title", base_url + "recreationalLoan?step=2");
         }
         if(step == 4 || step == 25)
         {
@@ -1191,14 +1191,14 @@ function recreational_step2()
     $('#step_count').val(2);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step2/",
+        url:  base_url + "recreationalLoan/step2",
         success: function (data)
         {    
             /*var data = { key: 'value' };
             var url = 'auto?step=2';
             window.history.pushState(data, '', base_url + "auto?step=2");*/
             //alert('you are in the function');
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=2");
+            window.history.pushState({id:2}, "Title", base_url + "recreationalLoan?step=2");
             $('#container').html(data);                
         }
     });
@@ -1208,10 +1208,10 @@ function recreational_step3()
     $('#step_count').val(3);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step3/",
+        url:  base_url + "recreationalLoan/step3",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=3");
+            window.history.pushState({id:3}, "Title", base_url + "recreationalLoan?step=3");
             $('#container').html(data);                
         }
     });
@@ -1222,10 +1222,10 @@ function recreational_step4()
     $('#step_count').val(4);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step4/",
+        url:  base_url + "recreationalLoan/step4",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=4");
+            window.history.pushState({id:4}, "Title", base_url + "recreationalLoan?step=4");
             $('#container').html(data);                
         }
     });
@@ -1236,10 +1236,10 @@ function recreational_step5()
     $('#step_count').val(5);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step5/",
+        url:  base_url + "recreationalLoan/step5",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=5");
+            window.history.pushState({id:5}, "Title", base_url + "recreationalLoan?step=5");
             $('#container').html(data);                
         }
     });
@@ -1249,10 +1249,10 @@ function recreational_step6()
     $('#step_count').val(6);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step6/",
+        url:  base_url + "recreationalLoan/step6",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=6");
+            window.history.pushState({id:6}, "Title", base_url + "recreationalLoan?step=6");
             $('#container').html(data);                
         }
     });
@@ -1262,10 +1262,10 @@ function recreational_step7()
     $('#step_count').val(7);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step7/",
+        url:  base_url + "recreationalLoan/step7",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=7");
+            window.history.pushState({id:7}, "Title", base_url + "recreationalLoan?step=7");
             $('#container').html(data);                
         }
     });
@@ -1275,10 +1275,10 @@ function recreational_step8()
     $('#step_count').val(8);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step8/",
+        url:  base_url + "recreationalLoan/step8",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=8");
+            window.history.pushState({id:8}, "Title", base_url + "recreationalLoan?step=8");
             $('#container').html(data);                
         }
     });
@@ -1288,10 +1288,10 @@ function recreational_step9()
     $('#step_count').val(9);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step9/",
+        url:  base_url + "recreationalLoan/step9",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=9");
+            window.history.pushState({id:9}, "Title", base_url + "recreationalLoan?step=9");
             $('#container').html(data);                
         }
     });
@@ -1301,10 +1301,10 @@ function recreational_step10()
     $('#step_count').val(10);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step10/",
+        url:  base_url + "recreationalLoan/step10",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=10");
+            window.history.pushState({id:10}, "Title", base_url + "recreationalLoan?step=10");
             $('#container').html(data);                
         }
     });
@@ -1314,10 +1314,10 @@ function recreational_step10_1()
     $('#step_count').val(10.1);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step10_1/",
+        url:  base_url + "recreationalLoan/step10_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=10.1");
+            window.history.pushState({id:10.1}, "Title", base_url + "recreationalLoan?step=10.1");
             $('#container').html(data);                
         }
     });
@@ -1327,10 +1327,10 @@ function recreational_step11()
     $('#step_count').val(11);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step11/",
+        url:  base_url + "recreationalLoan/step11",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=11");
+            window.history.pushState({id:11}, "Title", base_url + "recreationalLoan?step=11");
             $('#container').html(data);                
         }
     });
@@ -1340,10 +1340,10 @@ function recreational_step11_1()
     $('#step_count').val(11.1);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step11_1/",
+        url:  base_url + "recreationalLoan/step11_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=11.1");
+            window.history.pushState({id:11.1}, "Title", base_url + "recreationalLoan?step=11.1");
             $('#container').html(data);                
         }
     });
@@ -1353,10 +1353,10 @@ function recreational_step12()
     $('#step_count').val(12);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step12/",
+        url:  base_url + "recreationalLoan/step12",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=12");
+            window.history.pushState({id:12}, "Title", base_url + "recreationalLoan?step=12");
             $('#container').html(data);                
         }
     });
@@ -1366,10 +1366,10 @@ function recreational_step13()
     $('#step_count').val(13);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step13/",
+        url:  base_url + "recreationalLoan/step13",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=13");
+            window.history.pushState({id:13}, "Title", base_url + "recreationalLoan?step=13");
             $('#container').html(data);                
         }
     });
@@ -1379,10 +1379,10 @@ function recreational_step14()
     $('#step_count').val(14);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step14/",
+        url:  base_url + "recreationalLoan/step14",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=14");
+            window.history.pushState({id:14}, "Title", base_url + "recreationalLoan?step=14");
             $('#container').html(data);                
         }
     });
@@ -1392,10 +1392,10 @@ function recreational_step15()
     $('#step_count').val(15);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step15/",
+        url:  base_url + "recreationalLoan/step15",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=15");
+            window.history.pushState({id:15}, "Title", base_url + "recreationalLoan?step=15");
             $('#container').html(data);                
         }
     });
@@ -1405,10 +1405,10 @@ function recreational_step16()
     $('#step_count').val(16);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step16/",
+        url:  base_url + "recreationalLoan/step16",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=16");
+            window.history.pushState({id:16}, "Title", base_url + "recreationalLoan?step=16");
             $('#container').html(data);                
         }
     });
@@ -1418,10 +1418,10 @@ function recreational_step17()
     $('#step_count').val(17);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step17/",
+        url:  base_url + "recreationalLoan/step17",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=17");
+            window.history.pushState({id:17}, "Title", base_url + "recreationalLoan?step=17");
             $('#container').html(data);                
         }
     });
@@ -1431,10 +1431,10 @@ function recreational_step18()
     $('#step_count').val(18);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step18/",
+        url:  base_url + "recreationalLoan/step18",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=18");
+            window.history.pushState({id:18}, "Title", base_url + "recreationalLoan?step=18");
             $('#container').html(data);                
         }
     });
@@ -1444,10 +1444,10 @@ function recreational_step19()
     $('#step_count').val(19);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step19/",
+        url:  base_url + "recreationalLoan/step19",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=19");
+            window.history.pushState({id:19}, "Title", base_url + "recreationalLoan?step=19");
             $('#container').html(data);                
         }
     });
@@ -1457,10 +1457,10 @@ function recreational_step20()
     $('#step_count').val(20);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step20/",
+        url:  base_url + "recreationalLoan/step20",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=20");
+            window.history.pushState({id:20}, "Title", base_url + "recreationalLoan?step=20");
             $('#container').html(data);                
         }
     });
@@ -1470,10 +1470,10 @@ function recreational_step21()
     $('#step_count').val(21);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step21/",
+        url:  base_url + "recreationalLoan/step21",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=21");
+            window.history.pushState({id:21}, "Title", base_url + "recreationalLoan?step=21");
             $('#container').html(data);                
         }
     });
@@ -1483,10 +1483,10 @@ function recreational_step22()
     $('#step_count').val(22);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step22/",
+        url:  base_url + "recreationalLoan/step22",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=22");
+            window.history.pushState({id:22}, "Title", base_url + "recreationalLoan?step=22");
             $('#container').html(data);                
         }
     });
@@ -1496,10 +1496,10 @@ function recreational_step22_1()
     $('#step_count').val(22.1);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step22_1/",
+        url:  base_url + "recreationalLoan/step22_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=22.1");
+            window.history.pushState({id:22.1}, "Title", base_url + "recreationalLoan?step=22.1");
             $('#container').html(data);                
         }
     });
@@ -1509,10 +1509,10 @@ function recreational_step23()
     $('#step_count').val(23);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step23/",
+        url:  base_url + "recreationalLoan/step23",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=23");
+            window.history.pushState({id:23}, "Title", base_url + "recreationalLoan?step=23");
             $('#container').html(data);                
         }
     });
@@ -1522,10 +1522,10 @@ function recreational_step24()
     $('#step_count').val(24);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step24/",
+        url:  base_url + "recreationalLoan/step24",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=24");
+            window.history.pushState({id:24}, "Title", base_url + "recreationalLoan?step=24");
             $('#container').html(data);                
         }
     });
@@ -1535,10 +1535,10 @@ function recreational_step25()
     $('#step_count').val(25);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step25/",
+        url:  base_url + "recreationalLoan/step25",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=25");
+            window.history.pushState({id:25}, "Title", base_url + "recreationalLoan?step=25");
             $('#container').html(data);                
         }
     });
@@ -1548,10 +1548,10 @@ function recreational_step26()
     $('#step_count').val(26);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step26/",
+        url:  base_url + "recreationalLoan/step26",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=26");
+            window.history.pushState({id:26}, "Title", base_url + "recreationalLoan?step=26");
             $('#container').html(data);                
         }
     });
@@ -1561,10 +1561,10 @@ function recreational_step27()
     $('#step_count').val(27);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step27/",
+        url:  base_url + "recreationalLoan/step27",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=27");
+            window.history.pushState({id:27}, "Title", base_url + "recreationalLoan?step=27");
             $('#container').html(data);                
         }
     });
@@ -1574,10 +1574,10 @@ function recreational_step28()
     $('#step_count').val(28);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step28/",
+        url:  base_url + "recreationalLoan/step28",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=28");
+            window.history.pushState({id:28}, "Title", base_url + "recreationalLoan?step=28");
             $('#container').html(data);                
         }
     });
@@ -1587,10 +1587,10 @@ function recreational_step29()
     $('#step_count').val(29);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step29/",
+        url:  base_url + "recreationalLoan/step29",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=29");
+            window.history.pushState({id:29}, "Title", base_url + "recreationalLoan?step=29");
             $('#container').html(data);                
         }
     });
@@ -1600,10 +1600,10 @@ function recreational_step30()
     $('#step_count').val(30);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step30/",
+        url:  base_url + "recreationalLoan/step30",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=30");
+            window.history.pushState({id:30}, "Title", base_url + "recreationalLoan?step=30");
             $('#container').html(data);                
         }
     });
@@ -1613,10 +1613,10 @@ function recreational_step31()
     $('#step_count').val(31);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step31/",
+        url:  base_url + "recreationalLoan/step31",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=31");
+            window.history.pushState({id:31}, "Title", base_url + "recreationalLoan?step=31");
             $('#container').html(data);                
         }
     });
@@ -1626,10 +1626,10 @@ function recreational_step32()
     $('#step_count').val(32);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step32/",
+        url:  base_url + "recreationalLoan/step32",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=32");
+            window.history.pushState({id:32}, "Title", base_url + "recreationalLoan?step=32");
             $('#container').html(data);                
         }
     });
@@ -1639,10 +1639,10 @@ function recreational_step32_1()
     $('#step_count').val(32.1);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step32_1/",
+        url:  base_url + "recreationalLoan/step32_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=32.1");
+            window.history.pushState({id:32.1}, "Title", base_url + "recreationalLoan?step=32.1");
             $('#container').html(data);                
         }
     });
@@ -1652,10 +1652,10 @@ function recreational_step33()
     $('#step_count').val(33);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step33/",
+        url:  base_url + "recreationalLoan/step33",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=33");
+            window.history.pushState({id:33}, "Title", base_url + "recreationalLoan?step=33");
             $('#container').html(data);                
         }
     });
@@ -1665,10 +1665,10 @@ function recreational_step34()
     $('#step_count').val(34);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step34/",
+        url:  base_url + "recreationalLoan/step34",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=34");
+            window.history.pushState({id:34}, "Title", base_url + "recreationalLoan?step=34");
             $('#container').html(data);                
         }
     });
@@ -1678,10 +1678,10 @@ function recreational_step35()
     $('#step_count').val(35);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step35/",
+        url:  base_url + "recreationalLoan/step35",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=35");
+            window.history.pushState({id:35}, "Title", base_url + "recreationalLoan?step=35");
             $('#container').html(data);                
         }
     });
@@ -1691,10 +1691,10 @@ function recreational_step36()
     $('#step_count').val(36);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step36/",
+        url:  base_url + "recreationalLoan/step36",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=36");
+            window.history.pushState({id:36}, "Title", base_url + "recreationalLoan?step=36");
             $('#container').html(data);                
         }
     });
@@ -1704,10 +1704,10 @@ function recreational_step37()
     $('#step_count').val(37);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step37/",
+        url:  base_url + "recreationalLoan/step37",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=37");
+            window.history.pushState({id:37}, "Title", base_url + "recreationalLoan?step=37");
             $('#container').html(data);                
         }
     });
@@ -1717,10 +1717,10 @@ function recreational_step38()
     $('#step_count').val(38);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step38/",
+        url:  base_url + "recreationalLoan/step38",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=38");
+            window.history.pushState({id:38}, "Title", base_url + "recreationalLoan?step=38");
             $('#container').html(data);                
         }
     });
@@ -1730,10 +1730,10 @@ function recreational_step39()
     $('#step_count').val(39);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step39/",
+        url:  base_url + "recreationalLoan/step39",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=39");
+            window.history.pushState({id:39}, "Title", base_url + "recreationalLoan?step=39");
             $('#container').html(data);                
         }
     });
@@ -1743,10 +1743,10 @@ function recreational_step40()
     $('#step_count').val(40);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step40/",
+        url:  base_url + "recreationalLoan/step40",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=40");
+            window.history.pushState({id:40}, "Title", base_url + "recreationalLoan?step=40");
             $('#container').html(data);                
         }
     });
@@ -1756,10 +1756,10 @@ function recreational_step41()
     $('#step_count').val(41);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step41/",
+        url:  base_url + "recreationalLoan/step41",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=41");
+            window.history.pushState({id:41}, "Title", base_url + "recreationalLoan?step=41");
             $('#container').html(data);                
         }
     });
@@ -1769,10 +1769,10 @@ function recreational_step42()
     $('#step_count').val(42);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step42/",
+        url:  base_url + "recreationalLoan/step42",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=42");
+            window.history.pushState({id:42}, "Title", base_url + "recreationalLoan?step=42");
             $('#container').html(data);                
         }
     });
@@ -1782,10 +1782,10 @@ function recreational_step43()
     $('#step_count').val(43);
     $.ajax({
         type: "GET",
-        url:  base_url + "recreationalLoan/step43/",
+        url:  base_url + "recreationalLoan/step43",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "recreationalLoan?step=43");
+            window.history.pushState({id:43}, "Title", base_url + "recreationalLoan?step=43");
             $('#container').html(data);                
         }
     });

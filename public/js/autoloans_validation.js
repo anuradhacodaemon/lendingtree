@@ -357,7 +357,7 @@ function addCosigner(value)
         {
             var selected_marital_status = $('input[name="type_loan"]:checked').val();
             formData.append('type_loan', selected_marital_status);
-            window.history.pushState("Details", "Title", base_url + "auto?step=1");
+            window.history.pushState({id:1}, "Title", base_url + "auto?step=1");
         }
         if(step == 2)
         {
@@ -562,7 +562,7 @@ function addCosigner(value)
               {
                   if(step == 1)
                   {
-                      autoloan_step2();
+                    autoloan_step2();
                   }
                   if(step == 2)
                   {
@@ -1221,7 +1221,7 @@ function autoloan_step2()
             var url = 'auto?step=2';
             window.history.pushState(data, '', base_url + "auto?step=2");*/
             //alert('you are in the function');
-            window.history.pushState("Details", "Title", base_url + "auto?step=2");
+            window.history.pushState({id:2}, "Title", base_url + "auto?step=2");
             $('#container').html(data);                
         }
     });
@@ -1234,7 +1234,7 @@ function autoloan_step3()
         url:  base_url + "auto/step3",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=3");
+            window.history.pushState({id:3}, "Title", base_url + "auto?step=3");
             $('#container').html(data);                
         }
     });
@@ -1248,7 +1248,7 @@ function autoloan_step4()
         url:  base_url + "auto/step4",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=4");
+            window.history.pushState({id:4}, "Title", base_url + "auto?step=4");
             $('#container').html(data);                
         }
     });
@@ -1262,7 +1262,7 @@ function autoloan_step5()
         url:  base_url + "auto/step5",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=5");
+            window.history.pushState({id:5}, "Title", base_url + "auto?step=5");
             $('#container').html(data);                
         }
     });
@@ -1275,7 +1275,7 @@ function autoloan_step6()
         url:  base_url + "auto/step6",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=6");
+            window.history.pushState({id:6}, "Title", base_url + "auto?step=6");
             $('#container').html(data);                
         }
     });
@@ -1288,7 +1288,7 @@ function autoloan_step7()
         url:  base_url + "auto/step7",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=7");
+            window.history.pushState({id:7}, "Title", base_url + "auto?step=7");
             $('#container').html(data);                
         }
     });
@@ -1301,7 +1301,7 @@ function autoloan_step8()
         url:  base_url + "auto/step8",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=8");
+            window.history.pushState({id:8}, "Title", base_url + "auto?step=8");
             $('#container').html(data);                
         }
     });
@@ -1314,7 +1314,7 @@ function autoloan_step9()
         url:  base_url + "auto/step9",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=9");
+            window.history.pushState({id:9}, "Title", base_url + "auto?step=9");
             $('#container').html(data);                
         }
     });
@@ -1327,7 +1327,7 @@ function autoloan_step10()
         url:  base_url + "auto/step10",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=10");
+            window.history.pushState({id:10}, "Title", base_url + "auto?step=10");
             $('#container').html(data);                
         }
     });
@@ -1340,7 +1340,7 @@ function autoloan_step10_1()
         url:  base_url + "auto/step10_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=10.1");
+            window.history.pushState({id:10.1}, "Title", base_url + "auto?step=10.1");
             $('#container').html(data);                
         }
     });
@@ -1353,7 +1353,7 @@ function autoloan_step11()
         url:  base_url + "auto/step11",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=11");
+            window.history.pushState({id:11}, "Title", base_url + "auto?step=11");
             $('#container').html(data);                
         }
     });
@@ -1366,7 +1366,7 @@ function autoloan_step11_1()
         url:  base_url + "auto/step11_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=11.1");
+            window.history.pushState({id:11.1}, "Title", base_url + "auto?step=11.1");
             $('#container').html(data);                
         }
     });
@@ -1379,7 +1379,7 @@ function autoloan_step12()
         url:  base_url + "auto/step12",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=12");
+            window.history.pushState({id:12}, "Title", base_url + "auto?step=12");
             $('#container').html(data);                
         }
     });
@@ -1392,7 +1392,7 @@ function autoloan_step13()
         url:  base_url + "auto/step13",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=13");
+            window.history.pushState({id:13}, "Title", base_url + "auto?step=13");
             $('#container').html(data);                
         }
     });
@@ -1405,7 +1405,7 @@ function autoloan_step14()
         url:  base_url + "auto/step14",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=14");
+            window.history.pushState({id:14}, "Title", base_url + "auto?step=14");
             $('#container').html(data);                
         }
     });
@@ -1418,7 +1418,7 @@ function autoloan_step15()
         url:  base_url + "auto/step15",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=15");
+            window.history.pushState({id:15}, "Title", base_url + "auto?step=15");
             $('#container').html(data);                
         }
     });
@@ -1431,7 +1431,7 @@ function autoloan_step16()
         url:  base_url + "auto/step16",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=16");
+            window.history.pushState({id:16}, "Title", base_url + "auto?step=16");
             $('#container').html(data);                
         }
     });
@@ -1444,7 +1444,7 @@ function autoloan_step17()
         url:  base_url + "auto/step17",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=17");
+            window.history.pushState({id:17}, "Title", base_url + "auto?step=17");
             $('#container').html(data);                
         }
     });
@@ -1457,7 +1457,7 @@ function autoloan_step18()
         url:  base_url + "auto/step18",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=18");
+            window.history.pushState({id:18}, "Title", base_url + "auto?step=18");
             $('#container').html(data);                
         }
     });
@@ -1470,7 +1470,7 @@ function autoloan_step19()
         url:  base_url + "auto/step19",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=19");
+            window.history.pushState({id:19}, "Title", base_url + "auto?step=19");
             $('#container').html(data);                
         }
     });
@@ -1483,7 +1483,7 @@ function autoloan_step20()
         url:  base_url + "auto/step20",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=20");
+            window.history.pushState({id:20}, "Title", base_url + "auto?step=20");
             $('#container').html(data);                
         }
     });
@@ -1496,7 +1496,7 @@ function autoloan_step21()
         url:  base_url + "auto/step21",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=21");
+            window.history.pushState({id:21}, "Title", base_url + "auto?step=21");
             $('#container').html(data);                
         }
     });
@@ -1509,7 +1509,7 @@ function autoloan_step22()
         url:  base_url + "auto/step22",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=22");
+            window.history.pushState({id:22}, "Title", base_url + "auto?step=22");
             $('#container').html(data);                
         }
     });
@@ -1522,7 +1522,7 @@ function autoloan_step22_1()
         url:  base_url + "auto/step22_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=22.1");
+            window.history.pushState({id:22.1}, "Title", base_url + "auto?step=22.1");
             $('#container').html(data);                
         }
     });
@@ -1535,7 +1535,7 @@ function autoloan_step23()
         url:  base_url + "auto/step23",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=23");
+            window.history.pushState({id:23}, "Title", base_url + "auto?step=23");
             $('#container').html(data);                
         }
     });
@@ -1548,7 +1548,7 @@ function autoloan_step24()
         url:  base_url + "auto/step24",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=24");
+            window.history.pushState({id:24}, "Title", base_url + "auto?step=24");
             $('#container').html(data);                
         }
     });
@@ -1561,7 +1561,7 @@ function autoloan_step25()
         url:  base_url + "auto/step25",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=25");
+            window.history.pushState({id:25}, "Title", base_url + "auto?step=25");
             $('#container').html(data);                
         }
     });
@@ -1574,7 +1574,7 @@ function autoloan_step26()
         url:  base_url + "auto/step26",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=26");
+            window.history.pushState({id:26}, "Title", base_url + "auto?step=26");
             $('#container').html(data);                
         }
     });
@@ -1587,7 +1587,7 @@ function autoloan_step27()
         url:  base_url + "auto/step27",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=27");
+            window.history.pushState({id:27}, "Title", base_url + "auto?step=27");
             $('#container').html(data);                
         }
     });
@@ -1600,7 +1600,7 @@ function autoloan_step28()
         url:  base_url + "auto/step28",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=28");
+            window.history.pushState({id:28}, "Title", base_url + "auto?step=28");
             $('#container').html(data);                
         }
     });
@@ -1613,7 +1613,7 @@ function autoloan_step29()
         url:  base_url + "auto/step29",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=29");
+            window.history.pushState({id:29}, "Title", base_url + "auto?step=29");
             $('#container').html(data);                
         }
     });
@@ -1626,7 +1626,7 @@ function autoloan_step30()
         url:  base_url + "auto/step30",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=30");
+            window.history.pushState({id:30}, "Title", base_url + "auto?step=30");
             $('#container').html(data);                
         }
     });
@@ -1639,7 +1639,7 @@ function autoloan_step31()
         url:  base_url + "auto/step31",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=31");
+            window.history.pushState({id:31}, "Title", base_url + "auto?step=31");
             $('#container').html(data);                
         }
     });
@@ -1652,7 +1652,7 @@ function autoloan_step32()
         url:  base_url + "auto/step32",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=32");
+            window.history.pushState({id:32}, "Title", base_url + "auto?step=32");
             $('#container').html(data);                
         }
     });
@@ -1665,7 +1665,7 @@ function autoloan_step32_1()
         url:  base_url + "auto/step32_1",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=32.1");
+            window.history.pushState({id:32.1}, "Title", base_url + "auto?step=32.1");
             $('#container').html(data);                
         }
     });
@@ -1678,7 +1678,7 @@ function autoloan_step33()
         url:  base_url + "auto/step33",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=33");
+            window.history.pushState({id:33}, "Title", base_url + "auto?step=33");
             $('#container').html(data);                
         }
     });
@@ -1691,7 +1691,7 @@ function autoloan_step34()
         url:  base_url + "auto/step34",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=34");
+            window.history.pushState({id:34}, "Title", base_url + "auto?step=34");
             $('#container').html(data);                
         }
     });
@@ -1704,7 +1704,7 @@ function autoloan_step35()
         url:  base_url + "auto/step35",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=35");
+            window.history.pushState({id:35}, "Title", base_url + "auto?step=35");
             $('#container').html(data);                
         }
     });
@@ -1717,7 +1717,7 @@ function autoloan_step36()
         url:  base_url + "auto/step36",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=36");
+            window.history.pushState({id:36}, "Title", base_url + "auto?step=36");
             $('#container').html(data);                
         }
     });
@@ -1730,7 +1730,7 @@ function autoloan_step37()
         url:  base_url + "auto/step37",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=37");
+            window.history.pushState({id:37}, "Title", base_url + "auto?step=37");
             $('#container').html(data);                
         }
     });
@@ -1743,7 +1743,7 @@ function autoloan_step38()
         url:  base_url + "auto/step38",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=38");
+            window.history.pushState({id:38}, "Title", base_url + "auto?step=38");
             $('#container').html(data);                
         }
     });
@@ -1756,7 +1756,7 @@ function autoloan_step39()
         url:  base_url + "auto/step39",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=39");
+            window.history.pushState({id:39}, "Title", base_url + "auto?step=39");
             $('#container').html(data);                
         }
     });
@@ -1769,7 +1769,7 @@ function autoloan_step40()
         url:  base_url + "auto/step40",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=40");
+            window.history.pushState({id:40}, "Title", base_url + "auto?step=40");
             $('#container').html(data);                
         }
     });
@@ -1782,7 +1782,7 @@ function autoloan_step41()
         url:  base_url + "auto/step41",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=41");
+            window.history.pushState({id:41}, "Title", base_url + "auto?step=41");
             $('#container').html(data);                
         }
     });
@@ -1795,7 +1795,7 @@ function autoloan_step42()
         url:  base_url + "auto/step42",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=42");
+            window.history.pushState({id:42}, "Title", base_url + "auto?step=42");
             $('#container').html(data);                
         }
     });
@@ -1808,7 +1808,7 @@ function autoloan_step43()
         url:  base_url + "auto/step43",
         success: function (data)
         {      
-            window.history.pushState("Details", "Title", base_url + "auto?step=43");
+            window.history.pushState({id:43}, "Title", base_url + "auto?step=43");
             $('#container').html(data);                
         }
     });

@@ -2,6 +2,9 @@ var base_url = $('#domain').val();
 if (window.performance) {
     console.info("window.performance work's fine on this browser");
 }
+    var urlParams = new URLSearchParams(window.location.search);
+    var step = parseInt(urlParams.get('step'));
+    console.log("The step from lending>>>"+ step);
 if (performance.navigation.type == 1) {
     //alert( "This page is reloaded" );
     if (window.location.search.indexOf('refinancestep=1') > -1) {
