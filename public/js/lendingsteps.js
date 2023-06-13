@@ -560,7 +560,7 @@ window.addEventListener('popstate', function(event)
         });
     }
     if (pageId==2) {
-        alert('check this>> 2');
+        //alert('check this>> 2');
         $('#step_count').val(2); 
         $.ajax({
             type: "GET",
@@ -583,7 +583,7 @@ window.addEventListener('popstate', function(event)
         });
     }
     if  (pageId==4) {
-        alert('check this>> 4');
+        //alert('check this>> 4');
         $('#step_count').val(4); 
        $.ajax({
             type: "GET",

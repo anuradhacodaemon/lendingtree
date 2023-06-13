@@ -2299,4 +2299,14 @@ class Auto extends CI_Controller {
         return 0;
     }
 
+    //
+    public function showPdf()
+    {
+        //echo "i am here>>>";
+        $data['userDetails'] = $this->AutoLoanMccu_model->get_userdetailsloanpdf(5);
+        //echo "<pre>";
+        //print_r($data);
+        $this->load->view('mccu_auto_view_fileloan', $data);
+    }    
+
 }

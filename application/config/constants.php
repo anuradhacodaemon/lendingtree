@@ -116,7 +116,7 @@ define('EMAILS', 'lend_emails');
 define('ADMINSETTING', 'lend_user');
 define('EMAILTEMPLATE', 'lend_email_message');
 define('ADMINEMAIL','support@culoanportal.com');
-define('ADMINNAME','BMTCCU');
+define('ADMINNAME','MCCU');
 define('EMAILTEMPLATEPDF', 'lend_email_template');
 define('ENCRYPTKEY', 'loan1234');
 define('ZIPCODE','lend_zipcode');

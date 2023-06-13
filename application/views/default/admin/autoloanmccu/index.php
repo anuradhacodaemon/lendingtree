@@ -271,7 +271,9 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <!-- <th class="column-title"><span class="nobr">View</span> -->
+                                <th class="column-title no-link last"><span class="nobr">Atchments</span>
 
+                                </th>
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
 
                                 </th>
@@ -323,12 +325,17 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
                                                 </a>
 
                                         </td>
-
-
-                                                <!-- <td > 
-
-                                                    <a href="<?php //echo BASE_URL . MASTERADMIN . '/autoloanmccu/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
-                                                </td>  -->
+                                        <td> 
+                                            <?php if(!empty($v['upload_document_proof'])) {  
+                                                $usr_path = BASE_URL. 'userDocuments/'. $v['upload_document_proof'];?>
+                                            <a href="<?php  echo $usr_path; ?>" class="dark_grey" target="_blank" title="User Uploaded Document"><i class="fa fa-file"></i> </a>
+                                            <?php }?>
+                                            &nbsp;
+                                            <?php if(!empty($v['cosigner_documant'])) {  
+                                                $csr_path = BASE_URL. 'cosignerDocuments/'. $v['cosigner_documant'];?>
+                                            <a href="<?php echo $csr_path; ?>" class="dark_grey" target="_blank" title="Cosigner Uploaded Document"><i class="fa fa-file-o"></i> </a>
+                                            <?php }?>
+                                        </td>  
                                         <td class="last">
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/autoloanmccu/details/' . $v['lend_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
                                             <a href="<?php echo BASE_URL . MASTERADMIN . '/autoloanmccu/pdfloan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
