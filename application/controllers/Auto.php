@@ -2316,7 +2316,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('haroon.m@codaemonsoftwares.com');
         $this->email->subject("MCCU Community Credit Union New Digital Application");
-        $this->email->message($emailContent);
+        $this->email->message('Test Email for Server MCCU');
         $emailSend = $this->email->send();
         if ($emailSend) {
             echo "from if>>";
