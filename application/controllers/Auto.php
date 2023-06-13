@@ -2307,6 +2307,25 @@ class Auto extends CI_Controller {
         //echo "<pre>";
         //print_r($data);
         $this->load->view('mccu_auto_view_fileloan', $data);
+    }  
+    //
+    public function testMail()
+    {
+        $this->load->library('email');
+        $this->email->set_newline("\r\n");
+        $this->email->from(ADMINEMAIL, ADMINNAME);
+        $this->email->to('haroon.m@codaemonsoftwares.com');
+        $this->email->subject("MCCU Community Credit Union New Digital Application");
+        $this->email->message($emailContent);
+        $emailSend = $this->email->send();
+        if ($emailSend) {
+            echo "from if>>";
+            echo $this->email->print_debugger();exit;
+            return 1;
+        }
+        echo "from if mail not send>>";
+        echo $this->email->print_debugger();exit;
+        return 0;
     }    
 
 }
