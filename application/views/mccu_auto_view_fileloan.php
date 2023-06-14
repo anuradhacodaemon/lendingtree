@@ -430,6 +430,14 @@
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Monthly Income ($) :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php echo $userDetails['monthly_pay'] ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Current Income monthly [pre-tax] ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
@@ -636,7 +644,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding:0; font-size:8px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                     ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
@@ -644,7 +652,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding:0; font-size:8px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                     IS ANY INCOME LISTED LIKELY TO BE REDUCED WITHIN THE NEXT TWO YEARS? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
@@ -1151,7 +1159,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding:0; font-size:8px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                     ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
@@ -1159,7 +1167,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding:0; font-size:8px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                     IS ANY INCOME LISTED LIKELY TO BE REDUCED WITHIN THE NEXT TWO YEARS? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
