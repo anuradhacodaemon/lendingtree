@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Family Reference Member</label>
+                    <label class="control-label">Family Reference</label>
                     <div class="row">
                         <form id="relative" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="7" id="auto_step" >
@@ -48,6 +48,7 @@
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Aunt') ? 'selected' : '' ?> value="Aunt">Aunt</option>
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'GrandParent') ? 'selected' : '' ?> value="GrandParent">GrandParent</option>
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Cousin') ? 'selected' : '' ?> value="Cousin">Cousin</option>
+                                    <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Other') ? 'selected' : '' ?> value="Other">Other</option>
                                 </select> 
                                 <span id="err2" style="color: red"></span>
 

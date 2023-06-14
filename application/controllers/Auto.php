@@ -2300,10 +2300,10 @@ class Auto extends CI_Controller {
     }
 
     //
-    public function showPdf()
+    public function showPdf($id)
     {
         //echo "i am here>>>";
-        $data['userDetails'] = $this->AutoLoanMccu_model->get_userdetailsloanpdf(5);
+        $data['userDetails'] = $this->AutoLoanMccu_model->get_userdetailsloanpdf($id);
         //echo "<pre>";
         //print_r($data);
         $this->load->view('mccu_auto_view_fileloan', $data);

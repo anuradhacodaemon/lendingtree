@@ -54,6 +54,7 @@
                                     <option <?php echo (isset($this->session->userdata['cosigner_relationship']) && $this->session->userdata['cosigner_relationship'] == 'Aunt') ? 'selected' : '' ?> value="Aunt">Aunt</option>
                                     <option <?php echo (isset($this->session->userdata['cosigner_relationship']) && $this->session->userdata['cosigner_relationship'] == 'GrandParent') ? 'selected' : '' ?> value="GrandParent">GrandParent</option>
                                     <option <?php echo (isset($this->session->userdata['cosigner_relationship']) && $this->session->userdata['cosigner_relationship'] == 'Cousin') ? 'selected' : '' ?> value="Cousin">Cousin</option>
+                                    <option <?php echo (isset($this->session->userdata['cosigner_relationship']) && $this->session->userdata['cosigner_relationship'] == 'Other') ? 'selected' : '' ?> value="Other">Other</option>
                                 </select> 
                                 <span id="err2" style="color: red"></span>
                             </div>
