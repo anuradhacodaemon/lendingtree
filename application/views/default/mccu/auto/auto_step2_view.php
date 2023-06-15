@@ -47,8 +47,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <form id="req_amount" method="post" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="2" id="auto_step" >
-                          <div class="col-xs-12 col-sm-12">
-                              <input type="text" name="req_amt" placeholder="Enter Requested Amount" value="<?php if (isset($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>" class="form-control width_100" id="req_amt" >
+                          <div class="col-xs-12 col-sm-12 margtop_10">
+                              <input type="text" name="req_amt" placeholder="Enter Requested Amount" value="<?php if (isset($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>" class="form-control" id="req_amt" >
                               <span id="err1" style="color: red"></span>
                           </div>
                           <div class="col-xs-12 col-sm-12 radio margtop_30">
