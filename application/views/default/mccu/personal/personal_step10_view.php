@@ -41,12 +41,12 @@
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                         <input type="hidden" name="auto_step" value="10" id="auto_step" >
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <span style = "color:black;"> $ </span>
+                            <span style = "color:black;font-size: 12px;"> <strong>$</strong> </span>
                                 <input type="text" name="monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['employment_monthly_income'])) echo $this->session->userdata['employment_monthly_income'] ?>" class="form-control width_100" id="monthly_income_pre_tax" >
                                 <span id="err1" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <span class="optional-file">Accepting File type [.png, .txt, .pdf] (Optional) </span>     
+                            <span class="optional-file">Accepted Files [paystub/Bank statements] in Formats [.png, .txt, .pdf] (Optional field) </span>    
                                 <input type="file" name="upload_user_doc" accept=".png, .txt, .pdf" value="<?php if (isset($this->session->userdata['upload_document_proof'])) echo $this->session->userdata['upload_document_proof'] ?>" class="form-control width_100" id="employer_job_title" >
                                 <span id="err2" style="color: red"></span>
                             </div>

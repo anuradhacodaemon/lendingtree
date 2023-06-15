@@ -1,3 +1,11 @@
+<?php 
+function isJson($string) {
+    json_decode($string);
+    return json_last_error() === JSON_ERROR_NONE;
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -208,18 +216,34 @@
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Current Street Address :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       <?php echo str_replace("%20"," ",$userDetails['p_address']); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Military Involvement :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo $userDetails['military_involvement']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Current Street Address :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                       <?php 
+                                $country = $street = $city = $state = $zipcode = "--";
+                                $resp = isJson($userDetails['p_address']);
+                                if($resp)
+                                {                                    
+                                    $full_address = json_decode($userDetails['p_address']);
+                                    echo $street = $full_address->p_street_line;
+                                    $country = (!empty($full_address->p_country)) ? $full_address->p_country : '--';
+                                    $city = $full_address->p_city;
+                                    $state = $full_address->p_state;
+                                    $zipcode = $full_address->p_zip_code;
+                                }
+                                else{
+                                      echo str_replace("%20"," ",$userDetails['p_address']);
+                                    }
+                       
+                       ?>
                     </td>
                 </tr>
                 <tr>
@@ -232,15 +256,20 @@
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Country :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php echo $country; ?>
+                          
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                          <?php 
-                          /*if($userDetails[0]['city']>0){
-                          $city=$this->details->get_city($userDetails[0]['city']);
-                          echo $city[0]['name'];} */
-                          ?>
-                          --
+                        <?php echo $city; ?>
+                          
                     </td>
                 </tr>
                 <tr>
@@ -248,11 +277,7 @@
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php  
-                        /*if($userDetails[0]['state']>0){
-                        $state=$this->details->get_state($userDetails[0]['state']);
-                        echo $state[0]['name']; }*/?>
-                        --
+                        <?php echo $state; ?>
                     </td>
                 </tr>
                 <tr>
@@ -260,8 +285,7 @@
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                         <?php //echo $userDetails[0]['zip'] ?>
-                         --
+                        <?php echo $zipcode; ?>
                     </td>
                 </tr>
             </table>

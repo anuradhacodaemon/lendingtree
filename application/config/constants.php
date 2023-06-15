@@ -120,3 +120,7 @@ define('ADMINNAME','MCCU');
 define('EMAILTEMPLATEPDF', 'lend_email_template');
 define('ENCRYPTKEY', 'loan1234');
 define('ZIPCODE','lend_zipcode');
+#
+
+define('SMARTY_AUTH_ID', 'ed68a60e-766b-fffc-d380-644f2ddb2696');
+define('SMARTY_AUTH_TOKEN','5JrwXjVCrqd2a08f7GQj');

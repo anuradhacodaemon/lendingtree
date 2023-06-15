@@ -88,7 +88,7 @@ class Auto extends CI_Controller {
         if($step == 2)
         {
             $rules = array(
-                array('field'=>'req_amt','label'=>'Required Amount','rules'=>'required')
+                array('field'=>'req_amt','label'=>'Required Amount','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -183,7 +183,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 5)
+        if($step == 6)
         {
             $rules = array(
                 array('field'=>'address','label'=>'Address','rules'=>'required'),
@@ -196,16 +196,30 @@ class Auto extends CI_Controller {
                 //success
                 if ($this->input->post('address')) 
                 {
+                    $p_new_address = ['p_country' => $this->input->post('p_country'),
+                                    'p_street_line' => $this->input->post('p_street_line'),
+                                    'p_city' => $this->input->post('p_city'),
+                                    'p_state' => $this->input->post('p_state'),
+                                    'p_zip_code' => $this->input->post('p_zip_code')
+
+                                    ];
+                    $json = json_encode($p_new_address);                
                     $data = array(
-                        'p_address' => $this->input->post('address'),
-                        'monthly_pay ' => $this->input->post('monthly_pay'),
-                        'p_years_been_there_on_address' => $this->input->post('living_there_years')
+                        'address_p' => $this->input->post('address'),
+                        'monthly_pay' => $this->input->post('monthly_pay'),
+                        'p_years_been_there_on_address' => $this->input->post('living_there_years'),
+                        'p_country' => $this->input->post('p_country'),
+                        'p_street_line' => $this->input->post('p_street_line'),
+                        'p_city' => $this->input->post('p_city'),
+                        'p_state' => $this->input->post('p_state'),
+                        'p_zip_code' => $this->input->post('p_zip_code'),
+                        'p_address'=> $json
                     );
 
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=6';
+                $data['url'] = 'auto?step=7';
                 echo json_encode($data);
             }else{
                 //fail
@@ -219,7 +233,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 6)
+        if($step == 5)
         {
             //echo $this->input->post('home_status');
             $this->form_validation->set_rules('home_status', 'Radio Button', 'required');
@@ -235,7 +249,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=7';
+                $data['url'] = 'auto?step=6';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1050,7 +1064,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 26)
+        if($step == 27)
         {
             $rules = array(
                 array('field'=>'cosigner_home_address','label'=>'Address','rules'=>'required'),
@@ -1072,7 +1086,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=27';
+                $data['url'] = 'auto?step=28';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1086,7 +1100,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 27)
+        if($step == 26)
         {
              //echo $this->input->post('home_status');
              $this->form_validation->set_rules('co_home_status', 'Radio Button', 'required');
@@ -1102,7 +1116,7 @@ class Auto extends CI_Controller {
                      $this->session->set_userdata($data);
                  }
                  $data['success'] = 1;
-                 $data['url'] = 'auto?step=28';
+                 $data['url'] = 'auto?step=27';
                  echo json_encode($data);
              }else{
                  //fail
@@ -1952,6 +1966,17 @@ class Auto extends CI_Controller {
             unset($array['panel']);
             unset($array['__ci_last_regenerate']);
             unset($array['type']);
+            /**
+             * 
+            */
+            
+            unset($array['address_p']);
+            unset($array['p_country']);
+            unset($array['p_street_line']);
+            unset($array['p_city']);
+            unset($array['p_state']);
+            unset($array['p_zip_code']);
+            //
             $result = $this->AutoLoanMccu_model->add_auto_loan($array);
             if($result > 0)
             {
@@ -2171,7 +2196,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("MCCU Community Credit Union New Digital Application");
+        $this->email->subject("MCCU New Digital Application");
         $this->email->bcc('haroon.m@codaemonsoftwares.com','nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
@@ -2251,7 +2276,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("MCCU Community Credit Union New Digital Application");
+        $this->email->subject("MCCU New Digital Application");
         $this->email->attach($dir . $dh);
         $this->email->bcc('haroon.m@codaemonsoftwares.com');
         //this is user
@@ -2315,7 +2340,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('haroon.m@codaemonsoftwares.com');
-        $this->email->subject("MCCU Community Credit Union New Digital Application");
+        $this->email->subject("MCCU New Digital Application");
         $this->email->message('Test Email for Server MCCU');
         $emailSend = $this->email->send();
         if ($emailSend) {
@@ -2326,6 +2351,13 @@ class Auto extends CI_Controller {
         echo "from if mail not send>>";
         echo $this->email->print_debugger();exit;
         return 0;
-    }    
+    } 
+    //
+    public function clearSession()
+    {
+        $this->session->sess_destroy();
+        session_destroy();
+        echo "session is clear now>>>";
+    }   
 
 }

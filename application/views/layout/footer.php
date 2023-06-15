@@ -19,7 +19,6 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <!--<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">-->
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">

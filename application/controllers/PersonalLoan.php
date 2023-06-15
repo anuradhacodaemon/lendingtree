@@ -81,16 +81,16 @@ class PersonalLoan extends CI_Controller
         if($step == 2)
         {
             $rules = array(
-                array('field'=>'req_amt','label'=>'Required Amount','rules'=>'required')
+                array('field'=>'p_req_amt','label'=>'Required Amount','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('req_amt')) 
+                if ($this->input->post('p_req_amt')) 
                 {
                     $data = array(
-                        'requested_amount' => $this->input->post('req_amt'),
+                        'requested_amount' => $this->input->post('p_req_amt'),
                         'loan_type' => 5,
                         'domain' => $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME']
                     );
@@ -103,7 +103,7 @@ class PersonalLoan extends CI_Controller
             }else{
                 //fail
                 $errors = array(
-                'req_amt' => form_error('req_amt')
+                'p_req_amt' => form_error('p_req_amt')
                 );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -178,7 +178,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
-        if($step == 5)
+        if($step == 6)
         {
             $rules = array(
                 array('field'=>'address','label'=>'Address','rules'=>'required'),
@@ -200,7 +200,7 @@ class PersonalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=6';
+                $data['url'] = 'personalLoan?step=7';
                 echo json_encode($data);
             }else{
                 //fail
@@ -214,7 +214,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
-        if($step == 6)
+        if($step == 5)
         {
             //echo $this->input->post('home_status');
             $this->form_validation->set_rules('home_status', 'Radio Button', 'required');
@@ -230,7 +230,7 @@ class PersonalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=7';
+                $data['url'] = 'personalLoan?step=6';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1043,7 +1043,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
-        if($step == 26)
+        if($step == 27)
         {
             $rules = array(
                 array('field'=>'cosigner_home_address','label'=>'Address','rules'=>'required'),
@@ -1065,7 +1065,7 @@ class PersonalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=27';
+                $data['url'] = 'personalLoan?step=28';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1079,7 +1079,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
-        if($step == 27)
+        if($step == 26)
         {
              //echo $this->input->post('home_status');
              $this->form_validation->set_rules('co_home_status', 'Radio Button', 'required');
@@ -1095,7 +1095,7 @@ class PersonalLoan extends CI_Controller
                      $this->session->set_userdata($data);
                  }
                  $data['success'] = 1;
-                 $data['url'] = 'personalLoan?step=28';
+                 $data['url'] = 'personalLoan?step=27';
                  echo json_encode($data);
              }else{
                  //fail
@@ -1973,7 +1973,7 @@ class PersonalLoan extends CI_Controller
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("MCCU Community Credit Union New Digital Application");
+        $this->email->subject("MCCU New Digital Application");
         $this->email->bcc('haroon.m@codaemonsoftwares.com','nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
@@ -2056,7 +2056,7 @@ class PersonalLoan extends CI_Controller
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("MCCU Community Credit Union New Digital Application");
+        $this->email->subject("MCCU New Digital Application");
         $this->email->attach($dir . $dh);
         $this->email->bcc('haroon.m@codaemonsoftwares.com');
         //this is user
