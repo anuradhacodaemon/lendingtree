@@ -42,38 +42,52 @@
                         <input type="hidden" name="auto_step" value="6" id="auto_step" >
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_address'])) echo $this->session->userdata['p_address'] ?>" class="form-control width_100" id="address" >
-                                <span id="err1" style="color: red"></span>
-
+                                <input type="text" name="monthly_pay" pattern="^\d+\.{0,1}\d{0,2}$" placeholder="Monthly Pay $" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="living_there_years" >
+                                <span id="err3" style="color: red"></span>
+                                
                             </div>
 
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="living_there_years" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
+                                <input type="text" name="living_there_years" pattern= "[0-9]" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                         </div>
+                        <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <div class="form-main clearfix">   
-                                    <label class="control-label">Monthly Payment</label>               
-                                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal">
-                                        <?php echo (!empty($this->session->userdata['monthly_pay']))?$this->session->userdata['monthly_pay']:5000;?></label>
-                                    </span>
-                                    <div class="slider-box">
-                                        <input id="ex6" name="monthly_pay" type="text" data-slider-min="0" data-slider-max="5000" data-slider-step="25" data-slider-value="<?php echo (!empty($this->session->userdata['monthly_pay']))?$this->session->userdata['monthly_pay']:5000 ;
-                ?>"/> 
-                                        <span class="min-value">$0  &nbsp;</span>
-                                        <span class="max-value">&nbsp; $5,000</span>
-                                    </div>
-                                    <span id="err3" style="color: red"></span>
-                                </div>
+                                <label>Adress</label>
+                                <input type="text" name="address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
+                                <span id="err1" style="color: red"></span>
+                                <div class="resource-container"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <label>Country</label>
+                                <input type="text" name="p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['p_country'])) echo $this->session->userdata['p_country'] ?>" class="form-control width_100" id="country_name" >
+                            </div>
+                                                    
+                        </div>
+                        <div class="input-text">
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <label>Street</label>
+                                <input type="text" name="p_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['p_street_line'])) echo $this->session->userdata['p_street_line'] ?>" class="form-control width_100" id="street_name" >
+                            </div>
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <label>City</label>
+                                <input type="text" name="p_city" placeholder="City" value="<?php if (isset($this->session->userdata['p_city'])) echo $this->session->userdata['p_city'] ?>" class="form-control width_100" id="city_name" >
                             </div>
                         </div>
-
+                        <div class="input-text">
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <label>State</label>
+                                <input type="text" name="p_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_state'])) echo $this->session->userdata['p_state'] ?>" class="form-control width_100" id="state_name" >
+                            </div>
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <label>Zipcode</label>
+                                <input type="text" name="p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['p_zip_code'])) echo $this->session->userdata['p_zip_code'] ?>" class="form-control width_100" id="zipcode_name" >
+                            </div>
+                        </div>
+                        
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <button type="submit" class="button">Continue<span class="continueIcon sprites"></span></button>
-                                              <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
-                                -->
-
                             </div>   
                         </form>
                         </div>
@@ -84,42 +98,64 @@
     </div>
 </div>
 <!-- Banner ends here -->
-<link href="<?php echo BASE_URL; ?>public/dist/css/bootstrap-slider.css" rel="stylesheet">
-<script src="<?php echo BASE_URL; ?>public/dist/bootstrap-slider.js"></script>
-<script src="<?php echo BASE_URL; ?>public/dist/bootstrap-slider.min.js"></script>
-<script>
-                        var slider = new Slider("#ex6");
-                        slider.on("slide", function (sliderValue) {
-                            document.getElementById("ex6SliderVal").textContent = sliderValue;//numberWithCommas(parseInt(sliderValue));
-                        });
-                        //my added code 
-                        slider.on("change", function (sliderValue) {
-                            //console.log(sliderValue.newValue);
-                            document.getElementById("ex6SliderVal").textContent = sliderValue.newValue;//numberWithCommas(parseInt(sliderValue));
-                        });
-                        function numberWithCommas(x) {
-                            var formatter = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                                minimumFractionDigits: 2,
-                            });
-// Use it.
-//var amount = document.getElementById('input').innerHTML;
-                            return parseInt(formatter.format(x).replace("$", "").replace(/\.00$/,''));
+<script> //$('input[name=amount]').val()
+    $(document).ready(function () {
+        $('#auto_primary_address_id').autocomplete({
+            source: function (request, response) {
+                $("#err1").html("");
+                if (request.term !== '') {
+
+                    $.ajax({
+                        type: "POST",
+                        url: base_url + "SmartyApi/getUsAddresses/",
+                        dataType: "json",
+                        data: { search: request.term },
+                        success: function (data) {
+                            //console.log(data);
+                            response(data);
+                            if (data.length === 0) {
+                                $("#err1").html("No Address Found");
+                            }
                         }
-   $(document).ready(function(){
-                 
-                  var formatter = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                                minimumFractionDigits: 2,
-                            });
-                 // alert($('#ex6SliderVal').html());
-               //   var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "").replace(/\.00$/,'');
-               // $('#ex6SliderVal').html(x);  
-               //alert( $('#ex6SliderVal').html());
- 
- });                     
+                    });
+                }
+                if (request.term == '') {
+                    $("#err1").html("Please Enter address");
+                    return false;
+                }
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                $('.resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#country_name').val('United States');
+                $('#street_name').val(ui.item.street_line);
+                $('#city_name').val(ui.item.city);
+                $('#state_name').val(ui.item.state);
+                $('#zipcode_name').val(ui.item.zipcode);
+                $('#auto_primary_address_id').val(addr);
+                event.preventDefault();
+            }
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            console.log("The values are>> " +item.city);
+            let l = item.street_line + ' ' + item.city + ' ' +item.state + ' ' + item.zipcode;
+            return $("<li></li>")
+                .addClass('autocomplete-suggestion')
+                .addClass('highlight')//item based custom class to li here
+                .attr('style', item.entries)
+                .append(l)
+                .data("ui-autocomplete-item", item)
+                .attr('data-street-line', item.street_line)
+                .attr('data-city', item.city)
+                .attr('data-state', item.state)
+                .attr('data-zipcode', item.zipcode)
+                .appendTo(ul);
+        };
+
+        //
+    });
+
 </script>
 
 

@@ -39,33 +39,49 @@
                     <div class="row">
                         <form id="p_details" method="post" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="27" id="auto_step" >
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="input-text">
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['cosigner_address'])) echo $this->session->userdata['cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
-                                <span id="err1" style="color: red"></span>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <input type="text" name="cosigner_monthly_pay" pattern="^\d+\.{0,1}\d{0,2}$" placeholder="Monthly Pay $" value="<?php if (isset($this->session->userdata['cosigner_monthly_pay'])) echo $this->session->userdata['cosigner_monthly_pay'] ?>" class="form-control width_100" id="cosigner_monthly_pay" >
+                                    <span id="err1" style="color: red"></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text" name="cosigner_living_there_years" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['cosigner_years_been_there'])) echo $this->session->userdata['cosigner_years_been_there'] ?>" class="form-control width_100" id="cosigner_living_there_years" >
-                                <span id="err2" style="color: red"></span>
-                            </div>
-                        </div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <div class="form-main clearfix">   
-                                    <label class="control-label">Monthly Payment</label>               
-                                    <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal">
-                                        <?php echo (!empty($this->session->userdata['cosigner_monthly_pay']))?$this->session->userdata['cosigner_monthly_pay']:5000;?></label>
-                                    </span>
-                                    <div class="slider-box">
-                                        <input id="ex61" name="cosigner_monthly_pay" type="text" data-slider-min="0" data-slider-max="5000" data-slider-step="25" data-slider-value="<?php echo (!empty($this->session->userdata['cosigner_monthly_pay']))?$this->session->userdata['cosigner_monthly_pay']:5000 ;
-                ?>"/> 
-                                        <span class="min-value">$0  &nbsp;</span>
-                                        <span class="max-value">&nbsp; $5,000</span>
-                                    </div>
-                                    <span id="err3" style="color: red"></span>
+                                    <span id="err2" style="color: red"></span>
                                 </div>
                             </div>
-                        </div>
+                            <div class="input-text">
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <label>Adress</label>
+                                    <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
+                                    <span id="err3" style="color: red"></span>
+                                    <div class="co_resource-container"></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <label>Country</label>
+                                    <input type="text" name="co_p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['co_p_country'])) echo $this->session->userdata['co_p_country'] ?>" class="form-control width_100" id="co_country_name" >
+                                </div>                 
+                            </div>
+                            <div class="input-text">
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <label>Street</label>
+                                    <input type="text" name="co_p_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['co_p_street_line'])) echo $this->session->userdata['co_p_street_line'] ?>" class="form-control width_100" id="co_street_name" >
+                                </div>
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <label>City</label>
+                                    <input type="text" name="co_p_city" placeholder="City" value="<?php if (isset($this->session->userdata['co_p_city'])) echo $this->session->userdata['co_p_city'] ?>" class="form-control width_100" id="co_city_name" >
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <label>State</label>
+                                    <input type="text" name="co_p_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_state'])) echo $this->session->userdata['co_p_state'] ?>" class="form-control width_100" id="co_state_name" >
+                                </div>
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <label>Zipcode</label>
+                                    <input type="text" name="co_p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['co_p_zip_code'])) echo $this->session->userdata['co_p_zip_code'] ?>" class="form-control width_100" id="co_zipcode_name" >
+                                </div>
+                            </div>
+                        
 
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <button type="submit" class="button">Continue<span class="continueIcon sprites"></span></button>
@@ -79,44 +95,63 @@
     </div>
 </div>
 <!-- Banner ends here -->
-<link href="<?php echo BASE_URL; ?>public/dist/css/bootstrap-slider.css" rel="stylesheet">
-<script src="<?php echo BASE_URL; ?>public/dist/bootstrap-slider.js"></script>
-<script src="<?php echo BASE_URL; ?>public/dist/bootstrap-slider.min.js"></script>
-<script>
-                        var slider = new Slider("#ex61");
-                        slider.on("slide", function (sliderValue) {
-                            document.getElementById("ex6SliderVal").textContent = sliderValue;//numberWithCommas(parseInt(sliderValue));
-                        });
-                         //my added code 
-                         slider.on("change", function (sliderValue) {
-                            //console.log(sliderValue.newValue);
-                            document.getElementById("ex6SliderVal").textContent = sliderValue.newValue;//numberWithCommas(parseInt(sliderValue));
-                        });
-                        function numberWithCommas(x) {
-                            var formatter = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                                minimumFractionDigits: 2,
-                            });
-// Use it.
-//var amount = document.getElementById('input').innerHTML;
-                            return parseInt(formatter.format(x).replace("$", "").replace(/\.00$/,''));
+<!-- Banner ends here -->
+<script> //$('input[name=amount]').val()
+    $(document).ready(function () {
+        $('#cosigner_home_address').autocomplete({
+            source: function (request, response) {
+                $("#err3").html("");
+                if (request.term !== '') {
+
+                    $.ajax({
+                        type: "POST",
+                        url: base_url + "SmartyApi/getUsAddresses/",
+                        dataType: "json",
+                        data: { search: request.term },
+                        success: function (data) {
+                            //console.log(data);
+                            response(data);
+                            if (data.length === 0) {
+                                $("#err3").html("No Address Found");
+                            }
                         }
-   $(document).ready(function(){
-                 
-                  var formatter = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                                minimumFractionDigits: 2,
-                            });
-                 // alert($('#ex6SliderVal').html());
-               //   var x=formatter.format( $('#ex6SliderVal').html()).replace("$", "").replace(/\.00$/,'');
-               // $('#ex6SliderVal').html(x);  
-               //alert( $('#ex6SliderVal').html());
- 
- });                     
+                    });
+                }
+                if (request.term == '') {
+                    $("#err3").html("Please Enter address");
+                    return false;
+                }
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                $('.co_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#co_country_name').val('United States');
+                $('#co_street_name').val(ui.item.street_line);
+                $('#co_city_name').val(ui.item.city);
+                $('#co_state_name').val(ui.item.state);
+                $('#co_zipcode_name').val(ui.item.zipcode);
+                $('#cosigner_home_address').val(addr);
+                event.preventDefault();
+            }
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            console.log("The values are>> " +item.city);
+            let l = item.street_line + ' ' + item.city + ' ' +item.state + ' ' + item.zipcode;
+            return $("<li></li>")
+                .addClass('autocomplete-suggestion')
+                .addClass('highlight')//item based custom class to li here
+                .attr('style', item.entries)
+                .append(l)
+                .data("ui-autocomplete-item", item)
+                .attr('data-street-line', item.street_line)
+                .attr('data-city', item.city)
+                .attr('data-state', item.state)
+                .attr('data-zipcode', item.zipcode)
+                .appendTo(ul);
+        };
+
+        //
+    });
+
 </script>
-
-
-
-

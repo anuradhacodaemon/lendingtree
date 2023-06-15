@@ -63,13 +63,36 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relative_address" placeholder="Relatives Address" value="<?php if (isset($this->session->userdata['relatives_live_address'])) echo $this->session->userdata['relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
+                                <input type="text" name="relative_address" placeholder="Relatives Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
                                 <span id="err3" style="color: red"></span>
+                                <div class="r_resource-container"></div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" name="relatives_phone" minlength="10" maxlength="10" placeholder="Relatives Phone" value="<?php if (isset($this->session->userdata['relatives_phone'])) echo $this->session->userdata['relatives_phone'] ?>" class="form-control width_100" id="relatives_phone" >
                                 <span id="err4" style="color: red"></span>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <label>Street</label>
+                                <input type="text" name="r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['r_street_line'])) echo $this->session->userdata['r_street_line'] ?>" class="form-control width_100" id="r_street_line" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <label>Country</label>
+                                <input type="text" name="r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['r_country'])) echo $this->session->userdata['r_country'] ?>" class="form-control width_100" id="r_country" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <label>State</label>
+                                <input type="text" name="r_state" placeholder="State" value="<?php if (isset($this->session->userdata['r_state'])) echo $this->session->userdata['r_state'] ?>" class="form-control width_100" id="r_state" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <label>City</label>
+                                <input type="text" name="r_city" placeholder="City" value="<?php if (isset($this->session->userdata['r_city'])) echo $this->session->userdata['r_city'] ?>" class="form-control width_100" id="r_city" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <label>Zipcode</label>
+                                <input type="text" name="r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['r_zip_code'])) echo $this->session->userdata['r_zip_code'] ?>" class="form-control width_100" id="r_zip_code" >
                             </div>
 
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
@@ -84,4 +107,65 @@
         </div>
     </div>
 </div>
+<!-- Banner ends here -->
+<script> //$('input[name=amount]').val()
+    $(document).ready(function () {
+        $('#relative_address').autocomplete({
+            source: function (request, response) {
+                $("#err3").html("");
+                if (request.term !== '') {
+
+                    $.ajax({
+                        type: "POST",
+                        url: base_url + "SmartyApi/getUsAddresses/",
+                        dataType: "json",
+                        data: { search: request.term },
+                        success: function (data) {
+                            //console.log(data);
+                            response(data);
+                            if (data.length === 0) {
+                                $("#err3").html("No Address Found");
+                            }
+                        }
+                    });
+                }
+                if (request.term == '') {
+                    $("#err3").html("Please Enter address");
+                    return false;
+                }
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                $('.r_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#r_country').val('United States');
+                $('#r_street_line').val(ui.item.street_line);
+                $('#r_city').val(ui.item.city);
+                $('#r_state').val(ui.item.state);
+                $('#r_zip_code').val(ui.item.zipcode);
+                $('#relative_address').val(addr);
+                event.preventDefault();
+            }
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            console.log("The values are>> " +item.city);
+            let l = item.street_line + ' ' + item.city + ' ' +item.state + ' ' + item.zipcode;
+            return $("<li></li>")
+                .addClass('autocomplete-suggestion')
+                .addClass('highlight')//item based custom class to li here
+                .attr('style', item.entries)
+                .append(l)
+                .data("ui-autocomplete-item", item)
+                .attr('data-street-line', item.street_line)
+                .attr('data-city', item.city)
+                .attr('data-state', item.state)
+                .attr('data-zipcode', item.zipcode)
+                .appendTo(ul);
+        };
+
+        //
+    });
+
+</script>
+
 
