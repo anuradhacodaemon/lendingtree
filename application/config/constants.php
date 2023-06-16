@@ -122,5 +122,5 @@ define('ENCRYPTKEY', 'loan1234');
 define('ZIPCODE','lend_zipcode');
 #
 
-define('SMARTY_AUTH_ID', 'ed68a60e-766b-fffc-d380-644f2ddb2696');
-define('SMARTY_AUTH_TOKEN','5JrwXjVCrqd2a08f7GQj');
+define('SMARTY_AUTH_ID', '31e7020d-9a47-c928-f6d2-bc3c38fb6546');
+define('SMARTY_AUTH_TOKEN','ygIUWrlkwpFlPZGX2Oj0');
