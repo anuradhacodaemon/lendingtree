@@ -526,6 +526,20 @@ function addCosigner(value)
         }
             
         //console.log(formData);
+        if(step == 23 || step == 43)
+        {
+            if(step == 23 && selected_home_status == 'no')
+            {
+                $("#add_cosigner23").hide();
+                $('#loader_page_final').show();
+            }
+            if(step == 43 )
+            {
+                $("#final_step43").hide();
+                $('#loader_page_final').show();
+            }
+            
+        }
         
         $.ajax({
             type: "POST",
@@ -776,6 +790,8 @@ function addCosigner(value)
                                 //alert('you are in 23 >>> Success is coming soon');
                                 if(obj['message'] != "")
                                 {
+                                    $('#loader_page_final').hide();
+                                    $("#add_cosigner23").show();
                                     let text = obj['message'];
                                     let newText = text.replace(/\./g, ".<br>");
                                     $('#showMsgToApplicant').html(newText);
@@ -793,6 +809,8 @@ function addCosigner(value)
                         //alert('you are in 43 >>> Success is coming soon');
                         if(obj['message'] != "")
                         {
+                            $('#loader_page_final').hide();
+                            $("#final_step43").show();
                             let text = obj['message'];
                             let newText = text.replace(/\./g, ".<br>");
                             $('#showMsgToApplicant').html(newText);
@@ -1123,6 +1141,8 @@ function addCosigner(value)
                         if(step == 43)
                         {
                             //alert('you are in 43');
+                            $('#loader_page_final').hide();
+                            $("#final_step43").show();
                             $('#err1').html(obj['error_messages']['co_i_represnt_accurate']);
                         }
                         

@@ -46,10 +46,11 @@
                                 <input type="radio" value="yes" name="add_cosigner"  onclick="addCosigner('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['add_co_signers_onto_loan'])) { if($this->session->userdata['add_co_signers_onto_loan']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                <label id="add_cosigner23" <?php if(isset($this->session->userdata['add_co_signers_onto_loan'])) { if($this->session->userdata['add_co_signers_onto_loan']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
                                 <input type="radio" value="no" name="add_cosigner" onclick="addCosigner('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <center><img style="display: none;width: 60px;position: relative;" id="loader_page_final" src="<?php echo base_url() ?>public/html/img/loader.gif"></center>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form>
