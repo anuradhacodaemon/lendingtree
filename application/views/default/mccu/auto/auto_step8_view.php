@@ -77,7 +77,7 @@
                                     <input type="hidden" name="p_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['p_r_zip_code'])) echo $this->session->userdata['p_r_zip_code'] ?>" class="form-control width_100" id="p_r_zip_code" >
                                 </div>
 
-                                <div class="col-xs-12 col-sm-12 radio margtop_30">
+                                <div class="col-xs-12 col-sm-12 radio margtop_20">
                                     <input type="submit" value="Continue" class="button" >
                                 </div>   
                             </div>

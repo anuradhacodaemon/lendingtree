@@ -197,7 +197,7 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'address','label'=>'Address','rules'=>'required'),
                 array('field'=>'living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
-                array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required|numeric')
+                array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -215,7 +215,7 @@ class Auto extends CI_Controller {
                     $json = json_encode($p_new_address);                
                     $data = array(
                         'address_p' => $this->input->post('address'),
-                        'monthly_pay' => $this->input->post('monthly_pay'),
+                        'monthly_pay' => str_replace(',', '', $this->input->post('monthly_pay')),
                         'p_years_been_there_on_address' => $this->input->post('living_there_years'),
                         'p_country' => $this->input->post('p_country'),
                         'p_street_line' => $this->input->post('p_street_line'),
@@ -1120,7 +1120,7 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'cosigner_home_address','label'=>'Address','rules'=>'required'),
                 array('field'=>'cosigner_living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
-                array('field'=>'cosigner_monthly_pay','label'=>'Monthly pay','rules'=>'required|numeric')
+                array('field'=>'cosigner_monthly_pay','label'=>'Monthly pay','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -1137,7 +1137,7 @@ class Auto extends CI_Controller {
                     $json = json_encode($p_new_address);
                     $data = array(
                         'p_cosigner_address' => $this->input->post('cosigner_home_address'),
-                        'cosigner_monthly_pay' => $this->input->post('cosigner_monthly_pay'),
+                        'cosigner_monthly_pay' => str_replace(',', '', $this->input->post('cosigner_monthly_pay')),
                         'cosigner_years_been_there' => $this->input->post('cosigner_living_there_years'),
                         'co_p_country' => $this->input->post('co_p_country'),
                         'co_p_street_line' => $this->input->post('co_p_street_line'),

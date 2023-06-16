@@ -42,7 +42,7 @@
                         <input type="hidden" name="auto_step" value="6" id="auto_step" >
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="monthly_pay" pattern="^\d+\.{0,1}\d{0,2}$" placeholder="Monthly Pay $" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="living_there_years" >
+                                <input type="text" name="monthly_pay" placeholder="Monthly Pay $##,###.##" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay_recreational" >
                                 <span id="err3" style="color: red"></span>
                                 
                             </div>
@@ -155,7 +155,41 @@
 
         //
     });
+    //
+    $(document).ready(function() {
+        $('#monthly_pay_recreational').on('blur', function() {
+            var input = $(this).val();
+            var formattedAmount = formatAmount(input);
+            $(this).val(formattedAmount);
+        });
+        //
+        $('#living_there_years').on('input', function() {
+        var input = $(this).val();
+        input = input.replace(/[^0-9]/g, ''); // Remove any non-digit characters
+        $(this).val(input);
+        });
+    });
+    function formatAmount(amount) {
+    // Convert the amount to a number
+    var number = parseFloat(amount);
 
+    // Check if the amount is a valid number
+    if (isNaN(number)) {
+        return '';
+    }
+
+    // Format the number with commas and decimals
+    var formattedAmount = number.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+    // Remove the currency symbol from the formatted amount
+    formattedAmount = formattedAmount.replace('$', '');
+
+    return formattedAmount;
+    }
 </script>
 
 

@@ -96,7 +96,7 @@
                             </div>
                             
 
-                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                            <div class="col-xs-12 col-sm-12 radio margtop_20">
                                 <input type="submit" value="Continue" class="button" >
                                             
                             </div>   
