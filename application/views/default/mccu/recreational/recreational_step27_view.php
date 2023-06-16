@@ -51,39 +51,39 @@
                             </div>
                             <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <label>Adress</label>
                                     <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
                                     <span id="err3" style="color: red"></span>
                                     <div class="co_resource-container"></div>
                                 </div>
+                                              
+                            </div>
+                            <div class="input-text">
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <!--<label>Country</label>-->
+                                    <input type="hidden" name="co_p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['co_p_country'])) echo $this->session->userdata['co_p_country'] ?>" class="form-control width_100" id="co_country_name" >
+                                </div>  
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <label>Country</label>
-                                    <input type="text" name="co_p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['co_p_country'])) echo $this->session->userdata['co_p_country'] ?>" class="form-control width_100" id="co_country_name" >
-                                </div>                 
+                                    <!--<label>Street</label>-->
+                                    <input type="hidden" name="co_p_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['co_p_street_line'])) echo $this->session->userdata['co_p_street_line'] ?>" class="form-control width_100" id="co_street_name" >
+                                </div>
+                                <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <!--<label>City</label>-->
+                                    <input type="hidden" name="co_p_city" placeholder="City" value="<?php if (isset($this->session->userdata['co_p_city'])) echo $this->session->userdata['co_p_city'] ?>" class="form-control width_100" id="co_city_name" >
+                                </div>
                             </div>
                             <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <label>Street</label>
-                                    <input type="text" name="co_p_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['co_p_street_line'])) echo $this->session->userdata['co_p_street_line'] ?>" class="form-control width_100" id="co_street_name" >
+                                    <!--<label>State</label>-->
+                                    <input type="hidden" name="co_p_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_state'])) echo $this->session->userdata['co_p_state'] ?>" class="form-control width_100" id="co_state_name" >
                                 </div>
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <label>City</label>
-                                    <input type="text" name="co_p_city" placeholder="City" value="<?php if (isset($this->session->userdata['co_p_city'])) echo $this->session->userdata['co_p_city'] ?>" class="form-control width_100" id="co_city_name" >
-                                </div>
-                            </div>
-                            <div class="input-text">
-                                <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <label>State</label>
-                                    <input type="text" name="co_p_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_state'])) echo $this->session->userdata['co_p_state'] ?>" class="form-control width_100" id="co_state_name" >
-                                </div>
-                                <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <label>Zipcode</label>
-                                    <input type="text" name="co_p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['co_p_zip_code'])) echo $this->session->userdata['co_p_zip_code'] ?>" class="form-control width_100" id="co_zipcode_name" >
+                                    <!--<label>Zipcode</label>-->
+                                    <input type="hidden" name="co_p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['co_p_zip_code'])) echo $this->session->userdata['co_p_zip_code'] ?>" class="form-control width_100" id="co_zipcode_name" >
                                 </div>
                             </div>
                         
 
-                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                            <div class="col-xs-12 col-sm-12 radio margtop_20">
                                 <button type="submit" class="button">Continue<span class="continueIcon sprites"></span></button>
                             </div> 
                         </form>  

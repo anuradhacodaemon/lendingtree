@@ -864,6 +864,7 @@ function addCosigner(value)
                     if(step == 2)
                     {
                         $('#err1').html(obj['error_messages']['p_req_amt']);
+                        $('#err2').html(obj['error_messages']['purpose_of_loan']);
                     }
                     if(step == 3)
                     {
@@ -871,6 +872,9 @@ function addCosigner(value)
                         $('#err2').html(obj['error_messages']['lastname']);
                         $('#err3').html(obj['error_messages']['phone']);
                         $('#err4').html(obj['error_messages']['p_email']);
+                        $('#err5').html(obj['error_messages']['tex_driv_lic']);
+                        $('#err6').html(obj['error_messages']['soc_sec']);
+                        $('#err7').html(obj['error_messages']['my_dob']);
                     }
                     if(step == 4 || step == 25)
                     {

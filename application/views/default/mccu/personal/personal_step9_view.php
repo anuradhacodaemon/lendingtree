@@ -66,26 +66,26 @@
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <label>Street</label>
-                                <input type="text" name="b_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['b_r_street_line'])) echo $this->session->userdata['b_r_street_line'] ?>" class="form-control width_100" id="b_r_street_line" >
+                                <input type="hidden" name="b_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['b_r_street_line'])) echo $this->session->userdata['b_r_street_line'] ?>" class="form-control width_100" id="b_r_street_line" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <label>Country</label>
-                                <input type="text" name="b_r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['b_r_country'])) echo $this->session->userdata['b_r_country'] ?>" class="form-control width_100" id="b_r_country" >
+                                <input type="hidden" name="b_r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['b_r_country'])) echo $this->session->userdata['b_r_country'] ?>" class="form-control width_100" id="b_r_country" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <label>State</label>
-                                <input type="text" name="b_r_state" placeholder="State" value="<?php if (isset($this->session->userdata['b_r_state'])) echo $this->session->userdata['b_r_state'] ?>" class="form-control width_100" id="b_r_state" >
+                                <input type="hidden" name="b_r_state" placeholder="State" value="<?php if (isset($this->session->userdata['b_r_state'])) echo $this->session->userdata['b_r_state'] ?>" class="form-control width_100" id="b_r_state" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <label>City</label>
-                                <input type="text" name="b_r_city" placeholder="City" value="<?php if (isset($this->session->userdata['b_r_city'])) echo $this->session->userdata['b_r_city'] ?>" class="form-control width_100" id="b_r_city" >
+                                <input type="hidden" name="b_r_city" placeholder="City" value="<?php if (isset($this->session->userdata['b_r_city'])) echo $this->session->userdata['b_r_city'] ?>" class="form-control width_100" id="b_r_city" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <label>Zipcode</label>
-                                <input type="text" name="b_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['b_r_zip_code'])) echo $this->session->userdata['b_r_zip_code'] ?>" class="form-control width_100" id="b_r_zip_code" >
+                                <input type="hidden" name="b_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['b_r_zip_code'])) echo $this->session->userdata['b_r_zip_code'] ?>" class="form-control width_100" id="b_r_zip_code" >
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                            <div class="col-xs-12 col-sm-12 radio margtop_20">
                                 <input type="submit" value="Continue" class="button" >     
                             </div>   
                         </div>

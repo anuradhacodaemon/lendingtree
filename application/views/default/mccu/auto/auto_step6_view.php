@@ -42,7 +42,7 @@
                         <input type="hidden" name="auto_step" value="6" id="auto_step" >
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="monthly_pay" pattern="^\d+\.{0,1}\d{0,2}$" placeholder="Monthly Pay $" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="living_there_years" >
+                                <input type="text" name="monthly_pay" pattern="^\d+\.{0,1}\d{0,2}$" placeholder="Monthly Pay $" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay" >
                                 <span id="err1" style="color: red"></span>
                                 
                             </div>
@@ -54,35 +54,34 @@
                         </div>
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label>Adress</label>
-                                <input type="text" name="address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
+                                <input type="text" name="address" placeholder="Enter Your Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="resource-container"></div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label>Country</label>
-                                <input type="text" name="p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['p_country'])) echo $this->session->userdata['p_country'] ?>" class="form-control width_100" id="country_name" >
+                                             
+                        </div>
+                        <div class="input-text">
+                        <div class="col-xs-12 col-sm-12 margbot_10">
+                                <!--<label>Country</label>-->
+                                <input type="hidden" name="p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['p_country'])) echo $this->session->userdata['p_country'] ?>" class="form-control width_100" id="country_name" >
                             </div>
-                                                    
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <!--<label>Street</label>-->
+                                <input type="hidden" name="p_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['p_street_line'])) echo $this->session->userdata['p_street_line'] ?>" class="form-control width_100" id="street_name" >
+                            </div>
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <!--<label>City</label>-->
+                                <input type="hidden" name="p_city" placeholder="City" value="<?php if (isset($this->session->userdata['p_city'])) echo $this->session->userdata['p_city'] ?>" class="form-control width_100" id="city_name" >
+                            </div>
                         </div>
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label>Street</label>
-                                <input type="text" name="p_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['p_street_line'])) echo $this->session->userdata['p_street_line'] ?>" class="form-control width_100" id="street_name" >
+                                <!--<label>State</label>-->
+                                <input type="hidden" name="p_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_state'])) echo $this->session->userdata['p_state'] ?>" class="form-control width_100" id="state_name" >
                             </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label>City</label>
-                                <input type="text" name="p_city" placeholder="City" value="<?php if (isset($this->session->userdata['p_city'])) echo $this->session->userdata['p_city'] ?>" class="form-control width_100" id="city_name" >
-                            </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label>State</label>
-                                <input type="text" name="p_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_state'])) echo $this->session->userdata['p_state'] ?>" class="form-control width_100" id="state_name" >
-                            </div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label>Zipcode</label>
-                                <input type="text" name="p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['p_zip_code'])) echo $this->session->userdata['p_zip_code'] ?>" class="form-control width_100" id="zipcode_name" >
+                                <!--<label>Zipcode</label>-->
+                                <input type="hidden" name="p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['p_zip_code'])) echo $this->session->userdata['p_zip_code'] ?>" class="form-control width_100" id="zipcode_name" >
                             </div>
                         </div>
                         
@@ -102,7 +101,7 @@
     $(document).ready(function () {
         $('#auto_primary_address_id').autocomplete({
             source: function (request, response) {
-                $("#err1").html("");
+                $("#err3").html("");
                 if (request.term !== '') {
 
                     $.ajax({
@@ -114,13 +113,13 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
-                                $("#err1").html("No Address Found");
+                                $("#err3").html("No Address Found");
                             }
                         }
                     });
                 }
                 if (request.term == '') {
-                    $("#err1").html("Please Enter address");
+                    $("#err3").html("Please Enter address");
                     return false;
                 }
             },
@@ -155,7 +154,20 @@
 
         //
     });
-
+    $(document).ready(function() {
+        /*$('#soc_sec').on('input', function() {
+        var input = $(this).val();
+        input = input.replace(/[^0-9]/g, ''); // Remove any non-digit characters
+        var formattedInput = input.replace(/^(\d{3})(\d{2})(\d{4})/, '$1-$2-$3');
+        $(this).val(formattedInput);
+        });*/
+        //
+        $('#living_there_years').on('input', function() {
+        var input = $(this).val();
+        input = input.replace(/[^0-9]/g, ''); // Remove any non-digit characters
+        $(this).val(input);
+        });
+    });
 </script>
 
 
