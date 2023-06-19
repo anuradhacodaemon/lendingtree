@@ -1,10 +1,16 @@
+<?php 
+function isJson($string) {
+    json_decode($string);
+    return json_last_error() === JSON_ERROR_NONE;
+ }
 
+?>
   
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> Loan User Details</h2>
+                <h2>Personal Loan User Details</h2>
 
                 <div class="clearfix"></div>
             </div><?php //$takenby = $this->jobs->get_dispatcher($userDetails[0]['dispatcherid']); ?>
@@ -12,7 +18,7 @@
     <div class="page-title">
         <div class="title_left">
 
-            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/autoloanmccu' ?>" class="dark_grey">Auto-Loan Listing</a> >Details
+            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/personalloanmccu' ?>" class="dark_grey">Auto-Loan Listing</a> >Details
             <h3> <small> </small></h3>
         </div>
 
@@ -97,7 +103,35 @@
                                     <?php echo date('d-m-Y',strtotime($userDetails['p_dob'])); ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Address: &nbsp;</b>
-                                    <?php echo str_replace("%20"," ",$userDetails['p_address']);?>
+                                    <?php 
+                                                $country = $street = $city = $state = $zipcode = "--";
+                                                $resp = isJson($userDetails['p_address']);
+                                                if($resp)
+                                                {                                    
+                                                    $full_address = json_decode($userDetails['p_address']);
+                                                    echo $street = $full_address->street_line;
+                                                    $country = (!empty($full_address->country)) ? $full_address->country : '--';
+                                                    $city = $full_address->city;
+                                                    $state = $full_address->state;
+                                                    $zipcode = $full_address->zip_code;
+                                                }
+                                                else{
+                                                    echo str_replace("%20"," ",$userDetails['p_address']);
+                                                    }
+                                    
+                                    ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Country: &nbsp;</b>
+                                    <?php echo $country; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>State: &nbsp;</b>
+                                    <?php echo $state; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                    <?php echo $city; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
+                                    <?php echo $zipcode; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Domain: &nbsp;</b>
                                     <?php echo $userDetails['domain'] ?>
@@ -110,8 +144,35 @@
                                         <?php  echo $userDetails['personal_refrence'];?></span>
                                 </div>
                                 <div class="col-sm-12"> <b>Personal Reference Address: &nbsp;</b>
-                                    <?php 
-                                     echo $userDetails['personal_refrence_address'];?>
+                                      <?php 
+                                                $country = $street = $city = $state = $zipcode = "--";
+                                                $resp = isJson($userDetails['personal_refrence_address']);
+                                                if($resp)
+                                                {                                    
+                                                    $full_address = json_decode($userDetails['personal_refrence_address']);
+                                                    echo $street = $full_address->street_line;
+                                                    $country = (!empty($full_address->country)) ? $full_address->country : '--';
+                                                    $city = $full_address->city;
+                                                    $state = $full_address->state;
+                                                    $zipcode = $full_address->zip_code;
+                                                }
+                                                else{
+                                                    echo str_replace("%20"," ",$userDetails['personal_refrence_address']);
+                                                    }
+                                    
+                                    ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Country: &nbsp;</b>
+                                    <?php echo $country; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>State: &nbsp;</b>
+                                    <?php echo $state; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                    <?php echo $city; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
+                                    <?php echo $zipcode; ?>
                                 </div>
                                 <div class="col-sm-12"><b>Personal Reference Phone: &nbsp</b>
                                         <?php echo $userDetails['personal_refrence_phone'] ?>
@@ -122,9 +183,7 @@
                                 <div class="col-sm-12"> <b>Working there since: &nbsp;</b>
                                     <?php echo $userDetails['how_long_your_working']; ?>
                                 </div>
-                                <div class="col-sm-12"> <b>Business Address: &nbsp;</b>
-                                    <?php echo $userDetails['address_of_business']; ?>
-                                </div>
+                                
                                 <div class="col-sm-12"> <b>Laid off OR payment Waived: &nbsp;</b>
                                     <?php echo $userDetails['laid_off_for_payment_waived'];?>
                                 </div>
@@ -139,6 +198,38 @@
                                 </div>
                                 <div class="col-sm-12"> <b>Miltary Involvement: &nbsp;</b>
                                     <?php echo $userDetails['military_involvement'] ?>
+                                </div>
+
+                                <div class="col-sm-12"> <b>Business Address: &nbsp;</b>
+                                    <?php 
+                                                $country = $street = $city = $state = $zipcode = "--";
+                                                $resp = isJson($userDetails['address_of_business']);
+                                                if($resp)
+                                                {                                    
+                                                    $full_address = json_decode($userDetails['address_of_business']);
+                                                    echo $street = $full_address->street_line;
+                                                    $country = (!empty($full_address->country)) ? $full_address->country : '--';
+                                                    $city = $full_address->city;
+                                                    $state = $full_address->state;
+                                                    $zipcode = $full_address->zip_code;
+                                                }
+                                                else{
+                                                    echo str_replace("%20"," ",$userDetails['address_of_business']);
+                                                    }
+                                    
+                                    ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Country: &nbsp;</b>
+                                    <?php echo $country; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>State: &nbsp;</b>
+                                    <?php echo $state; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                    <?php echo $city; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
+                                    <?php echo $zipcode; ?>
                                 </div>
                             </div>
                             <!-- /.col -->
@@ -162,9 +253,7 @@
                                 <div class="col-sm-12"> <b>Cosigner's Marital Status: &nbsp;</b>
                                     <?php echo $userDetails['cosigner_marital_status']; ?>
                                 </div>
-                                <div class="col-sm-12"> <b>Cosigner's Address: &nbsp;</b>
-                                    <?php echo str_replace("%20"," ",$userDetails['cosigner_address']);?>
-                                </div>
+                               
                                 <div class="col-sm-12"> <b>Being on the Address since long: &nbsp;</b>
                                     <?php echo $userDetails['cosigner_years_been_there'] ?>
                                 </div>
@@ -176,6 +265,37 @@
                                 </div>
                                 <div class="col-sm-12"> <b>Cosigner's Relationship: &nbsp;</b>
                                     <?php echo $userDetails['cosigner_relationship'] ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Cosigner's Address: &nbsp;</b>
+                                    <?php 
+                                                $country = $street = $city = $state = $zipcode = "--";
+                                                $resp = isJson($userDetails['cosigner_address']);
+                                                if($resp)
+                                                {                                    
+                                                    $full_address = json_decode($userDetails['cosigner_address']);
+                                                    echo $street = $full_address->street_line;
+                                                    $country = (!empty($full_address->country)) ? $full_address->country : '--';
+                                                    $city = $full_address->city;
+                                                    $state = $full_address->state;
+                                                    $zipcode = $full_address->zip_code;
+                                                }
+                                                else{
+                                                    echo str_replace("%20"," ",$userDetails['cosigner_address']);
+                                                    }
+                                    
+                                    ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Country: &nbsp;</b>
+                                    <?php echo $country; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>State: &nbsp;</b>
+                                    <?php echo $state; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                    <?php echo $city; ?>
+                                </div>
+                                <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
+                                    <?php echo $zipcode; ?>
                                 </div>
                             </div>
                             <!-- /.col -->
