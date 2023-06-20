@@ -31,7 +31,29 @@ if (window.performance) {
             }
         });
     }
-     if (step==3) {
+    if (step == 44) {
+        $('#step_count').val(44); 
+       $.ajax({
+            type: "GET",
+            url: base_url +"recreationalLoan/step44",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (step == 44.1) {
+        $('#step_count').val(44.1); 
+       $.ajax({
+            type: "GET",
+            url: base_url +"recreationalLoan/step44_1",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (step==3) {
         $('#step_count').val(3); 
          $.ajax({
              type: "GET",
@@ -561,6 +583,28 @@ if (window.performance) {
         $.ajax({
             type: "GET",
             url: base_url +"recreationalLoan/step2",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (pageId == 44) {
+        $('#step_count').val(44); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"recreationalLoan/step44",
+            success: function (data)
+            {
+                $('#container').html(data);
+            }
+        });
+    }
+    if (pageId == 44.1) {
+        $('#step_count').val(44.1); 
+        $.ajax({
+            type: "GET",
+            url: base_url +"recreationalLoan/step44_1",
             success: function (data)
             {
                 $('#container').html(data);

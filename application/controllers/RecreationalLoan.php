@@ -1854,6 +1854,80 @@ class RecreationalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
+        if($step == 44)
+        {
+            //echo $this->input->post('p_another_source');
+            $rules = array(
+                array('field'=>'do_know_the_vehicle','label'=>'Vehicle is Known','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('do_know_the_vehicle')) 
+                {
+                    $value = $this->input->post('do_know_the_vehicle');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'finance_for_vehicle' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=44.1';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'do_know_the_vehicle' => form_error('do_know_the_vehicle')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 44.1)
+        {
+           
+            $this->form_validation->set_rules('year', 'Year', 'required|numeric');
+            $this->form_validation->set_rules('make', 'Make/Brand', 'required');
+            $this->form_validation->set_rules('model', 'Model', 'required');
+            //$this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if (!empty($this->input->post('year')) && !empty($this->input->post('make')) && !empty($this->input->post('model'))) 
+                {
+                    $data = array(
+                        'vehicle_year' => $this->input->post('year'),
+                        'vehicle_make_brand' => $this->input->post('make'),
+                        'vehicle_model' => $this->input->post('model')
+                    );
+                    $this->session->set_userdata($data);
+                    $data['success'] = 1;
+                    $data['url'] = 'auto?step=3';
+                    echo json_encode($data);
+                }
+                else{
+                    $errors = array(
+                        'year' => form_error('year'),
+                        'make' => form_error('make'),
+                        'model' => form_error('model')
+                        );
+                    }
+            }else{
+                //fail
+                $errors = array(
+                            'year' => form_error('year'),
+                            'make' => form_error('make'),
+                            'model' => form_error('model')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
         //END OF FUnction
     }
     /**
@@ -2048,6 +2122,15 @@ class RecreationalLoan extends CI_Controller
     public function step43()
     {
         $this->load->view('default/mccu/recreational/recreational_step43_view');
+    }
+    //Below is added for new YMM
+    public function step44()
+    {
+        $this->load->view('default/mccu/recreational/recreational_step44_view');
+    }
+    public function step44_1()
+    {
+        $this->load->view('default/mccu/recreational/recreational_stepymm');
     }
     /**
      * My code ends here

@@ -875,7 +875,8 @@ input[type="checkbox"] {
   border-radius: 10px;
 }
 
-.form-main select.form-control {
+.form-main select.form-control
+{
   font-size: 20px;
   text-align: center;
   height: 58px;
@@ -884,6 +885,22 @@ input[type="checkbox"] {
   max-width: 475px;
   border-radius: 10px;
 }
+.form-main .select2-selection
+{
+  font-size: 20px !important;
+  padding: 4% !important;
+  text-align: center !important;
+  height: 58px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 475px !important;
+  border-radius: 10px !important;
+}
+.form-main .select2-selection .select2-selection__arrow
+{
+  padding: 7% !important;
+}
+
 
 .form-main .form-control-small {
   font-size: 14px !important;

@@ -124,3 +124,7 @@ define('ZIPCODE','lend_zipcode');
 
 define('SMARTY_AUTH_ID', '31e7020d-9a47-c928-f6d2-bc3c38fb6546');
 define('SMARTY_AUTH_TOKEN','ygIUWrlkwpFlPZGX2Oj0');
+
+#year make model
+define('YEAR_MAKE_USER', 'AutoBid_UCTV');
+define('YEAR_MAKE_SECRET','india409');

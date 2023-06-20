@@ -20,7 +20,17 @@ $(document).ready(function() {
  * 
  */
 
-
+function selectedVehicle(step, value)
+{
+    if(step == 44)
+    {
+        console.log('this is value>>' + value);
+        var form = document.getElementById('re_vehicle_info');
+        var formData = new FormData(form);
+        formData.append('do_know_the_vehicle', value);
+        getFormId(form);
+    }
+}
 
 //for marital status 4 or 25 
 function getMaritalRadioBtn(step, value)
@@ -342,6 +352,11 @@ function addCosigner(value)
             formData.append('req_amt', selected_marital_status);
             window.history.pushState({id:2}, "Title", base_url + "recreationalLoan?step=2");
         }*/
+        if(step == 44)
+        {
+            var selected_home_status = $('input[name="do_know_the_vehicle"]:checked').val();
+            formData.append('do_know_the_vehicle', selected_home_status);
+        }
         if(step == 4 || step == 25)
         {
             if(step == 4)
@@ -556,10 +571,32 @@ function addCosigner(value)
                   {
                       recreational_step2();
                   }
-                  if(step == 2)
+                  //old code
+                  /*if(step == 2)
                   {
                       recreational_step3();
+                  }*/
+                  //
+                  if(step == 2)
+                  {
+                        recreational_step44();
                   }
+                  if(step == 44)
+                  {
+
+                      if(selected_home_status == 'yes')
+                      {
+                        recreational_step44_1();
+                      }
+                      else{
+                            recreational_step3();
+                          }
+                  }
+                  if(step == 44.1)
+                  {
+                    recreational_step3();
+                  }
+                  //
                   if(step == 3)
                   {
                       recreational_step4();
@@ -1201,6 +1238,18 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['cosigner_monthly_income_pre_tax']);
                         $('#err2').html(obj['error_messages']['cosigner_upload_user_doc']);
                     }
+                    if(step == 44.1)
+                    {
+                        //alert('you are in 10');
+                        $('#err1').html(obj['error_messages']['year']);
+                        $('#err2').html(obj['error_messages']['make']);
+                        $('#err3').html(obj['error_messages']['model']);
+                    }
+                    if(step == 44)
+                    {
+                        //alert('you are in 10');
+                        $('#err1').html(obj['error_messages']['do_know_the_vehicle']);
+                    }
                     
               }   
             },
@@ -1230,6 +1279,34 @@ function recreational_step2()
         }
     });
 }
+//
+function recreational_step44()
+{   
+    $('#step_count').val(44);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "recreationalLoan/step44",
+        success: function (data)
+        {    
+            window.history.pushState({id:44}, "Title", base_url + "recreationalLoan?step=44");
+            $('#container').html(data);                
+        }
+    });
+}
+function recreational_step44_1()
+{   
+    $('#step_count').val(44.1);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "recreationalLoan/step44_1",
+        success: function (data)
+        {    
+            window.history.pushState({id:44.1}, "Title", base_url + "recreationalLoan?step=44.1");
+            $('#container').html(data);                
+        }
+    });
+}
+//
 function recreational_step3()
 {   
     $('#step_count').val(3);

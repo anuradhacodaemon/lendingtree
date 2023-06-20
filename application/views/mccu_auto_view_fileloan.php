@@ -151,6 +151,65 @@ function isJson($string) {
     <tr>
         <td>&nbsp;</td>
     </tr>
+    <!--New Vehicle Details-->
+    <?php 
+            if($userDetails['loan_type'] != 5 && $userDetails['finance_for_vehicle'] == 'Y')
+            {     ?>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Vehicle Details</td>
+                </tr> 
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Known Vehicle :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php echo (isset($userDetails['finance_for_vehicle']) && $userDetails['finance_for_vehicle'] == 'Y') ? "Yes" : "" ; ?>
+                    </td>
+                </tr> 
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Vehicle Year :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php echo $userDetails['vehicle_year']; ?>
+                    </td>
+                </tr>                
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                       Vehicle Make/Brand :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php echo $userDetails['vehicle_make_brand']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Vehicle Model/Style/Details :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php echo  $string = str_replace( ',', '/', $userDetails['vehicle_model'] ); ?>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <?php } ?>
+    <!--New Vehicle Details End here-->
     <tr>
         <td>
             <table>
