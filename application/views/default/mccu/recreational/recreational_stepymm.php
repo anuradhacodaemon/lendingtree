@@ -41,7 +41,7 @@
                         <input type="hidden" name="auto_step" value="44.1" id="auto_step" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-4 margbot_10">
-                                <input type="text" name="year" placeholder="Year" value="<?php if (isset($this->session->userdata['vehicle_year'])) echo $this->session->userdata['vehicle_year'] ?>" class="form-control width_100" id="vehicle_year" >
+                                <input type="text" name="year" placeholder="Year" value="<?php if (isset($this->session->userdata['vehicle_year'])) echo $this->session->userdata['vehicle_year'] ?>" class="form-control width_100" id="vehicle_year" minength="4" maxlength="4">
                                 <span id="err1" style="color: red"></span>
                             </div>
 
@@ -70,3 +70,39 @@
     </div>
 </div>
 <!-- Banner ends here -->
+
+<script>
+
+$(document).ready(function() {
+  $('#vehicle_year').on('input', function() {
+    var year = parseInt($(this).val(), 10);
+       
+    if (!isNaN(year)) {
+      if (validateYear(year)) 
+      {
+         $("#err1").html("");
+      } 
+      else {
+             $("#err1").html("Please Select a valid Year");
+            }
+        
+    } else {
+      // Invalid input (not a number)
+      $("#err1").html("Please Select Year in number");
+      
+    }
+  });
+});
+function validateYear(year) {
+  var currentYear = new Date().getFullYear();
+  
+  if (year > 1900 && year <= currentYear) {
+    // Year is valid
+    return true;
+  } else {
+    // Year is invalid
+    return false;
+  }
+}
+
+</script>

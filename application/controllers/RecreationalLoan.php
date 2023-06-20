@@ -1889,8 +1889,8 @@ class RecreationalLoan extends CI_Controller
         }
         if($step == 44.1)
         {
-           
-            $this->form_validation->set_rules('year', 'Year', 'required|numeric');
+            $date = (int) date('Y');
+            $this->form_validation->set_rules('year', 'Year', "required|numeric|greater_than[1900]|less_than_equal_to[{$date}]");
             $this->form_validation->set_rules('make', 'Make/Brand', 'required');
             $this->form_validation->set_rules('model', 'Model', 'required');
             //$this->form_validation->set_rules($rules);
