@@ -153,6 +153,11 @@
   .form-main input.form-control {
     width: 100%;
   }
+  /**/
+  .form-main input[type=date].form-control {
+    width: 100%;
+  }
+  /**/
   .inner_height {
     min-height: calc(100vh - 165px);
   }
