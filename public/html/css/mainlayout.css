@@ -57,7 +57,7 @@ button, input:focus {outline: none;}
 
 /* Banner */
 .banner-main {
-    background: #fff url(../img/bg.jpg) no-repeat center top;
+    background: #fff url(../img/banner.jpg) no-repeat center top;
 	background-size: cover;
     width: 100%;
     padding: 0;
