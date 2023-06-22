@@ -1,9 +1,22 @@
 @media only screen and (max-width:509px){ 
-    .logo {text-align: center;}
-    .number {
+    .logo {
+        text-align: center;
+        width: 60%;
+        float: none;
+        margin: 5% auto 0;
+      }
+    /*.number {
         text-align: center;
     }
-    .number a {font-size: 9px;}
+    .number a {font-size: 9px;}*/
+    .number {
+        text-align: center;
+        font-size: 12px;
+        line-height: 14px;
+      }
+      .number a {
+        font-size: 13px;
+      }
     .banner-main {background: #fff url(../img/bg.jpg) no-repeat center top; padding-top: 30px; padding-bottom: 30px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
@@ -106,8 +119,14 @@
 	.btn-calc {width:100%;}
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
-    .logo {width: 65%;}
-    .number a {font-size: 18px;}
+    .logo {
+        width: 35%;
+        margin: 3% auto 0;
+        float: none;
+      }
+    .number a {
+        font-size: 18px;
+      }
     .banner-main {
         background: #fff url(../img/bg.jpg) no-repeat center top;
         padding-top: 35px;
@@ -169,6 +188,11 @@
         bottom: 0;
         right: 0;
     }
+    .logo {
+        float: left;
+        margin: 10% 0 0;
+        width: 65%;
+      }
 }
 @media only screen and (max-width:411px){ 
     .inner_height {min-height:662px;}

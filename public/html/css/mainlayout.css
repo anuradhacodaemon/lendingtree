@@ -29,7 +29,7 @@ button, input:focus {outline: none;}
 }
 .font_14 {font-size:14px !important;}
 /* Header */
-.header-main {
+/*.header-main {
     overflow: hidden;
     width: 100%;
     background: #fff;
@@ -37,13 +37,13 @@ button, input:focus {outline: none;}
     position: relative;
     z-index: 10;
     padding: 0 0 5px;
-}
+}*/
 .logo {
     float: left;
     width: 100%;
 }
 .logo img {display: inline-block;}
-.number {
+/*.number {
     float: right;
     padding: 0;
 }
@@ -54,6 +54,54 @@ button, input:focus {outline: none;}
     font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
 }
 .number a strong {font-family: source_sans_proregular, Arial, Helvetica, sans-serif;}
+*/
+.header-main {
+    overflow: hidden;
+    background: var(--colo2);
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 5px 0;
+  }
+  
+  .header-main>.container:after,
+  .header-main>.container:before {
+    display: none;
+  }
+  
+  .header-main>.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-main>.container>a {
+    display: block;
+    width: 100px;
+  }
+  
+  .header-main>.container>a img {
+    display: block;
+    filter: brightness(0) invert(1);
+    width: 100%;
+  }
+.number {
+    padding: 0;
+    text-align: right;
+    color: #000;
+    font-size: 14px;
+    line-height: 18px;
+    width:100% !important
+}
+  
+.number a {
+    display: block;
+    color: #000;
+}
+.number a:hover {
+    color: #999;
+  }
+  
 
 /* Banner */
 .banner-main {
