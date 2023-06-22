@@ -2,9 +2,10 @@
     .logo {text-align: center; width: 100%;}
     .number {
         text-align: center;
-        padding: 2px 0 0;
-    }
-    .number a {font-size: 13px;}
+        font-size: 12px;
+        margin-top: 20px;
+      }
+    .number a {font-size: 12px;}
     .banner-main {padding-top: 0px; padding-bottom: 0px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
@@ -82,7 +83,11 @@
     .inner_height {min-height:574px;}
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
-    .logo {width: 65%;}
+    .logo {
+        width: 35%;
+        margin: 3% auto 0;
+        float: none;
+      }
     .number a {font-size: 18px;}
     .banner-main {
         padding-top: 0px;
