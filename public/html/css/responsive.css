@@ -2,9 +2,11 @@
     .logo {text-align: center;}
     .number {
         text-align: center;
-		margin-top: 7px;
-    }
-    .number a {font-size: 14px;}
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 35px;
+      }
+    .number a {font-size: 13px;}
 	.banner-main {padding: 20px 0;}
 	.banner-main h1 {font-size: 26px; margin: 0 0 15px;}
 	.banner-inner {margin-bottom: 20px;}
@@ -80,7 +82,7 @@
     .logo {text-align: center;}
     .number {
         text-align: center;
-		margin-top: 7px;
+		margin-top: 45px;
     }
     .number a {font-size: 14px;}
 	.banner-main {padding: 20px 0;}
@@ -145,7 +147,7 @@
 }
 @media only screen and (min-width:375px) and (max-width:375px){
     .inner_height {min-height:500px;}
-	.number {margin-top: 5px;}
+	.number {margin-top: 25px;}
     .number a {font-size: 12px;}
 }
 @media only screen and (min-width:360px) and (max-width:360px){ 
@@ -153,7 +155,7 @@
 }
 @media only screen and (max-width:320px){ 
     .inner_height {min-height:400px;}
-	.number {margin-top: 0px;}
+	.number {margin-top: 5px;}
     .number a {font-size: 10px;}
 }
 @media only screen and (min-width: 812px) and (max-width: 823px) {
