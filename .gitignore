@@ -35,3 +35,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 application/config/*
 download_pdf/*
 .htaccess
+
+#below folders not used in this branch it is used in MCCU only
+userDocuments/*
+cosignerDocuments/*
