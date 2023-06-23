@@ -33,7 +33,7 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Cosigner Marital Status</label>
+              <label class="control-label">Joint Owner/Co-Signer Marital Status</label>
               <form id="co_p_details1q" method="post">
               <input type="hidden" name="auto_step" value="25" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

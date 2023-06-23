@@ -27,7 +27,7 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Do you know you the vehicle you are wanting to finance?</label>
+              <label class="control-label">Do you know the vehicle you are wanting to finance?</label>
               <form id="vehicle_info" method="POST">
               <input type="hidden" name="auto_step" value="44" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

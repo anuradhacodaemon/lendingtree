@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner ANY BANKRUPTCY FILING OR DEBT ADJUSTMENT CONFIRMED UNDER CH. 13 AGAINST YOU?</label>
+                    <label class="control-label">Joint Owner/Co-Signer ANY BANKRUPTCY FILING OR DEBT ADJUSTMENT CONFIRMED UNDER CH. 13 AGAINST YOU?</label>
                     <div class="row">
                         <form id="co_bankruptcy_adjustmnt" method="POST">
                             <input type="hidden" name="auto_step" value="38" id="auto_step" >

@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner IS ANY INCOME LISTED LIKELY TO BE REDUCED WITHIN THE NEXT TWO YEARS?</label>
+                    <label class="control-label">Joint Owner/Co-Signer IS ANY INCOME LISTED LIKELY TO BE REDUCED WITHIN THE NEXT TWO YEARS?</label>
                     <div class="row">
                     <form id="co_income_get_reduce_nxt_2y" method="POST">
                             <input type="hidden" name="auto_step" value="42" id="auto_step" >

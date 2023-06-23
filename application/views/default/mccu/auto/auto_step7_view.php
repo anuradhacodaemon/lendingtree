@@ -147,6 +147,18 @@
                 $('#r_zip_code').val(ui.item.zipcode);
                 $('#relative_address').val(addr);
                 event.preventDefault();
+            },
+            focus: function (event, ui) {
+                $('.r_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#r_country').val('United States');
+                $('#r_street_line').val(ui.item.street_line);
+                $('#r_city').val(ui.item.city);
+                $('#r_state').val(ui.item.state);
+                $('#r_zip_code').val(ui.item.zipcode);
+                $('#relative_address').val(addr);
+                event.preventDefault();
             }
         }).data("ui-autocomplete")._renderItem = function (ul, item) {
             console.log("The values are>> " +item.city);

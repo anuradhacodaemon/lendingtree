@@ -35,13 +35,13 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner Address Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer Address Details</label>
                     <div class="row">
                         <form id="p_details" method="post" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="27" id="auto_step" >
                         <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <input type="text" name="cosigner_monthly_pay" placeholder="Monthly Pay $##,###.##" value="<?php if (isset($this->session->userdata['cosigner_monthly_pay'])) echo $this->session->userdata['cosigner_monthly_pay'] ?>" class="form-control width_100" id="cosigner_monthly_pay27" >
+                                    <input type="text" name="cosigner_monthly_pay" placeholder="Monthly Payment" value="<?php if (isset($this->session->userdata['cosigner_monthly_pay'])) echo $this->session->userdata['cosigner_monthly_pay'] ?>" class="form-control width_100" id="cosigner_monthly_pay27" >
                                     <span id="err3" style="color: red"></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 margbot_10">
@@ -123,6 +123,18 @@
             },
             minLength: 1,
             select: function (event, ui) {
+                $('.co_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#co_country_name').val('United States');
+                $('#co_street_name').val(ui.item.street_line);
+                $('#co_city_name').val(ui.item.city);
+                $('#co_state_name').val(ui.item.state);
+                $('#co_zipcode_name').val(ui.item.zipcode);
+                $('#cosigner_home_address').val(addr);
+                event.preventDefault();
+            },
+            focus: function (event, ui) {
                 $('.co_resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    

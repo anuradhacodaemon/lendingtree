@@ -54,7 +54,7 @@
                                 <span id="err3" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="working_years" placeholder="How long you are working there Ex.1 OR 2" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
+                                <input type="text" name="working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
@@ -126,6 +126,18 @@
             },
             minLength: 1,
             select: function (event, ui) {
+                $('.b_r_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#b_r_country').val('United States');
+                $('#b_r_street_line').val(ui.item.street_line);
+                $('#b_r_city').val(ui.item.city);
+                $('#b_r_state').val(ui.item.state);
+                $('#b_r_zip_code').val(ui.item.zipcode);
+                $('#business_address').val(addr);
+                event.preventDefault();
+            },
+            focus: function (event, ui) {
                 $('.b_r_resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    

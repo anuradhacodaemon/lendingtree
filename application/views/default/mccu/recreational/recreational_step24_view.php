@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigners Personal Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer's Personal Details</label>
                     <div class="row">
                         <form id="co_p_details" method="post" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="24" id="auto_step" >

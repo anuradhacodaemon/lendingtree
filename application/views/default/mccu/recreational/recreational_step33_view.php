@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner Previous working Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer Previous working Details</label>
                     <div class="row">
                         <form id="co_pre_emp_details" method="POST" onsubmit="return getFormId(this)">
                             <input type="hidden" name="auto_step" value="33" id="auto_step" >

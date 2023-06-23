@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner ARE THERE CURRENTLY ANY OUTSTANDING JUDGEMENTS AGAINST YOU?</label>
+                    <label class="control-label">Joint Owner/Co-Signer ARE THERE CURRENTLY ANY OUTSTANDING JUDGEMENTS AGAINST YOU?</label>
                     <div class="row">
                         <form id="co_outstanding_judgement" method="POST">
                             <input type="hidden" name="auto_step" value="37" id="auto_step" >

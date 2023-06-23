@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigners Employement Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer's Employement Details</label>
                     <div class="row">
                     <form id="co_work_details" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="30" id="auto_step" >
@@ -54,7 +54,7 @@
                                 <span id="err3" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigners_working_years" placeholder="How long you are working there" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
+                                <input type="text" name="cosigners_working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
@@ -126,6 +126,18 @@
             },
             minLength: 1,
             select: function (event, ui) {
+                $('.b_r_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#co_b_r_country').val('United States');
+                $('#co_b_r_street_line').val(ui.item.street_line);
+                $('#co_b_r_city').val(ui.item.city);
+                $('#co_b_r_state').val(ui.item.state);
+                $('#co_b_r_zip_code').val(ui.item.zipcode);
+                $('#cosigners_business_address').val(addr);
+                event.preventDefault();
+            },
+            focus: function (event, ui) {
                 $('.b_r_resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    

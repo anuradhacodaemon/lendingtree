@@ -42,7 +42,7 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Cosigner Own Or Rent</label>
+              <label class="control-label">Joint Owner/Co-Signer Own Or Rent</label>
               <form id="co_home_id" method="POST">
                 <input type="hidden" name="auto_step" value="26" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

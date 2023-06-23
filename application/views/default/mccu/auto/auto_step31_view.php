@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner's Salary Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer's Salary Details</label>
                     <div class="row">
                     <form id="co_user_docs" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="31" id="auto_step" >

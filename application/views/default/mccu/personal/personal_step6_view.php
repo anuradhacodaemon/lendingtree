@@ -42,7 +42,7 @@
                         <input type="hidden" name="auto_step" value="6" id="auto_step" >
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="monthly_pay" placeholder="Monthly Pay $##,###.##" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay_personal" >
+                                <input type="text" name="monthly_pay" placeholder="Monthly Payment" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay_personal" >
                                 <span id="err3" style="color: red"></span>
                                 
                             </div>
@@ -126,6 +126,18 @@
             },
             minLength: 1,
             select: function (event, ui) {
+                $('.resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#country_name').val('United States');
+                $('#street_name').val(ui.item.street_line);
+                $('#city_name').val(ui.item.city);
+                $('#state_name').val(ui.item.state);
+                $('#zipcode_name').val(ui.item.zipcode);
+                $('#auto_primary_address_id').val(addr);
+                event.preventDefault();
+            },
+            focus: function (event, ui) {
                 $('.resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    

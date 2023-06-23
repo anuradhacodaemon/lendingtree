@@ -35,7 +35,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Cosigner's Personal Reference Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer's Personal Reference Details</label>
                     <div class="row">
                     <form id="co_personal_ref" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="29" id="auto_step" >
@@ -118,6 +118,18 @@
             },
             minLength: 1,
             select: function (event, ui) {
+                $('.co_p_r_resource-container').empty();
+                /*TODO future need to remove inline styles*/
+                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
+                $('#co_p_r_country').val('United States');
+                $('#co_p_r_street_line').val(ui.item.street_line);
+                $('#co_p_r_city').val(ui.item.city);
+                $('#co_p_r_state').val(ui.item.state);
+                $('#co_p_r_zip_code').val(ui.item.zipcode);
+                $('#cosigners_personal_refrence_address').val(addr);
+                event.preventDefault();
+            },
+            focus: function (event, ui) {
                 $('.co_p_r_resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    

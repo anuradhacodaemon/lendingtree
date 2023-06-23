@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Are you wanting to add any co-signors onto this loan?</label>
+                    <label class="control-label">Are you wanting to add any Joint Owner/Co-Signer onto this loan?</label>
                     <div class="row">
                     <form id="add_cosigner" method="POST">
                             <input type="hidden" name="auto_step" value="23" id="auto_step" >
