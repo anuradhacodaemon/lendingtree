@@ -871,6 +871,7 @@ input[type="checkbox"] {
   text-align: center;
   height: 58px;
   width: 360px;
+  /* width: 100%; */
   margin: 0 auto 2px;
   border-radius: 10px;
 }
@@ -930,7 +931,9 @@ input[type="checkbox"] {
   font-size: 20px;
   text-align: center;
   height: 58px;
-  width: 360px;
+  /* width: 360px; */
+  content: attr(placeholder) !important;
+  width: 100%;
   margin: 0 auto 2px;
   border-radius: 10px;
 }

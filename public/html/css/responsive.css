@@ -155,7 +155,8 @@
   }
   /**/
   .form-main input[type=date].form-control {
-    width: 100%;
+    /* width: 100%; */
+    width: 75vw;
   }
   /**/
   .inner_height {
