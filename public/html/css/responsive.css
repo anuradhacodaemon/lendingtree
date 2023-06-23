@@ -1,9 +1,9 @@
 @media only screen and (max-width:509px){ 
-    .logo {text-align: center; width: 100%;}
+    .logo {text-align: center; width: 93%;margin-top: 10px;}
     .number {
         text-align: center;
-        font-size: 12px;
-        margin-top: 20px;
+        font-size: 5px;
+        margin-top: 8px;
       }
     .number a {font-size: 12px;}
     .banner-main {padding-top: 0px; padding-bottom: 0px;}
@@ -84,11 +84,11 @@
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
     .logo {
-        width: 35%;
+        width: 45%;
         margin: 3% auto 0;
-        float: none;
-      }
-    .number a {font-size: 18px;}
+        float: left;
+    }
+    .number a {font-size: 17px;}
     .banner-main {
         padding-top: 0px;
         padding-bottom: 0px;
