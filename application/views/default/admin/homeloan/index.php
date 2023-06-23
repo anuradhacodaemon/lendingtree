@@ -110,7 +110,13 @@ $visitor = $this->homeloan->checklead_denied_forDomain();
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
                                 <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://swfinancial.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://swfinancial.culoanportal.com/") echo 'selected' ?>>swfinancial.culoanportal.com</option>
-                              <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME'];?>://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
+
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://demo.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://demo.culoanportal.com/") echo 'selected' ?>>demo.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://texasbridge.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://texasbridge.culoanportal.com/") echo 'selected' ?>>taxasbridge.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://jcfcu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://jcfcu.culoanportal.com/") echo 'selected' ?>>jcfcu.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://jctfcu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://jctfcu.culoanportal.com/") echo 'selected' ?>>jctfcu.culoanportal.com</option>                                    
+							
                             
                             </select>
                         </div>
