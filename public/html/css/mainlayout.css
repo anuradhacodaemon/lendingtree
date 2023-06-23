@@ -42,10 +42,14 @@ button, input:focus {outline: none;}
     float: left;
     width: 100%;
 }
-.logo img {display: inline-block;}
+.logo img {
+    display: inline-block;
+    width: 10vw;
+}
 .number {
     float: right;
-    padding: 0;
+    padding-top: 3.5%;
+    /* padding: 15px; */
 }
 .number a {
     color: #0896c6;
@@ -210,7 +214,8 @@ button, input:focus {outline: none;}
 /* Other Popular Calculator Section CSS */
 .calculator-main {
     background: #fff;
-    padding: 40px 0 10px;
+    padding: 40px 0 65px;
+    /* padding: 40px 0 10px; */
     clear: both;
     text-align: center;
 }
@@ -409,9 +414,13 @@ button, input:focus {outline: none;}
 }
 /* Footer CSS */
 .footer-main {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 1%;
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     background: #373737;
 }
 .footer-main .sub-nav {

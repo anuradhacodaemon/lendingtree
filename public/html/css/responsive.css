@@ -1,5 +1,8 @@
 @media only screen and (max-width:509px){ 
     .logo {text-align: center;}
+    .logo img{
+        width:50%;
+    }
     .number {
         text-align: center;
     }
@@ -106,7 +109,10 @@
 	.btn-calc {width:100%;}
 }
 @media only screen and (min-width:510px) and (max-width:767px) { 
-    .logo {width: 65%;}
+    /* .logo {width: 65%;} */
+    .logo img{
+        width:20vw;
+    }
     .number a {font-size: 18px;}
     .banner-main {
         background: #fff url(../img/bg.jpg) no-repeat center top;
