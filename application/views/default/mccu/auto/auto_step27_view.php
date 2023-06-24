@@ -42,7 +42,7 @@
                             <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
                                     <input type="text" name="cosigner_monthly_pay" placeholder="Monthly Payment" value="<?php if (isset($this->session->userdata['cosigner_monthly_pay'])) echo $this->session->userdata['cosigner_monthly_pay'] ?>" class="form-control width_100" id="cosigner_monthly_pay_auto" >
-                                    <span id="err1" style="color: red"></span>
+                                    <span id="err3" style="color: red"></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text" name="cosigner_living_there_years" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['cosigner_years_been_there'])) echo $this->session->userdata['cosigner_years_been_there'] ?>" class="form-control width_100" id="cosigner_living_there_years" >
@@ -52,7 +52,7 @@
                             <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
                                     <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
-                                    <span id="err3" style="color: red"></span>
+                                    <span id="err1" style="color: red"></span>
                                     <div class="co_resource-container"></div>
                                 </div>
                                                  
@@ -99,7 +99,7 @@
     $(document).ready(function () {
         $('#cosigner_home_address').autocomplete({
             source: function (request, response) {
-                $("#err3").html("");
+                $("#err1").html("");
                 if (request.term !== '') {
 
                     $.ajax({
@@ -111,13 +111,13 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
-                                $("#err3").html("No Address Found");
+                                $("#err1").html("No Address Found");
                             }
                         }
                     });
                 }
                 if (request.term == '') {
-                    $("#err3").html("Please Enter address");
+                    $("#err1").html("Please Enter address");
                     return false;
                 }
             },
@@ -166,9 +166,18 @@
     });
     $(document).ready(function() {
         $('#cosigner_monthly_pay_auto').on('blur', function() {
-            var input = $(this).val();
-            var formattedAmount = formatAmount(input);
-            $(this).val(formattedAmount);
+            $("#err3").html("");
+            var value = parseInt($(this).val().replace(/[^0-9.,]/g, ''));
+            if (!isNaN(value)) 
+            {
+                value = value.toLocaleString('en-US', {  minimumFractionDigits: 2,maximumFractionDigits: 2 })
+                $(this).val(value);
+            }
+            else{
+                    $("#err3").html("Enter Number only");
+                    return false;
+                    $(this).focus();
+                }
         });
         //
         $('#cosigner_living_there_years').on('input', function() {
@@ -177,25 +186,5 @@
         $(this).val(input);
         });
     });
-    function formatAmount(amount) {
-    // Convert the amount to a number
-    var number = parseFloat(amount);
-
-    // Check if the amount is a valid number
-    if (isNaN(number)) {
-        return '';
-    }
-
-    // Format the number with commas and decimals
-    var formattedAmount = number.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-    // Remove the currency symbol from the formatted amount
-    formattedAmount = formattedAmount.replace('$', '');
-
-    return formattedAmount;
-    }
+    
 </script>

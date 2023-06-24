@@ -192,7 +192,7 @@ class RecreationalLoan extends CI_Controller
             $rules = array(
                 array('field'=>'address','label'=>'Address','rules'=>'required'),
                 array('field'=>'living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
-                array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required')
+                array('field'=>'monthly_pay','label'=>'Monthly payment in Numbers','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 

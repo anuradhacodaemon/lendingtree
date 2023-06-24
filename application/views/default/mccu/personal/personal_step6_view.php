@@ -168,10 +168,20 @@
         //
     });
     $(document).ready(function() {
-        $('#monthly_pay_personal').on('blur', function() {
-            var input = $(this).val();
-            var formattedAmount = formatAmount(input);
-            $(this).val(formattedAmount);
+        $('#monthly_pay_personal').on('blur', function(e) {
+            $("#err3").html("");
+            var value = parseInt($(this).val().replace(/[^0-9.,]/g, ''));
+            if (!isNaN(value)) 
+            {
+                value = value.toLocaleString('en-US', {  minimumFractionDigits: 2,maximumFractionDigits: 2 })
+                $(this).val(value);
+            }
+            else{
+                    $("#err3").html("Enter Number only");
+                    return false;
+                    $(this).focus();
+                }
+            
         });
         //
         $('#living_there_years').on('input', function() {
@@ -180,27 +190,7 @@
         $(this).val(input);
         });
     });
-    function formatAmount(amount) {
-    // Convert the amount to a number
-    var number = parseFloat(amount);
-
-    // Check if the amount is a valid number
-    if (isNaN(number)) {
-        return '';
-    }
-
-    // Format the number with commas and decimals
-    var formattedAmount = number.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-    // Remove the currency symbol from the formatted amount
-    formattedAmount = formattedAmount.replace('$', '');
-
-    return formattedAmount;
-    }
+   
 </script>
 
 

@@ -623,7 +623,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Monthly Income ($) :
+                        Monthly Outstandings ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo $userDetails['monthly_pay'] ?>
@@ -631,7 +631,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Current Income monthly [pre-tax] ($) :
+                        Current Monthly Income [pre-tax] ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo $userDetails['employment_monthly_income'] ?>
@@ -966,7 +966,7 @@ function isJson($string) {
             <table>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Are you wanting to add any co-signors onto this loan? :
+                    Are you wanting to add any Joint Owner/Co-Signer onto this loan? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo ($userDetails['add_co_signers_onto_loan']=='Y') ? 'Yes' : 'No';  ?>
@@ -986,7 +986,7 @@ function isJson($string) {
             <td>
                 <table>
                     <tr>
-                        <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner Personal Details</td>
+                        <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Personal Details</td>
                     </tr> 
                 </table>
             </td>
@@ -1040,7 +1040,7 @@ function isJson($string) {
                     </tr>
                     <tr>
                         <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Monthly Pay ($) :
+                        Monthly Outstandings ($) :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                             <?php echo $userDetails['cosigner_monthly_pay'];  ?>
@@ -1124,7 +1124,7 @@ function isJson($string) {
             <td>
                 <table>
                     <tr>
-                        <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner Relative Details</td>
+                        <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Relative Details</td>
                     </tr> 
                 </table>
             </td>
@@ -1230,7 +1230,7 @@ function isJson($string) {
         <td>
             <table>
                 <tr>
-                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner Personal Reference</td>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Personal Reference</td>
                 </tr> 
             </table>
         </td>
@@ -1327,7 +1327,7 @@ function isJson($string) {
         <td>
             <table>
                 <tr>
-                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner Employment Details</td>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Employment Details</td>
                 </tr> 
             </table>
         </td>
@@ -1380,7 +1380,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Monthly Income ($) :
+                    Current Monthly Income ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo $userDetails['cosigner_monthly_income_pre_tax'];  ?>
@@ -1464,7 +1464,7 @@ function isJson($string) {
         <td>
             <table>
                 <tr>
-                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner Second source Of Income</td>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Second source Of Income</td>
                 </tr> 
             </table>
         </td>
@@ -1513,7 +1513,7 @@ function isJson($string) {
         <td>
             <table>
                 <tr>
-                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner Previous Employment Details</td>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Previous Employment Details</td>
                 </tr> 
             </table>
         </td>
@@ -1552,7 +1552,7 @@ function isJson($string) {
         <td>
             <table>
                 <tr>
-                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Cosigner ARE YOU A CO-MAKER/ENDORSER ON ANY NOTE</td>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer ARE YOU A CO-MAKER/ENDORSER ON ANY NOTE</td>
                 </tr> 
             </table>
         </td>
