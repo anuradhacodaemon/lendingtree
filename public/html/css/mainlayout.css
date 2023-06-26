@@ -40,7 +40,7 @@ button, input:focus {outline: none;}
 }*/
 .logo {
     float: left;
-    width: 100%;
+    width: 15%;
 }
 .logo img {display: inline-block;}
 /*.number {
@@ -57,7 +57,7 @@ button, input:focus {outline: none;}
 */
 .header-main {
     overflow: hidden;
-    background: var(--colo2);
+    background: #08a9c6;
     margin: 0 auto;
     position: relative;
     z-index: 10;
