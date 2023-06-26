@@ -1,11 +1,11 @@
 @media only screen and (max-width:509px){ 
-    .logo {text-align: center; width: 93%;margin-top: 10px;}
+    .logo {text-align: center; width: 79%;margin-top: 10px;}
     .number {
         text-align: center;
         font-size: 5px;
         margin-top: 8px;
       }
-    .number a {font-size: 12px;}
+    .number a {font-size: 11px;}
     .banner-main {padding-top: 0px; padding-bottom: 0px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}

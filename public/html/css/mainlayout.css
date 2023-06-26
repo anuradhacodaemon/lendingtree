@@ -29,8 +29,9 @@ button, input:focus {outline: none;}
 .font_14 {font-size:14px !important;}
 /* Header */
 .header-main {
+    background-image:  url(../img/BackgroundTextureTileWhite.png);
     overflow: hidden;
-    background: #003da6;
+   
     margin: 0 auto;
     position: relative;
     z-index: 10;
@@ -53,17 +54,20 @@ button, input:focus {outline: none;}
     padding: 18px 0 0;
 }
 .number a {
-    color: #fff;
+    color: black;
     font-size: 17px;
     line-height: 40px;
     font-family: source_sans_proregular, Arial, Helvetica, sans-serif;
 }
-.number a:hover {color: #fff;}
+.number a:hover {color: black;}
 .number a strong {font-family: source_sans_proregular, Arial, Helvetica, sans-serif;}
 
 /* Banner */
+.banner-inner{
+    color:white;
+}
 .banner-main {
-    background: #fff url(../img/banner.jpg) no-repeat center;
+    background: #fff url(../img/USFlag.jpg) no-repeat center;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -416,10 +420,11 @@ button, input:focus {outline: none;}
 }
 /* Footer CSS */
 .footer-main {
+    background-image:  url(../img/BackgroundTextureTileWhite.png);
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
-    background: #4e4e4e;
+   
 }
 .footer-main .sub-nav {
     margin: 0;
