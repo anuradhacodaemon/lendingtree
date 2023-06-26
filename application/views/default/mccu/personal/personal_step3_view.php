@@ -67,6 +67,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 margbot_10">
+                              <label class="dob_class">Enter Date Of Birth </label>
                                 <input type="date" name="my_dob" placeholder="DOB" value="<?php if (isset($this->session->userdata['p_dob'])) echo $this->session->userdata['p_dob'] ?>" class="form-control" id="my_dob">
                                 <span id="err7" style="color: red"></span>
                             </div>

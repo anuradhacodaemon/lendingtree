@@ -381,3 +381,14 @@ input ::placeholder{
     width: 1051px;
   }
 }
+
+/** for DOB birth feild issue in SAFARI*/
+.dob_class{
+  display: block;
+}
+/* Media Query for iPad and Mobile Devices */
+@media only screen and (max-width: 767px) {
+  .dob_class{
+    display: block;
+  }
+}
