@@ -41,6 +41,13 @@
                             <input type="hidden" name="auto_step" value="27" id="auto_step" >
                             <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
+                                    <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
+                                    <span id="err1" style="color: red"></span>
+                                    <div class="co_resource-container"></div>
+                                </div>              
+                            </div>
+                            <div class="input-text">
+                                <div class="col-xs-12 col-sm-12 margbot_10">
                                     <input type="text" name="cosigner_monthly_pay" placeholder="Monthly Payment" value="<?php if (isset($this->session->userdata['cosigner_monthly_pay'])) echo $this->session->userdata['cosigner_monthly_pay'] ?>" class="form-control width_100" id="cosigner_monthly_pay_auto" >
                                     <span id="err3" style="color: red"></span>
                                 </div>
@@ -49,14 +56,7 @@
                                     <span id="err2" style="color: red"></span>
                                 </div>
                             </div>
-                            <div class="input-text">
-                                <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
-                                    <span id="err1" style="color: red"></span>
-                                    <div class="co_resource-container"></div>
-                                </div>
-                                                 
-                            </div>
+                           
                             <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                     <!--<label>Country</label>-->
