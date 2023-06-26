@@ -155,9 +155,14 @@
   }
   /**/
   .form-main input[type=date].form-control {
-    /* width: 100%; */
     width: 75vw;
+    /* width: 100%; */
+    content: attr(placeholder) ! important;
   }
+input ::placeholder{
+  overflow: visible !important;
+}
+  
   /**/
   .inner_height {
     min-height: calc(100vh - 165px);

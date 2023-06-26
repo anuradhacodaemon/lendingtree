@@ -932,7 +932,7 @@ input[type="checkbox"] {
   text-align: center;
   height: 58px;
   /* width: 360px; */
-  content: attr(placeholder) !important;
+  /* content: attr(placeholder) !important; */
   width: 100%;
   margin: 0 auto 2px;
   border-radius: 10px;
