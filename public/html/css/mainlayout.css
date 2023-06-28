@@ -1109,7 +1109,8 @@ input[type="checkbox"] {
   border-bottom: 1px dashed #ccc;
   margin: 0;
   font-size: 14px;
-  color: #919191;
+  color: black;
+  font-weight: 200!important;
 }
 .cont-box:last-child {
   border-bottom: 1px solid #ccc;
@@ -1128,7 +1129,7 @@ input[type="checkbox"] {
   display: inline-block;
   font-size: 14px;
   text-align: right;
-  color: #919191;
+  color: black;
   float: right;
 }
 .total {
@@ -1159,7 +1160,7 @@ input[type="checkbox"] {
 .formula-sec {
   background: rgba(138, 27, 30, 0.1);
   padding: 10px;
-  color: #8f846f;
+  color: black;
   font-size: 16px;
   line-height: 22px;
   border-radius: 5px;
