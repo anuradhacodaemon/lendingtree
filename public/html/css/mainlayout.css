@@ -80,6 +80,7 @@ input:focus {
 }
 .logo img {
   display: inline-block;
+  width: 150px;
 }
 .number {
   float: right;
