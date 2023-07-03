@@ -68,7 +68,8 @@ input:focus {
 }
 .header-main {
   overflow: hidden;
-  background: #fff;
+  /* background: #fff; */
+  background-color: #fbfaf8;
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -98,7 +99,8 @@ input:focus {
   margin: 0 0 30px;
 }
 .banner-main {
-  background: url("../img/banner-new.jpg") no-repeat 50% 50% / cover;
+  /* background: url("../img/banner-new.jpg") no-repeat 50% 50% / cover; */
+  background: url("../img/1.jpg") no-repeat 50% 30% / cover;
   position: relative;
   min-height: calc(80vh - 100px);
   display: flex;
@@ -147,14 +149,17 @@ input:focus {
   padding: 5px 8px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8f846f;
-  background: #8f846f;
+  border: 2px solid #654040;
+  background-color:  #654040;
+  /* border: 2px solid #8f846f;
+  background: #8f846f; */
 }
 .offer-cont > a:hover {
   text-decoration: none;
 }
 .offer-cont > a:hover .offer-circ .outer-circ .inner-bevel .second-bevel {
-  background: #333;
+  /* background: #333; */
+  background-color: #b79090;
   color: #fff;
 }
 .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
@@ -231,7 +236,8 @@ input:focus {
   position: absolute;
   right: 30px;
   bottom: 12px;
-  color: #8f846f;
+  /* color: #8f846f; */
+  color: white;
   font-size: 12px;
   text-decoration: none;
   text-align: right;
@@ -239,7 +245,8 @@ input:focus {
 }
 .disclosure a {
   font-weight: 700;
-  color: #8f846f;
+  color: white;
+  /* color: #8f846f; */
 }
 .btn-calc,
 .radio .button {
@@ -254,8 +261,8 @@ input:focus {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8f846f;
-  background: #8f846f;
+  border: 2px solid #654040;
+  background: #654040;
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -271,10 +278,12 @@ input:focus {
 }
 .btn-calc.status,
 .radio .button.status {
-  background: #8f846f;
+  /* background: #8f846f; */
+  background-color: #654040b3;
 }
 .radio .button:hover {
-  background: #333;
+  /* background: #333; */
+  background-color: #b79090;
   color: #fff;
 }
 .calculator-main {
@@ -480,8 +489,8 @@ input:focus {
 }
 .footer-main {
   padding: 20px 0;
-  background: #333;
-  color: #fff;
+  background: #142b3f;
+  color: white;
 }
 .footer-main .sub-nav {
   margin: 0;
@@ -1096,7 +1105,8 @@ input[type="checkbox"] {
   justify-content: space-between;
 }
 .btn-calc:hover {
-  background: #333;
+  /* background: #333; */
+  background-color: #654040b3;
   color: #fff;
 }
 .btn-calc .sprites {
