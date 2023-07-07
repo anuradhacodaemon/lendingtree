@@ -265,6 +265,14 @@ function isJson($string) {
                        <?php echo $userDetails['buying_own_rent']; ?>
                     </td>
                 </tr>
+	         <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; mar>
+                        Monthly Payment : ($) :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; mar>
+                        <?php echo $userDetails['monthly_pay'] ?>
+                    </td>
+                </tr>      
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Military Involvement :
@@ -619,14 +627,6 @@ function isJson($string) {
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo $userDetails['how_long_your_working'] ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Monthly Outstandings ($) :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['monthly_pay'] ?>
                     </td>
                 </tr>
                 <tr>
