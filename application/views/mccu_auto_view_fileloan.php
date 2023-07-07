@@ -266,10 +266,10 @@ function isJson($string) {
                     </td>
                 </tr>
 	         <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; mar>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px;">
                         Monthly Payment : ($) :
                     </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; mar>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px;">
                         <?php echo $userDetails['monthly_pay'] ?>
                     </td>
                 </tr>      
