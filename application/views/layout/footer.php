@@ -11,9 +11,9 @@
 <!-- Footer ends here -->
 <?php
 if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:82') {
-    $setURL = 'http://' . $_SERVER['HTTP_HOST'] . '/lendingtree/';
+    $setURL = 'https://' . $_SERVER['HTTP_HOST'] . '/lendingtree/';
 } else {
-    $setURL = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+    $setURL = 'https://' . $_SERVER['SERVER_NAME'] . '/';
 }
 ?>	
 <input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
