@@ -89,6 +89,25 @@ function geWavedStepLinkRadioBtn(value)
     formData.append('waiver_payment_value', value);
     getFormId(form);
 }
+//step 11
+function gecoMakerRadioBtn(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('comaker_loan_form');
+    var formData = new FormData(form);
+    formData.append('comaker_loan_value', value);
+    getFormId(form);
+}
+
+//step 12
+function getoutstanding_judgmentRadioBtn(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('outstanding_judgment_form');
+    var formData = new FormData(form);
+    formData.append('outstanding_judgment_value', value);
+    getFormId(form);
+}
 //step 1
 function TypeOfLoan(value)
 {
@@ -636,6 +655,11 @@ function addCosigner(value)
                   if(step == 9)
                   {
                       //alert('you are in 9');
+                      autoloan_step9_1();
+                  }
+                  if(step == 9.1)
+                  {
+                      //alert('you are in 9');
                       autoloan_step10();
                   }
                   if(step == 10)
@@ -645,7 +669,7 @@ function addCosigner(value)
                   }
                   if(step == 10.1)
                   {
-                      //alert('you are in 10.1');
+                     // alert('you are in 10.1');
                       autoloan_step11();
                   }
                   if(step == 11 || step == 32)
@@ -655,7 +679,7 @@ function addCosigner(value)
                             //alert('you are in 11 >>>'+ selected_home_status);
                             if(selected_home_status == 'yes')
                             {
-                                autoloan_step11_1();
+                                autoloan_step11();
                             }
                             else{
                                     //alert('you are in 11 >>>'+ selected_home_status);
@@ -1404,6 +1428,19 @@ function autoloan_step9()
         success: function (data)
         {      
             window.history.pushState({id:9}, "Title", base_url + "auto?step=9");
+            $('#container').html(data);                
+        }
+    });
+}
+function autoloan_step9_1()
+{  
+    $('#step_count').val(9.1);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "auto/step9_1",
+        success: function (data)
+        {      
+            window.history.pushState({id:9}, "Title", base_url + "auto?step=9.1");
             $('#container').html(data);                
         }
     });

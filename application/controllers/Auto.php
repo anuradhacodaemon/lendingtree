@@ -124,10 +124,10 @@ class Auto extends CI_Controller {
                     array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
                     array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
                     array('field'=>'phone','label'=>'phone','rules'=>'required|numeric'),
-                    array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
-                    array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
+                    array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email')
+                    /*array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
                     array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
-                    array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
+                    array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')*/
                     );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -139,10 +139,10 @@ class Auto extends CI_Controller {
                         'first_name' => $this->input->post('firstname'),
                         'last_name' => $this->input->post('lastname'),
                         'p_phone' => $this->input->post('phone'),
-                        'p_email' => $this->input->post('p_email'),
-                        'tex_driv_lic' => $this->input->post('tex_driv_lic'),
+                        'p_email' => $this->input->post('p_email')
+                        /*'tex_driv_lic' => $this->input->post('tex_driv_lic'),
                         'soc_sec' => $this->input->post('soc_sec'),
-                        'p_dob' => $this->input->post('my_dob')
+                        'p_dob' => $this->input->post('my_dob')*/
                     );
 
                     $this->session->set_userdata($data);
@@ -157,9 +157,9 @@ class Auto extends CI_Controller {
                 'lastname' => form_error('lastname'),
                 'phone' => form_error('phone'),
                 'p_email' => form_error('p_email'),
-                'tex_driv_lic' => form_error('tex_driv_lic'),
+                /*'tex_driv_lic' => form_error('tex_driv_lic'),
                 'soc_sec' => form_error('soc_sec'),
-                'my_dob' => form_error('my_dob')
+                'my_dob' => form_error('my_dob')*/
                 );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -328,7 +328,7 @@ class Auto extends CI_Controller {
         }
         if($step == 8)
         {
-            $rules = array(
+           /* $rules = array(
                 array('field'=>'personal_refrence','label'=>'Personal Refrence','rules'=>'required'),
                 array('field'=>'personal_refrence_phone','label'=>'Personal Refrence Phone','rules'=>'required|numeric'),
                 array('field'=>'personal_refrence_address','label'=>'Personal Refrence Address','rules'=>'required')
@@ -374,16 +374,11 @@ class Auto extends CI_Controller {
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
-            }
-        }
-        if($step == 9)
-        {
+            }*/
+
             $rules = array(
                 array('field'=>'employer_name','label'=>'Employer Name','rules'=>'required'),
-                array('field'=>'employer_job_title','label'=>'Employer Job title','rules'=>'required'),
-                array('field'=>'supervisor_name','label'=>'Supervisor name','rules'=>'required'),
-                array('field'=>'working_years','label'=>'Working years','rules'=>'required|numeric'),
-                array('field'=>'business_address','label'=>'Business address','rules'=>'required')
+                array('field'=>'working_years','label'=>'Working years','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -391,48 +386,31 @@ class Auto extends CI_Controller {
                 //success
                 if ($this->input->post('employer_name')) 
                 {
-                    $r_new_address = ['country' => $this->input->post('b_r_country'),
-                                    'street_line' => $this->input->post('b_r_street_line'),
-                                    'city' => $this->input->post('b_r_city'),
-                                    'state' => $this->input->post('b_r_state'),
-                                    'zip_code' => $this->input->post('b_r_zip_code')
-
-                                    ];
-                    $json = json_encode($r_new_address);
                     $data = array(
                         'current_employer' => $this->input->post('employer_name'),
-                        'job_title' => $this->input->post('employer_job_title'),
-                        'supervisor_name' => $this->input->post('supervisor_name'),
-                        'how_long_your_working' => $this->input->post('working_years'),
-                        'b_address_of_business' => $this->input->post('business_address'),
-                        'address_of_business' => $json,
-                        'b_r_country' => $this->input->post('b_r_country'),
-                        'b_r_street_line' => $this->input->post('b_r_street_line'),
-                        'b_r_city' => $this->input->post('b_r_city'),
-                        'b_r_state' => $this->input->post('b_r_state'),
-                        'b_r_zip_code' => $this->input->post('b_r_zip_code')
+                        'how_long_your_working' => $this->input->post('working_years')
+
                     );
 
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=10';
+                $data['url'] = 'auto?step=9';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
                             'employer_name' => form_error('employer_name'),
-                            'employer_job_title' => form_error('employer_job_title'),
-                            'supervisor_name' => form_error('supervisor_name'),
                             'working_years' => form_error('working_years'),
-                            'business_address' => form_error('business_address')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
             }
+
+
         }
-        if($step == 10)
+        if($step == 9)
         {
             $rules = array(
                 array('field'=>'monthly_income_pre_tax','label'=>'Monthly Income','rules'=>'required|numeric')
@@ -487,7 +465,7 @@ class Auto extends CI_Controller {
                         }
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=10_1';
+                $data['url'] = 'auto?step=9_1';
                 echo json_encode($data);
             }else{
                 //fail
@@ -498,9 +476,9 @@ class Auto extends CI_Controller {
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
-            }    
+            }   
         }
-        if($step == 10.1)
+        if($step == 9.1)
         {
             //echo $this->input->post('waiver_payment_value');
             $rules = array(
@@ -521,7 +499,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=11';
+                $data['url'] = 'auto?step=10';
                 echo json_encode($data);
             }else{
                 //fail
@@ -533,7 +511,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 11)
+        if($step == 10)
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
@@ -554,7 +532,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=11';
+                $data['url'] = 'auto?step=10_1';
                 echo json_encode($data);
             }else{
                 //fail
@@ -566,7 +544,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 11.1)
+        if($step == 10.1)
         {
             $rules = array(
                 array('field'=>'second_income_source','label'=>'Second Income Source','rules'=>'required'),
@@ -586,7 +564,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=12';
+                $data['url'] = 'auto?step=11';
                 echo json_encode($data);
             }else{
                 //fail
@@ -599,21 +577,55 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 12)
+        if($step == 11)
         {
-            $rules = array(
-                array('field'=>'previous_employer_name','label'=>'Previous Employer Name','rules'=>'required'),
-                array('field'=>'previous_working_years','label'=>'How long you worked','rules'=>'required|numeric')
+             //echo $this->input->post('waiver_payment_value');
+             $rules = array(
+                array('field'=>'comaker_loan_value','label'=>'Co-Maker or Cosignor','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('previous_employer_name')) 
+                if($this->input->post('comaker_loan_value')) 
                 {
+                    $value = $this->input->post('comaker_loan_value');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
-                        'previous_employer' => $this->input->post('previous_employer_name'),
-                        'previous_working_years' => $this->input->post('previous_working_years')
+                        'comaker_loan_value' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=11';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'comaker_loan_value' => form_error('comaker_loan_value')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 12)
+        {
+             //echo $this->input->post('waiver_payment_value');
+             $rules = array(
+                array('field'=>'outstanding_judgment_value','label'=>'Co-Maker or Cosignor','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('outstanding_judgment_value')) 
+                {
+                    $value = $this->input->post('outstanding_judgment_value');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'outstanding_judgment_value' => $selected
                     );
 
                     $this->session->set_userdata($data);
@@ -624,8 +636,7 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'previous_employer_name' => form_error('previous_employer_name'),
-                            'previous_working_years' => form_error('previous_working_years')
+                            'outstanding_judgment_value' => form_error('outstanding_judgment_value')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -634,51 +645,53 @@ class Auto extends CI_Controller {
         }
         if($step == 13)
         {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'co_maker','label'=>'CO-MAKER/ENDORSER','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('co_maker')) 
-                {
-                    $value = $this->input->post('co_maker');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
-                    $data = array(
-                        'are_you_co_maker_endoser' => $selected
+                 //echo $this->input->post('p_another_source');
+                 $rules = array(
+                    array('field'=>'bankruptcy_adjustmnt','label'=>'Any Bankcruptcy Judgments','rules'=>'required')
                     );
-
-                    $this->session->set_userdata($data);
+                $this->form_validation->set_rules($rules);
+                if ($this->form_validation->run() == true) 
+                {
+                    //success
+                    if($this->input->post('bankruptcy_adjustmnt')) 
+                    {
+                        $value = $this->input->post('bankruptcy_adjustmnt');
+                        $selected = ($value == 'yes') ? 'Y' : 'N';
+                        $data = array(
+                            'bankruptcy_debt_adjusutment' => $selected
+                        );
+    
+                        $this->session->set_userdata($data);
+                    }
+                    $data['success'] = 1;
+                    $data['url'] = 'auto?step=14';
+                    echo json_encode($data);
+                }else{
+                    //fail
+                    $errors = array(
+                                'bankruptcy_adjustmnt' => form_error('bankruptcy_adjustmnt')
+                                );
+                    $data['error'] = 1;
+                    $data['error_messages'] = $errors;
+                    echo json_encode($data);
                 }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=14';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'co_maker' => form_error('co_maker')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
         }
         if($step == 14)
         {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'miltary_involve','label'=>'Miltary Involvement','rules'=>'required')
+             //echo $this->input->post('p_another_source');
+             $rules = array(
+                array('field'=>'force_closure','label'=>'Force Closure','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('miltary_involve')) 
+                if($this->input->post('force_closure')) 
                 {
+                    $value = $this->input->post('force_closure');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
-                        'military_involvement' => $this->input->post('miltary_involve')
+                        'forceclosure_lost_title_deed_in_past_7_year' => $selected
                     );
 
                     $this->session->set_userdata($data);
@@ -689,7 +702,7 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'miltary_involve' => form_error('miltary_involve')
+                            'force_closure' => form_error('force_closure')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -698,20 +711,20 @@ class Auto extends CI_Controller {
         }
         if($step == 15)
         {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'member_credit','label'=>'Credit Member','rules'=>'required')
+             //echo $this->input->post('p_another_source');
+             $rules = array(
+                array('field'=>'any_law_suit','label'=>'Party to any lawsuit','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('member_credit')) 
+                if($this->input->post('any_law_suit')) 
                 {
-                    $value = $this->input->post('member_credit');
+                    $value = $this->input->post('any_law_suit');
                     $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
-                        'member_of_other_credit_unioin' => $selected
+                        'party_to_any_lawsuit' => $selected
                     );
 
                     $this->session->set_userdata($data);
@@ -722,7 +735,7 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'member_credit' => form_error('member_credit')
+                            'any_law_suit' => form_error('any_law_suit')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -733,18 +746,18 @@ class Auto extends CI_Controller {
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
-                array('field'=>'outstanding_judgement','label'=>'Any Outstanding Judgments','rules'=>'required')
+                array('field'=>'other_than_us_citizen','label'=>'Citizen Other Than US','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('outstanding_judgement')) 
+                if($this->input->post('other_than_us_citizen')) 
                 {
-                    $value = $this->input->post('outstanding_judgement');
+                    $value = $this->input->post('other_than_us_citizen');
                     $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
-                        'outstanding_judgements_against_you' => $selected
+                        'a_u_s_citizen_permanant_alien' => $selected
                     );
 
                     $this->session->set_userdata($data);
@@ -755,7 +768,7 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'outstanding_judgement' => form_error('outstanding_judgement')
+                            'other_than_us_citizen' => form_error('other_than_us_citizen')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -766,18 +779,20 @@ class Auto extends CI_Controller {
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
-                array('field'=>'bankruptcy_adjustmnt','label'=>'Any Bankcruptcy Judgments','rules'=>'required')
+                array('field'=>'i_represnt_accurate','label'=>'Consent','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('bankruptcy_adjustmnt')) 
+                if($this->input->post('i_represnt_accurate')) 
                 {
-                    $value = $this->input->post('bankruptcy_adjustmnt');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $value = $this->input->post('i_represnt_accurate');
+                    $value2 = $this->input->post('date_of_application');
+                    $selected = ($value == 'consent') ? 'Y' : 'N';
                     $data = array(
-                        'bankruptcy_debt_adjusutment' => $selected
+                        'i_represent_stated' => $selected,
+                        'date_of_application' => $value2
                     );
 
                     $this->session->set_userdata($data);
@@ -788,8 +803,8 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'bankruptcy_adjustmnt' => form_error('bankruptcy_adjustmnt')
-                            );
+                    'i_represnt_accurate' => form_error('i_represnt_accurate')
+                    );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
@@ -1980,6 +1995,10 @@ class Auto extends CI_Controller {
     public function step9()
     {
         $this->load->view('default/mccu/auto/auto_step9_view');
+    }
+    public function step9_1()
+    {
+        $this->load->view('default/mccu/auto/auto_step9_1_view');
     }
     public function step10()
     {

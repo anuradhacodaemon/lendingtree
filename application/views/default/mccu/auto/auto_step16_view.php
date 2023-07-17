@@ -27,21 +27,21 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">ARE THERE CURRENTLY ANY OUTSTANDING JUDGEMENTS AGAINST YOU?</label>
+                    <label class="control-label">ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN?</label>
                     <div class="row">
-                        <form id="outstanding_judgement" method="POST">
+                    <form id="other_than_us_citizen" method="POST">
                             <input type="hidden" name="auto_step" value="16" id="auto_step" >
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['outstanding_judgements_against_you'])) { if($this->session->userdata['outstanding_judgements_against_you']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                <label <?php if(isset($this->session->userdata['a_u_s_citizen_permanant_alien'])) { if($this->session->userdata['a_u_s_citizen_permanant_alien']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="outstanding_judgement"  onclick="OutstandingJudge(16, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="other_than_us_citizen"  onclick="CitizenOtherThanUS(20, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['outstanding_judgements_against_you'])) { if($this->session->userdata['outstanding_judgements_against_you']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                <label <?php if(isset($this->session->userdata['a_u_s_citizen_permanant_alien'])) { if($this->session->userdata['a_u_s_citizen_permanant_alien']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="outstanding_judgement" onclick="OutstandingJudge(16, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="other_than_us_citizen" onclick="CitizenOtherThanUS(20, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form> 
