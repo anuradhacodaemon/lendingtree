@@ -4,7 +4,7 @@
             
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
-                     <h1>
+                <h1>
               <?php   if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
@@ -27,25 +27,24 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer Previous working Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN?</label>
                     <div class="row">
-                        <form id="co_pre_emp_details" method="POST" onsubmit="return getFormId(this)">
+                    <form id="co_other_than_us_citizen" method="POST">
                             <input type="hidden" name="auto_step" value="33" id="auto_step" >
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigner_previous_employer_name" placeholder="Previous employer" value="<?php if (isset($this->session->userdata['cosigner_previous_employer'])) echo $this->session->userdata['cosigner_previous_employer'] ?>" class="form-control width_100" id="cosigner_previous_employer_name" >
-                                <span id="err1" style="color: red"></span>
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['cosigner_citizen'])) { if($this->session->userdata['cosigner_citizen']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                    <div class="label-text">Yes</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="yes" name="co_other_than_us_citizen"  onclick="CitizenOtherThanUS(41, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigner_previous_working_years" placeholder="How long you are working there" value="<?php if (isset($this->session->userdata['cosigner_how_longwork_years'])) echo $this->session->userdata['cosigner_how_longwork_years'] ?>" class="form-control width_100" id="cosigner_previous_working_years" >
-                                <span id="err2" style="color: red"></span>
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['cosigner_citizen'])) { if($this->session->userdata['cosigner_citizen']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                    <div class="label-text">No</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="no" name="co_other_than_us_citizen" onclick="CitizenOtherThanUS(41, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
-                            <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-12 radio margtop_30">
-                                <input type="submit" value="Continue" class="button" >
-                            </div>   
-                        </div>
-                        </form>
+                            <span id="err1" style="color: red"></span>
+                        </form> 
                     </div>
                 </div>
             </div>

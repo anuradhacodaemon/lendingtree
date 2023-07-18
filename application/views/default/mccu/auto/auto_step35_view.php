@@ -9,15 +9,18 @@
                       { 
                         if($this->session->userdata['type']== 1)
                         {
-                          echo 'Buying New Vehicle';
+                          //echo 'Buying New Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 2)
                         {
-                          echo 'Buying Used Vehicle';
+                          //echo 'Buying Used Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Refinance For Vehicle';
+                          //echo 'Refinance For Vehicle';
+                          echo "Loan Protection";
                         }
                       }
                       else{
@@ -27,31 +30,25 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer's Military Involvement</label>
+                    <label class="control-label">If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan?</label>
                     <div class="row">
-                    <form id="co_miltry_involve" method="POST">
-                        <input type="hidden" name="auto_step" value="35" id="auto_step" >
-                        <div class="col-xs-12 col-sm-12 radio">
-                            <label <?php if(isset($this->session->userdata['cosigner_military_involvement'])) { if($this->session->userdata['cosigner_military_involvement']== 'Active') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
-                                <div class="label-text">ACTIVE</div>
-                                <span class="continueIcon sprites"></span>
-                            <input type="radio" value="Active" name="co_miltary_involve"  onclick="miltaryInvolve(35, 'Active')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 radio">
-                            <label <?php if(isset($this->session->userdata['cosigner_military_involvement'])) { if($this->session->userdata['cosigner_military_involvement']== 'Former') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                                <div class="label-text">FORMER</div>
-                                <span class="continueIcon sprites"></span>
-                            <input type="radio" value="Former" name="co_miltary_involve" onclick="miltaryInvolve(35, 'Former')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 radio">
-                            <label <?php if(isset($this->session->userdata['cosigner_military_involvement'])) { if($this->session->userdata['cosigner_military_involvement']== 'None') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                                <div class="label-text">NONE</div>
-                                <span class="continueIcon sprites"></span>
-                            <input type="radio" value="None" name="co_miltary_involve" onclick="miltaryInvolve(35, 'None')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-                        </div>
-                        <span id="err1" style="color: red"></span>
-                    </form> 
-                        
+                    <form id="on_die_cancel_loan" method="POST" onsubmit="return getFormId(this)">
+                            <input type="hidden" name="auto_step" value="35" id="auto_step" >
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan'])) { if($this->session->userdata['die_or_ill_cancel_the_loan']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                    <div class="label-text">Yes</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="yes" name="on_die_cancel_loan"  onclick="onDieCancelLoan('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan'])) { if($this->session->userdata['die_or_ill_cancel_the_loan']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                    <div class="label-text">No</div>
+                                    <span class="continueIcon sprites"></span>
+                                    <center><img style="display: none;width: 60px;position: relative;" id="loader_page_final" src="<?php echo base_url() ?>public/html/img/loader.gif"></center>
+                                <input type="radio" value="no" name="on_die_cancel_loan" onclick="onDieCancelLoan('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            </div>
+                            <span id="err1" style="color: red"></span>
+                        </form>
                     </div>
                 </div>
             </div>

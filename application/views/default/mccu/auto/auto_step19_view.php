@@ -1,6 +1,7 @@
 <div class="clearfix">
     <div class="container" id="container">
         <div class="row">
+            
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
@@ -26,24 +27,26 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">ARE YOU A PARTY TO ANY LAWSUIT?</label>
+                    <label class="control-label">Are you wanting to add any Joint Owner/Co-Signer onto this loan?</label>
                     <div class="row">
-                    <form id="any_law_suit" method="POST">
+                    <form id="add_cosigner" method="POST">
                             <input type="hidden" name="auto_step" value="19" id="auto_step" >
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['party_to_any_lawsuit'])) { if($this->session->userdata['party_to_any_lawsuit']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                <label <?php if(isset($this->session->userdata['add_co_signers_onto_loan'])) { if($this->session->userdata['add_co_signers_onto_loan']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="any_law_suit"  onclick="PartyToLawSuit(19, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="add_cosigner"  onclick="addCosigner('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['party_to_any_lawsuit'])) { if($this->session->userdata['party_to_any_lawsuit']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                <label id="add_cosigner19" <?php if(isset($this->session->userdata['add_co_signers_onto_loan'])) { if($this->session->userdata['add_co_signers_onto_loan']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="any_law_suit" onclick="PartyToLawSuit(19, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                
+                                <input type="radio" value="no" name="add_cosigner" onclick="addCosigner('no')" class="ng-pristine ng-invalid ng-invalid-required" ></label>
+                                <center><img style="display: none;width: 60px;position: relative;" id="loader_page_final" src="<?php echo base_url() ?>public/html/img/loader.gif"></center>
                             </div>
                             <span id="err1" style="color: red"></span>
-                        </form> 
+                        </form>
                     </div>
                 </div>
             </div>

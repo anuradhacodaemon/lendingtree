@@ -197,6 +197,34 @@ class Auto extends CI_Controller {
         }
         if($step == 6)
         {
+            //echo $this->input->post('home_status');
+            $this->form_validation->set_rules('home_status', 'Radio Button', 'required');
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('home_status')) 
+                {
+                    $data = array(
+                        'buying_own_rent' => $this->input->post('home_status')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=6';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'home_status' => form_error('home_status')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 5)
+        {
             $rules = array(
                 array('field'=>'address','label'=>'Address','rules'=>'required'),
                 array('field'=>'living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
@@ -239,34 +267,6 @@ class Auto extends CI_Controller {
                             'address' => form_error('address'),
                             'living_there_years' => form_error('living_there_years'),
                             'monthly_pay' => form_error('monthly_pay'),
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 5)
-        {
-            //echo $this->input->post('home_status');
-            $this->form_validation->set_rules('home_status', 'Radio Button', 'required');
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if ($this->input->post('home_status')) 
-                {
-                    $data = array(
-                        'buying_own_rent' => $this->input->post('home_status')
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=6';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'home_status' => form_error('home_status')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -814,173 +814,6 @@ class Auto extends CI_Controller {
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
-                array('field'=>'force_closure','label'=>'Force Closure','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('force_closure')) 
-                {
-                    $value = $this->input->post('force_closure');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
-                    $data = array(
-                        'forceclosure_lost_title_deed_in_past_7_year' => $selected
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=19';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'force_closure' => form_error('force_closure')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 19)
-        {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'any_law_suit','label'=>'Party to any lawsuit','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('any_law_suit')) 
-                {
-                    $value = $this->input->post('any_law_suit');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
-                    $data = array(
-                        'party_to_any_lawsuit' => $selected
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=20';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'any_law_suit' => form_error('any_law_suit')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 20)
-        {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'other_than_us_citizen','label'=>'Citizen Other Than US','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('other_than_us_citizen')) 
-                {
-                    $value = $this->input->post('other_than_us_citizen');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
-                    $data = array(
-                        'a_u_s_citizen_permanant_alien' => $selected
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=21';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'other_than_us_citizen' => form_error('other_than_us_citizen')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 21)
-        {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'income_get_reduce_nxt_2y','label'=>'Is Income Reduced In Next 2 Year','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('income_get_reduce_nxt_2y')) 
-                {
-                    $value = $this->input->post('income_get_reduce_nxt_2y');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
-                    $data = array(
-                        'any_income_listed_tobe_reduced_in_next_2_year' => $selected
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=22';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'income_get_reduce_nxt_2y' => form_error('income_get_reduce_nxt_2y')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 22)
-        {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
-                array('field'=>'i_represnt_accurate','label'=>'Consent','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('i_represnt_accurate')) 
-                {
-                    $value = $this->input->post('i_represnt_accurate');
-                    $value2 = $this->input->post('date_of_application');
-                    $selected = ($value == 'consent') ? 'Y' : 'N';
-                    $data = array(
-                        'i_represent_stated' => $selected,
-                        'date_of_application' => $value2
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=22.1';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                    'i_represnt_accurate' => form_error('i_represnt_accurate')
-                    );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 22.1)
-        {
-            //echo $this->input->post('p_another_source');
-            $rules = array(
                 array('field'=>'on_die_cancel_loan','label'=>'Select One of them','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
@@ -998,7 +831,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=23';
+                $data['url'] = 'auto?step=19';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1010,7 +843,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 23)
+        if($step == 19)
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
@@ -1050,7 +883,7 @@ class Auto extends CI_Controller {
                     }
                     else{
                             $data['success'] = 1;
-                            $data['url'] = 'auto?step=24';
+                            $data['url'] = 'auto?step=20';
                             echo json_encode($data);
                         }
                 }
@@ -1065,14 +898,14 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 24)
+        if($step == 20)
         {
             $rules = array(
-                        array('field'=>'cosigner_firstname','label'=>'cosigner firstname','rules'=>'required'),
-                        array('field'=>'cosigner_lastname','label'=>'cosigner lastname','rules'=>'required'),
-                        array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|numeric'),
-                        array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')
-                    );
+                array('field'=>'cosigner_firstname','label'=>'cosigner firstname','rules'=>'required'),
+                array('field'=>'cosigner_lastname','label'=>'cosigner lastname','rules'=>'required'),
+                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|numeric')
+                /*array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')*/
+            );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
@@ -1082,29 +915,29 @@ class Auto extends CI_Controller {
                     $data = array(
                         'cosigner_first_name' => $this->input->post('cosigner_firstname'),
                         'cosigner_last_name' => $this->input->post('cosigner_lastname'),
-                        'cosigner_phone' => $this->input->post('cosigner_phone'),
-                        'cosigner_email' => $this->input->post('cosigner_email')
+                        'cosigner_phone' => $this->input->post('cosigner_phone')
+                        /*'cosigner_email' => $this->input->post('cosigner_email')*/
                     );
 
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=25';
+                $data['url'] = 'auto?step=21';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
                 'cosigner_firstname' => form_error('cosigner_firstname'),
                 'cosigner_lastname' => form_error('cosigner_lastname'),
-                'cosigner_phone' => form_error('cosigner_phone'),
-                'cosigner_email' => form_error('cosigner_email'),
+                'cosigner_phone' => form_error('cosigner_phone')
+                /*'cosigner_email' => form_error('cosigner_email'),*/
                 );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
             }
         }
-        if($step == 25)
+        if($step == 21)
         {
             //echo $this->input->post('marital_status');
             $this->form_validation->set_rules('co_marital_status', 'Radio Button', 'required');
@@ -1121,7 +954,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=26';
+                $data['url'] = 'auto?step=22';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1133,7 +966,7 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 27)
+        if($step == 22)
         {
             $rules = array(
                 array('field'=>'cosigner_home_address','label'=>'Address','rules'=>'required'),
@@ -1168,7 +1001,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=28';
+                $data['url'] = 'auto?step=23';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1182,145 +1015,42 @@ class Auto extends CI_Controller {
                 echo json_encode($data);
             }
         }
-        if($step == 26)
+        if($step == 23)
         {
-             //echo $this->input->post('home_status');
-             $this->form_validation->set_rules('co_home_status', 'Radio Button', 'required');
-             if ($this->form_validation->run() == true) 
-             {
-                 //success
-                 if ($this->input->post('co_home_status')) 
-                 {
-                     $data = array(
-                         'cosigner_own_rent' => $this->input->post('co_home_status')
-                     );
- 
-                     $this->session->set_userdata($data);
-                 }
-                 $data['success'] = 1;
-                 $data['url'] = 'auto?step=27';
-                 echo json_encode($data);
-             }else{
-                 //fail
-                 $errors = array(
-                             'co_home_status' => form_error('co_home_status')
-                             );
-                 $data['error'] = 1;
-                 $data['error_messages'] = $errors;
-                 echo json_encode($data);
-             }
-        }
-        if($step == 28)
-        {
-            $rules = array(
-                array('field'=>'co_relatives_firstname','label'=>'Relative Name','rules'=>'required'),
-                array('field'=>'co_relative_relation','label'=>'Relative Relation','rules'=>'required'),
-                array('field'=>'cosigners_relative_address','label'=>'Relative Address','rules'=>'required'),
-                array('field'=>'cosigners_relatives_phone','label'=>'Relative Phone','rules'=>'required|numeric')
-                );
-            $this->form_validation->set_rules($rules);
+            //echo $this->input->post('home_status');
+            $this->form_validation->set_rules('co_home_status', 'Radio Button', 'required');
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('co_relatives_firstname')) 
+                if ($this->input->post('co_home_status')) 
                 {
-                    $r_new_address = ['country' => $this->input->post('co_r_country'),
-                                    'street_line' => $this->input->post('co_r_street_line'),
-                                    'city' => $this->input->post('co_r_city'),
-                                    'state' => $this->input->post('co_r_state'),
-                                    'zip_code' => $this->input->post('co_r_zip_code')
-
-                                    ];
-                    $json = json_encode($r_new_address);  
                     $data = array(
-                        'cosigner_nearest_relative' => $this->input->post('co_relatives_firstname'),
-                        'cosigner_relationship' => ucfirst($this->input->post('co_relative_relation')),
-                        'p_cosigner_relatives_address' => $this->input->post('cosigners_relative_address'),
-                        'cosigner_relatives_phone' => $this->input->post('cosigners_relatives_phone'),
-                        'cosigner_relatives_address' => $json,
-                        'co_r_country' => $this->input->post('co_r_country'),
-                        'co_r_street_line' => $this->input->post('co_r_street_line'),
-                        'co_r_city' => $this->input->post('co_r_city'),
-                        'co_r_state' => $this->input->post('co_r_state'),
-                        'co_r_zip_code' => $this->input->post('co_r_zip_code')
+                        'cosigner_own_rent' => $this->input->post('co_home_status')
                     );
 
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=29';
+                $data['url'] = 'auto?step=24';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
-                            'co_relatives_firstname' => form_error('co_relatives_firstname'),
-                            'co_relative_relation' => form_error('co_relative_relation'),
-                            'cosigners_relative_address' => form_error('cosigners_relative_address'),
-                            'cosigners_relatives_phone' => form_error('cosigners_relatives_phone')
+                            'co_home_status' => form_error('co_home_status')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
             }
         }
-        if($step == 29)
-        {
-            $rules = array(
-                array('field'=>'cosigners_personal_refrence','label'=>'Cosigner Personal Refrence','rules'=>'required'),
-                array('field'=>'cosigners_personal_refrence_phone','label'=>'Cosigner Personal Refrence Phone','rules'=>'required|numeric'),
-                array('field'=>'cosigners_personal_refrence_address','label'=>'Cosigner Personal Refrence Address','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if ($this->input->post('cosigners_personal_refrence')) 
-                {
-                    $r_new_address = ['country' => $this->input->post('co_p_r_country'),
-                                        'street_line' => $this->input->post('co_r_street_line'),
-                                        'city' => $this->input->post('co_p_r_city'),
-                                        'state' => $this->input->post('co_p_r_state'),
-                                        'zip_code' => $this->input->post('co_p_r_zip_code')
-
-                                        ];
-                    $json = json_encode($r_new_address);
-                    $data = array(
-                        'cosigner_personal_refrence' => $this->input->post('cosigners_personal_refrence'),
-                        'cosigner_personal_refrence_phone' => $this->input->post('cosigners_personal_refrence_phone'),
-                        'p_cosigner_personal_refrence_address' => $this->input->post('cosigners_personal_refrence_address'),
-                        'cosigner_personal_refrence_address' => $json,
-                        'co_p_r_country' => $this->input->post('co_p_r_country'),
-                        'co_p_r_street_line' => $this->input->post('co_p_r_street_line'),
-                        'co_p_r_city' => $this->input->post('co_p_r_city'),
-                        'co_p_r_state' => $this->input->post('co_p_r_state'),
-                        'co_p_r_zip_code' => $this->input->post('co_p_r_zip_code')
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=30';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'cosigners_personal_refrence' => form_error('cosigners_personal_refrence'),
-                            'cosigners_personal_refrence_phone' => form_error('cosigners_personal_refrence_phone'),
-                            'cosigners_personal_refrence_address' => form_error('cosigners_personal_refrence_address')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 30)
+        if($step == 24)
         {
             $rules = array(
                 array('field'=>'cosigners_employer_name','label'=>'Cosigner Employer Name','rules'=>'required'),
-                array('field'=>'cosigners_employer_job_title','label'=>'Cosigner Employer Job title','rules'=>'required'),
-                array('field'=>'co_supervisor_name','label'=>'Cosigner Supervisor name','rules'=>'required'),
-                array('field'=>'cosigners_working_years','label'=>'Cosigner Working years','rules'=>'required|numeric'),
-                array('field'=>'cosigners_business_address','label'=>'Cosigner Business address','rules'=>'required')
+                /*array('field'=>'cosigners_employer_job_title','label'=>'Cosigner Employer Job title','rules'=>'required'),
+                array('field'=>'co_supervisor_name','label'=>'Cosigner Supervisor name','rules'=>'required'),*/
+                array('field'=>'cosigners_working_years','label'=>'Cosigner Working years','rules'=>'required|numeric')
+                /*array('field'=>'cosigners_business_address','label'=>'Cosigner Business address','rules'=>'required')*/
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -1338,37 +1068,37 @@ class Auto extends CI_Controller {
                     $json = json_encode($r_new_address);
                     $data = array(
                         'cosigner_employer' => $this->input->post('cosigners_employer_name'),
-                        'cosigner_job_title' => $this->input->post('cosigners_employer_job_title'),
-                        'cosigner_supervisor_name' => $this->input->post('co_supervisor_name'),
+                        /*'cosigner_job_title' => $this->input->post('cosigners_employer_job_title'),*/
+                        /*'cosigner_supervisor_name' => $this->input->post('co_supervisor_name'),*/
                         'cosigner_how_long_working_years' => $this->input->post('cosigners_working_years'),
-                        'co_cosigner_business_address' => $this->input->post('cosigners_business_address'),
+                        /*'co_cosigner_business_address' => $this->input->post('cosigners_business_address'),
                         'cosigner_business_address' => $json,
                         'co_b_r_country' => $this->input->post('co_b_r_country'),
                         'co_b_r_street_line' => $this->input->post('co_b_r_street_line'),
                         'co_b_r_city' => $this->input->post('co_b_r_city'),
                         'co_b_r_state' => $this->input->post('co_b_r_state'),
-                        'co_b_r_zip_code' => $this->input->post('co_b_r_zip_code')
+                        'co_b_r_zip_code' => $this->input->post('co_b_r_zip_code')*/
                     );
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=31';
+                $data['url'] = 'auto?step=25';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
-                            'cosigners_employer_name' => form_error('cosigners_employer_name'),
-                            'cosigners_employer_job_title' => form_error('cosigners_employer_job_title'),
-                            'co_supervisor_name' => form_error('co_supervisor_name'),
-                            'cosigners_working_years' => form_error('cosigners_working_years'),
-                            'cosigners_business_address' => form_error('cosigners_business_address')
+                           'cosigners_employer_name' => form_error('cosigners_employer_name'),
+                            /* 'cosigners_employer_job_title' => form_error('cosigners_employer_job_title'),
+                            'co_supervisor_name' => form_error('co_supervisor_name'),*/
+                            'cosigners_working_years' => form_error('cosigners_working_years')
+                             /*'cosigners_business_address' => form_error('cosigners_business_address')*/
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
             }
         }
-        if($step == 31)
+        if($step == 25)
         {
             $rules = array(
                 array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Cosigner Monthly Income','rules'=>'required|numeric')
@@ -1422,7 +1152,7 @@ class Auto extends CI_Controller {
                         }
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=10_1';
+                $data['url'] = 'auto?step=26';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1433,9 +1163,9 @@ class Auto extends CI_Controller {
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
-            }    
+            }  
         }
-        if($step == 32)
+        if($step == 27)
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
@@ -1456,12 +1186,246 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=33';
+                $data['url'] = 'auto?step=28';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
                             'co_p_another_source' => form_error('co_p_another_source')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 26)
+        {
+               //echo $this->input->post('waiver_payment_value');
+            $rules = array(
+                array('field'=>'waiver_payment_value','label'=>'Waiver laid off','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('waiver_payment_value')) 
+                {
+                    $value = $this->input->post('waiver_payment_value');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'laid_off_for_payment_waived' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=27';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'waiver_payment_value' => form_error('waiver_payment_value')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+
+        if($step == 27.1)
+        {
+            $rules = array(
+                array('field'=>'cosigner_second_income_source','label'=>'Cosigner Second Income Source','rules'=>'required'),
+                array('field'=>'cosigner_second_monthly_income','label'=>'Cosigner Monthly Income From Second Source','rules'=>'required|numeric')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('cosigner_second_income_source')) 
+                {
+                    $data = array(
+                        'cosigner_what_income_source' => $this->input->post('cosigner_second_income_source'),
+                        'cosigner_other_source_monthly_income' => $this->input->post('cosigner_second_monthly_income')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=33';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'cosigner_second_income_source' => form_error('cosigner_second_income_source'),
+                            'cosigner_second_monthly_income' => form_error('cosigner_second_monthly_income')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+
+        }
+
+        if($step == 28)
+        {
+             //echo $this->input->post('p_another_source');
+             $rules = array(
+                array('field'=>'co_co_maker','label'=>'Cosigner CO-MAKER/ENDORSER','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('co_co_maker')) 
+                {
+                    $value = $this->input->post('co_co_maker');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'cosigner_co_maker_endorser' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=29';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'co_co_maker' => form_error('co_co_maker')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 29)
+        {
+             //echo $this->input->post('waiver_payment_value');
+             $rules = array(
+                array('field'=>'outstanding_judgment_value','label'=>'Co-Maker or Cosignor','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('outstanding_judgment_value')) 
+                {
+                    $value = $this->input->post('outstanding_judgment_value');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'outstanding_judgment_value' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=30';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'outstanding_judgment_value' => form_error('outstanding_judgment_value')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 30)
+        {
+              //echo $this->input->post('p_another_source');
+              $rules = array(
+                array('field'=>'bankruptcy_adjustmnt','label'=>'Any Bankcruptcy Judgments','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('bankruptcy_adjustmnt')) 
+                {
+                    $value = $this->input->post('bankruptcy_adjustmnt');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'bankruptcy_debt_adjusutment' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=31';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'bankruptcy_adjustmnt' => form_error('bankruptcy_adjustmnt')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 31)
+        {
+            //echo $this->input->post('p_another_source');
+            $rules = array(
+                array('field'=>'co_force_closure','label'=>'Cosigner Force Closure','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('co_force_closure')) 
+                {
+                    $value = $this->input->post('co_force_closure');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'cosigner_force_closure_title_deed' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=32';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'co_force_closure' => form_error('co_force_closure')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 32)
+        {
+             //echo $this->input->post('p_another_source');
+             $rules = array(
+                array('field'=>'co_any_law_suit','label'=>'Party to any lawsuit','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('co_any_law_suit')) 
+                {
+                    $value = $this->input->post('co_any_law_suit');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'cosigner_lawsuit_party' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=33';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'co_any_law_suit' => form_error('co_any_law_suit')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -1503,30 +1467,31 @@ class Auto extends CI_Controller {
         }
         if($step == 33)
         {
+            //echo $this->input->post('p_another_source');
             $rules = array(
-                array('field'=>'cosigner_previous_employer_name','label'=>'Previous Employer Name','rules'=>'required'),
-                array('field'=>'cosigner_previous_working_years','label'=>'How long you worked','rules'=>'required|numeric')
-                );
+            array('field'=>'co_other_than_us_citizen','label'=>'Cosigner Citizen Other Than US','rules'=>'required')
+            );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('cosigner_previous_employer_name')) 
+                if($this->input->post('co_other_than_us_citizen')) 
                 {
+                    $value = $this->input->post('co_other_than_us_citizen');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
-                        'cosigner_previous_employer' => $this->input->post('cosigner_previous_employer_name'),
-                        'cosigner_how_longwork_years' => $this->input->post('cosigner_previous_working_years')
+                        'cosigner_citizen' => $selected
                     );
+
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=34';
+                $data['url'] = 'auto?step=42';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
-                            'cosigner_previous_employer_name' => form_error('cosigner_previous_employer_name'),
-                            'cosigner_previous_working_years' => form_error('cosigner_previous_working_years')
+                            'co_other_than_us_citizen' => form_error('co_other_than_us_citizen')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -1537,30 +1502,48 @@ class Auto extends CI_Controller {
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
-                array('field'=>'co_co_maker','label'=>'Cosigner CO-MAKER/ENDORSER','rules'=>'required')
+                array('field'=>'co_i_represnt_accurate','label'=>'Consent','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('co_co_maker')) 
+                if($this->input->post('co_i_represnt_accurate')) 
                 {
-                    $value = $this->input->post('co_co_maker');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $value = $this->input->post('co_i_represnt_accurate');
+                    $value2 = $this->input->post('co_date_of_application');
+                    $selected = ($value == 'consent') ? 'Y' : 'N';
                     $data = array(
-                        'cosigner_co_maker_endorser' => $selected
+                        'cosigner_i_represent_everything_correct' => $selected,
+                        'date_of_application' => $value2,
+                        'final_step' => $step
                     );
 
                     $this->session->set_userdata($data);
+                   /* echo "<pre>";
+                    print_r($this->session->userdata());exit;*/
+                    $ret_values = $this->final_step($this->session->userdata());
+                    if($ret_values['message'] !== false)
+                    {
+                        $this->session->sess_destroy();
+                        session_destroy();
+                        $data['success'] = 1;
+                        $data['message'] = $ret_values['message'];
+                        $data['url'] = 'auto?step=1';
+                        echo json_encode($data);
+                    }
+                    else{
+                            $data['error'] = 1;
+                            $data['error_messages'] = 'something went wrong';
+                            echo json_encode($data);
+                        }   
                 }
-                $data['success'] = 1;
-                $data['url'] = 'auto?step=14';
-                echo json_encode($data);
+               
             }else{
                 //fail
                 $errors = array(
-                            'co_co_maker' => form_error('co_co_maker')
-                            );
+                    'co_i_represnt_accurate' => form_error('co_i_represnt_accurate')
+                    );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
@@ -1570,27 +1553,29 @@ class Auto extends CI_Controller {
         {
             //echo $this->input->post('p_another_source');
             $rules = array(
-                array('field'=>'co_miltary_involve','label'=>'Cosigner Miltary Involvement','rules'=>'required')
+                array('field'=>'on_die_cancel_loan','label'=>'Select One of them','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('co_miltary_involve')) 
+                if($this->input->post('on_die_cancel_loan')) 
                 {
+                    $value = $this->input->post('on_die_cancel_loan');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
-                        'cosigner_military_involvement' => $this->input->post('co_miltary_involve')
+                        'die_or_ill_cancel_the_loan' => $selected
                     );
 
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=36';
+                $data['url'] = 'auto?step=19';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
-                            'co_miltary_involve' => form_error('co_miltary_involve')
+                            'on_die_cancel_loan' => form_error('on_die_cancel_loan')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -2083,6 +2068,10 @@ class Auto extends CI_Controller {
     public function step27()
     {
         $this->load->view('default/mccu/auto/auto_step27_view');
+    }
+    public function step27_1()
+    {
+        $this->load->view('default/mccu/auto/auto_step27_1_view');
     }
     public function step28()
     {

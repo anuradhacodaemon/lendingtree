@@ -27,19 +27,17 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer's Salary Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer Second Source of Income</label>
                     <div class="row">
-                    <form id="co_user_docs" method="POST" onsubmit="return getFormId(this)">
-                        <input type="hidden" name="auto_step" value="25" id="auto_step" >
+                    <form id="co_second_income" method="POST" onsubmit="return getFormId(this)">
+                        <input type="hidden" name="auto_step" value="27.1" id="auto_step" >
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <span style = "color:black;"> $ </span>
-                                <input type="text" name="cosigner_monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['cosigner_monthly_income_pre_tax'])) echo $this->session->userdata['cosigner_monthly_income_pre_tax'] ?>" class="form-control width_100" id="cosigner_monthly_income_pre_tax" >
+                                <input type="text" name="cosigner_second_income_source" placeholder="Income source" value="<?php if (isset($this->session->userdata['cosigner_what_income_source'])) echo $this->session->userdata['cosigner_what_income_source'] ?>" class="form-control width_100" id="cosigner_second_income_source" >
                                 <span id="err1" style="color: red"></span>
                             </div>                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <span class="optional-file">Accepting File type [.png, .txt, .pdf] (Optional) </span>     
-                                <input type="file" name="cosigner_upload_user_doc" accept=".png, .txt, .pdf"  value="<?php if (isset($this->session->userdata['cosigner_documant'])) echo $this->session->userdata['cosigner_documant'] ?>" class="form-control width_100" id="cosigner_documant" >
+                                <input type="text" name="cosigner_second_monthly_income" placeholder="Monthly Income" value="<?php if (isset($this->session->userdata['cosigner_other_source_monthly_income'])) echo $this->session->userdata['cosigner_other_source_monthly_income'] ?>" class="form-control width_100" id="cosigner_second_monthly_income" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>
