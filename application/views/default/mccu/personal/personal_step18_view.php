@@ -9,23 +9,18 @@
                       { 
                         if($this->session->userdata['type']== 1)
                         {
-                          echo 'Buying New Vehicle';
+                          //echo 'Buying New Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 2)
                         {
-                          echo 'Buying Used Vehicle';
+                          //echo 'Buying Used Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
+                          //echo 'Refinance For Vehicle';
+                          echo "Loan Protection";
                         }
                       }
                       else{
@@ -35,24 +30,24 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">ANY FORECLOSURES OR LOST TITLE/DEED ON PROPERTY IN PAST 7 YEARS?</label>
+                    <label class="control-label">If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan?</label>
                     <div class="row">
-                    <form id="force_closure" method="POST">
+                        <form id="on_die_cancel_loan" method="POST">
                             <input type="hidden" name="auto_step" value="18" id="auto_step" >
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year'])) { if($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan'])) { if($this->session->userdata['die_or_ill_cancel_the_loan']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="force_closure"  onclick="ForceClosure(18, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="on_die_cancel_loan"  onclick="onDieCancelLoan('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year'])) { if($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan'])) { if($this->session->userdata['die_or_ill_cancel_the_loan']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="force_closure" onclick="ForceClosure(18, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="on_die_cancel_loan" onclick="onDieCancelLoan('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
-                        </form> 
+                        </form>
                     </div>
                 </div>
             </div>

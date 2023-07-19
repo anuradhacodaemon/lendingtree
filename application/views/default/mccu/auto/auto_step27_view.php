@@ -41,13 +41,13 @@
                   <label <?php if(isset($this->session->userdata['cosigner_other_source_of_income'])) { if($this->session->userdata['cosigner_other_source_of_income']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                     <div class="label-text">YES</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="yes" name="co_p_another_source"  onclick="anotherSourceIncome(32, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="yes" name="co_p_another_source"  onclick="anotherSourceIncome(27, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
                   <label <?php if(isset($this->session->userdata['cosigner_other_source_of_income'])) { if($this->session->userdata['cosigner_other_source_of_income']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                     <div class="label-text">NO</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="no" name="co_p_another_source" onclick="anotherSourceIncome(32, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="no" name="co_p_another_source" onclick="anotherSourceIncome(27, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <span id="err1" style="color: red"></span>
               </form>

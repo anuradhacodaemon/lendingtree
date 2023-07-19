@@ -598,7 +598,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=11';
+                $data['url'] = 'auto?step=12';
                 echo json_encode($data);
             }else{
                 //fail

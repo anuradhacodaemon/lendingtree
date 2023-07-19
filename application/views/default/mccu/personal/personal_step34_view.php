@@ -17,15 +17,7 @@
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
+                          echo 'Refinance For Vehicle';
                         }
                       }
                       else{
@@ -33,26 +25,33 @@
                           }
               ?>
               </h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
-              <div class="clearfix"></div>
-              <label class="control-label">Joint Owner/Co-Signer ARE YOU A CO-MAKER/ENDORSER ON ANY NOTE?</label>
-              <form id="co_co_maker" method="POST">
-              <input type="hidden" name="auto_step" value="34" id="auto_step" >
-              <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['cosigner_co_maker_endorser'])) { if($this->session->userdata['cosigner_co_maker_endorser']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
-                    <div class="label-text">YES</div>
-                    <span class="continueIcon sprites"></span>
-                  <input type="radio" value="yes" name="co_co_maker"  onclick="coMaker(34, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-              </div>
-              <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['cosigner_co_maker_endorser'])) { if($this->session->userdata['cosigner_co_maker_endorser']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                    <div class="label-text">NO</div>
-                    <span class="continueIcon sprites"></span>
-                  <input type="radio" value="no" name="co_co_maker" onclick="coMaker(34, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-              </div>
-              <span id="err1" style="color: red"></span>
-              </form>
-              
+                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <div class="clearfix"></div>
+                    <label class="control-label">I REPRESENT THAT EVERYTHING I HAVE STATED IN THIS APPLICATION IS CORRECT AND COMPLETE TO THE BEST OF MY KNOWLEDGE. YOU ARE AUTHORIZED TO CHECK MY (OUR) CREDIT HISTORY, AND TO ANSWER QUESTIONS ABOUT YOUR CREDIT HISTORY WITH ME. (US).</label>
+                    <div class="row">
+                        <form id="co_user_consnt" method="POST" onsubmit="return getFormId(this)">
+                        <input type="hidden" name="auto_step" value="34" id="auto_step" >
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="check">
+                                <div class="col-xs-12 col-sm-1 margbot_10">
+                                    <input type="checkbox" name="co_i_represnt_accurate" value="consent"
+                                    <?php if(isset($this->session->userdata['cosigner_i_represent_everything_correct'])) { if($this->session->userdata['cosigner_i_represent_everything_correct']== 'Y') echo 'checked="checked"'; else echo '';}  ?>
+                                    class="form-control width_100 button" id="i_represnt_accurate" >
+                                    <span id="err1" style="color: red"></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 margbot_10">
+                                    <input type="text" name="co_date_of_application" readonly="readonly" value="<?php echo date('d-m-Y') ?>" class="form-control width_100" id="date_of_application" >
+                                    <span id="err2" style="color: red"></span>
+                                </div>
+                        </div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                                <center><img style="display: none;width: 60px;position: relative;" id="loader_page_final" src="<?php echo base_url() ?>public/html/img/loader.gif"></center>
+                                <input type="submit" value="Continue" class="button" id="final_step43">
+                            </div>   
+                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,24 +9,18 @@
                       { 
                         if($this->session->userdata['type']== 1)
                         {
-                          echo 'Buying New Vehicle';
+                          //echo 'Buying New Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 2)
                         {
-                          echo 'Buying Used Vehicle';
+                          //echo 'Buying Used Vehicle';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          //echo 'Personal Loan';
+                          //echo 'Refinance For Vehicle';
                           echo "Loan Protection";
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
                         }
                       }
                       else{

@@ -17,15 +17,7 @@
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
+                          echo 'Refinance For Vehicle';
                         }
                       }
                       else{
@@ -35,31 +27,24 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Military Involvement</label>
+                    <label class="control-label">ANY FORECLOSURES OR LOST TITLE/DEED ON PROPERTY IN PAST 7 YEARS?</label>
                     <div class="row">
-                    <form id="miltry_involve" method="POST">
-                        <input type="hidden" name="auto_step" value="14" id="auto_step" >
-                        <div class="col-xs-12 col-sm-12 radio">
-                            <label <?php if(isset($this->session->userdata['military_involvement'])) { if($this->session->userdata['military_involvement']== 'Active') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
-                                <div class="label-text">ACTIVE</div>
-                                <span class="continueIcon sprites"></span>
-                            <input type="radio" value="Active" name="miltary_involve"  onclick="miltaryInvolve(14, 'Active')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 radio">
-                            <label <?php if(isset($this->session->userdata['military_involvement'])) { if($this->session->userdata['military_involvement']== 'Former') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                                <div class="label-text">FORMER</div>
-                                <span class="continueIcon sprites"></span>
-                            <input type="radio" value="Former" name="miltary_involve" onclick="miltaryInvolve(14, 'Former')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 radio">
-                            <label <?php if(isset($this->session->userdata['military_involvement'])) { if($this->session->userdata['military_involvement']== 'None') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                                <div class="label-text">NONE</div>
-                                <span class="continueIcon sprites"></span>
-                            <input type="radio" value="None" name="miltary_involve" onclick="miltaryInvolve(14, 'None')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-                        </div>
-                        <span id="err1" style="color: red"></span>
-                    </form> 
-                        
+                    <form id="force_closure" method="POST">
+                            <input type="hidden" name="auto_step" value="14" id="auto_step" >
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year'])) { if($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                    <div class="label-text">Yes</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="yes" name="force_closure"  onclick="ForceClosure(14, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year'])) { if($this->session->userdata['forceclosure_lost_title_deed_in_past_7_year']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                    <div class="label-text">No</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="no" name="force_closure" onclick="ForceClosure(14, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            </div>
+                            <span id="err1" style="color: red"></span>
+                        </form> 
                     </div>
                 </div>
             </div>

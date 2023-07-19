@@ -17,15 +17,7 @@
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
+                          echo 'Refinance For Vehicle';
                         }
                       }
                       else{
@@ -35,27 +27,24 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer's Salary Details</label>
+                    <label class="control-label">Joint Owner/Co-Signer ANY FORECLOSURES OR LOST TITLE/DEED ON PROPERTY IN PAST 7 YEARS?</label>
                     <div class="row">
-                    <form id="co_user_docs" method="POST" onsubmit="return getFormId(this)">
-                        <input type="hidden" name="auto_step" value="31" id="auto_step" >
-                        <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <span style = "color:black;"> $ </span>
-                                <input type="text" name="cosigner_monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['cosigner_monthly_income_pre_tax'])) echo $this->session->userdata['cosigner_monthly_income_pre_tax'] ?>" class="form-control width_100" id="cosigner_monthly_income_pre_tax" >
-                                <span id="err1" style="color: red"></span>
-                            </div>                           
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                            <span class="optional-file">Accepting File type [.png, .txt, .pdf] (Optional) </span>     
-                                <input type="file" name="cosigner_upload_user_doc" accept=".png, .txt, .pdf" value="<?php if (isset($this->session->userdata['cosigner_documant'])) echo $this->session->userdata['cosigner_documant'] ?>" class="form-control width_100" id="cosigner_documant" >
-                                <span id="err2" style="color: red"></span>
+                    <form id="co_force_closure" method="POST">
+                            <input type="hidden" name="auto_step" value="31" id="auto_step" >
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['cosigner_force_closure_title_deed'])) { if($this->session->userdata['cosigner_force_closure_title_deed']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                                    <div class="label-text">Yes</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="yes" name="co_force_closure"  onclick="ForceClosure(39, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
-                            <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-12 radio margtop_30">
-                                <input type="submit" value="Continue" class="button" >
-                            </div>   
-                        </div>
-                        </form>
+                            <div class="col-xs-12 col-sm-12 radio">
+                                <label <?php if(isset($this->session->userdata['cosigner_force_closure_title_deed'])) { if($this->session->userdata['cosigner_force_closure_title_deed']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                                    <div class="label-text">No</div>
+                                    <span class="continueIcon sprites"></span>
+                                <input type="radio" value="no" name="co_force_closure" onclick="ForceClosure(39, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            </div>
+                            <span id="err1" style="color: red"></span>
+                        </form> 
                     </div>
                 </div>
             </div>
