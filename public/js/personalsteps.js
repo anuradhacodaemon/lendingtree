@@ -119,11 +119,11 @@ if (window.performance) {
             }
         });
     }  
-    if (step==10.1) {
-        $('#step_count').val(10.1);   
+    if (step==9.1) {
+        $('#step_count').val(9.1);   
        $.ajax({
             type: "GET",
-            url: base_url +"personalLoan/step10_1",
+            url: base_url +"personalLoan/step9_1",
             success: function (data)
             {
                 $('#container').html(data);
@@ -655,11 +655,11 @@ if (window.performance) {
             }
         });
     }
-    if (pageId==10.1) {
-        $('#step_count').val(10.1); 
+    if (pageId==9.1) {
+        $('#step_count').val(9.1); 
         $.ajax({
             type: "GET",
-            url: base_url +"personalLoan/step10_1",
+            url: base_url +"personalLoan/step9_1",
             success: function (data)
             {
                 $('#container').html(data);

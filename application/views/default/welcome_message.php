@@ -1,18 +1,16 @@
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
-    <div class="container">       
+    <div class="container">
         <div class="row">
-            <!--<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                <div class="logo">
-                    <a href="<?php //echo BASE_URL; ?>"><img src="<?php //echo BASE_URL; ?>public/html/img/mccu_logo.png" alt="Logo" title="Coastal Community community federal credit union" class="img-responsive"/></a>
-                </div>
-            </div>-->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="offer-main clearfix">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <div class="banner-inner">
                     <h1>How can we help you today?</h1>
-                    <div class="offer-cont" style="display:block">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'MCCU', 'click', 'auto loan');">
+                </div>
+                <div class="offer-main clearfix">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'sw-financial', 'click', 'auto loan');" >
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -26,41 +24,25 @@
                             </a>
                         </div>
                     </div>
-                    <div class="offer-cont" style="display:block">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'personalLoan?step=2' ?>" onClick="ga('send', 'event', 'MCCU', 'click', 'Personal loan');">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'sw-financial', 'click', 'auto refinance');" >
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
                                             <div class="second-bevel">
                                                 <div class="offer-img offer-personal"></div>
-                                                <p class="title">PERSONAL LOANS</p>
+                                                <p class="title">AUTO REFINANCE</p>
                                             </div>
                                         </div>
                                     </div>
                                 </button>
                             </a>
                         </div>
-                    </div>
-                    <div class="offer-cont" style="display:block">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'recreationalLoan?step=2' ?>" onClick="ga('send', 'event', 'MCCU', 'click', 'recreational loan');">
-                                <button class="offer-circ">
-                                    <div class="outer-circ">
-                                        <div class="inner-bevel">
-                                            <div class="second-bevel">
-                                                <div class="offer-img offer-recreational"></div>
-                                                <p class="title">Recreational Vehicle Loans</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </a>
                         </div>
-                    </div>
-					<div class="offer-cont" style="display:block">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <a href="https://memberhomeloanapp.com/homehub/signup/" target="_blank">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="offer-cont">
+                            <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'sw-financial', 'click', 'home loan');" >
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">
@@ -73,21 +55,16 @@
                                 </button>
                             </a>
                         </div>
-
                     </div>
-                  </div>
-                </button>
-              </a>
+                  </div>   
+                </div>
             </div>
-          </div>
+            <div class="disclosure">
+                <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="promodisclosure" rel="nofollow" class="disclosures-link" href="">Advertising Disclosures</a>
+            </div>
         </div>
-      </div>
-      <div class="disclosure">
-        <i class="fa fa-lock"></i>&nbsp;&nbsp;Privacy secured&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a id="promodisclosure" rel="nofollow" class="disclosures-link" href="">Advertising Disclosures</a>
-      </div>
     </div>
-  </div>
 </div>
 <!-- Banner ends here -->
 <!-- Popular calculator section starts here -->

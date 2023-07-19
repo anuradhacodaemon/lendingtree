@@ -28,7 +28,8 @@
                         }
                         elseif($this->session->userdata['type']== 5)
                         {
-                          echo 'Personal Loan';
+                          //echo 'Personal Loan';
+                          echo "Involuntary Unemployment Protection";
                         }
                         elseif($this->session->userdata['type']== 6)
                         {
@@ -42,26 +43,20 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Your Primary Residence</label>
-              <form id="home_id" method="POST">
-              <input type="hidden" name="auto_step" value="6" id="auto_step" >
+              <label class="control-label">If you are laid off and lose this income source, would you like to have your loan payments waived?</label>
+              <form id="waiver_form" method="POST">
+              <input type="hidden" name="auto_step" value="9.1" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['buying_own_rent'])) { if($this->session->userdata['buying_own_rent']== 'Buying') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
-                    <div class="label-text">Buying</div>
+                  <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['laid_off_for_payment_waived']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                    <div class="label-text">YES</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="Buying" name="home_status"  onclick="getHomeRadioBtn(5, 'Buying')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="yes" name="waiver_payment_value"  onclick="geWavedStepLinkRadioBtn('yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['buying_own_rent'])) { if($this->session->userdata['buying_own_rent']== 'Own') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                    <div class="label-text">Own</div>
+                  <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['laid_off_for_payment_waived']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                    <div class="label-text">NO</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="Own" name="home_status" onclick="getHomeRadioBtn(5, 'Own')" class="ng-pristine ng-invalid ng-invalid-required"></label>
-              </div>
-              <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['buying_own_rent'])) { if($this->session->userdata['buying_own_rent']== 'Rent') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button'; ?>>
-                    <div class="label-text">Rent</div>
-                    <span class="continueIcon sprites"></span>
-                  <input type="radio" value="Rent" name="home_status" onclick="getHomeRadioBtn(5, 'Rent')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="no" name="waiver_payment_value" onclick="geWavedStepLinkRadioBtn('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <span id="err1" style="color: red"></span>
               </form>

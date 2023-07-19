@@ -46,7 +46,7 @@ function getMaritalRadioBtn(step, value)
 //for home  5/26 is Buying/Own/Rent  
 function getHomeRadioBtn(step, value)
 {
-    if(step == 5)
+    if(step == 6)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('home_id');
@@ -64,7 +64,7 @@ function getHomeRadioBtn(step, value)
     }
     
 }
-//step 10.1
+//step 9.1
 function geWavedStepLinkRadioBtn(value)
 {
     console.log('this is value>>' + value);
@@ -355,9 +355,9 @@ function addCosigner(value)
                 formData.append('co_marital_status', selected_marital_status);
             }
         }
-        if(step == 5 || step == 26)
+        if(step == 6 || step == 26)
         {
-            if(step == 5)
+            if(step == 6)
             {
                 var selected_home_status = $('input[name="home_status"]:checked').val();
                 formData.append('home_status', selected_home_status);
@@ -368,7 +368,7 @@ function addCosigner(value)
                 formData.append('co_home_status', selected_home_status);
             }
         }
-        if(step == 10.1)
+        if(step == 9.1)
         {
             
             var selected_home_status = $('input[name="waiver_payment_value"]:checked').val();
@@ -590,6 +590,11 @@ function addCosigner(value)
                       personal_step9();
                   }
                   if(step == 9)
+                  {
+                      //alert('you are in 9');
+                      personal_step9_1();
+                  }
+                  if(step == 9.1)
                   {
                       //alert('you are in 9');
                       personal_step10();
@@ -907,19 +912,20 @@ function addCosigner(value)
                         }
                         
                     }
-                    if(step == 6)
+                    if(step == 5)
                     {
                         //alert('you are in 5');
                         $('#err1').html(obj['error_messages']['address']);
                         $('#err2').html(obj['error_messages']['living_there_years']);
                         $('#err3').html(obj['error_messages']['monthly_pay']);
                     }
-                    if(step == 5 || step == 26)
+                    if(step == 6 || step == 26)
                     {
                         //alert('you are in 6');
-                        if(step == 5)
+                        if(step == 6)
                         {
                             $('#err1').html(obj['error_messages']['home_status']);
+                            
                         }
                         if(step == 26)
                         {
@@ -938,18 +944,20 @@ function addCosigner(value)
                     if(step == 8)
                     {
                         //alert('you are in 8');
-                        $('#err1').html(obj['error_messages']['personal_refrence']);
+                        /*$('#err1').html(obj['error_messages']['personal_refrence']);
                         $('#err2').html(obj['error_messages']['personal_refrence_phone']);
-                        $('#err3').html(obj['error_messages']['personal_refrence_address']);
+                        $('#err3').html(obj['error_messages']['personal_refrence_address']);*/
+
+                        $('#err1').html(obj['error_messages']['employer_name']);
+                        $('#err4').html(obj['error_messages']['working_years']);
+
+
                     }
                     if(step == 9)
                     {
                         //alert('you are in 9');
-                        $('#err1').html(obj['error_messages']['employer_name']);
-                        $('#err2').html(obj['error_messages']['employer_job_title']);
-                        $('#err3').html(obj['error_messages']['supervisor_name']);
-                        $('#err4').html(obj['error_messages']['working_years']);
-                        $('#err5').html(obj['error_messages']['business_address']);
+                        $('#err1').html(obj['error_messages']['monthly_income_pre_tax']);
+                        $('#err2').html(obj['error_messages']['upload_user_doc']);
                     }
                     if(step == 10)
                     {
@@ -957,7 +965,7 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['monthly_income_pre_tax']);
                         $('#err2').html(obj['error_messages']['upload_user_doc']);
                     }
-                    if(step == 10.1)
+                    if(step == 9.1)
                     {
                         //alert('you are in 10.1');
                         $('#err1').html(obj['error_messages']['waiver']);
@@ -1337,15 +1345,15 @@ function personal_step10()
         }
     });
 }
-function personal_step10_1()
+function personal_step9_1()
 {  
-    $('#step_count').val(10.1);
+    $('#step_count').val(9.1);
     $.ajax({
         type: "GET",
-        url:  base_url + "personalLoan/step10_1",
+        url:  base_url + "personalLoan/step9_1",
         success: function (data)
         {      
-            window.history.pushState({id:10.1}, "Title", base_url + "personalLoan?step=10.1");
+            window.history.pushState({id:9.1}, "Title", base_url + "personalLoan?step=9.1");
             $('#container').html(data);                
         }
     });

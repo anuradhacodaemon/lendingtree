@@ -116,14 +116,14 @@ class PersonalLoan extends CI_Controller
         if($step == 3)
         {
             $rules = array(
-                    array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
-                    array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
-                    array('field'=>'phone','label'=>'phone','rules'=>'required|numeric'),
-                    array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
-                    array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
-                    array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
-                    array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
-                    );
+                array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
+                array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
+                array('field'=>'phone','label'=>'phone','rules'=>'required|numeric'),
+                array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email')
+                /*array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
+                array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
+                array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')*/
+                );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
@@ -134,10 +134,10 @@ class PersonalLoan extends CI_Controller
                         'first_name' => $this->input->post('firstname'),
                         'last_name' => $this->input->post('lastname'),
                         'p_phone' => $this->input->post('phone'),
-                        'p_email' => $this->input->post('p_email'),
-                        'tex_driv_lic' => $this->input->post('tex_driv_lic'),
+                        'p_email' => $this->input->post('p_email')
+                        /*'tex_driv_lic' => $this->input->post('tex_driv_lic'),
                         'soc_sec' => $this->input->post('soc_sec'),
-                        'p_dob' => $this->input->post('my_dob')
+                        'p_dob' => $this->input->post('my_dob')*/
                     );
 
                     $this->session->set_userdata($data);
@@ -148,14 +148,14 @@ class PersonalLoan extends CI_Controller
             }else{
                 //fail
                 $errors = array(
-                'firstname' => form_error('firstname'),
-                'lastname' => form_error('lastname'),
-                'phone' => form_error('phone'),
-                'p_email' => form_error('p_email'),
-                'tex_driv_lic' => form_error('tex_driv_lic'),
-                'soc_sec' => form_error('soc_sec'),
-                'my_dob' => form_error('my_dob')
-                );
+                    'firstname' => form_error('firstname'),
+                    'lastname' => form_error('lastname'),
+                    'phone' => form_error('phone'),
+                    'p_email' => form_error('p_email'),
+                    /*'tex_driv_lic' => form_error('tex_driv_lic'),
+                    'soc_sec' => form_error('soc_sec'),
+                    'my_dob' => form_error('my_dob')*/
+                    );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
                 echo json_encode($data);
@@ -190,7 +190,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
-        if($step == 6)
+        if($step == 5)
         {
             $rules = array(
                 array('field'=>'address','label'=>'Address','rules'=>'required'),
@@ -240,7 +240,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
-        if($step == 5)
+        if($step == 6)
         {
             //echo $this->input->post('home_status');
             $this->form_validation->set_rules('home_status', 'Radio Button', 'required');
@@ -321,64 +321,12 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
+
         if($step == 8)
         {
             $rules = array(
-                array('field'=>'personal_refrence','label'=>'Personal Refrence','rules'=>'required'),
-                array('field'=>'personal_refrence_phone','label'=>'Personal Refrence Phone','rules'=>'required|numeric'),
-                array('field'=>'personal_refrence_address','label'=>'Personal Refrence Address','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if ($this->input->post('personal_refrence')) 
-                {
-                    $r_new_address = ['country' => $this->input->post('p_r_country'),
-                                    'street_line' => $this->input->post('p_r_street_line'),
-                                    'city' => $this->input->post('p_r_city'),
-                                    'state' => $this->input->post('p_r_state'),
-                                    'zip_code' => $this->input->post('p_r_zip_code')
-
-                                    ];
-                    $json = json_encode($r_new_address);
-                    $data = array(
-                        'personal_refrence' => $this->input->post('personal_refrence'),
-                        'personal_refrence_phone' => $this->input->post('personal_refrence_phone'),
-                        'p_personal_refrence_address' => $this->input->post('personal_refrence_address'),
-                        'personal_refrence_address' => $json,
-                        'p_r_country' => $this->input->post('p_r_country'),
-                        'p_r_street_line' => $this->input->post('p_r_street_line'),
-                        'p_r_city' => $this->input->post('p_r_city'),
-                        'p_r_state' => $this->input->post('p_r_state'),
-                        'p_r_zip_code' => $this->input->post('p_r_zip_code')
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=9';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'personal_refrence' => form_error('personal_refrence'),
-                            'personal_refrence_phone' => form_error('personal_refrence_phone'),
-                            'personal_refrence_address' => form_error('personal_refrence_address')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
-        if($step == 9)
-        {
-            $rules = array(
                 array('field'=>'employer_name','label'=>'Employer Name','rules'=>'required'),
-                array('field'=>'employer_job_title','label'=>'Employer Job title','rules'=>'required'),
-                array('field'=>'supervisor_name','label'=>'Supervisor name','rules'=>'required'),
-                array('field'=>'working_years','label'=>'Working years','rules'=>'required|numeric'),
-                array('field'=>'business_address','label'=>'Business address','rules'=>'required')
+                array('field'=>'working_years','label'=>'Working years','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -386,26 +334,114 @@ class PersonalLoan extends CI_Controller
                 //success
                 if ($this->input->post('employer_name')) 
                 {
-                    $r_new_address = ['country' => $this->input->post('b_r_country'),
-                                    'street_line' => $this->input->post('b_r_street_line'),
-                                    'city' => $this->input->post('b_r_city'),
-                                    'state' => $this->input->post('b_r_state'),
-                                    'zip_code' => $this->input->post('b_r_zip_code')
-
-                                    ];
-                    $json = json_encode($r_new_address);
                     $data = array(
                         'current_employer' => $this->input->post('employer_name'),
-                        'job_title' => $this->input->post('employer_job_title'),
-                        'supervisor_name' => $this->input->post('supervisor_name'),
-                        'how_long_your_working' => $this->input->post('working_years'),
-                        'b_address_of_business' => $this->input->post('business_address'),
-                        'address_of_business' => $json,
-                        'b_r_country' => $this->input->post('b_r_country'),
-                        'b_r_street_line' => $this->input->post('b_r_street_line'),
-                        'b_r_city' => $this->input->post('b_r_city'),
-                        'b_r_state' => $this->input->post('b_r_state'),
-                        'b_r_zip_code' => $this->input->post('b_r_zip_code')
+                        'how_long_your_working' => $this->input->post('working_years')
+
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=9';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'employer_name' => form_error('employer_name'),
+                            'working_years' => form_error('working_years'),
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+
+        if($step == 9)
+        {
+            $rules = array(
+                array('field'=>'monthly_income_pre_tax','label'=>'Monthly Income','rules'=>'required|numeric')
+                );
+
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                $config['upload_path'] = './userDocuments/'; // Specify the directory to save the uploaded files
+                $config['allowed_types'] = 'pdf|png|txt'; // Specify the allowed file types
+                $this->load->library('upload', $config);
+                $Cfile = $_FILES['upload_user_doc']['name'];
+                $name = explode(".", $_FILES['upload_user_doc']['name']);
+                $file_ext = strtolower(end($name));
+                $time = time();
+                $new_name = $time . '.' . $file_ext;
+                //success
+                if ($this->input->post('monthly_income_pre_tax')) 
+                {
+                    $data = array(
+                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax')
+                    );
+                    $this->session->set_userdata($data);
+                }
+              
+                if(!empty($Cfile))
+                {
+                    $data = array(
+                        'upload_document_proof' => $new_name
+                    );
+                    $this->session->set_userdata($data);
+                    if(!$this->upload->do_upload('upload_user_doc')) 
+                    {
+                        $error = $this->upload->display_errors();
+                        $this->session->unset_userdata('upload_document_proof');
+                        $str_replace = ['<p>', '</p>'];
+                        $errors = array(
+                            'upload_user_doc' => str_replace($str_replace, '', $error)
+                            );
+                        $data['error'] = 1;
+                        $data['error_messages'] = $errors;
+                        echo json_encode($data);exit;
+                    }
+                    else{
+                            $upload_data = $this->upload->data();
+                            $file_name = $upload_data['file_name'];
+                            $file_path = $upload_data['full_path'];
+                            $new_file_path = $upload_data['file_path'] . $new_name;
+                            rename($file_path, $new_file_path);
+                        }
+                }
+                $data['success'] = 1;
+                $data['url'] = 'personalLoan?step=9.1';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'monthly_income_pre_tax' => form_error('monthly_income_pre_tax'),
+                            'upload_user_doc' => form_error('upload_user_doc')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }    
+        }
+
+        
+
+        if($step == 9.1)
+        {
+            //echo $this->input->post('waiver_payment_value');
+            $rules = array(
+                array('field'=>'waiver_payment_value','label'=>'Waiver laid off','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('waiver_payment_value')) 
+                {
+                    $value = $this->input->post('waiver_payment_value');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'laid_off_for_payment_waived' => $selected
                     );
 
                     $this->session->set_userdata($data);
@@ -416,11 +452,7 @@ class PersonalLoan extends CI_Controller
             }else{
                 //fail
                 $errors = array(
-                            'employer_name' => form_error('employer_name'),
-                            'employer_job_title' => form_error('employer_job_title'),
-                            'supervisor_name' => form_error('supervisor_name'),
-                            'working_years' => form_error('working_years'),
-                            'business_address' => form_error('business_address')
+                            'waiver_payment_value' => form_error('waiver_payment_value')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -493,39 +525,7 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }    
         }
-        if($step == 10.1)
-        {
-            //echo $this->input->post('waiver_payment_value');
-            $rules = array(
-                array('field'=>'waiver_payment_value','label'=>'Waiver laid off','rules'=>'required')
-                );
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == true) 
-            {
-                //success
-                if($this->input->post('waiver_payment_value')) 
-                {
-                    $value = $this->input->post('waiver_payment_value');
-                    $selected = ($value == 'yes') ? 'Y' : 'N';
-                    $data = array(
-                        'laid_off_for_payment_waived' => $selected
-                    );
-
-                    $this->session->set_userdata($data);
-                }
-                $data['success'] = 1;
-                $data['url'] = 'personalLoan?step=11';
-                echo json_encode($data);
-            }else{
-                //fail
-                $errors = array(
-                            'waiver_payment_value' => form_error('waiver_payment_value')
-                            );
-                $data['error'] = 1;
-                $data['error_messages'] = $errors;
-                echo json_encode($data);
-            }
-        }
+ 
         if($step == 11)
         {
             //echo $this->input->post('p_another_source');
@@ -1899,6 +1899,10 @@ class PersonalLoan extends CI_Controller
     public function step9()
     {
         $this->load->view('default/mccu/personal/personal_step9_view');
+    }
+    public function step9_1()
+    {
+        $this->load->view('default/mccu/personal/personal_step9_1_view');
     }
     public function step10()
     {
