@@ -584,7 +584,7 @@ function addCosigner(value)
                 }
                 if(step == 6)
                 {
-                    alert('you are in 6');
+                    //alert('you are in 6');
                      autoloan_step7();
                 }
                 if(step == 7)
@@ -687,7 +687,7 @@ function addCosigner(value)
                 {
                   if(step == 15)
                   {
-                      alert('you are in 15');
+                     // alert('you are in 15');
                        autoloan_step16();
                   }
                   if(step == 36)
@@ -1047,7 +1047,7 @@ function addCosigner(value)
                     
                     if(step == 36)
                     {
-                        alert('you are in 36');
+                        //alert('you are in 36');
                         $('#err1').html(obj['error_messages']['co_member_credit']);
                     }
                 }

@@ -562,7 +562,7 @@ function addCosigner(value)
                   }
                   if(step == 6)
                   {
-                      alert('you are in 6');
+                      //alert('you are in 6');
                       personal_step7();
                   }
                   if(step == 7)
@@ -665,7 +665,7 @@ function addCosigner(value)
                   {
                     if(step == 15)
                     {
-                        alert('you are in 15');
+                        //alert('you are in 15');
                         personal_step16();
                     }
                     if(step == 36)

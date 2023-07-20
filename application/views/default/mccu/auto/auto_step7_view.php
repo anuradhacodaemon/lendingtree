@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <select class="form-control width_100" style="width:auto;" name="relative_relation">
+                                <select class="form-control width_100" style="max-width: 490px;" name="relative_relation">
                                     <option value="">Select Relationship</option>
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Parent') ? 'selected' : '' ?> value="Parent">Parent</option>
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Sibling') ? 'selected' : '' ?> value="Sibling">Sibling</option>
