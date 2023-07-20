@@ -1,3 +1,9 @@
+
+<style>
+.footer-main {
+  position: inherit !important;
+}
+</style>
 <!-- Banner starts here -->
 <div class="banner-main clearfix">
     <div class="container">       

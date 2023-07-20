@@ -434,6 +434,7 @@ button, input:focus {outline: none;}
   padding: 20px 0;
   left: 0;
   bottom: 0;
+  position: fixed;
  
 }
 .footer-main .sub-nav {
