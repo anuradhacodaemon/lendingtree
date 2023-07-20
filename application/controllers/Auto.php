@@ -1337,15 +1337,15 @@ class Auto extends CI_Controller {
         {
               //echo $this->input->post('p_another_source');
               $rules = array(
-                array('field'=>'bankruptcy_adjustmnt','label'=>'Any Bankcruptcy Judgments','rules'=>'required')
+                array('field'=>'co_bankruptcy_adjustmnt','label'=>'Any Bankcruptcy Judgments','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if($this->input->post('bankruptcy_adjustmnt')) 
+                if($this->input->post('co_bankruptcy_adjustmnt')) 
                 {
-                    $value = $this->input->post('bankruptcy_adjustmnt');
+                    $value = $this->input->post('co_bankruptcy_adjustmnt');
                     $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
                         'bankruptcy_debt_adjusutment' => $selected
@@ -1359,7 +1359,7 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                            'bankruptcy_adjustmnt' => form_error('bankruptcy_adjustmnt')
+                            'co_bankruptcy_adjustmnt' => form_error('co_bankruptcy_adjustmnt')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;

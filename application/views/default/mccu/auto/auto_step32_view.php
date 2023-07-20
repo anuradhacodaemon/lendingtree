@@ -34,13 +34,13 @@
                                 <label <?php if(isset($this->session->userdata['cosigner_lawsuit_party'])) { if($this->session->userdata['cosigner_lawsuit_party']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="co_any_law_suit"  onclick="PartyToLawSuit(40, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="co_any_law_suit"  onclick="PartyToLawSuit(32, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
                                 <label <?php if(isset($this->session->userdata['cosigner_lawsuit_party'])) { if($this->session->userdata['cosigner_lawsuit_party']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="co_any_law_suit" onclick="PartyToLawSuit(40, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="co_any_law_suit" onclick="PartyToLawSuit(32, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form> 

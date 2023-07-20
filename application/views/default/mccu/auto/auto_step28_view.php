@@ -34,13 +34,13 @@
                   <label <?php if(isset($this->session->userdata['cosigner_co_maker_endorser'])) { if($this->session->userdata['cosigner_co_maker_endorser']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                     <div class="label-text">YES</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="yes" name="co_co_maker"  onclick="coMaker(34, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="yes" name="co_co_maker"  onclick="coMaker(28, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
                   <label <?php if(isset($this->session->userdata['cosigner_co_maker_endorser'])) { if($this->session->userdata['cosigner_co_maker_endorser']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                     <div class="label-text">NO</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="no" name="co_co_maker" onclick="coMaker(34, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="no" name="co_co_maker" onclick="coMaker(28, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <span id="err1" style="color: red"></span>
               </form>

@@ -41,13 +41,13 @@
                   <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['laid_off_for_payment_waived']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                     <div class="label-text">YES</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="yes" name="p_another_source"  onclick="anotherSourceIncome(11, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="yes" name="p_another_source"  onclick="anotherSourceIncome(10, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
                   <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['laid_off_for_payment_waived']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                     <div class="label-text">NO</div>
                     <span class="continueIcon sprites"></span>
-                  <input type="radio" value="no" name="p_another_source" onclick="anotherSourceIncome(11, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                  <input type="radio" value="no" name="p_another_source" onclick="anotherSourceIncome(10, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <span id="err1" style="color: red"></span>
               </form>

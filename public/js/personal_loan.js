@@ -274,7 +274,7 @@ function CitizenOtherThanUS(step, value)
         formData.append('other_than_us_citizen', value);
         getFormId(form);
     }
-    if(step == 41)
+    if(step == 33)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_other_than_us_citizen');
@@ -473,14 +473,14 @@ function addCosigner(value)
             }
             
         }
-        if(step == 16 || step == 41)
+        if(step == 16 || step == 33)
         {
             if(step == 16)
             {
                 var selected_home_status = $('input[name="other_than_us_citizen"]:checked').val();
                 formData.append('other_than_us_citizen', selected_home_status);
             }
-            if(step == 41)
+            if(step == 33)
             {
                 var selected_home_status = $('input[name="co_other_than_us_citizen"]:checked').val();
                 formData.append('co_other_than_us_citizen', selected_home_status);
@@ -512,16 +512,16 @@ function addCosigner(value)
         }
             
         //console.log(formData);
-        if(step == 19 || step == 43)
+        if(step == 19 || step == 34)
         {
             if(step == 19 && selected_home_status == 'no')
             {
                 $("#add_cosigner23").hide();
                 $('#loader_page_final').show();
             }
-            if(step == 43 )
+            if(step == 34)
             {
-                $("#final_step43").hide();
+                $("#final_step34").hide();
                 $('#loader_page_final').show();
             }
             
@@ -614,7 +614,7 @@ function addCosigner(value)
                             //alert('you are in 32.1 >>>'+ selected_home_status);
                             if(selected_home_status == 'yes')
                             {
-                                personal_step32_1();
+                                personal_step33();
                             }
                             else{
                                     //alert('you are in 33 >>>'+ selected_home_status);
@@ -702,18 +702,14 @@ function addCosigner(value)
                     }
                     
                   }
-                  if(step == 18 || step == 31)
+                  if(step == 18)
                   {
                     if(step == 18)
                     {
                         //alert('you are in 18');
                         personal_step19();
                     }
-                    if(step == 31)
-                    {
-                        //alert('you are in 39');
-                        personal_step40();
-                    }
+                   
                     
                   }
                   if(step == 19 || step == 32)
@@ -726,7 +722,7 @@ function addCosigner(value)
                     if(step == 32)
                     {
                         //alert('you are in 40');
-                        personal_step41();
+                        personal_step33();
                     }
                   }
                   if(step == 20 || step == 41)
@@ -768,7 +764,7 @@ function addCosigner(value)
                     personal_step24();
                   }
 //================THIS IS A FINAL STEP ON 23 and 43 ========================================
-                  if(step == 19 || step == 43)
+                  if(step == 19 || step == 34)
                   {
                     if(step == 19)
                     {
@@ -795,13 +791,13 @@ function addCosigner(value)
                                 }
                             }
                     }
-                    if(step == 43)
+                    if(step == 34)
                     {
                         //alert('you are in 43 >>> Success is coming soon');
                         if(obj['message'] != "")
                         {
                             $('#loader_page_final').hide();
-                            $("#final_step43").show();
+                            $("#final_step34").show();
                             let text = obj['message'];
                             let newText = text.replace(/\./g, ".<br>");
                             $('#showMsgToApplicant').html(newText);
@@ -1089,14 +1085,14 @@ function addCosigner(value)
                         }
                         
                     }
-                    if(step == 16 || step == 41)
+                    if(step == 16 || step == 33)
                     {
                         if(step == 16)
                         {
                             //alert('you are in 20');
                             $('#err1').html(obj['error_messages']['other_than_us_citizen']);
                         }
-                        if(step == 41)
+                        if(step == 33)
                         {
                             //alert('you are in 41');
                             $('#err1').html(obj['error_messages']['co_other_than_us_citizen']);
@@ -1116,13 +1112,13 @@ function addCosigner(value)
                             $('#err1').html(obj['error_messages']['co_income_get_reduce_nxt_2y']);
                         }
                     }
-                    if(step == 43)
+                    if(step == 34)
                     {
-                        if(step == 43)
+                        if(step == 34)
                         {
                             //alert('you are in 43');
                             $('#loader_page_final').hide();
-                            $("#final_step43").show();
+                            $("#final_step34").show();
                             $('#err1').html(obj['error_messages']['co_i_represnt_accurate']);
                         }
                         

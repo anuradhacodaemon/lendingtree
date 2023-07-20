@@ -29,19 +29,19 @@
                     <div class="clearfix"></div>
                     <label class="control-label">ANY BANKRUPTCY FILING OR DEBT ADJUSTMENT CONFIRMED UNDER CH. 13 AGAINST YOU?</label>
                     <div class="row">
-                        <form id="bankruptcy_adjustmnt" method="POST">
+                        <form id="co_bankruptcy_adjustmnt" method="POST">
                             <input type="hidden" name="auto_step" value="30" id="auto_step" >
                             <div class="col-xs-12 col-sm-12 radio">
                                 <label <?php if(isset($this->session->userdata['bankruptcy_debt_adjusutment'])) { if($this->session->userdata['bankruptcy_debt_adjusutment']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="bankruptcy_adjustmnt"  onclick="BankruptcyJudge(17, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="co_bankruptcy_adjustmnt"  onclick="BankruptcyJudge(30, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
                                 <label <?php if(isset($this->session->userdata['bankruptcy_debt_adjusutment'])) { if($this->session->userdata['bankruptcy_debt_adjusutment']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="bankruptcy_adjustmnt" onclick="BankruptcyJudge(17, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="co_bankruptcy_adjustmnt" onclick="BankruptcyJudge(30, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form> 

@@ -47,7 +47,7 @@
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <center><img style="display: none;width: 60px;position: relative;" id="loader_page_final" src="<?php echo base_url() ?>public/html/img/loader.gif"></center>
-                                <input type="submit" value="Continue" class="button" id="final_step43">
+                                <input type="submit" value="Continue" class="button" id="final_step34">
                             </div>   
                         </div>
                         </form>

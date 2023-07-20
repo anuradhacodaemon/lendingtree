@@ -35,13 +35,13 @@
                                 <label <?php if(isset($this->session->userdata['cosigner_force_closure_title_deed'])) { if($this->session->userdata['cosigner_force_closure_title_deed']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                                     <div class="label-text">Yes</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="co_force_closure"  onclick="ForceClosure(39, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="yes" name="co_force_closure"  onclick="ForceClosure(31, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <div class="col-xs-12 col-sm-12 radio">
                                 <label <?php if(isset($this->session->userdata['cosigner_force_closure_title_deed'])) { if($this->session->userdata['cosigner_force_closure_title_deed']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                                     <div class="label-text">No</div>
                                     <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="co_force_closure" onclick="ForceClosure(39, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                                <input type="radio" value="no" name="co_force_closure" onclick="ForceClosure(31, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                             </div>
                             <span id="err1" style="color: red"></span>
                         </form> 
