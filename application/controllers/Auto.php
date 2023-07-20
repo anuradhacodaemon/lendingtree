@@ -91,16 +91,16 @@ class Auto extends CI_Controller {
         if($step == 2)
         {
             $rules = array(
-                array('field'=>'req_amt','label'=>'Required Amount','rules'=>'required|numeric')
+                array('field'=>'p_req_amt','label'=>'Required Amount','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
-                if ($this->input->post('req_amt')) 
+                if ($this->input->post('p_req_amt')) 
                 {
                     $data = array(
-                        'requested_amount' => $this->input->post('req_amt')
+                        'requested_amount' => $this->input->post('p_req_amt')
                     );
 
                     $this->session->set_userdata($data);
@@ -111,7 +111,7 @@ class Auto extends CI_Controller {
             }else{
                 //fail
                 $errors = array(
-                'req_amt' => form_error('req_amt')
+                'p_req_amt' => form_error('p_req_amt')
                 );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
