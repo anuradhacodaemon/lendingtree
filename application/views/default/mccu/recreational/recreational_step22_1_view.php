@@ -21,12 +21,12 @@
                         }
                         elseif($this->session->userdata['type']== 5)
                         {
-                          echo 'Personal Loan';
+                          //echo 'Personal Loan';
+                          echo "Loan Protection";
                         }
                         elseif($this->session->userdata['type']== 6)
                         {
-                          //echo 'Recreational Vehical Loan';
-                          echo "Loan Protection";
+                          echo 'Recreational Vehical Loan';
                         }
                       }
                       else{

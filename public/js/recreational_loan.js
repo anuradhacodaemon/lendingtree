@@ -7,7 +7,7 @@ if (window.performance)
 $(document).ready(function() {
         var urlParams = new URLSearchParams(window.location.search);
         var step = parseInt(urlParams.get('step'));;
-        console.log("From Recreational The step>>>"+ step);
+        console.log("From Personal The step>>>"+ step);
 });
 
 //
@@ -20,17 +20,7 @@ $(document).ready(function() {
  * 
  */
 
-function selectedVehicle(step, value)
-{
-    if(step == 44)
-    {
-        console.log('this is value>>' + value);
-        var form = document.getElementById('re_vehicle_info');
-        var formData = new FormData(form);
-        formData.append('do_know_the_vehicle', value);
-        getFormId(form);
-    }
-}
+
 
 //for marital status 4 or 25 
 function getMaritalRadioBtn(step, value)
@@ -43,7 +33,7 @@ function getMaritalRadioBtn(step, value)
         formData.append('marital_status', value);
         getFormId(form);
     }
-    if(step == 25)
+    if(step == 21)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_p_details1q');
@@ -56,7 +46,7 @@ function getMaritalRadioBtn(step, value)
 //for home  5/26 is Buying/Own/Rent  
 function getHomeRadioBtn(step, value)
 {
-    if(step == 5)
+    if(step == 6)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('home_id');
@@ -64,7 +54,7 @@ function getHomeRadioBtn(step, value)
         formData.append('home_status', value);
         getFormId(form);
     }
-    if(step == 26)
+    if(step == 23)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_home_id');
@@ -74,7 +64,7 @@ function getHomeRadioBtn(step, value)
     }
     
 }
-//step 10.1
+//step 9.1
 function geWavedStepLinkRadioBtn(value)
 {
     console.log('this is value>>' + value);
@@ -83,6 +73,27 @@ function geWavedStepLinkRadioBtn(value)
     formData.append('waiver_payment_value', value);
     getFormId(form);
 }
+
+//step 11
+function gecoMakerRadioBtn(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('comaker_loan_form');
+    var formData = new FormData(form);
+    formData.append('comaker_loan_value', value);
+    getFormId(form);
+}
+
+//step 12
+function getoutstanding_judgmentRadioBtn(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('outstanding_judgment_form');
+    var formData = new FormData(form);
+    formData.append('outstanding_judgment_value', value);
+    getFormId(form);
+}
+
 //step 1
 function TypeOfLoan(value)
 {
@@ -104,7 +115,7 @@ function reqAmountLoan(value)
 //step 11 or 32
 function anotherSourceIncome(step, value)
 {
-    if(step == 11)
+    if(step == 10)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('p_another_source_income');
@@ -112,7 +123,7 @@ function anotherSourceIncome(step, value)
         formData.append('p_another_source', value);
         getFormId(form);
     }
-    if(step == 32)
+    if(step == 27)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_p_another_source_income');
@@ -125,15 +136,7 @@ function anotherSourceIncome(step, value)
 //step 13 or 34
 function coMaker(step, value)
 {
-    if(step == 13)
-    {
-        console.log('this is value>>' + value);
-        var form = document.getElementById('co_maker');
-        var formData = new FormData(form);
-        formData.append('co_maker', value);
-        getFormId(form);
-    }
-    if(step == 34)
+    if(step == 28)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_co_maker');
@@ -188,14 +191,6 @@ function memberCredit(step, value)
 //step 16 or 37
 function OutstandingJudge(step, value)
 {
-    if(step == 16)
-    {
-        console.log('this is value>>' + value);
-        var form = document.getElementById('outstanding_judgement');
-        var formData = new FormData(form);
-        formData.append('outstanding_judgement', value);
-        getFormId(form);
-    }
     if(step == 37)
     {
         console.log('this is value>>' + value);
@@ -208,7 +203,7 @@ function OutstandingJudge(step, value)
 //step 17 or 38
 function BankruptcyJudge(step, value)
 {
-    if(step == 17)
+    if(step == 13)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('bankruptcy_adjustmnt');
@@ -216,7 +211,7 @@ function BankruptcyJudge(step, value)
         formData.append('bankruptcy_adjustmnt', value);
         getFormId(form);
     }
-    if(step == 38)
+    if(step == 30)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_bankruptcy_adjustmnt');
@@ -229,7 +224,7 @@ function BankruptcyJudge(step, value)
 //step 18 or 39
 function ForceClosure(step, value)
 {
-    if(step == 18)
+    if(step == 14)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('force_closure');
@@ -237,7 +232,7 @@ function ForceClosure(step, value)
         formData.append('force_closure', value);
         getFormId(form);
     }
-    if(step == 39)
+    if(step == 31)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_force_closure');
@@ -250,7 +245,7 @@ function ForceClosure(step, value)
 //step 19 or 40
 function PartyToLawSuit(step, value)
 {
-    if(step == 19)
+    if(step == 15)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('any_law_suit');
@@ -258,7 +253,7 @@ function PartyToLawSuit(step, value)
         formData.append('any_law_suit', value);
         getFormId(form);
     }
-    if(step == 40)
+    if(step == 32)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_any_law_suit');
@@ -271,7 +266,7 @@ function PartyToLawSuit(step, value)
 //step 20 or 41
 function CitizenOtherThanUS(step, value)
 {
-    if(step == 20)
+    if(step == 16)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('other_than_us_citizen');
@@ -279,7 +274,7 @@ function CitizenOtherThanUS(step, value)
         formData.append('other_than_us_citizen', value);
         getFormId(form);
     }
-    if(step == 41)
+    if(step == 33)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_other_than_us_citizen');
@@ -352,79 +347,68 @@ function addCosigner(value)
             formData.append('req_amt', selected_marital_status);
             window.history.pushState({id:2}, "Title", base_url + "recreationalLoan?step=2");
         }*/
-        if(step == 44)
-        {
-            var selected_home_status = $('input[name="do_know_the_vehicle"]:checked').val();
-            formData.append('do_know_the_vehicle', selected_home_status);
-        }
-        if(step == 4 || step == 25)
+        if(step == 4 || step == 21)
         {
             if(step == 4)
             {
                 var selected_marital_status = $('input[name="marital_status"]:checked').val();
                 formData.append('marital_status', selected_marital_status);
             }
-            if(step == 25)
+            if(step == 21)
             {
                 var selected_marital_status = $('input[name="co_marital_status"]:checked').val();
                 formData.append('co_marital_status', selected_marital_status);
             }
         }
-        if(step == 5 || step == 26)
+        if(step == 6 || step == 26)
         {
-            if(step == 5)
+            if(step == 6)
             {
                 var selected_home_status = $('input[name="home_status"]:checked').val();
                 formData.append('home_status', selected_home_status);
             }
-            if(step == 26)
+            if(step == 23)
             {
                 var selected_home_status = $('input[name="co_home_status"]:checked').val();
                 formData.append('co_home_status', selected_home_status);
             }
         }
-        if(step == 10.1)
+        if(step == 9.1 || step == 26)
         {
             
             var selected_home_status = $('input[name="waiver_payment_value"]:checked').val();
             formData.append('waiver_payment_value', selected_home_status);
             
         }
-        if(step == 11 || step == 32)
+        if(step == 11 || step == 24)
         {
             if(step == 11)
             {
-                var selected_home_status = $('input[name="p_another_source"]:checked').val();
-                formData.append('p_another_source', selected_home_status);
+                var selected_home_status = $('input[name="comaker_loan_value"]:checked').val();
+                formData.append('comaker_loan_form', selected_home_status);
             }
-            if(step == 32)
+            
+        }
+
+        if(step == 27)
             {
                 var selected_home_status = $('input[name="co_p_another_source"]:checked').val();
                 formData.append('co_p_another_source', selected_home_status);    
             }
-            
-        }
-        if(step == 13 || step == 34)
+
+        if(step == 28)
         {
-            if(step == 13)
-            {
-                var selected_home_status = $('input[name="co_maker"]:checked').val();
-                formData.append('co_maker', selected_home_status);
-            }
-            if(step == 34)
+           
+            if(step == 28)
             {
                 var selected_home_status = $('input[name="co_co_maker"]:checked').val();
                 formData.append('co_co_maker', selected_home_status);
             }
             
         }
-        if(step == 14 || step == 35)
+        if(step == 35)
         {
-            if(step == 14)
-            {
-                var selected_home_status = $('input[name="miltary_involve"]:checked').val();
-                formData.append('miltary_involve', selected_home_status);
-            }
+           
             if(step == 35)
             {
                 var selected_home_status = $('input[name="co_miltary_involve"]:checked').val();
@@ -432,13 +416,9 @@ function addCosigner(value)
             }
             
         }
-        if(step == 15 || step == 36)
+        if(step == 36)
         {
-            if(step == 15)
-            {
-                var selected_home_status = $('input[name="member_credit"]:checked').val();
-                formData.append('member_credit', selected_home_status);
-            }
+
             if(step == 36)
             {
                 var selected_home_status = $('input[name="co_member_credit"]:checked').val();
@@ -446,13 +426,9 @@ function addCosigner(value)
             }
             
         }
-        if(step == 16 || step == 37)
+        if(step == 37)
         {
-            if(step == 16)
-            {
-                var selected_home_status = $('input[name="outstanding_judgement"]:checked').val();
-                formData.append('outstanding_judgement', selected_home_status);
-            }
+           
             if(step == 37)
             {
                 var selected_home_status = $('input[name="co_outstanding_judgement"]:checked').val();
@@ -460,56 +436,51 @@ function addCosigner(value)
             }
             
         }
-        if(step == 17 || step == 38)
+        if(step == 111 || step == 30)
         {
-            if(step == 17)
+            if(step == 111)
             {
                 var selected_home_status = $('input[name="bankruptcy_adjustmnt"]:checked').val();
                 formData.append('bankruptcy_adjustmnt', selected_home_status);
             }
-            if(step == 38)
+            if(step == 30)
             {
                 var selected_home_status = $('input[name="co_bankruptcy_adjustmnt"]:checked').val();
                 formData.append('co_bankruptcy_adjustmnt', selected_home_status);
             }
             
         }
-        if(step == 18 || step == 39)
+        if(step == 222 || step == 31)
         {
-            if(step == 18)
+            if(step == 222)
             {
                 var selected_home_status = $('input[name="force_closure"]:checked').val();
                 formData.append('force_closure', selected_home_status);
             }
-            if(step == 39)
+            if(step == 31)
             {
                 var selected_home_status = $('input[name="co_force_closure"]:checked').val();
                 formData.append('co_force_closure', selected_home_status);
             }
             
         }
-        if(step == 19 || step == 40)
+        if(step == 32)
         {
-            if(step == 19)
-            {
-                var selected_home_status = $('input[name="any_law_suit"]:checked').val();
-                formData.append('any_law_suit', selected_home_status);
-            }
-            if(step == 40)
+            if(step == 32)
             {
                 var selected_home_status = $('input[name="co_any_law_suit"]:checked').val();
                 formData.append('co_any_law_suit', selected_home_status);
             }
             
         }
-        if(step == 20 || step == 41)
+        if(step == 16 || step == 33)
         {
-            if(step == 20)
+            if(step == 16)
             {
                 var selected_home_status = $('input[name="other_than_us_citizen"]:checked').val();
                 formData.append('other_than_us_citizen', selected_home_status);
             }
-            if(step == 41)
+            if(step == 33)
             {
                 var selected_home_status = $('input[name="co_other_than_us_citizen"]:checked').val();
                 formData.append('co_other_than_us_citizen', selected_home_status);
@@ -534,23 +505,23 @@ function addCosigner(value)
             var selected_home_status = $('input[name="on_die_cancel_loan"]:checked').val();
             formData.append('on_die_cancel_loan', selected_home_status);
         }
-        if(step == 23)
+        if(step == 19)
         {
             var selected_home_status = $('input[name="add_cosigner"]:checked').val();
             formData.append('add_cosigner', selected_home_status);
         }
             
         //console.log(formData);
-        if(step == 23 || step == 43)
+        if(step == 19 || step == 34)
         {
-            if(step == 23 && selected_home_status == 'no')
+            if(step == 19 && selected_home_status == 'no')
             {
                 $("#add_cosigner23").hide();
                 $('#loader_page_final').show();
             }
-            if(step == 43 )
+            if(step == 34)
             {
-                $("#final_step43").hide();
+                $("#final_step34").hide();
                 $('#loader_page_final').show();
             }
             
@@ -558,7 +529,7 @@ function addCosigner(value)
         
         $.ajax({
             type: "POST",
-            url:base_url + "recreationalLoan/auto_step/",
+            url:base_url + "recreationalLoan/auto_step",
             data: formData,
             contentType: false,
             cache: false,
@@ -571,32 +542,10 @@ function addCosigner(value)
                   {
                       recreational_step2();
                   }
-                  //old code
-                  /*if(step == 2)
-                  {
-                      recreational_step3();
-                  }*/
-                  //
                   if(step == 2)
                   {
-                        recreational_step44();
+                      recreational_step3();
                   }
-                  if(step == 44)
-                  {
-
-                      if(selected_home_status == 'yes')
-                      {
-                        recreational_step44_1();
-                      }
-                      else{
-                            recreational_step3();
-                          }
-                  }
-                  if(step == 44.1)
-                  {
-                    recreational_step3();
-                  }
-                  //
                   if(step == 3)
                   {
                       recreational_step4();
@@ -613,7 +562,7 @@ function addCosigner(value)
                   }
                   if(step == 6)
                   {
-                      //alert('you are in 6');
+                      alert('you are in 6');
                       recreational_step7();
                   }
                   if(step == 7)
@@ -629,6 +578,11 @@ function addCosigner(value)
                   if(step == 9)
                   {
                       //alert('you are in 9');
+                      recreational_step9_1();
+                  }
+                  if(step == 9.1)
+                  {
+                      //alert('you are in 9.1');
                       recreational_step10();
                   }
                   if(step == 10)
@@ -648,7 +602,7 @@ function addCosigner(value)
                             //alert('you are in 11 >>>'+ selected_home_status);
                             if(selected_home_status == 'yes')
                             {
-                                recreational_step11_1();
+                                recreational_step12();
                             }
                             else{
                                     //alert('you are in 11 >>>'+ selected_home_status);
@@ -660,7 +614,7 @@ function addCosigner(value)
                             //alert('you are in 32.1 >>>'+ selected_home_status);
                             if(selected_home_status == 'yes')
                             {
-                                recreational_step32_1();
+                                recreational_step33();
                             }
                             else{
                                     //alert('you are in 33 >>>'+ selected_home_status);
@@ -679,17 +633,17 @@ function addCosigner(value)
                     //alert('you are in 12');
                     recreational_step13();
                   }
-                  if(step == 13 || step == 34)
+                  if(step == 13 || step == 28)
                   {
                     if(step == 13)
                     {
                         //alert('you are in 13');
                         recreational_step14();
                     }
-                    if(step == 34)
+                    if(step == 28)
                     {
                         //alert('you are in 13');
-                        recreational_step35();
+                        recreational_step29();
                     }
                     
                   }
@@ -711,7 +665,7 @@ function addCosigner(value)
                   {
                     if(step == 15)
                     {
-                        //alert('you are in 15');
+                        alert('you are in 15');
                         recreational_step16();
                     }
                     if(step == 36)
@@ -748,31 +702,27 @@ function addCosigner(value)
                     }
                     
                   }
-                  if(step == 18 || step == 39)
+                  if(step == 18)
                   {
                     if(step == 18)
                     {
                         //alert('you are in 18');
                         recreational_step19();
                     }
-                    if(step == 39)
-                    {
-                        //alert('you are in 39');
-                        recreational_step40();
-                    }
+                   
                     
                   }
-                  if(step == 19 || step == 40)
+                  if(step == 19 || step == 32)
                   {
                     if(step == 19)
                     {
                         //alert('you are in 19');
                         recreational_step20();
                     }
-                    if(step == 40)
+                    if(step == 32)
                     {
                         //alert('you are in 40');
-                        recreational_step41();
+                        recreational_step33();
                     }
                   }
                   if(step == 20 || step == 41)
@@ -806,29 +756,29 @@ function addCosigner(value)
                   if(step == 22)
                   {
                     //alert('you are in 22');
-                    recreational_step22_1();
-                  }
-                  if(step == 22.1)
-                  {
-                    //alert('you are in 22.1');
                     recreational_step23();
                   }
-//================THIS IS A FINAL STEP ON 23 and 43 ========================================
-                  if(step == 23 || step == 43)
+                  if(step == 23)
                   {
-                    if(step == 23)
+                    //alert('you are in 22.1');
+                    recreational_step24();
+                  }
+//================THIS IS A FINAL STEP ON 23 and 43 ========================================
+                  if(step == 19 || step == 34)
+                  {
+                    if(step == 19)
                     {
                         //alert('you are in 23 >>>'+ selected_home_status);
                         if(selected_home_status == 'yes')
                         {
-                            recreational_step24();
+                            autoloan_step20();
                         }
                         else{
                                 //alert('you are in 23 >>> Success is coming soon');
                                 if(obj['message'] != "")
                                 {
                                     $('#loader_page_final').hide();
-                                    $("#add_cosigner23").show();
+                                    $("#add_cosigner19").show();
                                     let text = obj['message'];
                                     let newText = text.replace(/\./g, ".<br>");
                                     $('#showMsgToApplicant').html(newText);
@@ -841,13 +791,13 @@ function addCosigner(value)
                                 }
                             }
                     }
-                    if(step == 43)
+                    if(step == 34)
                     {
                         //alert('you are in 43 >>> Success is coming soon');
                         if(obj['message'] != "")
                         {
                             $('#loader_page_final').hide();
-                            $("#final_step43").show();
+                            $("#final_step34").show();
                             let text = obj['message'];
                             let newText = text.replace(/\./g, ".<br>");
                             $('#showMsgToApplicant').html(newText);
@@ -879,6 +829,16 @@ function addCosigner(value)
                   if(step == 27)
                   {
                     //alert('you are in 27 >>>');
+                    if(selected_home_status == 'yes')
+                    {
+                        recreational_step27_1();
+                    }else{
+                        recreational_step28();
+                    }
+                  }
+                  if(step == 27.1)
+                  {
+                    //alert('you are in 27 >>>');
                     recreational_step28();
                   }
                   if(step == 28)
@@ -901,11 +861,7 @@ function addCosigner(value)
                     //alert('you are in 31 >>>');
                     recreational_step32();
                   }
-                  if(step == 32.1)
-                  {
-                    //alert('you are in 32.1 >>>');
-                    recreational_step33();
-                  }
+
                   if(step == 33)
                   {
                     //alert('you are in 33 >>>');
@@ -918,7 +874,8 @@ function addCosigner(value)
               {
                     if(step == 2)
                     {
-                        $('#err1').html(obj['error_messages']['r_req_amt']);
+                        $('#err1').html(obj['error_messages']['p_req_amt']);
+                        $('#err2').html(obj['error_messages']['purpose_of_loan']);
                     }
                     if(step == 3)
                     {
@@ -930,34 +887,35 @@ function addCosigner(value)
                         $('#err6').html(obj['error_messages']['soc_sec']);
                         $('#err7').html(obj['error_messages']['my_dob']);
                     }
-                    if(step == 4 || step == 25)
+                    if(step == 4 || step == 21)
                     {
                         //alert('you are in 4');
                         if(step == 4)
                         {
                             $('#err1').html(obj['error_messages']['marital_status']);
                         }
-                        if(step == 25)
+                        if(step == 21)
                         {
                             $('#err1').html(obj['error_messages']['co_marital_status']);
                         }
                         
                     }
-                    if(step == 6)
+                    if(step == 5)
                     {
                         //alert('you are in 5');
                         $('#err1').html(obj['error_messages']['address']);
                         $('#err2').html(obj['error_messages']['living_there_years']);
                         $('#err3').html(obj['error_messages']['monthly_pay']);
                     }
-                    if(step == 5 || step == 26)
+                    if(step == 6 || step == 26)
                     {
                         //alert('you are in 6');
-                        if(step == 5)
+                        if(step == 6)
                         {
                             $('#err1').html(obj['error_messages']['home_status']);
+                            
                         }
-                        if(step == 26)
+                        if(step == 23)
                         {
                             $('#err1').html(obj['error_messages']['co_home_status']);
                         }
@@ -974,18 +932,20 @@ function addCosigner(value)
                     if(step == 8)
                     {
                         //alert('you are in 8');
-                        $('#err1').html(obj['error_messages']['personal_refrence']);
+                        /*$('#err1').html(obj['error_messages']['personal_refrence']);
                         $('#err2').html(obj['error_messages']['personal_refrence_phone']);
-                        $('#err3').html(obj['error_messages']['personal_refrence_address']);
+                        $('#err3').html(obj['error_messages']['personal_refrence_address']);*/
+
+                        $('#err1').html(obj['error_messages']['employer_name']);
+                        $('#err4').html(obj['error_messages']['working_years']);
+
+
                     }
                     if(step == 9)
                     {
                         //alert('you are in 9');
-                        $('#err1').html(obj['error_messages']['employer_name']);
-                        $('#err2').html(obj['error_messages']['employer_job_title']);
-                        $('#err3').html(obj['error_messages']['supervisor_name']);
-                        $('#err4').html(obj['error_messages']['working_years']);
-                        $('#err5').html(obj['error_messages']['business_address']);
+                        $('#err1').html(obj['error_messages']['monthly_income_pre_tax']);
+                        $('#err2').html(obj['error_messages']['upload_user_doc']);
                     }
                     if(step == 10)
                     {
@@ -993,34 +953,34 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['monthly_income_pre_tax']);
                         $('#err2').html(obj['error_messages']['upload_user_doc']);
                     }
-                    if(step == 10.1)
+                    if(step == 9.1)
                     {
                         //alert('you are in 10.1');
                         $('#err1').html(obj['error_messages']['waiver']);
                     }
-                    if(step == 11 || step == 32)
+                    if(step == 11 || step == 27)
                     {
                         if(step == 11)
                         {
                             //alert('you are in 10.1');
-                            $('#err1').html(obj['error_messages']['p_another_source']);
+                            $('#err1').html(obj['error_messages']['comaker_loan_value']);
                         }
-                        if(step == 32)
+                        if(step == 27)
                         {
                             //alert('you are in 10.1');
                             $('#err1').html(obj['error_messages']['co_p_another_source']);
                         }
                         
                     }
-                    if(step == 11.1 || step == 32.1)
+                    if(step == 10.1 || step == 27.1)
                     {
-                        if(step == 11.1)
+                        if(step == 10.1)
                         {
                             //alert('you are in 11.1');
                             $('#err1').html(obj['error_messages']['second_income_source']);
                             $('#err2').html(obj['error_messages']['second_monthly_income']);
                         }
-                        if(step == 32.1)
+                        if(step == 27.1)
                         {
                             //alert('you are in 11.1');
                             $('#err1').html(obj['error_messages']['cosigner_second_income_source']);
@@ -1028,34 +988,23 @@ function addCosigner(value)
                         }
                         
                     }
-                    if(step == 12 || step == 33)
+                    if(step == 33)
                     {
-                        if(step == 12)
-                        {
-                            //alert('you are in 12');
-                            $('#err1').html(obj['error_messages']['previous_employer_name']);
-                            $('#err2').html(obj['error_messages']['previous_working_years']);
-                        }
-                        if(step == 33)
-                        {
+                      
+                      
                             //alert('you are in 12');
                             $('#err1').html(obj['error_messages']['cosigner_previous_employer_name']);
                             $('#err2').html(obj['error_messages']['cosigner_previous_working_years']);
-                        }
+                        
                        
                     }
-                    if(step == 13 || step == 34)
+                    if(step == 28)
                     {
-                        if(step == 13)
-                        {
-                            //alert('you are in 13');
-                            $('#err1').html(obj['error_messages']['co_maker']);
-                        }
-                        if(step == 34)
-                        {
+                       
+                        
                             //alert('you are in 13');
                             $('#err1').html(obj['error_messages']['co_co_maker']);
-                        }
+                        
                         
                     }
                     if(step == 14 || step == 35)
@@ -1063,7 +1012,7 @@ function addCosigner(value)
                         if(step == 14)
                         {
                             //alert('you are in 14');
-                            $('#err1').html(obj['error_messages']['miltary_involve']);
+                            $('#err1').html(obj['error_messages']['force_closure']);
                         }
                         if(step == 35)
                         {
@@ -1071,16 +1020,12 @@ function addCosigner(value)
                             $('#err1').html(obj['error_messages']['co_miltary_involve']);
                         }
                     }
-                    if(step == 15 || step == 36)
+                    if(step == 36)
                     {
-                        if(step == 15)
-                        {
-                            //alert('you are in 15');
-                            $('#err1').html(obj['error_messages']['member_credit']);
-                        }
+                        
                         if(step == 36)
                         {
-                            //alert('you are in 36');
+                            alert('you are in 36');
                             $('#err1').html(obj['error_messages']['co_member_credit']);
                         }
                     }
@@ -1103,51 +1048,51 @@ function addCosigner(value)
                         if(step == 17)
                         {
                             //alert('you are in 17');
-                            $('#err1').html(obj['error_messages']['bankruptcy_adjustmnt']);
+                            $('#err1').html(obj['error_messages']['i_represnt_accurate']);
                         }
-                        if(step == 38)
+                        if(step == 30)
                         {
                             //alert('you are in 17');
                             $('#err1').html(obj['error_messages']['co_bankruptcy_adjustmnt']);
                         }
                         
                     }
-                    if(step == 18 || step == 39)
+                    if(step == 18 || step == 31)
                     {
                         if(step == 18)
                         {
                             //alert('you are in 18');
-                            $('#err1').html(obj['error_messages']['force_closure']);
+                            $('#err1').html(obj['error_messages']['on_die_cancel_loan']);
                         }
-                        if(step == 39)
+                        if(step == 31)
                         {
                             //alert('you are in 18');
                             $('#err1').html(obj['error_messages']['co_force_closure']);
                         }
                         
                     }
-                    if(step == 19 || step == 40)
+                    if(step == 19 || step == 32)
                     {
                         if(step == 19)
                         {
                             //alert('you are in 19');
                             $('#err1').html(obj['error_messages']['any_law_suit']);
                         }
-                        if(step == 40)
+                        if(step == 32)
                         {
                             //alert('you are in 19');
                             $('#err1').html(obj['error_messages']['co_any_law_suit']);
                         }
                         
                     }
-                    if(step == 20 || step == 41)
+                    if(step == 16 || step == 33)
                     {
-                        if(step == 20)
+                        if(step == 16)
                         {
                             //alert('you are in 20');
                             $('#err1').html(obj['error_messages']['other_than_us_citizen']);
                         }
-                        if(step == 41)
+                        if(step == 33)
                         {
                             //alert('you are in 41');
                             $('#err1').html(obj['error_messages']['co_other_than_us_citizen']);
@@ -1167,18 +1112,13 @@ function addCosigner(value)
                             $('#err1').html(obj['error_messages']['co_income_get_reduce_nxt_2y']);
                         }
                     }
-                    if(step == 22 || step == 43)
+                    if(step == 34)
                     {
-                        if(step == 22)
-                        {
-                            //alert('you are in 22');
-                            $('#err1').html(obj['error_messages']['i_represnt_accurate']);
-                        }
-                        if(step == 43)
+                        if(step == 34)
                         {
                             //alert('you are in 43');
                             $('#loader_page_final').hide();
-                            $("#final_step43").show();
+                            $("#final_step34").show();
                             $('#err1').html(obj['error_messages']['co_i_represnt_accurate']);
                         }
                         
@@ -1188,12 +1128,12 @@ function addCosigner(value)
                         //alert('you are in 22.1');
                         $('#err1').html(obj['error_messages']['on_die_cancel_loan']);
                     }
-                    if(step == 23)
+                    if(step == 19)
                     {
                         //alert('you are in 23');
                         $('#err1').html(obj['error_messages']['add_cosigner']);
                     }
-                    if(step == 24)
+                    if(step == 20)
                     {
                         //alert('you are in 24');
                         $('#err1').html(obj['error_messages']['cosigner_firstname']);
@@ -1201,7 +1141,7 @@ function addCosigner(value)
                         $('#err3').html(obj['error_messages']['cosigner_phone']);
                         $('#err4').html(obj['error_messages']['cosigner_email']);
                     }
-                    if(step == 27)
+                    if(step == 22)
                     {
                         //alert('you are in 26');
                         $('#err1').html(obj['error_messages']['cosigner_home_address']);
@@ -1223,7 +1163,7 @@ function addCosigner(value)
                         $('#err2').html(obj['error_messages']['cosigners_personal_refrence_phone']);
                         $('#err3').html(obj['error_messages']['cosigners_personal_refrence_address']);
                     }
-                    if(step == 30)
+                    if(step == 24)
                     {
                         //alert('you are in 30');
                         $('#err1').html(obj['error_messages']['cosigners_employer_name']);
@@ -1232,23 +1172,11 @@ function addCosigner(value)
                         $('#err4').html(obj['error_messages']['cosigners_working_years']);
                         $('#err5').html(obj['error_messages']['cosigners_business_address']);
                     }
-                    if(step == 31)
+                    if(step == 25)
                     {
                         //alert('you are in 10');
                         $('#err1').html(obj['error_messages']['cosigner_monthly_income_pre_tax']);
                         $('#err2').html(obj['error_messages']['cosigner_upload_user_doc']);
-                    }
-                    if(step == 44.1)
-                    {
-                        //alert('you are in 10');
-                        $('#err1').html(obj['error_messages']['year']);
-                        $('#err2').html(obj['error_messages']['make']);
-                        $('#err3').html(obj['error_messages']['model']);
-                    }
-                    if(step == 44)
-                    {
-                        //alert('you are in 10');
-                        $('#err1').html(obj['error_messages']['do_know_the_vehicle']);
                     }
                     
               }   
@@ -1279,34 +1207,6 @@ function recreational_step2()
         }
     });
 }
-//
-function recreational_step44()
-{   
-    $('#step_count').val(44);
-    $.ajax({
-        type: "GET",
-        url:  base_url + "recreationalLoan/step44",
-        success: function (data)
-        {    
-            window.history.pushState({id:44}, "Title", base_url + "recreationalLoan?step=44");
-            $('#container').html(data);                
-        }
-    });
-}
-function recreational_step44_1()
-{   
-    $('#step_count').val(44.1);
-    $.ajax({
-        type: "GET",
-        url:  base_url + "recreationalLoan/step44_1",
-        success: function (data)
-        {    
-            window.history.pushState({id:44.1}, "Title", base_url + "recreationalLoan?step=44.1");
-            $('#container').html(data);                
-        }
-    });
-}
-//
 function recreational_step3()
 {   
     $('#step_count').val(3);
@@ -1409,6 +1309,19 @@ function recreational_step10()
         success: function (data)
         {      
             window.history.pushState({id:10}, "Title", base_url + "recreationalLoan?step=10");
+            $('#container').html(data);                
+        }
+    });
+}
+function recreational_step9_1()
+{  
+    $('#step_count').val(9.1);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "recreationalLoan/step9_1",
+        success: function (data)
+        {      
+            window.history.pushState({id:9.1}, "Title", base_url + "recreationalLoan?step=9.1");
             $('#container').html(data);                
         }
     });
@@ -1656,6 +1569,20 @@ function recreational_step26()
         success: function (data)
         {      
             window.history.pushState({id:26}, "Title", base_url + "recreationalLoan?step=26");
+            $('#container').html(data);                
+        }
+    });
+}
+
+function recreational_step27_1()
+{  
+    $('#step_count').val(27.1);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "recreationalLoan/step27_1",
+        success: function (data)
+        {      
+            window.history.pushState({id:27.1}, "Title", base_url + "recreationalLoan?step=27.1");
             $('#container').html(data);                
         }
     });

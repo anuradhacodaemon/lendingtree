@@ -17,15 +17,7 @@
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
+                          echo 'Refinance For Vehicle';
                         }
                       }
                       else{
@@ -35,24 +27,35 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN?</label>
+                    <label class="control-label">Joint Owner/Co-Signer Personal Details</label>
                     <div class="row">
-                    <form id="other_than_us_citizen" method="POST">
-                            <input type="hidden" name="auto_step" value="20" id="auto_step" >
-                            <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['a_u_s_citizen_permanant_alien'])) { if($this->session->userdata['a_u_s_citizen_permanant_alien']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
-                                    <div class="label-text">Yes</div>
-                                    <span class="continueIcon sprites"></span>
-                                <input type="radio" value="yes" name="other_than_us_citizen"  onclick="CitizenOtherThanUS(20, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                        <form id="co_p_details" method="post" onsubmit="return getFormId(this)">
+                        <input type="hidden" name="auto_step" value="20" id="auto_step" >
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="cosigner_firstname" placeholder="Cosigner First name" value="<?php if (isset($this->session->userdata['cosigner_first_name'])) echo $this->session->userdata['cosigner_first_name'] ?>" class="form-control width_100" id="cosigner_firstname" >
+                                <span id="err1" style="color: red"></span>
                             </div>
-                            <div class="col-xs-12 col-sm-12 radio">
-                                <label <?php if(isset($this->session->userdata['a_u_s_citizen_permanant_alien'])) { if($this->session->userdata['a_u_s_citizen_permanant_alien']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
-                                    <div class="label-text">No</div>
-                                    <span class="continueIcon sprites"></span>
-                                <input type="radio" value="no" name="other_than_us_citizen" onclick="CitizenOtherThanUS(20, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="cosigner_lastname" placeholder="Cosigner Last name" value="<?php if (isset($this->session->userdata['cosigner_last_name'])) echo $this->session->userdata['cosigner_last_name'] ?>" class="form-control width_100" id="cosigner_lastname" >
+                                <span id="err2" style="color: red"></span>
                             </div>
-                            <span id="err1" style="color: red"></span>
-                        </form> 
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="cosigner_phone" placeholder="Cosigner phone" value="<?php if (isset($this->session->userdata['cosigner_phone'])) echo $this->session->userdata['cosigner_phone'] ?>" class="form-control width_100" id="cosigner_phone" maxlength="10">
+                                <span id="err3" style="color: red"></span>
+                            </div>  
+                            <!--<div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="cosigner_email" placeholder="Cosigner Email" value="<?php if (isset($this->session->userdata['cosigner_email'])) echo $this->session->userdata['cosigner_email'] ?>" class="form-control width_100" id="cosigner_email">
+                                <span id="err4" style="color: red"></span>
+                            </div>  -->
+                            <div class="clearfix"></div>                         
+                            
+                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                                <input type="submit" value="Continue" class="button" >
+                                            
+                            </div> 
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

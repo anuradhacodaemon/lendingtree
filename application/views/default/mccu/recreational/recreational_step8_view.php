@@ -35,52 +35,45 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Personal Reference Details</label>
+                    <label class="control-label">Current Employment</label>
                     <div class="row">
-                        <form id="personal_ref" method="POST" onsubmit="return getFormId(this)"> 
+                        <form id="work_details" method="POST" onsubmit="return getFormId(this)">
+                        <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                         <input type="hidden" name="auto_step" value="8" id="auto_step" >
-                            <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
-                                <div class="col-xs-12 col-sm-6 margbot_10">
-                                    <input type="text" name="personal_refrence" placeholder="Personal Reference" value="<?php if (isset($this->session->userdata['personal_refrence'])) echo $this->session->userdata['personal_refrence'] ?>" class="form-control width_100" id="personal_refrence" >
-                                    <span id="err1" style="color: red"></span>
-                                </div>                           
-                                <div class="col-xs-12 col-sm-6 margbot_10">
-                                    <input type="text" name="personal_refrence_phone" minlength="10" maxlength="10" placeholder="Reference Phone" value="<?php if (isset($this->session->userdata['personal_refrence_phone'])) echo $this->session->userdata['personal_refrence_phone'] ?>" class="form-control width_100" id="personal_refrence_phone" >
-                                    <span id="err2" style="color: red"></span>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <input type="text" name="personal_refrence_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['p_personal_refrence_address'])) echo $this->session->userdata['p_personal_refrence_address'] ?>" class="form-control width_100" id="personal_refrence_address" >
-                                    <span id="err3" style="color: red"></span>
-                                    <div class="p_r_resource-container"></div>
-                                </div>
-
-                                <div class="clearfix"></div>
-                                <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <!--<label>Street</label>-->
-                                    <input type="hidden" name="p_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['p_r_street_line'])) echo $this->session->userdata['p_r_street_line'] ?>" class="form-control width_100" id="p_r_street_line" >
-                                </div>
-                                <div class="col-xs-12 col-sm-6 margbot_10">
-                                    <!--<label>Country</label>-->
-                                    <input type="hidden" name="p_r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['p_r_country'])) echo $this->session->userdata['p_r_country'] ?>" class="form-control width_100" id="p_r_country" >
-                                </div>
-                                <div class="col-xs-12 col-sm-6 margbot_10">
-                                    <!--<label>State</label>-->
-                                    <input type="hidden" name="p_r_state" placeholder="State" value="<?php if (isset($this->session->userdata['p_r_state'])) echo $this->session->userdata['p_r_state'] ?>" class="form-control width_100" id="p_r_state" >
-                                </div>
-                                <div class="col-xs-12 col-sm-6 margbot_10">
-                                    <!--<label>City</label>-->
-                                    <input type="hidden" name="p_r_city" placeholder="City" value="<?php if (isset($this->session->userdata['p_r_city'])) echo $this->session->userdata['p_r_city'] ?>" class="form-control width_100" id="p_r_city" >
-                                </div>
-                                <div class="col-xs-12 col-sm-6 margbot_10">
-                                    <!--<label>Zipcode</label>-->
-                                    <input type="hidden" name="p_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['p_r_zip_code'])) echo $this->session->userdata['p_r_zip_code'] ?>" class="form-control width_100" id="p_r_zip_code" >
-                                </div>
-
-                                <div class="col-xs-12 col-sm-12 radio margtop_20">
-                                    <input type="submit" value="Continue" class="button" >            
-                                </div>   
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="employer_name" placeholder="Employer Name" value="<?php if (isset($this->session->userdata['current_employer'])) echo $this->session->userdata['current_employer'] ?>" class="form-control width_100" id="employer_name" >
+                                <span id="err1" style="color: red"></span>
                             </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
+                                <span id="err4" style="color: red"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <!--<label>Street</label>-->
+                                <input type="hidden" name="b_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['b_r_street_line'])) echo $this->session->userdata['b_r_street_line'] ?>" class="form-control width_100" id="b_r_street_line" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <!--<label>Country</label>-->
+                                <input type="hidden" name="b_r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['b_r_country'])) echo $this->session->userdata['b_r_country'] ?>" class="form-control width_100" id="b_r_country" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <!--<label>State</label>-->
+                                <input type="hidden" name="b_r_state" placeholder="State" value="<?php if (isset($this->session->userdata['b_r_state'])) echo $this->session->userdata['b_r_state'] ?>" class="form-control width_100" id="b_r_state" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <!--<label>City</label>-->
+                                <input type="hidden" name="b_r_city" placeholder="City" value="<?php if (isset($this->session->userdata['b_r_city'])) echo $this->session->userdata['b_r_city'] ?>" class="form-control width_100" id="b_r_city" >
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <!--<label>Zipcode</label>-->
+                                <input type="hidden" name="b_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['b_r_zip_code'])) echo $this->session->userdata['b_r_zip_code'] ?>" class="form-control width_100" id="b_r_zip_code" >
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 radio margtop_20">
+                                <input type="submit" value="Continue" class="button" >     
+                            </div>   
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -91,9 +84,9 @@
 <!-- Banner ends here -->
 <script> //$('input[name=amount]').val()
     $(document).ready(function () {
-        $('#personal_refrence_address').autocomplete({
+        $('#business_address').autocomplete({
             source: function (request, response) {
-                $("#err3").html("");
+                $("#err5").html("");
                 if (request.term !== '') {
 
                     $.ajax({
@@ -105,40 +98,44 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
-                                $("#err3").html("No Address Found");
+                                $("#err5").html("No Address Found");
                             }
                         }
                     });
                 }
                 if (request.term == '') {
-                    $("#err3").html("Please Enter address");
+                    $("#err5").html("Please Enter address");
                     return false;
                 }
             },
             minLength: 1,
             select: function (event, ui) {
-                $('.p_r_resource-container').empty();
+                $('.b_r_resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
-                $('#p_r_country').val('United States');
-                $('#p_r_street_line').val(ui.item.street_line);
-                $('#p_r_city').val(ui.item.city);
-                $('#p_r_state').val(ui.item.state);
-                $('#p_r_zip_code').val(ui.item.zipcode);
-                $('#personal_refrence_address').val(addr);
+                $('#b_r_country').val('United States');
+                $('#b_r_street_line').val(ui.item.street_line);
+                $('#b_r_city').val(ui.item.city);
+                $('#b_r_state').val(ui.item.state);
+                $('#b_r_zip_code').val(ui.item.zipcode);
+                $('#business_address').val(addr);
                 event.preventDefault();
             },
             focus: function (event, ui) {
-                $('.p_r_resource-container').empty();
+                //this.value = ui.item.label;
+                // or $('#autocomplete-input').val(ui.item.label);
+                $('.b_r_resource-container').empty();
                 /*TODO future need to remove inline styles*/
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
-                $('#p_r_country').val('United States');
-                $('#p_r_street_line').val(ui.item.street_line);
-                $('#p_r_city').val(ui.item.city);
-                $('#p_r_state').val(ui.item.state);
-                $('#p_r_zip_code').val(ui.item.zipcode);
-                $('#personal_refrence_address').val(addr);
+                $('#b_r_country').val('United States');
+                $('#b_r_street_line').val(ui.item.street_line);
+                $('#b_r_city').val(ui.item.city);
+                $('#b_r_state').val(ui.item.state);
+                $('#b_r_zip_code').val(ui.item.zipcode);
+                $('#business_address').val(addr);
+                // Prevent the default focus behavior.
                 event.preventDefault();
+                // or return false;
             }
         }).data("ui-autocomplete")._renderItem = function (ul, item) {
             console.log("The values are>> " +item.city);
@@ -160,6 +157,7 @@
     });
 
 </script>
+
 
 
 

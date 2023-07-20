@@ -909,7 +909,7 @@ function addCosigner(value)
                     $('#err6').html(obj['error_messages']['soc_sec']);
                     $('#err7').html(obj['error_messages']['my_dob']);
                 }
-                if(step == 4 || step == 25)
+                if(step == 4 || step == 21)
                 {
                     //alert('you are in 4');
                     if(step == 4)

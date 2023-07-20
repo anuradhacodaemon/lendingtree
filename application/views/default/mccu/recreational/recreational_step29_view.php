@@ -1,168 +1,44 @@
-<div class="clearfix">
-    <div class="container" id="container">
+
+<?php 
+
+//echo '<pre>';
+//print_r($this->session->userdata());
+
+?>
+    <div class="clearfix">
+      <div class="container" id="container">
         <div class="row">
-            
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="form-main clearfix">
-                <h1>
-              <?php   if(isset($this->session->userdata['type']))
-                      { 
-                        if($this->session->userdata['type']== 1)
-                        {
-                          echo 'Buying New Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 2)
-                        {
-                          echo 'Buying Used Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 3)
-                        {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
-                        }
-                      }
-                      else{
-                          echo 'Buying New Vehicle';
-                          }
-              ?>
-              </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
-                    <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer's Personal Reference Details</label>
-                    <div class="row">
-                    <form id="co_personal_ref" method="POST" onsubmit="return getFormId(this)">
-                        <input type="hidden" name="auto_step" value="29" id="auto_step" >
-                        <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigners_personal_refrence" placeholder="Personal Reference" value="<?php if (isset($this->session->userdata['cosigner_personal_refrence'])) echo $this->session->userdata['cosigner_personal_refrence'] ?>" class="form-control width_100" id="cosigners_personal_refrence" >
-                                <span id="err1" style="color: red"></span>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigners_personal_refrence_phone" placeholder="Reference Phone" minlength="10" maxlength="10" value="<?php if (isset($this->session->userdata['cosigner_personal_refrence_phone'])) echo $this->session->userdata['cosigner_personal_refrence_phone'] ?>" class="form-control width_100" id="cosigners_personal_refrence_phone" >
-                                <span id="err2" style="color: red"></span>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="cosigners_personal_refrence_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['p_cosigner_personal_refrence_address'])) echo $this->session->userdata['p_cosigner_personal_refrence_address'] ?>" class="form-control width_100" id="cosigners_personal_refrence_address" >
-                                <span id="err3" style="color: red"></span>
-                                <div class="co_p_r_resource-container"></div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
-                                <!--<label>Street</label>-->
-                                <input type="hidden" name="co_p_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['co_p_r_street_line'])) echo $this->session->userdata['co_p_r_street_line'] ?>" class="form-control width_100" id="co_p_r_street_line" >
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>Country</label>-->
-                                <input type="hidden" name="co_p_r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['co_p_r_country'])) echo $this->session->userdata['co_p_r_country'] ?>" class="form-control width_100" id="co_p_r_country" >
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>State</label>-->
-                                <input type="hidden" name="co_p_r_state" placeholder="State" value="<?php if (isset($this->session->userdata['co_p_r_state'])) echo $this->session->userdata['co_p_r_state'] ?>" class="form-control width_100" id="co_p_r_state" >
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>City</label>-->
-                                <input type="hidden" name="co_p_r_city" placeholder="City" value="<?php if (isset($this->session->userdata['co_p_r_city'])) echo $this->session->userdata['co_p_r_city'] ?>" class="form-control width_100" id="co_p_r_city" >
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>Zipcode</label>-->
-                                <input type="hidden" name="co_p_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['co_p_r_zip_code'])) echo $this->session->userdata['co_p_r_zip_code'] ?>" class="form-control width_100" id="co_p_r_zip_code" >
-                            </div>
-
-                            <div class="col-xs-12 col-sm-12 radio margtop_20">
-                                <input type="submit" value="Continue" class="button" >
-                            </div>   
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+          
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-main clearfix">
+              <div class="clearfix"></div>
+              <label class="control-label">Do you have any outstanding judgments against you?</label>
+              <form id="outstanding_judgment_form" method="POST">
+              <input type="hidden" name="auto_step" value="29" id="auto_step" >
+              <div class="col-xs-12 col-sm-12 radio">
+                  <label <?php if(isset($this->session->userdata['outstanding_judgment'])) { if($this->session->userdata['outstanding_judgment']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                    <div class="label-text">YES</div>
+                    <span class="continueIcon sprites"></span>
+                  <input type="radio" value="yes" name="outstanding_judgment_value"  onclick="getoutstanding_judgmentRadioBtn('yes')" class="ng-pristine ng-invalid ng-invalid-required" id ="button-selected"></label>
+              </div>
+              <div class="col-xs-12 col-sm-12 radio">
+                  <label <?php if(isset($this->session->userdata['outstanding_judgment'])) { if($this->session->userdata['outstanding_judgment']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                    <div class="label-text">NO</div>
+                    <span class="continueIcon sprites"></span>
+                  <input type="radio" value="no" name="outstanding_judgment_value" onclick="getoutstanding_judgmentRadioBtn('no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+              </div>
+              <span id="err1" style="color: red"></span>
+              </form>
+              
+              
+          <!--    
+<div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
+           
+          -->
+          </div>
+          </div>
         </div>
+      </div>
+        
     </div>
-</div>
-<!-- Banner ends here -->
-<script> //$('input[name=amount]').val()
-    $(document).ready(function () {
-        $('#cosigners_personal_refrence_address').autocomplete({
-            source: function (request, response) {
-                $("#err3").html("");
-                if (request.term !== '') {
-
-                    $.ajax({
-                        type: "POST",
-                        url: base_url + "SmartyApi/getUsAddresses/",
-                        dataType: "json",
-                        data: { search: request.term },
-                        success: function (data) {
-                            //console.log(data);
-                            response(data);
-                            if (data.length === 0) {
-                                $("#err3").html("No Address Found");
-                            }
-                        }
-                    });
-                }
-                if (request.term == '') {
-                    $("#err3").html("Please Enter address");
-                    return false;
-                }
-            },
-            minLength: 1,
-            select: function (event, ui) {
-                $('.co_p_r_resource-container').empty();
-                /*TODO future need to remove inline styles*/
-                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
-                $('#co_p_r_country').val('United States');
-                $('#co_p_r_street_line').val(ui.item.street_line);
-                $('#co_p_r_city').val(ui.item.city);
-                $('#co_p_r_state').val(ui.item.state);
-                $('#co_p_r_zip_code').val(ui.item.zipcode);
-                $('#cosigners_personal_refrence_address').val(addr);
-                event.preventDefault();
-            },
-            focus: function (event, ui) {
-                $('.co_p_r_resource-container').empty();
-                /*TODO future need to remove inline styles*/
-                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
-                $('#co_p_r_country').val('United States');
-                $('#co_p_r_street_line').val(ui.item.street_line);
-                $('#co_p_r_city').val(ui.item.city);
-                $('#co_p_r_state').val(ui.item.state);
-                $('#co_p_r_zip_code').val(ui.item.zipcode);
-                $('#cosigners_personal_refrence_address').val(addr);
-                event.preventDefault();
-            }
-        }).data("ui-autocomplete")._renderItem = function (ul, item) {
-            console.log("The values are>> " +item.city);
-            let l = item.street_line + ' ' + item.city + ' ' +item.state + ' ' + item.zipcode;
-            return $("<li></li>")
-                .addClass('autocomplete-suggestion')
-                .addClass('highlight')//item based custom class to li here
-                .attr('style', item.entries)
-                .append(l)
-                .data("ui-autocomplete-item", item)
-                .attr('data-street-line', item.street_line)
-                .attr('data-city', item.city)
-                .attr('data-state', item.state)
-                .attr('data-zipcode', item.zipcode)
-                .appendTo(ul);
-        };
-
-        //
-    });
-
-</script>
-
-
-
-
-
-
+    <!-- Banner ends here -->

@@ -42,14 +42,17 @@
               </h1>
               <a href="" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Requested Amount</label>
+              <label class="control-label">Requested Amount/Purpose Of Loan</label>
               <div class="row">
-                <form id="r_req_amount" method="POST" onsubmit="return getFormId(this)">
+                <form id="p_req_amount" method="POST" onsubmit="return getFormId(this)">
                 <input type="hidden" name="auto_step" value="2" id="auto_step">
-              
-                <div class="col-xs-12 col-sm-12 margbot_10">
-                    <input type="text" name="r_req_amt" placeholder="Enter Requested Amount" value="<?php if (isset($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>" class="form-control" id="r_req_amt">
+                <div class="col-xs-12 col-sm-6 margbot_10">
+                <input type="text" name="p_req_amt" placeholder="Enter Requested Amount" value="<?php if (isset($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>" class="form-control width_100" id="p_req_amt">
                     <span id="err1" style="color: red"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 margbot_10">
+                    <input type="text" name="purpose_of_loan" placeholder="Purpose Of Loan" value="<?php if (isset($this->session->userdata['purpose_of_loan'])) echo $this->session->userdata['purpose_of_loan'] ?>" class="form-control width_100" id="purpose_of_loan" >
+                    <span id="err2" style="color: red"></span>
                 </div>
                     
                 <div class="col-xs-12 col-sm-12 radio margtop_30">
@@ -58,7 +61,7 @@
                 </div>
                 </form>
               </div>
-              </div>
+          </div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ function getMaritalRadioBtn(step, value)
         formData.append('marital_status', value);
         getFormId(form);
     }
-    if(step == 25)
+    if(step == 21)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('co_p_details1q');
@@ -115,7 +115,7 @@ function reqAmountLoan(value)
 //step 11 or 32
 function anotherSourceIncome(step, value)
 {
-    if(step == 11)
+    if(step == 10)
     {
         console.log('this is value>>' + value);
         var form = document.getElementById('p_another_source_income');
@@ -887,7 +887,7 @@ function addCosigner(value)
                         $('#err6').html(obj['error_messages']['soc_sec']);
                         $('#err7').html(obj['error_messages']['my_dob']);
                     }
-                    if(step == 4 || step == 25)
+                    if(step == 4 || step == 21)
                     {
                         //alert('you are in 4');
                         if(step == 4)

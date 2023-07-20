@@ -57,8 +57,7 @@
                                 <input type="text" name="p_email" placeholder="email@example.com" value="<?php if (isset($this->session->userdata['p_email'])) echo $this->session->userdata['p_email'] ?>" class="form-control width_100" id="p_email">
                                 <span id="err4" style="color: red"></span>
                             </div>
-
-                            <div class="col-xs-12 col-sm-6 margbot_10">
+                           <!-- <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" name="tex_driv_lic" placeholder="TDL" value="<?php if (isset($this->session->userdata['tex_driv_lic'])) echo $this->session->userdata['tex_driv_lic'] ?>" class="form-control width_100" id="tex_driv_lic" minlength="8" maxlength="8">
                                 <span id="err5" style="color: red"></span>
                             </div>
@@ -68,14 +67,16 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <label class="dob_class">Enter Date Of Birth </label>
+                              <label class="dob_class">Enter Date Of Birth </label>
                                 <input type="date" name="my_dob" placeholder="DOB" value="<?php if (isset($this->session->userdata['p_dob'])) echo $this->session->userdata['p_dob'] ?>" class="form-control" id="my_dob">
                                 <span id="err7" style="color: red"></span>
+                            </div>-->
+                           
+                    
+                            <div class="col-xs-12 col-sm-12 radio margtop_20">
+                                <input type="submit" value="Continue" class="button" >
+                                            
                             </div>
-
-                            <div class="col-xs-12 col-sm-12 radio margtop_30">
-                                <input type="submit" value="Continue" class="button" >          
-                            </div> 
                             </form> 
                         </div>
                     </div>
@@ -131,3 +132,5 @@ $(document).ready(function() {
 
 
 </script>
+
+

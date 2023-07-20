@@ -46,25 +46,25 @@
               <form id="p_details1q" method="post">
               <input type="hidden" name="auto_step" value="4" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status']== 'Single') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status'] == 'Single') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                     <div class="label-text">Single</div>  
                     <span class="continueIcon sprites"></span>
                   <input type="radio" value="single" name="marital_status" onclick="getMaritalRadioBtn(4, 'single')" class="ng-pristine ng-invalid ng-invalid-required" id="marital_status"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status']== 'Married') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status'] == 'Married') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                     <div class="label-text">Married</div>
                     <span class="continueIcon sprites"></span>
                   <input type="radio" value="married" name="marital_status" onclick="getMaritalRadioBtn(4, 'married')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status']== 'Divorced') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button'; ?>>
+                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status'] == 'Divorced') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button'; ?>>
                     <div class="label-text">Divorced</div>
                     <span class="continueIcon sprites"></span>
                   <input type="radio" value="divorced" name="marital_status" onclick="getMaritalRadioBtn(4, 'divorced')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status']== 'Widowed') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button'; ?>>
+                  <label <?php if(isset($this->session->userdata['marital_status'])) { if($this->session->userdata['marital_status'] == 'Widowed') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button'; ?>>
                     <div class="label-text">Widowed</div>
                     <span class="continueIcon sprites"></span>
                   <input type="radio" value="widowed" name="marital_status" onclick="getMaritalRadioBtn(4, 'widowed')" class="ng-pristine ng-invalid ng-invalid-required"></label>

@@ -66,6 +66,14 @@ button, input:focus {outline: none;}
 .banner-inner{
   color:white;
 }
+
+.offer-recreational {
+  background-image: url(../img/auto-ref.svg);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .banner-main {
   background: #fff url(../img/USFlag.jpg) no-repeat center;
   width: 100%;
@@ -424,6 +432,8 @@ button, input:focus {outline: none;}
   width: 100%;
   overflow: hidden;
   padding: 20px 0;
+  left: 0;
+  bottom: 0;
  
 }
 .footer-main .sub-nav {
