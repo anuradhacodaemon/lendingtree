@@ -1260,7 +1260,7 @@ function isJson($string) {
 
         <!--my code end here-->    
         <!--my code Add Cosigner Nearest Relative Details-->
-        <tr>
+        <!--<tr>
             <td>
                 <table>
                     <tr>
@@ -1280,7 +1280,7 @@ function isJson($string) {
                         Nearest Relative Name :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['cosigner_nearest_relative'];  ?>
+                        <?php //echo $userDetails['cosigner_nearest_relative'];  ?>
                         </td>
                     </tr>
                     <tr>
@@ -1288,7 +1288,7 @@ function isJson($string) {
                          Relative Relationship :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['cosigner_relationship'];  ?>
+                        <?php //echo $userDetails['cosigner_relationship'];  ?>
                         </td>
                     </tr>
                     <tr>
@@ -1296,7 +1296,7 @@ function isJson($string) {
                          Relative Phone :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['cosigner_relatives_phone'];  ?>
+                        <?php //echo $userDetails['cosigner_relatives_phone'];  ?>
                         </td>
                     </tr>
                     <tr>
@@ -1328,7 +1328,7 @@ function isJson($string) {
                             Country :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_r_country; ?>
+                            <?php //echo $co_r_country; ?>
                             
                         </td>
                     </tr>
@@ -1337,7 +1337,7 @@ function isJson($string) {
                             City :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_r_city; ?>
+                            <?php //echo $co_r_city; ?>
                             
                         </td>
                     </tr>
@@ -1346,7 +1346,7 @@ function isJson($string) {
                             State :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_r_state; ?>
+                            <?php //echo $co_r_state; ?>
                         </td>
                     </tr>
                     <tr>
@@ -1354,13 +1354,13 @@ function isJson($string) {
                             Zip Code :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_r_zipcode; ?>
+                            <?php //echo $co_r_zipcode; ?>
                         </td>
                     </tr>
                    
                 </table>
             </td>
-        </tr>
+        </tr>-->
         <tr>
             <td>&nbsp;</td>
         </tr>
