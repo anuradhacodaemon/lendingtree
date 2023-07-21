@@ -281,7 +281,7 @@ function isJson($string) {
                         <?php echo date('m-d-Y',strtotime($userDetails['p_dob'])) ?>
                     </td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Texas Driving License :
                     </td>
@@ -296,7 +296,7 @@ function isJson($string) {
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo $userDetails['soc_sec']; ?>
                     </td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Current Street Address :
@@ -597,12 +597,12 @@ function isJson($string) {
                         <?php echo $userDetails['current_employer'] ?>
                     </td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Job Title :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['job_title'] ?>
+                        <?php //echo $userDetails['job_title'] ?>
                     </td>
                 </tr>
                 <tr>
@@ -610,9 +610,9 @@ function isJson($string) {
                         Supervisor Name :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['supervisor_name'] ?>
+                        <?php //echo $userDetails['supervisor_name'] ?>
                     </td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Working Years :
@@ -637,7 +637,7 @@ function isJson($string) {
                         <?php echo $userDetails['employment_monthly_income'] ?>
                     </td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Business Address :
                     </td>
@@ -666,7 +666,7 @@ function isJson($string) {
                         Country :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $b_country; ?>
+                        <?php //echo $b_country; ?>
                           
                     </td>
                 </tr>
@@ -675,7 +675,7 @@ function isJson($string) {
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $b_city; ?>
+                        <?php //echo $b_city; ?>
                           
                     </td>
                 </tr>
@@ -684,7 +684,7 @@ function isJson($string) {
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $b_state; ?>
+                        <?php //echo $b_state; ?>
                     </td>
                 </tr>
                 <tr>
@@ -692,9 +692,9 @@ function isJson($string) {
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $b_zipcode; ?>
+                        <?php //echo $b_zipcode; ?>
                     </td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Attached Document :
@@ -792,7 +792,7 @@ function isJson($string) {
     </tr>
     <!--my code end here-->
     <!--my code Applicant Previous Employment-->
-    <tr>
+    <!--<tr>
         <td>
             <table>
                 <tr>
@@ -812,7 +812,7 @@ function isJson($string) {
                         Previous Employer :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['previous_employer'];  ?>
+                        <?php //echo $userDetails['previous_employer'];  ?>
                     </td>
                 </tr>
                  <tr>
@@ -820,12 +820,12 @@ function isJson($string) {
                         Working Years :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['previous_working_years']; ?>
+                        <?php //echo $userDetails['previous_working_years']; ?>
                     </td>
                 </tr>
             </table>
         </td>
-    </tr>
+    </tr>-->
     <tr>
         <td>&nbsp;</td>
     </tr>
@@ -1013,14 +1013,14 @@ function isJson($string) {
                             <?php echo $userDetails['cosigner_phone'];  ?>
                         </td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Email :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $userDetails['cosigner_email'];  ?>
+                            <?php //echo $userDetails['cosigner_email'];  ?>
                         </td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Marital Status :
@@ -1118,6 +1118,146 @@ function isJson($string) {
         <tr>
             <td>&nbsp;</td>
         </tr>
+
+        <!--my code end here-->
+    <!--my code Add Cosigner Employment details-->
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Employment Details</td>
+                </tr> 
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Employer Name :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo $userDetails['cosigner_employer'];  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Job Title :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo $userDetails['cosigner_job_title'];  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Supervisor Name :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo $userDetails['cosigner_supervisor_name'];  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Living On addrees since Years :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo $userDetails['cosigner_how_long_working_years'];  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Military Involvement :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo $userDetails['cosigner_military_involvement'];  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Current Monthly Income ($) :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo $userDetails['cosigner_monthly_income_pre_tax'];  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Business Address :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                        <?php 
+                                $co_b_country = $co_b_street = $co_b_city = $co_b_state = $co_b_zipcode = "--";
+                                $resp = isJson($userDetails['cosigner_business_address']);
+                                if($resp)
+                                {                                    
+                                    $full_address = json_decode($userDetails['cosigner_business_address']);
+                                    echo $co_b_street = $full_address->street_line;
+                                    $co_b_country = (!empty($full_address->country)) ? $full_address->country : '--';
+                                    $co_b_city = $full_address->city;
+                                    $co_b_state = $full_address->state;
+                                    $co_b_zipcode = $full_address->zip_code;
+                                }
+                                else{
+                                      echo str_replace("%20"," ",$userDetails['cosigner_business_address']);
+                                    }
+                       
+                       ?>
+                    </td>
+                </tr>
+                <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                            Country :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $co_b_country; ?>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                            City :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $co_b_city; ?>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                            State :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $co_b_state; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                            Zip Code :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $co_b_zipcode; ?>
+                        </td>
+                    </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Cosigner Document :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo (!empty($userDetails['cosigner_documant'])) ? "Yes" : "No";  ?>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>                            
+
         <!--my code end here-->    
         <!--my code Add Cosigner Nearest Relative Details-->
         <tr>
@@ -1322,143 +1462,6 @@ function isJson($string) {
         <td>&nbsp;</td>
     </tr>
     <!--my code end here-->
-    <!--my code Add Cosigner Employment details-->
-    <tr>
-        <td>
-            <table>
-                <tr>
-                    <td style="padding:0 0 5px; font-weight:bold; font-size:12px; color:#000; text-align:center; font-family:Arial; line-height:20px; letter-spacing:0.3px; border-bottom:1px dashed #ddd;">Joint Owner/Co-Signer Employment Details</td>
-                </tr> 
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>
-            <table>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Employer Name :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_employer'];  ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Job Title :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_job_title'];  ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Supervisor Name :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_supervisor_name'];  ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Living On addrees since Years :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_how_long_working_years'];  ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Military Involvement :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_military_involvement'];  ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Current Monthly Income ($) :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_monthly_income_pre_tax'];  ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Business Address :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php 
-                                $co_b_country = $co_b_street = $co_b_city = $co_b_state = $co_b_zipcode = "--";
-                                $resp = isJson($userDetails['cosigner_business_address']);
-                                if($resp)
-                                {                                    
-                                    $full_address = json_decode($userDetails['cosigner_business_address']);
-                                    echo $co_b_street = $full_address->street_line;
-                                    $co_b_country = (!empty($full_address->country)) ? $full_address->country : '--';
-                                    $co_b_city = $full_address->city;
-                                    $co_b_state = $full_address->state;
-                                    $co_b_zipcode = $full_address->zip_code;
-                                }
-                                else{
-                                      echo str_replace("%20"," ",$userDetails['cosigner_business_address']);
-                                    }
-                       
-                       ?>
-                    </td>
-                </tr>
-                <tr>
-                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                            Country :
-                        </td>
-                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_country; ?>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                            City :
-                        </td>
-                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_city; ?>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                            State :
-                        </td>
-                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_state; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                            Zip Code :
-                        </td>
-                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_zipcode; ?>
-                        </td>
-                    </tr>
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Cosigner Document :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo (!empty($userDetails['cosigner_documant'])) ? "Yes" : "No";  ?>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-    </tr>
-    <!--my code end here-->
     <!--my code Add Cosigner Second Source of income-->
     <tr>
         <td>
@@ -1509,7 +1512,7 @@ function isJson($string) {
     </tr>
     <!--my code end here-->
     <!--my code Add Cosigner Previous Employment Details-->
-    <tr>
+   <!-- <tr>
         <td>
             <table>
                 <tr>
@@ -1529,7 +1532,7 @@ function isJson($string) {
                     Previous Employer :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_previous_employer'];  ?>
+                    <?php //echo $userDetails['cosigner_previous_employer'];  ?>
                     </td>
                 </tr>
                 <tr>
@@ -1537,12 +1540,12 @@ function isJson($string) {
                     How long you have there years:
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_how_longwork_years'];  ?>
+                    <?php //echo $userDetails['cosigner_how_longwork_years'];  ?>
                     </td>
                 </tr>
             </table>
         </td>
-    </tr>
+    </tr>-->
     <tr>
         <td>&nbsp;</td>
     </tr>
