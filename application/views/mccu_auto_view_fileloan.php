@@ -476,7 +476,7 @@ function isJson($string) {
     </tr>
     <!--my code end here-->
     <!--my code Personal Refrence-->
-    <tr>
+   <!-- <tr>
         <td>
             <table>
                 <tr>
@@ -496,7 +496,7 @@ function isJson($string) {
                         Personal Reference Name :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['personal_refrence'] ?>
+                        <?php //echo $userDetails['personal_refrence'] ?>
                     </td>
                 </tr>
                 <tr>
@@ -504,7 +504,7 @@ function isJson($string) {
                         Personal Reference Contact :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['personal_refrence_phone'] ?>
+                        <?php //echo $userDetails['personal_refrence_phone'] ?>
                     </td>
                 </tr>
                 <tr>
@@ -536,7 +536,7 @@ function isJson($string) {
                         Country :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $p_country; ?>
+                        <?php //echo $p_country; ?>
                           
                     </td>
                 </tr>
@@ -545,7 +545,7 @@ function isJson($string) {
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $p_city; ?>
+                        <?php //echo $p_city; ?>
                           
                     </td>
                 </tr>
@@ -554,7 +554,7 @@ function isJson($string) {
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $p_state; ?>
+                        <?php //echo $p_state; ?>
                     </td>
                 </tr>
                 <tr>
@@ -562,13 +562,13 @@ function isJson($string) {
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $p_zipcode; ?>
+                        <?php //echo $p_zipcode; ?>
                     </td>
                 </tr>
                 
             </table>
         </td>
-    </tr>
+    </tr>-->
     <tr>
         <td>&nbsp;</td>
     </tr>
@@ -1366,7 +1366,7 @@ function isJson($string) {
         </tr>
     <!--my code end here-->
     <!--my code Add Cosigner Personal Refrence details-->
-    <tr>
+   <!-- <tr>
         <td>
             <table>
                 <tr>
@@ -1386,7 +1386,7 @@ function isJson($string) {
                     Personal Reference :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_personal_refrence'];  ?>
+                    <?php //echo $userDetails['cosigner_personal_refrence'];  ?>
                     </td>
                 </tr>
                 <tr>
@@ -1394,7 +1394,7 @@ function isJson($string) {
                      Reference Phone:
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_personal_refrence_phone'];  ?>
+                    <?php //echo $userDetails['cosigner_personal_refrence_phone'];  ?>
                     </td>
                 </tr>
                 <tr>
@@ -1426,7 +1426,7 @@ function isJson($string) {
                             Country :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_p_country; ?>
+                            <?php //echo $co_p_country; ?>
                             
                         </td>
                     </tr>
@@ -1435,7 +1435,7 @@ function isJson($string) {
                             City :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_p_city; ?>
+                            <?php //echo $co_p_city; ?>
                             
                         </td>
                     </tr>
@@ -1444,7 +1444,7 @@ function isJson($string) {
                             State :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_p_state; ?>
+                            <?php //echo $co_p_state; ?>
                         </td>
                     </tr>
                     <tr>
@@ -1452,12 +1452,12 @@ function isJson($string) {
                             Zip Code :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_p_zipcode; ?>
+                            <?php //echo $co_p_zipcode; ?>
                         </td>
                     </tr>
             </table>
         </td>
-    </tr>
+    </tr>-->
     <tr>
         <td>&nbsp;</td>
     </tr>
