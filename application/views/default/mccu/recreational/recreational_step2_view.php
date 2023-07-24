@@ -5,7 +5,7 @@
 //print_r($this->session->userdata());
 
 ?>
-    <div class="clearfix">
+    <div class="main-section inner_height" id="container1">
       <div class="container" id="container">
         <div class="row">
           
