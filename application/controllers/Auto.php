@@ -2551,7 +2551,7 @@ class Auto extends CI_Controller {
         $this->load->library('email');
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
-        $this->email->to('suraj.k@codaemonsoftwares.com');
+        $this->email->to('info@jacksoncountyfcu.com,suraj.k@codaemonsoftwares.com');
         $this->email->subject("JCFCU New Digital Application");
         $this->email->message('Test Email for Server JCFCU');
         $emailSend = $this->email->send();
