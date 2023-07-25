@@ -115,7 +115,7 @@ define('DOMAIN', 'lend_domain');
 define('EMAILS', 'lend_emails');
 define('ADMINSETTING', 'lend_user');
 define('EMAILTEMPLATE', 'lend_email_message');
-define('ADMINEMAIL','support@jctfcu.culoanportal.com');
+define('ADMINEMAIL','support@culoanportal.com');
 define('ADMINNAME','JCTFCU');
 define('EMAILTEMPLATEPDF', 'lend_email_template');
 define('ENCRYPTKEY', 'loan1234');
