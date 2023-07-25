@@ -124,10 +124,10 @@ class Auto extends CI_Controller {
                     array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
                     array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
                     array('field'=>'phone','label'=>'phone','rules'=>'required|numeric'),
-                    array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email')
-                    /*array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
+                    array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
+                    array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
                     array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
-                    array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')*/
+                    array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
                     );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -139,10 +139,10 @@ class Auto extends CI_Controller {
                         'first_name' => $this->input->post('firstname'),
                         'last_name' => $this->input->post('lastname'),
                         'p_phone' => $this->input->post('phone'),
-                        'p_email' => $this->input->post('p_email')
-                        /*'tex_driv_lic' => $this->input->post('tex_driv_lic'),
+                        'p_email' => $this->input->post('p_email'),
+                        'tex_driv_lic' => $this->input->post('tex_driv_lic'),
                         'soc_sec' => $this->input->post('soc_sec'),
-                        'p_dob' => $this->input->post('my_dob')*/
+                        'p_dob' => $this->input->post('my_dob')
                     );
 
                     $this->session->set_userdata($data);
@@ -157,9 +157,9 @@ class Auto extends CI_Controller {
                 'lastname' => form_error('lastname'),
                 'phone' => form_error('phone'),
                 'p_email' => form_error('p_email'),
-                /*'tex_driv_lic' => form_error('tex_driv_lic'),
+                'tex_driv_lic' => form_error('tex_driv_lic'),
                 'soc_sec' => form_error('soc_sec'),
-                'my_dob' => form_error('my_dob')*/
+                'my_dob' => form_error('my_dob')
                 );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;

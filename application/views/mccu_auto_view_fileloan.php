@@ -272,21 +272,21 @@ function isJson($string) {
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php //echo $userDetails['military_involvement']; ?>
                     </td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         DOB :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php //echo date('m-d-Y',strtotime($userDetails['p_dob'])) ?>
+                        <?php echo date('m-d-Y',strtotime($userDetails['p_dob'])) ?>
                     </td>
-                </tr>-->
-                <!--<tr>
+                </tr>
+               <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Texas Driving License :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php //echo $userDetails['tex_driv_lic']; ?>
+                    <?php echo $userDetails['tex_driv_lic']; ?>
                     </td>
                 </tr>
                 <tr>
@@ -296,7 +296,7 @@ function isJson($string) {
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo $userDetails['soc_sec']; ?>
                     </td>
-                </tr>-->
+                </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Current Street Address :
