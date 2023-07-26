@@ -380,6 +380,13 @@ function addCosigner(value)
             formData.append('waiver_payment_value', selected_home_status);
             
         }
+        if(step == 10)
+        {
+            
+            var selected_home_status = $('input[name="p_another_source"]:checked').val();
+            formData.append('p_another_source_income', selected_home_status);
+            
+        }
         if(step == 11 || step == 24)
         {
             if(step == 11)
@@ -589,6 +596,16 @@ function addCosigner(value)
                   {
                       //alert('you are in 10');
                       recreational_step10_1();
+                  }
+                  if(step == 10)
+                  {
+                    //alert('you are in 10');
+                    if(selected_home_status == 'yes')
+                    {
+                        recreational_step10_1();
+                    }else{
+                        recreational_step11();
+                    }
                   }
                   if(step == 10.1)
                   {

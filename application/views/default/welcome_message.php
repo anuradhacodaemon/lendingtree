@@ -64,7 +64,7 @@
                             </a>
                         </div>
                     </div>
-					<div class="offer-cont" style="display:block">
+					          <div class="offer-cont" style="display:none">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <a href="https://memberhomeloanapp.com/homehub/signup/" target="_blank">
                                 <button class="offer-circ">
@@ -79,7 +79,6 @@
                                 </button>
                             </a>
                         </div>
-
                     </div>
                   </div>
                 </button>

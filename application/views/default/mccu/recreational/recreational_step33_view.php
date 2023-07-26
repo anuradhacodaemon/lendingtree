@@ -27,7 +27,7 @@
               </h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN?</label>
+                    <label class="control-label">Joint Owner/Co-Signer ARE YOU AN UNITED STATES CITIZEN OR PERMANENT RESIDENT OF THE UNITED STATES?</label>
                     <div class="row">
                     <form id="co_other_than_us_citizen" method="POST">
                             <input type="hidden" name="auto_step" value="33" id="auto_step" >
