@@ -54,7 +54,7 @@
                                 <span id="err3" style="color: red"></span>
                             </div>-->                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigners_working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
+                                <input type="text" pattern="(?!0$)([1-9]\d?|0[1-9])" name="cosigners_working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>

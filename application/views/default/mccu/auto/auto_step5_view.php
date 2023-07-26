@@ -53,7 +53,7 @@
                                 <span id="err1" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="living_there_years" pattern= "[0-9]" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
+                                <input type="text" name="living_there_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                         </div>
