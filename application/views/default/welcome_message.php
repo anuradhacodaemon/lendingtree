@@ -17,6 +17,7 @@
                 <div class="offer-main clearfix">
                     <h1 style="color:#fff">How can we help you today?</h1>
                     <div class="offer-cont" style="display:block">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <a href="<?php echo BASE_URL . 'auto?step=1' ?>" onClick="ga('send', 'event', 'MCCU', 'click', 'auto loan');">
                                 <button class="offer-circ">
@@ -65,7 +66,7 @@
                         </div>
                     </div>
 					          <div class="offer-cont" style="display:none">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                             <a href="https://memberhomeloanapp.com/homehub/signup/" target="_blank">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
