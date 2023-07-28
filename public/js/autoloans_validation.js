@@ -822,7 +822,7 @@ function addCosigner(value)
                                 setInterval(function() {
                                     $('#exampleModal').modal('hide');
                                     $('#showMsgToApplicant').html('');
-                                    window.location.href = base_url;
+                                    window.location.href = 'https://www.jacksoncountyteachers.com/';
                                 }, 5000);
                             }
                         }
@@ -841,7 +841,7 @@ function addCosigner(value)
                         setInterval(function() {
                             $('#exampleModal').modal('hide');
                             $('#showMsgToApplicant').html('');
-                            window.location.href = base_url;
+                            window.location.href = 'https://www.jacksoncountyteachers.com/';
                         }, 5000);
                     }
                 }

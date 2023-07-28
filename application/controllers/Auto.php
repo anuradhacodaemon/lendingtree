@@ -875,7 +875,7 @@ class Auto extends CI_Controller {
                             session_destroy();
                             $data['success'] = 1;
                             $data['message'] = $ret_values['message'];
-                            $data['url'] = 'auto?step=1';
+                            $data['url'] = 'https://www.jacksoncountyteachers.com/';
                             echo json_encode($data);
                         }
                         else{
@@ -1533,7 +1533,7 @@ class Auto extends CI_Controller {
                         session_destroy();
                         $data['success'] = 1;
                         $data['message'] = $ret_values['message'];
-                        $data['url'] = 'auto?step=1';
+                        $data['url'] = 'https://www.jacksoncountyteachers.com/';
                         echo json_encode($data);
                     }
                     else{

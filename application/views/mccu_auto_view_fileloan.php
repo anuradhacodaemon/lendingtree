@@ -1193,7 +1193,7 @@ function isJson($string) {
                     <?php echo $userDetails['cosigner_monthly_income_pre_tax'];  ?>
                     </td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                     Business Address :
                     </td>
@@ -1222,7 +1222,7 @@ function isJson($string) {
                             Country :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_country; ?>
+                            <?php //echo $co_b_country; ?>
                             
                         </td>
                     </tr>
@@ -1231,7 +1231,7 @@ function isJson($string) {
                             City :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_city; ?>
+                            <?php //echo $co_b_city; ?>
                             
                         </td>
                     </tr>
@@ -1240,7 +1240,7 @@ function isJson($string) {
                             State :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_state; ?>
+                            <?php //echo $co_b_state; ?>
                         </td>
                     </tr>
                     <tr>
@@ -1248,9 +1248,9 @@ function isJson($string) {
                             Zip Code :
                         </td>
                         <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                            <?php echo $co_b_zipcode; ?>
+                            <?php //echo $co_b_zipcode; ?>
                         </td>
-                    </tr>
+                    </tr>-->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                     Cosigner Document :
