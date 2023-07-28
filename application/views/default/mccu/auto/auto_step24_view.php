@@ -57,12 +57,12 @@
                                 <input type="text" pattern="(?!0$)([1-9]\d?|0[1-9])" name="cosigners_working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
-                            <div class="clearfix"></div>
+                           <!-- <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text"  name="cosigners_business_address" placeholder="Business Address" value="<?php if (isset($this->session->userdata['co_cosigner_business_address'])) echo $this->session->userdata['co_cosigner_business_address'] ?>" class="form-control width_100" id="cosigners_business_address" >
                                 <span id="err5" style="color: red"></span>
                                 <div class="co_b_r_resource-container"></div>
-                            </div>
+                            </div>-->
 
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
