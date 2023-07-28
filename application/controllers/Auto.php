@@ -123,7 +123,7 @@ class Auto extends CI_Controller {
             $rules = array(
                     array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
                     array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
-                    array('field'=>'phone','label'=>'phone','rules'=>'required|exact_length[14]'),
+                    array('field'=>'phone','label'=>'phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
                     array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
                     array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
                     array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
@@ -281,7 +281,7 @@ class Auto extends CI_Controller {
                 array('field'=>'relative_firstname','label'=>'Relative Name','rules'=>'required'),
                 array('field'=>'relative_relation','label'=>'Relative Relation','rules'=>'required'),
                 array('field'=>'relative_address','label'=>'Relative Address','rules'=>'required'),
-                array('field'=>'relatives_phone','label'=>'Relative Phone','rules'=>'required|exact_length[14]')
+                array('field'=>'relatives_phone','label'=>'Relative Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
             $this->form_validation->set_rules($rules);
@@ -906,7 +906,7 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'cosigner_firstname','label'=>'cosigner firstname','rules'=>'required'),
                 array('field'=>'cosigner_lastname','label'=>'cosigner lastname','rules'=>'required'),
-                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|exact_length[14]')
+                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 /*array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')*/
             );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.'); 
