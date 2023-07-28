@@ -58,7 +58,7 @@
                                 <span id="err4" style="color: red"></span>
                             </div>
                            <!-- <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-12 margbot_10">
+                            <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text"  name="cosigners_business_address" placeholder="Business Address" value="<?php if (isset($this->session->userdata['co_cosigner_business_address'])) echo $this->session->userdata['co_cosigner_business_address'] ?>" class="form-control width_100" id="cosigners_business_address" >
                                 <span id="err5" style="color: red"></span>
                                 <div class="co_b_r_resource-container"></div>

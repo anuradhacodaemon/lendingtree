@@ -51,8 +51,8 @@
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" name="co_supervisor_name" placeholder="Supervisor Name" value="<?php if (isset($this->session->userdata['cosigner_supervisor_name'])) echo $this->session->userdata['cosigner_supervisor_name'] ?>" class="form-control width_100" id="supervisor_name" >
-                                <span id="err3" style="color: red"></span>-->
-                            </div>                           
+                                <span id="err3" style="color: red"></span></div>-->
+                                                      
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" pattern="(?!0$)([1-9]\d?|0[1-9])" name="cosigners_working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
                                 <span id="err4" style="color: red"></span>
