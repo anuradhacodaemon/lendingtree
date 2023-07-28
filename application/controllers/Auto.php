@@ -123,12 +123,14 @@ class Auto extends CI_Controller {
             $rules = array(
                     array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
                     array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
-                    array('field'=>'phone','label'=>'phone','rules'=>'required|numeric'),
+                    array('field'=>'phone','label'=>'phone','rules'=>'required|exact_length[14]'),
                     array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
                     array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
                     array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
                     array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
                     );
+            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');
+        
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
@@ -279,8 +281,9 @@ class Auto extends CI_Controller {
                 array('field'=>'relative_firstname','label'=>'Relative Name','rules'=>'required'),
                 array('field'=>'relative_relation','label'=>'Relative Relation','rules'=>'required'),
                 array('field'=>'relative_address','label'=>'Relative Address','rules'=>'required'),
-                array('field'=>'relatives_phone','label'=>'Relative Phone','rules'=>'required|numeric')
+                array('field'=>'relatives_phone','label'=>'Relative Phone','rules'=>'required|exact_length[14]')
                 );
+            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
@@ -903,9 +906,10 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'cosigner_firstname','label'=>'cosigner firstname','rules'=>'required'),
                 array('field'=>'cosigner_lastname','label'=>'cosigner lastname','rules'=>'required'),
-                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|numeric')
+                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|exact_length[14]')
                 /*array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')*/
             );
+            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.'); 
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
@@ -2408,8 +2412,8 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("JCTFCU New Digital New Digital Application");
-        $this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
+        $this->email->subject("JCTFCU New Digital Application");
+        #$this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -2488,9 +2492,9 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("JCTFCU New Digital New Digital Application");
+        $this->email->subject("JCTFCU New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
+        #$this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
         //this is user
         if(!empty($data['userDetails']['upload_document_proof']))
         {
@@ -2552,7 +2556,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('suraj.k@codaemonsoftwares.com');
-        $this->email->subject("JCTFCU New Digital New Digital Application");
+        $this->email->subject("JCTFCU New Digital Application");
         $this->email->message('Test Email for Server JCTFCU New Digital');
         $emailSend = $this->email->send();
         if ($emailSend) {

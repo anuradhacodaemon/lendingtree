@@ -50,7 +50,7 @@
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="phone" placeholder="phone" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone" maxlength="10">
+                                <input type="text" name="phone" placeholder="phone" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone"  maxlength="14" pattern="[\d(),\- ]*">
                                 <span id="err3" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -100,6 +100,16 @@
       input = input.replace(/[^0-9]/g, ''); // Remove any non-digit characters
       $(this).val(input);
     });
+    $('#phone').on('input', function() {
+      var phoneNumber = $(this).val().replace(/\D/g, ''); // Remove all non-digit characters
+      if (phoneNumber.length === 10) {
+        var formattedNumber = '(' + phoneNumber.substring(0, 3) + ') ' + phoneNumber.substring(3, 6) + '-' + phoneNumber.substring(6, 10);
+        $(this).val(formattedNumber);
+      } else {
+        console.log('invalid');
+      }
+    });
+
   });
 //
 $(document).ready(function() {
