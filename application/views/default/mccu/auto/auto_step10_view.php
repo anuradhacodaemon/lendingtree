@@ -38,13 +38,13 @@
               <form id="p_another_source_income" method="POST">
               <input type="hidden" name="auto_step" value="10" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['laid_off_for_payment_waived']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
+                  <label <?php if(isset($this->session->userdata['having_any_other_source_income'])) { if($this->session->userdata['having_any_other_source_income']== 'Y') echo 'class="button status"'; else echo 'class=button';} else echo 'class=button';?>>
                     <div class="label-text">YES</div>
                     <span class="continueIcon sprites"></span>
                   <input type="radio" value="yes" name="p_another_source"  onclick="anotherSourceIncome(10, 'yes')" class="ng-pristine ng-invalid ng-invalid-required"></label>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
-                  <label <?php if(isset($this->session->userdata['laid_off_for_payment_waived'])) { if($this->session->userdata['laid_off_for_payment_waived']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
+                  <label <?php if(isset($this->session->userdata['having_any_other_source_income'])) { if($this->session->userdata['having_any_other_source_income']== 'N') echo 'class="button status"'; else echo 'class=button';}else echo 'class=button'; ?>>
                     <div class="label-text">NO</div>
                     <span class="continueIcon sprites"></span>
                   <input type="radio" value="no" name="p_another_source" onclick="anotherSourceIncome(10, 'no')" class="ng-pristine ng-invalid ng-invalid-required"></label>
