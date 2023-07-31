@@ -25,7 +25,7 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Contact Information</label>
                     <div class="row">
@@ -42,7 +42,7 @@
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="phone" placeholder="phone" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone" maxlength="14" pattern="[\d(),\- ]*">
+                                <input type="text" name="phone" placeholder="phone" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone" maxlength="14" >
                                 <span id="err3" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">

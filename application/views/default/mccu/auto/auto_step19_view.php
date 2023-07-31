@@ -25,7 +25,7 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Are you wanting to add any Joint Owner/Co-Signer onto this loan?</label>
                     <div class="row">

@@ -24,9 +24,9 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">ARE YOU A PARTY TO ANY LAWSUIT?</label>
+                    <label class="control-label">Are you a party to any lawsuit?</label>
                     <div class="row">
                     <form id="any_law_suit" method="POST">
                             <input type="hidden" name="auto_step" value="15" id="auto_step" >

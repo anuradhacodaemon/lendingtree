@@ -33,9 +33,9 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer Military Involvement</label>
+                    <label class="control-label">Joint owner/co-signer military involvement</label>
                     <div class="row">
                     <form id="co_miltry_involve" method="POST">
                         <input type="hidden" name="auto_step" value="35" id="auto_step" >

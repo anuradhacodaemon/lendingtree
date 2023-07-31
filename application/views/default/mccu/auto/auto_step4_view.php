@@ -32,7 +32,7 @@
                           }
               ?>
               </h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
+              <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">Marital Status</label>
               <form id="p_details1q" method="post">

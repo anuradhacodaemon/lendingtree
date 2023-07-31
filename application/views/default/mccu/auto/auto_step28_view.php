@@ -25,9 +25,9 @@
                           }
               ?>
               </h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
+              <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">Joint Owner/Co-Signer ARE YOU A CO-MAKER/ENDORSER ON ANY NOTE?</label>
+              <label class="control-label">Joint Owner/Co-Signer are you a co-maker/endorser on any note?</label>
               <form id="co_co_maker" method="POST">
               <input type="hidden" name="auto_step" value="28" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">
