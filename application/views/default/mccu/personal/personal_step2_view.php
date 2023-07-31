@@ -40,7 +40,7 @@
                           }
               ?>
               </h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
+              <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">Requested Amount/Purpose Of Loan</label>
               <div class="row">

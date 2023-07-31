@@ -33,7 +33,7 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Family Reference</label>
                     <div class="row">
@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relatives_phone"  maxlength="14" placeholder="Relatives Phone" value="<?php if (isset($this->session->userdata['relatives_phone'])) echo $this->session->userdata['relatives_phone'] ?>" class="form-control width_100" id="relatives_phone" pattern="[\d(),\- ]*">
+                                <input type="text" name="relatives_phone"  maxlength="14" placeholder="Relatives Phone" value="<?php if (isset($this->session->userdata['relatives_phone'])) echo $this->session->userdata['relatives_phone'] ?>" class="form-control width_100" id="relatives_phone">
                                 <span id="err4" style="color: red"></span>
                             </div>
                             

@@ -32,7 +32,7 @@
                           }
               ?>
               </h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
+              <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">Joint Owner/Co-Signer Do You have any other sources of income?</label>
               <form id="co_p_another_source_income" method="POST">

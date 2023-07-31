@@ -25,9 +25,9 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer ANY FORECLOSURES OR LOST TITLE/DEED ON PROPERTY IN PAST 7 YEARS?</label>
+                    <label class="control-label">Joint owner/co-signer any foreclosures or lost title/deed on property in past 7 years?</label>
                     <div class="row">
                     <form id="co_force_closure" method="POST">
                             <input type="hidden" name="auto_step" value="31" id="auto_step" >

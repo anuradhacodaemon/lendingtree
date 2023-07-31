@@ -41,7 +41,7 @@
                           }
               ?>
               </h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
+              <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">If you are laid off and lose this income source, would you like to have your loan payments waived?</label>
               <form id="waiver_form" method="POST">
