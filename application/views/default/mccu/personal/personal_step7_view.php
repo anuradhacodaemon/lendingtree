@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <select class="form-control width_100" style="width:auto;" name="relative_relation">
+                                <select class="form-control width_100" style="max-width: none;" name="relative_relation">
                                     <option value="">Select Relationship</option>
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Parent') ? 'selected' : '' ?> value="Parent">Parent</option>
                                     <option <?php echo (isset($this->session->userdata['relation_with_relative']) && $this->session->userdata['relation_with_relative'] == 'Sibling') ? 'selected' : '' ?> value="Sibling">Sibling</option>
@@ -63,7 +63,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relative_address" placeholder="Relatives Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" maxlength="14" pattern="[\d(),\- ]*">
+                                <input type="text" name="relative_address" placeholder="Relatives Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address">
                                 <span id="err3" style="color: red"></span>
                                 <div class="r_resource-container"></div>
                             </div>
