@@ -2413,7 +2413,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
         $this->email->subject("JCFCU New Digital Application");
-        $this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
+        //$this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -2494,7 +2494,7 @@ class Auto extends CI_Controller {
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("JCFCU New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
+        //$this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
         //this is user
         if(!empty($data['userDetails']['upload_document_proof']))
         {
