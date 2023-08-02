@@ -80,7 +80,6 @@ class Auto extends CI_Controller {
     }
 
     public function step5($pre_tax_income = 0) {
-
         if ($pre_tax_income) {
 
             //$num = explode('$', $pre_tax_income);
@@ -108,15 +107,17 @@ class Auto extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
+    public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '', $country = '', $street_line = '') {
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
                 'lastname' => $lastname,
-                'address' => $address,
+                'address' => urldecode($address),
                 'city' => $city,
                 'state' => $state,
-                'zip' => $zip
+                'zip' => $zip,
+                'country' => urldecode($country),
+                'street_line' => urldecode($street_line),
             );
 
             $this->session->set_userdata($data);

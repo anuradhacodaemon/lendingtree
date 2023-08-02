@@ -2,7 +2,10 @@ var base_url = $('#domain').val();
 if (window.performance) {
   console.info("window.performance work's fine on this browser");
 }
-  if (performance.navigation.type == 1) {
+var urlParams = new URLSearchParams(window.location.search);
+var step = parseInt(urlParams.get('step'));
+
+if (performance.navigation.type == 1) {
    
     if (window.location.search.indexOf('step=1') > -1) {
          
@@ -376,68 +379,13 @@ function step6() {
         $('#err1').html('');
         $('#err2').html('');
         return false;
-    } else if ($('#state').val() == '')
-    {
-        //alert($(this).val());
-        // alert($('input[name=state]').has('option').length);
-        $('#err4').html('state is empty');
-        $('#state').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        return false;
-    } else if ($('#city').val() == '' && !$('#city').prop('disabled'))
-    {
-        $('#err5').html('city is empty');
-        $('#city').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        return false;
-    } else if ($('input[name=zip]').val() == '')
-    {
-
-        $('#err6').html('zip is empty');
-        $('#zip').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        $('#err5').html('');
-        return false;
-    } else if (!RE1.test($("#zip").val()))
-    {
-
-        $('#err6').html('zip should be number');
-        $('#zip').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        $('#err5').html('');
-        return false;
-    } else if (!RE2.test($("#zip").val()))
-    {
-
-        $('#err6').html('Zip code is invalid. 5 digits are mandatory');
-        $('#zip').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        $('#err5').html('');
-        return false;
-    } else
+    }else
     {
         $('#err2').html('');
-        var city = 0;
-        if ($('#city').val() > 0)
-            city = $('#city').val();
 
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val() + '/' + $('input[name=zip]').val() + '/' + $('input[name=ssn]').val(),
+             url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('input[name=p_city]').val() + '/' + $('#p_state').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=p_country]').val() + '/' + $('input[name=p_street_line]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=6");
