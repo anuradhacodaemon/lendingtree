@@ -153,7 +153,8 @@ class Auto extends CI_Controller {
                 'phone' => $phone,
                 'add_date' => date('Y-m-d H:i:s'),
                 'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
-                'status' => "2"
+                'status' => "2",
+                'active_status' => 1
             );
 
             $this->session->set_userdata($data);

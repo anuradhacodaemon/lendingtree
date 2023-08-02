@@ -385,7 +385,7 @@ function step6() {
 
         $.ajax({
             type: "GET",
-             url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('input[name=p_city]').val() + '/' + $('#p_state').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=p_country]').val() + '/' + $('input[name=p_street_line]').val(),
+             url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('input[name=p_city]').val() + '/' + $('input[name=p_state]').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=p_country]').val() + '/' + $('input[name=p_street_line]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=6");

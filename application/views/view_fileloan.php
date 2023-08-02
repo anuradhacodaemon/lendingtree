@@ -227,7 +227,7 @@
                         Country :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                          <?php $userDetails[0]['country']; ?>
+                          <?php echo $userDetails[0]['country']; ?>
                     </td>
                 </tr>                        
                                         
@@ -236,7 +236,7 @@
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                          <?php $userDetails[0]['city']; ?>
+                          <?php echo $userDetails[0]['city']; ?>
                     </td>
                 </tr>
                 <tr>
