@@ -904,7 +904,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN? :
+                    ARE YOU AN UNITED STATES CITIZEN OR PERMANENT RESIDENT OF THE UNITED STATES? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo ($userDetails['a_u_s_citizen_permanant_alien']=='Y') ? 'Yes' : 'No';  ?>
@@ -1624,7 +1624,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    ARE YOU OTHER THAN A U.S. CITIZEN/PERMANENT RESIDENT ALIEN? :
+                    ARE YOU AN UNITED STATES CITIZEN OR PERMANENT RESIDENT OF THE UNITED STATES? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo ($userDetails['cosigner_citizen']  == 'Y') ? "Yes" : "No";  ?>
