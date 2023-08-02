@@ -262,7 +262,7 @@ function step3(id) {
 
 function step4() {
     ga('send', 'event', 'MCT', 'auto loan', 'Current Employer');
-    var RE = /^[A-Za-z]+$/;
+    var RE = /^[A-Za-z\s]+$/;
     var RE1 = /^\d*\.?\d*$/;
     if ($('input[name=cemployer]').val() == '')
     {
@@ -341,7 +341,7 @@ function step5() {
 function step6() {
     ga('send', 'event', 'MCT', 'auto loan', 'Your Details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
-    var RE = /^[A-Za-z]+$/;
+    var RE = /^[A-Za-z\s]+$/;
     var RE1 = /^\d*\.?\d*$/;
     var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 
