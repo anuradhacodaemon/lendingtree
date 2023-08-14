@@ -18,6 +18,17 @@
                        <input  type="hidden" id="err2" name="err2" value="0"  class="form-control"  >
                         <span id="err1" style="color: red"></span>
                     </div>
+
+                    <label class="control-label">How Many Dependents They Have?</label>
+                    <div class="col-xs-12 col-sm-12 margbot_40">
+                        <select class="form-control width_100" name="total_dependent" id="total_dependent">
+                            <option value="">Select Dependents</option>
+                            <?php for($i=0;$i<=10;$i++){  ?>
+                                <option value="<?php echo $i; ?>" <?php if (!empty($this->session->userdata['total_dependent']) && $this->session->userdata['total_dependent'] == $i) { echo "Selected"; }  ?>><?php echo $i; ?></option>
+                            <?php } ?>
+                        </select> 
+                        <span id="err3" style="color: red"></span>
+                    </div>
                     
                     
                     <div class="col-xs-12 col-sm-12 margbot_10">

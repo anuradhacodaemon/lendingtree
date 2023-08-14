@@ -319,12 +319,20 @@ function step5() {
         $('#err1').html('Your Pre-tax yearly income should be number');
         $('#pre_tax_income').focus();
         return false;
-    } else
+    }else if ($('#total_dependent').val() == '')
+    {
+        $('#err3').html('Please select the option for the number of dependents');
+        $('#total_dependent').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        return false;
+    }
+     else
     {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step5/" + $('input[name=pre_tax_income1]').val(),
+            url: base_url + "auto/step5/" + $('input[name=pre_tax_income1]').val() + "/" + $("#total_dependent").val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=5");

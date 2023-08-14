@@ -81,7 +81,7 @@ class Auto extends CI_Controller {
         $this->load->view('step4_view');
     }
 
-    public function step5($pre_tax_income = 0) {
+    public function step5($pre_tax_income = 0,$total_dependent = 0) {
 
         if ($pre_tax_income) {
 
@@ -89,7 +89,8 @@ class Auto extends CI_Controller {
             // $number = $num[1];
             //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
-                'pre_tax_income' => $pre_tax_income
+                'pre_tax_income' => $pre_tax_income,
+                'total_dependent' => $total_dependent
             );
 
             $this->session->set_userdata($data);
@@ -190,8 +191,6 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
         
-        
-
         $result = $this->loan_model->add_loan($this->session->userdata());
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
@@ -210,6 +209,7 @@ class Auto extends CI_Controller {
             $this->session->userdata['current_employer'] = '';
             $this->session->userdata['job_title'] = '';
             $this->session->userdata['pre_tax_income'] = '';
+            $this->session->userdata['total_dependent'] = '';
             $this->session->userdata['firstname'] = '';
             $this->session->userdata['lastname'] = '';
             $this->session->userdata['address'] = '';
@@ -255,7 +255,7 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
         $this->email->subject("Beaumont Community Credit Union New Digital Application");
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        //$this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -346,7 +346,7 @@ class Auto extends CI_Controller {
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Beaumont Community Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
+        //$this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
