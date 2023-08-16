@@ -45,6 +45,12 @@
                                 </div>
                         </div>
                             <div class="clearfix"></div>
+                             <div class="col-xs-12 col-sm-12 margbot_10">
+                            <p class="subtext" style="float: left;">
+                                It is a felony crime to lie on an application for credit.
+                            </p>
+                            </div>
+                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <center><img style="display: none;width: 60px;position: relative;" id="loader_page_final" src="<?php echo base_url() ?>public/html/img/loader.gif"></center>
                                 <input type="submit" value="Continue" class="button" id="final_step43">
