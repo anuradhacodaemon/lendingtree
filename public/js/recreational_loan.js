@@ -960,6 +960,7 @@ function addCosigner(value)
                         //alert('you are in 9');
                         $('#err1').html(obj['error_messages']['monthly_income_pre_tax']);
                         $('#err2').html(obj['error_messages']['upload_user_doc']);
+                        $('#err3').html(obj['error_messages']['total_dependent']);
                     }
                     if(step == 10)
                     {
@@ -1191,6 +1192,7 @@ function addCosigner(value)
                         //alert('you are in 10');
                         $('#err1').html(obj['error_messages']['cosigner_monthly_income_pre_tax']);
                         $('#err2').html(obj['error_messages']['cosigner_upload_user_doc']);
+                        $('#err3').html(obj['error_messages']['co_total_dependent']);
                     }
                     
               }   

@@ -37,7 +37,17 @@
                                 <input type="text" name="monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['employment_monthly_income'])) echo $this->session->userdata['employment_monthly_income'] ?>" class="form-control width_100" id="monthly_income_pre_tax" >
                                 <span id="err1" style="color: red"></span>
                             </div>    
-                                          
+                             <div class="col-xs-12 col-sm-6 margbot_10">
+                                <span class="optional-file">How Many Dependents They Have? </span>    
+                                <select class="form-control" name="total_dependent" id="total_dependent" style="max-width: 100%;">
+                                    <option value="">How Many Dependents</option>
+                                    <?php for($i=0;$i<=10;$i++){  ?>
+                                        <option value="<?php echo $i; ?>" <?php if (!empty($this->session->userdata['employment_total_dependent']) && $this->session->userdata['employment_total_dependent'] == $i) { echo "Selected"; }  ?>><?php echo $i; ?></option>
+                                    <?php } ?>
+                                </select> 
+                                <span id="err3" style="color: red"></span>
+                            </div>  
+                            <div class="clearfix"></div>              
                             <div class="col-xs-12 col-sm-6 margbot_10">
                             <span class="optional-file">Accepted Files [paystub/Bank statements] in Formats [.png, .txt, .pdf] (Optional field) </span>    
                                 <input type="file" name="upload_user_doc" accept=".png, .txt, .pdf" value="<?php if (isset($this->session->userdata['upload_document_proof'])) echo $this->session->userdata['upload_document_proof'] ?>" class="form-control width_100" id="employer_job_title" >

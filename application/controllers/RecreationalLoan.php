@@ -359,7 +359,7 @@ class RecreationalLoan extends CI_Controller
         if($step == 9)
         {
             $rules = array(
-                array('field'=>'monthly_income_pre_tax','label'=>'Monthly Income','rules'=>'required|numeric')
+                array('field'=>'monthly_income_pre_tax','label'=>'Monthly Income','rules'=>'required|numeric'), array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -377,7 +377,8 @@ class RecreationalLoan extends CI_Controller
                 if ($this->input->post('monthly_income_pre_tax')) 
                 {
                     $data = array(
-                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax')
+                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax'),
+                        'employment_total_dependent' => $this->input->post('total_dependent')
                     );
                     $this->session->set_userdata($data);
                 }
@@ -415,7 +416,8 @@ class RecreationalLoan extends CI_Controller
                 //fail
                 $errors = array(
                             'monthly_income_pre_tax' => form_error('monthly_income_pre_tax'),
-                            'upload_user_doc' => form_error('upload_user_doc')
+                            'upload_user_doc' => form_error('upload_user_doc'),
+                            'total_dependent' => form_error('total_dependent')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -1084,7 +1086,7 @@ class RecreationalLoan extends CI_Controller
         if($step == 25)
         {
             $rules = array(
-                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Cosigner Monthly Income','rules'=>'required|numeric')
+                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Cosigner Monthly Income','rules'=>'required|numeric'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -1102,7 +1104,8 @@ class RecreationalLoan extends CI_Controller
                 if ($this->input->post('cosigner_monthly_income_pre_tax')) 
                 {
                     $data = array(
-                        'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax')
+                        'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax'),
+                         'co_total_dependent' => $this->input->post('co_total_dependent')
                     );
 
                     $this->session->set_userdata($data);
@@ -1141,7 +1144,8 @@ class RecreationalLoan extends CI_Controller
                 //fail
                 $errors = array(
                             'cosigner_monthly_income_pre_tax' => form_error('cosigner_monthly_income_pre_tax'),
-                            'cosigner_upload_user_doc' => form_error('cosigner_upload_user_doc')
+                            'cosigner_upload_user_doc' => form_error('cosigner_upload_user_doc'),
+                            'co_total_dependent' => form_error('co_total_dependent')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -2117,7 +2121,7 @@ class RecreationalLoan extends CI_Controller
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
         $this->email->subject("JCTFCU New Digital New Digital Application");
-        $this->email->bcc('haroon.m@codaemonsoftwares.com,suraj.k@codaemonsoftwares.com');
+        //$this->email->bcc('haroon.m@codaemonsoftwares.com,suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -2201,7 +2205,7 @@ class RecreationalLoan extends CI_Controller
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("JCTFCU New Digital New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('haroon.m@codaemonsoftwares.com,suraj.k@codaemonsoftwares.com');
+        //$this->email->bcc('haroon.m@codaemonsoftwares.com,suraj.k@codaemonsoftwares.com');
         //this is user
         if(!empty($data['userDetails']['upload_document_proof']))
         {
