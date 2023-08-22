@@ -1029,6 +1029,30 @@ function isJson($string) {
                             <?php echo $userDetails['cosigner_phone'];  ?>
                         </td>
                     </tr>
+                    <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Cosigner Texas Driving License :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $userDetails['cosigner_tdl'];  ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Cosigner SSN :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $userDetails['cosigner_ssn'];  ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Cosigner Texas Driving DOB :
+                        </td>
+                        <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                            <?php echo $userDetails['cosigner_dob'];  ?>
+                        </td>
+                    </tr>
                     <!--<tr>
                         <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Email :

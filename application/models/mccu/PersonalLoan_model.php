@@ -30,7 +30,7 @@ class PersonalLoan_model extends CI_Model {
             unset($logData['final_step']);
         }
         $this->db->insert(PERSONAL_MMCU_LOAN, $logData);
-        //echo $this->db->last_query();exit;
+        echo $this->db->last_query();exit;
         $id = $this->db->insert_id();
         return $id;
     }

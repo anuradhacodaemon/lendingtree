@@ -1158,6 +1158,9 @@ function addCosigner(value)
                         $('#err2').html(obj['error_messages']['cosigner_lastname']);
                         $('#err3').html(obj['error_messages']['cosigner_phone']);
                         $('#err4').html(obj['error_messages']['cosigner_email']);
+                        $('#err5').html(obj['error_messages']['cosigner_tdl']);
+                        $('#err6').html(obj['error_messages']['cosigner_ssn']);
+                        $('#err7').html(obj['error_messages']['cosigner_dob']);
                     }
                     if(step == 22)
                     {
