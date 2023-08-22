@@ -908,7 +908,10 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'cosigner_firstname','label'=>'cosigner firstname','rules'=>'required'),
                 array('field'=>'cosigner_lastname','label'=>'cosigner lastname','rules'=>'required'),
-                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
+                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
+                array('field'=>'cosigner_tdl','label'=>'Cosigner Texas Driving License','rules'=>'required'),
+                array('field'=>'cosigner_ssn','label'=>'Cosigner Social Security','rules'=>'required'),
+                array('field'=>'cosigner_dob','label'=>'Cosigner Date Of Birth','rules'=>'required')
                 /*array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')*/
             );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.'); 
@@ -921,7 +924,10 @@ class Auto extends CI_Controller {
                     $data = array(
                         'cosigner_first_name' => $this->input->post('cosigner_firstname'),
                         'cosigner_last_name' => $this->input->post('cosigner_lastname'),
-                        'cosigner_phone' => $this->input->post('cosigner_phone')
+                        'cosigner_phone' => $this->input->post('cosigner_phone'),
+                        'cosigner_tdl' => $this->input->post('cosigner_tdl'),
+                        'cosigner_ssn' => $this->input->post('cosigner_ssn'),
+                        'cosigner_dob' => $this->input->post('cosigner_dob')
                         /*'cosigner_email' => $this->input->post('cosigner_email')*/
                     );
 
@@ -935,7 +941,10 @@ class Auto extends CI_Controller {
                 $errors = array(
                 'cosigner_firstname' => form_error('cosigner_firstname'),
                 'cosigner_lastname' => form_error('cosigner_lastname'),
-                'cosigner_phone' => form_error('cosigner_phone')
+                'cosigner_phone' => form_error('cosigner_phone'),
+                'cosigner_tdl' => form_error('cosigner_tdl'),
+                'cosigner_ssn' => form_error('cosigner_ssn'),
+                'cosigner_dob' => form_error('cosigner_dob')
                 /*'cosigner_email' => form_error('cosigner_email'),*/
                 );
                 $data['error'] = 1;

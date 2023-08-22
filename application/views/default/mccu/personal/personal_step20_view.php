@@ -44,6 +44,18 @@
                                 <input type="text" name="cosigner_phone" placeholder="Cosigner phone" value="<?php if (isset($this->session->userdata['cosigner_phone'])) echo $this->session->userdata['cosigner_phone'] ?>" class="form-control width_100" id="cosigner_phone" maxlength="14" >
                                 <span id="err3" style="color: red"></span>
                             </div>  
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="cosigner_tdl" placeholder="Cosigner TDL" value="<?php if (isset($this->session->userdata['cosigner_tdl'])) echo $this->session->userdata['cosigner_tdl'] ?>" class="form-control width_100" id="cosigner_tdl" minlength="8" maxlength="8" >
+                                <span id="err5" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="cosigner_ssn" placeholder="Cosigner SSN" value="<?php if (isset($this->session->userdata['cosigner_ssn'])) echo $this->session->userdata['cosigner_ssn'] ?>" class="form-control width_100" id="cosigner_ssn" minlength="11" maxlength="11" >
+                                <span id="err6" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="date" name="cosigner_dob" placeholder="Cosigner Date Of Birth" value="<?php if (isset($this->session->userdata['cosigner_dob'])) echo $this->session->userdata['cosigner_dob'] ?>" class="form-control width_100" id="cosigner_dob" >
+                                <span id="err7" style="color: red"></span>
+                            </div>
                             <!--<div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" name="cosigner_email" placeholder="Cosigner Email" value="<?php if (isset($this->session->userdata['cosigner_email'])) echo $this->session->userdata['cosigner_email'] ?>" class="form-control width_100" id="cosigner_email">
                                 <span id="err4" style="color: red"></span>
@@ -72,4 +84,27 @@
         console.log('invalid');
       }
     });
+    $('#cosigner_ssn').on('input', function() {
+      var input = $(this).val();
+      input = input.replace(/[^0-9]/g, ''); // Remove any non-digit characters
+      var formattedInput = input.replace(/^(\d{3})(\d{2})(\d{4})/, '$1-$2-$3');
+      $(this).val(formattedInput);
+    });
+    //
+    $('#cosigner_tdl').on('input', function() {
+      var input = $(this).val();
+      input = input.replace(/[^0-9]/g, ''); // Remove any non-digit characters
+      $(this).val(input);
+    });
+    $(document).ready(function() {
+
+      //Year to start from calender
+      var minDate = new Date(1921, 0, 1);
+      var minDateString = minDate.toISOString().split('T')[0];
+      $("#cosigner_dob").attr("min", minDateString);
+
+      //not showing futur dates
+      var currentDate = new Date().toISOString().split('T')[0];
+      document.getElementById('cosigner_dob').setAttribute('max', currentDate);
+    });      
 </script>
