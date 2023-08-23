@@ -1890,7 +1890,20 @@ function autoloan_step43()
     });
 }
 
-//
+    function disclosure_auto()
+    {  
+        $("#disclosureModal").modal('show'); // Open the modal
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.addEventListener("click", function(event) {
+            if (event.target.matches(".disclosure-sec")) {
+                // Handle the click event
+                disclosure_auto();
+            }
+        });
+    });
+
 
     //alert('you are in jq');
     // Select the input element using its ID or class

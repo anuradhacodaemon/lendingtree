@@ -1844,6 +1844,19 @@ function recreational_step43()
     });
 }
 
+function disclosure_recreational()
+{  
+    $("#disclosureModal").modal('show'); // Open the modal
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        if (event.target.matches(".disclosure-sec")) {
+            // Handle the click event
+            disclosure_recreational();
+        }
+    });
+});
 
 
 
