@@ -180,3 +180,21 @@ if ($this->session->flashdata('item')) {
   </div>
 </div>
 
+<div class="modal fade" id="disclosureModal" tabindex="-1" role="dialog" aria-labelledby="disclosureModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="disclosure">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="disclosureModalLabel">Disclosures</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>By providing the Credit Union with a wireless phone number (cell phone) you consent to receiving phone calls, including autodialed and pre-recorded calls from the Credit Union or its third-party debt collector at that number. </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
