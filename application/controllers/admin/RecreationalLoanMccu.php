@@ -143,7 +143,7 @@ class RecreationalLoanMccu extends CI_Controller {
             print_r($filterData);exit;*/
             $last = $this->uri->total_segments();
             $record_num = $this->uri->segment($last);
-            $config['base_url'] = BASE_URL . MASTERADMIN . '/autoloanmccu';
+            $config['base_url'] = BASE_URL . MASTERADMIN . '/recreationalloanmccu';
             $config['total_rows'] = $this->Recreationalloanmccu_model->get_count_user($filterData);
             $page = (is_numeric($record_num)) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;

@@ -133,6 +133,7 @@ $route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
  * 
  */
 $route['admin/autoloanmccu'] = 'admin/autoLoanMccu/index';
+$route['admin/autoloanmccu/(:num)'] = 'admin/autoLoanMccu/index/$1';
 $route['admin/autoloanmccu/details/(:num)'] = 'admin/autoLoanMccu/details/$1';
 $route['admin/autoloanmccu/pdfloan/(:num)'] = 'admin/autoLoanMccu/pdfLoan/$1';
 $route['admin/autoloanmccu/export'] = 'admin/autoLoanMccu/export';
@@ -142,6 +143,7 @@ $route['admin/autoloanmccu/updatestatus'] = 'admin/autoLoanMccu/updatestatus';
 
 
 $route['admin/personalloanmccu'] = 'admin/personalLoanMccu/index';
+$route['admin/personalloanmccu/(:num)'] = 'admin/personalLoanMccu/index/$1';
 $route['admin/personalloanmccu/details/(:num)'] = 'admin/personalLoanMccu/details/$1';
 $route['admin/personalloanmccu/pdfloan/(:num)'] = 'admin/personalLoanMccu/pdfLoan/$1';
 $route['admin/personalloanmccu/export'] = 'admin/personalLoanMccu/export';
@@ -151,6 +153,7 @@ $route['admin/personalloanmccu/updatestatus'] = 'admin/personalLoanMccu/updatest
 
 
 $route['admin/recreationalloanmccu'] = 'admin/recreationalLoanMccu/index';
+$route['admin/recreationalloanmccu/(:num)'] = 'admin/recreationalLoanMccu/index/$1';
 $route['admin/recreationalloanmccu/details/(:num)'] = 'admin/recreationalLoanMccu/details/$1';
 $route['admin/recreationalloanmccu/pdfloan/(:num)'] = 'admin/recreationalLoanMccu/pdfLoan/$1';
 $route['admin/recreationalloanmccu/export'] = 'admin/recreationalLoanMccu/export';
