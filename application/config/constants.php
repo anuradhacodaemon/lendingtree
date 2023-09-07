@@ -89,6 +89,7 @@ define('LOGIN', 'lend_user');
 define('COUNTRY', 'lend_countries');
 define('STATE', 'lend_states');
 define('CITY', 'lend_cities');
+define('PERSONALLOANS', 'lend_personal_loan');
 
 define('RECORD_LIMIT', 10);
 define('TOTAL_ROWS', 2);
@@ -105,3 +106,6 @@ define('ADMINNAME','BMTCCU');
 define('EMAILTEMPLATEPDF', 'lend_email_template');
 define('ENCRYPTKEY', 'loan1234');
 define('ZIPCODE','lend_zipcode');
+
+define('SMARTY_AUTH_ID', '31e7020d-9a47-c928-f6d2-bc3c38fb6546');
+define('SMARTY_AUTH_TOKEN','ygIUWrlkwpFlPZGX2Oj0');

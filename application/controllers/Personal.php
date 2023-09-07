@@ -1,17 +1,19 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Refinance extends CI_Controller {
+/*ini_set('display_errors', 1); 
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);*/
+class Personal extends CI_Controller {
 
     /**
      * Index Page for this controller.
      *
      * Maps to the following URL
-     *      http://example.com/index.php/welcome
-     *  - or -
-     *      http://example.com/index.php/welcome/index
-     *  - or -
+     * 		http://example.com/index.php/welcome
+     * 	- or -
+     * 		http://example.com/index.php/welcome/index
+     * 	- or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
@@ -27,80 +29,91 @@ class Refinance extends CI_Controller {
 
     public function index() {
 
+     
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
 
         $this->session->set_userdata('panel', 'frontend');
 
-        $this->template->view('refinance_step1');
+        $this->template->view('personal_step1_view');
     }
 
-    public function refinancestep1() {
+    public function personal_step1() {
 
-        $this->load->view('refinance_step1');
+        $this->load->view('personal_step1_view');
     }
 
-    public function refinancestep2($id = 0) {
+    public function personal_step2($id = 0) {
+
+        
         if ($id) {
             $data = array(
-                'currently_owe' => $id
+                'type' => $id
             );
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        //print_r($this->session->userdata());
-        $this->load->view('refinance_step2');
+        $this->load->view('personal_step2_view');
     }
 
-    public function refinancestep3($id = 0) {
+    public function personal_step3($id = 0) {
         if ($id) {
             $data = array(
-                'monthly_payment' => $id
+                'requested_amount' => $id
             );
 
             $this->session->set_userdata($data);
         }
         // echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('refinance_step3');
+        $this->load->view('personal_step3_view');
     }
 
-    public function refinancestep4($id = 0, $current_milage = 0) {
+    public function personal_step4($id = 0, $pre_approved = 0) {
         if ($id) {
             $data = array(
-                'vin' => $id,
-                'current_milage' => $current_milage
+                'current_employer' => $id,
+                'job_title' => $pre_approved
+            );
+
+            $this->session->set_userdata($data);
+        }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+        $this->load->view('personal_step4_view');
+    }
+
+    public function personal_step5($pre_tax_income = 0,$total_dependent = 0) {
+
+        if ($pre_tax_income) {
+
+            //$num = explode('$', $pre_tax_income);
+            // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+            $data = array(
+                'pre_tax_income' => $pre_tax_income,
+                'total_dependent' => $total_dependent
             );
 
             $this->session->set_userdata($data);
         }
 
-
-        //echo '<pre>';
-        // print_r($this->session->userdata());
         $data['state'] = $this->loan_model->get_state();
-        if (isset($this->session->userdata['state'])) {
-            $data['city'] = $this->loan_model->get_city($this->session->userdata['state']);
+        if (isset($this->session->userdata['userdata']['state'])) {
+            $data['city'] = $this->loan_model->get_city($this->session->userdata['userdata']['state']);
         }
-        $this->load->view('refinance_step4', $data);
+//echo '<pre>';
+        // print_r($this->session->userdata());
+        $this->load->view('personal_step5_view', $data);
     }
 
+    public function getcity($state_id = 0) {
 
-    public function sha(){
-
-         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $dh = scandir($dir);
-        echo '<pre>';
-        echo PHYSICAL_PATH;
-        echo '<br>';
-        print_r($dh);
+        $city = $this->loan_model->get_city($state_id);
+        echo json_encode($city);
     }
 
-
-
-    public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
-
+    public function personal_step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
@@ -113,43 +126,19 @@ class Refinance extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
+        //echo '<pre>';
+        // print_r($this->session->userdata());
 
-        $this->load->view('refinance_step5_new');
+        $this->load->view('personal_step6_view');
     }
 
-
-    public function refinancestep6($cemployer = '',$job_title = '') {
-
-        if ($cemployer) {
-
-            //$num = explode('$', $pre_tax_income);
-            // $number = $num[1];
-            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
-            $data = array(
-                'current_employer' => $cemployer,
-                'job_title' => $job_title
-            );
-
-            $this->session->set_userdata($data);
-        }
-
-      
-        $this->load->view('refinance_step5', $data);
-    }
-
-
-    public function getcity($state_id = 0) {
-
-        $city = $this->loan_model->get_city($state_id);
-        echo json_encode($city);
-    }
-
-    public function refinancestep7($dob, $ssn = '') {
+    public function personal_step7($dob, $ssn = '') {
 
         $timestamp = strtotime($dob);
         $day = date('d', $timestamp);
         $month = date('m', $timestamp);
         $year = date('Y', $timestamp);
+        
         if ($ssn) {
             $data = array(
                 'month' => $month,
@@ -158,40 +147,41 @@ class Refinance extends CI_Controller {
                 'dob' => $year . '-' . $month . '-' . $day,
                 'ssn' => $ssn
             );
-
+        
             $this->session->set_userdata($data);
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
+        
+        $this->load->view('personal_step7_view');
+        }
 
-        $this->load->view('refinance_step6');
-        //die;
-    }
-
-    public function refinancestep8($email = '', $phone = '') {
+    public function personal_step8($email = '', $phone = '') {
         if ($email) {
             $data = array(
                 'email' => $email,
                 'phone' => $phone,
                 'add_date' => date('Y-m-d H:i:s'),
                 'domain' => $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'] . '/',
-                'status' => "2"
+                'status' => "2",
+                'active_status' => 1
             );
 
             $this->session->set_userdata($data);
-
         }
-
-
+        //echo '<pre>';
+        // print_r($this->session->userdata());
+        //die;
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
-        unset($this->session->userdata['type']);
-        unset($this->session->userdata['requested_amount']);
-        unset($this->session->userdata['current_employer']);
-        //unset($this->session->userdata['job_title']);
-        unset($this->session->userdata['pre_tax_income']);
-        unset($this->session->userdata['zip']);
+
+        unset($this->session->userdata['currently_owe']);
+        unset($this->session->userdata['monthly_payment']);
+        unset($this->session->userdata['vin']);
+        unset($this->session->userdata['current_milage']);
+        unset($this->session->userdata['property_type']);
+        unset($this->session->userdata['userdata']);
         unset($this->session->userdata['loan_type']);
         unset($this->session->userdata['property_type']);
         unset($this->session->userdata['home_type']);
@@ -210,28 +200,30 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
         
-        $result = $this->loan_model->add_refinance($this->session->userdata());
-
-
+        $result = $this->loan_model->add_personal_loan($this->session->userdata());
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+            
             $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
             $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
             
             $this->session->userdata['userdata'] = '';
-            $this->session->userdata['currently_owe'] = '';
-            $this->session->userdata['monthly_payment'] = '';
-            $this->session->userdata['vin'] = '';
-            $this->session->userdata['current_milage'] = '';
+            $this->session->userdata['type'] = '';
+            $this->session->userdata['requested_amount'] = '';
+            $this->session->userdata['current_employer'] = '';
+            $this->session->userdata['job_title'] = '';
+            $this->session->userdata['pre_tax_income'] = '';
+            $this->session->userdata['total_dependent'] = '';
             $this->session->userdata['firstname'] = '';
             $this->session->userdata['lastname'] = '';
-
+            $this->session->userdata['address'] = '';
             $this->session->userdata['state'] = '';
             $this->session->userdata['city'] = '';
+            $this->session->userdata['zip'] = '';
             $this->session->userdata['month'] = '';
             $this->session->userdata['day'] = '';
             $this->session->userdata['years'] = '';
@@ -241,12 +233,12 @@ class Refinance extends CI_Controller {
             $this->session->userdata['phone'] = '';
             //redirect('/');
             echo 1;
-        } /** else {
+        } /*         * else {
 
           $error = 'Your email already exist';
           $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
 
-          $this->load->view('refinancestep6_view');
+          $this->load->view('step6_view');
           }* */
     }
 
@@ -255,7 +247,7 @@ class Refinance extends CI_Controller {
 
         //$this->load->library('email');
         //$this->email->set_mailtype("html");
-        /*         * $config = Array(
+        /** $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
           'smtp_port' => 25,
@@ -264,16 +256,14 @@ class Refinance extends CI_Controller {
           'smtp_timeout' => '4',
           'mailtype' => 'html',
           'charset' => 'iso-8859-1'
-          );
-         * */
-
+          );  * */
         $this->load->library('email');
 
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("Space City New Digital Application");
-        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,amit.jadhav@codaemonsoftwares.com');
+        $this->email->subject("Beaumont Community Credit Union New Digital Application");
+        //$this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -308,12 +298,12 @@ class Refinance extends CI_Controller {
     public function mail_format_pdf($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('view_file', $data, TRUE);
+        $tbl = $this->load->view('view_file_personal_loan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
@@ -321,12 +311,12 @@ class Refinance extends CI_Controller {
     public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('view_file', $data, TRUE);
+        $tbl = $this->load->view('view_file_personal_loan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $path = PHYSICAL_PATH . 'download_pdf/';
@@ -336,12 +326,14 @@ class Refinance extends CI_Controller {
 
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
+        
         $url1 = urlencode($Link);
-        $url = base_url() . "refinance/mail_format_pdf/" . $url1;
+        $url = base_url() . "auto/mail_format_pdf/" . $url1;
+  
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($id);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
@@ -357,15 +349,14 @@ class Refinance extends CI_Controller {
           'charset' => 'iso-8859-1'
           );
          * */
-
         $this->load->library('email');
 
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("Space City New Digital Application");
-         $this->email->attach($dir . $dh);
-        $this->email->bcc('shashank.c@codaemonsoftwares.com');
+        $this->email->subject("Beaumont Community Credit Union New Digital Application");
+        $this->email->attach($dir . $dh);
+        //$this->email->bcc('amit.jadhav@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -389,11 +380,13 @@ class Refinance extends CI_Controller {
         $emailContent = strtr($emailtemplate[0]['content'], $varMap);
         $this->email->message($emailContent);
         $emailSend = $this->email->send();
+
         if ($emailSend) {
-            unlink($dir . $dh);
-            //echo $this->email->print_debugger();
+            // echo 'yes';
+              unlink($dir . $dh);
             return 1;
         }
+
         return 0;
     }
 

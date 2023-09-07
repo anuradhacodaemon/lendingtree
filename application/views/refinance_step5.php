@@ -15,51 +15,12 @@
                     <label class="control-label">When Were You Born?</label>
                    
                 <div class="margbot_10 clearfix">
-                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
-                                           
-                        
-                        <select  id="selectMonth" name="month" class="form-control form-control-small">
-                            <option value="">Month</option>
-                            <?php for ($i = 1; $i <= 12; $i++) { ?>
-                                <option  value="<?php echo $i ?>" <?php
-                                if (isset($this->session->userdata['month'])) {
-                                    if ($this->session->userdata['month'] == $i)
-                                        echo 'selected';
-                                }
-                                ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
-<?php } ?>
-                        </select>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
-                        <select id="selectDate" name="day" class="form-control form-control-small">
-                            <option value="">Day</option>
-                                    <?php for ($i = 1; $i <= 31; $i++) { ?>
-                                <option  value="<?php echo $i ?>"  <?php
-                                    if (isset($this->session->userdata['day'])) {
-                                        if ($this->session->userdata['day'] == $i)
-                                            echo 'selected';
-                                    }
-                                    ?>><?php echo $i ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
-                        <select id="selectYear" name="year" class="form-control form-control-small">
-                            <option value="">Year</option>
-<?php for ($i = 1900; $i <= 2015; $i++) { ?>
-                                <option  value="<?php echo $i ?>" <?php
-    if (isset($this->session->userdata['years'])) {
-        if ($this->session->userdata['years'] == $i)
-            echo 'selected';
-    }
-    ?>><?php echo $i ?></option>
-<?php } ?>
-                        </select>
-                        
-                    </div>
-                     <span id="err" style="color: red"></span>
-                     </div>
+
+                <div class="col-xs-12 col-sm-12 margbot_10">
+                              <label class="dob_class">Enter Date Of Birth </label>
+                                <input type="date" name="dob" placeholder="DOB" value="<?php if (isset($this->session->userdata['dob'])) echo $this->session->userdata['dob'] ?>" class="form-control width_100" id="dob">
+                                <span id="err" style="color: red"></span>
+                            </div>
                       <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
                         <span id="err7" style="color: red"></span>
@@ -97,6 +58,14 @@ $(document).ready(function() {
            newVal += val;
            this.value = newVal.substring(0, 11);
     });
+    var minDate = new Date(1921, 0, 1);
+      var minDateString = minDate.toISOString().split('T')[0];
+      $("#dob").attr("min", minDateString);
+
+      //not showing futur dates
+      var currentDate = new Date().toISOString().split('T')[0];
+      document.getElementById('dob').setAttribute('max', currentDate);
+
 });
 </script>
 

@@ -256,6 +256,7 @@ function refinancestep4() {
     var RE1 = /^\d*\.?\d*$/;
     var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 
+    alert($('input[name=address]').val());
     if ($('input[name=firstname]').val() == '')
     {
 
@@ -290,25 +291,6 @@ function refinancestep4() {
         $('#err1').html('');
         $('#err2').html('');
         return false;
-    } else if ($('#state').val() == '')
-    {
-        //alert($(this).val());
-        // alert($('input[name=state]').has('option').length);
-        $('#err4').html('state is empty');
-        $('#state').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        return false;
-    } else if ($('#city').val() == '' && !$('#city').prop('disabled'))
-    {
-        $('#err5').html('city is empty');
-        $('#city').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        return false;
     } else
     {
         $('#err2').html('');
@@ -317,7 +299,7 @@ function refinancestep4() {
             city = $('#city').val();
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val(),
+            url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
@@ -382,22 +364,10 @@ function refinancestep5() {
     ga('send', 'event', 'spececity', 'auto refinance', 'Date Of Birth');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
-    if ($('#selectMonth').val() === "") {
+     if ($('#dob').val() === "") {
 
-        $('#err').html('Month is empty');
-        $('#selectMonth').focus();
-        return false;
-    } else if ($('#selectDate').val() === "")
-    {
-
-        $('#err').html('Day is empty');
-        $('#selectDate').focus();
-        return false;
-    } else if ($('#selectYear').val() === "")
-    {
-
-        $('#err').html('Year is empty');
-        $('#selectYear').focus();
+        $('#err').html('Date of Birth is empty');
+        $('#dob').focus();
         return false;
     } else if ($('input[name=ssn]').val() == '')
     {
@@ -424,7 +394,7 @@ function refinancestep5() {
     } else {
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep7/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
+            url: base_url + "refinance/refinancestep7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=8");

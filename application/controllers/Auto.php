@@ -130,7 +130,13 @@ class Auto extends CI_Controller {
         $this->load->view('step6_view');
     }
 
-    public function step7($month = 0, $day = 0, $year = 0, $ssn = '') {
+    public function step7($dob, $ssn = '') {
+
+        $timestamp = strtotime($dob);
+        $day = date('d', $timestamp);
+        $month = date('m', $timestamp);
+        $year = date('Y', $timestamp);
+        
         if ($ssn) {
             $data = array(
                 'month' => $month,
@@ -139,14 +145,14 @@ class Auto extends CI_Controller {
                 'dob' => $year . '-' . $month . '-' . $day,
                 'ssn' => $ssn
             );
-
+        
             $this->session->set_userdata($data);
         }
         //echo '<pre>';
         // print_r($this->session->userdata());
-
+        
         $this->load->view('step7_view');
-    }
+        }
 
     public function step8($email = '', $phone = '') {
         if ($email) {

@@ -1,5 +1,5 @@
 <div class="clearfix">
-    <div class="container" id="containerrefinance">
+    <div class="container" id="container">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                 <div class="logo">
@@ -8,26 +8,26 @@
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="form-main clearfix">
-                    <h1>Refinance Your Vehicle</h1>
+                    <h1>Buying New Vehicle</h1>
                     <a href="" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Your Details</label>
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-xs-12 col-sm-6 margbot_10">
-                        <input type="text" name="firstname" placeholder="First name" value="<?php if (isset($this->session->userdata['firstname'])) echo $this->session->userdata['firstname'] ?>" class="form-control width_100" id="firstname" >
-                    <span id="err1" style="color: red"></span>
-                      
-                      </div>
-                   
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="firstname" placeholder="First name" value="<?php if (isset($this->session->userdata['firstname'])) echo $this->session->userdata['firstname'] ?>" class="form-control width_100" id="firstname" >
+                                <span id="err1" style="color: red"></span>
 
-                    <div class="col-xs-12 col-sm-6 margbot_10">
-                        <input type="text" name="lastname" placeholder="Last name" value="<?php if (isset($this->session->userdata['lastname'])) echo $this->session->userdata['lastname'] ?>" class="form-control width_100" id="lastname" >
-                    <span id="err2" style="color: red"></span>
-                    
-                    </div>
-                        
-                    <div class="col-xs-12 col-sm-12 margbot_10">
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="lastname" placeholder="Last name" value="<?php if (isset($this->session->userdata['lastname'])) echo $this->session->userdata['lastname'] ?>" class="form-control width_100" id="lastname" >
+                                <span id="err2" style="color: red"></span>
+
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text" name="address" placeholder="Enter Your Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="resource-container"></div>
@@ -57,43 +57,25 @@
                                 <input type="hidden" name="p_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['p_zip_code'])) echo $this->session->userdata['p_zip_code'] ?>" class="form-control width_100" id="zipcode_name" >
                             </div>
                         </div>
-                    
-                   
-                    
-                    <div class="col-xs-12 col-sm-12 radio margtop_30">
-                        <button type="button" class="button" onclick="refinancestep4()">Continue<span class="continueIcon sprites"></span></button>
-                                      <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
-                        -->
 
-                    </div>   
+
+
+                            <div class="col-xs-12 col-sm-12 radio margtop_30">
+                                <button type="button" class="button" onclick="personal_step6()">Continue<span class="continueIcon sprites"></span></button>
+                                              <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
+                                -->
+
+                            </div>   
+                        </div>
                     </div>
-                  </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#ssn').keyup(function() {        
-        var val = this.value.replace(/\D/g, '');
-          var newVal = '';
-          if(val.length > 4) {
-             this.value = val;
-          }
-          if((val.length > 3) && (val.length < 6)) {
-             newVal += val.substr(0, 3) + '-';
-             val = val.substr(3);
-          }
-          if (val.length > 5) {
-             newVal += val.substr(0, 3) + '-';
-             newVal += val.substr(3, 2) + '-';
-             val = val.substr(5);
-           }
-           newVal += val;
-           this.value = newVal.substring(0, 11);
-    });
+<script> //$('input[name=amount]').val()
+    $(document).ready(function () {
         $('#auto_primary_address_id').autocomplete({
             source: function (request, response) {
                 $("#err3").html("");
@@ -158,6 +140,5 @@ $(document).ready(function() {
                 .appendTo(ul);
         };
         //
-    
-});
+    });
 </script>

@@ -8,7 +8,7 @@ if (window.performance) {
          
       $.ajax({
             type: "GET",
-            url: base_url +"auto/step1",
+            url: base_url +"personal/personal_step1",
             success: function (data)
             {
 
@@ -21,7 +21,7 @@ if (window.performance) {
        
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step2",
+            url: base_url +"personal/personal_step2",
             success: function (data)
             {
 
@@ -34,7 +34,7 @@ if (window.performance) {
        
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step3",
+            url: base_url +"personal/personal_step3",
             success: function (data)
             {
 
@@ -46,7 +46,7 @@ if (window.performance) {
     if (window.location.search.indexOf('step=4') > -1) {
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step4",
+            url: base_url +"personal/personal_step4",
             success: function (data)
             {
                 
@@ -59,7 +59,7 @@ if (window.performance) {
     if (window.location.search.indexOf('step=5') > -1) {
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step5",
+            url: base_url +"personal/personal_step5",
             success: function (data)
             {
 
@@ -71,7 +71,7 @@ if (window.performance) {
    if (window.location.search.indexOf('step=6') > -1) {
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step6",
+            url: base_url +"personal/personal_step6",
             success: function (data)
             {
 
@@ -83,7 +83,7 @@ if (window.performance) {
     if (window.location.search.indexOf('step=7') > -1) {
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step7",
+            url: base_url +"personal/personal_step7",
             success: function (data)
             {
 
@@ -114,7 +114,7 @@ if (window.performance) {
          
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step1",
+            url: base_url +"personal/personal_step1",
             success: function (data)
             {
 
@@ -127,7 +127,7 @@ if (window.performance) {
          
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step2",
+            url: base_url +"personal/personal_step2",
             success: function (data)
             {
 
@@ -139,7 +139,7 @@ if (window.performance) {
     if (window.location.search.indexOf('step=3') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step3",
+            url: base_url +"personal/personal_step3",
             success: function (data)
             {
 
@@ -151,7 +151,7 @@ if (window.performance) {
     if (window.location.search.indexOf('step=4') > -1) {
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step4",
+            url: base_url +"personal/personal_step4",
             success: function (data)
             {
                
@@ -163,7 +163,7 @@ if (window.performance) {
     if (window.location.search.indexOf('step=5') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step5",
+            url: base_url +"personal/personal_step5",
             success: function (data)
             {
 
@@ -175,7 +175,7 @@ if (window.performance) {
      if (window.location.search.indexOf('step=6') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step6",
+            url: base_url +"personal/personal_step6",
             success: function (data)
             {
 
@@ -187,7 +187,7 @@ if (window.performance) {
      if (window.location.search.indexOf('step=7') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step7",
+            url: base_url +"personal/personal_step7",
             success: function (data)
             {
 
@@ -201,8 +201,8 @@ if (window.performance) {
 //}
  }, false);
 function step1(id) {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'type of loan');
-    var url = base_url + "auto/step1/" + id;
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'type of loan');
+    var url = base_url + "personal/personal_step1/" + id;
     
     $.ajax({
         type: "GET",
@@ -211,7 +211,7 @@ function step1(id) {
         {
             
            
-            window.history.pushState("Details", "Title", base_url + "auto?step=1");
+            window.history.pushState("Details", "Title", base_url + "personal?step=1");
             
             $('#container').html(data);
             
@@ -221,9 +221,9 @@ function step1(id) {
     });
 
 }
-function step2(id) {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'type of loan');
-    var url = base_url + "auto/step2/" + id;
+function personal_step2(id) {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'type of loan');
+    var url = base_url + "personal/personal_step2/" + id;
     
     $.ajax({
         type: "GET",
@@ -232,7 +232,7 @@ function step2(id) {
         {
             
            
-            window.history.pushState("Details", "Title", base_url + "auto?step=2");
+            window.history.pushState("Details", "Title", base_url + "personal?personal_step=2");
             
             $('#container').html(data);
             
@@ -242,14 +242,14 @@ function step2(id) {
     });
 
 }
-function step3(id) {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+function personal_step3(id) {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'Requested Amount');
     $.ajax({
         type: "GET",
-        url: base_url + "auto/step3/" + id,
+        url: base_url + "personal/personal_step3/" + id,
         success: function (data)
         {
-            window.history.pushState("Details", "Title", base_url + "auto?step=3");
+            window.history.pushState("Details", "Title", base_url + "personal?personal_step=3");
 
             $('#container').html(data);
         }
@@ -257,8 +257,8 @@ function step3(id) {
 
 }
 
-function step4() {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Current Employer');
+function personal_step4() {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'Current Employer');
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
     if ($('input[name=cemployer]').val() == '')
@@ -292,10 +292,10 @@ function step4() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
+            url: base_url + "personal/personal_step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=4");
+                window.history.pushState("Details", "Title", base_url + "personal?personal_step=4");
                 $('#container').html(data);
             }
         });
@@ -304,8 +304,8 @@ function step4() {
 }
 
 
-function step5() {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Pre-Tax Monthly Income');
+function personal_step5() {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'Pre-Tax Monthly Income');
     var RE = /^\d*\.?\d*$/;
    
     if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
@@ -332,10 +332,10 @@ function step5() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step5/" + $('input[name=pre_tax_income1]').val() + "/" + $("#total_dependent").val(),
+            url: base_url + "personal/personal_step5/" + $('input[name=pre_tax_income1]').val() + "/" + $("#total_dependent").val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=5");
+                window.history.pushState("Details", "Title", base_url + "personal?personal_step=5");
                 $('#container').html(data);
             }
         });
@@ -343,8 +343,8 @@ function step5() {
     }
 
 }
-function step6() {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Your Details');
+function personal_step6() {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'Your Details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -393,18 +393,18 @@ function step6() {
 
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=ssn]').val(),
+            url: base_url + "personal/personal_step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=ssn]').val(),
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=6");
+                window.history.pushState("Details", "Title", base_url + "personal?personal_step=6");
                 $('#container').html(data);
             }
         });
     }
 }
 
-function step7(){
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'When Were You Born');
+function personal_step7(){
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'When Were You Born');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
         if ($('#dob').val() === "") {
@@ -437,18 +437,18 @@ function step7(){
     } else {
         $.ajax({
             type: "GET",
-               url: base_url + "auto/step7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
+               url: base_url + "personal/personal_step7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
             success: function (data)
             {
-                  window.history.pushState("Details", "Title", base_url + "auto?step=7");
+                  window.history.pushState("Details", "Title", base_url + "personal?personal_step=7");
                $('#container').html(data);
             }
         });
     }
 }
 
-function step8() {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Submit');
+function personal_step8() {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'Submit');
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var RE1 = /^[0-9]{10}/;
     if ($('input[name=email]').val() == '')
@@ -482,7 +482,7 @@ function step8() {
 
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step8/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
+            url: base_url + "personal/personal_step8/" + $('input[name=email]').val() + '/' + $('input[name=phone]').val(),
             success: function (data)
             {
                 // alert(data);
