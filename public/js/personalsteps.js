@@ -393,7 +393,17 @@ function personal_step6() {
 
         $.ajax({
             type: "GET",
-            url: base_url + "personal/personal_step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=ssn]').val(),
+          //  url: base_url + "personal/personal_step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=ssn]').val(),
+          url: base_url + "personal/personal_step6/",
+          data: {
+                firstname: $('input[name=firstname]').val(),
+                lastname: $('input[name=lastname]').val(),
+                address: $('input[name=address]').val(),
+                city_name: $('#city_name').val(),
+                state_name: $('#state_name').val(),
+                p_zip_code: $('input[name=p_zip_code]').val(),
+                ssn: $('input[name=ssn]').val()
+            },
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "personal?personal_step=6");
@@ -515,3 +525,16 @@ function gtag_report_conversion(url) {
     return false;
 }
  
+function disclosure_auto()
+{  
+    $("#disclosureModal").modal('show'); // Open the modal
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        if (event.target.matches(".disclosure-sec")) {
+            // Handle the click event
+            disclosure_auto();
+        }
+    });
+});

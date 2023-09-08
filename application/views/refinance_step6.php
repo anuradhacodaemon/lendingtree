@@ -9,7 +9,7 @@
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                 <div class="form-main clearfix">
                     <h1>Refinance Your Vehicle</h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                      
                                 <?php

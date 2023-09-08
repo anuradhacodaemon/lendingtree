@@ -256,7 +256,6 @@ function refinancestep4() {
     var RE1 = /^\d*\.?\d*$/;
     var RE2 = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 
-    alert($('input[name=address]').val());
     if ($('input[name=firstname]').val() == '')
     {
 
@@ -299,7 +298,17 @@ function refinancestep4() {
             city = $('#city').val();
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val(),
+           // url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val(),
+            url: base_url + "refinance/refinancestep5/",
+            data: {
+                firstname: $('input[name=firstname]').val(),
+                lastname: $('input[name=lastname]').val(),
+                address: $('input[name=address]').val(),
+                city_name: $('#city_name').val(),
+                state_name: $('#state_name').val(),
+                p_zip_code: $('input[name=p_zip_code]').val(),
+                ssn: $('input[name=ssn]').val()
+            },
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
@@ -472,4 +481,16 @@ function gtag_report_conversion_ref(url) {
     return false;
 }
  
- 
+function disclosure_auto()
+{  
+    $("#disclosureModal").modal('show'); // Open the modal
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        if (event.target.matches(".disclosure-sec")) {
+            // Handle the click event
+            disclosure_auto();
+        }
+    });
+});

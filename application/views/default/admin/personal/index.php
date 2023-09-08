@@ -6,16 +6,16 @@
 
 <!-- iCheck -->
 <?php
-$lead_approved = $this->users->checklead_approved_forDomain();
-$lend_pending = $this->users->checklead_pending_forDomain();
-$visitor = $this->users->checklead_denied_forDomain();
+$lead_approved = $this->personal->checklead_approved_forDomain();
+$lend_pending = $this->personal->checklead_pending_forDomain();
+$visitor = $this->personal->checklead_denied_forDomain();
 ?>
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> User Listing</h2>
+                <h2> User Personal Listing</h2>
 
                 <div class="clearfix"></div>
             </div>
@@ -241,7 +241,7 @@ $visitor = $this->users->checklead_denied_forDomain();
                             </label>
                             entries                        
                         </div>                    
-                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/user/export' ?>">Export as CSV</a>
+                        <a class="btn btn-primary pull-right"  target="_blank" href="<?php echo BASE_URL . 'admin/personal/export' ?>">Export as CSV</a>
                     </div>
                 </div>
             </form>
@@ -254,26 +254,26 @@ $visitor = $this->users->checklead_denied_forDomain();
                                 <!-- <th class="column-title"># </th> -->
                                 <th class="column-title"> <input type="checkbox" id="mainchk" name="chk[]"  class="flat"  />
                                 </th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.firstname" && $sort_direction == "desc") { ?> onClick="sortList('user.firstname', 'asc')"<?php } ?> <?php if ($sort_by != "user.firstname") { ?> onClick="sortList('user.firstname', 'asc')"<?php } ?><?php if ($sort_by == "user.firstname" && $sort_direction == "asc") { ?> onClick="sortList('user.firstname', 'desc')"<?php } ?>> Full Name</a>&nbsp;<?php if ($sort_by == "user.firstname" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.firstname" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.firstname" && $sort_direction == "desc") { ?> onClick="sortList('personal.firstname', 'asc')"<?php } ?> <?php if ($sort_by != "personal.firstname") { ?> onClick="sortList('personal.firstname', 'asc')"<?php } ?><?php if ($sort_by == "personal.firstname" && $sort_direction == "asc") { ?> onClick="sortList('personal.firstname', 'desc')"<?php } ?>> Full Name</a>&nbsp;<?php if ($sort_by == "personal.firstname" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.firstname" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.email" && $sort_direction == "desc") { ?> onClick="sortList('user.email', 'asc')"<?php } ?> <?php if ($sort_by != "user.email") { ?> onClick="sortList('user.email', 'asc')"<?php } ?><?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?> onClick="sortList('user.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "user.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.email" && $sort_direction == "desc") { ?> onClick="sortList('personal.email', 'asc')"<?php } ?> <?php if ($sort_by != "personal.email") { ?> onClick="sortList('personal.email', 'asc')"<?php } ?><?php if ($sort_by == "personal.email" && $sort_direction == "asc") { ?> onClick="sortList('personal.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "personal.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.type" && $sort_direction == "desc") { ?> onClick="sortList('user.type', 'asc')"<?php } ?> <?php if ($sort_by != "user.type") { ?> onClick="sortList('user.type', 'asc')"<?php } ?><?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?> onClick="sortList('user.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "user.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.type" && $sort_direction == "desc") { ?> onClick="sortList('personal.type', 'asc')"<?php } ?> <?php if ($sort_by != "personal.type") { ?> onClick="sortList('personal.type', 'asc')"<?php } ?><?php if ($sort_by == "personal.type" && $sort_direction == "asc") { ?> onClick="sortList('personal.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "personal.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "user.requested_amount") { ?> onClick="sortList('user.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('user.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "user.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('personal.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "personal.requested_amount") { ?> onClick="sortList('personal.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "personal.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('personal.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "personal.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('personal.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "personal.pre_tax_income") { ?> onClick="sortList('personal.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "personal.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('personal.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "personal.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.job_title" && $sort_direction == "desc") { ?> onClick="sortList('personal.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "personal.job_title") { ?> onClick="sortList('personal.job_title', 'asc')"<?php } ?><?php if ($sort_by == "personal.job_title" && $sort_direction == "asc") { ?> onClick="sortList('personal.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "personal.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.status" && $sort_direction == "desc") { ?> onClick="sortList('personal.status', 'asc')"<?php } ?> <?php if ($sort_by != "personal.status") { ?> onClick="sortList('personal.status', 'asc')"<?php } ?><?php if ($sort_by == "personal.status" && $sort_direction == "asc") { ?> onClick="sortList('personal.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "personal.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "personal.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <!-- <th class="column-title"><span class="nobr">View</span> -->
 
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
@@ -347,11 +347,11 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                                                 <!-- <td > 
 
-                                                    <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
+                                                    <a href="<?php echo BASE_URL . MASTERADMIN . '/personal/details/' . $v['lend_id'] ?>" class="dark_grey " ><i class="fa fa-eye"></i> </a>
                                                 </td>  -->
                                         <td class="last">
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/user/details/' . $v['lend_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
-                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/user/pdfLoan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/personal/details/' . $v['lend_id'] ?>" class="dark_grey" title="View" ><i class="fa fa-eye"></i> </a>
+                                            <a href="<?php echo BASE_URL . MASTERADMIN . '/personal/pdfLoan/' . $v['lend_id'] ?>" target="_blank" class="dark_grey" title="View" ><i class="fa fa-file-pdf-o"></i> </a>
 
                                             &nbsp;&nbsp;
                                             <?php if ($v['active_status'] == 1) { ?>
@@ -446,7 +446,7 @@ $visitor = $this->users->checklead_denied_forDomain();
     $("#cPrice").click(function () {
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url() . '/admin/user/updatestatus' ?>",
+            url: "<?php echo base_url() . '/admin/personal/updatestatus' ?>",
             data: $("#antoform2").serialize(), // serializes the form's elements.
             success: function (data)
             {
@@ -455,7 +455,7 @@ $visitor = $this->users->checklead_denied_forDomain();
                 $("#CalenderModalView").attr("aria-hidden", "true");
                 /*$("#CalenderModalEdit").css('display', 'none');*/
                 $("body").attr('class', 'nav-md  pace-done');
-                location.href = "<?php echo base_url() . '/admin/user' ?>";
+                location.href = "<?php echo base_url() . '/admin/personal' ?>";
             }
         });
     });
@@ -469,7 +469,7 @@ $visitor = $this->users->checklead_denied_forDomain();
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
-        $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/user?' ?>' + vars);
+        $("#filter_form").attr('action', '<?php echo BASE_URL . MASTERADMIN . '/personal?' ?>' + vars);
         $("#filter_form").submit();
     }
     function submitForm1()
@@ -477,7 +477,7 @@ $visitor = $this->users->checklead_denied_forDomain();
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("?");
-        $("#filter_form1").attr('action', '<?php echo BASE_URL . 'admin/user/mailsent' ?>');
+        $("#filter_form1").attr('action', '<?php echo BASE_URL . 'admin/personal/mailsent' ?>');
         $("#filter_form1").submit();
     }
     function sortList(sortBy, sortDirection)
@@ -495,10 +495,10 @@ $visitor = $this->users->checklead_denied_forDomain();
             {
                 $.ajax({
                     type: "GET",
-                    url: "<?php echo base_url() . 'admin/user/delete_inactive/' ?>" + franchiseid,
+                    url: "<?php echo base_url() . 'admin/personal/delete_inactive/' ?>" + franchiseid,
                     success: function (data)
                     {
-                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/personal/' ?>';
                     }
                 });
             } else
@@ -521,11 +521,11 @@ $visitor = $this->users->checklead_denied_forDomain();
                 $.ajax({
                     type: "POST",
                     data: $("#filter_form1").serialize(),
-                    url: "<?php echo base_url() . 'admin/user/deleteall' ?>",
+                    url: "<?php echo base_url() . 'admin/personal/deleteall' ?>",
                     success: function (data)
                     {
                         //alert(data);
-                        location.href = '<?php echo base_url() . 'admin/user/' ?>';
+                        location.href = '<?php echo base_url() . 'admin/personal/' ?>';
                     }
                 });
 

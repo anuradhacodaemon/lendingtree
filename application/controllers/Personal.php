@@ -113,7 +113,17 @@ class Personal extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function personal_step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
+
+        public function personal_step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {    
+        
+            $firstname = $this->input->get('firstname');
+        $lastname = $this->input->get('lastname');
+        $address = $this->input->get('address');
+        $city = $this->input->get('city_name');
+        $state = $this->input->get('state_name');
+        $zip = $this->input->get('p_zip_code');
+        
+     
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
@@ -126,8 +136,7 @@ class Personal extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
+
 
         $this->load->view('personal_step6_view');
     }
@@ -298,7 +307,7 @@ class Personal extends CI_Controller {
     public function mail_format_pdf($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $data['userDetails'] = $this->loan_model->get_userdetailspersonalloanpdf($link[0]);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
@@ -311,7 +320,7 @@ class Personal extends CI_Controller {
     public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($link[0]);
+        $data['userDetails'] = $this->loan_model->get_userdetailspersonalloanpdf($link[0]);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
@@ -332,7 +341,7 @@ class Personal extends CI_Controller {
   
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $data['userDetails'] = $this->loan_model->get_userdetailspersonalloanpdf($id);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';

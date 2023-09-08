@@ -112,6 +112,14 @@ class Auto extends CI_Controller {
     }
 
     public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
+    
+        $firstname = $this->input->get('firstname');
+        $lastname = $this->input->get('lastname');
+        $address = $this->input->get('address');
+        $city = $this->input->get('city_name');
+        $state = $this->input->get('state_name');
+        $zip = $this->input->get('p_zip_code');
+
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,

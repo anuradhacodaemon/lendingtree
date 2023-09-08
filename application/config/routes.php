@@ -71,6 +71,7 @@ $route['admin/user/mailsent'] = 'admin/admin_user/mailsent';
 $route['admin/user/updatestatus'] = 'admin/admin_user/updatestatus';
 $route['admin/user/delete_inactive/(:any)'] = 'admin/admin_user/delete_inactive/$1';
 $route['admin/user/deleteall'] = 'admin/admin_user/deleteall';
+$route['admin/user/pdfLoan/(:num)'] = 'admin/admin_user/pdfLoan/$1';
 
 $route['admin/refinance'] = 'admin/admin_refinance/index';
 $route['admin/refinance/(:num)'] = 'admin/admin_refinance/index/$1';
@@ -128,3 +129,17 @@ $route['admin/homeloan/delete_inactive/(:any)'] = 'admin/admin_homeloan/delete_i
 $route['admin/homeloan/deleteall'] = 'admin/admin_homeloan/deleteall';
 $route['admin/homeloan/sentemail'] = 'admin/admin_homeloan/sentemail';
 $route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
+
+
+$route['admin/personal'] = 'admin/admin_personal/index';
+$route['admin/personal/(:num)'] = 'admin/admin_personal/index/$1';
+$route['admin/personal/details/(:num)'] = 'admin/admin_personal/details/$1';
+$route['admin/personal/export'] = 'admin/admin_personal/export';
+$route['admin/personal/pdfpersonalloan/(:num)'] = 'admin/admin_personal/pdfpersonalloan/$1';
+
+$route['admin/personal/mailsent'] = 'admin/admin_personal/mailsent';
+
+$route['admin/personal/updatestatus'] = 'admin/admin_personal/updatestatus';
+$route['admin/personal/delete_inactive/(:any)'] = 'admin/admin_personal/delete_inactive/$1';
+$route['admin/personal/deleteall'] = 'admin/admin_personal/deleteall';
+$route['admin/personal/pdfLoan/(:num)'] = 'admin/admin_personal/pdfLoan/$1';

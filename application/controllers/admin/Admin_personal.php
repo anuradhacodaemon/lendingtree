@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Admin_user extends CI_Controller {
+class Admin_personal extends CI_Controller {
 
     /**
       @Name User Controller
@@ -22,7 +22,7 @@ class Admin_user extends CI_Controller {
     public function __construct() {
         // Construct the parent class
         parent::__construct();
-        $this->load->model('admin/users');
+        $this->load->model('admin/personal');
         $this->load->library('pagination');
         $this->load->helper('csv');
     }
@@ -140,9 +140,9 @@ class Admin_user extends CI_Controller {
             $last = $this->uri->total_segments();
             $record_num = $this->uri->segment($last);
 
-            $config['base_url'] = BASE_URL . MASTERADMIN . '/user';
+            $config['base_url'] = BASE_URL . MASTERADMIN . '/personal';
 
-            $config['total_rows'] = $this->users->get_count_user($filterData);
+            $config['total_rows'] = $this->personal->get_count_user($filterData);
             $page = ($record_num) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;
             $config['use_page_numbers'] = TRUE;
@@ -153,8 +153,8 @@ class Admin_user extends CI_Controller {
             $data["page_no"] = $page;
             $data["total_rows"] = $config['total_rows'];
             $data["record_limit"] = $config['per_page'];
-            $data["userlisting"] = $this->users->get_user('', $config["per_page"], $page, $filterData, $sortData);
-            $this->template->view('admin/user/index', array_merge($data, $filterData));
+            $data["userlisting"] = $this->personal->get_user('', $config["per_page"], $page, $filterData, $sortData);
+            $this->template->view('admin/personal/index', array_merge($data, $filterData));
         }
     }
 
@@ -166,16 +166,38 @@ class Admin_user extends CI_Controller {
             $data = array();
             $this->load->view('admin', $data);
         } else {
-            $data['userDetails'] = $this->users->get_userdetails($userId);
+            $data['userDetails'] = $this->personal->get_userdetails($userId);
             /* Load the view using template */
-            $this->template->view('admin/user/userdetails', $data);
+            $this->template->view('admin/personal/userdetails', $data);
         }
+    }
+    public function pdfRefinance($id = 0) {
+        // $this->load->library('pdf');
+         $this->load->model('details');
+        $data['userDetails'] = $this->refinance->get_userdetails($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        // $pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        //echo ' '.APPPATH . 'views/view_files.php';
+        $tbl = $this->load->view('view_file', $data, TRUE);
+        //echo $tbl;
+        //die;
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
     public function pdfLoan($id = 0) {
         // $this->load->library('pdf');
-        $this->load->model('admin/users');
+        $this->load->model('admin/personal');
         $this->load->model('details');
-        $data['userDetails'] = $this->users->get_userdetails($id);
+        $data['userDetails'] = $this->personal->get_userdetails($id);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
@@ -225,7 +247,7 @@ class Admin_user extends CI_Controller {
         $arr[] = "SSN";
         //}
         $arr = array($arr);
-        $data2 = $this->users->get_userall();
+        $data2 = $this->personal->get_userall();
         // die;
         $type = '';
         $years = '';
@@ -334,12 +356,12 @@ class Admin_user extends CI_Controller {
 
     public function updatestatus()
     {
-        $this->users->updateStatus($this->input->post('lendId'),$this->input->post('status'));
+        $this->personal->updateStatus($this->input->post('lendId'),$this->input->post('status'));
     }
     
     public function delete_inactive($lend_id=0)
     {
-               $this->users->updateactiveStatus($lend_id);
+               $this->personal->updateactiveStatus($lend_id);
  
     }
      public function deleteall()
@@ -347,12 +369,12 @@ class Admin_user extends CI_Controller {
        
         foreach($this->input->post('c') as $k=>$v)
         {
-             $this->users->updateactiveStatus($v);
+             $this->personal->updateactiveStatus($v);
         }
     }
     public function sentemail() {
         foreach ($this->input->post('c') as $k => $v) {
-            $data['userDetails'] = $this->users->get_userdetails($v);
+            $data['userDetails'] = $this->personal->get_userdetails($v);
             $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
             $pdf = new PDF();
             $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');

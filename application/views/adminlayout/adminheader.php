@@ -35,7 +35,8 @@
                                     
                                      <li><a href="<?php echo BASE_URL ?>admin/refinance"><i class="fa fa-edit"></i>Auto Refinance User</a>
                                     </li>
-                                    
+                                    <li><a href="<?php echo BASE_URL ?>admin/personal"><i class="fa fa-edit"></i>Personal Loan</a>
+                                    </li>
                                      <li><a href="<?php echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a>
                                     </li>
                                      <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>

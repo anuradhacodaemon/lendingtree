@@ -23,12 +23,38 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <!--<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">-->
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
-<script src="<?php echo BASE_URL; ?>public/js/lendingsteps.js"></script>
-<script src="<?php echo BASE_URL; ?>public/js/refinancesteps.js"></script>
+
 <script src="<?php echo BASE_URL; ?>public/js/homeloansteps.js"></script>
-<script src="<?php echo BASE_URL; ?>public/js/personalsteps.js"></script>
+
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<?php 
+    $segment = $this->uri->segment(1);
+    if($segment == 'auto') {  
+?>
+
+    <script src="<?php echo BASE_URL; ?>public/js/lendingsteps.js"></script>
+<?php } ?>
+
+<?php 
+    $segment = $this->uri->segment(1);
+    if($segment == 'personal') {  
+?>
+
+<script src="<?php echo BASE_URL; ?>public/js/personalsteps.js"></script>
+    
+<?php } ?>
+
+<?php 
+    $segment = $this->uri->segment(1);
+    if($segment == 'refinance') {  
+?>
+<script src="<?php echo BASE_URL; ?>public/js/refinancesteps.js"></script>
+
+<?php } ?>
 <script>
     new WOW().init();
 </script>
@@ -128,4 +154,22 @@ if ($this->session->flashdata('item')) {
     <?php
 }
 ?>
+<div class="modal fade" id="disclosureModal" tabindex="-1" role="dialog" aria-labelledby="disclosureModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="disclosure">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="disclosureModalLabel">Disclosures</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>By providing the Credit Union with a wireless phone number (cell phone) you consent to receiving phone calls, including autodialed and pre-recorded calls from the Credit Union or its third-party debt collector at that number. </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 

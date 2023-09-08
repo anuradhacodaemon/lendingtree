@@ -101,6 +101,13 @@ class Refinance extends CI_Controller {
 
     public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
 
+        $firstname = $this->input->get('firstname');
+        $lastname = $this->input->get('lastname');
+        $address = $this->input->get('address');
+        $city = $this->input->get('city_name');
+        $state = $this->input->get('state_name');
+        $zip = $this->input->get('p_zip_code');
+
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
@@ -110,7 +117,8 @@ class Refinance extends CI_Controller {
                 'state' => $state,
                 'zip' => $zip
             );
-
+//echo '<pre>';
+        // print_r($this->session->userdata());
             $this->session->set_userdata($data);
         }
 
@@ -209,9 +217,11 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['total_dependent']);
         
+      //  echo"<pre>"; print_r($this->session->userdata()); die();		
         $result = $this->loan_model->add_refinance($this->session->userdata());
-
+      //  echo"<pre>"; print_r($result); die();	
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
