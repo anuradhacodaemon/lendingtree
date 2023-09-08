@@ -11,14 +11,14 @@
 <!-- Footer ends here -->
 <?php
 if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:82') {
-    $setURL = 'http://' . $_SERVER['HTTP_HOST'] . '/lendingtree/';
+    $setURL = 'https://' . $_SERVER['HTTP_HOST'] . '/lendingtree/';
 } else {
-    $setURL = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+    $setURL = 'https://' . $_SERVER['SERVER_NAME'] . '/';
 }
 ?>	
 <input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
-<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-<script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
 <!--<link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/bootstrap-theme.min.css">-->
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/js/slide/custom.css" type="text/css">
