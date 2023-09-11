@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro:wght@400;600;700&display=swap");
 :root {
-  --primary: #8a1b1e;
+  /* --primary: #8a1b1e; */
+  --primary: #a0d2d3;
+  --hover: #d6f1ec;
+  --white: #fff;
+  --black: #000;
+  /* --hover: #b79090; */
+
 }
 body {
   margin: 0;
@@ -68,8 +74,8 @@ input:focus {
 }
 .header-main {
   overflow: hidden;
-  /* background: #fff; */
-  background-color: #fbfaf8;
+  background: #fff;
+  /* background-color: #fbfaf8; */
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -81,7 +87,7 @@ input:focus {
 }
 .logo img {
   display: inline-block;
-  width: 150px;
+  width: 300px;
 }
 .number {
   float: right;
@@ -100,7 +106,8 @@ input:focus {
 }
 .banner-main {
   /* background: url("../img/banner-new.jpg") no-repeat 50% 50% / cover; */
-  background: url("../img/1.jpg") no-repeat 50% 30% / cover;
+  background: url("../img/beyou-banner.png") no-repeat 50% 30% / cover;
+  /* background: url("../img/banner2.jpg") no-repeat 50% 30% / cover; */
   position: relative;
   min-height: calc(80vh - 100px);
   display: flex;
@@ -149,8 +156,10 @@ input:focus {
   padding: 5px 8px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #654040;
-  background-color:  #654040;
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  /* border: 2px solid #654040; */
+  /* background-color:  #654040; */
   /* border: 2px solid #8f846f;
   background: #8f846f; */
 }
@@ -159,8 +168,9 @@ input:focus {
 }
 .offer-cont > a:hover .offer-circ .outer-circ .inner-bevel .second-bevel {
   /* background: #333; */
-  background-color: #b79090;
-  color: #fff;
+  /* background-color: #b79090; */
+  background-color: var(--hover);
+  color: var(--black);
 }
 .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
   display: block;
@@ -241,7 +251,7 @@ input:focus {
   font-size: 12px;
   text-decoration: none;
   text-align: right;
-  text-shadow: 1px 1px 3px #fff;
+  /* text-shadow: 1px 1px 3px #fff; */
 }
 .disclosure a {
   font-weight: 700;
@@ -261,8 +271,10 @@ input:focus {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #654040;
-  background: #654040;
+  border: 3px solid #a0d2d3;
+  background: #a0d2d3;
+  /* border: 2px solid #654040; */
+  /* background: #654040; */
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -279,11 +291,13 @@ input:focus {
 .btn-calc.status,
 .radio .button.status {
   /* background: #8f846f; */
-  background-color: #654040b3;
+  /* background-color: #654040b3; */
+  background-color: #587e60;
 }
 .radio .button:hover {
   /* background: #333; */
-  background-color: #b79090;
+  /* background-color: #b79090; */
+  background-color: #d9edee;
   color: #fff;
 }
 .calculator-main {
@@ -489,7 +503,8 @@ input:focus {
 }
 .footer-main {
   padding: 20px 0;
-  background: #142b3f;
+  background-color: #545454;
+  /* background: #142b3f; */
   color: white;
 }
 .footer-main .sub-nav {
@@ -558,7 +573,8 @@ input:focus {
   line-height: 13px;
 }
 .main-section {
-  background: #f2f2f2;
+  /* background: #f2f2f2; */
+  background: #d9edee;
   width: 100%;
   float: left;
   padding: 0;
@@ -630,14 +646,16 @@ input:focus {
   pointer-events: none;
   font-size: 22px;
   background: none;
-  color: #8f846f;
+  color: #587e60;
+  /* color: #8f846f; */
 }
 .radio .text {
   font-size: 16px;
   font-weight: 600;
 }
 .radio .button_payment_current {
-  background: #8f846f;
+  /* background: #8f846f; */
+  background: #587e60;
   color: #fff;
 }
 .button_back .sprites.continueIcon {
@@ -699,7 +717,8 @@ input[type="checkbox"] {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8f846f;
+  border: 2px solid #587e60;
+  /* border: 2px solid #8f846f; */
   padding: 0 15px;
 }
 .form-main select.form-control {
@@ -711,7 +730,8 @@ input[type="checkbox"] {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8f846f;
+  border: 2px solid #587e60;
+  /* border: 2px solid #8f846f; */
   padding: 0 15px;
 }
 .subtext {
@@ -840,7 +860,8 @@ input[type="checkbox"] {
   height: 20px;
   width: 20px;
   background: #fff;
-  border: 2px solid #8f846f;
+  border: 2px solid #587e60;
+  /* border: 2px solid #8f846f; */
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -857,7 +878,8 @@ input[type="checkbox"] {
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background: #8f846f;
+  background: #587e60;
+  /* background: #8f846f; */
   transform: translate(-50%, -50%);
   transition: all 0.3s ease-out;
 }
@@ -916,13 +938,15 @@ input[type="checkbox"] {
   box-shadow: none;
 }
 .slider-box .slider.slider-horizontal .slider-selection {
-  background: #8f846f;
+  /* background: #8f846f; */
+  background: #587e60;
 }
 .slider-box .slider.slider-horizontal .slider-handle {
   width: 20px;
   height: 20px;
   top: 5px;
-  background: #8f846f;
+  background: #587e60;
+  /* background: #8f846f; */
   cursor: grab;
 }
 .slider-box .slider.slider-horizontal .slider-handle:active {
@@ -1014,7 +1038,8 @@ input[type="checkbox"] {
   font-weight: 500;
 }
 .top-head {
-  background: #8f846f;
+  /* background: #8f846f; */
+  background: #587e60;
   padding: 10px;
   color: #fff;
   font-size: 18px;
@@ -1095,8 +1120,10 @@ input[type="checkbox"] {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8f846f;
-  background: #8f846f;
+  border: 2px solid #587e60;
+  background: #587e60;
+  /* border: 2px solid #8f846f;
+  background: #8f846f; */
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -1106,7 +1133,8 @@ input[type="checkbox"] {
 }
 .btn-calc:hover {
   /* background: #333; */
-  background-color: #654040b3;
+  /* background-color: #654040b3; */
+  background: #587e60b4;;
   color: #fff;
 }
 .btn-calc .sprites {
