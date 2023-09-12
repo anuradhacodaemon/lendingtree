@@ -317,7 +317,7 @@ function refinancestep4() {
             city = $('#city').val();
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val(),
+            url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('#city').val()  + '/' + $('#state').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
