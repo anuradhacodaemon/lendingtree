@@ -4,7 +4,11 @@
         text-align: center;
     }
     .number a {font-size: 13px;}
-    .banner-main {background: #fff; padding-top: 0px; padding-bottom: 0px;}
+    .banner-main {
+        /* background: #fff;  */
+        padding-top: 0px;
+        padding-bottom: 0px;
+        }
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
     .banner-main .banner-left h2 {font-size: 22px;}
@@ -84,7 +88,7 @@
     .logo {width: 65%;}
     .number a {font-size: 18px;}
     .banner-main {
-        background: #fff;
+        /* background: #fff; */
         padding-top: 0px;
         padding-bottom: 0px;
         margin: 0;
