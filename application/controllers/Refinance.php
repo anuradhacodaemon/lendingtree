@@ -203,6 +203,10 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['country']);
+        unset($this->session->userdata['street_line']);
+
+
         
         $result = $this->loan_model->add_refinance($this->session->userdata());
 
