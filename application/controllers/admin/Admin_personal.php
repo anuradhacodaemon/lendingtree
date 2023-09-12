@@ -207,7 +207,7 @@ class Admin_personal extends CI_Controller {
         // $pdf->SetFont('helvetica', '', 10);
         // add a page
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('view_file_personal_loan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();

@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2> Loan User Details</h2>
+                <h2>Personal Loan User Details</h2>
 
                 <div class="clearfix"></div>
             </div><?php //$takenby = $this->jobs->get_dispatcher($userDetails[0]['dispatcherid']); ?>
@@ -12,7 +12,7 @@
     <div class="page-title">
         <div class="title_left">
 
-            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/user' ?>" class="dark_grey">User Listing</a> >Details
+            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/personal' ?>" class="dark_grey">Personal Listing</a> >Details
             <h3> <small> </small></h3>
         </div>
 
@@ -62,48 +62,17 @@
 
                         <div class="row invoice-info">
                             <div class="col-sm-12 invoice-col padding_0">
-                                <div class="col-sm-12"><span> <b>Request Amount:</b>&nbsp;
+                                <div class="col-sm-12"><span> <b>Request Amount ($):</b>&nbsp;
                                         <?php  
-                                        if($userDetails[0]['requested_amount']>0){
-                                            $years='';
-                                        if($userDetails[0]['requested_amount']==7)
-                                    $years='$5,000-$10,000';
-                                        if($userDetails[0]['requested_amount']==6)
-                                    $years='$10,000-$15,000';
-                                        if($userDetails[0]['requested_amount']==5)
-                                    $years='$15,000-$20,000';
-                                        if($userDetails[0]['requested_amount']==4)
-                                    $years='$20,000-$30,000';
-                                        if($userDetails[0]['requested_amount']==3)
-                                    $years='$30,000- $40,000';
-                                        if($userDetails[0]['requested_amount']==2)
-                                    $years='$40,000 - $50,000';
-                                        if($userDetails[0]['requested_amount']==1)
-                                    $years='$50,000+';
-                                      
-                                        
-                                        echo $years;
-                                        }
+                                      echo $userDetails[0]['requested_amount'];
                                          ?></span>
                                 </div>
                                 
                                 
                                <div class="col-sm-12"> <b>Type: &nbsp;</b>
                                     <?php 
-                                    if($userDetails[0]['type']>0)
-                                    {
-                                        $type='';
-                                if($userDetails[0]['type']==1)
-                                    $type='New Car Purchase';
-                                 if($userDetails[0]['type']==2)
-                                    $type='Used Car Purchase';
-                                  if($userDetails[0]['type']==3)
-                                    $type='Refinance';
-                                   if($userDetails[0]['type']==4)
-                                    $type='Lease Buy Out';
-                                
-                                
-                                    echo $type;} ?>
+                                   $type='Personal Loan';
+                                   echo $type ?>
                                 </div>
                                
                                 <div class="col-sm-12"><b>Your Current Employer: &nbsp</b>
@@ -123,22 +92,14 @@
                                     <?php echo str_replace("%20"," ",$userDetails[0]['address']);?>
                                 </div>
                                
- <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                    <div class="col-sm-12"> <b>City: &nbsp;</b>
                                     <?php
-                                    if($userDetails[0]['city']>0){
-                                    $city=$this->users->get_city($userDetails[0]['city']);
-                                    
-                                    echo $city[0]['name'];} ?>
+                                    echo $userDetails[0]['city'];?>
                                 </div>
                                <div class="col-sm-12"> <b>State: &nbsp;</b>
                                     <?php
                                     
-                                    if($userDetails[0]['state']>0)
-                                    {
-                                  $state=$this->users->get_city($userDetails[0]['state']);
-
-                                    echo $state[0]['name'];
-                                    }?>
+                                    echo $userDetails[0]['state'] ;?>
                                 </div>
                                <div class="col-sm-12"> <b>Zip: &nbsp;</b>
                                     <?php echo $userDetails[0]['zip'] ?>
