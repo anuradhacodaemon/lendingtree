@@ -4,7 +4,7 @@
         text-align: center;
     }
     .number a {font-size: 13px;}
-    .banner-main {background: #fff; padding-top: 0px; padding-bottom: 0px;}
+    .banner-main { padding-top: 0px; padding-bottom: 0px;}
     .banner-main .banner-left {margin: 0 auto; text-align: center;}
     .banner-main .banner-left h1 {font-size: 20px; margin: 0 0 15px;}
     .banner-main .banner-left h2 {font-size: 22px;}
@@ -19,7 +19,7 @@
     .panel .logo-list {text-align: center;}
     .footer-main {padding: 10px; text-align: center;}
     .panel .block-frame .logo-list {float: none; margin: 0; padding: 0;}
-    .main-section {background: #f2f2f2; padding: 10px 0 0;}
+    .main-section { padding: 10px 0 0;}
     .form-main {padding: 0 0 110px;}
     .form-main .control-label {font-size: 18px; margin-top: 10px;}
     .form-main h2 {font-size: 16px;}
@@ -84,7 +84,7 @@
     .logo {width: 65%;}
     .number a {font-size: 18px;}
     .banner-main {
-        background: #fff;
+        /* background: #fff; */
         padding-top: 0px;
         padding-bottom: 0px;
         margin: 0;
@@ -103,7 +103,7 @@
     .quicklinks-main {padding: 20px 0;}
     .footer-main {padding: 10px; text-align: center;}
     .main-section {
-        background: #f2f2f2;
+        /* background: #f2f2f2; */
         padding: 0;
         margin: 0;
     }

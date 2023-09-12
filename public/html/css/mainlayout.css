@@ -49,7 +49,7 @@ input:focus {
   margin-bottom: 40px !important;
 }
 .margtop_30 {
-  margin-top: 30px !important;
+  /* margin-top: 30px !important; */
 }
 .width_100 {
   width: 100% !important;
@@ -81,7 +81,7 @@ input:focus {
 }
 .logo img {
   display: inline-block;
-  width: 150px;
+  width: 200px;
 }
 .number {
   float: right;
@@ -100,7 +100,8 @@ input:focus {
 }
 .banner-main {
   /* background: url("../img/banner-new.jpg") no-repeat 50% 50% / cover; */
-  background: url("../img/1.jpg") no-repeat 50% 30% / cover;
+  /* background: url("../img/1.jpg") no-repeat 50% 30% / cover; */
+  background-color: #03ae6e;
   position: relative;
   min-height: calc(80vh - 100px);
   display: flex;
@@ -149,8 +150,8 @@ input:focus {
   padding: 5px 8px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #654040;
-  background-color:  #654040;
+  border: 2px solid #ED8B00;
+  background-color:  #ED8B00;
   /* border: 2px solid #8f846f;
   background: #8f846f; */
 }
@@ -159,7 +160,7 @@ input:focus {
 }
 .offer-cont > a:hover .offer-circ .outer-circ .inner-bevel .second-bevel {
   /* background: #333; */
-  background-color: #b79090;
+  background-color: #ffad39;
   color: #fff;
 }
 .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
@@ -241,7 +242,7 @@ input:focus {
   font-size: 12px;
   text-decoration: none;
   text-align: right;
-  text-shadow: 1px 1px 3px #fff;
+  /* text-shadow: 1px 1px 3px #fff; */
 }
 .disclosure a {
   font-weight: 700;
@@ -261,8 +262,8 @@ input:focus {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #654040;
-  background: #654040;
+  border: 2px solid #ED8B00;
+  background: #ED8B00;
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -279,11 +280,11 @@ input:focus {
 .btn-calc.status,
 .radio .button.status {
   /* background: #8f846f; */
-  background-color: #654040b3;
+  background-color: #001489;
 }
 .radio .button:hover {
   /* background: #333; */
-  background-color: #b79090;
+  background-color: #ffad39;
   color: #fff;
 }
 .calculator-main {
@@ -489,8 +490,7 @@ input:focus {
 }
 .footer-main {
   padding: 20px 0;
-  background: #142b3f;
-  color: white;
+  background: #f0f1f2;
 }
 .footer-main .sub-nav {
   margin: 0;
@@ -558,7 +558,7 @@ input:focus {
   line-height: 13px;
 }
 .main-section {
-  background: #f2f2f2;
+  background: #13a9dc78;
   width: 100%;
   float: left;
   padding: 0;
@@ -637,7 +637,7 @@ input:focus {
   font-weight: 600;
 }
 .radio .button_payment_current {
-  background: #8f846f;
+  background: #ffad39;
   color: #fff;
 }
 .button_back .sprites.continueIcon {
@@ -693,13 +693,13 @@ input[type="checkbox"] {
 .form-main input.form-control {
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
+  /* text-align: center; */
   height: 50px;
   width: 320px;
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8f846f;
+  border: 2px solid #001489;
   padding: 0 15px;
 }
 .form-main select.form-control {
@@ -709,9 +709,10 @@ input[type="checkbox"] {
   height: 50px;
   width: 320px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 5px auto;
   border-radius: 50px;
-  border: 2px solid #8f846f;
+  /* border: 2px solid #8f846f; */
+  border: 2px solid #001489;
   padding: 0 15px;
 }
 .subtext {
@@ -840,7 +841,7 @@ input[type="checkbox"] {
   height: 20px;
   width: 20px;
   background: #fff;
-  border: 2px solid #8f846f;
+  border: 2px solid #001489;
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -857,7 +858,7 @@ input[type="checkbox"] {
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background: #8f846f;
+  background: #001489;
   transform: translate(-50%, -50%);
   transition: all 0.3s ease-out;
 }
@@ -916,13 +917,13 @@ input[type="checkbox"] {
   box-shadow: none;
 }
 .slider-box .slider.slider-horizontal .slider-selection {
-  background: #8f846f;
+  background: #001489;
 }
 .slider-box .slider.slider-horizontal .slider-handle {
   width: 20px;
   height: 20px;
   top: 5px;
-  background: #8f846f;
+  background: #001489;
   cursor: grab;
 }
 .slider-box .slider.slider-horizontal .slider-handle:active {
@@ -1014,7 +1015,7 @@ input[type="checkbox"] {
   font-weight: 500;
 }
 .top-head {
-  background: #8f846f;
+  background: #ED8B00;
   padding: 10px;
   color: #fff;
   font-size: 18px;
@@ -1095,8 +1096,8 @@ input[type="checkbox"] {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8f846f;
-  background: #8f846f;
+  border: 2px solid #ED8B00;
+  background: #ED8B00;
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -1106,7 +1107,7 @@ input[type="checkbox"] {
 }
 .btn-calc:hover {
   /* background: #333; */
-  background-color: #654040b3;
+  background-color: #ffad39;
   color: #fff;
 }
 .btn-calc .sprites {
