@@ -200,27 +200,27 @@ if (window.performance) {
     
 //}
  }, false);
-function step1(id) {
-    ga('send', 'event', 'BMTCCU', 'personal loan', 'type of loan');
-    var url = base_url + "personal/personal_step1/" + id;
+// function step1(id) {
+//     ga('send', 'event', 'BMTCCU', 'personal loan', 'type of loan');
+//     var url = base_url + "personal/personal_step1/" + id;
     
-    $.ajax({
-        type: "GET",
-        url: url,
-        success: function (data)
-        {
+//     $.ajax({
+//         type: "GET",
+//         url: url,
+//         success: function (data)
+//         {
             
            
-            window.history.pushState("Details", "Title", base_url + "personal?step=1");
+//             window.history.pushState("Details", "Title", base_url + "personal?step=1");
             
-            $('#container').html(data);
+//             $('#container').html(data);
             
              
             
-        }
-    });
+//         }
+//     });
 
-}
+// }
 function personal_step2(id) {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'type of loan');
     var url = base_url + "personal/personal_step2/" + id;
@@ -242,11 +242,23 @@ function personal_step2(id) {
     });
 
 }
-function personal_step3(id) {
+function personal_step3() {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'Requested Amount');
+    var RE1 = /^\d+$/;
+
+    if (!RE1.test($("#requested_amount").val())) 
+    {
+
+        $('#err2').html('Only digits allowed ');
+        $('#requested_amount').focus();
+        $('#err1').html('');
+        return false;
+    } else
+    {
+        $('#err2').html('');
     $.ajax({
         type: "GET",
-        url: base_url + "personal/personal_step3/" + id,
+        url: base_url + "personal/personal_step3/" + $("#requested_amount").val(),
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "personal?personal_step=3");
@@ -254,6 +266,9 @@ function personal_step3(id) {
             $('#container').html(data);
         }
     });
+ }
+
+
 
 }
 

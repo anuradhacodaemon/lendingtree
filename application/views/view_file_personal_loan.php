@@ -91,28 +91,13 @@
                        Request Amount ($):
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                      <?php  
-                                        if($userDetails[0]['requested_amount']>0){
-                                            $years='';
-                                        if($userDetails[0]['requested_amount']==7)
-                                    $years='$5,000-$10,000';
-                                        if($userDetails[0]['requested_amount']==6)
-                                    $years='$10,000-$15,000';
-                                        if($userDetails[0]['requested_amount']==5)
-                                    $years='$15,000-$20,000';
-                                        if($userDetails[0]['requested_amount']==4)
-                                    $years='$20,000-$30,000';
-                                        if($userDetails[0]['requested_amount']==3)
-                                    $years='$30,000- $40,000';
-                                        if($userDetails[0]['requested_amount']==2)
-                                    $years='$40,000 - $50,000';
-                                        if($userDetails[0]['requested_amount']==1)
-                                    $years='$50,000+';
+                      <?php    echo $userDetails[0]['requested_amount'];  ?>
+
                                       
                                         
-                                        echo $years;
-                                        }
-                                         ?>
+                                      
+
+                                        
                     </td>
                 </tr>
                 <tr>
@@ -120,21 +105,11 @@
                         Type of Application :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php 
-                                    if($userDetails[0]['type']>0)
-                                    {
-                                        $type='';
-                                if($userDetails[0]['type']==1)
-                                    $type='New Car Purchase';
-                                 if($userDetails[0]['type']==2)
-                                    $type='Used Car Purchase';
-                                  if($userDetails[0]['type']==3)
-                                    $type='Refinance';
-                                   if($userDetails[0]['type']==4)
-                                    $type='Lease Buy Out';
+                        <?php $type='Personal Loan';
+                        echo $type; ?>
                                 
                                 
-                                    echo $type;} ?>
+                                   
                     </td>
                 </tr>
             </table>

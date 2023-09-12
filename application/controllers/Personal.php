@@ -36,7 +36,7 @@ class Personal extends CI_Controller {
 
         $this->session->set_userdata('panel', 'frontend');
 
-        $this->template->view('personal_step1_view');
+        $this->template->view('personal_step2_view');
     }
 
     public function personal_step1() {
@@ -56,16 +56,16 @@ class Personal extends CI_Controller {
         $this->load->view('personal_step2_view');
     }
 
-    public function personal_step3($id = 0) {
-        if ($id) {
+    public function personal_step3($requested_amount = 0) {
+        if ($requested_amount) {
             $data = array(
-                'requested_amount' => $id
+                'requested_amount' => $requested_amount
             );
 
             $this->session->set_userdata($data);
         }
-        // echo '<pre>';
-        // print_r($this->session->userdata());
+       //  echo '<pre>';
+      //   print_r($this->session->userdata());
         $this->load->view('personal_step3_view');
     }
 
@@ -208,6 +208,7 @@ class Personal extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['type']);
         
         $result = $this->loan_model->add_personal_loan($this->session->userdata());
         //$this->loan_model->add_loan($this->session->userdata['userdata']);

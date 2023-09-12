@@ -62,7 +62,7 @@
                     </div>
                     <div class="offer-cont" style="display:block">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <a href="<?php echo BASE_URL . 'personal?personal_step=1' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'personal loan');">
+                            <a href="<?php echo BASE_URL . 'personal?personal_step=2' ?>" onClick="ga('send', 'event', 'BMTCCU', 'click', 'personal loan');">
                                 <button class="offer-circ">
                                     <div class="outer-circ">
                                         <div class="inner-bevel">

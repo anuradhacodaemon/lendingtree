@@ -76,35 +76,6 @@ $visitor = $this->personal->checklead_denied_forDomain();
                     ?>">
                     </div> -->
 
-                    <div class="col-md-2 form-group ">
-
-                        <select name="type" class="form-control">
-                            <option value="">Type of Loan</option>
-                            <option value="1" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 1) echo 'selected'; ?>>New Car Purchase</option>
-                            <option value="2" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 2) echo 'selected'; ?>>Used Car Purchase</option>
-                            <option value="3" <?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 3) echo 'selected'; ?>>Refinance</option>
-                            <option value="4"<?php if (isset($_REQUEST['type'])) if ($_REQUEST['type'] == 4) echo 'selected'; ?>>Lease Buy Out</option>
-
-                        </select>
-
-
-                    </div>
-                    <div class="col-md-2 form-group ">
-
-                        <select name="requested_amount" class="form-control">
-                            <option value="">Request Amount</option>
-                            <option value="7"<?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 7) echo 'selected'; ?>>$5,000-$10,000</option>
-                            <option value="6" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 6) echo 'selected'; ?>>$10,000-$15,000</option>
-                            <option value="5" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 5) echo 'selected'; ?>>$15,000-$20,000</option>
-                            <option value="4" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 4) echo 'selected'; ?>>$20,000-$30,000</option>
-                            <option value="3" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 3) echo 'selected'; ?>>$30,000- $40,000</option>
-                            <option value="2" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 2) echo 'selected'; ?>>$40,000 - $50,000</option> 
-                            <option value="1" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == 1) echo 'selected'; ?>>$50,000+</option>
-
-                        </select>
-
-
-                    </div>
 
 
                     <!--  
@@ -145,7 +116,19 @@ $visitor = $this->personal->checklead_denied_forDomain();
 
                     </div>  
                     <?php } ?>
-                    <div class="col-md-3 form-group ">
+
+                    <div class="col-md-4 form-group ">
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Requested Amount" name="requested_amount" value="<?php
+                                    if (isset($_REQUEST['requested_amount'])) {
+                                        echo $_REQUEST['requested_amount'];
+                                    }
+                                    ?>">
+                                </div>
+
+                         </div>
+                    <div class="col-md-4 form-group ">
 
 
                         <div class="input-group">
@@ -158,7 +141,7 @@ $visitor = $this->personal->checklead_denied_forDomain();
 
                     </div>
 
-                    <div class="col-md-3 form-group ">
+                    <div class="col-md-4 form-group ">
 
 
                         <div class="input-group">
@@ -172,7 +155,7 @@ $visitor = $this->personal->checklead_denied_forDomain();
                     </div>
 
 
-                    <div class="col-md-3 form-group ">
+                    <div class="col-md-4 form-group ">
 
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Monthly Income greater than" name="pre_tax_income2" value="<?php
@@ -260,10 +243,6 @@ $visitor = $this->personal->checklead_denied_forDomain();
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.email" && $sort_direction == "desc") { ?> onClick="sortList('personal.email', 'asc')"<?php } ?> <?php if ($sort_by != "personal.email") { ?> onClick="sortList('personal.email', 'asc')"<?php } ?><?php if ($sort_by == "personal.email" && $sort_direction == "asc") { ?> onClick="sortList('personal.email', 'desc')"<?php } ?>> Email</a>&nbsp;<?php if ($sort_by == "personal.email" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "personal.email" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.type" && $sort_direction == "desc") { ?> onClick="sortList('personal.type', 'asc')"<?php } ?> <?php if ($sort_by != "personal.type") { ?> onClick="sortList('personal.type', 'asc')"<?php } ?><?php if ($sort_by == "personal.type" && $sort_direction == "asc") { ?> onClick="sortList('personal.type', 'desc')"<?php } ?>> Type</a>&nbsp;<?php if ($sort_by == "personal.type" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "personal.type" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-
-
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "personal.requested_amount" && $sort_direction == "desc") { ?> onClick="sortList('personal.requested_amount', 'asc')"<?php } ?> <?php if ($sort_by != "personal.requested_amount") { ?> onClick="sortList('personal.requested_amount', 'asc')"<?php } ?><?php if ($sort_by == "personal.requested_amount" && $sort_direction == "asc") { ?> onClick="sortList('personal.requested_amount', 'desc')"<?php } ?>> Requested Amount</a>&nbsp;<?php if ($sort_by == "personal.requested_amount" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "personal.requested_amount" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
@@ -301,39 +280,8 @@ $visitor = $this->personal->checklead_denied_forDomain();
                                         </td>
                                         <td class=" "><?php echo $v['firstname']." ".$v['lastname'] ?></td>
                                         <td class=" "><?php echo $v['email'] ?></td>
-                                        <td class=" "><?php
-                                            $type = '';
-                                            if ($v['type'] == 1)
-                                                $type = 'New Car Purchase';
-                                            if ($v['type'] == 2)
-                                                $type = 'Used Car Purchase';
-                                            if ($v['type'] == 3)
-                                                $type = 'Refinance';
-                                            if ($v['type'] == 4)
-                                                $type = 'Lease Buy Out';
-                                            echo $type;
-                                            ?></td>
-                                        <td> <?php
-                                            $years = '';
-                                            if ($v['requested_amount'] == 7)
-                                                $years = '$5,000-$10,000';
-                                            if ($v['requested_amount'] == 6)
-                                                $years = '$10,000-$15,000';
-                                            if ($v['requested_amount'] == 5)
-                                                $years = '$15,000-$20,000';
-                                            if ($v['requested_amount'] == 4)
-                                                $years = '$20,000-$30,000';
-                                            if ($v['requested_amount'] == 3)
-                                                $years = '$30,000- $40,000';
-                                            if ($v['requested_amount'] == 2)
-                                                $years = '$40,000 - $50,000';
-                                            if ($v['requested_amount'] == 1)
-                                                $years = '$50,000+';
-                                            if ($v['requested_amount'] == 0)
-                                                $years = '0';
-                                            echo $years;
-                                            ?></td>
 
+                                        <td><?php echo '$' . number_format($v['requested_amount']); ?></td>
                                         <td><?php echo '$' . number_format($v['pre_tax_income']); ?></td>
 
                                         <td><?php echo $v['job_title']; ?></td>
