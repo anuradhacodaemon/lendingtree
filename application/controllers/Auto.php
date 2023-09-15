@@ -211,7 +211,7 @@ class Auto extends CI_Controller {
 
         $result = $this->loan_model->add_loan($this->session->userdata());
 
-        //$this->loan_model->add_loan($this->session->userdata['userdata']);
+        
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
@@ -348,6 +348,8 @@ class Auto extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),$dh,$dir);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
