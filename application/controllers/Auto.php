@@ -36,7 +36,24 @@ class Auto extends CI_Controller {
 
         $this->template->view('step1_view');
     }
-
+       public function testMail()
+    {
+        $this->load->library('email');
+        $this->email->set_newline("\r\n");
+        $this->email->from(ADMINEMAIL, ADMINNAME);
+        $this->email->to('suraj.k@codaemonsoftwares.com');
+        $this->email->subject("Test Application");
+        $this->email->message('Test Email for Server Demo');
+        $emailSend = $this->email->send();
+        if ($emailSend) {
+            echo "from if>>";
+            echo $this->email->print_debugger();exit;
+            return 1;
+        }
+        echo "from if mail not send>>";
+        echo $this->email->print_debugger();exit;
+        return 0;
+    }
     public function step1() {
 
         $this->load->view('step1_view');
