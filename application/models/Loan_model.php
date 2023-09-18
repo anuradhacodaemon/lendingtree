@@ -196,15 +196,15 @@ class Loan_model extends CI_Model {
     }
 
     //send to zapier
-    public function send_to_zapier($postFields,$name,$path){
+    public function send_to_zapier($postFields,$name,$path,$id){
         $full_path = $path.$name;
-        $zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/16509132/3rgndwy/";
+        $zapierWebhookUrl = ZAPIER_HOOK_URL;
 
         // Initialize cURL session
         $ch = curl_init();
 
         // Define the file to be sent as an attachment
-        $fileAttachment = new \CURLFile($full_path, 'application/pdf', $name);
+        $fileAttachment =  $_SERVER['HTTP_HOST'].'/auto/pdfLoan/'.$id
         $postFields["File"] = $fileAttachment;
 
         
