@@ -204,7 +204,7 @@ class Loan_model extends CI_Model {
         $ch = curl_init();
 
         // Define the file to be sent as an attachment
-        $fileAttachment =  $_SERVER['HTTP_HOST'].'/auto/pdfLoan/'.$id
+        $fileAttachment =  $_SERVER['HTTP_HOST'].'/auto/pdfLoan/'.$id;
         $postFields["File"] = $fileAttachment;
 
         
