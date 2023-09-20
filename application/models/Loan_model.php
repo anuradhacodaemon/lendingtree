@@ -184,13 +184,57 @@ class Loan_model extends CI_Model {
     }
     
      public function get_zip($zipcode = 0) {
-//$this->db->select('id,name');
         $this->db->from(ZIPCODE);
         $this->db->where('zipcode', $zipcode);
         $result = $this->db->get();
         //echo $this->db->last_query();
 
         return $result->result_array();
+    }
+
+    //send to zapier
+    public function send_to_zapier($postFields,$name,$id){
+        $zapierWebhookUrl = ZAPIER_HOOK_URL;
+
+        // Initialize cURL session
+        $ch = curl_init();
+
+        // Define the file to be sent as an attachment
+        $fileAttachment =  $_SERVER['HTTP_HOST'].'/'.$name.'/pdfLoan/'.$id;
+        $postFields["File"] = $fileAttachment;
+
+        
+
+        // Set the Content-Type header to indicate multipart/form-data
+        $headers = array('Content-Type: multipart/form-data');
+
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_URL, $zapierWebhookUrl);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        // Execute the cURL request
+        $response = curl_exec($ch);
+
+        // Check for cURL errors or process the response as needed
+        if (curl_errno($ch)) {
+            $status = 'fail';
+        } else {
+            // Decode the JSON string into an associative array
+            $data = json_decode($response, true);
+
+            // Extract the "status" value
+            $status = $data['status'];
+        }
+
+        // Close cURL session
+        curl_close($ch);
+        return $status;
+        
     }
 
 }
