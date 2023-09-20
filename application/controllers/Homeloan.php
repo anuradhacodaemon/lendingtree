@@ -606,6 +606,8 @@ class Homeloan extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'homeloan',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',

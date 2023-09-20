@@ -349,7 +349,7 @@ class Auto extends CI_Controller {
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
         //send data to zapier
-        $this->loan_model->send_to_zapier($this->session->userdata(),$dh,$dir,$id);
+        $this->loan_model->send_to_zapier($this->session->userdata(),'auto',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
