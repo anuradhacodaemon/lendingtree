@@ -2595,7 +2595,7 @@ class Auto extends CI_Controller {
 
     public function pdfLoan($id = 0) {
      
-        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,LOANS);
         $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');

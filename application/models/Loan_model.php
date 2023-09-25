@@ -176,6 +176,18 @@ class Loan_model extends CI_Model {
 
         return $result->result_array();
     }
+
+    public function get_userdetailsforpdf($shopId = 0,$TABLE = 0) {
+        $this->db->select('shop.*');
+
+        $this->db->from($TABLE . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.Loan_id', $shopId);
+
+        $result = $this->db->get();
+
+        return $result->result_array();
+    }
     
      public function get_emailtemplatepdf() {
         $this->db->from(EMAILTEMPLATEPDF . ' as email');
@@ -206,10 +218,10 @@ class Loan_model extends CI_Model {
         $fileAttachment =  $_SERVER['HTTP_HOST'].'/'.$name.'/pdfLoan/'.$id;
         $postFields["File"] = $fileAttachment;
 
-
+        $api_key = $this->config->item('ZAPIER_API_KEY');
         // Set the Content-Type header to indicate multipart/form-data
         //$headers = array('Content-Type: multipart/form-data');
-        $headers = array('api_key: 03333890dae6c291ba58f5ed2a','Content-Type: multipart/form-data');
+        $headers = array('api_key: '.$api_key,'Content-Type: multipart/form-data');
 
         // Set cURL options
         curl_setopt($ch, CURLOPT_URL, $zapierWebhookUrl);
