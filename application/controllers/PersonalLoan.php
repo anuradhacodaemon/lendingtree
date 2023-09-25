@@ -2213,7 +2213,7 @@ class PersonalLoan extends CI_Controller
         $emails = $this->loan_model->get_phone();
 
         //send data to zapier
-        $this->loan_model->send_to_zapier($this->session->userdata(),'personal',$id);
+        $this->loan_model->send_to_zapier($this->session->userdata(),'personalLoan',$id);
 
         $this->load->library('email');
 
@@ -2270,17 +2270,12 @@ class PersonalLoan extends CI_Controller
 
     public function pdfLoan($id = 0) {
      
-        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,HOMELOAN);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,PERSONAL_MMCU_LOAN,'p_id');
+        $name = $data['userDetails']['first_name'] . '_' . $data['userDetails']['p_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
-        //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
-        //$pdf->SetAutoPageBreak(true, 20);
-        // $pdf->setFontSubsetting(false);
-        // $pdf->SetFont('helvetica', '', 10);
-        // add a page
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('mccu_auto_view_fileloan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
