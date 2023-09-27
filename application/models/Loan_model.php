@@ -176,6 +176,18 @@ class Loan_model extends CI_Model {
 
         return $result->result_array();
     }
+
+    public function get_userdetailsforpdf($shopId = 0,$TABLE = 0, $auto_id) {
+        $this->db->select('shop.*');
+
+        $this->db->from($TABLE . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.'.$auto_id, $shopId);
+
+        $result = $this->db->get();
+
+        return $result->row_array();
+    }
     
      public function get_emailtemplatepdf() {
         $this->db->from(EMAILTEMPLATEPDF . ' as email');
