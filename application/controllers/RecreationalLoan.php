@@ -2279,6 +2279,9 @@ class RecreationalLoan extends CI_Controller
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'recreationalLoan',$id);
+
         $this->load->library('email');
 
         $this->email->set_newline("\r\n");
@@ -2332,7 +2335,19 @@ class RecreationalLoan extends CI_Controller
         return 0;
     }
    
-
+    public function pdfLoan($id = 0) {
+     
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,RECREATIONAL_MMCU_LOAN,'rc_id');
+        $name = $data['userDetails']['first_name'] . '_' . $data['userDetails']['rc_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        $pdf->AddPage();
+        $tbl = $this->load->view('mccu_auto_view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
+    }
 
 
 
