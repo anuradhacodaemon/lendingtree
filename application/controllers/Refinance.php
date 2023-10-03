@@ -400,11 +400,16 @@ class Refinance extends CI_Controller {
 
     public function pdfLoan($id = 0) {
      
-        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,REFINANCE,'lend_id');
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,REFINANCE,'ref_id');
         //print_r($data['userDetails']);
-        $name = $data['userDetails']['first_name'] . '_' . $data['userDetails']['lend_id'];
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
+        // add a page
         $pdf->AddPage();
         $tbl = $this->load->view('view_fileloan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');

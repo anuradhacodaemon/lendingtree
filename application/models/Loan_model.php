@@ -186,7 +186,7 @@ class Loan_model extends CI_Model {
 
         $result = $this->db->get();
 
-        return $result->row_array();
+        return $result->result_array();
     }
     
      public function get_emailtemplatepdf() {
