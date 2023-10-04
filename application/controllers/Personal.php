@@ -72,7 +72,7 @@ class Personal extends CI_Controller {
     public function personal_step4($id = 0, $pre_approved = 0) {
         if ($id) {
             $data = array(
-                'current_employer' => $id,
+                'current_employer' => urldecode($id),
                 'job_title' => $pre_approved
             );
 

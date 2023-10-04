@@ -54,10 +54,10 @@ class Auto extends CI_Controller {
         $this->load->view('step2_view');
     }
 
-    public function step3($id = 0) {
-        if ($id) {
+    public function step3($requested_amount = 0) {
+        if ($requested_amount) {
             $data = array(
-                'requested_amount' => $id
+                'requested_amount' => $requested_amount
             );
 
             $this->session->set_userdata($data);
@@ -70,7 +70,7 @@ class Auto extends CI_Controller {
     public function step4($id = 0, $pre_approved = 0) {
         if ($id) {
             $data = array(
-                'current_employer' => $id,
+                'current_employer' => urldecode($id),
                 'job_title' => $pre_approved
             );
 

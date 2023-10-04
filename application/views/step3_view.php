@@ -19,7 +19,7 @@
               <div class="clearfix"></div>
               <label class="control-label">Your Current Employer?</label>
               <div class="col-xs-12 col-sm-12 margbot_40">
-                <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['current_employer'])) echo $this->session->userdata['current_employer']?>" class="form-control"  >
+                <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['current_employer'])) echo urldecode($this->session->userdata['current_employer']);?>" class="form-control"  >
                 <span id="err1" style="color: red"></span>
               </div>
               <label class="control-label">How many years have you worked there?</label>

@@ -246,7 +246,7 @@ function personal_step3() {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'Requested Amount');
     var RE1 = /^\d+$/;
 
-    if (!RE1.test($("#requested_amount").val())) 
+    if (!RE1.test($("#requested_amount1").val())) 
     {
 
         $('#err2').html('Only digits allowed ');
@@ -258,7 +258,7 @@ function personal_step3() {
         $('#err2').html('');
     $.ajax({
         type: "GET",
-        url: base_url + "personal/personal_step3/" + $("#requested_amount").val(),
+        url: base_url + "personal/personal_step3/" + $("#requested_amount1").val(),
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "personal?personal_step=3");
@@ -280,12 +280,6 @@ function personal_step4() {
     {
 
         $('#err1').html('Your Current Employer is empty');
-        $('#cemployer').focus();
-        return false;
-    } else if (!RE.test($("#cemployer").val()))
-    {
-
-        $('#err1').html('Your Current Employer should have letter only ');
         $('#cemployer').focus();
         return false;
     } else if ($('input[name=job_title]').val() == '')

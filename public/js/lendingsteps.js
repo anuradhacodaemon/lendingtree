@@ -242,11 +242,12 @@ function step2(id) {
     });
 
 }
-function step3(id) {
+function step3() {
+    var requested_amount = $('input[name=requested_amount1]').val();
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     $.ajax({
         type: "GET",
-        url: base_url + "auto/step3/" + id,
+        url: base_url + "auto/step3/" + requested_amount,
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "auto?step=3");
@@ -267,13 +268,7 @@ function step4() {
         $('#err1').html('Your Current Employer is empty');
         $('#cemployer').focus();
         return false;
-    } else if (!RE.test($("#cemployer").val()))
-    {
-
-        $('#err1').html('Your Current Employer should have letter only ');
-        $('#cemployer').focus();
-        return false;
-    } else if ($('input[name=job_title]').val() == '')
+    }else if ($('input[name=job_title]').val() == '')
     {
 
         $('#err2').html('How many years have you worked there is empty');

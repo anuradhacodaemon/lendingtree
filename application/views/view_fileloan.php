@@ -94,7 +94,7 @@
                       <?php  
                                         if($userDetails[0]['requested_amount']>0){
                                             $years='';
-                                        if($userDetails[0]['requested_amount']==7)
+                                        /*if($userDetails[0]['requested_amount']==7)
                                     $years='$5,000-$10,000';
                                         if($userDetails[0]['requested_amount']==6)
                                     $years='$10,000-$15,000';
@@ -107,10 +107,9 @@
                                         if($userDetails[0]['requested_amount']==2)
                                     $years='$40,000 - $50,000';
                                         if($userDetails[0]['requested_amount']==1)
-                                    $years='$50,000+';
-                                      
-                                        
-                                        echo $years;
+                                    $years='$50,000+';*/
+
+                                        echo $userDetails[0]['requested_amount'];
                                         }
                                          ?>
                     </td>
