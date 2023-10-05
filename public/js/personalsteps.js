@@ -91,7 +91,33 @@ if (window.performance) {
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
-    }    
+    }  
+    
+    if (window.location.search.indexOf('step=8') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"personal/personal_step8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('step=9') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"personal/personal_step9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }   
      
   }
   
@@ -197,7 +223,31 @@ if (window.performance) {
         });
     }
    
-    
+        if (window.location.search.indexOf('step=8') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"personal/personal_step8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('personal_step=9') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"personal/step9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 //}
  }, false);
 // function step1(id) {
@@ -246,7 +296,7 @@ function personal_step3() {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'Requested Amount');
     var RE1 = /^\d+$/;
 
-    if (!RE1.test($("#requested_amount1").val())) 
+    if (!RE1.test($("#requested_amount").val())) 
     {
 
         $('#err2').html('Only digits allowed ');
@@ -258,7 +308,7 @@ function personal_step3() {
         $('#err2').html('');
     $.ajax({
         type: "GET",
-        url: base_url + "personal/personal_step3/" + $("#requested_amount1").val(),
+        url: base_url + "personal/personal_step3/" + $("#requested_amount").val(),
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "personal?personal_step=3");
@@ -511,11 +561,54 @@ function personal_step8() {
                     gtag_report_conversion(base_url);
                 } else
                 {
+                    window.history.pushState("Details", "Title", base_url + "personal?personal_step=8");
                     $('#container').html(data);
                 }
             }
         });
     }
+}
+
+function personal_step9(val) {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'laid_off_for_payment_waived');
+    var url = base_url + "personal/personal_step9/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "personal?personal_step=9");
+            
+            $('#container').html(data);
+            
+        }
+    });
+
+}
+
+function personal_step10(val) {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'submit');
+    var url = base_url + "personal/personal_step10/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            // alert(data);
+                if (data == 1)
+                {
+                    //location.href = base_url;
+                    gtag_report_conversion(base_url);
+                } else
+                {
+                    $('#container').html(data);
+                }
+            
+        }
+    });
+
 }
 
 /* Event snippet for Completed Auto App conversion page

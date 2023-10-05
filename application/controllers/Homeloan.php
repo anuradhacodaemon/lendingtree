@@ -441,6 +441,9 @@ class Homeloan extends CI_Controller {
         unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['state']);
+        unset($this->session->userdata['laid_off_for_payment_waived']);
+        unset($this->session->userdata['die_or_ill_cancel_the_loan']);
+        unset($this->session->userdata['total_dependent']);
 
         $result = $this->loan_model->add_homeloan($this->session->userdata());
 

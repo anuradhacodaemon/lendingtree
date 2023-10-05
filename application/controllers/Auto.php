@@ -175,6 +175,28 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
+        $this->load->view('step8_view');
+    }
+
+    public function step9($val = 'N') {
+        if ($val) {
+            $data = array(
+                'laid_off_for_payment_waived' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $this->load->view('step9_view');
+    }
+
+    public function step10($val = 'N') {
+        if ($val) {
+            $data = array(
+                'die_or_ill_cancel_the_loan' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+
+
         //echo '<pre>';
         // print_r($this->session->userdata());
         //die;
@@ -238,6 +260,8 @@ class Auto extends CI_Controller {
             $this->session->userdata['ssn'] = '';
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {
@@ -343,6 +367,9 @@ class Auto extends CI_Controller {
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'auto',$id);
+
         /*         * $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
@@ -393,6 +420,21 @@ class Auto extends CI_Controller {
         }
 
         return 0;
+    }
+
+    public function pdfLoan($id = 0) {
+     
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,LOANS,'lend_id');
+        //print_r($data['userDetails']);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
 }

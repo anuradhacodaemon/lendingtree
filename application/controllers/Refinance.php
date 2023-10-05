@@ -189,6 +189,26 @@ class Refinance extends CI_Controller {
             $this->session->set_userdata($data);
 
         }
+        $this->load->view('refinance_step8');
+    }
+
+    public function refinancestep9($val = 'N') {
+        if ($val) {
+            $data = array(
+                'laid_off_for_payment_waived' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $this->load->view('refinance_step9');
+    }
+
+    public function refinancestep10($val = 'N') {
+        if ($val) {
+            $data = array(
+                'die_or_ill_cancel_the_loan' => $val
+            );
+            $this->session->set_userdata($data);
+        }
 
 
         unset($this->session->userdata['panel']);
@@ -249,6 +269,8 @@ class Refinance extends CI_Controller {
             $this->session->userdata['ssn'] = '';
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             //redirect('/');
             echo 1;
         } /** else {
@@ -356,6 +378,9 @@ class Refinance extends CI_Controller {
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'refinance',$id);
+
         /*         * $config = Array(
           'protocol' => 'sendmail',
           'smtp_host' => 'Smtp.gmail.com',
@@ -405,6 +430,26 @@ class Refinance extends CI_Controller {
             return 1;
         }
         return 0;
+    }
+
+    public function pdfLoan($id = 0) {
+     
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,REFINANCE,'ref_id');
+        //print_r($data['userDetails']);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
 }

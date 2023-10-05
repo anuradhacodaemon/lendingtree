@@ -91,6 +91,31 @@ if (performance.navigation.type == 1) {
         });
     }
 
+    if (window.location.search.indexOf('refinancestep=8') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=9') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    } 
 
 }
 window.onpopstate = function ()
@@ -177,6 +202,32 @@ window.onpopstate = function ()
             {
 
                 $('#containerrefinance').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=8') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=9') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -458,11 +509,54 @@ function refinancestep7() {
                     gtag_report_conversion_ref(base_url);
                 } else
                 {
+                    window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=7");
                     $('#containerrefinance').html(data);
                 }
             }
         });
     }
+}
+
+function refinancestep9(val) {
+    ga('send', 'event', 'BMTCCU', 'refinance loan', 'laid_off_for_payment_waived');
+    var url = base_url + "refinance/refinancestep9/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=9");
+            
+            $('#container').html(data);
+            
+        }
+    });
+
+}
+
+function refinancestep10(val) {
+    ga('send', 'event', 'BMTCCU', 'refinance loan', 'submit');
+    var url = base_url + "refinance/refinancestep10/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            // alert(data);
+                if (data == 1)
+                {
+                    //location.href = base_url;
+                    gtag_report_conversion(base_url);
+                } else
+                {
+                    $('#container').html(data);
+                }
+            
+        }
+    });
+
 }
 
 /* Event snippet for Completed Auto App conversion page

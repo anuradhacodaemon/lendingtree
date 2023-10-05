@@ -43,7 +43,7 @@
                         </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <button type="button" class="button" onclick="personal_step8()">Submit<span class="continueIcon sprites"></span></button>
+                        <button type="button" class="button" onclick="personal_step8()">Continue<span class="continueIcon sprites"></span></button>
                         
 
                     </div>

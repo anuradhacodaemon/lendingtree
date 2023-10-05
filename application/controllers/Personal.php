@@ -178,6 +178,28 @@ class Personal extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
+
+        $this->load->view('personal_step8_view');
+    }
+
+    public function personal_step9($val = 'N') {
+        if ($val) {
+            $data = array(
+                'laid_off_for_payment_waived' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $this->load->view('personal_step9_view');
+    }
+
+    public function personal_step10($val = 'N') {
+        if ($val) {
+            $data = array(
+                'die_or_ill_cancel_the_loan' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+
         //echo '<pre>';
         // print_r($this->session->userdata());
         //die;
@@ -241,6 +263,8 @@ class Personal extends CI_Controller {
             $this->session->userdata['ssn'] = '';
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {
@@ -338,7 +362,7 @@ class Personal extends CI_Controller {
         $Link = $id . '&rand=' . rand(1, 10);
         
         $url1 = urlencode($Link);
-        $url = base_url() . "auto/mail_format_pdf/" . $url1;
+        $url = base_url() . "personal/mail_format_pdf/" . $url1;
   
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
@@ -347,6 +371,9 @@ class Personal extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
+
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'personal',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
@@ -398,6 +425,22 @@ class Personal extends CI_Controller {
         }
 
         return 0;
+    }
+
+    public function pdfLoan($id = 0) {
+     
+        $data['userDetails'] = $this->loan_model->get_userdetailsforpdf($id,PERSONALLOANS,'lend_id');
+        //print_r($data['userDetails']);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        // add a page
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_file_personal_loan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
 }

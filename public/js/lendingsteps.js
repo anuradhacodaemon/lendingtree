@@ -91,7 +91,33 @@ if (window.performance) {
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
-    }    
+    } 
+
+    if (window.location.search.indexOf('step=8') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('step=9') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }     
      
   }
   
@@ -188,6 +214,32 @@ if (window.performance) {
         $.ajax({
             type: "GET",
             url: base_url +"auto/step7",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('step=8') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('step=9') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step9",
             success: function (data)
             {
 
@@ -445,7 +497,7 @@ function step7(){
                url: base_url + "auto/step7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
             success: function (data)
             {
-                  window.history.pushState("Details", "Title", base_url + "auto?step=7");
+                window.history.pushState("Details", "Title", base_url + "auto?step=7");
                $('#container').html(data);
             }
         });
@@ -497,11 +549,54 @@ function step8() {
                     gtag_report_conversion(base_url);
                 } else
                 {
+                    window.history.pushState("Details", "Title", base_url + "auto?step=8");
                     $('#container').html(data);
                 }
             }
         });
     }
+}
+
+function step9(val) {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'laid_off_for_payment_waived');
+    var url = base_url + "auto/step9/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "auto?step=9");
+            
+            $('#container').html(data);
+            
+        }
+    });
+
+}
+
+function step10(val) {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'submit');
+    var url = base_url + "auto/step10/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            // alert(data);
+                if (data == 1)
+                {
+                    //location.href = base_url;
+                    gtag_report_conversion(base_url);
+                } else
+                {
+                    $('#container').html(data);
+                }
+            
+        }
+    });
+
 }
 
 /* Event snippet for Completed Auto App conversion page
