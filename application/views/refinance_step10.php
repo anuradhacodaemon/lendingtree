@@ -21,16 +21,6 @@
                     <h1>Loan Protection</h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-
-                                <?php
-                                if ($this->session->flashdata('item')) {
-                                    $message = $this->session->flashdata('item');
-                                    ?><div class="alert">
-                                    <div id="show"><?php echo $message['message'];
-                                    ?></div> </div>
-                                    <?php
-                                }
-                                ?>
                     <label class="control-label">If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan?</label>
                     <div class="col-xs-12 col-sm-12 radio">
                         <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan']))
@@ -41,13 +31,13 @@
                             >
                             <div class="label-text">YES</div>
                             <span class="continueIcon sprites"></span>
-                            <input type="radio" value="Y"  onclick="step11('Y')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="Y"  onclick="refinancestep11('Y')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
                         <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan'])) { if($this->session->userdata['die_or_ill_cancel_the_loan']== 'N') echo 'class="button status"'; else echo 'class=button';} else  echo 'class="button"';?>>
                             <div class="label-text">NO</div>
                             <span class="continueIcon sprites"></span>
-                            <input type="radio" value="N" onclick="step11('N')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="N" onclick="refinancestep11('N')" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
                 </div>
             </div>

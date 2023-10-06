@@ -117,6 +117,19 @@ if (performance.navigation.type == 1) {
         });
     } 
 
+    if (window.location.search.indexOf('refinancestep=10') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep10",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
 }
 window.onpopstate = function ()
 {
@@ -224,6 +237,19 @@ window.onpopstate = function ()
         $.ajax({
             type: "GET",
             url: base_url +"refinance/refinancestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=10') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep10",
             success: function (data)
             {
 
@@ -536,8 +562,36 @@ function refinancestep9(val) {
 }
 
 function refinancestep10(val) {
+    ga('send', 'event', 'BMTCCU', 'refinance loan', 'i_represent_stated');
+
+    let isChecked = $('#i_represent_stated').is(':checked');
+
+    if (isChecked == false)
+    {
+        $('#err1').html('The Consent field is required.');
+        $('#i_represent_stated').focus();
+        return false;
+    }
+    
+            $.ajax({
+                type: "GET",
+                url: base_url + "refinance/refinancestep10/",
+                data: {
+                i_represent_stated: $('input[name=i_represent_stated]').val(),
+                date_of_application: $('input[name=date_of_application]').val()
+            },
+           success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=10");
+                $('#container').html(data);
+            }
+        });;
+
+}
+
+function refinancestep11(val) {
     ga('send', 'event', 'BMTCCU', 'refinance loan', 'submit');
-    var url = base_url + "refinance/refinancestep10/" + val;
+    var url = base_url + "refinance/refinancestep11/" + val;
     
     $.ajax({
         type: "GET",

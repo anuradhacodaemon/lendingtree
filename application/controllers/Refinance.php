@@ -202,7 +202,27 @@ class Refinance extends CI_Controller {
         $this->load->view('refinance_step9');
     }
 
-    public function refinancestep10($val = 'N') {
+    public function refinancestep10($i_represent_stated = '', $date_of_application = '') {
+    
+        if($this->input->get('i_represent_stated')) {
+
+            $value = $this->input->get('i_represent_stated');
+            $value2 = $this->input->get('date_of_application');
+
+            $newDate = date("Y-m-d", strtotime($value2));
+            $selected = ($value == 'consent') ? 'Y' : 'N';
+            $data = array(
+                'i_represent_stated' => $selected,
+                'date_of_application' => $newDate
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+        $this->load->view('refinance_step10');
+    }
+
+    public function refinancestep11($val = 'N') {
         if ($val) {
             $data = array(
                 'die_or_ill_cancel_the_loan' => $val
@@ -238,6 +258,7 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
         unset($this->session->userdata['total_dependent']);
+
         
       //  echo"<pre>"; print_r($this->session->userdata()); die();		
         $result = $this->loan_model->add_refinance($this->session->userdata());
@@ -271,6 +292,8 @@ class Refinance extends CI_Controller {
             $this->session->userdata['phone'] = '';
             $this->session->userdata['laid_off_for_payment_waived'] = '';
             $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
+            $this->session->userdata['i_represent_stated'] = '';
+            $this->session->userdata['date_of_application'] = '';
             //redirect('/');
             echo 1;
         } /** else {

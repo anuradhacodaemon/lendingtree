@@ -192,7 +192,27 @@ class Personal extends CI_Controller {
         $this->load->view('personal_step9_view');
     }
 
-    public function personal_step10($val = 'N') {
+    public function personal_step10($i_represent_stated = '', $date_of_application = '') {
+    
+        if($this->input->get('i_represent_stated')) {
+
+            $value = $this->input->get('i_represent_stated');
+            $value2 = $this->input->get('date_of_application');
+
+            $newDate = date("Y-m-d", strtotime($value2));
+            $selected = ($value == 'consent') ? 'Y' : 'N';
+            $data = array(
+                'i_represent_stated' => $selected,
+                'date_of_application' => $newDate
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+        $this->load->view('personal_step10_view');
+    }
+
+    public function personal_step11($val = 'N') {
         if ($val) {
             $data = array(
                 'die_or_ill_cancel_the_loan' => $val
@@ -265,6 +285,8 @@ class Personal extends CI_Controller {
             $this->session->userdata['phone'] = '';
             $this->session->userdata['laid_off_for_payment_waived'] = '';
             $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
+            $this->session->userdata['i_represent_stated'] = '';
+            $this->session->userdata['date_of_application'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {

@@ -117,7 +117,20 @@ if (window.performance) {
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
-    }     
+    }
+
+    if (window.location.search.indexOf('step=10') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"auto/step10",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }      
      
   }
   
@@ -248,7 +261,19 @@ if (window.performance) {
             }
         });
     }
-   
+
+    if (window.location.search.indexOf('step=10') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/step10",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }   
     
 //}
  }, false);
@@ -576,8 +601,36 @@ function step9(val) {
 }
 
 function step10(val) {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'i_represent_stated');
+
+    let isChecked = $('#i_represent_stated').is(':checked');
+
+    if (isChecked == false)
+    {
+        $('#err1').html('The Consent field is required.');
+        $('#i_represent_stated').focus();
+        return false;
+    }
+    
+            $.ajax({
+                type: "GET",
+                url: base_url + "auto/step10/",
+                data: {
+                i_represent_stated: $('input[name=i_represent_stated]').val(),
+                date_of_application: $('input[name=date_of_application]').val()
+            },
+           success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "auto?step=10");
+                $('#container').html(data);
+            }
+        });;
+
+}
+
+function step11(val) {
     ga('send', 'event', 'BMTCCU', 'auto loan', 'submit');
-    var url = base_url + "auto/step10/" + val;
+    var url = base_url + "auto/step11/" + val;
     
     $.ajax({
         type: "GET",
