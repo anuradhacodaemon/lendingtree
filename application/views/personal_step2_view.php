@@ -20,7 +20,7 @@
               <div class="clearfix"></div>
               <label class="control-label">Requested Amount</label>
               <div class="col-xs-12 col-sm-12 margbot_10">
-                <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['requested_amount'])) echo '$'.number_format($this->session->userdata['requested_amount'],2); ?>" class="form-control" id="requested_amount" >
+                <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['requested_amount'])) echo '$'.number_format($this->session->userdata['requested_amount'],2); ?>" class="form-control" id="requested_amount" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
 
 
 

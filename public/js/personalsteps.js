@@ -295,11 +295,11 @@ function personal_step2(id) {
 function personal_step3() {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'Requested Amount');
     var RE1 = /^\d+$/;
-
-    if (!RE1.test($("#requested_amount").val())) 
+    var requested_amount = $('input[name=requested_amount1]').val();
+    if (($("#requested_amount").val()) == '') 
     {
 
-        $('#err2').html('Only digits allowed ');
+        $('#err2').html('Requested Amount Required');
         $('#requested_amount').focus();
         $('#err1').html('');
         return false;
@@ -308,7 +308,7 @@ function personal_step3() {
         $('#err2').html('');
     $.ajax({
         type: "GET",
-        url: base_url + "personal/personal_step3/" + $("#requested_amount").val(),
+        url: base_url + "personal/personal_step3/" + requested_amount,
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "personal?personal_step=3");
