@@ -345,26 +345,28 @@ function step4() {
         $('#err1').html('Your Current Employer is empty');
         $('#cemployer').focus();
         return false;
-    }else if ($('input[name=job_title]').val() == '')
+    }else if ($('input[name=start_date]').val() == '')
     {
 
-        $('#err2').html('How many years have you worked there is empty');
-        $('#job_title').focus();
+        $('#err2').html('Please select start date');
+        $('#start_date').focus();
         $('#err1').html('');
         return false;
-    } else if (!RE1.test($("#job_title").val()))
-    {
+    }
+    //  else if (!RE1.test($("#job_title").val()))
+    // {
 
-        $('#err2').html('Only digits allowed ');
-        $('#job_title').focus();
-        $('#err1').html('');
-        return false;
-    } else
+    //     $('#err2').html('Only digits allowed ');
+    //     $('#job_title').focus();
+    //     $('#err1').html('');
+    //     return false;
+    // }
+     else
     {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "auto/step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
+            url: base_url + "auto/step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=start_date]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "auto?step=4");

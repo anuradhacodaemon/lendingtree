@@ -69,11 +69,11 @@ class Personal extends CI_Controller {
         $this->load->view('personal_step3_view');
     }
 
-    public function personal_step4($id = 0, $pre_approved = 0) {
+    public function personal_step4($id = 0, $start_date = 0) {
         if ($id) {
             $data = array(
                 'current_employer' => urldecode($id),
-                'job_title' => $pre_approved
+                'start_date' => $start_date
             );
 
             $this->session->set_userdata($data);

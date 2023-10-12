@@ -22,11 +22,16 @@
                 <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['current_employer'])) echo urldecode($this->session->userdata['current_employer']);?>" class="form-control"  >
                 <span id="err1" style="color: red"></span>
               </div>
-              <label class="control-label">How many years have you worked there?</label>
-              <div class="col-xs-12 col-sm-12 margbot_10">
+              <label class="control-label">Start Date</label>
+             <!--  <div class="col-xs-12 col-sm-12 margbot_10">
                 <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['job_title'])) echo $this->session->userdata['job_title']?>" class="form-control" id="job_title" >
                 <span id="err2" style="color: red"></span>
-              </div>
+              </div> -->
+              <div class="col-xs-12 col-sm-12 margbot_10">
+                              <!-- <label class="dob_class">Enter Date Of Birth </label> -->
+                                <input type="date" name="start_date" placeholder="DOB" value="<?php if (isset($this->session->userdata['start_date'])) echo $this->session->userdata['start_date'] ?>" class="form-control" id="start_date">
+                                <span id="err7" style="color: red"></span>
+                            </div>
               <div class="col-xs-12 col-sm-12 margbot_10">
                 <p class="subtext">
                   Alimony, child support, or separate maintenance income need not be revealed if you do not wish to have it considered as a basis for repaying this obligation.
@@ -43,3 +48,15 @@
         </div>
       </div>
     </div>
+<script>
+$(document).ready(function() {
+
+      var minDate = new Date(1921, 0, 1);
+      var minDateString = minDate.toISOString().split('T')[0];
+      $("#start_date").attr("min", minDateString);
+
+      //not showing futur dates
+      var currentDate = new Date().toISOString().split('T')[0];
+      document.getElementById('start_date').setAttribute('max', currentDate);
+    });
+</script>

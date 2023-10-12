@@ -67,11 +67,11 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0, $pre_approved = 0) {
+    public function step4($id = 0, $start_date = '') {
         if ($id) {
             $data = array(
                 'current_employer' => urldecode($id),
-                'job_title' => $pre_approved
+                'start_date' => $start_date
             );
 
             $this->session->set_userdata($data);

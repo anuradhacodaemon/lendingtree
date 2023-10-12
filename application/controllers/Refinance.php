@@ -126,7 +126,7 @@ class Refinance extends CI_Controller {
     }
 
 
-    public function refinancestep6($cemployer = '',$job_title = '') {
+    public function refinancestep6($cemployer = '',$start_date = '') {
 
         if ($cemployer) {
 
@@ -135,7 +135,7 @@ class Refinance extends CI_Controller {
             //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
                 'current_employer' => urldecode($cemployer),
-                'job_title' => $job_title
+                'start_date' => $start_date
             );
 
             $this->session->set_userdata($data);
