@@ -22,7 +22,7 @@
                 <input  type="text" id="cemployer" name="cemployer" value="<?php if(isset($this->session->userdata['current_employer'])) echo urldecode($this->session->userdata['current_employer']);?>" class="form-control"  >
                 <span id="err1" style="color: red"></span>
               </div>
-              <label class="control-label">Start Date</label>
+              <label class="control-label">When did you start?</label>
              <!--  <div class="col-xs-12 col-sm-12 margbot_10">
                 <input type="text" name="job_title" placeholder="" value="<?php if(isset($this->session->userdata['job_title'])) echo $this->session->userdata['job_title']?>" class="form-control" id="job_title" >
                 <span id="err2" style="color: red"></span>
