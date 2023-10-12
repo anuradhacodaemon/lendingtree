@@ -25,13 +25,13 @@
                         <input type="hidden" name="auto_step" value="17" id="auto_step" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="check">
-                                <div class="col-xs-12 col-sm-1 margbot_10">
+                                <div class="col-xs-12 col-sm-2 margbot_10">
                                     <input type="checkbox" name="i_represent_stated" value="consent"
                                     <?php if(isset($this->session->userdata['i_represent_stated'])) { if($this->session->userdata['i_represent_stated']== 'Y') echo 'checked="checked"'; else echo '';}  ?>
                                     class="form-control width_100 button" id="i_represent_stated" required>
                                     <span id="err1" style="color: red"></span>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 margbot_10">
+                                <div class="col-xs-12 col-sm-8 margbot_10">
                                     <input type="text" name="date_of_application" readonly="readonly" value="<?php echo date('d-m-Y') ?>" class="form-control width_100" id="date_of_application" >
                                     <span id="err2" style="color: red"></span>
                                 </div>
