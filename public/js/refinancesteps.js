@@ -355,7 +355,7 @@ function refinancestep4() {
     } else if (!RE.test($("#lastname").val()))
     {
 
-        $('#err2').html('Your Lastname should have letter only ');
+        $('#err2').html('Your Lastname should include letters only ');
         $('#lastname').focus();
         $('#err1').html('');
         return false;
