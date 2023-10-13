@@ -24,7 +24,7 @@
               </div> -->
               <div class="col-xs-12 col-sm-12 margbot_10">
                   <!-- <label class="dob_class">Enter Date Of Birth </label> -->
-                    <input type="date" name="start_date" placeholder="DOB" value="<?php if (isset($this->session->userdata['start_date'])) echo $this->session->userdata['start_date'] ?>" class="form-control" id="start_date">
+                    <input type="date" name="start_date" placeholder="start_date" value="<?php if (isset($this->session->userdata['start_date'])) echo $this->session->userdata['start_date'] ?>" class="form-control" id="start_date">
                     <span id="err7" style="color: red"></span>
               </div>
               <div class="col-xs-12 col-sm-12 margbot_10">

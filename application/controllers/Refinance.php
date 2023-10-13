@@ -236,7 +236,7 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['userdata']);
         unset($this->session->userdata['type']);
         unset($this->session->userdata['requested_amount']);
-        unset($this->session->userdata['current_employer']);
+        // unset($this->session->userdata['current_employer']);
         //unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['zip']);
@@ -280,7 +280,7 @@ class Refinance extends CI_Controller {
             $this->session->userdata['current_milage'] = '';
             $this->session->userdata['firstname'] = '';
             $this->session->userdata['lastname'] = '';
-
+            $this->session->userdata['current_employer'] = '';
             $this->session->userdata['state'] = '';
             $this->session->userdata['city'] = '';
             $this->session->userdata['month'] = '';
