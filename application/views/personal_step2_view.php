@@ -20,12 +20,14 @@
               <div class="clearfix"></div>
               <label class="control-label">Requested Amount</label>
               <div class="col-xs-12 col-sm-12 margbot_10">
-                <input type="text" name="requested_amount" placeholder="" value="<?php if(isset($this->session->userdata['requested_amount'])) echo '$'.number_format($this->session->userdata['requested_amount'],2); ?>" class="form-control" id="requested_amount" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                <input type="text" id="requested_amount" name="requested_amount" placeholder="" value="<?php if(isset($this->session->userdata['requested_amount'])) echo '$'.number_format($this->session->userdata['requested_amount'],2); ?>" class="form-control" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
 
 
 
 
-                 <input  type="hidden" id="requested_amount1" name="requested_amount1"  class="form-control" value="<?php if (!empty($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>">
+                  <input  type="hidden" id="requested_amount1" name="requested_amount1"  class="form-control" value="<?php if (!empty($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>">
+
+
                 <span id="err2" style="color: red"></span>
               </div>
               <div class="col-xs-12 col-sm-12 radio">
@@ -48,8 +50,8 @@
     </div>
     <!-- Banner ends here -->
 <script type="text/javascript">
- $("#requested_amount").keyup(function(){
+$("#requested_amount").keyup(function(){
     var val = $("#requested_amount").val().replace(/\D/g, '');
         $("#requested_amount1").val(val);
-    }); 
+    });  
 </script>

@@ -19,7 +19,7 @@
               <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">Requested Amount</label>
-               <input type="text" id="requested_amount" name="requested_amount" value="<?php if(isset($this->session->userdata['requested_amount'])) { echo '$'.number_format($this->session->userdata['requested_amount'],2); } ?>" class="form-control text-uppercase" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+               <input type="text" id="requested_amount" name="requested_amount" value="<?php if(isset($this->session->userdata['requested_amount'])) { echo '$'.number_format($this->session->userdata['requested_amount'],2); } ?>" class="form-control text-uppercase" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
 
                <input  type="hidden" id="requested_amount1" name="requested_amount1"  class="form-control" value="<?php if (!empty($this->session->userdata['requested_amount'])) echo $this->session->userdata['requested_amount'] ?>">
 
