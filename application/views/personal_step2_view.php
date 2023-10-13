@@ -50,8 +50,8 @@
     </div>
     <!-- Banner ends here -->
 <script type="text/javascript">
-$("#requested_amount").keyup(function(){
-    var val = $("#requested_amount").val().replace(/\D/g, '');
-        $("#requested_amount1").val(val);
-    });  
+// $("#requested_amount").keyup(function(){
+//     var val = $("#requested_amount").val().replace(/\D/g, '');
+//         $("#requested_amount1").val(val);
+//     });  
 </script>

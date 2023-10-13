@@ -155,7 +155,8 @@ class Loan_model extends CI_Model {
     }
     
      public function get_emailtemplate() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        //$domain = 'https://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $this->db->from(EMAILTEMPLATE . ' as email');
         $this->db->like('email.domain_name', $domain,'both');
         $result = $this->db->get();

@@ -321,7 +321,8 @@ function personal_step2(id) {
 function personal_step3() {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'Requested Amount');
     //var RE1 = /^\d+$/;
-    var requested_amount = $('input[name=requested_amount1]').val();
+    //var requested_amount = $('input[name=requested_amount1]').val();
+    var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
     // if (($("#requested_amount").val()) == '') 
     // {
 
