@@ -11,7 +11,7 @@
                     <h1>Buying New Vehicle</h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Your Gross [Pre-Tax] Yearly Income?</label>
+                    <label class="control-label">Your Gross [Pre-Tax] Monthly Income?</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
                         <input  type="text" id="pre_tax_income" name="pre_tax_income" value="<?php if (!empty($this->session->userdata['pre_tax_income'])) { echo '$'.number_format($this->session->userdata['pre_tax_income'],2); } ?>" class="form-control"  >
                        <input  type="hidden" id="pre_tax_income1" name="pre_tax_income1"  class="form-control" value="<?php if (!empty($this->session->userdata['pre_tax_income'])) echo $this->session->userdata['pre_tax_income'] ?>"  >

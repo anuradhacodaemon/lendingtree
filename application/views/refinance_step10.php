@@ -31,13 +31,13 @@
                             >
                             <div class="label-text">YES</div>
                             <span class="continueIcon sprites"></span>
-                            <input type="radio" value="Y"  onclick="refinancestep11('Y')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="Y"  onclick="refinancestep11('Y');validate()" class="ng-pristine ng-invalid ng-invalid-required buttonclass"></label>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
                         <label <?php if(isset($this->session->userdata['die_or_ill_cancel_the_loan'])) { if($this->session->userdata['die_or_ill_cancel_the_loan']== 'N') echo 'class="button status"'; else echo 'class=button';} else  echo 'class="button"';?>>
                             <div class="label-text">NO</div>
                             <span class="continueIcon sprites"></span>
-                            <input type="radio" value="N" onclick="refinancestep11('N')" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="N" onclick="refinancestep11('N');validate()" class="ng-pristine ng-invalid ng-invalid-required buttonclass"></label>
                     </div>
                 </div>
             </div>
@@ -59,4 +59,13 @@ if (!empty($this->session->flashdata('item'))) {
             $(".forgot_section").hide();
 <?php } ?>
     });
+
+ function validate(){
+    var elems = document.getElementsByClassName("buttonclass");
+
+    for(var i = 0; i < elems.length; i++) {
+        elems[i].disabled = true;
+    }
+
+}
 </script>
