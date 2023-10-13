@@ -385,12 +385,12 @@ function step5() {
     if ($('input[name=pre_tax_income]').val() == '' || $('input[name=pre_tax_income]').val() == 0)
     {
 
-        $('#err1').html('Your Pre-tax yearly income is empty');
+        $('#err1').html('Your Pre-tax monthly income is empty');
         $('#pre_tax_income').focus();
         return false;
     } else if ($('#err2').val() == 0 && $('#pre_tax_income1').val()=='')
     {
-        $('#err1').html('Your Pre-tax yearly income should be number');
+        $('#err1').html('Your Pre-tax monthly income should be number');
         $('#pre_tax_income').focus();
         return false;
     }else if ($('#total_dependent').val() == '')
