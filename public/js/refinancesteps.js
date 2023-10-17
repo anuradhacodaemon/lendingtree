@@ -91,6 +91,44 @@ if (performance.navigation.type == 1) {
         });
     }
 
+    if (window.location.search.indexOf('refinancestep=8') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=9') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    } 
+
+    if (window.location.search.indexOf('refinancestep=10') > -1) {
+       $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep10",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 
 }
 window.onpopstate = function ()
@@ -177,6 +215,45 @@ window.onpopstate = function ()
             {
 
                 $('#containerrefinance').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=8') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep8",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=9') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep9",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
+    if (window.location.search.indexOf('refinancestep=10') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestep10",
+            success: function (data)
+            {
+
+                $('#container').html(data);
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
@@ -290,25 +367,6 @@ function refinancestep4() {
         $('#err1').html('');
         $('#err2').html('');
         return false;
-    } else if ($('#state').val() == '')
-    {
-        //alert($(this).val());
-        // alert($('input[name=state]').has('option').length);
-        $('#err4').html('state is empty');
-        $('#state').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        return false;
-    } else if ($('#city').val() == '' && !$('#city').prop('disabled'))
-    {
-        $('#err5').html('city is empty');
-        $('#city').focus();
-        $('#err1').html('');
-        $('#err2').html('');
-        $('#err3').html('');
-        $('#err4').html('');
-        return false;
     } else
     {
         $('#err2').html('');
@@ -317,7 +375,17 @@ function refinancestep4() {
             city = $('#city').val();
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + city + '/' + $('#state').val(),
+           // url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val(),
+            url: base_url + "refinance/refinancestep5/",
+            data: {
+                firstname: $('input[name=firstname]').val(),
+                lastname: $('input[name=lastname]').val(),
+                address: $('input[name=address]').val(),
+                city_name: $('#city').val(),
+                state_name: $('#state').val(),
+                p_zip_code: $('input[name=p_zip_code]').val(),
+                ssn: $('input[name=ssn]').val()
+            },
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
@@ -339,26 +407,30 @@ function refinancestep5_new() {
         $('#err1').html('Your Current Employer is empty');
         $('#cemployer').focus();
         return false;
-    } else if ($('input[name=job_title]').val() == '')
+    } 
+
+    else if ($('input[name=start_date]').val() == '')
     {
 
-        $('#err2').html('How many years have you worked there is empty');
-        $('#job_title').focus();
+        $('#err2').html('Please select start date');
+        $('#start_date').focus();
         $('#err1').html('');
         return false;
-    } else if (!RE1.test($("#job_title").val()))
-    {
+    } 
+    // else if (!RE1.test($("#job_title").val()))
+    // {
 
-        $('#err2').html('Only digits allowed ');
-        $('#job_title').focus();
-        $('#err1').html('');
-        return false;
-    } else
+    //     $('#err2').html('Only digits allowed ');
+    //     $('#job_title').focus();
+    //     $('#err1').html('');
+    //     return false;
+    // } 
+    else
     {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep6/" + $('input[name=cemployer]').val() + '/' + $('input[name=job_title]').val(),
+            url: base_url + "refinance/refinancestep6/" + $('input[name=cemployer]').val() + '/' + $('input[name=start_date]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=7");
@@ -382,22 +454,10 @@ function refinancestep5() {
     ga('send', 'event', 'spececity', 'auto refinance', 'Date Of Birth');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
-    if ($('#selectMonth').val() === "") {
+     if ($('#dob').val() === "") {
 
-        $('#err').html('Month is empty');
-        $('#selectMonth').focus();
-        return false;
-    } else if ($('#selectDate').val() === "")
-    {
-
-        $('#err').html('Day is empty');
-        $('#selectDate').focus();
-        return false;
-    } else if ($('#selectYear').val() === "")
-    {
-
-        $('#err').html('Year is empty');
-        $('#selectYear').focus();
+        $('#err').html('Date of Birth is empty');
+        $('#dob').focus();
         return false;
     } else if ($('input[name=ssn]').val() == '')
     {
@@ -424,7 +484,7 @@ function refinancestep5() {
     } else {
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep7/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
+            url: base_url + "refinance/refinancestep7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=8");
@@ -479,11 +539,82 @@ function refinancestep7() {
                     gtag_report_conversion_ref(base_url);
                 } else
                 {
+                    window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=7");
                     $('#containerrefinance').html(data);
                 }
             }
         });
     }
+}
+
+function refinancestep9(val) {
+    ga('send', 'event', 'spececity', 'refinance loan', 'laid_off_for_payment_waived');
+    var url = base_url + "refinance/refinancestep9/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=9");
+            
+            $('#containerrefinance').html(data);
+            
+        }
+    });
+
+}
+
+function refinancestep10(val) {
+    ga('send', 'event', 'spececity', 'refinance loan', 'i_represent_stated');
+
+    let isChecked = $('#i_represent_stated').is(':checked');
+
+    if (isChecked == false)
+    {
+        $('#err1').html('The Consent field is required.');
+        $('#i_represent_stated').focus();
+        return false;
+    }
+    
+            $.ajax({
+                type: "GET",
+                url: base_url + "refinance/refinancestep10/",
+                data: {
+                i_represent_stated: $('input[name=i_represent_stated]').val(),
+                date_of_application: $('input[name=date_of_application]').val()
+            },
+           success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=10");
+                $('#containerrefinance').html(data);
+            }
+        });;
+
+}
+
+function refinancestep11(val) {
+    ga('send', 'event', 'spececity', 'refinance loan', 'submit');
+    var url = base_url + "refinance/refinancestep11/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            // alert(data);
+                if (data == 1)
+                {
+                    //location.href = base_url;
+                    gtag_report_conversion(base_url);
+                } else
+                {
+                    $('#containerrefinance').html(data);
+                }
+            
+        }
+    });
+
 }
 
 /* Event snippet for Completed Auto App conversion page
@@ -502,4 +633,16 @@ function gtag_report_conversion_ref(url) {
     return false;
 }
  
- 
+function disclosure_auto()
+{  
+    $("#disclosureModal").modal('show'); // Open the modal
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        if (event.target.matches(".disclosure-sec")) {
+            // Handle the click event
+            disclosure_auto();
+        }
+    });
+});

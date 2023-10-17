@@ -17,16 +17,14 @@
                                 }
                                 ?>
                            
-                    <label class="control-label"> Great!Your rates are ready to view.<br>
-                        Let's create a login to view your rates.</label>
+                    <label class="control-label">Contact Information</label>
                     <div class="col-xs-12 col-sm-12 margbot_40">
                         <input  type="text" id="email" placeholder="you@example.com" name="email" value="<?php if (isset($this->session->userdata['email'])) echo $this->session->userdata['email'] ?>" class="form-control"  >
                         <span id="err1" style="color: red"></span>
                     </div>
                      
-                    <label class="control-label">We take your privacy seriously. </label>
+                    <!-- <label class="control-label">We take your privacy seriously. </label> -->
                    
-
                     <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="phone" placeholder="Phone" value="<?php if (isset($this->session->userdata['phone'])) echo $this->session->userdata['phone'] ?>" class="form-control" id="phone" maxlength="10">
                         <span id="err2" style="color: red"></span>
@@ -38,7 +36,8 @@
                         </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
-                        <button type="button" class="button" onclick="refinancestep7()">Submit<span class="continueIcon sprites"></span></button>
+                        <!-- <button type="button" class="button" onclick="refinancestep7()">Submit<span class="continueIcon sprites"></span></button> -->
+                        <button type="button" class="button" onclick="refinancestep7()">Continue<span class="continueIcon sprites"></span></button>
                         
 
                     </div>

@@ -69,10 +69,13 @@ class Auto extends CI_Controller {
         $this->load->view('step2_view');
     }
 
-    public function step3($id = 0) {
-        if ($id) {
+    public function step3($requested_amount = 0) {
+
+        //$requested_amount = $this->input->get('requested_amount');
+
+        if ($requested_amount) {
             $data = array(
-                'requested_amount' => $id
+                'requested_amount' => $requested_amount
             );
 
             $this->session->set_userdata($data);
@@ -82,11 +85,11 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0, $pre_approved = 0) {
-        if ($id) {
+    public function step4($cemployer = 0, $start_date = 0) {
+        if ($cemployer) {
             $data = array(
-                'current_employer' => $id,
-                'job_title' => $pre_approved
+                'current_employer' => $cemployer,
+                'start_date' => $start_date
             );
 
             $this->session->set_userdata($data);
@@ -176,6 +179,46 @@ class Auto extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
+        $this->load->view('step8_view');
+    }
+
+    public function step9($val = 'N') {
+        if ($val) {
+            $data = array(
+                'laid_off_for_payment_waived' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $this->load->view('step9_view');
+    }
+
+    public function step10($i_represent_stated = '', $date_of_application = '') {
+    
+        if($this->input->get('i_represent_stated')) {
+
+            $value = $this->input->get('i_represent_stated');
+            $value2 = $this->input->get('date_of_application');
+
+            $newDate = date("Y-m-d", strtotime($value2));
+            $selected = ($value == 'consent') ? 'Y' : 'N';
+            $data = array(
+                'i_represent_stated' => $selected,
+                'date_of_application' => $newDate
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+        $this->load->view('step10_view');
+    }
+
+    public function step11($val = 'N') {
+        if ($val) {
+            $data = array(
+                'die_or_ill_cancel_the_loan' => $val
+            );
+            $this->session->set_userdata($data);
+        }
         //echo '<pre>';
         // print_r($this->session->userdata());
         //die;
@@ -206,7 +249,7 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
-        
+        unset($this->session->userdata['total_dependent']);
         
 
         $result = $this->loan_model->add_loan($this->session->userdata());
@@ -240,6 +283,10 @@ class Auto extends CI_Controller {
             $this->session->userdata['ssn'] = '';
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
+            $this->session->userdata['i_represent_stated'] = '';
+            $this->session->userdata['date_of_application'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {

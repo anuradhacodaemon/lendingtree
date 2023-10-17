@@ -32,7 +32,7 @@
               <div class="input-text">
                 <div class="col-xs-12 col-sm-12 margbot_10">
                         <!--<label>Country</label>-->
-                        <input type="hidden" name="p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['country'])) echo $this->session->userdata['country'] ?>" class="form-control width_100" id="country_name" >
+                        <!-- <input type="hidden" name="p_country" placeholder="Country" value="<?php if (isset($this->session->userdata['country'])) echo $this->session->userdata['country'] ?>" class="form-control width_100" id="country_name" > -->
                     </div>
                     <div class="col-xs-12 col-sm-12 margbot_10">
                         <!--<label>Street</label>-->
