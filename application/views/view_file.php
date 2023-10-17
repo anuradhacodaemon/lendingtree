@@ -273,15 +273,15 @@
                         Current Employer :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo !empty($userDetails[0]['cemployer'])?str_replace("%20"," ",$userDetails[0]['cemployer']):'--'; ?>
+                        <?php echo $userDetails[0]['current_employer'] ?>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Years There :
+                        Start Date :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo !empty($userDetails[0]['job_title'])?$userDetails[0]['job_title']:'--'; ?>
+                       <?php echo $userDetails[0]['start_date'] ?>
                     </td>
                 </tr>
                 <tr>
