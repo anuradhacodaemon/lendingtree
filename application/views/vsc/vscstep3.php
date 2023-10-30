@@ -18,7 +18,7 @@
                 <span id="err1" style="color: red"></span>
               </div>
                <div class="col-xs-12 col-sm-12 radio">
-                <button type="button" class="button" onclick="vscstep4()">Continue<span class="continueIcon sprites"></span></button>
+                <button type="button" class="button" onclick="vscstep5()">Continue<span class="continueIcon sprites"></span></button>
             
             </div>
           </div>

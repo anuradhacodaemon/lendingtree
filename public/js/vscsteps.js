@@ -190,10 +190,11 @@ if (performance.navigation.type == 1) {
             }
         });
     }
-    if (window.location.search.indexOf('step=4') > -1) {
+    if (window.location.search.indexOf('vscstep=4') > -1) {
+        
        $.ajax({
             type: "GET",
-            url: base_url +"auto/step4",
+            url: base_url +"vsc/vscstep4",
             success: function (data)
             {
                
@@ -202,10 +203,10 @@ if (performance.navigation.type == 1) {
             }
         });
     }
-    if (window.location.search.indexOf('step=5') > -1) {
+    if (window.location.search.indexOf('vscstep=5') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step5",
+            url: base_url +"vsc/vscstep5",
             success: function (data)
             {
 
@@ -214,10 +215,10 @@ if (performance.navigation.type == 1) {
             }
         });
     }
-     if (window.location.search.indexOf('step=6') > -1) {
+     if (window.location.search.indexOf('vscstep=6') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step6",
+            url: base_url +"vsc/vscstep6",
             success: function (data)
             {
 
@@ -226,10 +227,10 @@ if (performance.navigation.type == 1) {
             }
         });
     }
-     if (window.location.search.indexOf('step=7') > -1) {
+     if (window.location.search.indexOf('vscstep=7') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step7",
+            url: base_url +"vsc/vscstep7",
             success: function (data)
             {
 
@@ -239,10 +240,10 @@ if (performance.navigation.type == 1) {
         });
     }
    
-    if (window.location.search.indexOf('step=8') > -1) {
+    if (window.location.search.indexOf('vscstep=8') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step8",
+            url: base_url +"vsc/vscstep8",
             success: function (data)
             {
 
@@ -252,10 +253,10 @@ if (performance.navigation.type == 1) {
         });
     }
 
-    if (window.location.search.indexOf('step=9') > -1) {
+    if (window.location.search.indexOf('vscstep=9') > -1) {
         $.ajax({
             type: "GET",
-            url: base_url +"auto/step9",
+            url: base_url +"vsc/vscstep9",
             success: function (data)
             {
 
@@ -265,18 +266,6 @@ if (performance.navigation.type == 1) {
         });
     }
 
-    if (window.location.search.indexOf('step=10') > -1) {
-        $.ajax({
-            type: "GET",
-            url: base_url +"auto/step10",
-            success: function (data)
-            {
-
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
     
 //}
  }, false);
@@ -357,10 +346,10 @@ function vscstep3(id) {
     });
 
 }
-
 function vscstep4() {
-    var vin = $('input[name=vin]').val();
-    //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
+    var year = $('input[name=year]').val();
+    alert(year);
+        //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     $.ajax({
         type: "GET",
@@ -375,13 +364,45 @@ function vscstep4() {
 
 }
 
-function vscstep5() {
-    var current_milage = $('input[name=current_milage]').val();
-    //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+function vscstep41111() {
+    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+    
+    alert($('input[name=year]').val());
     $.ajax({
         type: "GET",
-        url: base_url + "vsc/vscstep5/" + current_milage,
+        url: base_url + "vsc/vscstep4111111/" + $('input[name=year]').val() + '/' + $('input[name=make]').val()+ '/' + $('input[name=model]').val(),
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "vsc?vscstep=411111");
+            $('#container').html(data);
+        }
+    });
+
+}
+
+function vscstep5() {
+    var vin = $('input[name=vin]').val();
+    //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+    var RE = /^[A-HJ-NPR-Z\\d]{8}[\\dX][A-HJ-NPR-Z\\d]{2}\\d{6}$/;
+    if ($('input[name=vin]').val() == '')
+    {
+
+        $('#err1').html('VIN Number is empty');
+        $('#vin').focus();
+        return false;
+    }
+    // else if(!RE.test($('input[name=vin]').val()))
+    // {
+
+    //     $('#err1').html('Please Enter Correct VIN Number');
+    //     $('#vin').focus();
+    //     return false;
+    // }
+    else{
+    $.ajax({
+        type: "GET",
+        url: base_url + "vsc/vscstep5/" + vin,
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "vsc?vscstep=5");
@@ -389,31 +410,44 @@ function vscstep5() {
             $('#container').html(data);
         }
     });
-
+}
 }
 
-function vscstep6(id) {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
-    var url = base_url + "vsc/vscstep6/" + id;
-    
+function vscstep6() {
+    var current_milage = $('input[name=current_milage]').val();
+    //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+
+    var RE = /^[A-HJ-NPR-Z\\d]{8}[\\dX][A-HJ-NPR-Z\\d]{2}\\d{6}$/;
+    if ($('input[name=current_milage]').val() == '')
+    {
+
+        $('#err1').html('Current Milage is empty');
+        $('#current_milage').focus();
+        return false;
+    }
+    // else if(!RE.test($('input[name=vin]').val()))
+    // {
+
+    //     $('#err1').html('Please Enter Correct VIN Number');
+    //     $('#vin').focus();
+    //     return false;
+    // }
+    else{
     $.ajax({
         type: "GET",
-        url: url,
+        url: base_url + "vsc/vscstep6/" + current_milage,
         success: function (data)
         {
-            
-           
             window.history.pushState("Details", "Title", base_url + "vsc?vscstep=6");
-            
+
             $('#container').html(data);
-            
-             
-            
         }
     });
-
 }
 
+
+}
 
 function vscstep7(id) {
     ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
@@ -438,9 +472,72 @@ function vscstep7(id) {
 }
 
 
-function vscstep8(val) {
+function vscstep8(id) {
+    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+    var url = base_url + "vsc/vscstep8/" + id;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            
+           
+            window.history.pushState("Details", "Title", base_url + "vsc?vscstep=8");
+            
+            $('#container').html(data);
+            
+             
+            
+        }
+    });
+
+}
+
+
+function vscstep9() {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+    var email = $('input[name=email]').val();
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ($('input[name=email]').val() == '')
+    {
+
+        $('#err1').html('Your email is empty');
+        $('#email').focus();
+        return false;
+    } else if (!regex.test($('input[name=email]').val()))
+    {
+        $('#err1').html('Your email is not valid');
+        $('#email').focus();
+        return false;
+    }
+    // else if(!RE.test($('input[name=vin]').val()))
+    // {
+
+    //     $('#err1').html('Please Enter Correct VIN Number');
+    //     $('#vin').focus();
+    //     return false;
+    // }
+    else{
+    $.ajax({
+        type: "GET",
+        url: base_url + "vsc/vscstep9/" + email,
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "vsc?vscstep=9");
+
+            $('#container').html(data);
+        }
+    });
+}
+
+
+}
+
+
+function vscstep10(val) {
     ga('send', 'event', 'MCT', 'auto loan', 'submit');
-    var url = base_url + "vsc/vscstep8/" + val;
+    var url = base_url + "vsc/vscstep10/" + val;
     
     $.ajax({
         type: "GET",

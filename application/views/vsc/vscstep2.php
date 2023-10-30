@@ -30,7 +30,7 @@
                         <label <?php if(isset($this->session->userdata['is_vin'])) { if($this->session->userdata['is_vin']== 2) echo 'class="button status"'; else echo 'class=button';} else  echo 'class="button"';?>>
                             <div class="label-text">No</div>
                             <span class="continueIcon sprites"></span>
-                            <input type="radio" value="NewCarPurchase" onclick="vscstep3(2)" class="ng-pristine ng-invalid ng-invalid-required"></label>
+                            <input type="radio" value="NewCarPurchase" onclick="vscstep3(0)" class="ng-pristine ng-invalid ng-invalid-required"></label>
                     </div>
                 </div>
             </div>

@@ -89,6 +89,7 @@ define('LOGIN', 'lend_user');
 define('COUNTRY', 'lend_countries');
 define('STATE', 'lend_states');
 define('CITY', 'lend_cities');
+define('VSC', 'lend_vsc');
 
 define('RECORD_LIMIT', 10);
 define('TOTAL_ROWS', 2);
@@ -110,3 +111,7 @@ define('ZIPCODE','lend_zipcode');
 define('SMARTY_AUTH_ID', '31e7020d-9a47-c928-f6d2-bc3c38fb6546');
 define('SMARTY_AUTH_TOKEN','ygIUWrlkwpFlPZGX2Oj0');
 define('ZAPIER_HOOK_URL','https://hooks.zapier.com/hooks/catch/4330880/3rx6nv0/');
+
+#year make model
+define('YEAR_MAKE_USER', 'AutoBid_UCTV');
+define('YEAR_MAKE_SECRET','india409');

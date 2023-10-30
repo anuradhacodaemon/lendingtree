@@ -63,10 +63,35 @@ class Vsc extends CI_Controller {
         }
         // echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('vsc/vscstep3');
+       // $this->load->view('vsc/vscstep3');
+        if($id==1)
+        {
+            $this->load->view('vsc/vscstep3');
+        }else{
+            $this->load->view('vsc/vscstep4');
+        }
+       
+    }
+    
+    public function vscstep4($year=0,$make=0,$model=0) {
+   //     if ($year) {
+            $data = array(
+                'year' => $year,
+                'make' => $make,
+                'model' => $model,
+            );
+
+            $this->session->set_userdata($data);
+     //   }
+
+
+      //  echo '<pre>';
+     //    print_r($this->session->userdata());
+        $this->load->view('vsc/vscstep4', $data);
     }
 
-    public function vscstep4($id = 0) {
+
+    public function vscstep5($id = 0) {
         if ($id) {
             $data = array(
                 'vin' => $id,
@@ -75,13 +100,12 @@ class Vsc extends CI_Controller {
             $this->session->set_userdata($data);
         }
 
-
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-        $this->load->view('vsc/vscstep4', $data);
+      //  echo '<pre>';
+  //   print_r($this->session->userdata());
+        $this->load->view('vsc/vscstep5', $data);
     }
 
-    public function vscstep5($current_milage = 0) {
+    public function vscstep6($current_milage = 0) {
         if ($current_milage) {
             $data = array(
                 'current_milage' => $current_milage
@@ -93,10 +117,10 @@ class Vsc extends CI_Controller {
 
         //echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('vsc/vscstep5', $data);
+        $this->load->view('vsc/vscstep6', $data);
     }
 
-    public function vscstep6($is_purchased = 0) {
+    public function vscstep7($is_purchased = 0) {
         if ($is_purchased) {
             $data = array(
                 'is_purchased' => $is_purchased
@@ -106,10 +130,10 @@ class Vsc extends CI_Controller {
         }
         // echo '<pre>';
         // print_r($this->session->userdata());
-        $this->load->view('vsc/vscstep6');
+        $this->load->view('vsc/vscstep7');
     }
 
-     public function vscstep7($basic_warranty = 0) {
+     public function vscstep8($basic_warranty = 0) {
         if ($basic_warranty) {
              $data = array(
                  'basic_warranty' => $basic_warranty
@@ -119,10 +143,21 @@ class Vsc extends CI_Controller {
          }
          // echo '<pre>';
          // print_r($this->session->userdata());
-              $this->load->view('vsc/vscstep7');
+              $this->load->view('vsc/vscstep8');
      }
 
+     public function vscstep9($email = 0) {
+        if ($email) {
+             $data = array(
+                 'email' => $email
+             );
 
+             $this->session->set_userdata($data);
+         }
+         // echo '<pre>';
+         // print_r($this->session->userdata());
+              $this->load->view('vsc/vscstep9');
+     }
 
     public function sha(){
 
@@ -138,13 +173,7 @@ class Vsc extends CI_Controller {
 
 
 
-    public function vscstep8($val = 'N') {
-        if ($val) {
-            $data = array(
-                'die_or_ill_cancel_the_loan' => $val
-            );
-            $this->session->set_userdata($data);
-        }
+    public function vscstep10($val = 'N') {
 
 
         unset($this->session->userdata['panel']);
@@ -157,9 +186,9 @@ class Vsc extends CI_Controller {
         // unset($this->session->userdata['is_purchased']);
         // unset($this->session->userdata['basic_warranty']);
 
-        echo"<pre>"; print_r($this->session->userdata()); die();		
+      
         
-        $result = $this->loan_model->add_refinance($this->session->userdata());
+        $result = $this->loan_model->add_vsc($this->session->userdata());
 
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
@@ -168,26 +197,17 @@ class Vsc extends CI_Controller {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-       //     $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
-         //   $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
+         //   $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
+            $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
             
             $this->session->userdata['userdata'] = '';
-            $this->session->userdata['currently_owe'] = '';
-            $this->session->userdata['monthly_payment'] = '';
+            $this->session->userdata['type'] = '';
+            $this->session->userdata['is_vin'] = '';
             $this->session->userdata['vin'] = '';
             $this->session->userdata['current_milage'] = '';
-            $this->session->userdata['firstname'] = '';
-            $this->session->userdata['lastname'] = '';
-
-            $this->session->userdata['state'] = '';
-            $this->session->userdata['city'] = '';
-            $this->session->userdata['month'] = '';
-            $this->session->userdata['day'] = '';
-            $this->session->userdata['years'] = '';
-            $this->session->userdata['dob'] = '';
-            $this->session->userdata['ssn'] = '';
+            $this->session->userdata['is_purchased'] = '';
+            $this->session->userdata['basic_warranty'] = '';
             $this->session->userdata['email'] = '';
-            $this->session->userdata['phone'] = '';
             $this->session->userdata['laid_off_for_payment_waived'] = '';
             $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             $this->session->userdata['i_represent_stated'] = '';
@@ -317,7 +337,7 @@ class Vsc extends CI_Controller {
 
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
-        $this->email->to('' . $emails[0]['emails'] . '');
+        $this->email->to('saurab.c@codaemonsoftwares.com');
         $this->email->subject("Demo Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
         $this->email->bcc('haroon.m@codaemonsoftwares.com');
