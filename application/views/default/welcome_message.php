@@ -48,6 +48,20 @@
           </button>
         </a>
       </div>
+      <div class="offer-cont">
+        <a href="<?php echo BASE_URL . 'vsc?vscstep=1' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'auto loan');">
+          <button class="offer-circ">
+            <div class="outer-circ">
+              <div class="inner-bevel">
+                <div class="second-bevel">
+                  <div class="offer-img offer-auto"></div>
+                  <p class="title">Vehicle Service Contract</p>
+                </div>
+              </div>
+            </div>
+          </button>
+        </a>
+      </div>
     </div>
     <div class="disclosure">
       <i class="fa fa-lock"></i>
