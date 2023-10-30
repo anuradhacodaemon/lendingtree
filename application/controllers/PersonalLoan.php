@@ -793,7 +793,7 @@ class PersonalLoan extends CI_Controller
                             session_destroy();
                             $data['success'] = 1;
                             $data['message'] = $ret_values['message'];
-                            $data['url'] = 'https://jacksoncountyfcu.com/';
+                            $data['url'] = 'https://demo.culoanportal.com/';
                             echo json_encode($data);
                         } else {
                             $data['error'] = 1;
@@ -1406,7 +1406,7 @@ class PersonalLoan extends CI_Controller
                         session_destroy();
                         $data['success'] = 1;
                         $data['message'] = $ret_values['message'];
-                        $data['url'] = 'https://jacksoncountyfcu.com/';
+                        $data['url'] = 'https://demo.culoanportal.com/';
                         echo json_encode($data);
                     } else {
                         $data['error'] = 1;

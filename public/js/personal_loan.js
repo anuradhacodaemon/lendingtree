@@ -663,7 +663,7 @@ function getFormId(form) {
                                 setInterval(function () {
                                     $('#exampleModal').modal('hide');
                                     $('#showMsgToApplicant').html('');
-                                    window.location.href = 'https://jacksoncountyfcu.com/';
+                                    window.location.href = 'https://demo.culoanportal.com/';
                                 }, 5000);
                             }
                         }
@@ -680,7 +680,7 @@ function getFormId(form) {
                             setInterval(function () {
                                 $('#exampleModal').modal('hide');
                                 $('#showMsgToApplicant').html('');
-                                window.location.href = 'https://jacksoncountyfcu.com/';
+                                window.location.href = 'https://demo.culoanportal.com/';
                             }, 5000);
                         }
                     }
