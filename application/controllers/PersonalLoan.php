@@ -2035,7 +2035,7 @@ class PersonalLoan extends CI_Controller
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('mccu_auto_view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('demo_personal_view_fileloan', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $path = PHYSICAL_PATH . 'download_pdf/';
