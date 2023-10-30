@@ -3,7 +3,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                Third Party Link Disclaimer:&nbsp;<?php $getPhone=$this->loan_model->get_phone(); if(!empty($getPhone[0]['footer'])) { echo $getPhone[0]['footer']; } ?>&nbsp;
+                Third Party Link
+                Disclaimer:&nbsp;<?php $getPhone = $this->loan_model->get_phone();
+                                    if (!empty($getPhone[0]['footer'])) {
+                                        echo $getPhone[0]['footer'];
+                                    } ?>&nbsp;
             </div>
         </div>
     </div>
@@ -13,9 +17,9 @@
 if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:82') {
     $setURL = 'http://' . $_SERVER['HTTP_HOST'] . '/lendingtree/';
 } else {
-    $setURL = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'] . '/';
+    $setURL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . '/';
 }
-?>	
+?>
 <input type="hidden" id="domain" value="<?php echo $setURL; ?>" />
 <script src="<?php echo BASE_URL; ?>public/js/slide/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -25,6 +29,8 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 <link href="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.css" rel="stylesheet">
 <script src="<?php echo BASE_URL; ?>public/js/lendingsteps.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/refinancesteps.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/personalsteps.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/personal_loan.js"></script>
 <script src="<?php echo BASE_URL; ?>public/js/homeloansteps.js"></script>
 <link href="<?php echo BASE_URL; ?>public/css/popup.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
@@ -33,21 +39,21 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'localhost:
 </script>
 
 
-<script> //$('input[name=amount]').val()
-    $(document).ready(function () {
-<?php
-if (!empty($this->session->flashdata('item'))) {
-    ?>
-            window.setTimeout(function () {
-                $(".alert").fadeTo(500, 0).slideUp(500, function () {
+<script>
+    //$('input[name=amount]').val()
+    $(document).ready(function() {
+        <?php
+        if (!empty($this->session->flashdata('item'))) {
+        ?>
+            window.setTimeout(function() {
+                $(".alert").fadeTo(500, 0).slideUp(500, function() {
                     $(this).remove();
                 });
             }, 4000);
             $(".forgot_section").hide();
-<?php } ?>
-     
-    });
+        <?php } ?>
 
+    });
 </script>
 
 
@@ -62,68 +68,67 @@ if (!empty($this->session->flashdata('item'))) {
         $.ajax({
             type: "GET",
             url: "<?php echo BASE_URL; ?>auto/getcity/" + id,
-            success: function (data)
-            {
+            success: function(data) {
                 var len = data.length;
-                 $('#city').prop('disabled',false);
+                $('#city').prop('disabled', false);
 
                 if (JSON.parse(data) == '') {
                     $('#city').prop('disabled', 'disabled');
                     // array empty or does not exist
                 }
-                
-                  
-                
+
+
+
                 //$("#city").empty();
                 $("#city").html("<option value=''>Select City</option>");
-                $.each(JSON.parse(data), function (key, value) {
-                    $('select[name="city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                $.each(JSON.parse(data), function(key, value) {
+                    $('select[name="city"]').append('<option value="' + value.id + '">' + value.name +
+                        '</option>');
                 });
             }
         });
     }
 
 
-    $(function () {
-//----- OPEN
-        $('[data-popup-open]').on('click', function (e) {
+    $(function() {
+        //----- OPEN
+        $('[data-popup-open]').on('click', function(e) {
             var targeted_popup_class = jQuery(this).attr('data-popup-open');
             $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
             e.preventDefault();
         });
-//----- CLOSE
-        $('[data-popup-close]').on('click', function (e) {
+        //----- CLOSE
+        $('[data-popup-close]').on('click', function(e) {
             var targeted_popup_class = jQuery(this).attr('data-popup-close');
             $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
             e.preventDefault();
         });
     });
-/*$(document).ready(function () {
-                            var formatter = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                                minimumFractionDigits: 2,
-                            });
-                            var x = formatter.format($('#ex6SliderVal').html()).replace("$", "");
-                            //$('#ex6SliderVal').html(x);
-                        });*/
+    /*$(document).ready(function () {
+                                var formatter = new Intl.NumberFormat('en-US', {
+                                    style: 'currency',
+                                    currency: 'USD',
+                                    minimumFractionDigits: 2,
+                                });
+                                var x = formatter.format($('#ex6SliderVal').html()).replace("$", "");
+                                //$('#ex6SliderVal').html(x);
+                            });*/
 </script>
 
 
 <?php
 if ($this->session->flashdata('item')) {
     $message = $this->session->flashdata('item');
-    ?>
+?>
 
     <div class="popup" data-popup="popup-1">
         <div class="popup-inner">
             <h2>Thank you</h2>
-            <p><?php echo $message['message'];?></p>
+            <p><?php echo $message['message']; ?></p>
             <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
         </div>
-    </div>           
+    </div>
 
-    <?php
+<?php
 }
 ?>
-
