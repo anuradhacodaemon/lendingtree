@@ -192,8 +192,8 @@ class Vsc extends CI_Controller {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-            $this->mailformat('saurabh1', 'saurabh2', 'saurab.c@codaemonsoftwares.com');
-            $this->sent_mail($result, 'saurabh4', 'saurabh5');
+        //    $this->mailformat('first name', 'last name', 'saurab.c@codaemonsoftwares.com');
+            $this->sent_mail($result);
             
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['type'] = '';
@@ -302,7 +302,7 @@ class Vsc extends CI_Controller {
         $pdf->Output($path . $filename, 'F');
     }
 
-    public function sent_mail($id = 0, $firstname, $lastname) {
+    public function sent_mail($id = 0) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = urlencode($Link);
         $url = base_url() . "vsc/mail_format_pdf/" . $url1;
@@ -328,11 +328,12 @@ class Vsc extends CI_Controller {
           );
          * */
 
+
         $this->load->library('email');
 
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
-        $this->email->to('saurab.c@codaemonsoftwares.com');
+        $this->email->to(VSCMAIL);
         $this->email->subject("Demo Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
      //   $this->email->bcc('haroon.m@codaemonsoftwares.com');
@@ -345,8 +346,8 @@ class Vsc extends CI_Controller {
             $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
-            'firstname' => $firstname,
-            'lastname' => $lastname,
+            'firstname' => VSCMAIL,
+           // 'lastname' => $lastname,
             'url' => $url_name,
             'domain'=>$_SERVER['SERVER_NAME'],
             'copyright' => date('Y')
