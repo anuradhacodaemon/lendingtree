@@ -488,7 +488,7 @@ input:focus {
   fill: #8f846f;
 }
 .footer-main {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
