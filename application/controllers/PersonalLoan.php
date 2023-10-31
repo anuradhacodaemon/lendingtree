@@ -2057,6 +2057,7 @@ class PersonalLoan extends CI_Controller
         $dh = '' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
 
+
         //send data to zapier
         $this->loan_model->send_to_zapier($this->session->userdata(), 'personalLoan', $id);
 
@@ -2095,6 +2096,8 @@ class PersonalLoan extends CI_Controller
         foreach ($token as $key => $val) {
             $varMap[sprintf($pattern, $key)] = $val;
         }
+
+
 
         $emailContent = strtr($emailtemplate[0]['content'], $varMap);
         $this->email->message($emailContent);

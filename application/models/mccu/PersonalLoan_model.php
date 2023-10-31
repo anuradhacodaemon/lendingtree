@@ -44,7 +44,8 @@ class PersonalLoan_model extends CI_Model
         // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
         $this->db->where('shop.p_id', $shopId);
         $result = $this->db->get();
-        return $result->row_array();
+        $data =  $result->row_array();
+        return $data;
     }
 
 

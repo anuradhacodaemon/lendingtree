@@ -658,11 +658,12 @@ function getFormId(form) {
                                 $("#add_cosigner19").show();
                                 let text = obj['message'];
                                 let newText = text.replace(/\./g, ".<br>");
-                                $('#showMsgToApplicant').html(newText);
-                                $('#exampleModal').modal('show');
+                                // $('#showMsgToApplicant').html(newText);
+                                // $('#exampleModal').modal('show');
+                                swal(newText);
                                 setInterval(function () {
-                                    $('#exampleModal').modal('hide');
-                                    $('#showMsgToApplicant').html('');
+                                    // $('#exampleModal').modal('hide');
+                                    // $('#showMsgToApplicant').html('');
                                     window.location.href = 'https://demo.culoanportal.com/';
                                 }, 5000);
                             }
@@ -675,11 +676,13 @@ function getFormId(form) {
                             $("#final_step34").show();
                             let text = obj['message'];
                             let newText = text.replace(/\./g, ".<br>");
-                            $('#showMsgToApplicant').html(newText);
-                            $('#exampleModal').modal('show');
+                            // $('#showMsgToApplicant').html(newText);
+                            // $('#exampleModal').modal('show');
+                            swal(newText);
                             setInterval(function () {
-                                $('#exampleModal').modal('hide');
-                                $('#showMsgToApplicant').html('');
+                                // $('#exampleModal').modal('hide');
+                                // $('#showMsgToApplicant').html('');
+                                swal(newText);
                                 window.location.href = 'https://demo.culoanportal.com/';
                             }, 5000);
                         }
