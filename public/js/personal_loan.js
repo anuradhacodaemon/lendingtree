@@ -657,7 +657,7 @@ function getFormId(form) {
                                 $('#loader_page_final').hide();
                                 $("#add_cosigner19").show();
                                 let text = obj['message'];
-                                let newText = text.replace(/\./g, ".<br>");
+                                let newText = text.replace(/\./g, "");
                                 // $('#showMsgToApplicant').html(newText);
                                 // $('#exampleModal').modal('show');
                                 swal(newText);
@@ -675,7 +675,7 @@ function getFormId(form) {
                             $('#loader_page_final').hide();
                             $("#final_step34").show();
                             let text = obj['message'];
-                            let newText = text.replace(/\./g, ".<br>");
+                            let newText = text.replace(/\./g, "");
                             // $('#showMsgToApplicant').html(newText);
                             // $('#exampleModal').modal('show');
                             swal(newText);
