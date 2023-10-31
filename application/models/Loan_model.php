@@ -252,6 +252,7 @@ class Loan_model extends CI_Model {
        // if ($num == 0) {
             $this->db->insert(VSC, $logData);
             $id = $this->db->insert_id();
+           // echo $this->db->last_query();
             //if ($this->db->affected_rows() > 0) {
                 return $id;
             //}
@@ -259,6 +260,20 @@ class Loan_model extends CI_Model {
            // return 0;
         //}
     }
+
+    public function get_userdetailsvscpdf($shopId = 0) {
+        $this->db->select('shop.*');
+
+        $this->db->from(VSC . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.vsc_id', $shopId);
+
+        $result = $this->db->get();
+
+        return $result->result_array();
+    }
+
+
 }
 ?>
 

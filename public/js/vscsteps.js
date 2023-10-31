@@ -328,7 +328,7 @@ function vscstep2(id) {
 function vscstep3(id) {
     ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
     var url = base_url + "vsc/vscstep3/" + id;
-    
+  
     $.ajax({
         type: "GET",
         url: url,
@@ -346,63 +346,69 @@ function vscstep3(id) {
     });
 
 }
-function vscstep4() {
-    var year = $('input[name=year]').val();
-    alert(year);
-        //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
-    $.ajax({
-        type: "GET",
-        url: base_url + "vsc/vscstep4/" + vin,
-        success: function (data)
-        {
-            window.history.pushState("Details", "Title", base_url + "vsc?vscstep=4");
+// function vscstep4() {
+//     var year = $('input[name=year]').val();
+//         //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
+//     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+//     $.ajax({
+//         type: "GET",
+//         url: base_url + "vsc/vscstep4/" + vin,
+//         success: function (data)
+//         {
+//             window.history.pushState("Details", "Title", base_url + "vsc?vscstep=4");
 
-            $('#container').html(data);
-        }
-    });
+//             $('#container').html(data);
+//         }
+//     });
 
-}
+// }
 
-function vscstep41111() {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
-    
-    alert($('input[name=year]').val());
-    $.ajax({
-        type: "GET",
-        url: base_url + "vsc/vscstep4111111/" + $('input[name=year]').val() + '/' + $('input[name=make]').val()+ '/' + $('input[name=model]').val(),
-        success: function (data)
-        {
-            window.history.pushState("Details", "Title", base_url + "vsc?vscstep=411111");
-            $('#container').html(data);
-        }
-    });
-
-}
 
 function vscstep5() {
     var vin = $('input[name=vin]').val();
-    //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
+    var year = $('#year').val();
+    var make = $('#make').val();
+    var model = $('#model').val();
+
+       var vin_value = $('input[name=vin_value]').val();
+    //   alert(year);
+    
+    if ($('input[name=vin]').val() == '' || $('input[name=vin]').val() == 'undefined')
+    {
+        vin_value=0;
+    }else{
+        vin_value=vin;
+    }
+
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     var RE = /^[A-HJ-NPR-Z\\d]{8}[\\dX][A-HJ-NPR-Z\\d]{2}\\d{6}$/;
-    if ($('input[name=vin]').val() == '')
+    if ($('input[name=vin]').val() == '' || $('input[name=vin]').val() == 'undefined' && vin_value==1)
     {
 
         $('#err1').html('VIN Number is empty');
-        $('#vin').focus();
+        $('#email').focus();
         return false;
-    }
-    // else if(!RE.test($('input[name=vin]').val()))
-    // {
+    } else if (year == '' || year == 'undefined' && vin_value==2)
+    {
+        $('#err1').html('Year Number is empty');
+        $('#year').focus();
+        return false;
+    } else if (make == '' || year == 'undefined' && vin_value==2)
+    {
+        $('#err2').html('Year Number is empty');
+        $('#make').focus();
+        return false;
+    } else if (model == '' || year == 'undefined' && vin_value==2)
+    {
+        $('#err3').html('Year Number is empty');
+        $('#model').focus();
+        return false;
+    }else{
 
-    //     $('#err1').html('Please Enter Correct VIN Number');
-    //     $('#vin').focus();
-    //     return false;
-    // }
-    else{
     $.ajax({
-        type: "GET",
-        url: base_url + "vsc/vscstep5/" + vin,
+        type: "POST",
+        url: base_url + "vsc/vscstep5/",
+        data: {vin_value:vin_value,year:year,make:make,model:model},
         success: function (data)
         {
             window.history.pushState("Details", "Title", base_url + "vsc?vscstep=5");
@@ -415,24 +421,20 @@ function vscstep5() {
 
 function vscstep6() {
     var current_milage = $('input[name=current_milage]').val();
-    //var requested_amount = $("#requested_amount").val().replace(/\D/g, '');
+    var RE1 = /^[0-9]+$/;
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
-
-    var RE = /^[A-HJ-NPR-Z\\d]{8}[\\dX][A-HJ-NPR-Z\\d]{2}\\d{6}$/;
     if ($('input[name=current_milage]').val() == '')
     {
 
         $('#err1').html('Current Milage is empty');
         $('#current_milage').focus();
         return false;
+    }else if (!RE1.test($('input[name=current_milage]').val()))
+    {
+        $('#err1').html('Current Milage Contains only Number');
+        $('#email').focus();
+        return false;
     }
-    // else if(!RE.test($('input[name=vin]').val()))
-    // {
-
-    //     $('#err1').html('Please Enter Correct VIN Number');
-    //     $('#vin').focus();
-    //     return false;
-    // }
     else{
     $.ajax({
         type: "GET",
@@ -510,15 +512,7 @@ function vscstep9() {
         $('#err1').html('Your email is not valid');
         $('#email').focus();
         return false;
-    }
-    // else if(!RE.test($('input[name=vin]').val()))
-    // {
-
-    //     $('#err1').html('Please Enter Correct VIN Number');
-    //     $('#vin').focus();
-    //     return false;
-    // }
-    else{
+    }else{
     $.ajax({
         type: "GET",
         url: base_url + "vsc/vscstep9/" + email,
@@ -558,3 +552,19 @@ function vscstep10(val) {
     });
 
 }
+
+
+function disclosure_vsc()
+{  
+   // $("#disclosureModal").modal('show'); // Open the modal
+   swal("By providing the Credit Union with a wireless phone number (cell phone) you consent to receiving phone calls, including autodialed and pre-recorded calls from the Credit Union or its third-party debt collector at that number");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        if (event.target.matches(".disclosure-sec")) {
+            // Handle the click event
+            disclosure_vsc();
+        }
+    });
+});

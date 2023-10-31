@@ -5,35 +5,19 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-                <?php  if(isset($this->session->userdata['type']))
-                      { 
-                        if($this->session->userdata['type']== 1)
-                        {
-                          echo 'Buying New Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 2)
-                        {
-                          echo 'Buying Used Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 3)
-                        {
-                          echo 'Buying Refinance For Vehicle';
-                        }
-                        elseif($this->session->userdata['type']== 5)
-                        {
-                          echo 'Personal Loan';
-                        }
-                        elseif($this->session->userdata['type']== 6)
-                        {
-                          echo 'Recreational Vehical Loan';
-                        }
-                      }
-                      else{
-                          echo 'Buying New Vehicle';
-                          }
+                <?php  
+                        if($this->session->userdata['is_vin']== 1)
+                        {?>                 
+                            <input  type="hidden" id="vin_value" name="vin_value" value="1">
+                    <?php }
+                        else
+                        {?>
+                           <input  type="hidden" id="vin_value" name="vin_value" value="2">
+                            <?php  }
+                        
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Vehicle Details</label>
                     <div class="row">

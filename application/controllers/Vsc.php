@@ -92,16 +92,29 @@ class Vsc extends CI_Controller {
 
 
     public function vscstep5($id = 0) {
-        if ($id) {
-            $data = array(
-                'vin' => $id,
-            );
 
-            $this->session->set_userdata($data);
+        if($_POST['year'])
+        {
+            $year=$_POST['year'];
+            $make=$_POST['make'];
+            $model=$_POST['model'];
+
+            $data = array(
+                'vehicle_year' => $year,
+                'vehicle_make_brand' => $make,
+                'vehicle_model' => $model,
+            );
+        }
+        if($_POST['vin_value'])
+        {
+            $vin=$_POST['vin_value'];
+            $data = array(
+                'vin' => $vin,
+            );
         }
 
-      //  echo '<pre>';
-  //   print_r($this->session->userdata());
+        $this->session->set_userdata($data);
+
         $this->load->view('vsc/vscstep5', $data);
     }
 
@@ -114,9 +127,6 @@ class Vsc extends CI_Controller {
             $this->session->set_userdata($data);
         }
 
-
-        //echo '<pre>';
-        // print_r($this->session->userdata());
         $this->load->view('vsc/vscstep6', $data);
     }
 
@@ -128,8 +138,6 @@ class Vsc extends CI_Controller {
 
             $this->session->set_userdata($data);
         }
-        // echo '<pre>';
-        // print_r($this->session->userdata());
         $this->load->view('vsc/vscstep7');
     }
 
@@ -141,8 +149,6 @@ class Vsc extends CI_Controller {
 
              $this->session->set_userdata($data);
          }
-         // echo '<pre>';
-         // print_r($this->session->userdata());
               $this->load->view('vsc/vscstep8');
      }
 
@@ -154,51 +160,40 @@ class Vsc extends CI_Controller {
 
              $this->session->set_userdata($data);
          }
-         // echo '<pre>';
-         // print_r($this->session->userdata());
               $this->load->view('vsc/vscstep9');
      }
 
-    public function sha(){
+    public function vscstep10() {
 
-         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $dh = scandir($dir);
-        echo '<pre>';
-        echo PHYSICAL_PATH;
-        echo '<br>';
-        print_r($dh);
-    }
-
-
-
-
-
-    public function vscstep10($val = 'N') {
-
-
-        unset($this->session->userdata['panel']);
+        unset($this->session->userdata['laid_off_for_payment_waived']);
         unset($this->session->userdata['__ci_last_regenerate']);
-        // unset($this->session->userdata['userdata']);
-        // unset($this->session->userdata['type']);
-        // unset($this->session->userdata['is_vin']);
-        // unset($this->session->userdata['vin']);
-        // unset($this->session->userdata['current_milage']);
-        // unset($this->session->userdata['is_purchased']);
-        // unset($this->session->userdata['basic_warranty']);
+        unset($this->session->userdata['panel']);
+        unset($this->session->userdata['i_represent_stated']);
+        unset($this->session->userdata['userdata']);
+        unset($this->session->userdata['die_or_ill_cancel_the_loan']);
+        $is_vin=$this->session->userdata['is_vin'];
+        if( $is_vin==1){
+         unset($this->session->userdata['vehicle_year']);
+         unset($this->session->userdata['vehicle_make_brand']);
+         unset($this->session->userdata['vehicle_model']);
+        }else{
+         unset($this->session->userdata['vin']);
+        }
 
-      
-        
+        $this->session->userdata['date_of_application']=date('Y-m-d H:i:s');
+        $this->session->userdata['domain']=$_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
+        $this->session->userdata['status']=1;
+
+       // echo"<pre>"; print_r($this->session->userdata()); die();		
+     
         $result = $this->loan_model->add_vsc($this->session->userdata());
-
-
-        //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
             $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
-         //   $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
-            $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
+            $this->mailformat('saurabh1', 'saurabh2', 'saurab.c@codaemonsoftwares.com');
+            $this->sent_mail($result, 'saurabh4', 'saurabh5');
             
             $this->session->userdata['userdata'] = '';
             $this->session->userdata['type'] = '';
@@ -294,12 +289,12 @@ class Vsc extends CI_Controller {
     public function mail_format_pdfdownload($id = 0) {
         $link = explode('&', urldecode($id));
         $this->load->model('details');
-        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($link[0]);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $data['userDetails'] = $this->loan_model->get_userdetailsvscpdf($link[0]);
+        $name = $data['userDetails'][0]['email'] . '_' . $data['userDetails'][0]['vsc_id'];
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('view_file', $data, TRUE);
+        $tbl = $this->load->view('view_vsc_file', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         ob_end_clean();
         $path = PHYSICAL_PATH . 'download_pdf/';
@@ -310,16 +305,16 @@ class Vsc extends CI_Controller {
     public function sent_mail($id = 0, $firstname, $lastname) {
         $Link = $id . '&rand=' . rand(1, 10);
         $url1 = urlencode($Link);
-        $url = base_url() . "refinance/mail_format_pdf/" . $url1;
+        $url = base_url() . "vsc/mail_format_pdf/" . $url1;
         $this->mail_format_pdfdownload($url1);
         $dir = PHYSICAL_PATH . 'download_pdf/';
-        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($id);
-        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['ref_id'];
+        $data['userDetails'] = $this->loan_model->get_userdetailsvscpdf($id);
+        $name = $data['userDetails'][0]['email'] . '_' . $data['userDetails'][0]['vsc_id'];
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
          //send data to zapier
-        $this->loan_model->send_to_zapier($this->session->userdata(),'refinance',$id);
+     //   $this->loan_model->send_to_zapier($this->session->userdata(),'refinance',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
@@ -340,7 +335,7 @@ class Vsc extends CI_Controller {
         $this->email->to('saurab.c@codaemonsoftwares.com');
         $this->email->subject("Demo Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('haroon.m@codaemonsoftwares.com');
+     //   $this->email->bcc('haroon.m@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
@@ -383,7 +378,7 @@ class Vsc extends CI_Controller {
         // $pdf->SetFont('helvetica', '', 10);
         // add a page
         $pdf->AddPage();
-        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('view_vsc_file', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
