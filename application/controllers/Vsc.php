@@ -184,6 +184,7 @@ class Vsc extends CI_Controller {
         $this->session->userdata['domain']=$_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $this->session->userdata['status']=1;
 
+        
        // echo"<pre>"; print_r($this->session->userdata()); die();		
      
         $result = $this->loan_model->add_vsc($this->session->userdata());
