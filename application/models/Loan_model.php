@@ -276,4 +276,3 @@ class Loan_model extends CI_Model {
 
 }
 ?>
-

@@ -488,6 +488,10 @@ input:focus {
   fill: #8f846f;
 }
 .footer-main {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   padding: 20px 0;
   background: #142b3f;
   color: white;
@@ -1238,3 +1242,7 @@ input[type="checkbox"] {
 .ui-menu .ui-menu-item{
   padding: 6px !important;
 }
+
+/* .clearfix{
+  background: #f2f2f2;
+} */

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -127,3 +127,12 @@ $route['admin/homeloan/delete_inactive/(:any)'] = 'admin/admin_homeloan/delete_i
 $route['admin/homeloan/deleteall'] = 'admin/admin_homeloan/deleteall';
 $route['admin/homeloan/sentemail'] = 'admin/admin_homeloan/sentemail';
 $route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
+
+$route['admin/personalloanmccu'] = 'admin/personalLoanMccu/index';
+$route['admin/personalloanmccu/(:num)'] = 'admin/personalLoanMccu/index/$1';
+$route['admin/personalloanmccu/details/(:num)'] = 'admin/personalLoanMccu/details/$1';
+$route['admin/personalloanmccu/pdfloan/(:num)'] = 'admin/personalLoanMccu/pdfLoan/$1';
+$route['admin/personalloanmccu/export'] = 'admin/personalLoanMccu/export';
+$route['admin/personalloanmccu/delete_inactive/(:any)'] = 'admin/personalLoanMccu/delete_inactive/$1';
+$route['admin/personalloanmccu/deleteall'] = 'admin/personalLoanMccu/deleteall';
+$route['admin/personalloanmccu/updatestatus'] = 'admin/personalLoanMccu/updatestatus';

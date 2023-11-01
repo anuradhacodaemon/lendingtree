@@ -19,8 +19,21 @@
         </a>
       </div>
       <div class="offer-cont">
-        <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>"
-          onClick="ga('send', 'event', 'MCT', 'click', 'auto refinance');">
+        <a href="<?php echo BASE_URL . 'personalLoan?step=2' ?>" onClick="ga('send', 'event', 'MCCU', 'click', 'Personal loan');">
+          <button class="offer-circ">
+            <div class="outer-circ">
+              <div class="inner-bevel">
+                <div class="second-bevel">
+                  <div class="offer-img offer-personal"></div>
+                  <p class="title">PERSONAL LOANS</p>
+                </div>
+              </div>
+            </div>
+          </button>
+        </a>
+      </div>
+      <div class="offer-cont">
+        <a href="<?php echo BASE_URL . 'refinance?refinancestep=1' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'auto refinance');">
           <button class="offer-circ">
             <div class="outer-circ">
               <div class="inner-bevel">
@@ -34,8 +47,7 @@
         </a>
       </div>
       <div class="offer-cont">
-        <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>"
-          onClick="ga('send', 'event', 'MCT', 'click', 'home loan');">
+        <a href="<?php echo BASE_URL . 'homeloan?homeloan=1' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'home loan');">
           <button class="offer-circ">
             <div class="outer-circ">
               <div class="inner-bevel">
@@ -75,8 +87,7 @@
     <h1>Other Popular Calculators</h1>
     <div class="center-btns">
       <div class="offer-cont">
-        <a href="<?php echo BASE_URL . 'loancalculator' ?>"
-          onClick="ga('send', 'event', 'MCT', 'click', 'loan calculator');">
+        <a href="<?php echo BASE_URL . 'loancalculator' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'loan calculator');">
           <button class="offer-circ">
             <div class="outer-circ">
               <div class="inner-bevel">
@@ -90,8 +101,7 @@
         </a>
       </div>
       <div class="offer-cont">
-        <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>"
-          onClick="ga('send', 'event', 'MCT', 'click', 'mortgage calculator');">
+        <a href="<?php echo BASE_URL . 'mortgagecalculator' ?>" onClick="ga('send', 'event', 'MCT', 'click', 'mortgage calculator');">
           <button class="offer-circ">
             <div class="outer-circ">
               <div class="inner-bevel">
