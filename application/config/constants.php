@@ -115,5 +115,3 @@ define('ZAPIER_HOOK_URL','https://hooks.zapier.com/hooks/catch/4330880/3rx6nv0/'
 #year make model
 define('YEAR_MAKE_USER', 'AutoBid_UCTV');
 define('YEAR_MAKE_SECRET','india409');
-
-define('VSCMAIL','saurab.c@codaemonsoftwares.com');

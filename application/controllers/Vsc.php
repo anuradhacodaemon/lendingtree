@@ -333,7 +333,7 @@ class Vsc extends CI_Controller {
 
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
-        $this->email->to(VSCMAIL);
+        $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Demo Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
      //   $this->email->bcc('haroon.m@codaemonsoftwares.com');
@@ -346,8 +346,8 @@ class Vsc extends CI_Controller {
             $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
-            'firstname' => VSCMAIL,
-           // 'lastname' => $lastname,
+            'firstname' => $emails[0]['emails'],
+            'lastname' => ' ',
             'url' => $url_name,
             'domain'=>$_SERVER['SERVER_NAME'],
             'copyright' => date('Y')
