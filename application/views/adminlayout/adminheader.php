@@ -37,6 +37,8 @@
 
                     <li><a href="<?php echo BASE_URL ?>admin/homeloan"><i class="fa fa-edit"></i>Home Loan</a>
                     </li>
+                    <li><a href="<?php echo BASE_URL ?>admin/vsc"><i class="fa fa-edit"></i>Vehicle Service Contract</a>
+                    </li>
                     <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>
                     </li>
 

@@ -381,14 +381,20 @@ function vscstep5() {
     }
 
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
-    var RE = /^[A-HJ-NPR-Z\\d]{8}[\\dX][A-HJ-NPR-Z\\d]{2}\\d{6}$/;
+    var vin_regex =/^[A-HJ-NPR-Za-hj-npr-z\d]{8}[\dX][A-HJ-NPR-Za-hj-npr-z\d]{2}\d{6}$/;
+
     if ($('input[name=vin]').val() == '' || $('input[name=vin]').val() == 'undefined' && vin_value==1)
     {
 
         $('#err1').html('VIN Number is empty');
         $('#email').focus();
         return false;
-    } else if (year == '' || year == 'undefined' && vin_value==2)
+    } else if (!vin_regex.test($('input[name=vin]').val())  && vin_value==1 )
+    {
+        $('#err1').html('VIN is not valid');
+        $('#email').focus();
+        return false;
+    }else if (year == '' || year == 'undefined' && vin_value==2)
     {
         $('#err1').html('Year Number is empty');
         $('#year').focus();
@@ -542,7 +548,11 @@ function vscstep10(val) {
                 if (data == 1)
                 {
                     //location.href = base_url;
-                    gtag_report_conversion(base_url);
+                    swal("Your quote will be sent to the email provided within the next three (3) business days");
+                    setTimeout(function() {
+                        gtag_report_conversion(base_url);
+                    }, 5000);
+                  
                 } else
                 {
                     $('#container').html(data);

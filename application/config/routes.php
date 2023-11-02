@@ -136,3 +136,14 @@ $route['admin/personalloanmccu/export'] = 'admin/personalLoanMccu/export';
 $route['admin/personalloanmccu/delete_inactive/(:any)'] = 'admin/personalLoanMccu/delete_inactive/$1';
 $route['admin/personalloanmccu/deleteall'] = 'admin/personalLoanMccu/deleteall';
 $route['admin/personalloanmccu/updatestatus'] = 'admin/personalLoanMccu/updatestatus';
+
+
+$route['admin/vsc'] = 'admin/admin_vsc/index';
+$route['admin/vsc/(:num)'] = 'admin/admin_vsc/index/$1';
+$route['admin/vsc/details/(:num)'] = 'admin/admin_vsc/details/$1';
+$route['admin/vsc/vscpdf/(:num)'] = 'admin/admin_vsc/vscpdf/$1';
+$route['admin/vsc/pdfloan/(:num)'] = 'admin/admin_vsc/pdfLoan/$1';
+$route['admin/vsc/export'] = 'admin/admin_vsc/export';
+$route['admin/vsc/delete_inactive/(:any)'] = 'admin/admin_vsc/delete_inactive/$1';
+$route['admin/vsc/deleteall'] = 'admin/admin_vsc/deleteall';
+$route['admin/vsc/updatestatus'] = 'admin/admin_vsc/updatestatus';

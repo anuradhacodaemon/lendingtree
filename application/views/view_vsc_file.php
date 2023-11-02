@@ -140,7 +140,7 @@ if (!empty($userDetails[0]['vehicle_make_brand'])) {
                     If VIN Number of the Vehicle :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo number_format($userDetails[0]['vin']); ?>
+                        <?php echo $userDetails[0]['vin']; ?>
                     </td>
                 </tr>
                 <tr>

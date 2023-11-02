@@ -165,6 +165,8 @@ class Vsc extends CI_Controller {
 
     public function vscstep10() {
 
+	
+
         unset($this->session->userdata['laid_off_for_payment_waived']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['panel']);
@@ -176,23 +178,23 @@ class Vsc extends CI_Controller {
          unset($this->session->userdata['vehicle_year']);
          unset($this->session->userdata['vehicle_make_brand']);
          unset($this->session->userdata['vehicle_model']);
-        }else{
+        }elseif( $is_vin==2){
          unset($this->session->userdata['vin']);
         }
 
         $this->session->userdata['date_of_application']=date('Y-m-d H:i:s');
         $this->session->userdata['domain']=$_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $this->session->userdata['status']=1;
+        $this->session->userdata['active_status']=1;
 
         
        // echo"<pre>"; print_r($this->session->userdata()); die();		
      
-        $result = $this->loan_model->add_vsc($this->session->userdata());
-
+        $result = $this->loan_model->add_vsc($this->session->userdata());		
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
-            $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
-            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+          //  $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
+          //  $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
         //    $this->mailformat('first name', 'last name', 'saurab.c@codaemonsoftwares.com');
             $this->sent_mail($result);
             
@@ -315,7 +317,7 @@ class Vsc extends CI_Controller {
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
          //send data to zapier
-     //   $this->loan_model->send_to_zapier($this->session->userdata(),'refinance',$id);
+        $this->loan_model->send_to_zapier($this->session->userdata(),'vsc',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
