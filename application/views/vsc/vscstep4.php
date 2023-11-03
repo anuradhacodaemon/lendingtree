@@ -22,7 +22,7 @@
                     <label class="control-label">Vehicle Details</label>
                     <div class="row">
                         <form id="vehicle_details" method="POST" onsubmit="return getFormId(this)">
-                        <input type="hidden" name="auto_step" value="44.1" id="auto_step" >
+                        <input type="hidden" name="vsc_step" value="44.1" id="vsc_step" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-2 margbot_10">
                                 <select class="form-control width_100 " style="width:auto;" name="year" id="year">

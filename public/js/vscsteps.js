@@ -5,137 +5,137 @@ if (window.performance) {
 var urlParams = new URLSearchParams(window.location.search);
 var step = parseInt(urlParams.get('step'));
 
-if (performance.navigation.type == 1) {
+// if (performance.navigation.type == 1) {
    
-    if (window.location.search.indexOf('vscstep=1') > -1) {
+//     if (window.location.search.indexOf('vscstep=1') > -1) {
          
-      $.ajax({
-            type: "GET",
-            url: base_url +"vsc/vscstep1",
-            success: function (data)
-            {
+//       $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep1",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        }); 
-    }
-    if (window.location.search.indexOf('vscstep=2') > -1) {
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         }); 
+//     }
+//     if (window.location.search.indexOf('vscstep=2') > -1) {
        
-       $.ajax({
-            type: "GET",
-            url: base_url +"vsc/vscstep2",
-            success: function (data)
-            {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep2",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
-    if (window.location.search.indexOf('vscstep=3') > -1) {
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
+//     if (window.location.search.indexOf('vscstep=3') > -1) {
        
-        $.ajax({
-            type: "GET",
-            url: base_url +"vsc/vscstep3",
-            success: function (data)
-            {
+//         $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep3",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
-    if (window.location.search.indexOf('vscstep=4') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step4",
-            success: function (data)
-            {
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
+//     if (window.location.search.indexOf('vscstep=4') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep4",
+//             success: function (data)
+//             {
                 
-                $('#container').html(data);
+//                 $('#container').html(data);
                 
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
-    if (window.location.search.indexOf('step=5') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step5",
-            success: function (data)
-            {
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
+//     if (window.location.search.indexOf('vscstep=5') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep5",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
-   if (window.location.search.indexOf('step=6') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step6",
-            success: function (data)
-            {
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
+//    if (window.location.search.indexOf('vscstep=6') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep6",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
-    if (window.location.search.indexOf('step=7') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step7",
-            success: function (data)
-            {
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
+//     if (window.location.search.indexOf('vscstep=7') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep7",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
 
-    if (window.location.search.indexOf('step=8') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step8",
-            success: function (data)
-            {
+//     if (window.location.search.indexOf('vscstep=8') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep8",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
 
-    if (window.location.search.indexOf('step=9') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step9",
-            success: function (data)
-            {
+//     if (window.location.search.indexOf('vscstep=9') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep9",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }
 
-    if (window.location.search.indexOf('step=10') > -1) {
-       $.ajax({
-            type: "GET",
-            url: base_url +"auto/step10",
-            success: function (data)
-            {
+//     if (window.location.search.indexOf('vscstep=10') > -1) {
+//        $.ajax({
+//             type: "GET",
+//             url: base_url +"vsc/vscstep10",
+//             success: function (data)
+//             {
 
-                $('#container').html(data);
-                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
-            }
-        });
-    }     
+//                 $('#container').html(data);
+//                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+//             }
+//         });
+//     }     
      
-  }
+//   }
   
    window.addEventListener('popstate', function(event) {
        /** if (event.state) {
@@ -270,7 +270,7 @@ if (performance.navigation.type == 1) {
 //}
  }, false);
 function vscstep1(id) {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+    //ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
     var url = base_url + "vsc/vscstep1/" + id;
     
     $.ajax({
@@ -291,7 +291,7 @@ function vscstep1(id) {
 
 }
 function vscstep2(id) {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+   // ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
     var url = base_url + "vsc/vscstep2/" + id;
     
     $.ajax({
@@ -326,7 +326,7 @@ function vscstep2(id) {
 
 // }
 function vscstep3(id) {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+ //   ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
     var url = base_url + "vsc/vscstep3/" + id;
   
     $.ajax({
@@ -380,7 +380,7 @@ function vscstep5() {
         vin_value=vin;
     }
 
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+  //  ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     var vin_regex =/^[A-HJ-NPR-Za-hj-npr-z\d]{8}[\dX][A-HJ-NPR-Za-hj-npr-z\d]{2}\d{6}$/;
 
     if ($('input[name=vin]').val() == '' || $('input[name=vin]').val() == 'undefined' && vin_value==1)
@@ -428,7 +428,7 @@ function vscstep5() {
 function vscstep6() {
     var current_milage = $('input[name=current_milage]').val();
     var RE1 = /^[0-9]+$/;
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+  //  ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     if ($('input[name=current_milage]').val() == '')
     {
 
@@ -458,7 +458,7 @@ function vscstep6() {
 }
 
 function vscstep7(id) {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+   // ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
     var url = base_url + "vsc/vscstep7/" + id;
     
     $.ajax({
@@ -481,7 +481,7 @@ function vscstep7(id) {
 
 
 function vscstep8(id) {
-    ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
+ //   ga('send', 'event', 'MCT', 'auto loan', 'type of loan');
     var url = base_url + "vsc/vscstep8/" + id;
     
     $.ajax({
@@ -504,7 +504,7 @@ function vscstep8(id) {
 
 
 function vscstep9() {
-    ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
+ //   ga('send', 'event', 'BMTCCU', 'auto loan', 'Requested Amount');
     var email = $('input[name=email]').val();
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if ($('input[name=email]').val() == '')
@@ -536,7 +536,7 @@ function vscstep9() {
 
 
 function vscstep10(val) {
-    ga('send', 'event', 'MCT', 'auto loan', 'submit');
+ //   ga('send', 'event', 'MCT', 'auto loan', 'submit');
     var url = base_url + "vsc/vscstep10/" + val;
     
     $.ajax({
