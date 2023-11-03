@@ -94,76 +94,84 @@
         </div>
     </div>
 </div>
+
 <!-- Banner ends here -->
-<script> //$('input[name=amount]').val()
-    $(document).ready(function () {
-        $('#auto_primary_address_id').autocomplete({
-            source: function (request, response) {
-                $("#err1").html("");
-                if (request.term !== '') {
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
+<script>
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+    $('#auto_primary_address_id').autocomplete({
+        source: function(request, response) {
+            $("#err3").html("");
+            if (request.term !== '') {
 
-                    $.ajax({
-                        type: "POST",
-                        url: base_url + "SmartyApi/getUsAddresses/",
-                        dataType: "json",
-                        data: { search: request.term },
-                        success: function (data) {
-                            //console.log(data);
-                            response(data);
-                            if (data.length === 0) {
-                                $("#err1").html("No Address Found");
-                            }
+                $.ajax({
+                    type: "POST",
+                    url: base_url + "SmartyApi/getUsAddresses/",
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function(data) {
+                        //console.log(data);
+                        response(data);
+                        if (data.length === 0) {
+                            $("#err3").html("No Address Found");
                         }
-                    });
-                }
-                if (request.term == '') {
-                    $("#err1").html("Please Enter address");
-                    return false;
-                }
-            },
-            minLength: 1,
-            select: function (event, ui) {
-                $('.resource-container').empty();
-                /*TODO future need to remove inline styles*/
-                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
-                $('#country_name').val('United States');
-                $('#street_name').val(ui.item.street_line);
-                $('#city_name').val(ui.item.city);
-                $('#state_name').val(ui.item.state);
-                $('#zipcode_name').val(ui.item.zipcode);
-                $('#auto_primary_address_id').val(addr);
-                event.preventDefault();
-            },
-            focus: function (event, ui) {
-                $('.resource-container').empty();
-                /*TODO future need to remove inline styles*/
-                let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
-                $('#country_name').val('United States');
-                $('#street_name').val(ui.item.street_line);
-                $('#city_name').val(ui.item.city);
-                $('#state_name').val(ui.item.state);
-                $('#zipcode_name').val(ui.item.zipcode);
-                $('#auto_primary_address_id').val(addr);
-                event.preventDefault();
+                    }
+                });
             }
-        }).data("ui-autocomplete")._renderItem = function (ul, item) {
-            console.log("The values are>> " +item.city);
-            let l = item.street_line + ' ' + item.city + ' ' +item.state + ' ' + item.zipcode;
-            return $("<li></li>")
-                .addClass('autocomplete-suggestion')
-                .addClass('highlight')//item based custom class to li here
-                .attr('style', item.entries)
-                .append(l)
-                .data("ui-autocomplete-item", item)
-                .attr('data-street-line', item.street_line)
-                .attr('data-city', item.city)
-                .attr('data-state', item.state)
-                .attr('data-zipcode', item.zipcode)
-                .appendTo(ul);
-        };
+            if (request.term == '') {
+                $("#err3").html("Please Enter address");
+                return false;
+            }
+        },
+        minLength: 1,
+        select: function(event, ui) {
+            $('.resource-container').empty();
+            /*TODO future need to remove inline styles*/
+            let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui
+                .item.zipcode;
+            $('#country_name').val('United States');
+            $('#street_name').val(ui.item.street_line);
+            $('#city_name').val(ui.item.city);
+            $('#state_name').val(ui.item.state);
+            $('#zipcode_name').val(ui.item.zipcode);
+            $('#auto_primary_address_id').val(addr);
+            event.preventDefault();
+        },
+        focus: function(event, ui) {
+            $('.resource-container').empty();
+            /*TODO future need to remove inline styles*/
+            let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui
+                .item.zipcode;
+            $('#country_name').val('United States');
+            $('#street_name').val(ui.item.street_line);
+            $('#city_name').val(ui.item.city);
+            $('#state_name').val(ui.item.state);
+            $('#zipcode_name').val(ui.item.zipcode);
+            $('#auto_primary_address_id').val(addr);
+            event.preventDefault();
+        }
+    }).data("ui-autocomplete")._renderItem = function(ul, item) {
+        console.log("The values are>> " + item.city);
+        let l = item.street_line + ' ' + item.city + ' ' + item.state + ' ' + item.zipcode;
+        return $("<li></li>")
+            .addClass('autocomplete-suggestion')
+            .addClass('highlight') //item based custom class to li here
+            .attr('style', item.entries)
+            .append(l)
+            .data("ui-autocomplete-item", item)
+            .attr('data-street-line', item.street_line)
+            .attr('data-city', item.city)
+            .attr('data-state', item.state)
+            .attr('data-zipcode', item.zipcode)
+            .appendTo(ul);
+    };
 
-        //
-    });
+    //
+});
     $(document).ready(function() {
         $('#monthly_pay_personal').on('blur', function(e) {
             $("#err3").html("");
