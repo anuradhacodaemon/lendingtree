@@ -77,9 +77,6 @@
                                 <div class="col-sm-12"><b>Current Milage: &nbsp</b>
                                         <?php echo $userDetails[0]['current_milage'] ?>
                                     </div>
-                                    <div class="col-sm-12"><b>VIN Number: &nbsp</b>
-                                        <?php echo $userDetails[0]['vin'] ?>
-                                    </div>
                                 <div class="col-sm-12"><b>Vechile Year: &nbsp</b>
                                         <?php echo $userDetails[0]['vehicle_year'] ?>
                                     </div>
@@ -108,7 +105,7 @@
                                         if ($userDetails[0]['basic_warranty'] == 1)
                                             $basic_warranty = 'Yes';
                                         if ($userDetails[0]['basic_warranty'] == 2)
-                                            $basic_warranty = 'NO';
+                                            $basic_warranty = 'No';
 
                                         echo $basic_warranty;
                                          ?></span>
