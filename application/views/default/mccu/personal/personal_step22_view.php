@@ -95,8 +95,11 @@
 </div>
 <!-- Banner ends here -->
 <!-- Banner ends here -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/slide/jquery-ui.min.js"></script>
 <script> //$('input[name=amount]').val()
-    $(document).ready(function () {
+jQuery.noConflict();
+jQuery(document).ready(function($) {
         $('#cosigner_home_address').autocomplete({
             source: function (request, response) {
                 $("#err1").html("");
