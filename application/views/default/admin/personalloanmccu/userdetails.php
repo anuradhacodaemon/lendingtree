@@ -18,7 +18,7 @@ function isJson($string) {
     <div class="page-title">
         <div class="title_left">
 
-            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/personalloanmccu' ?>" class="dark_grey">Auto-Loan Listing</a> >Details
+            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/personalloanmccu' ?>" class="dark_grey">Personal-Loan Listing</a> >Details
             <h3> <small> </small></h3>
         </div>
 
@@ -78,6 +78,8 @@ function isJson($string) {
                                     $type='Refinance';
                                     if($userDetails['loan_type']==4)
                                     $type='Lease Buy Out';
+                                    if($userDetails['loan_type']==5)
+                                    $type='Personal Loan';
                                     echo $type;} ?>
                                 </div>
                                
@@ -236,10 +238,17 @@ function isJson($string) {
                             <!-- 8 Fields break -->
                             <div class="col-sm-4 invoice-col padding_0">
                                 <div class="col-sm-12"><span> <b>Date Of Application:</b>&nbsp;
-                                    <?php  echo date('d-m-Y',strtotime($userDetails['date_of_application']));?></span>
+                                    <?php  echo date('j M Y',strtotime($userDetails['date_of_application']));?></span>
                                 </div>
                                 <div class="col-sm-12"> <b>Added Cosigner: &nbsp;</b>
-                                    <?php echo $userDetails['add_co_signers_onto_loan']; ?>
+                                <?php 
+                                    $add_co_signers_onto_loan='';
+                                    if($userDetails['add_co_signers_onto_loan']=='Y')
+                                    $add_co_signers_onto_loan='Yes';
+                                    if($userDetails['add_co_signers_onto_loan']=='N')
+                                    $add_co_signers_onto_loan='No';
+                                    echo $add_co_signers_onto_loan;
+                                     ?>
                                 </div>
                                 <div class="col-sm-12"><b>Cosigner's Full Name: &nbsp</b>
                                         <?php echo $userDetails['cosigner_first_name'] . ' ' . $userDetails['cosigner_last_name']; ?>

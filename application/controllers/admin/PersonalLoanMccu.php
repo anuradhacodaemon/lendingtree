@@ -183,6 +183,12 @@ class PersonalLoanMccu extends CI_Controller {
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
     }
+
+    public function isJson($string) {
+        json_decode($string);
+        return json_last_error() === JSON_ERROR_NONE;
+     }
+    
     //
     public function export() {
         
@@ -190,12 +196,67 @@ class PersonalLoanMccu extends CI_Controller {
         $arr = $this->get_header(); //this is the Header of CSV file
         $arr = array($arr);
         $data2 = $this->Personalloanmccu_model->get_userall();
+       
         // die;
         $type = '';
         $years = '';
         $a = array();
         foreach ($data2 as $k => $v) {  
-            
+         
+            $country = $street = $city = $state = $zipcode = "--";
+            $resp = $this->isJson($v['p_address']);
+         
+            if($resp)
+            {                                    
+                $full_address = json_decode($v['p_address']);
+                 $address = $full_address->street_line;
+                $country = (!empty($full_address->country)) ? $full_address->country : '--';
+                $city = $full_address->city;
+                $state = $full_address->state;
+                $zipcode = $full_address->zip_code;
+            }
+
+              
+                $personal_country = $personal_street = $personal_city = $personal_state = $personal_zipcode = "--";
+                $personal_resp = $this->isJson($v['personal_refrence_address']);
+             
+                if($personal_resp)
+                {                                    
+                    $personal_full_address = json_decode($v['personal_refrence_address']);
+                    $personal_address = $personal_full_address->street_line;
+                    $personal_country = (!empty($personal_full_address->country)) ? $personal_full_address->country : '--';
+                    $personal_city = $personal_full_address->city;
+                    $personal_state = $personal_full_address->state;
+                    $personal_zipcode = $personal_full_address->zip_code;
+                }
+
+                  
+                    $relatives_country = $relatives_street = $relatives_city = $relatives_state = $relatives_zipcode = "--";
+                    $relatives_resp = $this->isJson($v['relatives_live_address']);
+                 
+                    if($relatives_resp)
+                    {                                    
+                        $relatives_full_address = json_decode($v['relatives_live_address']);
+                        $relatives_address = $relatives_full_address->street_line;
+                        $relatives_country = (!empty($relatives_full_address->country)) ? $relatives_full_address->country : '--';
+                        $relatives_city = $relatives_full_address->city;
+                        $relatives_state = $relatives_full_address->state;
+                        $relatives_zipcode = $relatives_full_address->zip_code;
+                    }
+                   
+                    $cosigner_country = $cosigner_street = $cosigner_city = $cosigner_state = $cosigner_zipcode = "--";
+                    $cosigner_resp = $this->isJson($v['cosigner_address']);
+                 
+                    if($cosigner_resp)
+                    {                                    
+                        $cosigner_full_address = json_decode($v['cosigner_address']);
+                        $cosigner_address = $cosigner_full_address->street_line;
+                        $cosigner_country = (!empty($cosigner_full_address->country)) ? $cosigner_full_address->country : '--';
+                        $cosigner_city = $cosigner_full_address->city;
+                        $cosigner_state = $cosigner_full_address->state;
+                        $cosigner_zipcode = $cosigner_full_address->zip_code;
+                    }                    
+
             if ($v['loan_type'] == 1)
             $type = 'New Car Purchase';
             elseif ($v['loan_type'] == 2)
@@ -215,6 +276,8 @@ class PersonalLoanMccu extends CI_Controller {
                 $years = $v['requested_amount'];
             else
             $years = '';
+           
+           
             $a[0] = $v['first_name'];
             $a[1] = $v['last_name'];
             $a[2] = $v['p_phone'];
@@ -224,50 +287,66 @@ class PersonalLoanMccu extends CI_Controller {
             $a[6] = $v['current_employer'];
             $a[7] = '$'.number_format($v['employment_monthly_income']);
             $a[8] = $v['job_title'];
-            $a[9] = $v['p_address'];
-            //
-            $a[10] = $v['personal_refrence'];
-            $a[11] = $v['personal_refrence_address'];
-            $a[12] = $v['personal_refrence_phone'];
-            $a[13] = $v['supervisor_name'];
-            $a[14] = $v['how_long_your_working'];
-            $a[15] = $v['address_of_business'];
-            $a[16] = $v['military_involvement'];
-            $a[17] = $v['previous_working_years'];
-            $a[18] = $v['nearest_relative'];
-            $a[19] = $v['relation_with_relative'];
-            $a[20] = $v['relatives_live_address'];
-            $a[21] = $v['laid_off_for_payment_waived'];
-            $a[22] = $v['having_any_other_source_income'];
-            $a[23] = $v['if_source_income_yes_what_isit'];
-            $a[24] = $v['if_source_income_yes_monthly_income'];
-            $a[25] = date('d-m-Y',strtotime($v['date_of_application']));
-            $a[26] = $v['add_co_signers_onto_loan'];
-            $a[27] = $v['cosigner_first_name'] . ' ' . $v['cosigner_last_name'];
-            $a[28] = $v['cosigner_phone'];
-            $a[29] = $v['cosigner_email'];
-            $a[30] = $v['cosigner_marital_status'];
-            $a[31] = $v['cosigner_address'];
-            $a[32] = $v['cosigner_years_been_there'];
-            $a[33] = $v['cosigner_monthly_pay'];
-            $a[34] = $v['cosigner_nearest_relative'];
-            $a[35] = $v['cosigner_relationship'];
-            $a[36] = $v['domain'];
+            $a[9] = $address;
+            $a[10] = $city;
+            $a[11] = $state;
+            $a[12] = $zipcode;
+            $a[13] = $country;
+            $a[14] = $v['personal_refrence'];
+            $a[15] = $personal_address;
+            $a[16] = $personal_city;
+            $a[17] = $personal_state;
+            $a[18] = $personal_zipcode;
+            $a[19] = $personal_country;
+            $a[20] = $v['personal_refrence_phone'];
+            $a[21] = $v['supervisor_name'];
+            $a[22] = $v['how_long_your_working'];
+            $a[23] = $v['address_of_business'];
+            $a[24] = $v['military_involvement'];
+            $a[25] = $v['previous_working_years'];
+            $a[26] = $v['nearest_relative'];
+            $a[27] = $v['relation_with_relative'];
+            $a[28] = $relatives_address;
+            $a[29] = $relatives_city;
+            $a[30] = $relatives_state;
+            $a[31] = $relatives_zipcode;
+            $a[32] = $relatives_country;
+            $a[33] = $v['laid_off_for_payment_waived'];
+            $a[34] = $v['having_any_other_source_income'];
+            $a[35] = $v['if_source_income_yes_what_isit'];
+            $a[36] = $v['if_source_income_yes_monthly_income'];
+            $a[37] = date('d-m-Y',strtotime($v['date_of_application']));
+            $a[38] = $v['add_co_signers_onto_loan'];
+            $a[39] = $v['cosigner_first_name'] . ' ' . $v['cosigner_last_name'];
+            $a[40] = $v['cosigner_phone'];
+            $a[41] = $v['cosigner_email'];
+            $a[42] = $v['cosigner_marital_status'];
+            $a[43] = $cosigner_address;
+            $a[44] = $cosigner_city;
+            $a[45] = $cosigner_state;
+            $a[46] = $cosigner_zipcode;
+            $a[47] = $cosigner_country;
+            $a[48] = $v['cosigner_years_been_there'];
+            $a[49] = $v['cosigner_monthly_pay'];
+            $a[50] = $v['cosigner_nearest_relative'];
+            $a[51] = $v['cosigner_relationship'];
+            $a[52] = $v['domain'];
             $arr[] = $a;
         }
-        /*echo '<pre>';
-        print_r($arr);
-        exit;*/
+     //   echo '<pre>';
+     //   print_r($arr);
+     //   exit;
         $filename = "personalloan.csv";
         $fp = fopen('php://output', 'w');       
+        header('Content-Type: application/csv');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
         fputcsv($fp, $arr[0]);
         unset($arr[0]);
         foreach ($arr as $user) {
             fputcsv($fp, $user);
         }
         fclose($fp);
-        header('Content-Type: application/csv');
-        header('Content-Disposition: attachment; filename="' . $filename . '"');
+
    
     }
     //
@@ -292,11 +371,11 @@ class PersonalLoanMccu extends CI_Controller {
     public function get_header()
     {
         $arr = ["First Name", "Last Name", "Phone", "Email", "Type of Loan", "Requested Amount", "Current Employer", "Gross Monthly Income", "Job Title"
-        ,"Address", "Personal Reference", "Personal Reference Address", "Personal Reference Phone", "Supervisor Name", "Working Years", "Address of Business",
+        ,"Address","City","State","Zip Code","Country", "Personal Reference", "Personal Reference Address","Personal Reference City","Personal Reference State","Personal Reference Zip Code","Personal Reference Country", "Personal Reference Phone", "Supervisor Name", "Working Years", "Address of Business",
         "Miltary Involvement", "Previous Employment Years",
-        "Nearest Relative", "Relatives Relation", "Relative Address", "Payment Laid Off | Payment Waived", "Having Second Income", "Income Source Name",
+        "Nearest Relative", "Relatives Relation", "Relative Address","Relative City","Relative State","Relative Zip Code","Relative Country","Payment Laid Off | Payment Waived", "Having Second Income", "Income Source Name",
         "Second Income Source Monthly", "Date Of Application", "Added Cosigner", "Cosigner's Full Name", "Cosigner's Phone", 
-        "Cosigner's Email", "Cosigner's Marital Status", "Cosigner's Adress", "Cosigner's Living there", "Cosginer's Monthly Pay", "Cosigner's Nearest Relative",
+        "Cosigner's Email", "Cosigner's Marital Status", "Cosigner's Adress","Cosigner's City","Cosigner's State","Cosigner's Zip Code","Cosigner's Country","Cosigner's Living there", "Cosginer's Monthly Pay", "Cosigner's Nearest Relative",
         "Cosigner's Relationship with",
         "Domain"
             ];
