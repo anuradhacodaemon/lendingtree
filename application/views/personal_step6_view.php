@@ -13,16 +13,52 @@
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">When Were You Born?</label>
-                   
+                    <label class="dob_class">Enter Date Of Birth </label>
                 <div class="margbot_10 clearfix">
-
-                <div class="col-xs-12 col-sm-12 margbot_10">
-                              <label class="dob_class">Enter Date Of Birth </label>
-                                <input type="date" name="dob" placeholder="DOB" value="<?php if (isset($this->session->userdata['dob'])) echo $this->session->userdata['dob'] ?>" class="form-control width_100" id="dob">
-                                <span id="err" style="color: red"></span>
+                <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select  id="selectdobMonth" name="dobmonth" class="form-control form-control-small">
+                                <option value="">Month</option>
+                                <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['dobmonth'])) {
+                                        if ($this->session->userdata['dobmonth'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
+                                         <?php } ?>
+                            </select>
+                            <span id="err2" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="selectdobDate" name="dobday" class="form-control form-control-small">
+                                <option value="">Day</option>
+                                <?php for ($i = 1; $i <= 31; $i++) { ?>
+                                    <option  value="<?php echo $i ?>"  <?php
+                                    if (isset($this->session->userdata['dobday'])) {
+                                        if ($this->session->userdata['dobday'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                            <span id="err4" style="color: red"></span>
                             </div>
 
-                     <span id="err" style="color: red"></span>
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="selectdobYear" name="dobyear" class="form-control form-control-small">
+                                <option value="">Year</option>
+                                <?php for ($i = 1920; $i <= 2015; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['dobyears'])) {
+                                        if ($this->session->userdata['dobyears'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                            <span id="err5" style="color: red"></span>
+                            </div>
+                            
                      </div>
                       <div class="col-xs-12 col-sm-12 margbot_10">
                         <input type="text" name="ssn" placeholder="SSN ###-##-####" value="<?php if (isset($this->session->userdata['ssn'])) echo $this->session->userdata['ssn'] ?>" class="form-control width_100" id="ssn" >
@@ -71,6 +107,11 @@ $(document).ready(function() {
 
 });
 </script>
-
+<script>
+$(document).ready(function() {
+  if($("#selectdobYear").val() == '')
+  $("#selectdobYear").val("1950");
+    });
+</script>
 
 

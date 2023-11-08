@@ -67,11 +67,15 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0, $start_date = '') {
+    public function step4($id = 0, $month = 0, $day = 0, $year = 0) {
         if ($id) {
+          
             $data = array(
                 'current_employer' => urldecode($id),
-                'start_date' => $start_date
+                'month' => $month,
+                'day' => $day,
+                'years' => $year,
+                'start_date' => $year . '-' . $month . '-' . $day,
             );
 
             $this->session->set_userdata($data);
@@ -138,26 +142,22 @@ class Auto extends CI_Controller {
         $this->load->view('step6_view');
     }
 
-    public function step7($dob, $ssn = '') {
+    public function step7($month = 0, $day = 0, $year = 0 ,$ssn = '') {
 
-        $timestamp = strtotime($dob);
-        $day = date('d', $timestamp);
-        $month = date('m', $timestamp);
-        $year = date('Y', $timestamp);
         
         if ($ssn) {
             $data = array(
-                'month' => $month,
-                'day' => $day,
-                'years' => $year,
+                'dobmonth' => $month,
+                'dobday' => $day,
+                'dobyears' => $year,
                 'dob' => $year . '-' . $month . '-' . $day,
                 'ssn' => $ssn
             );
         
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
+      //  echo '<pre>';
+      //   print_r($this->session->userdata());
         
         $this->load->view('step7_view');
         }
@@ -247,9 +247,12 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['dobmonth']);
+        unset($this->session->userdata['dobday']);
+        unset($this->session->userdata['dobyears']);
         
         $result = $this->loan_model->add_loan($this->session->userdata());
-
+     //   echo"<pre>"; print_r($result); die();		
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
         if ($result > 0) {

@@ -28,9 +28,51 @@
                 <span id="err2" style="color: red"></span>
               </div> -->
               <div class="col-xs-12 col-sm-12 margbot_10">
-                  <!-- <label class="dob_class">Enter Date Of Birth </label> -->
-                    <input type="date" name="start_date" placeholder="DOB" value="<?php if (isset($this->session->userdata['start_date'])) echo $this->session->userdata['start_date'] ?>" class="form-control" id="start_date">
-                    <span id="err7" style="color: red"></span>
+              <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                              <!-- <label class="dob_class">Enter Date Of Birth </label> -->
+                              <select  id="selectMonth" name="month" class="form-control form-control-small">
+                                <option value="">Month</option>
+                                <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['month'])) {
+                                        if ($this->session->userdata['month'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
+                                         <?php } ?>
+                            </select>
+                            <span id="err2" style="color: red"></span>
+                            </div>
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="selectDate" name="day" class="form-control form-control-small">
+                                <option value="">Day</option>
+                                <?php for ($i = 1; $i <= 31; $i++) { ?>
+                                    <option  value="<?php echo $i ?>"  <?php
+                                    if (isset($this->session->userdata['day'])) {
+                                        if ($this->session->userdata['day'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                            <span id="err4" style="color: red"></span>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="selectYear" name="year" class="form-control form-control-small">
+                                <option value="">Year</option>
+                                <?php for ($i = 1920; $i <= 2015; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['years'])) {
+                                        if ($this->session->userdata['years'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                            <span id="err5" style="color: red"></span>
+                        </div>
+                               
               </div>
               <div class="col-xs-12 col-sm-12 margbot_10">
                 <p class="subtext">
@@ -48,3 +90,9 @@
         </div>
       </div>
     </div>
+    <script>
+$(document).ready(function() {
+  if($("#selectYear").val() == '')
+  $("#selectYear").val("1950");
+    });
+</script>

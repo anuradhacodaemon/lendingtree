@@ -359,14 +359,29 @@ function personal_step4() {
         $('#err1').html('Your Current Employer is empty');
         $('#cemployer').focus();
         return false;
-    } else if ($('input[name=start_date]').val() == '')
+    } else if ($("#selectMonth").val() == '')
     {
 
-        $('#err2').html('Please select start date');
-        $('#job_title').focus();
-        $('#err1').html('');
+        $('#err2').html('Please select Month');
+        $('#selectMonth').focus();
+     //   $('#err2').html('');
         return false;
-    } 
+    }else if ($("#selectDate").val() == '')
+    {
+
+        $('#err4').html('Please select Month');
+        $('#selectDate').focus();
+      //  $('#err4').html('');
+        return false;
+    }
+    else if ($("#selectYear").val() == '')
+    {
+
+        $('#err5').html('Please select Month');
+        $('#selectYear').focus();
+     //   $('#err5').html('');
+        return false;
+    }
     // else if (!RE1.test($("#job_title").val()))
     // {
 
@@ -380,7 +395,7 @@ function personal_step4() {
         $('#err2').html('');
         $.ajax({
             type: "GET",
-            url: base_url + "personal/personal_step4/" + $('input[name=cemployer]').val() + '/' + $('input[name=start_date]').val(),
+            url: base_url + "personal/personal_step4/" + $('input[name=cemployer]').val() + '/' + $("#selectMonth").val() + '/' + $("#selectDate").val() + '/' + $("#selectYear").val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "personal?personal_step=4");
@@ -505,12 +520,29 @@ function personal_step7(){
     ga('send', 'event', 'BMTCCU', 'personal loan', 'When Were You Born');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
-        if ($('#dob').val() === "") {
-
-        $('#err').html('Date of Birth is empty');
-        $('#dob').focus();
-        return false;
-    } else if ($('input[name=ssn]').val() == '')
+     if ($("#selectdobMonth").val() == '')
+     {
+ 
+         $('#err2').html('Please select Month');
+         $('#selectdobMonth').focus();
+       //  $('#err2').html('');
+         return false;
+     }else if ($("#selectdobDate").val() == '')
+     {
+ 
+         $('#err4').html('Please select Date');
+         $('#selectdobDate').focus();
+        // $('#err4').html('');
+         return false;
+     }
+     else if ($("#selectdobYear").val() == '')
+     {
+ 
+         $('#err5').html('Please select Year');
+         $('#selectdobYear').focus();
+        // $('#err5').html('');
+         return false;
+     } else if ($('input[name=ssn]').val() == '')
     {
 
         $('#err7').html('ssn is empty');
@@ -535,7 +567,7 @@ function personal_step7(){
     } else {
         $.ajax({
             type: "GET",
-               url: base_url + "personal/personal_step7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
+               url: base_url + "personal/personal_step7/" +  $("#selectdobMonth").val() + '/' +  $("#selectdobDate").val() + '/' + $("#selectdobYear").val() + '/'  +  $('input[name=ssn]').val(),
             success: function (data)
             {
                   window.history.pushState("Details", "Title", base_url + "personal?personal_step=7");
