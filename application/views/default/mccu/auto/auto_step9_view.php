@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php /*   if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -23,18 +23,20 @@
                       else{
                           echo 'Buying New Vehicle';
                           }
+                          */
+                          echo 'Auto Loan Application';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Current Income</label>
+                    <label class="control-label">Primary Employment Income</label>
                     <div class="row">
                         <form id="user_docs" method="POST" enctype="multipart/form-data" onsubmit="return getFormId(this)">
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                         <input type="hidden" name="auto_step" value="9" id="auto_step" >
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <span style = "color:black;font-size: 12px;"> <strong>$</strong> </span>
-                                <input type="text" name="monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['employment_monthly_income'])) echo $this->session->userdata['employment_monthly_income'] ?>" class="form-control width_100" id="monthly_income_pre_tax" >
+                                <input type="text" name="monthly_income_pre_tax" placeholder="Gross Monthly Earnings" value="<?php if (isset($this->session->userdata['employment_monthly_income'])) echo $this->session->userdata['employment_monthly_income'] ?>" class="form-control width_100" id="monthly_income_pre_tax" >
                                 <span id="err1" style="color: red"></span>
                             </div>    
 

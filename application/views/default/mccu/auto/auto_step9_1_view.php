@@ -12,7 +12,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="form-main clearfix">
             <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php /*   if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -33,11 +33,13 @@
                       else{
                           echo 'Buying New Vehicle';
                           }
+                          */
+                          echo 'Auto Loan Application';
               ?>
               </h1>
               <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">If you are laid off and lose this income source, would you like to have your loan payments waived?</label>
+              <label class="control-label">If You Lose Your Employment, Would You Like the Credit Union to Make Your Payments For You While You Look For More Work</label>
               <form id="waiver_form" method="POST">
               <input type="hidden" name="auto_step" value="9.1" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

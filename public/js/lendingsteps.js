@@ -684,6 +684,7 @@ window.addEventListener('popstate', function(event)
     }
     if  (pageId==9) {
         $('#step_count').val(9); 
+        alert("1a");
         $.ajax({
             type: "GET",
             url: base_url +"auto/step9",
@@ -695,6 +696,7 @@ window.addEventListener('popstate', function(event)
     }
     if  (pageId==10) {
         $('#step_count').val(10); 
+        alert("a");
         $.ajax({
             type: "GET",
             url: base_url +"auto/step10",

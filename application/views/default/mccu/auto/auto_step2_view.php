@@ -16,28 +16,29 @@
                       { 
                         if($this->session->userdata['type']== 1)
                         {
-                          echo 'Buying New Vehicle';
+                      //    echo 'Buying New Vehicle';
                         }
                         elseif($this->session->userdata['type']== 2)
                         {
-                          echo 'Buying Used Vehicle';
+                     //     echo 'Buying Used Vehicle';
                         }
                         elseif($this->session->userdata['type']== 3)
                         {
-                          echo 'Buying Refinance For Vehicle';
+                   //       echo 'Buying Refinance For Vehicle';
                         }
                         elseif($this->session->userdata['type']== 5)
                         {
-                          echo 'Personal Loan';
+                   //       echo 'Personal Loan';
                         }
                         elseif($this->session->userdata['type']== 6)
                         {
-                          echo 'Recreational Vehical Loan';
+                    //     echo 'Recreational Vehical Loan';
                         }
                       }
                       else{
-                          echo 'Buying New Vehicle';
+                      //   echo 'Buying New Vehicle';
                           }
+                             echo 'Auto Loan Application';
               ?>
               </h1>
               <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>

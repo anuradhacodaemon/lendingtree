@@ -90,6 +90,32 @@ function isJson($string) {
     <tr>
         <td>
             <table>
+                    <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Coverage Package :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php 
+                                $coverage='-';
+                                if($userDetails['coverage'] == 'A')
+                                {  ?>
+                                    <b> <?php echo 'A:Life Enhanced'; ?> </b>
+                         <?php  }elseif($userDetails['coverage'] == 'B')
+                                {  ?>
+                                    <b> <?php echo 'B:Life Enhanced & Disablity'; ?> </b>
+                         <?php  }elseif($userDetails['coverage'] == 'C')
+                                {  ?>
+                                    <b> <?php  echo 'C:Life Enhanced & Inventory Unemployment'; ?> </b>
+                         <?php  }elseif($userDetails['coverage'] == 'D')
+                                {  ?>
+                                    <b> <?php echo 'D:Life Enhanced & Disablity & Inventory Unemployment'; ?> </b>
+                         <?php  }else
+                                {  ?>
+                                    <b> <?php echo $coverage; ?> </b>
+                         <?php  } 
+                    ?>
+                    </td>
+                </tr>       
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Purpose of Loan :
@@ -235,7 +261,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Home Phone :
+                        Home Phone Number:
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo $userDetails['p_phone'] ?>
@@ -281,17 +307,9 @@ function isJson($string) {
                     <?php //echo $userDetails['military_involvement']; ?>
                     </td>
                 </tr>-->
-                <tr>
-                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        DOB :
-                    </td>
-                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo date('m-d-Y',strtotime($userDetails['p_dob'])) ?>
-                    </td>
-                </tr>
                <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Texas Driving License :
+                        Driving License Number :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo $userDetails['tex_driv_lic']; ?>
@@ -727,7 +745,7 @@ function isJson($string) {
     </tr>
     <!--my code end here-->
     <!--my code Involuntary Unemployment Protection -->
-    <tr>
+    <!--  <tr>
         <td>
             <table>
                 <tr>
@@ -747,7 +765,7 @@ function isJson($string) {
                     If you are laid off and lose this income source, would you like to have your loan payments waived? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo ($userDetails['laid_off_for_payment_waived'] == 'Y') ? 'Yes' : 'No'; ?>
+                        <?php // echo ($userDetails['laid_off_for_payment_waived'] == 'Y') ? 'Yes' : 'No'; ?>
                     </td>
                 </tr>
             </table>
@@ -755,7 +773,7 @@ function isJson($string) {
     </tr>
     <tr>
         <td>&nbsp;</td>
-    </tr>
+    </tr> -->
     <!--my code end here-->
     <!--my code Other Income -->
     <tr>
@@ -792,7 +810,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Monthly Income ($) :
+                        Monthly Income Amount ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo $userDetails['if_source_income_yes_monthly_income']; ?>
@@ -880,7 +898,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:8px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    ARE THERE CURRENTLY ANY OUTSTANDING JUDGEMENTS AGAINST YOU? :
+                     DO YOU HAVE ANY OUTSTANDING JUDGMENTS AGAINST YOU? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo ($userDetails['outstanding_judgements_against_you']=='Y') ? 'Yes' : 'No';  ?>
@@ -888,7 +906,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:8px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    ANY BANKRUPTCY FILING OR DEBT ADJUSTMENT CONFIRMED UNDER CH. 13 AGAINST YOU? :
+                    DO YOU HAVE ANY BANKRUPTCIES OR CH.13 FILED AGAINST YOU? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo ($userDetails['bankruptcy_debt_adjusutment']=='Y') ? 'Yes' : 'No';  ?>
@@ -912,7 +930,7 @@ function isJson($string) {
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:7px; font-weight:550; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    ARE YOU AN UNITED STATES CITIZEN OR PERMANENT RESIDENT OF THE UNITED STATES? :
+                    ARE YOU A CITIZEN OR PERMENANT RESIDENT OF THE UNITED STATES OF AMERICA? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         <?php echo ($userDetails['a_u_s_citizen_permanant_alien']=='Y') ? 'Yes' : 'No';  ?>
@@ -951,10 +969,18 @@ function isJson($string) {
             <table>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan? :
+                    If You Suddenly Pass or Become Critically Ill, Would You Like the Credit Union to Cancel (Pay Off) the Remaining Balance of the Loan? :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo ($userDetails['die_or_ill_cancel_the_loan']=='Y') ? 'Yes' : 'No';  ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    If You Are Suddenly Hurt and Unable to Work, Would You Like the Credit Union to Make Payments on This Loan While You Recover? :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                    <?php echo ($userDetails['hurt_or_unable_cancel_the_loan']=='Y') ? 'Yes' : 'No';  ?>
                     </td>
                 </tr>
             </table>

@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php  /*  if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -22,23 +22,24 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo 'Co-signer Information';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer's Salary Details</label>
+                    <label class="control-label">Primary Employment Income</label>
                     <div class="row">
                     <form id="co_user_docs" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="25" id="auto_step" >
                         <div class="col-lg-12 col-md- col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
                             <span style = "color:black;"> $ </span>
-                                <input type="text" name="cosigner_monthly_income_pre_tax" placeholder="Monthly income [pre-tax]" value="<?php if (isset($this->session->userdata['cosigner_monthly_income_pre_tax'])) echo $this->session->userdata['cosigner_monthly_income_pre_tax'] ?>" class="form-control width_100" id="cosigner_monthly_income_pre_tax" >
+                                <input type="text" name="cosigner_monthly_income_pre_tax" placeholder="Gross Monthly Earnings" value="<?php if (isset($this->session->userdata['cosigner_monthly_income_pre_tax'])) echo $this->session->userdata['cosigner_monthly_income_pre_tax'] ?>" class="form-control width_100" id="cosigner_monthly_income_pre_tax" >
                                 <span id="err1" style="color: red"></span>
                             </div> 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <span class="optional-file">How Many Dependents They Have?</span>    
+                            <span class="optional-file">Select How Many Dependants You Have?</span>    
                             <select class="form-control" name="co_total_dependent" id="co_total_dependent" style="max-width: 100%;">
                                 <option value="">Select Dependents</option>
                                 <?php for($i=0;$i<=10;$i++){  ?>
