@@ -266,8 +266,8 @@ $visitor = $this->Recreationalloanmccu_model->checklead_denied_forDomain();
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Job Title</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.coverage" && $sort_direction == "desc") { ?> onClick="sortList('user.coverage', 'asc')"<?php } ?> <?php if ($sort_by != "user.coverage") { ?> onClick="sortList('user.coverage', 'asc')"<?php } ?><?php if ($sort_by == "user.coverage" && $sort_direction == "asc") { ?> onClick="sortList('user.coverage', 'desc')"<?php } ?>> Coverage</a>&nbsp;<?php if ($sort_by == "user.coverage" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.coverage" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -321,7 +321,24 @@ $visitor = $this->Recreationalloanmccu_model->checklead_denied_forDomain();
 
                                         <td><?php echo '$' . number_format($v['employment_monthly_income']); ?></td>
 
-                                        <td><?php echo $v['job_title']; ?></td>
+                                        <td><?php         
+                                                        $coverage='-';
+                                                      if($v['coverage'] == 'A')
+                                                            { 
+                                                            echo 'A:Life Enhanced';
+                                                     }elseif($v['coverage'] == 'B')
+                                                            {  
+                                                                echo 'B:Life Enhanced & Disablity'; 
+                                                      }elseif($v['coverage'] == 'C')
+                                                            { 
+                                                                 echo 'C:Life Enhanced & Inventory Unemployment'; 
+                                                      }elseif($v['coverage'] == 'D')
+                                                            { 
+                                                                 echo 'D:Life Enhanced & Disablity & Inventory Unemployment'; 
+                                                      }else
+                                                            { 
+                                                               echo $coverage;
+                                                      }  ?></td>
                                         <td><a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['rc_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
                                             <?php if ($v['status'] == 2) { ?> <a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['rc_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
                                                 <?php if ($v['status'] == 0) { ?><a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['rc_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
