@@ -42,18 +42,18 @@
                         <input type="hidden" name="auto_step" value="5" id="auto_step" >
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
+                                <input type="text" name="address" placeholder="Home Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
                                 <span id="err1" style="color: red"></span>
                                 <div class="resource-container"></div>
                             </div>                       
                         </div>
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="monthly_pay" placeholder="Monthly Payment" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay_personal" >
+                                <input type="text" name="monthly_pay" placeholder="Monthly Payment Amount" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay_personal" >
                                 <span id="err3" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="living_there_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
+                                <input type="text" name="living_there_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years You Have Lived Here" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                         </div>

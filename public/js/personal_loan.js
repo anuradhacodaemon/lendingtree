@@ -810,7 +810,7 @@ function addCosigner(value)
                         //alert('you are in 23 >>>'+ selected_home_status);
                         if(selected_home_status == 'yes')
                         {
-                            autoloan_step20();
+                            personal_step20();
                         }
                         else{
                                 //alert('you are in 23 >>> Success is coming soon');

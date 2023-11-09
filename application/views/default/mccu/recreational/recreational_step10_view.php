@@ -12,7 +12,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="form-main clearfix">
             <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php  /*  if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -29,7 +29,8 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo   ' Recreational Vehical Loan'; 
               ?>
               </h1>
               <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>

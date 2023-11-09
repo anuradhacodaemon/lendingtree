@@ -91,7 +91,7 @@ class Auto extends CI_Controller {
         if($step == 2)
         {
             $rules = array(
-                array('field'=>'p_req_amt','label'=>'Required Amount','rules'=>'required|numeric')
+                array('field'=>'p_req_amt','label'=>'Requested Amount','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -227,7 +227,7 @@ class Auto extends CI_Controller {
         if($step == 5)
         {
             $rules = array(
-                array('field'=>'address','label'=>'Address','rules'=>'required'),
+                array('field'=>'address','label'=>'Home Address','rules'=>'required'),
                 array('field'=>'living_there_years','label'=>'How long years you are living here','rules'=>'required|numeric'),
                 array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required')
                 );

@@ -42,15 +42,15 @@
                         <input type="hidden" name="auto_step" value="3" id="auto_step" >
                         <input type="hidden" name="formID" value="p_details" id="formID" >
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="firstname" placeholder="First name" value="<?php if (isset($this->session->userdata['first_name'])) echo $this->session->userdata['first_name'] ?>" class="form-control width_100" id="firstname" >
+                                <input type="text" name="firstname" placeholder="First Name" value="<?php if (isset($this->session->userdata['first_name'])) echo $this->session->userdata['first_name'] ?>" class="form-control width_100" id="firstname" >
                                 <span id="err1" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="lastname" placeholder="Last name" value="<?php if (isset($this->session->userdata['last_name'])) echo $this->session->userdata['last_name'] ?>" class="form-control width_100" id="lastname" >
+                                <input type="text" name="lastname" placeholder="Last Name" value="<?php if (isset($this->session->userdata['last_name'])) echo $this->session->userdata['last_name'] ?>" class="form-control width_100" id="lastname" >
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="phone" placeholder="phone" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone" maxlength="14" >
+                                <input type="text" name="phone" placeholder="Phone Number" value="<?php if (isset($this->session->userdata['p_phone'])) echo $this->session->userdata['p_phone'] ?>" class="form-control width_100" id="phone" maxlength="14" >
                                 <span id="err3" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -58,7 +58,7 @@
                                 <span id="err4" style="color: red"></span>
                             </div>
                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="tex_driv_lic" placeholder="TDL" value="<?php if (isset($this->session->userdata['tex_driv_lic'])) echo $this->session->userdata['tex_driv_lic'] ?>" class="form-control width_100" id="tex_driv_lic" minlength="8" maxlength="8">
+                                <input type="text" name="tex_driv_lic" placeholder="Drivers License Number" value="<?php if (isset($this->session->userdata['tex_driv_lic'])) echo $this->session->userdata['tex_driv_lic'] ?>" class="form-control width_100" id="tex_driv_lic" minlength="8" maxlength="8">
                                 <span id="err5" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -66,11 +66,11 @@
                                 <span id="err6" style="color: red"></span>
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 margbot_10">
+                           <!--  <div class="col-xs-12 col-sm-12 margbot_10">
                               <label class="dob_class">Enter Date Of Birth </label>
                                 <input type="date" name="my_dob" placeholder="DOB" value="<?php if (isset($this->session->userdata['p_dob'])) echo $this->session->userdata['p_dob'] ?>" class="form-control" id="my_dob">
                                 <span id="err7" style="color: red"></span>
-                            </div>
+                            </div>  -->
                            
                     
                             <div class="col-xs-12 col-sm-12 radio margtop_20">

@@ -70,14 +70,14 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="cosigner_relatives_phone"  maxlength="14" placeholder="Reference Phone" value="<?php if (isset($this->session->userdata['relatives_phone'])) echo $this->session->userdata['cosigner_relatives_phone'] ?>" class="form-control width_100" id="cosigner_relatives_phone" >
+                                <input type="text" name="cosigner_relatives_phone"  maxlength="14" placeholder="Reference Phone" value="<?php if (isset($this->session->userdata['cosigner_relatives_phone'])) echo $this->session->userdata['cosigner_relatives_phone'] ?>" class="form-control width_100" id="cosigner_relatives_phone" >
                                 <span id="err4" style="color: red"></span>
                             </div>
 
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <!--<label>Street</label>-->
-                                <input type="hidden" name="cosigner_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['cosigner_r_street_line'])) echo $this->session->userdata['cosigner_r_street_line'] ?>" class="form-control width_100" id="r_street_line" >
+                                <input type="hidden" name="cosigner_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['cosigner_r_street_line'])) echo $this->session->userdata['cosigner_r_street_line'] ?>" class="form-control width_100" id="cosigner_r_street_line" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
                                 <!--<label>Country</label>-->
