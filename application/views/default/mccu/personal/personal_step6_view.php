@@ -28,7 +28,7 @@
                         }
                         elseif($this->session->userdata['type']== 5)
                         {
-                          echo 'Personal Loan';
+                          echo 'Personal Loan Application';
                         }
                         elseif($this->session->userdata['type']== 6)
                         {

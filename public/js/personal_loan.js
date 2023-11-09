@@ -314,6 +314,14 @@ function onDieCancelLoan(value)
     formData.append('on_die_cancel_loan', value);
     getFormId(form);
 }
+function onHurtCancelLoan(value)
+{
+    console.log('this is value>>' + value);
+    var form = document.getElementById('on_hurt_cancel_loan');
+    var formData = new FormData(form);
+    formData.append('on_hurt_cancel_loan', value);
+    getFormId(form);
+}
 //step 23
 function addCosigner(value)
 {
@@ -692,7 +700,7 @@ function addCosigner(value)
                     if(step == 16)
                     {
                         //alert('you are in 16');
-                        personal_step17();
+                        personal_step18();
                     }
                     if(step == 37)
                     {
@@ -705,7 +713,7 @@ function addCosigner(value)
                     if(step == 17)
                     {
                         //alert('you are in 17');
-                        personal_step18();
+                        personal_step19();
                     }
                     if(step == 38)
                     {
@@ -719,7 +727,17 @@ function addCosigner(value)
                     if(step == 18)
                     {
                         //alert('you are in 18');
-                        personal_step19();
+                        personal_step18_1();
+                        
+                    }
+                   
+                    
+                  }                
+                  if(step == 18.1)
+                  {
+                    if(step == 18.1)
+                    {
+                        personal_step17();
                     }
                    
                     
@@ -773,7 +791,16 @@ function addCosigner(value)
                   if(step == 23)
                   {
                     //alert('you are in 22.1');
-                    personal_step24();
+                    personal_step23_1();
+                  }
+                  if(step == 23.1)
+                  {
+                    if(step == 23.1)
+                    {
+                        personal_step24();
+                    }
+                   
+                    
                   }
 //================THIS IS A FINAL STEP ON 23 and 43 ========================================
                   if(step == 19 || step == 34)
@@ -831,7 +858,7 @@ function addCosigner(value)
                   if(step == 25)
                   {
                     //alert('you are in 25 >>>');
-                    personal_step26();
+                    personal_step27();
                   }
                   if(step == 26)
                   {
@@ -1084,6 +1111,16 @@ function addCosigner(value)
                         }
                         
                     }
+                    if(step == 18.1)
+                    {
+                        if(step == 18.1)
+                        {
+                            //alert('you are in 18');
+                            $('#err1').html(obj['error_messages']['on_hurt_cancel_loan']);
+                        }
+    
+                        
+                    }
                     if(step == 19 || step == 32)
                     {
                         if(step == 19)
@@ -1163,6 +1200,14 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['cosigner_home_address']);
                         $('#err2').html(obj['error_messages']['cosigner_living_there_years']);
                         $('#err3').html(obj['error_messages']['cosigner_monthly_pay']);
+                    }
+                    if(step == 23.1)
+                    {
+                        //alert('you are in 7');
+                        $('#err1').html(obj['error_messages']['cosigner_nearest_relative']);
+                        $('#err2').html(obj['error_messages']['cosigner_relationship']);
+                        $('#err3').html(obj['error_messages']['cosigner_relatives_address']);
+                        $('#err4').html(obj['error_messages']['cosigner_relatives_phone']);
                     }
                     if(step == 28)
                     {
@@ -1473,6 +1518,19 @@ function personal_step18()
         }
     });
 }
+function personal_step18_1()
+{  
+    $('#step_count').val(18.1);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "personalLoan/step18_1",
+        success: function (data)
+        {      
+            window.history.pushState({id:18.1}, "Title", base_url + "personalLoan?step=18.1");
+            $('#container').html(data);                
+        }
+    });
+}
 function personal_step19()
 {  
     $('#step_count').val(19);
@@ -1547,6 +1605,19 @@ function personal_step23()
         success: function (data)
         {      
             window.history.pushState({id:23}, "Title", base_url + "personalLoan?step=23");
+            $('#container').html(data);                
+        }
+    });
+}
+function personal_step23_1()
+{  
+    $('#step_count').val(23);
+    $.ajax({
+        type: "GET",
+        url:  base_url + "personalLoan/step23_1",
+        success: function (data)
+        {      
+            window.history.pushState({id:23.1}, "Title", base_url + "personalLoan?step=23.1");
             $('#container').html(data);                
         }
     });

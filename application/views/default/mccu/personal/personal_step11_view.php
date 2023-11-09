@@ -11,8 +11,9 @@
           
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="form-main clearfix">
+            <h1>Personal Loan</h1>
               <div class="clearfix"></div>
-              <label class="control-label">Are you a Co-Maker or Cosignor on another loan?</label>
+              <label class="control-label">Are You a Co-Signer on any Other Loans?</label>
               <form id="comaker_loan_form" method="POST">
               <input type="hidden" name="auto_step" value="11" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

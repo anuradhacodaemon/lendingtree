@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-                <?php  if(isset($this->session->userdata['type']))
+                <?php /*   if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -30,12 +30,13 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          } */
+                          echo 'Co-signer Information';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer's Employement Details</label>
+                    <label class="control-label">Current Employment</label>
                     <div class="row">
                     <form id="co_work_details" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="24" id="auto_step" >
@@ -54,7 +55,7 @@
                                 <span id="err3" style="color: red"></span>
                             </div>-->                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" pattern="(?!0$)([1-9]\d?|0[1-9])" name="cosigners_working_years" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
+                                <input type="text" pattern="(?!0$)([1-9]\d?|0[1-9])" name="cosigners_working_years" placeholder="Years You Have Worked Here?" value="<?php if (isset($this->session->userdata['cosigner_how_long_working_years'])) echo $this->session->userdata['cosigner_how_long_working_years'] ?>" class="form-control width_100" id="cosigners_working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
                            <!-- <div class="clearfix"></div>

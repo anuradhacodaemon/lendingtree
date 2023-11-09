@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php  /*  if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -25,12 +25,13 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo 'Personal Loan Application';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan?</label>
+                    <label class="control-label">If You Suddenly Pass or Become Critically Ill, Would You Like the Credit Union to Cancel (Pay Off) the Remaining Balance of the Loan?</label>
                     <div class="row">
                         <form id="on_die_cancel_loan" method="POST">
                             <input type="hidden" name="auto_step" value="18" id="auto_step" >

@@ -11,8 +11,9 @@
           
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="form-main clearfix">
+            <h1>Co-signer Information</h1>
               <div class="clearfix"></div>
-              <label class="control-label">Do you have any outstanding judgments against you?</label>
+              <label class="control-label">Do You Have any Outstanding Judgments Against You?</label>
               <form id="outstanding_judgment_form" method="POST">
               <input type="hidden" name="auto_step" value="29" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">
