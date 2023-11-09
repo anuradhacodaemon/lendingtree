@@ -54,8 +54,48 @@
                                 <span id="err6" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="date" name="cosigner_dob" placeholder="Cosigner Date Of Birth" value="<?php if (isset($this->session->userdata['cosigner_dob'])) echo $this->session->userdata['cosigner_dob'] ?>" class="form-control width_100" id="cosigner_dob" >
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select  id="month" name="month" class="form-control form-control-small">
+                                <option value="">Month</option>
+                                <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['month'])) {
+                                        if ($this->session->userdata['month'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
+                                         <?php } ?>
+                            </select>
                                 <span id="err7" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="day" name="day" class="form-control form-control-small">
+                                <option value="">Day</option>
+                                <?php for ($i = 1; $i <= 31; $i++) { ?>
+                                    <option  value="<?php echo $i ?>"  <?php
+                                    if (isset($this->session->userdata['day'])) {
+                                        if ($this->session->userdata['day'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                                <span id="err8" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="years" name="years" class="form-control form-control-small">
+                                <option value="">Year</option>
+                                <?php for ($i = 1920; $i <= 2015; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['years'])) {
+                                        if ($this->session->userdata['years'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                                <span id="err9" style="color: red"></span>
+                            </div>
                             </div>
                             <!--<div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" name="cosigner_email" placeholder="Cosigner Email" value="<?php if (isset($this->session->userdata['cosigner_email'])) echo $this->session->userdata['cosigner_email'] ?>" class="form-control width_100" id="cosigner_email">
@@ -99,7 +139,8 @@
       $(this).val(input);
     });
     $(document).ready(function() {
-
+      if($("#years").val() == '')
+      $("#years").val("1950");
       //Year to start from calender
       var minDate = new Date(1921, 0, 1);
       var minDateString = minDate.toISOString().split('T')[0];

@@ -924,7 +924,9 @@ class RecreationalLoan extends CI_Controller
                 array('field'=>'cosigner_phone','label'=>'Phone Number','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
                 array('field'=>'cosigner_tdl','label'=>'Driving License Number','rules'=>'required'),
                 array('field'=>'cosigner_ssn','label'=>'Social Security Number','rules'=>'required'),
-                array('field'=>'cosigner_dob','label'=>'Date Of Birth','rules'=>'required')
+                array('field'=>'month','label'=>'Month','rules'=>'required'),
+                array('field'=>'day','label'=>'Date','rules'=>'required'),
+                array('field'=>'years','label'=>'Year','rules'=>'required')
                 /*array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')*/
             );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');
@@ -934,13 +936,19 @@ class RecreationalLoan extends CI_Controller
                 //success
                 if ($this->input->post('cosigner_firstname')) 
                 {
+                    $dob=$this->input->post('years') . '-' . $this->input->post('month') . '-' . $this->input->post('day');
+                    $cosigner_dob = date("Y-m-d", strtotime($dob));
+                    
                     $data = array(
                         'cosigner_first_name' => $this->input->post('cosigner_firstname'),
                         'cosigner_last_name' => $this->input->post('cosigner_lastname'),
                         'cosigner_phone' => $this->input->post('cosigner_phone'),
                         'cosigner_tdl' => $this->input->post('cosigner_tdl'),
                         'cosigner_ssn' => $this->input->post('cosigner_ssn'),
-                        'cosigner_dob' => $this->input->post('cosigner_dob')
+                        'month' => $this->input->post('month'),
+                        'years' => $this->input->post('years'),
+                        'day' => $this->input->post('day'),
+                        'cosigner_dob' => $cosigner_dob
                         /*'cosigner_email' => $this->input->post('cosigner_email')*/
                     );
 
@@ -957,7 +965,9 @@ class RecreationalLoan extends CI_Controller
                 'cosigner_phone' => form_error('cosigner_phone'),
                 'cosigner_tdl' => form_error('cosigner_tdl'),
                 'cosigner_ssn' => form_error('cosigner_ssn'),
-                'cosigner_dob' => form_error('cosigner_dob')
+                'month' => form_error('month'),
+                'day' => form_error('day'),
+                'years' => form_error('years')
                 /*'cosigner_email' => form_error('cosigner_email'),*/
                 );
                 $data['error'] = 1;
@@ -2204,6 +2214,7 @@ class RecreationalLoan extends CI_Controller
                     'p_cosigner_personal_refrence_address', 'co_p_r_country', 'co_p_r_street_line', 'co_p_r_city', 'co_p_r_state', 'co_p_r_zip_code',
                     'co_cosigner_business_address', 'co_b_r_country', 'co_b_r_street_line', 'co_b_r_city', 'co_b_r_state', 'co_b_r_zip_code',
                     'cosigner_r_country', 'cosigner_r_street_line', 'cosigner_r_city', 'cosigner_r_state', 'cosigner_r_zip_code',
+                    'month', 'day', 'years',
 
             ];
         if(!empty($arr))

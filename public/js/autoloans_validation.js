@@ -1215,7 +1215,9 @@ function addCosigner(value)
                     $('#err4').html(obj['error_messages']['cosigner_email']);
                     $('#err5').html(obj['error_messages']['cosigner_tdl']);
                     $('#err6').html(obj['error_messages']['cosigner_ssn']);
-                    $('#err7').html(obj['error_messages']['cosigner_dob']);
+                    $('#err7').html(obj['error_messages']['month']);
+                    $('#err8').html(obj['error_messages']['day']);
+
                 }
                 if(step == 22)
                 {
