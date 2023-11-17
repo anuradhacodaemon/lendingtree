@@ -33,7 +33,7 @@ class Refinance extends CI_Controller {
 
         $this->session->set_userdata('panel', 'frontend');
 
-        $this->template->view('refinance_step1');
+        $this->template->view('refinance_stepaddress');
     }
 
     public function refinancestep1() {
@@ -201,6 +201,21 @@ class Refinance extends CI_Controller {
         }
         $this->load->view('refinance_step9');
     }
+
+    public function refinancestepaddress($val = 'N') {
+        if ($val) {
+            $data = array(
+                'live_work' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        
+          //echo '<pre>';
+        // print_r($this->session->userdata());
+
+        $this->load->view('refinance_step1');
+    }
+
 
     public function refinancestep10($i_represent_stated = '', $date_of_application = '') {
     

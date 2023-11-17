@@ -17,6 +17,19 @@ if (window.performance) {
             }
         }); 
     }
+    if (window.location.search.indexOf('step=autoaddress') > -1) {
+         
+        $.ajax({
+              type: "GET",
+              url: base_url +"auto/stepautoaddress",
+              success: function (data)
+              {
+  
+                  $('#container').html(data);
+                  //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+              }
+          }); 
+      }
     if (window.location.search.indexOf('step=2') > -1) {
        
        $.ajax({
@@ -162,6 +175,19 @@ if (window.performance) {
             }
         });
     }
+    if (window.location.search.indexOf('step=autoaddress') > -1) {
+         
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/stepautoaddress",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
     if (window.location.search.indexOf('step=2') > -1) {
          
         $.ajax({
@@ -289,6 +315,27 @@ function step1(id) {
             
            
             window.history.pushState("Details", "Title", base_url + "auto?step=1");
+            
+            $('#container').html(data);
+            
+             
+            
+        }
+    });
+
+}
+function stepautoaddress(id) {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'type of loan');
+    var url = base_url + "auto/stepautoaddress/" + id;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            
+           
+            window.history.pushState("Details", "Title", base_url + "auto?step=autoaddress");
             
             $('#container').html(data);
             

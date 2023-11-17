@@ -36,7 +36,7 @@ class Personal extends CI_Controller {
 
         $this->session->set_userdata('panel', 'frontend');
 
-        $this->template->view('personal_step2_view');
+        $this->template->view('step_personaladdress_view');
     }
 
     public function personal_step1() {
@@ -49,13 +49,16 @@ class Personal extends CI_Controller {
         
         if ($id) {
             $data = array(
-                'type' => $id
+                'live_work' => $id
             );
             $this->session->set_userdata($data);
         }
         $this->load->view('personal_step2_view');
     }
+    public function steppersonaladdress() {
 
+        $this->load->view('step_personaladdress_view');
+    }
     public function personal_step3($requested_amount = 0) {
         if ($requested_amount) {
             $data = array(

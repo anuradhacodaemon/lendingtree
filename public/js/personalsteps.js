@@ -17,6 +17,19 @@ if (window.performance) {
             }
         }); 
     }
+    if (window.location.search.indexOf('step=personaladdress') > -1) {
+         
+        $.ajax({
+              type: "GET",
+              url: base_url +"auto/steppersonaladdress",
+              success: function (data)
+              {
+  
+                  $('#container').html(data);
+                  //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+              }
+          }); 
+      }
     if (window.location.search.indexOf('step=2') > -1) {
        
        $.ajax({
@@ -162,6 +175,19 @@ if (window.performance) {
             }
         });
     }
+    if (window.location.search.indexOf('step=personaladdress') > -1) {
+         
+        $.ajax({
+            type: "GET",
+            url: base_url +"auto/steppersonaladdress",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
     if (window.location.search.indexOf('step=2') > -1) {
          
         $.ajax({
@@ -297,6 +323,27 @@ if (window.performance) {
 //     });
 
 // }
+function steppersonaladdress(id) {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'type of loan');
+    var url = base_url + "auto/steppersonaladdress/" + id;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            
+           
+            window.history.pushState("Details", "Title", base_url + "auto?step=personaladdress");
+            
+            $('#container').html(data);
+            
+             
+            
+        }
+    });
+
+}
 function personal_step2(id) {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'type of loan');
     var url = base_url + "personal/personal_step2/" + id;

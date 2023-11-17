@@ -116,7 +116,18 @@ if (performance.navigation.type == 1) {
             }
         });
     } 
-
+    if (window.location.search.indexOf('refinancestep=address') > -1) {
+        $.ajax({
+             type: "GET",
+             url: base_url +"refinance/refinancestepaddress",
+             success: function (data)
+             {
+ 
+                 $('#container').html(data);
+                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+             }
+         });
+     } 
     if (window.location.search.indexOf('refinancestep=10') > -1) {
        $.ajax({
             type: "GET",
@@ -245,6 +256,21 @@ window.onpopstate = function ()
             }
         });
     }
+
+
+    if (window.location.search.indexOf('refinancestep=address') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestepaddress",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+
 
     if (window.location.search.indexOf('refinancestep=10') > -1) {
         $.ajax({
@@ -595,6 +621,25 @@ function refinancestep9(val) {
 
 }
 
+
+function refinancestepaddress(val) {
+    ga('send', 'event', 'BMTCCU', 'refinance loan', 'laid_off_for_payment_waived');
+    var url = base_url + "refinance/refinancestepaddress/" + val;
+    
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data)
+        {
+            window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=1");
+            
+            $('#container').html(data);
+            
+        }
+    });
+
+}
+
 function refinancestep10(val) {
     ga('send', 'event', 'BMTCCU', 'refinance loan', 'i_represent_stated');
 
@@ -632,7 +677,7 @@ function refinancestep11(val) {
         url: url,
         success: function (data)
         {
-            // alert(data);
+            alert(data);
                 if (data == 1)
                 {
                     //location.href = base_url;

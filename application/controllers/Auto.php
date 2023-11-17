@@ -36,14 +36,26 @@ class Auto extends CI_Controller {
 
         $this->session->set_userdata('panel', 'frontend');
 
-        $this->template->view('step1_view');
+        $this->template->view('step_autoaddress_view');
     }
 
-    public function step1() {
+    // public function step1() {
 
+    //     $this->load->view('step1_view');
+    // }
+    public function step1($live_work = 0) {
+        if ($live_work) {
+            $data = array(
+                'live_work' => $live_work
+            );
+            $this->session->set_userdata($data);
+        }
         $this->load->view('step1_view');
     }
+    public function stepautoaddress() {
 
+        $this->load->view('step_autoaddress_view');
+    }
     public function step2($id = 0) {
         if ($id) {
             $data = array(
