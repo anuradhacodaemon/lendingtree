@@ -81,6 +81,18 @@ if (window.performance) {
             }
         });
     }
+    if (window.location.search.indexOf('step=residence') > -1) {
+        $.ajax({
+             type: "GET",
+             url: base_url +"auto/stepresidence",
+             success: function (data)
+             {
+ 
+                 $('#container').html(data);
+                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+             }
+         });
+     }
    if (window.location.search.indexOf('step=6') > -1) {
        $.ajax({
             type: "GET",
@@ -236,6 +248,18 @@ if (window.performance) {
                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
             }
         });
+        if (window.location.search.indexOf('step=residence') > -1) {
+            $.ajax({
+                type: "GET",
+                url: base_url +"auto/stepresidence",
+                success: function (data)
+                {
+    
+                    $('#container').html(data);
+                    //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+                }
+            });
+        }
     }
      if (window.location.search.indexOf('step=6') > -1) {
         $.ajax({
@@ -481,6 +505,44 @@ function step5() {
 
 }
 function step6() {
+    ga('send', 'event', 'BMTCCU', 'auto loan', 'Monthly Pay');
+    var RE = /^\d*\.?\d*$/;
+    if ($('input[name=pay_month]').val() == '' || $('input[name=pay_month]').val() == 0  || $('input[name=pay_month]').val() == '$')
+    {
+
+        $('#err1').html('Your Monthly Pay is empty');
+        $('#pay_month').focus();
+        return false;
+    } else if ($('#err2').val() == 0 && $('#pay_month1').val()=='')
+    {
+        $('#err1').html('Your ');
+        $('#pay_month').focus();
+        return false;
+    }else if ($('#home_status').val() == '')
+    {
+        $('#err3').html('Please select Your Home Residence');
+        $('#home_status').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        return false;
+    }
+     else
+    {
+        $('#err2').html('');
+        $.ajax({
+            type: "GET",
+            url: base_url + "auto/step6/" + $('input[name=pay_month1]').val() + "/" + $("#home_status").val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "auto?step=6");
+                $('#container').html(data);
+            }
+        });
+
+    }
+
+}
+function stepresidence() {
     ga('send', 'event', 'BMTCCU', 'auto loan', 'Your Details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
@@ -490,7 +552,7 @@ function step6() {
     if ($('input[name=firstname]').val() == '')
     {
 
-        $('#err1').html('firstname is empty');
+        $('#err1').html('First Name is empty');
         $('#firstname').focus();
         return false;
     } else if (!RE.test($("#firstname").val()))
@@ -502,7 +564,7 @@ function step6() {
     } else if ($('input[name=lastname]').val() == '')
     {
 
-        $('#err2').html('lastname is empty');
+        $('#err2').html('Last Name is empty');
         $('#lastname').focus();
         $('#err1').html('');
         return false;
@@ -516,7 +578,7 @@ function step6() {
     } else if ($('input[name=address]').val() == '')
     {
 
-        $('#err3').html('address is empty');
+        $('#err3').html('Address is empty');
         $('#address').focus();
         $('#err1').html('');
         $('#err2').html('');
@@ -531,7 +593,7 @@ function step6() {
         $.ajax({
             type: "GET",
            // url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=ssn]').val(),
-           url: base_url + "auto/step6/",
+           url: base_url + "auto/stepresidence/",
            data: {
             firstname: $('input[name=firstname]').val(),
             lastname: $('input[name=lastname]').val(),
@@ -543,7 +605,7 @@ function step6() {
         },
            success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "auto?step=6");
+                window.history.pushState("Details", "Title", base_url + "auto?step=residence");
                 $('#container').html(data);
             }
         });

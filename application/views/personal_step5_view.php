@@ -61,7 +61,7 @@
 
 
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
-                                <button type="button" class="button" onclick="personal_step6()">Continue<span class="continueIcon sprites"></span></button>
+                                <button type="button" class="button" onclick="personal_stepresidence()">Continue<span class="continueIcon sprites"></span></button>
                                               <!--           <div class="col-xs-12 col-sm-12 radio"> <button type="button" onclick="back()" class="button_back"><span class="continueIcon sprites"></span>Back</button> </div>
                                 -->
 

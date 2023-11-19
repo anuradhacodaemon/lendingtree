@@ -113,6 +113,24 @@ class Personal extends CI_Controller {
         $this->load->view('personal_step5_view', $data);
     }
 
+    public function personal_step6($pay_month = 0,$home_status) {
+
+
+        if ($pay_month) {
+
+            //$num = explode('$', $pre_tax_income);
+            // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+            $data = array(
+                'pay_month' => $pay_month,
+                'home_status' => $home_status
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+        $this->load->view('personal_step6_view', $data);
+    }
     public function getcity($state_id = 0) {
 
         $city = $this->loan_model->get_city($state_id);
@@ -120,7 +138,7 @@ class Personal extends CI_Controller {
     }
 
 
-        public function personal_step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {    
+        public function personal_stepresidence($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {    
         
             $firstname = $this->input->get('firstname');
         $lastname = $this->input->get('lastname');
@@ -144,7 +162,7 @@ class Personal extends CI_Controller {
         }
 
 
-        $this->load->view('personal_step6_view');
+        $this->load->view('personal_stepresidence_view');
     }
 
     public function personal_step7($month = 0, $day = 0, $year = 0, $ssn = '') {

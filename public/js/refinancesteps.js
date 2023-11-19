@@ -41,6 +41,19 @@ if (performance.navigation.type == 1) {
             }
         });
     }
+    if (window.location.search.indexOf('refinancestep=31') > -1) {
+
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep31",
+            success: function (data)
+            {
+
+                $('#containerrefinance').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
     if (window.location.search.indexOf('refinancestep=4') > -1) {
         $.ajax({
             type: "GET",
@@ -172,6 +185,18 @@ window.onpopstate = function ()
         $.ajax({
             type: "GET",
             url: base_url + "refinance/refinancestep3",
+            success: function (data)
+            {
+
+                $('#containerrefinance').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('refinancestep=31') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep31",
             success: function (data)
             {
 
@@ -350,7 +375,43 @@ function refinancestep3() {
     }
 
 }
+function refinancestepresidence() {
+    ga('send', 'event', 'spececity', 'auto refinance', 'Vehicle VIN Number');
+    var RE = /^\d*\.?\d*$/;
+   // alert($('#home_status').val());
+    if ($('input[name=pay_month]').val() == '' || $('input[name=pay_month]').val() == 0  || $('input[name=pay_month]').val() == '$')
+    {
 
+        $('#err1').html('Your Monthly Pay is empty');
+        $('#pay_month').focus();
+        return false;
+    } else if ($('#err2').val() == 0 && $('#pay_month1').val()=='')
+    {
+        $('#err1').html('Your ');
+        $('#pay_month').focus();
+        return false;
+    }else if ($('#home_status').val() == '')
+    {
+        $('#err3').html('Please select Your Home Residence');
+        $('#home_status').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        return false;
+    } else
+    {
+        $('#err2').html('');
+        $.ajax({
+            type: "GET",
+            url: base_url + "refinance/refinancestep5/" + $('input[name=pay_month1]').val()+'/'+ $('#home_status').val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
+                $('#containerrefinance').html(data);
+            }
+        });
+    }
+
+}
 
 function refinancestep4() {
     ga('send', 'event', 'spececity', 'auto refinance', 'custmer details');
@@ -402,7 +463,7 @@ function refinancestep4() {
         $.ajax({
             type: "GET",
            // url: base_url + "refinance/refinancestep5/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val(),
-            url: base_url + "refinance/refinancestep5/",
+            url: base_url + "refinance/refinancestepresidence/",
             data: {
                 firstname: $('input[name=firstname]').val(),
                 lastname: $('input[name=lastname]').val(),
@@ -414,7 +475,7 @@ function refinancestep4() {
             },
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=5");
+                window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=residence");
                 $('#containerrefinance').html(data);
             }
         });

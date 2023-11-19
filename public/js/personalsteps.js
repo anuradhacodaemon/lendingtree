@@ -81,6 +81,18 @@ if (window.performance) {
             }
         });
     }
+    if (window.location.search.indexOf('step=residence') > -1) {
+        $.ajax({
+             type: "GET",
+             url: base_url +"personal/personal_stepresidence",
+             success: function (data)
+             {
+ 
+                 $('#container').html(data);
+                 //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+             }
+         });
+     }
    if (window.location.search.indexOf('step=6') > -1) {
        $.ajax({
             type: "GET",
@@ -229,6 +241,18 @@ if (window.performance) {
         $.ajax({
             type: "GET",
             url: base_url +"personal/personal_step5",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
+    if (window.location.search.indexOf('step=residence') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"personal/personal_stepresidence",
             success: function (data)
             {
 
@@ -495,6 +519,42 @@ function personal_step5() {
 }
 function personal_step6() {
     ga('send', 'event', 'BMTCCU', 'personal loan', 'Your Details');
+    var RE = /^\d*\.?\d*$/;
+    if ($('input[name=pay_month]').val() == '' || $('input[name=pay_month]').val() == 0  || $('input[name=pay_month]').val() == '$')
+    {
+
+        $('#err1').html('Your Monthly Pay is empty');
+        $('#pay_month').focus();
+        return false;
+    } else if ($('#err2').val() == 0 && $('#pay_month1').val()=='')
+    {
+        $('#err1').html('Your ');
+        $('#pay_month').focus();
+        return false;
+    }else if ($('#home_status').val() == '')
+    {
+        $('#err3').html('Please select Your Home Residence');
+        $('#home_status').focus();
+        $('#err1').html('');
+        $('#err2').html('');
+        return false;
+    }else
+    {
+       
+        $('#err2').html('');
+        $.ajax({
+            type: "GET",
+            url: base_url + "personal/personal_step6/" + $('input[name=pay_month1]').val() + "/" + $("#home_status").val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "personal?personal_step=6");
+                $('#container').html(data);
+            }
+        });
+    }
+}
+function personal_stepresidence() {
+    ga('send', 'event', 'BMTCCU', 'personal loan', 'Your Details');
     var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     var RE = /^[A-Za-z]+$/;
     var RE1 = /^\d*\.?\d*$/;
@@ -544,7 +604,7 @@ function personal_step6() {
         $.ajax({
             type: "GET",
           //  url: base_url + "personal/personal_step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' +  $('#city_name').val() + '/' + $('#state_name').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=ssn]').val(),
-          url: base_url + "personal/personal_step6/",
+          url: base_url + "personal/personal_stepresidence/",
           data: {
                 firstname: $('input[name=firstname]').val(),
                 lastname: $('input[name=lastname]').val(),
@@ -556,7 +616,7 @@ function personal_step6() {
             },
             success: function (data)
             {
-                window.history.pushState("Details", "Title", base_url + "personal?personal_step=6");
+                window.history.pushState("Details", "Title", base_url + "personal?personal_step=residence");
                 $('#container').html(data);
             }
         });

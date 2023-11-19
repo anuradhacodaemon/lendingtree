@@ -96,7 +96,26 @@ class Auto extends CI_Controller {
         // print_r($this->session->userdata());
         $this->load->view('step4_view');
     }
+    public function step6($pay_month = 0,$home_status) {
 
+        if ($pay_month) {
+
+            //$num = explode('$', $pre_tax_income);
+            // $number = $num[1];
+            //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+            $data = array(
+                'pay_month' => $pay_month,
+                'home_status' => $home_status
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+
+//echo '<pre>';
+        // print_r($this->session->userdata());
+        $this->load->view('step6_view', $data);
+    }
     public function step5($pre_tax_income = 0,$total_dependent = 0) {
 
         if ($pre_tax_income) {
@@ -127,7 +146,7 @@ class Auto extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
+    public function stepresidence($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
     
         $firstname = $this->input->get('firstname');
         $lastname = $this->input->get('lastname');
@@ -151,7 +170,7 @@ class Auto extends CI_Controller {
         //echo '<pre>';
         // print_r($this->session->userdata());
 
-        $this->load->view('step6_view');
+        $this->load->view('stepresidence_view');
     }
 
     public function step7($month = 0, $day = 0, $year = 0 ,$ssn = '') {
