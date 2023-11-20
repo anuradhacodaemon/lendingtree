@@ -738,7 +738,7 @@ function refinancestep11(val) {
         url: url,
         success: function (data)
         {
-            alert(data);
+          //  alert(data);
                 if (data == 1)
                 {
                     //location.href = base_url;

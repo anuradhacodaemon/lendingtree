@@ -61,7 +61,7 @@
 
 
                         <div class="row invoice-info">
-                            <div class="col-sm-12 invoice-col padding_0">
+                            <div class="col-sm-6 invoice-col padding_0">
                                 <div class="col-sm-12"><span> <b>Request Amount ($):</b>&nbsp;
                                         <?php  
                                       echo $userDetails[0]['requested_amount'];
@@ -86,7 +86,7 @@
                                     <?php echo '$'.number_format($userDetails[0]['pre_tax_income']); ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Birth Date: &nbsp;</b>
-                                    <?php echo date('d-m-Y',strtotime($userDetails[0]['dob'])); ?>
+                                    <?php echo date('F j, Y',strtotime($userDetails[0]['dob'])); ?>
                                 </div>
                                <div class="col-sm-12"> <b>Address: &nbsp;</b>
                                     <?php echo str_replace("%20"," ",$userDetails[0]['address']);?>
@@ -112,7 +112,31 @@
                                 </div>
                             </div>
                             <!-- /.col -->
-
+                            <div class="col-sm-6 invoice-col padding_0">
+                                <div class="col-sm-12"><span> <b>Home Phone:</b>&nbsp;
+                                        <?php  
+                                        echo $userDetails[0]['phone'] 
+                                         ?></span>
+                                </div>
+                                
+                                
+                               <div class="col-sm-12"> <b>Start Date: &nbsp;</b>
+                                    <?php 
+                                    echo date('F j, Y',strtotime($userDetails[0]['start_date'])); ?>
+                                </div>
+                               
+                                <div class="col-sm-12"><b>Dependents : &nbsp</b>
+                                        <?php echo $userDetails[0]['total_dependent'] ?>
+                                    </div>
+                                    <div class="col-sm-12"><b>Home Residence: &nbsp</b>
+                                        <?php echo $userDetails[0]['home_status'] ?>
+                                    </div>
+                       
+                                <div class="col-sm-12"> <b>How Much Pay a Month ($): &nbsp;</b>
+                                    <?php echo '$'.number_format($userDetails[0]['pay_month']); ?>
+                                </div>
+                              
+                            </div>
                          
                         </div>
                         <div>

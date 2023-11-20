@@ -318,6 +318,9 @@ class Auto extends CI_Controller {
             $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             $this->session->userdata['i_represent_stated'] = '';
             $this->session->userdata['date_of_application'] = '';
+            $this->session->userdata['pay_month'] = '';
+            $this->session->userdata['home_status'] = '';
+            
             //redirect('/');
             echo 1;
         } /*         * else {

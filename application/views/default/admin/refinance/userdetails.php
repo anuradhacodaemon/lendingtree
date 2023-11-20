@@ -61,7 +61,7 @@
 
 
                         <div class="row invoice-info">
-                            <div class="col-sm-12 invoice-col padding_0">
+                            <div class="col-sm-6 invoice-col padding_0">
                                 <div class="col-sm-12"><span> <b>Monthly Payment:</b>&nbsp;
                                         <?php  
                                         
@@ -89,42 +89,54 @@
                                     </div>
                        
                                <div class="col-sm-12"> <b>Birth Date: &nbsp;</b>
-                                    <?php echo date('d-m-Y',strtotime($userDetails[0]['dob'])); ?>
+                                    <?php echo date('F j, Y',strtotime($userDetails[0]['dob'])); ?>
                                 </div>
                                <div class="col-sm-12"> <b>Address: &nbsp;</b>
                                     <?php echo str_replace("%20"," ",$userDetails[0]['address']) ?>
                                 </div>
                                
- <div class="col-sm-12"> <b>City: &nbsp;</b>
+                                <div class="col-sm-12"> <b>City: &nbsp;</b>
                                     <?php
-                                    if($userDetails[0]['city']>0){
-                                    $city=$this->refinance->get_city($userDetails[0]['city']);
-                                    
-                                    echo $city[0]['name'];} ?>
+                                    echo $userDetails[0]['city']; ?>
                                 </div>
                                <div class="col-sm-12"> <b>State: &nbsp;</b>
                                     <?php
-                                    
-                                    if($userDetails[0]['state']>0)
-                                    {
-                                  $state=$this->refinance->get_city($userDetails[0]['state']);
-
-                                    echo $state[0]['name'];
-                                    }?>
+                                    echo $userDetails[0]['state'];
+                                    ?>
                                 </div>
                                
                                <div class="col-sm-12"> <b>SSN: &nbsp;</b>
                                     <?php echo $userDetails[0]['ssn'] ?>
                                 </div>
                                 <div class="col-sm-12"> <b>DOB: &nbsp;</b>
-                                    <?php echo date('d-m-Y', strtotime($userDetails[0]['dob'])) ?>
+                                    <?php echo date('F j, Y', strtotime($userDetails[0]['dob'])) ?>
                                 </div>
                                <div class="col-sm-12"> <b>Domain: &nbsp;</b>
                                     <?php echo $userDetails[0]['domain'] ?>
                                 </div>
                             </div>
                             <!-- /.col -->
-
+                            <div class="col-sm-6 invoice-col padding_0">
+                                <div class="col-sm-12"><span> <b>Home Phone:</b>&nbsp;
+                                        <?php  
+                                        echo $userDetails[0]['phone'] 
+                                         ?></span>
+                                </div>
+                                
+                                
+                               <div class="col-sm-12"> <b>Start Date: &nbsp;</b>
+                                    <?php 
+                                    echo date('F j, Y',strtotime($userDetails[0]['start_date'])); ?>
+                                </div>
+                                    <div class="col-sm-12"><b>Home Residence: &nbsp</b>
+                                        <?php echo $userDetails[0]['home_status'] ?>
+                                    </div>
+                       
+                                <div class="col-sm-12"> <b>How Much Pay a Month ($): &nbsp;</b>
+                                    <?php echo '$'.number_format($userDetails[0]['pay_month']); ?>
+                                </div>
+                              
+                            </div>
                          
                         </div>
                         <div>

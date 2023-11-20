@@ -194,7 +194,7 @@
                         Birth Date :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       <?php echo date('d-m-Y',strtotime($userDetails[0]['dob'])) ?>
+                       <?php echo date('F j, Y',strtotime($userDetails[0]['dob'])) ?>
                     </td>
                 </tr>
                 <tr>
@@ -245,6 +245,22 @@
                          <?php echo $userDetails[0]['zip'] ?>
                     </td>
                 </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    Home Residence :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                         <?php echo $userDetails[0]['home_status'] ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                    How Much Pay a Month ($) :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                         <?php echo $userDetails[0]['pay_month'] ?>
+                    </td>
+                </tr>
             </table>
         </td>
     </tr>
@@ -279,7 +295,7 @@
                         Start Date :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                      <?php echo $userDetails[0]['start_date'] ?>
+                      <?php echo date('F j, Y',strtotime($userDetails[0]['start_date'])) ?>
                     </td>
                 </tr>
                 <tr>
