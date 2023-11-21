@@ -296,6 +296,18 @@ window.onpopstate = function ()
         });
     }
 
+    if (window.location.search.indexOf('refinancestep=residence') > -1) {
+        $.ajax({
+            type: "GET",
+            url: base_url +"refinance/refinancestepresidence",
+            success: function (data)
+            {
+
+                $('#container').html(data);
+                //location.href = '<?php echo 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>';
+            }
+        });
+    }
 
     if (window.location.search.indexOf('refinancestep=10') > -1) {
         $.ajax({

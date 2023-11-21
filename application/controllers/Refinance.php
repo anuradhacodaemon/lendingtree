@@ -66,11 +66,11 @@ class Refinance extends CI_Controller {
         $this->load->view('refinance_step3');
     }
 
-    public function refinancestep4($id = 0, $home_status) {
-        if ($id) {
+    public function refinancestep4($vin = 0, $current_milage) {
+        if ($vin) {
             $data = array(
-                'vin' => $id,
-                'current_milage' => $home_status
+                'vin' => $vin,
+                'current_milage' => $current_milage
             );
 
             $this->session->set_userdata($data);
@@ -127,6 +127,7 @@ class Refinance extends CI_Controller {
                 'firstname' => $firstname,
                 'lastname' => $lastname,
                 'address' => $address,
+                'address_p' => $address,
                 'city' => $city,
                 'state' => $state,
                 'zip' => $zip
@@ -291,7 +292,7 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['dobmonth']);
         unset($this->session->userdata['dobday']);
         unset($this->session->userdata['dobyears']);
-
+        unset($this->session->userdata['address_p']);
         
       //  echo"<pre>"; print_r($this->session->userdata()); die();		
         $result = $this->loan_model->add_refinance($this->session->userdata());

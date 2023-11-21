@@ -153,6 +153,7 @@ class Personal extends CI_Controller {
                 'firstname' => $firstname,
                 'lastname' => $lastname,
                 'address' => $address,
+                'address_p' => $address,
                 'city' => $city,
                 'state' => $state,
                 'zip' => $zip
@@ -274,6 +275,7 @@ class Personal extends CI_Controller {
         unset($this->session->userdata['dobmonth']);
         unset($this->session->userdata['dobday']);
         unset($this->session->userdata['dobyears']);
+        unset($this->session->userdata['address_p']);
         
         $result = $this->loan_model->add_personal_loan($this->session->userdata());
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
