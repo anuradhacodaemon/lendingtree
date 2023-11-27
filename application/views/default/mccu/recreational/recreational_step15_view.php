@@ -4,7 +4,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php   /*  if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -21,12 +21,13 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo   'Recreational Loan Application'; 
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Are you a party to any lawsuit?</label>
+                    <label class="control-label">Are You a Party to any Lawsuit?</label>
                     <div class="row">
                     <form id="any_law_suit" method="POST">
                             <input type="hidden" name="auto_step" value="15" id="auto_step" >
