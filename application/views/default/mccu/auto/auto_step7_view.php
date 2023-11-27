@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-                <?php  if(isset($this->session->userdata['type']))
+                <?php /* if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -30,18 +30,20 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+
+                          echo 'Auto Loan Application';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Family Reference</label>
+                    <label class="control-label">Family Reference Who Does Not Live With You</label>
                     <div class="row">
                         <form id="relative" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="7" id="auto_step" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relative_firstname" placeholder="Nearest Relative (Not living with you)" value="<?php if (isset($this->session->userdata['nearest_relative'])) echo $this->session->userdata['nearest_relative'] ?>" class="form-control width_100" id="firstname" >
+                                <input type="text" name="relative_firstname" placeholder="Reference Name" value="<?php if (isset($this->session->userdata['nearest_relative'])) echo $this->session->userdata['nearest_relative'] ?>" class="form-control width_100" id="firstname" >
                                 <span id="err1" style="color: red"></span>
 
                             </div>
@@ -63,13 +65,13 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relative_address" placeholder="Relatives Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
+                                <input type="text" name="relative_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="r_resource-container"></div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relatives_phone"  maxlength="14" placeholder="Relatives Phone" value="<?php if (isset($this->session->userdata['relatives_phone'])) echo $this->session->userdata['relatives_phone'] ?>" class="form-control width_100" id="relatives_phone">
+                                <input type="text" name="relatives_phone"  maxlength="14" placeholder="Reference Phone" value="<?php if (isset($this->session->userdata['relatives_phone'])) echo $this->session->userdata['relatives_phone'] ?>" class="form-control width_100" id="relatives_phone">
                                 <span id="err4" style="color: red"></span>
                             </div>
                             

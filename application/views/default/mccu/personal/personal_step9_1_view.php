@@ -29,7 +29,7 @@
                         elseif($this->session->userdata['type']== 5)
                         {
                           //echo 'Personal Loan';
-                          echo "Involuntary Unemployment Protection";
+                          echo "Personal Loan Application";
                         }
                         elseif($this->session->userdata['type']== 6)
                         {
@@ -43,7 +43,7 @@
               </h1>
               <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
-              <label class="control-label">If you are laid off and lose this income source, would you like to have your loan payments waived?</label>
+              <label class="control-label">If You Lose Your Employment, Would You Like the Credit Union to Make Your Payments For You While You Look For More Work?</label>
               <form id="waiver_form" method="POST">
               <input type="hidden" name="auto_step" value="9.1" id="auto_step" >
               <div class="col-xs-12 col-sm-12 radio">

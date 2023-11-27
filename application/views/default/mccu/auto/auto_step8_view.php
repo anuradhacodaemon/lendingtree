@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-                <?php  if(isset($this->session->userdata['type']))
+                <?php /*  if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -30,7 +30,9 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+
+                          echo 'Auto Loan Application';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
@@ -54,7 +56,7 @@
                                 <span id="err3" style="color: red"></span>
                             </div>-->                           
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="working_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
+                                <input type="text" name="working_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years You Have Worked Here?" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>

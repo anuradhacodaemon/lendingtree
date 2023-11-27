@@ -21,7 +21,7 @@
                         }
                         elseif($this->session->userdata['type']== 5)
                         {
-                          echo 'Personal Loan';
+                          echo 'Personal Loan Application';
                         }
                         elseif($this->session->userdata['type']== 6)
                         {
@@ -45,7 +45,7 @@
                                 <span id="err1" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="working_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years Employed?" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
+                                <input type="text" name="working_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years You Have Worked Here?" value="<?php if (isset($this->session->userdata['how_long_your_working'])) echo $this->session->userdata['how_long_your_working'] ?>" class="form-control width_100" id="working_years" >
                                 <span id="err4" style="color: red"></span>
                             </div>
                             <div class="clearfix"></div>

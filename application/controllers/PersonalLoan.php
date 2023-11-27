@@ -116,13 +116,13 @@ class PersonalLoan extends CI_Controller
         if($step == 3)
         {
             $rules = array(
-                array('field'=>'firstname','label'=>'firstname','rules'=>'required'),
-                array('field'=>'lastname','label'=>'lastname','rules'=>'required'),
-                array('field'=>'phone','label'=>'phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
+                array('field'=>'firstname','label'=>'First Name','rules'=>'required'),
+                array('field'=>'lastname','label'=>'Last Name','rules'=>'required'),
+                array('field'=>'phone','label'=>'Phone Number','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
                 array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
-                array('field'=>'tex_driv_lic','label'=>'Texas Driving License','rules'=>'required'),
+                array('field'=>'tex_driv_lic','label'=>'Drivers License Number','rules'=>'required'),
                 array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
-                array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
+              //  array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
                 );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
             $this->form_validation->set_rules($rules);
@@ -138,7 +138,7 @@ class PersonalLoan extends CI_Controller
                         'p_email' => $this->input->post('p_email'),
                         'tex_driv_lic' => $this->input->post('tex_driv_lic'),
                         'soc_sec' => $this->input->post('soc_sec'),
-                        'p_dob' => $this->input->post('my_dob')
+                      //  'p_dob' => $this->input->post('my_dob')
                     );
 
                     $this->session->set_userdata($data);
@@ -155,7 +155,7 @@ class PersonalLoan extends CI_Controller
                     'p_email' => form_error('p_email'),
                     'tex_driv_lic' => form_error('tex_driv_lic'),
                     'soc_sec' => form_error('soc_sec'),
-                    'my_dob' => form_error('my_dob')
+                 //   'my_dob' => form_error('my_dob')
                     );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -194,9 +194,9 @@ class PersonalLoan extends CI_Controller
         if($step == 5)
         {
             $rules = array(
-                array('field'=>'address','label'=>'Address','rules'=>'required'),
-                array('field'=>'living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
-                array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required')
+                array('field'=>'address','label'=>'Home Address','rules'=>'required'),
+                array('field'=>'living_there_years','label'=>'Years You Have Lived Here','rules'=>'required|numeric'),
+                array('field'=>'monthly_pay','label'=>'Monthly Payment','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -272,10 +272,10 @@ class PersonalLoan extends CI_Controller
         if($step == 7)
         {
             $rules = array(
-                array('field'=>'relative_firstname','label'=>'Relative Name','rules'=>'required'),
+                array('field'=>'relative_firstname','label'=>'Reference Name','rules'=>'required'),
                 array('field'=>'relative_relation','label'=>'Relative Relation','rules'=>'required'),
-                array('field'=>'relative_address','label'=>'Relative Address','rules'=>'required'),
-                array('field'=>'relatives_phone','label'=>'Relative Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
+                array('field'=>'relative_address','label'=>'Reference Address','rules'=>'required'),
+                array('field'=>'relatives_phone','label'=>'Reference Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
             $this->form_validation->set_rules($rules);
@@ -328,7 +328,7 @@ class PersonalLoan extends CI_Controller
         {
             $rules = array(
                 array('field'=>'employer_name','label'=>'Employer Name','rules'=>'required'),
-                array('field'=>'working_years','label'=>'Working years','rules'=>'required|numeric')
+                array('field'=>'working_years','label'=>'Years You Have Worked Here','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -362,7 +362,7 @@ class PersonalLoan extends CI_Controller
         if($step == 9)
         {
             $rules = array(
-                array('field'=>'monthly_income_pre_tax','label'=>'Monthly Income','rules'=>'required|numeric'), array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
+                array('field'=>'monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required|numeric'), array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -500,8 +500,8 @@ class PersonalLoan extends CI_Controller
         if($step == 10.1)
         {
             $rules = array(
-                array('field'=>'second_income_source','label'=>'Second Income Source','rules'=>'required'),
-                array('field'=>'second_monthly_income','label'=>'Monthly Income From Second Source','rules'=>'required|numeric')
+                array('field'=>'second_income_source','label'=>'List Income Source','rules'=>'required'),
+                array('field'=>'second_monthly_income','label'=>'Monthly Income Amount','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -614,6 +614,7 @@ class PersonalLoan extends CI_Controller
                     $data = array(
                         'outstanding_judgment_value' => $selected
                     );
+
 
                     $this->session->set_userdata($data);
                 }
@@ -785,7 +786,7 @@ class PersonalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=18';
+                $data['url'] = 'auto?step=19';
                 echo json_encode($data);
             }else{
                 //fail
@@ -818,12 +819,45 @@ class PersonalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=19';
+                $data['url'] = 'auto?step=18_1';
                 echo json_encode($data);
             }else{
                 //fail
                 $errors = array(
                             'on_die_cancel_loan' => form_error('on_die_cancel_loan')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
+        if($step == 18.1)
+        {
+            //echo $this->input->post('p_another_source');
+            $rules = array(
+                array('field'=>'on_hurt_cancel_loan','label'=>'Select One of them','rules'=>'required')
+                );
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if($this->input->post('on_hurt_cancel_loan')) 
+                {
+                    $value = $this->input->post('on_hurt_cancel_loan');
+                    $selected = ($value == 'yes') ? 'Y' : 'N';
+                    $data = array(
+                        'hurt_or_unable_cancel_the_loan' => $selected
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=17';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'on_hurt_cancel_loan' => form_error('on_hurt_cancel_loan')
                             );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -888,28 +922,36 @@ class PersonalLoan extends CI_Controller
         if($step == 20)
         {
             $rules = array(
-                array('field'=>'cosigner_firstname','label'=>'cosigner firstname','rules'=>'required'),
-                array('field'=>'cosigner_lastname','label'=>'cosigner lastname','rules'=>'required'),
-                array('field'=>'cosigner_phone','label'=>'cosigner phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
-                array('field'=>'cosigner_tdl','label'=>'Cosigner Texas Driving License','rules'=>'required'),
-                array('field'=>'cosigner_ssn','label'=>'Cosigner Social Security','rules'=>'required'),
-                array('field'=>'cosigner_dob','label'=>'Cosigner Date Of Birth','rules'=>'required')
+                array('field'=>'cosigner_firstname','label'=>'First Name','rules'=>'required'),
+                array('field'=>'cosigner_lastname','label'=>'Last Name','rules'=>'required'),
+                array('field'=>'cosigner_phone','label'=>'Phone Number','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]'),
+                array('field'=>'cosigner_tdl','label'=>'Driving License Number','rules'=>'required'),
+                array('field'=>'cosigner_ssn','label'=>'Social Security Number','rules'=>'required'),
+                array('field'=>'month','label'=>'Month','rules'=>'required'),
+                array('field'=>'day','label'=>'Date','rules'=>'required'),
+                array('field'=>'years','label'=>'Year','rules'=>'required')
                 /*array('field'=>'cosigner_email','label'=>'cosigner email','rules'=>'required|valid_email')*/
             );
-            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.'); 
+            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
                 //success
                 if ($this->input->post('cosigner_firstname')) 
                 {
+                    $dob=$this->input->post('years') . '-' . $this->input->post('month') . '-' . $this->input->post('day');
+                    $cosigner_dob = date("Y-m-d", strtotime($dob));
+
                     $data = array(
                         'cosigner_first_name' => $this->input->post('cosigner_firstname'),
                         'cosigner_last_name' => $this->input->post('cosigner_lastname'),
                         'cosigner_phone' => $this->input->post('cosigner_phone'),
                         'cosigner_tdl' => $this->input->post('cosigner_tdl'),
                         'cosigner_ssn' => $this->input->post('cosigner_ssn'),
-                        'cosigner_dob' => $this->input->post('cosigner_dob')
+                        'month' => $this->input->post('month'),
+                        'years' => $this->input->post('years'),
+                        'day' => $this->input->post('day'),
+                        'cosigner_dob' => $cosigner_dob
                         /*'cosigner_email' => $this->input->post('cosigner_email')*/
                     );
 
@@ -926,7 +968,9 @@ class PersonalLoan extends CI_Controller
                 'cosigner_phone' => form_error('cosigner_phone'),
                 'cosigner_tdl' => form_error('cosigner_tdl'),
                 'cosigner_ssn' => form_error('cosigner_ssn'),
-                'cosigner_dob' => form_error('cosigner_dob')
+                'month' => form_error('month'),
+                'day' => form_error('day'),
+                'years' => form_error('years')
                 /*'cosigner_email' => form_error('cosigner_email'),*/
                 );
                 $data['error'] = 1;
@@ -966,9 +1010,9 @@ class PersonalLoan extends CI_Controller
         if($step == 22)
         {
             $rules = array(
-                array('field'=>'cosigner_home_address','label'=>'Address','rules'=>'required'),
-                array('field'=>'cosigner_living_there_years','label'=>'How long you are living there','rules'=>'required|numeric'),
-                array('field'=>'cosigner_monthly_pay','label'=>'Monthly pay','rules'=>'required')
+                array('field'=>'cosigner_home_address','label'=>'Home Address','rules'=>'required'),
+                array('field'=>'cosigner_living_there_years','label'=>'Years You Have Lived Here','rules'=>'required|numeric'),
+                array('field'=>'cosigner_monthly_pay','label'=>'Monthly Payment Amount','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -998,7 +1042,7 @@ class PersonalLoan extends CI_Controller
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=23';
+                $data['url'] = 'auto?step=23_1';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1040,13 +1084,68 @@ class PersonalLoan extends CI_Controller
                 echo json_encode($data);
             }
         }
+        if($step == 23.1)
+        {
+            $rules = array(
+                array('field'=>'cosigner_nearest_relative','label'=>'Reference Name','rules'=>'required'),
+                array('field'=>'cosigner_relationship','label'=>'Reference Relation','rules'=>'required'),
+                array('field'=>'cosigner_relatives_address','label'=>'Reference Address','rules'=>'required'),
+                array('field'=>'cosigner_relatives_phone','label'=>'Reference Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
+                );
+
+            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == true) 
+            {
+                //success
+                if ($this->input->post('cosigner_nearest_relative')) 
+                {
+                    $r_new_address = ['country' => $this->input->post('cosigner_r_country'),
+                                    'street_line' => $this->input->post('cosigner_r_street_line'),
+                                    'city' => $this->input->post('cosigner_r_city'),
+                                    'state' => $this->input->post('cosigner_r_state'),
+                                    'zip_code' => $this->input->post('cosigner_r_zip_code')
+
+                                    ];
+                    $json = json_encode($r_new_address);       
+                    $data = array(
+                        'cosigner_nearest_relative' => $this->input->post('cosigner_nearest_relative'),
+                        'cosigner_relationship' => ucfirst($this->input->post('cosigner_relationship')),
+                        'cosigner_relatives_address' => $this->input->post('cosigner_relatives_address'),
+                        'cosigner_relatives_phone' => $this->input->post('cosigner_relatives_phone'),
+                       // 'cosigner_relatives_address' => $json,
+                        'cosigner_r_country' => $this->input->post('cosigner_r_country'),
+                        'cosigner_r_street_line' => $this->input->post('cosigner_r_street_line'),
+                        'cosigner_r_city' => $this->input->post('cosigner_r_city'),
+                        'cosigner_r_state' => $this->input->post('cosigner_r_state'),
+                        'cosigner_r_zip_code' => $this->input->post('cosigner_r_zip_code')
+                    );
+
+                    $this->session->set_userdata($data);
+                }
+                $data['success'] = 1;
+                $data['url'] = 'auto?step=24';
+                echo json_encode($data);
+            }else{
+                //fail
+                $errors = array(
+                            'cosigner_nearest_relative' => form_error('cosigner_nearest_relative'),
+                            'cosigner_relationship' => form_error('cosigner_relationship'),
+                            'cosigner_relatives_address' => form_error('cosigner_relatives_address'),
+                            'cosigner_relatives_phone' => form_error('cosigner_relatives_phone')
+                            );
+                $data['error'] = 1;
+                $data['error_messages'] = $errors;
+                echo json_encode($data);
+            }
+        }
         if($step == 24)
         {
             $rules = array(
-                array('field'=>'cosigners_employer_name','label'=>'Cosigner Employer Name','rules'=>'required'),
+                array('field'=>'cosigners_employer_name','label'=>'Employer Name','rules'=>'required'),
                 /*array('field'=>'cosigners_employer_job_title','label'=>'Cosigner Employer Job title','rules'=>'required'),
                 array('field'=>'co_supervisor_name','label'=>'Cosigner Supervisor name','rules'=>'required'),*/
-                array('field'=>'cosigners_working_years','label'=>'Cosigner Working years','rules'=>'required|numeric')
+                array('field'=>'cosigners_working_years','label'=>'Years You Have Worked Here','rules'=>'required|numeric')
                 /*array('field'=>'cosigners_business_address','label'=>'Cosigner Business address','rules'=>'required')*/
                 );
             $this->form_validation->set_rules($rules);
@@ -1098,7 +1197,7 @@ class PersonalLoan extends CI_Controller
         if($step == 25)
         {
             $rules = array(
-                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Cosigner Monthly Income','rules'=>'required|numeric'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
+                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required|numeric'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -1234,8 +1333,8 @@ class PersonalLoan extends CI_Controller
         if($step == 27.1)
         {
             $rules = array(
-                array('field'=>'cosigner_second_income_source','label'=>'Cosigner Second Income Source','rules'=>'required'),
-                array('field'=>'cosigner_second_monthly_income','label'=>'Cosigner Monthly Income From Second Source','rules'=>'required|numeric')
+                array('field'=>'cosigner_second_income_source','label'=>'List Income Source','rules'=>'required'),
+                array('field'=>'cosigner_second_monthly_income','label'=>'Monthly Income Amount','rules'=>'required|numeric')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -1952,6 +2051,10 @@ class PersonalLoan extends CI_Controller
     {
         $this->load->view('default/mccu/personal/personal_step18_view');
     }
+    public function step18_1()
+    {
+        $this->load->view('default/mccu/personal/personal_step18_1_view');
+    }
     public function step19()
     {
         $this->load->view('default/mccu/personal/personal_step19_view');
@@ -1975,6 +2078,10 @@ class PersonalLoan extends CI_Controller
     public function step23()
     {
         $this->load->view('default/mccu/personal/personal_step23_view');
+    }
+    public function step23_1()
+    {
+        $this->load->view('default/mccu/personal/personal_step23_1_view');
     }
     public function step24()
     {
@@ -2077,7 +2184,8 @@ class PersonalLoan extends CI_Controller
         {
              /*echo "<pre>";
             print_r($array);exit;*/
-          
+            $coverage_response = $this->check_coverage($array);
+            $array['coverage'] = $coverage_response;
             $array = $this->unsetArrays($array);
             //
             $result = $this->PersonalLoan_model->add_personal_loan($array);
@@ -2108,6 +2216,8 @@ class PersonalLoan extends CI_Controller
                     'p_cosigner_relatives_address', 'co_r_country', 'co_r_street_line', 'co_r_city', 'co_r_state', 'co_r_zip_code',
                     'p_cosigner_personal_refrence_address', 'co_p_r_country', 'co_p_r_street_line', 'co_p_r_city', 'co_p_r_state', 'co_p_r_zip_code',
                     'co_cosigner_business_address', 'co_b_r_country', 'co_b_r_street_line', 'co_b_r_city', 'co_b_r_state', 'co_b_r_zip_code',
+                    'cosigner_r_country', 'cosigner_r_street_line', 'cosigner_r_city', 'cosigner_r_state', 'cosigner_r_zip_code',
+                    'month', 'day', 'years',
 
             ];
         if(!empty($arr))
@@ -2123,6 +2233,47 @@ class PersonalLoan extends CI_Controller
         }
     }
 
+    public function check_coverage($array)
+    {
+        if(!empty($array))
+        {
+            $laid_off_for_payment_waived=$array['laid_off_for_payment_waived'];
+            $die_or_ill_cancel_the_loan=$array['die_or_ill_cancel_the_loan'];
+            $hurt_or_unable_cancel_the_loan=$array['hurt_or_unable_cancel_the_loan'];
+		
+
+            if($laid_off_for_payment_waived=="N" && $die_or_ill_cancel_the_loan=="Y" & $hurt_or_unable_cancel_the_loan=="N")
+            {
+                $coverage='A';
+            }elseif($laid_off_for_payment_waived=="N" && $die_or_ill_cancel_the_loan=="Y" & $hurt_or_unable_cancel_the_loan=="Y")
+            {
+                $coverage='B';
+            }elseif($laid_off_for_payment_waived=="N" && $die_or_ill_cancel_the_loan=="N" & $on_hurt_cahurt_or_unable_cancel_the_loanncel_loan=="Y")
+            {
+                $coverage='B';
+            }elseif($laid_off_for_payment_waived=="Y" && $die_or_ill_cancel_the_loan=="N" & $hurt_or_unable_cancel_the_loan=="N")
+            {
+                $coverage='C';
+            }elseif($laid_off_for_payment_waived=="Y" && $die_or_ill_cancel_the_loan=="Y" & $hurt_or_unable_cancel_the_loan=="N")
+            {
+                $coverage='C';
+            }elseif($laid_off_for_payment_waived=="N" && $die_or_ill_cancel_the_loan=="Y" & $hurt_or_unable_cancel_the_loan=="N")
+            {
+                $coverage='C';
+            }elseif($laid_off_for_payment_waived=="Y" && $die_or_ill_cancel_the_loan=="Y" & $hurt_or_unable_cancel_the_loan=="Y")
+            {
+                $coverage='D';
+            }elseif($laid_off_for_payment_waived=="Y" && $die_or_ill_cancel_the_loan=="N" & $hurt_or_unable_cancel_the_loan=="Y")
+            {
+                $coverage='D';
+            }else
+            {
+                $coverage='-';
+            }
+
+            return $coverage;
+        }
+    }
 
 
 

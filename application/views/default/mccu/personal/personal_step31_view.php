@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php  /*  if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -22,12 +22,13 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo 'Co-signer Information';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint owner/co-signer any foreclosures or lost title/deed on property in past 7 years?</label>
+                    <label class="control-label">Any Foreclosures or Lost Title/Deed on Property in Past 7 years?</label>
                     <div class="row">
                     <form id="co_force_closure" method="POST">
                             <input type="hidden" name="auto_step" value="31" id="auto_step" >

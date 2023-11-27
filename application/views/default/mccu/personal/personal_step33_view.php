@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-              <?php   if(isset($this->session->userdata['type']))
+              <?php /*     if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -22,12 +22,13 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo 'Co-signer Information';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint owner/co-signer are you an united states citizen or permanent resident of the united states?</label>
+                    <label class="control-label">Are You A Citizen or Permenant Resident of the United States of America?</label>
                     <div class="row">
                     <form id="co_other_than_us_citizen" method="POST">
                             <input type="hidden" name="auto_step" value="33" id="auto_step" >

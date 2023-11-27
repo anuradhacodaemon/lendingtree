@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                 <h1>
-                <?php  if(isset($this->session->userdata['type']))
+                <?php  /* if(isset($this->session->userdata['type']))
                       { 
                         if($this->session->userdata['type']== 1)
                         {
@@ -30,18 +30,19 @@
                       }
                       else{
                           echo 'Buying New Vehicle';
-                          }
+                          }*/
+                          echo 'Co-signer Information';
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">Joint Owner/Co-Signer Address Details</label>
+                    <label class="control-label">Your Primary Residence</label>
                     <div class="row">
                         <form id="p_details" method="post" onsubmit="return getFormId(this)">
                             <input type="hidden" name="auto_step" value="22" id="auto_step" >
                             <div class="input-text">
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                    <input type="text" name="cosigner_home_address" placeholder="Enter Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
+                                    <input type="text" name="cosigner_home_address" placeholder="Enter Home Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
                                     <span id="err1" style="color: red"></span>
                                     <div class="co_resource-container"></div>
                                 </div>              
@@ -52,7 +53,7 @@
                                     <span id="err3" style="color: red"></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="cosigner_living_there_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years Been There" value="<?php if (isset($this->session->userdata['cosigner_years_been_there'])) echo $this->session->userdata['cosigner_years_been_there'] ?>" class="form-control width_100" id="cosigner_living_there_years" >
+                                <input type="text" name="cosigner_living_there_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years You Have Lived Here" value="<?php if (isset($this->session->userdata['cosigner_years_been_there'])) echo $this->session->userdata['cosigner_years_been_there'] ?>" class="form-control width_100" id="cosigner_living_there_years" >
                                     <span id="err2" style="color: red"></span>
                                 </div>
                             </div>
