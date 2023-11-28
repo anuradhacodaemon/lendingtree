@@ -69,10 +69,53 @@
 
                          <!--   <div class="col-xs-12 col-sm-12 margbot_10">
                               <label class="dob_class">Enter Date Of Birth </label>
-                                <input type="date" name="my_dob" placeholder="DOB" value="<?php if (isset($this->session->userdata['p_dob'])) echo $this->session->userdata['p_dob'] ?>" class="form-control" id="my_dob">
+                                <input type="date" name="my_dob" placeholder="DOB" value="<?php // if (isset($this->session->userdata['p_dob'])) echo $this->session->userdata['p_dob'] ?>" class="form-control" id="my_dob">
                                 <span id="err7" style="color: red"></span>
                             </div> -->
-                           
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select  id="c_month" name="c_month" class="form-control form-control-small">
+                                <option value="">Month</option>
+                                <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['c_month'])) {
+                                        if ($this->session->userdata['c_month'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?> ><?php echo date("F", mktime(0, 0, 0, $i, 10)); ?></option>
+                                         <?php } ?>
+                            </select>
+                                <span id="err7" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="c_day" name="c_day" class="form-control form-control-small">
+                                <option value="">Day</option>
+                                <?php for ($i = 1; $i <= 31; $i++) { ?>
+                                    <option  value="<?php echo $i ?>"  <?php
+                                    if (isset($this->session->userdata['c_day'])) {
+                                        if ($this->session->userdata['c_day'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                                <span id="err8" style="color: red"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <select id="c_years" name="c_years" class="form-control form-control-small">
+                                <option value="">Year</option>
+                                <?php for ($i = 1920; $i <= 2015; $i++) { ?>
+                                    <option  value="<?php echo $i ?>" <?php
+                                    if (isset($this->session->userdata['c_years'])) {
+                                        if ($this->session->userdata['c_years'] == $i)
+                                            echo 'selected';
+                                    }
+                                    ?>><?php echo $i ?></option>
+                                         <?php } ?>
+                            </select>
+                                <span id="err9" style="color: red"></span>
+                            </div>
+                            </div>
                     
                             <div class="col-xs-12 col-sm-12 radio margtop_20">
                                 <input type="submit" value="Continue" class="button" >
@@ -113,6 +156,8 @@
   });
 //
 $(document).ready(function() {
+  if($("#c_years").val() == '')
+      $("#c_years").val("1950");
       /*$("#my_dob").datepicker({
         dateFormat: "mm/dd/yy", // Specify the desired date format
         onSelect: function(dateText) {

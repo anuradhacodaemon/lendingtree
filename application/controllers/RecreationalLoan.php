@@ -119,6 +119,9 @@ class RecreationalLoan extends CI_Controller
                 array('field'=>'p_email','label'=>'Email','rules'=>'required|valid_email'),
                 array('field'=>'tex_driv_lic','label'=>'Drivers License Number','rules'=>'required'),
                 array('field'=>'soc_sec','label'=>'Social Security','rules'=>'required'),
+                array('field'=>'c_month','label'=>'Month','rules'=>'required'),
+                array('field'=>'c_day','label'=>'Date','rules'=>'required'),
+                array('field'=>'c_years','label'=>'Year','rules'=>'required')
               //  array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
                 );
                 $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
@@ -128,6 +131,9 @@ class RecreationalLoan extends CI_Controller
                 //success
                 if ($this->input->post('firstname')) 
                 {
+                    $dob=$this->input->post('c_years') . '-' . $this->input->post('c_month') . '-' . $this->input->post('c_day');
+                    $customer_dob = date("Y-m-d", strtotime($dob));
+
                     $data = array(
                         'first_name' => $this->input->post('firstname'),
                         'last_name' => $this->input->post('lastname'),
@@ -135,6 +141,10 @@ class RecreationalLoan extends CI_Controller
                         'p_email' => $this->input->post('p_email'),
                         'tex_driv_lic' => $this->input->post('tex_driv_lic'),
                         'soc_sec' => $this->input->post('soc_sec'),
+                        'c_month' => $this->input->post('c_month'),
+                        'c_years' => $this->input->post('c_years'),
+                        'c_day' => $this->input->post('c_day'),
+                        'p_dob' => $customer_dob,
                      //   'p_dob' => $this->input->post('my_dob')
                     );
 
@@ -153,6 +163,9 @@ class RecreationalLoan extends CI_Controller
                     'tex_driv_lic' => form_error('tex_driv_lic'),
                     'soc_sec' => form_error('soc_sec'),
                   //  'my_dob' => form_error('my_dob')
+                    'c_month' => form_error('c_month'),
+                    'c_day' => form_error('c_day'),
+                    'c_years' => form_error('c_years')
                     );
                 $data['error'] = 1;
                 $data['error_messages'] = $errors;
@@ -1110,7 +1123,7 @@ class RecreationalLoan extends CI_Controller
                         'cosigner_relationship' => ucfirst($this->input->post('cosigner_relationship')),
                         'cosigner_relatives_address' => $this->input->post('cosigner_relatives_address'),
                         'cosigner_relatives_phone' => $this->input->post('cosigner_relatives_phone'),
-                        'cosigner_relatives_address' => $json,
+                      //  'cosigner_relatives_address' => $json,
                         'cosigner_r_country' => $this->input->post('cosigner_r_country'),
                         'cosigner_r_street_line' => $this->input->post('cosigner_r_street_line'),
                         'cosigner_r_city' => $this->input->post('cosigner_r_city'),
@@ -2214,7 +2227,7 @@ class RecreationalLoan extends CI_Controller
                     'p_cosigner_personal_refrence_address', 'co_p_r_country', 'co_p_r_street_line', 'co_p_r_city', 'co_p_r_state', 'co_p_r_zip_code',
                     'co_cosigner_business_address', 'co_b_r_country', 'co_b_r_street_line', 'co_b_r_city', 'co_b_r_state', 'co_b_r_zip_code',
                     'cosigner_r_country', 'cosigner_r_street_line', 'cosigner_r_city', 'cosigner_r_state', 'cosigner_r_zip_code',
-                    'month', 'day', 'years',
+                    'month', 'day', 'years','c_month', 'c_day', 'c_years',
 
             ];
         if(!empty($arr))

@@ -28,7 +28,7 @@
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">JAny Foreclosures or Lost Title/Deed on Property in Past 7 years?</label>
+                    <label class="control-label">Any Foreclosures or Lost Title/Deed on Property in Past 7 years?</label>
                     <div class="row">
                     <form id="co_force_closure" method="POST">
                             <input type="hidden" name="auto_step" value="31" id="auto_step" >
