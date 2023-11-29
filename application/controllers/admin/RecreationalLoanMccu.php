@@ -212,6 +212,23 @@ class RecreationalLoanMccu extends CI_Controller {
                 $type = 'Recreational Loan';
             else
                 $type = '';
+
+            if($v['coverage'] == 'A')
+                    { 
+                    $coverage = 'A:Life Enhanced';
+            }elseif($v['coverage'] == 'B')
+                    {  
+                    $coverage = 'B:Life Enhanced & Disablity'; 
+            }elseif($v['coverage'] == 'C')
+                    { 
+                    $coverage = 'C:Life Enhanced & Inventory Unemployment'; 
+            }elseif($v['coverage'] == 'D')
+                    { 
+                    $coverage = 'D:Life Enhanced & Disablity & Inventory Unemployment'; 
+            }else
+                    { 
+                    $coverage='-';
+            }
         
             if ($v['requested_amount'])
                 $years = $v['requested_amount'];
@@ -255,6 +272,7 @@ class RecreationalLoanMccu extends CI_Controller {
             $a[34] = $v['cosigner_nearest_relative'];
             $a[35] = $v['cosigner_relationship'];
             $a[36] = $v['domain'];
+            $a[37] = $coverage;
             $arr[] = $a;
         }
         /*echo '<pre>';
@@ -262,14 +280,15 @@ class RecreationalLoanMccu extends CI_Controller {
         exit;*/
         $filename = "recreational.csv";
         $fp = fopen('php://output', 'w');       
-        fputcsv($fp, $arr[0]);
-        unset($arr[0]);
-        foreach ($arr as $user) {
-            fputcsv($fp, $user);
-        }
-        fclose($fp);
         header('Content-Type: application/csv');
         header('Content-Disposition: attachment; filename="' . $filename . '"');
+        foreach ($arr as $file) {
+            $result = [];
+            array_walk_recursive($file, function($item) use (&$result) {
+                $result[] = $item;
+            });
+            fputcsv($fp, $result);
+        }
    
     }
     //
@@ -300,7 +319,7 @@ class RecreationalLoanMccu extends CI_Controller {
          "Second Income Source Monthly", "Date Of Application", "Added Cosigner", "Cosigner's Full Name", "Cosigner's Phone", 
          "Cosigner's Email", "Cosigner's Marital Status", "Cosigner's Adress", "Cosigner's Living there", "Cosginer's Monthly Pay", "Cosigner's Nearest Relative",
          "Cosigner's Relationship with",
-         "Domain"
+         "Domain","Coverage"
              ];
          return $arr;    
  

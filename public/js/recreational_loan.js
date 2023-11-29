@@ -925,7 +925,9 @@ function addCosigner(value)
                         $('#err4').html(obj['error_messages']['p_email']);
                         $('#err5').html(obj['error_messages']['tex_driv_lic']);
                         $('#err6').html(obj['error_messages']['soc_sec']);
-                        $('#err7').html(obj['error_messages']['my_dob']);
+                       // $('#err7').html(obj['error_messages']['my_dob']);
+                       $('#err7').html(obj['error_messages']['c_month']);
+                       $('#err8').html(obj['error_messages']['c_day']);
                     }
                     if(step == 4 || step == 21)
                     {

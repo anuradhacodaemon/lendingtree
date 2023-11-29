@@ -90,20 +90,11 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
 
                     </div>
                     <div class="col-md-2 form-group ">
-
-                        <select name="requested_amount" class="form-control">
-                            <option value="">Request Amount</option>
-                            <option value="$5,000 - $10,000"<?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$5,000 - $10,000') echo 'selected'; ?>>$5,000-$10,000</option>
-                            <option value="$10,000 - $15,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$10,000 - $15,000') echo 'selected'; ?>>$10,000-$15,000</option>
-                            <option value="$15,000 - $20,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$15,000 - $20,000') echo 'selected'; ?>>$15,000-$20,000</option>
-                            <option value="$20,000 - $30,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$20,000 - $30,000') echo 'selected'; ?>>$20,000-$30,000</option>
-                            <option value="$30,000 - $40,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$30,000 - $40,000') echo 'selected'; ?>>$30,000-$40,000</option>
-                            <option value="$40,000 - $50,000" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$40,000 - $50,000') echo 'selected'; ?>>$40,000-$50,000</option> 
-                            <option value="$50,000+" <?php if (isset($_REQUEST['requested_amount'])) if ($_REQUEST['requested_amount'] == '$50,000+') echo 'selected'; ?>>$50,000+</option>
-
-                        </select>
-
-
+                        <input type="text" class="form-control" placeholder="Request Amount" name="requested_amount" value="<?php
+                            if (isset($_REQUEST['requested_amount'])) {
+                                echo $_REQUEST['requested_amount'];
+                            }
+                            ?>">
                     </div>
 
 
@@ -265,8 +256,8 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Job Title</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                    <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.coverage" && $sort_direction == "desc") { ?> onClick="sortList('user.coverage', 'asc')"<?php } ?> <?php if ($sort_by != "user.coverage") { ?> onClick="sortList('user.coverage', 'asc')"<?php } ?><?php if ($sort_by == "user.coverage" && $sort_direction == "asc") { ?> onClick="sortList('user.coverage', 'desc')"<?php } ?>> Coverage</a>&nbsp;<?php if ($sort_by == "user.coverage" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.coverage" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -318,7 +309,24 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
 
                                         <td><?php echo '$' . number_format($v['employment_monthly_income']); ?></td>
 
-                                        <td><?php echo $v['job_title']; ?></td>
+                                        <td><?php         
+                                                        $coverage='-';
+                                                      if($v['coverage'] == 'A')
+                                                            { 
+                                                            echo 'A:Life Enhanced';
+                                                     }elseif($v['coverage'] == 'B')
+                                                            {  
+                                                                echo 'B:Life Enhanced & Disablity'; 
+                                                      }elseif($v['coverage'] == 'C')
+                                                            { 
+                                                                 echo 'C:Life Enhanced & Inventory Unemployment'; 
+                                                      }elseif($v['coverage'] == 'D')
+                                                            { 
+                                                                 echo 'D:Life Enhanced & Disablity & Inventory Unemployment'; 
+                                                      }else
+                                                            { 
+                                                               echo $coverage;
+                                                      }  ?></td>
                                         <td><a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
                                             <?php if ($v['status'] == 2) { ?> <a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
                                                 <?php if ($v['status'] == 0) { ?><a href="javascript:void(0)" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>
@@ -522,6 +530,7 @@ $visitor = $this->Autoloanmccu_model->checklead_denied_forDomain();
                 //alert('no');
             }
         });
+        
         //});
     }
 </script>
