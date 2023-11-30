@@ -375,7 +375,7 @@ $visitor = $this->Personalloanmccu_model->checklead_denied_forDomain();
 
                                 <tr class="even pointer">
 
-                                    <td class="text-center" colspan="6">No Auto-loan Records found</td>
+                                    <td class="text-center" colspan="6">No Personal-Loan Records found</td>
                                 </tr>
                                 <?php
                             }
