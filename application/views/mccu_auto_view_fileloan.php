@@ -1245,7 +1245,7 @@ function isJson($string) {
                 </tr>-->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                    Living On addrees since Years :
+                    Years You Have Worked Here :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                     <?php echo $userDetails['cosigner_how_long_working_years'];  ?>
