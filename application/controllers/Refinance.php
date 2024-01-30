@@ -149,7 +149,7 @@ class Refinance extends CI_Controller {
 
     public function refinancestep7($month = 0, $day = 0, $year = 0, $ssn = '') {
 
-        $ssn = $this->input->get('ssn');
+       // $ssn = $this->input->get('ssn');
         
         if ($ssn) {
             $data = array(

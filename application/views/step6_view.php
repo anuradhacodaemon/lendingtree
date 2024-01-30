@@ -42,7 +42,7 @@
                     <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
                         <select id="selectYear" name="year" class="form-control form-control-small">
                             <option value="">Year</option>
-<?php for ($i = 1900; $i <= 2015; $i++) { ?>
+<?php for ($i = 2023; $i >= 1950; $i--) { ?>
                                 <option  value="<?php echo $i ?>" <?php
     if (isset($this->session->userdata['years'])) {
         if ($this->session->userdata['years'] == $i)

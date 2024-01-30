@@ -454,12 +454,24 @@ function refinancestep5() {
     ga('send', 'event', 'spececity', 'auto refinance', 'Date Of Birth');
      var regex = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
     
-     if ($('#dob').val() === "") {
+     if ($('#selectMonth').val() === "") {
 
-        $('#err').html('Date of Birth is empty');
-        $('#dob').focus();
+        $('#err').html('Month is empty');
+        $('#selectMonth').focus();
         return false;
-    } else if ($('input[name=ssn]').val() == '')
+    }  else if ($('#selectDate').val() === "")
+    {
+
+        $('#err').html('Day is empty');
+        $('#selectDate').focus();
+        return false;
+    } else if ($('#selectYear').val() === "")
+    {
+
+        $('#err').html('Year is empty');
+        $('#selectYear').focus();
+        return false;
+    }else if ($('input[name=ssn]').val() == '')
     {
 
         $('#err7').html('ssn is empty');
@@ -484,7 +496,8 @@ function refinancestep5() {
     } else {
         $.ajax({
             type: "GET",
-            url: base_url + "refinance/refinancestep7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
+            url: base_url + "refinance/refinancestep7/" +  $('#selectMonth').val() + '/' +  $('#selectDate').val() + '/' +  $('#selectYear').val()+ '/' +  $('input[name=ssn]').val(),
+           // url: base_url + "refinance/refinancestep7/" +  $('#dob').val() + '/'  +  $('input[name=ssn]').val(),
             success: function (data)
             {
                 window.history.pushState("Details", "Title", base_url + "refinance?refinancestep=8");
