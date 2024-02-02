@@ -3,7 +3,7 @@
   <div class="" id="container">
     <div class="form-main home-loan clearfix">
       <h1 class="text-head">Great! What type of property are you refinancing?</h1>
-      <!--<a href="" class="disclosure-sec">Disclosures</a>-->
+      <!--<a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>-->
       <div class="offer-cont">
         <a href="javascript:void(0);" onclick="home_step3(1)">
           <button class="offer-circ">

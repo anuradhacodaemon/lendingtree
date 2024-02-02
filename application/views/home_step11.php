@@ -2,7 +2,7 @@
   <div class="" id="container">
     <div class="form-main home-loan clearfix">
       <h1 class="text-head">Did you close on your mortgage on or before May 31, 2009?</h1>
-      <!--<a href="" class="disclosure-sec">Disclosures</a>-->
+      <!--<a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>-->
       <div class="clearfix"></div>
       <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="offer-cont">

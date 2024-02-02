@@ -33,7 +33,7 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">Joint Owner/Co-Signer ANY BANKRUPTCY FILING OR DEBT ADJUSTMENT CONFIRMED UNDER CH. 13 AGAINST YOU?</label>
                     <div class="row">

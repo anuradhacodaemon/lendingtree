@@ -4,7 +4,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                     <h1 class="text-head">What type of home loan are you looking for?</h1>
-                    <!--<a href="" class="disclosure-sec">Disclosures</a>-->
+                    <!--<a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="offer-cont">

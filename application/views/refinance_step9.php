@@ -4,7 +4,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                     <h1>Refinance Your Vehicle</h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                            
                     <label class="control-label">I represent that everything i have stated in this application is correct and complete to the best of my knowledge. you are authorized to check my (our) credit history, and to answer questions about your credit history with me. (us).</label>

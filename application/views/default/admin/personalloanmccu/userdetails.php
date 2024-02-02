@@ -138,6 +138,17 @@ function isJson($string) {
                                 <div class="col-sm-12"> <b>Domain: &nbsp;</b>
                                     <?php echo $userDetails['domain'] ?>
                                 </div>
+                                <div class="col-sm-12"> <b>Total Time: &nbsp;</b>
+                                    <?php if(!empty($userDetails['start_time']) && !empty($userDetails['end_time'])){
+                                        $start_datetime = new DateTime($userDetails['start_time']);
+                                        $end_datetime = new DateTime($userDetails['end_time']);
+                                        // Calculate the difference
+                                        $time_difference = $start_datetime->diff($end_datetime);
+                                        echo $time_difference->format('%H:%I:%S');
+                                        }else{
+                                            echo 'N/A';
+                                        } ?>
+                                </div>
                             </div>
                             <!-- /.col -->
                             <!-- 8 Fields break -->

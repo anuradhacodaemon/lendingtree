@@ -34,7 +34,11 @@ class PersonalLoan extends CI_Controller
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
-
+        $start_time = date('Y-m-d H:i:s');
+        $data = array(
+            'start_time' => $start_time,
+        );
+        $this->session->set_userdata($data);
         $this->session->set_userdata('panel', 'frontend');
         $this->session->set_userdata('type', 5); //Personal Loan
         //SHOW STEP 2
@@ -770,6 +774,7 @@ class PersonalLoan extends CI_Controller
             }
         }
         if ($step == 19) {
+            $end_time = date('Y-m-d H:i:s');
             //echo $this->input->post('p_another_source');
             $rules = array(
                 array('field' => 'add_cosigner', 'label' => 'Select One of them', 'rules' => 'required')
@@ -782,7 +787,8 @@ class PersonalLoan extends CI_Controller
                     $selected = ($value == 'yes') ? 'Y' : 'N';
                     $data = array(
                         'add_co_signers_onto_loan' => $selected,
-                        'final_step' => $step
+                        'final_step' => $step,
+                        'end_time' => $end_time
                     );
                     $this->session->set_userdata($data);
                     if ($value == 'no') {
@@ -1379,6 +1385,7 @@ class PersonalLoan extends CI_Controller
             }
         }
         if ($step == 34) {
+            $end_time = date('Y-m-d H:i:s');
             //echo $this->input->post('p_another_source');
             $rules = array(
                 array('field' => 'co_i_represnt_accurate', 'label' => 'Consent', 'rules' => 'required')
@@ -1393,7 +1400,8 @@ class PersonalLoan extends CI_Controller
                     $data = array(
                         'cosigner_i_represent_everything_correct' => $selected,
                         'date_of_application' => $value2,
-                        'final_step' => $step
+                        'final_step' => $step,
+                        'end_time' => $end_time
                     );
 
                     $this->session->set_userdata($data);
@@ -1677,7 +1685,8 @@ class PersonalLoan extends CI_Controller
                     $data = array(
                         'cosigner_i_represent_everything_correct' => $selected,
                         'date_of_application' => $value2,
-                        'final_step' => $step
+                        'final_step' => $step,
+                        'end_time' => $end_time
                     );
 
                     $this->session->set_userdata($data);

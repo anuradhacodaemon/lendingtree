@@ -289,6 +289,9 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.current_milage" && $sort_direction == "desc") { ?> onClick="sortList('user.current_milage', 'asc')"<?php } ?> <?php if ($sort_by != "user.current_milage") { ?> onClick="sortList('user.current_milage', 'asc')"<?php } ?><?php if ($sort_by == "user.current_milage" && $sort_direction == "asc") { ?> onClick="sortList('user.current_milage', 'desc')"<?php } ?>> Current Milage</a>&nbsp;<?php if ($sort_by == "user.current_milage" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.current_milage" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
+                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.start_time" && $sort_direction == "desc") { ?> onClick="sortList('user.start_time', 'asc')"<?php } ?> <?php if ($sort_by != "user.start_time") { ?> onClick="sortList('user.start_time', 'asc')"<?php } ?><?php if ($sort_by == "user.start_time" && $sort_direction == "asc") { ?> onClick="sortList('user.start_time', 'desc')"<?php } ?>> Total Time</a>&nbsp;<?php if ($sort_by == "user.start_time" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.start_time" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
                                 <!-- <th class="column-title"><span class="nobr">View</span> -->
@@ -328,6 +331,16 @@ $visitor = $this->refinance->checklead_denied_forDomain();
                                         <td><?php echo $v['vin'] ?></td>
 
                                         <td><?php echo $v['current_milage']; ?></td>
+                                        <td><?php 
+                                        if(!empty($v['start_time']) && !empty($v['end_time'])){
+                                        $start_datetime = new DateTime($v['start_time']);
+                                        $end_datetime = new DateTime($v['end_time']);
+                                        // Calculate the difference
+                                        $time_difference = $start_datetime->diff($end_datetime);
+                                        echo $time_difference->format('%H:%I:%S');
+                                        }else{
+                                            echo 'N/A';
+                                        } ?></td>
                                         <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
         <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
                                             <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['ref_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>

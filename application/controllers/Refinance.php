@@ -30,6 +30,11 @@ class Refinance extends CI_Controller {
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
+        $start_time = date('Y-m-d H:i:s');
+        $data = array(
+            'start_time' => $start_time,
+        );
+        $this->session->set_userdata($data);
 
         $this->session->set_userdata('panel', 'frontend');
 
@@ -223,6 +228,11 @@ class Refinance extends CI_Controller {
             );
             $this->session->set_userdata($data);
         }
+        $end_time = date('Y-m-d H:i:s');
+        $data = array(
+            'end_time' => $end_time,
+        );
+        $this->session->set_userdata($data);
 
 
         unset($this->session->userdata['panel']);
@@ -288,6 +298,8 @@ class Refinance extends CI_Controller {
             $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             $this->session->userdata['i_represent_stated'] = '';
             $this->session->userdata['date_of_application'] = '';
+            $this->session->userdata['start_time'] = '';
+            $this->session->userdata['end_time'] = '';
             //redirect('/');
             echo 1;
         } /** else {

@@ -2,7 +2,7 @@
   <div class="" id="container">
     <div class="form-main home-loan score clearfix">
       <h1 class="text-head">Estimate your credit score</h1>
-      <!--<a href="" class="disclosure-sec">Disclosures</a>-->
+      <!--<a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>-->
       <div class="offer-cont">
         <a href="javascript:void(0);" onclick="home_step12(1)">
           <button class="offer-circ">

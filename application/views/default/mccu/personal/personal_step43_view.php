@@ -33,7 +33,7 @@
                           }
               ?>
               </h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <label class="control-label">I REPRESENT THAT EVERYTHING I HAVE STATED IN THIS APPLICATION IS CORRECT AND COMPLETE TO THE BEST OF MY KNOWLEDGE. YOU ARE AUTHORIZED TO CHECK MY (OUR) CREDIT HISTORY, AND TO ANSWER QUESTIONS ABOUT YOUR CREDIT HISTORY WITH ME. (US).</label>
                     <div class="row">

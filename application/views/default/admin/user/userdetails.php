@@ -149,6 +149,17 @@
                                <div class="col-sm-12"> <b>Domain: &nbsp;</b>
                                     <?php echo $userDetails[0]['domain'] ?>
                                 </div>
+                                <div class="col-sm-12"> <b>Total Time: &nbsp;</b>
+                                    <?php if(!empty($userDetails[0]['start_time']) && !empty($userDetails[0]['end_time'])){
+                                        $start_datetime = new DateTime($userDetails[0]['start_time']);
+                                        $end_datetime = new DateTime($userDetails[0]['end_time']);
+                                        // Calculate the difference
+                                        $time_difference = $start_datetime->diff($end_datetime);
+                                        echo $time_difference->format('%H:%I:%S');
+                                        }else{
+                                            echo 'N/A';
+                                        } ?>
+                                </div>
                             </div>
                             <!-- /.col -->
 

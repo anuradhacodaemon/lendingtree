@@ -33,6 +33,11 @@ class Auto extends CI_Controller {
         }
 
         $this->session->set_userdata('panel', 'frontend');
+        $start_time = date('Y-m-d H:i:s');
+        $data = array(
+            'start_time' => $start_time,
+        );
+        $this->session->set_userdata($data);
 
         $this->template->view('step1_view');
     }
@@ -219,9 +224,12 @@ class Auto extends CI_Controller {
             );
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-        //die;
+        $end_time = date('Y-m-d H:i:s');
+        $data = array(
+            'end_time' => $end_time,
+        );
+        $this->session->set_userdata($data);
+
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
@@ -250,8 +258,7 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
         unset($this->session->userdata['total_dependent']);
-        
-
+        	
         $result = $this->loan_model->add_loan($this->session->userdata());
 
         
@@ -287,6 +294,8 @@ class Auto extends CI_Controller {
             $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
             $this->session->userdata['i_represent_stated'] = '';
             $this->session->userdata['date_of_application'] = '';
+            $this->session->userdata['start_time'] = '';
+            $this->session->userdata['end_time'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {

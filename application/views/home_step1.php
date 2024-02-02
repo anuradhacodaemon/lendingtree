@@ -4,7 +4,7 @@
   <div class="container" id="container">
     <div class="form-main clearfix">
       <h1 class="text-head">What type of home loan are you looking for?</h1>
-      <!--<a href="" class="disclosure-sec">Disclosures</a>-->
+      <!--<a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>-->
       <div class="offer-cont">
         <a href="javascript:void(0);" onclick="home_step2(1)">
           <button class="offer-circ">

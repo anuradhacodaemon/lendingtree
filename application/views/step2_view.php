@@ -11,7 +11,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="form-main clearfix">
               <h1>Buying New Vehicle</h1>
-              <a href="" class="disclosure-sec">Disclosures</a>
+              <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
               <div class="clearfix"></div>
               <label class="control-label">Requested Amount</label>
                <input type="text" id="requested_amount" name="requested_amount" value="<?php if(isset($this->session->userdata['requested_amount'])) { echo '$'.number_format($this->session->userdata['requested_amount'],2); } ?>" class="form-control text-uppercase" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>

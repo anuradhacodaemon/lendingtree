@@ -3,7 +3,7 @@
   <div class="container" id="containerrefinance">
     <div class="form-main clearfix">
       <h1></h1>
-      <a href="" class="disclosure-sec">Disclosures</a>
+      <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
       <div class="clearfix"></div>
       <label class="control-label">What is the remaining balance on the 2nd mortgage?</label>
       <span id="ex6CurrentSliderValLabel" class="top-value">$ <label id="ex6SliderVal"><?php
