@@ -270,6 +270,20 @@ class Refinance extends CI_Controller {
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
 
+        $start_datetime = new DateTime($this->session->userdata['start_time']);
+        $end_datetime = new DateTime($this->session->userdata['end_time']);
+        // Calculate the difference
+        $time_difference = $start_datetime->diff($end_datetime);
+        $total_time= $time_difference->format('%H:%I:%S');
+        $data = array(
+            'total_time' => $total_time,
+        );
+        
+        $this->session->set_userdata($data);
+
+        unset($this->session->userdata['start_time']);
+        unset($this->session->userdata['end_time']);
+
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
             $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
