@@ -1942,7 +1942,7 @@ class PersonalLoan extends CI_Controller
             $time_difference = $start_datetime->diff($end_datetime);
             $total_time= $time_difference->format('%H:%I:%S');
             $data = array(
-                'total_time' => $total_time,
+                'total_time_taken_to_submit_the_application' => $total_time,
             );
             
             $this->session->set_userdata($data);

@@ -276,7 +276,7 @@ class Refinance extends CI_Controller {
         $time_difference = $start_datetime->diff($end_datetime);
         $total_time= $time_difference->format('%H:%I:%S');
         $data = array(
-            'total_time' => $total_time,
+            'total_time_taken_to_submit_the_application' => $total_time,
         );
         
         $this->session->set_userdata($data);
@@ -314,6 +314,7 @@ class Refinance extends CI_Controller {
             $this->session->userdata['date_of_application'] = '';
             $this->session->userdata['start_time'] = '';
             $this->session->userdata['end_time'] = '';
+            $this->session->userdata['total_time_taken_to_submit_the_application'] = '';
             //redirect('/');
             echo 1;
         } /** else {
