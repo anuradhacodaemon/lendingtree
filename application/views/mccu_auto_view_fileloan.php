@@ -296,7 +296,7 @@ function isJson($string) {
                         Monthly Payment : ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $userDetails['monthly_pay'] ?>
+                        <?php echo number_format($userDetails['monthly_pay'], 2, '.', ','); ?>
                     </td>
                 </tr>
                 <tr>
@@ -1264,7 +1264,7 @@ function isJson($string) {
                     Current Monthly Income ($) :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                    <?php echo $userDetails['cosigner_monthly_income_pre_tax'];  ?>
+                    <?php echo  number_format($userDetails['cosigner_monthly_income_pre_tax'], 2, '.', ',');  ?>
                     </td>
                 </tr>
                 <!--<tr>
