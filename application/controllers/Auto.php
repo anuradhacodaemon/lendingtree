@@ -91,7 +91,7 @@ class Auto extends CI_Controller {
         if($step == 2)
         {
             $rules = array(
-                array('field'=>'p_req_amt','label'=>'Requested Amount','rules'=>'required|numeric')
+                array('field'=>'p_req_amt','label'=>'Requested Amount','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -241,7 +241,7 @@ class Auto extends CI_Controller {
         if($step == 5)
         {
             $rules = array(
-                array('field'=>'address','label'=>'Home Address','rules'=>'required'),
+                array('field'=>'address','label'=>'Home Address','rules'=>'required|min_length[20]'),
                 array('field'=>'living_there_years','label'=>'Years You Have Lived Here','rules'=>'required|numeric'),
                 array('field'=>'monthly_pay','label'=>'Monthly Payment','rules'=>'required')
                 );
@@ -293,7 +293,7 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'relative_firstname','label'=>'Reference Name','rules'=>'required'),
                 array('field'=>'relative_relation','label'=>'Reference Relation','rules'=>'required'),
-                array('field'=>'relative_address','label'=>'Reference Address','rules'=>'required'),
+                array('field'=>'relative_address','label'=>'Reference Address','rules'=>'required|min_length[20]'),
                 array('field'=>'relatives_phone','label'=>'Reference Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 );
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
@@ -429,7 +429,7 @@ class Auto extends CI_Controller {
         if($step == 9)
         {
             $rules = array(
-                array('field'=>'monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required|numeric'), array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
+                array('field'=>'monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required'), array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -566,7 +566,7 @@ class Auto extends CI_Controller {
         {
             $rules = array(
                 array('field'=>'second_income_source','label'=>'List Income Source','rules'=>'required'),
-                array('field'=>'second_monthly_income','label'=>'Monthly Income From Second Source','rules'=>'required|numeric')
+                array('field'=>'second_monthly_income','label'=>'Monthly Income From Second Source','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -1040,7 +1040,7 @@ class Auto extends CI_Controller {
         if($step == 22)
         {
             $rules = array(
-                array('field'=>'cosigner_home_address','label'=>'Home Address','rules'=>'required'),
+                array('field'=>'cosigner_home_address','label'=>'Home Address','rules'=>'required|min_length[20]'),
                 array('field'=>'cosigner_living_there_years','label'=>'Years You Have Lived Here','rules'=>'required|numeric'),
                 array('field'=>'cosigner_monthly_pay','label'=>'Monthly Payment','rules'=>'required')
                 );
@@ -1119,7 +1119,7 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'cosigner_nearest_relative','label'=>'Reference Name','rules'=>'required'),
                 array('field'=>'cosigner_relationship','label'=>'Reference Relation','rules'=>'required'),
-                array('field'=>'cosigner_relatives_address','label'=>'Reference Address','rules'=>'required'),
+                array('field'=>'cosigner_relatives_address','label'=>'Reference Address','rules'=>'required|min_length[20]'),
                 array('field'=>'cosigner_relatives_phone','label'=>'Reference Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 );
 
@@ -1227,7 +1227,7 @@ class Auto extends CI_Controller {
         if($step == 25)
         {
             $rules = array(
-                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required|numeric'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
+                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -1364,7 +1364,7 @@ class Auto extends CI_Controller {
         {
             $rules = array(
                 array('field'=>'cosigner_second_income_source','label'=>'List Income Source','rules'=>'required'),
-                array('field'=>'cosigner_second_monthly_income','label'=>'Monthly Income Amount','rules'=>'required|numeric')
+                array('field'=>'cosigner_second_monthly_income','label'=>'Monthly Income Amount','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 

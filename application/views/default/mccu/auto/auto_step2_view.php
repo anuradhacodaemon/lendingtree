@@ -66,3 +66,25 @@
         
     </div>
     <!-- Banner ends here -->
+    <script> //$('input[name=amount]').val()
+
+    $(document).ready(function() {
+        $('#req_amt').on('blur', function() {
+            $("#err1").html("");
+            var value = parseInt($(this).val().replace(/[^0-9.,]/g, ''));
+            if (!isNaN(value)) 
+            {
+                value = value.toLocaleString('en-US', {  minimumFractionDigits: 2,maximumFractionDigits: 2 })
+                $(this).val(value);
+            }
+            else{
+                    $("#err1").html("Enter Number only");
+                    return false;
+                    $(this).focus();
+                }
+        });
+        //
+
+    });
+    
+</script>

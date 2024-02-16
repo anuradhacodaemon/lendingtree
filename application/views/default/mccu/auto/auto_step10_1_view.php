@@ -56,3 +56,25 @@
     </div>
 </div>
 
+<script> //$('input[name=amount]').val()
+
+$(document).ready(function() {
+    $('#second_monthly_income').on('blur', function() {
+        $("#err2").html("");
+        var value = parseInt($(this).val().replace(/[^0-9.,]/g, ''));
+        if (!isNaN(value)) 
+        {
+            value = value.toLocaleString('en-US', {  minimumFractionDigits: 2,maximumFractionDigits: 2 })
+            $(this).val(value);
+        }
+        else{
+                $("#err2").html("Enter Number only");
+                return false;
+                $(this).focus();
+            }
+    });
+    //
+
+});
+
+</script>
