@@ -97,7 +97,7 @@ function isJson($string) {
                                         <?php echo $userDetails['relation_with_relative'] ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Your Pre-tax Gross Monthly Income: &nbsp;</b>
-                                    <?php echo '$'.number_format($userDetails['employment_monthly_income']); ?>
+                                    <?php echo '$'.number_format($userDetails['employment_monthly_income'], 2, '.', ','); ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Birth Date: &nbsp;</b>
                                     <?php echo date('d-m-Y',strtotime($userDetails['p_dob'])); ?>
@@ -258,7 +258,7 @@ function isJson($string) {
                                     <?php echo $userDetails['cosigner_years_been_there'] ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Cosigner's Monthly Pay: &nbsp;</b>
-                                    <?php echo $userDetails['cosigner_monthly_pay'] ?>
+                                    <?php echo number_format($userDetails['cosigner_monthly_pay'], 2, '.', ',') ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Cosigner's Nearest Relative : &nbsp;</b>
                                     <?php echo $userDetails['cosigner_nearest_relative'] ?>
