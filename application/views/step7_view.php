@@ -24,13 +24,13 @@
                     </div>
                     
                     <div class="col-xs-12 col-sm-12 margbot_10">
-                        <p class="subtext">
+                      <!--  <p class="subtext">
                             Alimony, child support, or separate maintenance income need not be revealed if you do not wish to have it considered as a basis for repaying this obligation.
-                        </p>
+                        </p> -->
                     </div>
                     <div class="col-xs-12 col-sm-12 radio">
                         <!-- <button type="button" class="button" onclick="step8()">Submit<span class="continueIcon sprites"></span></button> -->
-                        <button type="button" class="button" onclick="step8()">Continue<span class="continueIcon sprites"></span></button>
+                        <button type="button" class="button" onclick="step9()">Continue<span class="continueIcon sprites"></span></button>
                         
 
                     </div>

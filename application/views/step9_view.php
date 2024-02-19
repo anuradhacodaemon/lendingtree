@@ -40,6 +40,17 @@
                                 It is a felony crime to lie on an application for credit.
                             </p>
                             </div>
+                                <div class="check">
+                                <div class="col-xs-12 col-sm-2 margbot_10">
+                                    <input type="checkbox" checked name="loan_insurance" value="loan_insurance"
+                                    <?php if(isset($this->session->userdata['loan_insurance'])) { if($this->session->userdata['loan_insurance']== 'Y') echo 'checked="checked"'; else echo '';}  ?>
+                                    class="form-control width_100 button" id="loan_insurance" required>
+                                    <span id="err1" style="color: red"></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 margbot_10">
+                                <a href="javascript:void(0)" class="insurance-sec">Opt In for Life Plus Protection</a>
+                                </div>
+                            </div>
                              <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 radio margtop_30">
                                 <button type="button" class="button" onclick="step10()">Continue<span class="continueIcon sprites"></span></button>
@@ -68,3 +79,8 @@ if (!empty($this->session->flashdata('item'))) {
 <?php } ?>
     });
 </script>
+<style>
+ .insurance-sec {
+    font-size: 20px;
+  }
+</style>

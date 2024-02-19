@@ -578,3 +578,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+function insurance_vsc()
+{  
+   // $("#disclosureModal").modal('show'); // Open the modal
+   swal("Life Plus Protection helps protect the credit union and your family in the unforeseen event were you to suddenly pass away while still paying off this loan.\n In this scenario, your family would inherit a clean title to your vehicle without having to pay off your outstanding debt.");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        if (event.target.matches(".insurance-sec")) {
+            // Handle the click event
+            insurance_vsc();
+        }
+    });
+});

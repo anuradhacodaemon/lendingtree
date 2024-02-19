@@ -23,7 +23,7 @@
                                 <span id="err2" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="address" placeholder="Address"
+                                <input type="text" name="address" placeholder="Home Address"
                                     value="<?php if (isset($this->session->userdata['address'])) echo $this->session->userdata['address'] ?>"
                                     class="form-control" id="auto_primary_address_id">
                                 <span id="err3" style="color: red"></span>
