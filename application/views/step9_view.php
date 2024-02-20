@@ -36,7 +36,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                            <p class="subtext" style="float:left;">
+                            <p class="subtext" style="margin-left:35px;">
                                 It is a felony crime to lie on an application for credit.
                             </p>
                             </div>
@@ -48,7 +48,7 @@
                                     <span id="err1" style="color: red"></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-8 margbot_10">
-                                <a href="javascript:void(0)" class="insurance-sec">Opt In for Life Plus Protection</a>
+                                <a href="javascript:void(0)" style="float:left;" class="insurance-sec">Opt In for Life Plus Protection</a>
                                 </div>
                             </div>
                              <div class="clearfix"></div>
@@ -84,11 +84,11 @@ if (!empty($this->session->flashdata('item'))) {
     function insurance_vsc()
 {  
    // $("#disclosureModal").modal('show'); // Open the modal
- //  swal("Life Plus Protection helps protect the credit union and your family in the unforeseen event were you to suddenly pass away while still paying off this loan.\n In this scenario, your family would inherit a clean title to your vehicle without having to pay off your outstanding debt.");
+   swal("Life Plus Protection helps protect the credit union and your family in the unforeseen event were you to suddenly pass away while still paying off this loan.\n \n In this scenario, your family would inherit a clean title to your vehicle without having to pay off your outstanding debt.");
 // Confirmation
-Swal.fire({
-  html: '<span class="swal-title">Life Plus Protection helps protect the credit union and your family in the unforeseen event were you to suddenly pass away while still paying off this loan<hr class="swal-hr--custom-color">In this scenario, your family would inherit a clean title to your vehicle without having to pay off your outstanding debt',
-})
+// Swal.fire({
+//   html: '<span class="swal-title">Life Plus Protection helps protect the credit union and your family in the unforeseen event were you to suddenly pass away while still paying off this loan<hr class="swal-hr--custom-color">In this scenario, your family would inherit a clean title to your vehicle without having to pay off your outstanding debt',
+// })
 
 }
 
@@ -116,5 +116,16 @@ Swal.fire({
 .swal2-styled.swal2-confirm {
     font-size: 16px;
 }
+.swal-text {
+  font-weight: bold;
+}
 
+@media (max-width: 767px){
+    .subtext{
+        margin-left:0 !important;
+    }
+    .insurance-sec{
+        float:none !important;
+    }
+}
 </style>
