@@ -20,7 +20,7 @@
                     </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
-                    <label class="control-label">I represent that everything i have stated in this application is
+                    <label class="control-label">I represent that everything I have stated in this application is
                         correct and complete to the best of my knowledge. you are authorized to check my (our) credit
                         history, and to answer questions about your credit history with me. (us).</label>
                     <div class="row">

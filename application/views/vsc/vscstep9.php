@@ -17,7 +17,7 @@
                                 }
                                 ?>
                            
-                   <label class="control-label">I represent that everything i have stated in this application is correct and complete to the best of my knowledge. you are authorized to check my (our) credit history, and to answer questions about your credit history with me. (us).</label>
+                   <label class="control-label">I represent that everything I have stated in this application is correct and complete to the best of my knowledge. you are authorized to check my (our) credit history, and to answer questions about your credit history with me. (us).</label>
                     <div class="row">
                         <form id="user_consnt" method="POST" onsubmit="return getFormId(this)">
                         <input type="hidden" name="auto_step" value="17" id="auto_step" >
