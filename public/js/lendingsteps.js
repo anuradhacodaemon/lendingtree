@@ -447,6 +447,8 @@ function step6() {
     var addressValue = $('input[name=address]').val();
     var addressLength = addressValue.length;
 
+    var p_auto_complete = $('input[name=p_auto_complete]').val();
+    
 
     if ($('input[name=firstname]').val() == '')
     {
@@ -493,6 +495,10 @@ function step6() {
     {
         $('#err2').html('');
 
+        if(p_auto_complete==1)
+        {
+       
+
         $.ajax({
             type: "GET",
              url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val() + '/' + $('input[name=p_city]').val() + '/' + $('input[name=p_state]').val() + '/' + $('input[name=p_zip_code]').val() + '/' + $('input[name=p_country]').val() + '/' + $('input[name=p_street_line]').val(),
@@ -502,6 +508,19 @@ function step6() {
                 $('#container').html(data);
             }
         });
+
+     }else{
+        $.ajax({
+            type: "GET",
+             url: base_url + "auto/step6/" + $('input[name=firstname]').val() + '/' + $('input[name=lastname]').val() + '/' + $('input[name=address]').val(),
+            success: function (data)
+            {
+                window.history.pushState("Details", "Title", base_url + "auto?step=6");
+                $('#container').html(data);
+            }
+        });
+
+     }
     }
 }
 

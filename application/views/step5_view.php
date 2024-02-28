@@ -28,6 +28,7 @@
                                     class="form-control" id="auto_primary_address_id">
                                 <span id="err3" style="color: red"></span>
                                 <div class="resource-container"></div>
+                                <input type="hidden" name="p_auto_complete" id="p_auto_complete"  value="0">
                             </div>
 
                             <div class="input-text">
@@ -94,7 +95,10 @@ jQuery(document).ready(function($) {
                         //console.log(data);
                         response(data);
                         if (data.length === 0) {
+                            $('#p_auto_complete').val(0);
                             $("#err3").html("No Address Found");
+                        }else{
+                                $('#p_auto_complete').val(1);
                         }
                     }
                 });

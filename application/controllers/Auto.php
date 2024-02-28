@@ -143,11 +143,11 @@ class Auto extends CI_Controller {
                 'firstname' => $firstname,
                 'lastname' => $lastname,
                 'address' => urldecode($address),
-                'city' => urldecode($city),
-                'state' => urldecode($state),
+                'city' => $city,
+                'state' => $state,
                 'zip' => $zip,
                 'country' => 'United States',
-                'street_line' => urldecode($street_line),
+                'street_line' => $street_line,
             );
 
             $this->session->set_userdata($data);
