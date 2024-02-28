@@ -67,6 +67,7 @@
                                 <input type="text" name="cosigner_relatives_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['cosigner_relatives_address'])) echo $this->session->userdata['cosigner_relatives_address'] ?>" class="form-control width_100" id="cosigner_relatives_address" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="r_resource-container"></div>
+                                <input type="hidden" name="co_r_auto_complete" id="co_r_auto_complete" >
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -125,7 +126,10 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
+                                $('#co_r_auto_complete').val(0);
                                 $("#err3").html("No Address Found");
+                            }else{
+                                $('#co_r_auto_complete').val(1);
                             }
                         }
                     });

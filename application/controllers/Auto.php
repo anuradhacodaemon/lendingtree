@@ -132,8 +132,7 @@ class Auto extends CI_Controller {
                     array('field'=>'c_years','label'=>'Year','rules'=>'required')
                  //   array('field'=>'my_dob','label'=>'Date Of Birth','rules'=>'required')
                     );
-            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');
-        
+            $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');        
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
@@ -171,7 +170,7 @@ class Auto extends CI_Controller {
                 'p_email' => form_error('p_email'),
                 'tex_driv_lic' => form_error('tex_driv_lic'),
                 'soc_sec' => form_error('soc_sec'),
-             //   'my_dob' => form_error('my_dob')
+          //      'my_dob' => form_error('my_dob')
                 'c_month' => form_error('c_month'),
                 'c_day' => form_error('c_day'),
                 'c_years' => form_error('c_years')
@@ -241,16 +240,18 @@ class Auto extends CI_Controller {
         if($step == 5)
         {
             $rules = array(
-                array('field'=>'address','label'=>'Home Address','rules'=>'required|min_length[20]'),
-                array('field'=>'living_there_years','label'=>'Years You Have Lived Here','rules'=>'required|numeric'),
-                array('field'=>'monthly_pay','label'=>'Monthly Payment','rules'=>'required')
+                array('field'=>'address','label'=>'Home Address','rules'=>'required|min_length[10]'),
+                array('field'=>'living_there_years','label'=>'How long years you are living here','rules'=>'required|numeric'),
+                array('field'=>'monthly_pay','label'=>'Monthly pay','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
+                $p_auto_complete=$this->input->post('p_auto_complete');
                 //success
                 if ($this->input->post('address')) 
                 {
+                    if($p_auto_complete==1){
                     $p_new_address = ['country' => $this->input->post('p_country'),
                                     'street_line' => $this->input->post('p_street_line'),
                                     'city' => $this->input->post('p_city'),
@@ -258,7 +259,10 @@ class Auto extends CI_Controller {
                                     'zip_code' => $this->input->post('p_zip_code')
 
                                     ];
-                    $json = json_encode($p_new_address);                
+                    $p_address_reponse = json_encode($p_new_address);    
+                }else{
+                    $p_address_reponse = $this->input->post('address');    
+                }             
                     $data = array(
                         'address_p' => $this->input->post('address'),
                         'monthly_pay' => str_replace(',', '', $this->input->post('monthly_pay')),
@@ -268,7 +272,7 @@ class Auto extends CI_Controller {
                         'p_city' => $this->input->post('p_city'),
                         'p_state' => $this->input->post('p_state'),
                         'p_zip_code' => $this->input->post('p_zip_code'),
-                        'p_address'=> $json
+                        'p_address'=> $p_address_reponse
                     );
 
                     $this->session->set_userdata($data);
@@ -293,16 +297,19 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'relative_firstname','label'=>'Reference Name','rules'=>'required'),
                 array('field'=>'relative_relation','label'=>'Reference Relation','rules'=>'required'),
-                array('field'=>'relative_address','label'=>'Reference Address','rules'=>'required|min_length[20]'),
+                array('field'=>'relative_address','label'=>'Reference Address','rules'=>'required|min_length[10]'),
                 array('field'=>'relatives_phone','label'=>'Reference Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 );
+
             $this->form_validation->set_message('exact_length', 'The {field} number field must be 10 digits.');    
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
+                $r_auto_complete=$this->input->post('r_auto_complete');
                 //success
                 if ($this->input->post('relative_firstname')) 
                 {
+                    if($r_auto_complete==1){
                     $r_new_address = ['country' => $this->input->post('r_country'),
                                     'street_line' => $this->input->post('r_street_line'),
                                     'city' => $this->input->post('r_city'),
@@ -310,13 +317,17 @@ class Auto extends CI_Controller {
                                     'zip_code' => $this->input->post('r_zip_code')
 
                                     ];
-                    $json = json_encode($r_new_address);       
+                                  
+                    $r_address_reponse = json_encode($r_new_address);     
+                }else{
+                    $r_address_reponse = $this->input->post('relative_address');    
+                }  
                     $data = array(
                         'nearest_relative' => $this->input->post('relative_firstname'),
                         'relation_with_relative' => ucfirst($this->input->post('relative_relation')),
                         'r_relatives_live_address' => $this->input->post('relative_address'),
                         'relatives_phone' => $this->input->post('relatives_phone'),
-                        'relatives_live_address' => $json,
+                        'relatives_live_address' => $r_address_reponse,
                         'r_country' => $this->input->post('r_country'),
                         'r_street_line' => $this->input->post('r_street_line'),
                         'r_city' => $this->input->post('r_city'),
@@ -429,7 +440,7 @@ class Auto extends CI_Controller {
         if($step == 9)
         {
             $rules = array(
-                array('field'=>'monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required'), array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
+                array('field'=>'monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required'),array('field'=>'total_dependent','label'=>'Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -566,7 +577,7 @@ class Auto extends CI_Controller {
         {
             $rules = array(
                 array('field'=>'second_income_source','label'=>'List Income Source','rules'=>'required'),
-                array('field'=>'second_monthly_income','label'=>'Monthly Income From Second Source','rules'=>'required')
+                array('field'=>'second_monthly_income','label'=>'Monthly Income Amount','rules'=>'required')
                 );
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
@@ -781,7 +792,7 @@ class Auto extends CI_Controller {
                     $this->session->set_userdata($data);
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=17';
+                $data['url'] = 'auto?step=18';
                 echo json_encode($data);
             }else{
                 //fail
@@ -923,7 +934,7 @@ class Auto extends CI_Controller {
                             session_destroy();
                             $data['success'] = 1;
                             $data['message'] = $ret_values['message'];
-                            $data['url'] = 'https://www.jacksoncountyteachers.com/';
+                            $data['url'] = 'https://jacksoncountyfcu.com/';
                             echo json_encode($data);
                         }
                         else{
@@ -1010,6 +1021,7 @@ class Auto extends CI_Controller {
         }
         if($step == 21)
         {
+            
             //echo $this->input->post('marital_status');
             $this->form_validation->set_rules('co_marital_status', 'Radio Button', 'required');
             //$this->form_validation->set_rules('marital_status', 'Radio Button', 'required');
@@ -1040,23 +1052,28 @@ class Auto extends CI_Controller {
         if($step == 22)
         {
             $rules = array(
-                array('field'=>'cosigner_home_address','label'=>'Home Address','rules'=>'required|min_length[20]'),
-                array('field'=>'cosigner_living_there_years','label'=>'Years You Have Lived Here','rules'=>'required|numeric'),
-                array('field'=>'cosigner_monthly_pay','label'=>'Monthly Payment','rules'=>'required')
+                array('field'=>'cosigner_home_address','label'=>'Home Address','rules'=>'required|min_length[10]'),
+                array('field'=>'cosigner_living_there_years','label'=>'How long Years You Have Lived Here','rules'=>'required|numeric'),
+                array('field'=>'cosigner_monthly_pay','label'=>'Monthly pay','rules'=>'required')
                 );
                 $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
+                $co_p_auto_complete=$this->input->post('co_p_auto_complete');
                 //success
                 if ($this->input->post('cosigner_home_address')) 
                 {
+                    if($co_p_auto_complete==1){
                     $p_new_address = ['country' => $this->input->post('co_p_country'),
                                     'street_line' => $this->input->post('co_p_street_line'),
                                     'city' => $this->input->post('co_p_city'),
                                     'state' => $this->input->post('p_state'),
                                     'zip_code' => $this->input->post('co_p_zip_code')
                                 ];
-                    $json = json_encode($p_new_address);
+                    $co_p_address_reponse = json_encode($p_new_address);
+                }else{
+                    $co_p_address_reponse = $this->input->post('cosigner_home_address');    
+                    } 
                     $data = array(
                         'p_cosigner_address' => $this->input->post('cosigner_home_address'),
                         'cosigner_monthly_pay' => str_replace(',', '', $this->input->post('cosigner_monthly_pay')),
@@ -1066,7 +1083,7 @@ class Auto extends CI_Controller {
                         'co_p_city' => $this->input->post('co_p_city'),
                         'co_p_state' => $this->input->post('co_p_state'),
                         'co_p_zip_code' => $this->input->post('co_p_zip_code'),
-                        'cosigner_address'=> $json
+                        'cosigner_address'=> $co_p_address_reponse
                     );
 
                     $this->session->set_userdata($data);
@@ -1119,7 +1136,7 @@ class Auto extends CI_Controller {
             $rules = array(
                 array('field'=>'cosigner_nearest_relative','label'=>'Reference Name','rules'=>'required'),
                 array('field'=>'cosigner_relationship','label'=>'Reference Relation','rules'=>'required'),
-                array('field'=>'cosigner_relatives_address','label'=>'Reference Address','rules'=>'required|min_length[20]'),
+                array('field'=>'cosigner_relatives_address','label'=>'Reference Address','rules'=>'required|min_length[10]'),
                 array('field'=>'cosigner_relatives_phone','label'=>'Reference Phone','rules'=>'required|exact_length[14]|regex_match[/^\(\d{3}\) \d{3}-\d{4}$/]')
                 );
 
@@ -1127,9 +1144,11 @@ class Auto extends CI_Controller {
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == true) 
             {
+                $co_r_auto_complete=$this->input->post('co_r_auto_complete');
                 //success
                 if ($this->input->post('cosigner_nearest_relative')) 
                 {
+                    if($co_r_auto_complete==1){
                     $r_new_address = ['country' => $this->input->post('cosigner_r_country'),
                                     'street_line' => $this->input->post('cosigner_r_street_line'),
                                     'city' => $this->input->post('cosigner_r_city'),
@@ -1137,13 +1156,16 @@ class Auto extends CI_Controller {
                                     'zip_code' => $this->input->post('cosigner_r_zip_code')
 
                                     ];
-                    $json = json_encode($r_new_address);       
+                    $co_r_address_reponse = json_encode($r_new_address);       
+                }else{
+                    $co_r_address_reponse = $this->input->post('cosigner_relatives_address');    
+                  }  
                     $data = array(
                         'cosigner_nearest_relative' => $this->input->post('cosigner_nearest_relative'),
                         'cosigner_relationship' => ucfirst($this->input->post('cosigner_relationship')),
-                        'cosigner_relatives_address' => $this->input->post('cosigner_relatives_address'),
+                      //  'cosigner_relatives_address' => $this->input->post('cosigner_relatives_address'),
                         'cosigner_relatives_phone' => $this->input->post('cosigner_relatives_phone'),
-                     //   'cosigner_relatives_address' => $json,
+                        'cosigner_relatives_address' => $co_r_address_reponse,
                         'cosigner_r_country' => $this->input->post('cosigner_r_country'),
                         'cosigner_r_street_line' => $this->input->post('cosigner_r_street_line'),
                         'cosigner_r_city' => $this->input->post('cosigner_r_city'),
@@ -1172,10 +1194,10 @@ class Auto extends CI_Controller {
         if($step == 24)
         {
             $rules = array(
-                array('field'=>'cosigners_employer_name','label'=>'Employer Name','rules'=>'required'),
+                array('field'=>'cosigners_employer_name','label'=>'Cosigner Employer Name','rules'=>'required'),
                 /*array('field'=>'cosigners_employer_job_title','label'=>'Cosigner Employer Job title','rules'=>'required'),
                 array('field'=>'co_supervisor_name','label'=>'Cosigner Supervisor name','rules'=>'required'),*/
-                array('field'=>'cosigners_working_years','label'=>'Years You Have Worked Here','rules'=>'required|numeric')
+                array('field'=>'cosigners_working_years','label'=>'Cosigner Working years','rules'=>'required|numeric')
                 /*array('field'=>'cosigners_business_address','label'=>'Cosigner Business address','rules'=>'required')*/
                 );
             $this->form_validation->set_rules($rules);
@@ -1227,7 +1249,7 @@ class Auto extends CI_Controller {
         if($step == 25)
         {
             $rules = array(
-                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Gross Monthly Earnings','rules'=>'required'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
+                array('field'=>'cosigner_monthly_income_pre_tax','label'=>'Cosigner Monthly Income','rules'=>'required'),array('field'=>'co_total_dependent','label'=>'Cosigner Total Dependent','rules'=>'required')
                 );
 
             $this->form_validation->set_rules($rules);
@@ -1246,7 +1268,7 @@ class Auto extends CI_Controller {
                 {
                     $data = array(
                         'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax'),
-                         'co_total_dependent' => $this->input->post('co_total_dependent')
+                        'co_total_dependent' => $this->input->post('co_total_dependent')
                     );
 
                     $this->session->set_userdata($data);
@@ -1279,7 +1301,7 @@ class Auto extends CI_Controller {
                         }
                 }
                 $data['success'] = 1;
-                $data['url'] = 'auto?step=26';
+                $data['url'] = 'auto?step=27';
                 echo json_encode($data);
             }else{
                 //fail
@@ -1657,7 +1679,7 @@ class Auto extends CI_Controller {
                         session_destroy();
                         $data['success'] = 1;
                         $data['message'] = $ret_values['message'];
-                        $data['url'] = 'https://www.jacksoncountyteachers.com/';
+                        $data['url'] = 'https://jacksoncountyfcu.com/';
                         echo json_encode($data);
                     }
                     else{
@@ -2300,10 +2322,11 @@ class Auto extends CI_Controller {
             print_r($array);exit;*/
             $coverage_response = $this->check_coverage($array);
             $array['coverage'] = $coverage_response;
-          
+
             $array = $this->unsetArrays($array);
             //
             $result = $this->AutoLoanMccu_model->add_auto_loan($array);
+	
             if($result > 0)
             {
                 $getPhone = $this->loan_model->get_phone();
@@ -2332,8 +2355,7 @@ class Auto extends CI_Controller {
                     'p_cosigner_personal_refrence_address', 'co_p_r_country', 'co_p_r_street_line', 'co_p_r_city', 'co_p_r_state', 'co_p_r_zip_code',
                     'co_cosigner_business_address', 'co_b_r_country', 'co_b_r_street_line', 'co_b_r_city', 'co_b_r_state', 'co_b_r_zip_code',
                     'cosigner_r_country', 'cosigner_r_street_line', 'cosigner_r_city', 'cosigner_r_state', 'cosigner_r_zip_code',
-                    'month', 'day', 'years','c_month', 'c_day', 'c_years',
-
+                    'month', 'day', 'years','c_month', 'c_day', 'c_years','p_auto_complete', 'r_auto_complete','co_p_auto_complete', 'co_r_auto_complete',
             ];
         if(!empty($arr))
         {
@@ -2588,7 +2610,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("JCTFCU New Digital Application");
+        $this->email->subject("JCFCU New Digital Application");
         //$this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
@@ -2672,7 +2694,7 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("JCTFCU New Digital Application");
+        $this->email->subject("JCFCU New Digital Application");
         $this->email->attach($dir . $dh);
         //$this->email->bcc('haroon.m@codaemonsoftwares.com','suraj.k@codaemonsoftwares.com');
         //this is user
@@ -2735,9 +2757,9 @@ class Auto extends CI_Controller {
         $this->load->library('email');
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
-        $this->email->to('suraj.k@codaemonsoftwares.com');
-        $this->email->subject("JCTFCU New Digital Application");
-        $this->email->message('Test Email for Server JCTFCU New Digital');
+        $this->email->to('info@jacksoncountyfcu.com,suraj.k@codaemonsoftwares.com');
+        $this->email->subject("JCFCU New Digital Application");
+        $this->email->message('Test Email for Server JCFCU');
         $emailSend = $this->email->send();
         if ($emailSend) {
             echo "from if>>";
@@ -2754,7 +2776,7 @@ class Auto extends CI_Controller {
         $this->session->sess_destroy();
         session_destroy();
         echo "session is clear now>>>";
-    } 
+    }   
 
     public function pdfLoan($id = 0) {
      
@@ -2769,6 +2791,6 @@ class Auto extends CI_Controller {
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();
         $pdf->Output('' . $name . '.pdf', 'D');
-    }  
+    }
 
 }

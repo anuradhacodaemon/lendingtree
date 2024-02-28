@@ -45,6 +45,7 @@
                                     <input type="text" name="cosigner_home_address" placeholder="Enter Home Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
                                     <span id="err1" style="color: red"></span>
                                     <div class="co_resource-container"></div>
+                                    <input type="hidden" name="co_p_auto_complete" id="co_p_auto_complete" >
                                 </div>              
                             </div>
                             <div class="input-text">
@@ -112,7 +113,10 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
+                                $('#co_p_auto_complete').val(0);
                                 $("#err1").html("No Address Found");
+                            }else{
+                                $('#co_p_auto_complete').val(1);
                             }
                         }
                     });
