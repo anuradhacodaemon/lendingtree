@@ -45,6 +45,7 @@
                                 <input type="text" name="address" placeholder="Home Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
                                 <span id="err1" style="color: red"></span>
                                 <div class="resource-container"></div>
+                                <input type="hidden" name="p_auto_complete" id="p_auto_complete" >
                             </div>                       
                         </div>
                         <div class="input-text">
@@ -111,7 +112,10 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
+                                $('#p_auto_complete').val(0);
                                 $("#err1").html("No Address Found");
+                            }else{
+                                $('#p_auto_complete').val(1);
                             }
                         }
                     });

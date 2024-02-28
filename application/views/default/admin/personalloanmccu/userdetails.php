@@ -18,7 +18,7 @@ function isJson($string) {
     <div class="page-title">
         <div class="title_left">
 
-            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/personalloanmccu' ?>" class="dark_grey">Auto-Loan Listing</a> >Details
+            <a href="<?php echo BASE_URL.'admin/dashboard' ?>" class="dark_grey">Home</a> >  <a href="<?php echo BASE_URL. 'admin/personalloanmccu' ?>" class="dark_grey">Personal-Loan Listing</a> >Details
             <h3> <small> </small></h3>
         </div>
 

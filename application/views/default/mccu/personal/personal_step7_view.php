@@ -66,6 +66,7 @@
                                 <input type="text" name="relative_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="r_resource-container"></div>
+                                <input type="hidden" name="r_auto_complete" id="r_auto_complete" >
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -124,7 +125,10 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
+                                $('#r_auto_complete').val(0);
                                 $("#err3").html("No Address Found");
+                            }else{
+                                $('#r_auto_complete').val(1);
                             }
                         }
                     });

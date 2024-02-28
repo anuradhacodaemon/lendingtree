@@ -47,6 +47,7 @@
                                 <input type="text" name="address" placeholder="Enter Your Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
                                 <span id="err1" style="color: red"></span>
                                 <div class="resource-container"></div>
+                                <input type="hidden" name="p_auto_complete" id="p_auto_complete" >
                             </div>                
                         </div>
                         <div class="input-text">
@@ -101,7 +102,7 @@
     $(document).ready(function () {
         $('#auto_primary_address_id').autocomplete({
             source: function (request, response) {
-                $("#err3").html("");
+                $("#err1").html("");
                 if (request.term !== '') {
 
                     $.ajax({
@@ -113,13 +114,16 @@
                             //console.log(data);
                             response(data);
                             if (data.length === 0) {
-                                $("#err3").html("No Address Found");
+                                $('#p_auto_complete').val(0);
+                                $("#err1").html("No Address Found");
+                            }else{
+                                $('#p_auto_complete').val(1);
                             }
                         }
                     });
                 }
                 if (request.term == '') {
-                    $("#err3").html("Please Enter address");
+                    $("#err1").html("Please Enter address");
                     return false;
                 }
             },
