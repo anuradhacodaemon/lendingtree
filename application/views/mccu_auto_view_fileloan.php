@@ -376,7 +376,7 @@ function isJson($string) {
                         Country :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $country; ?>
+                        <?php echo 'United States'; ?>
                           
                     </td>
                 </tr>
@@ -385,8 +385,14 @@ function isJson($string) {
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $city; ?>
-                          
+                        <?php $p_city=$userDetails['p_city'];
+                        
+                        if($p_city>0)
+                                                            {
+                                                          $city_data=$this->loan_model->get_city_value($p_city);
+
+                                                            echo $city_data[0]['name'];
+                                                            }?>
                     </td>
                 </tr>
                 <tr>
@@ -394,7 +400,14 @@ function isJson($string) {
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $state; ?>
+                        <?php 
+                        $p_state=$userDetails['p_state'];
+                                                            if($p_state>0)
+                                                            {
+                                                          $state_data=$this->loan_model->get_state_value($p_state);
+                        
+                                                            echo $state_data[0]['name'];
+                                                            }?>
                     </td>
                 </tr>
                 <tr>
@@ -480,7 +493,7 @@ function isJson($string) {
                         Country :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $r_country; ?>
+                        <?php echo 'United States'; ?>
                           
                     </td>
                 </tr>
@@ -489,7 +502,15 @@ function isJson($string) {
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $r_city; ?>
+                        <?php // echo $r_city;
+                         $r_city=$userDetails['r_city'];
+                        if($r_city>0)
+                        {
+                      $r_city_data=$this->loan_model->get_city_value($r_city);
+
+                        echo $r_city_data[0]['name'];
+                        }?>
+                    
                           
                     </td>
                 </tr>
@@ -498,7 +519,17 @@ function isJson($string) {
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $r_state; ?>
+                        <?php //  echo $r_state; 
+                      $r_state=$userDetails['r_state'];
+                    if($r_state>0)
+                          {
+                        $r_state_data=$this->loan_model->get_state_value($r_state);
+
+                          echo $r_state_data[0]['name'];
+                          } 
+                        
+                        
+                        ?>
                     </td>
                 </tr>
                 <tr>
@@ -1165,7 +1196,7 @@ function isJson($string) {
                         Country :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $co_country; ?>
+                    <?php echo 'United States'; ?>
                           
                     </td>
                 </tr>
@@ -1174,7 +1205,16 @@ function isJson($string) {
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $co_city; ?>
+                        <?php // echo $co_city;
+                         $co_p_city=$userDetails['co_p_city'];
+                                                if($co_p_city>0)
+                                                {
+                                              $co_p_city_data=$this->loan_model->get_city_value($co_p_city);
+            
+                                                echo $co_p_city_data[0]['name'];
+                                                }
+                        
+                        ?>
                           
                     </td>
                 </tr>
@@ -1183,7 +1223,16 @@ function isJson($string) {
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $co_state; ?>
+                        <?php // echo $co_state;
+                         $co_p_state=$userDetails['co_p_state'];
+                        if($co_p_state>0)
+                        {
+                      $co_p_state_data=$this->loan_model->get_state_value($co_p_state);
+
+                        echo $co_p_state_data[0]['name'];
+                        }
+                        
+                        ?>
                     </td>
                 </tr>
                 <tr>

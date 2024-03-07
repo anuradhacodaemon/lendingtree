@@ -951,6 +951,8 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['address']);
                         $('#err2').html(obj['error_messages']['living_there_years']);
                         $('#err3').html(obj['error_messages']['monthly_pay']);
+                        $('#err4').html(obj['error_messages']['p_state']);
+                        $('#err5').html(obj['error_messages']['p_city']);
                     }
                     if(step == 6 || step == 26)
                     {
@@ -973,6 +975,8 @@ function addCosigner(value)
                         $('#err2').html(obj['error_messages']['relative_relation']);
                         $('#err3').html(obj['error_messages']['relative_address']);
                         $('#err4').html(obj['error_messages']['relatives_phone']);
+                        $('#err5').html(obj['error_messages']['r_state']);
+                        $('#err6').html(obj['error_messages']['r_city']);
                     }
                     if(step == 8)
                     {
@@ -1207,6 +1211,8 @@ function addCosigner(value)
                         $('#err1').html(obj['error_messages']['cosigner_home_address']);
                         $('#err2').html(obj['error_messages']['cosigner_living_there_years']);
                         $('#err3').html(obj['error_messages']['cosigner_monthly_pay']);
+                        $('#err5').html(obj['error_messages']['co_p_state']);
+                        $('#err6').html(obj['error_messages']['co_p_city']);
                     }
                     if(step == 23.1)
                     {
@@ -1215,6 +1221,8 @@ function addCosigner(value)
                         $('#err2').html(obj['error_messages']['cosigner_relationship']);
                         $('#err3').html(obj['error_messages']['cosigner_relatives_address']);
                         $('#err4').html(obj['error_messages']['cosigner_relatives_phone']);
+                        $('#err5').html(obj['error_messages']['cosigner_r_state']);
+                        $('#err6').html(obj['error_messages']['cosigner_r_city']);
                     }
                     if(step == 28)
                     {

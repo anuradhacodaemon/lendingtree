@@ -57,7 +57,7 @@
                 </div>
                     
                 <div class="col-xs-12 col-sm-12 radio margtop_30">
-                    <input type="submit" value="Continue" class="button" >
+                    <input type="submit" value="Continue" class="button" id="amt_button">
                                             
                 </div>
                 </form>
@@ -88,7 +88,16 @@
                 }
         });
         //
+        $('#amt_button').click(function() {
+        var value1 = $('#p_req_amt').val();
+            if (value1==0.00||value1==0) 
+            {
 
+              $("#err1").html("Amount must be geter than zero");
+                    return false;
+                    $(this).focus();
+            } 
+       });
     });
     
 </script>
