@@ -60,7 +60,7 @@
                             foreach ($state as $k => $v) {
                                 ?> 
 
-                                <option value="<?php echo $v['id']; ?>" <?php if (isset($this->session->userdata['p_state'])) if($this->session->userdata['p_state']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
+                                <option value="<?php echo $v['id']; ?>" <?php if (isset($this->session->userdata['co_p_state'])) if($this->session->userdata['co_p_state']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
                             <?php } ?>
                         </select> 
                         <span id="err5" style="color: red"></span>
