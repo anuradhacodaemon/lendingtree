@@ -389,7 +389,7 @@ function isJson($string) {
                         
                         if($p_city>0)
                                                             {
-                                                          $city_data=$this->loan_model->get_city_value($p_city);
+                                                          $city_data=$this->Recreationalloanmccu_model->get_city_value($p_city);
                                                         
                                                             echo $city_data[0]['name'];
                                                             }?>
@@ -405,7 +405,7 @@ function isJson($string) {
                         $p_state=$userDetails['p_state'];
                                                             if($p_state>0)
                                                             {
-                                                          $state_data=$this->loan_model->get_state_value($p_state);
+                                                          $state_data=$this->Recreationalloanmccu_model->get_state_value($p_state);
                         
                                                             echo $state_data[0]['name'];
                                                             }?>
@@ -507,7 +507,7 @@ function isJson($string) {
                          $r_city=$userDetails['r_city'];
                         if($r_city>0)
                         {
-                      $r_city_data=$this->loan_model->get_city_value($r_city);
+                      $r_city_data=$this->Recreationalloanmccu_model->get_city_value($r_city);
 
                         echo $r_city_data[0]['name'];
                         }?>
@@ -523,7 +523,7 @@ function isJson($string) {
                       $r_state=$userDetails['r_state'];
                     if($r_state>0)
                           {
-                        $r_state_data=$this->loan_model->get_state_value($r_state);
+                        $r_state_data=$this->Recreationalloanmccu_model->get_state_value($r_state);
 
                           echo $r_state_data[0]['name'];
                           } 
@@ -1209,7 +1209,7 @@ function isJson($string) {
                          $co_p_city=$userDetails['co_p_city'];
                                                 if($co_p_city>0)
                                                 {
-                                              $co_p_city_data=$this->loan_model->get_city_value($co_p_city);
+                                              $co_p_city_data=$this->Recreationalloanmccu_model->get_city_value($co_p_city);
             
                                                 echo $co_p_city_data[0]['name'];
                                                 }
@@ -1227,7 +1227,7 @@ function isJson($string) {
                          $co_p_state=$userDetails['co_p_state'];
                         if($co_p_state>0)
                         {
-                      $co_p_state_data=$this->loan_model->get_state_value($co_p_state);
+                      $co_p_state_data=$this->Recreationalloanmccu_model->get_state_value($co_p_state);
 
                         echo $co_p_state_data[0]['name'];
                         }

@@ -54,7 +54,7 @@
                               <span id="err1" style="color: red"></span>
                           </div>
                           <div class="col-xs-12 col-sm-12 radio margtop_30">
-                              <input type="submit" value="Continue" class="button" >       
+                              <input type="submit" value="Continue" class="button" id="amt_button">       
                           </div>   
                       </form> 
                     </div>
@@ -84,6 +84,17 @@
                 }
         });
         //
+
+        $('#amt_button').click(function() {
+        var value1 = $('#req_amt').val();
+            if (value1==0.00||value1==0) 
+            {
+
+              $("#err1").html("Amount must be greater than zero");
+                    return false;
+                    $(this).focus();
+            } 
+       });
 
     });
     

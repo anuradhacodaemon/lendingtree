@@ -31,6 +31,8 @@
                       else{
                           echo 'Buying New Vehicle';
                           }
+
+                          $state = $this->loan_model->get_state();
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
@@ -62,11 +64,45 @@
 
                             </div>
                             <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
-                                <input type="text" name="relative_address" placeholder="Relatives Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address">
+                           <!--  <div class="col-xs-12 col-sm-6 margbot_10">
+                                <input type="text" name="relative_address" placeholder="Reference Address" value="<?php // if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="r_resource-container"></div>
                                 <input type="hidden" name="r_auto_complete" id="r_auto_complete" >
+                            </div> -->
+
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <select class="form-control width_100" style="width:auto;" name="r_state" id="r_state" onchange="get_r_city($(this).val())">
+                            <option value="">Select State</option>
+                            <?php
+                            foreach ($state as $k => $v) {
+                                ?> 
+
+                                <option value="<?php echo $v['id']; ?>" <?php if (isset($this->session->userdata['r_state'])) if($this->session->userdata['r_state']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
+                            <?php } ?>
+                        </select> 
+                        <span id="err5" style="color: red"></span>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <select class="form-control width_100" name="r_city" id="r_city" style="width:auto;">
+                            <option value="">Select City</option> 
+                            <?php
+                            foreach ($city as $k => $v) {
+
+                                ?> 
+
+                                <option value="<?php echo $v['id']; ?>"<?php if (isset($this->session->userdata['r_city'])) if($this->session->userdata['r_city']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
+                            <?php } ?>
+                        </select>
+                       <span id="err6" style="color: red"></span>
+                            </div>
+
+                            
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <input type="text" name="relative_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
+                                <span id="err3" style="color: red"></span>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -74,27 +110,28 @@
                                 <span id="err4" style="color: red"></span>
                             </div>
 
-                            <div class="clearfix"></div>
+
+                             <!--      <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <!--<label>Street</label>-->
-                                <input type="hidden" name="r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['r_street_line'])) echo $this->session->userdata['r_street_line'] ?>" class="form-control width_100" id="r_street_line" >
+                                <label>Street</label>
+                                <input type="hidden" name="r_street_line" placeholder="Street" value="<?php // if (isset($this->session->userdata['r_street_line'])) echo $this->session->userdata['r_street_line'] ?>" class="form-control width_100" id="r_street_line" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>Country</label>-->
-                                <input type="hidden" name="r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['r_country'])) echo $this->session->userdata['r_country'] ?>" class="form-control width_100" id="r_country" >
+                                <label>Country</label>
+                                <input type="hidden" name="r_country" placeholder="Country" value="<?php  // if (isset($this->session->userdata['r_country'])) echo $this->session->userdata['r_country'] ?>" class="form-control width_100" id="r_country" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>State</label>-->
-                                <input type="hidden" name="r_state" placeholder="State" value="<?php if (isset($this->session->userdata['r_state'])) echo $this->session->userdata['r_state'] ?>" class="form-control width_100" id="r_state" >
+                                <label>State</label>
+                                <input type="hidden" name="r_state" placeholder="State" value="<?php // if (isset($this->session->userdata['r_state'])) echo $this->session->userdata['r_state'] ?>" class="form-control width_100" id="r_state" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>City</label>-->
-                                <input type="hidden" name="r_city" placeholder="City" value="<?php if (isset($this->session->userdata['r_city'])) echo $this->session->userdata['r_city'] ?>" class="form-control width_100" id="r_city" >
+                                <label>City</label>
+                                <input type="hidden" name="r_city" placeholder="City" value="<?php // if (isset($this->session->userdata['r_city'])) echo $this->session->userdata['r_city'] ?>" class="form-control width_100" id="r_city" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>Zipcode</label>-->
-                                <input type="hidden" name="r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['r_zip_code'])) echo $this->session->userdata['r_zip_code'] ?>" class="form-control width_100" id="r_zip_code" >
-                            </div>
+                                <label>Zipcode</label>
+                                <input type="hidden" name="r_zip_code" placeholder="Zipcode" value="<?php // if (isset($this->session->userdata['r_zip_code'])) echo $this->session->userdata['r_zip_code'] ?>" class="form-control width_100" id="r_zip_code" >
+                            </div> -->
 
                             <div class="col-xs-12 col-sm-12 radio margtop_20">
                                 <input type="submit" value="Continue" class="button" >
@@ -110,12 +147,11 @@
 </div>
 <!-- Banner ends here -->
 <script> //$('input[name=amount]').val()
-    $(document).ready(function () {
+   /*  $(document).ready(function () {
         $('#relative_address').autocomplete({
             source: function (request, response) {
                 $("#err3").html("");
                 if (request.term !== '') {
-
                     $.ajax({
                         type: "POST",
                         url: base_url + "SmartyApi/getUsAddresses/",
@@ -141,7 +177,7 @@
             minLength: 1,
             select: function (event, ui) {
                 $('.r_resource-container').empty();
-                /*TODO future need to remove inline styles*/
+               // TODO future need to remove inline styles
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
                 $('#r_country').val('United States');
                 $('#r_street_line').val(ui.item.street_line);
@@ -153,7 +189,7 @@
             },
             focus: function (event, ui) {
                 $('.r_resource-container').empty();
-                /*TODO future need to remove inline styles*/
+              //  TODO future need to remove inline styles
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
                 $('#r_country').val('United States');
                 $('#r_street_line').val(ui.item.street_line);
@@ -181,6 +217,7 @@
 
         //
     });
+*/
 
     $('#relatives_phone').on('input', function() {
       var phoneNumber = $(this).val().replace(/\D/g, ''); // Remove all non-digit characters

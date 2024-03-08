@@ -177,7 +177,7 @@ class PersonalLoanMccu extends CI_Controller {
         $pdf = new PDF();
         $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
         $pdf->AddPage();
-        $tbl = $this->load->view('mccu_auto_view_fileloan', $data, TRUE);
+        $tbl = $this->load->view('mccu_auto_view_fileloan_personal_admin', $data, TRUE);
         $pdf->writeHTML($tbl, true, false, false, false, '');
         //$pdf->SetFont('helvetica', '', 6);
         ob_end_clean();

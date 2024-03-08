@@ -4,6 +4,64 @@ function isJson($string) {
     return json_last_error() === JSON_ERROR_NONE;
  }
 
+ $p_state=$userDetails['p_state'];
+ if($p_state>0)
+ {
+ $state_data=$this->Personalloanmccu_model->get_state_value($p_state);
+ $state_name=$state_data[0]['name'];
+ }
+
+ $p_city=$userDetails['p_city'];
+ if($p_city>0)
+ {
+ $city_data=$this->Personalloanmccu_model->get_city_value($p_city);
+ $city_name=$city_data[0]['name']; 
+ }
+        
+ 
+ $p_state=$userDetails['p_state'];
+ if($p_state>0)
+ {
+ $state_data=$this->Personalloanmccu_model->get_state_value($p_state);
+ $state_name=$state_data[0]['name'];
+ }
+
+ $p_city=$userDetails['p_city'];
+ if($p_city>0)
+ {
+ $city_data=$this->Personalloanmccu_model->get_city_value($p_city);
+ $city_name=$city_data[0]['name']; 
+ }
+
+ 
+ 
+ $r_state=$userDetails['r_state'];
+ if($r_state>0)
+ {
+ $r_state_data=$this->Personalloanmccu_model->get_state_value($r_state);
+ $r_state_name=$r_state_data[0]['name'];
+ }
+
+ $r_city=$userDetails['r_city'];
+ if($r_city>0)
+ {
+ $r_city_data=$this->Personalloanmccu_model->get_city_value($r_city);
+ $r_city_name=$r_city_data[0]['name']; 
+ }     
+ 
+ $co_p_state=$userDetails['co_p_state'];
+ if($co_p_state>0)
+ {
+ $co_p_state_data=$this->Personalloanmccu_model->get_state_value($co_p_state);
+ $co_p_state_name=$co_p_state_data[0]['name'];
+ }
+
+ $co_p_city=$userDetails['co_p_city'];
+ if($co_p_city>0)
+ {
+ $co_p_city_data=$this->Personalloanmccu_model->get_city_value($co_p_city);
+ $co_p_city_name=$co_p_city_data[0]['name']; 
+ }     
 ?>
   
 <div class="row">
@@ -122,13 +180,13 @@ function isJson($string) {
                                     ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Country: &nbsp;</b>
-                                    <?php echo $country; ?>
+                                    <?php echo 'United States'; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>State: &nbsp;</b>
-                                    <?php echo $state; ?>
+                                    <?php echo $state_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>City: &nbsp;</b>
-                                    <?php echo $city; ?>
+                                    <?php echo $city_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
                                     <?php echo $zipcode; ?>
@@ -163,13 +221,13 @@ function isJson($string) {
                                     ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Country: &nbsp;</b>
-                                    <?php echo $country; ?>
+                                    <?php echo 'United States'; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>State: &nbsp;</b>
-                                    <?php echo $state; ?>
+                                    <?php echo $r_state_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>City: &nbsp;</b>
-                                    <?php echo $city; ?>
+                                    <?php echo $r_city_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
                                     <?php echo $zipcode; ?>
@@ -286,13 +344,13 @@ function isJson($string) {
                                     ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Country: &nbsp;</b>
-                                    <?php echo $country; ?>
+                                    <?php echo 'United States'; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>State: &nbsp;</b>
-                                    <?php echo $state; ?>
+                                    <?php echo $co_p_state_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>City: &nbsp;</b>
-                                    <?php echo $city; ?>
+                                    <?php echo $co_p_city_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
                                     <?php echo $zipcode; ?>

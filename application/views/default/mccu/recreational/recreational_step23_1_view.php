@@ -31,6 +31,8 @@
                       else{
                           echo 'Buying New Vehicle';
                           }
+
+                          $state = $this->loan_model->get_state();
               ?>
               </h1>
                     <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
@@ -62,11 +64,44 @@
 
                             </div>
                             <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <!--   <div class="col-xs-12 col-sm-6 margbot_10">
                                 <input type="text" name="cosigner_relatives_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['cosigner_relatives_address'])) echo $this->session->userdata['cosigner_relatives_address'] ?>" class="form-control width_100" id="cosigner_relatives_address" >
                                 <span id="err3" style="color: red"></span>
                                 <div class="r_resource-container"></div>
                                 <input type="hidden" name="co_r_auto_complete" id="co_r_auto_complete" >
+                            </div> -->
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <select class="form-control width_100" style="width:auto;" name="cosigner_r_state" id="cosigner_r_state" onchange="get_co_r_city($(this).val())">
+                            <option value="">Select State</option>
+                            <?php
+                            foreach ($state as $k => $v) {
+                                ?> 
+
+                                <option value="<?php echo $v['id']; ?>" <?php if (isset($this->session->userdata['cosigner_r_state'])) if($this->session->userdata['cosigner_r_state']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
+                            <?php } ?>
+                        </select> 
+                        <span id="err5" style="color: red"></span>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <select class="form-control width_100" name="cosigner_r_city" id="cosigner_r_city" style="width:auto;">
+                            <option value="">Select City</option> 
+                            <?php
+                            foreach ($city as $k => $v) {
+
+                                ?> 
+
+                                <option value="<?php echo $v['id']; ?>"<?php if (isset($this->session->userdata['cosigner_r_city'])) if($this->session->userdata['cosigner_r_city']==$v['id']) echo 'selected'; ?>><?php echo $v['name']; ?></option> 
+                            <?php } ?>
+                        </select>
+                       <span id="err6" style="color: red"></span>
+                            </div>
+
+                            
+                            <div class="col-xs-12 col-sm-6 margbot_10">
+                            <input type="text" name="cosigner_relatives_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['cosigner_relatives_address'])) echo $this->session->userdata['cosigner_relatives_address'] ?>" class="form-control width_100" id="cosigner_relatives_address" >
+                                <span id="err3" style="color: red"></span>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -74,27 +109,28 @@
                                 <span id="err4" style="color: red"></span>
                             </div>
 
-                            <div class="clearfix"></div>
+
+                           <!--    <div class="clearfix"></div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <!--<label>Street</label>-->
-                                <input type="hidden" name="cosigner_r_street_line" placeholder="Street" value="<?php if (isset($this->session->userdata['cosigner_r_street_line'])) echo $this->session->userdata['cosigner_r_street_line'] ?>" class="form-control width_100" id="cosigner_r_street_line" >
+                                <label>Street</label>
+                                <input type="hidden" name="cosigner_r_street_line" placeholder="Street" value="<?php // if (isset($this->session->userdata['cosigner_r_street_line'])) echo $this->session->userdata['cosigner_r_street_line'] ?>" class="form-control width_100" id="cosigner_r_street_line" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>Country</label>-->
-                                <input type="hidden" name="cosigner_r_country" placeholder="Country" value="<?php if (isset($this->session->userdata['cosigner_r_country'])) echo $this->session->userdata['cosigner_r_country'] ?>" class="form-control width_100" id="cosigner_r_country" >
+                                <label>Country</label>
+                                <input type="hidden" name="cosigner_r_country" placeholder="Country" value="<?php // if (isset($this->session->userdata['cosigner_r_country'])) echo $this->session->userdata['cosigner_r_country'] ?>" class="form-control width_100" id="cosigner_r_country" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>State</label>-->
-                                <input type="hidden" name="cosigner_r_country" placeholder="State" value="<?php if (isset($this->session->userdata['cosigner_r_country'])) echo $this->session->userdata['cosigner_r_country'] ?>" class="form-control width_100" id="cosigner_r_country" >
+                                <label>State</label>
+                                <input type="hidden" name="cosigner_r_state" placeholder="State" value="<?php // if (isset($this->session->userdata['cosigner_r_state'])) echo $this->session->userdata['cosigner_r_state'] ?>" class="form-control width_100" id="cosigner_r_state" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>City</label>-->
-                                <input type="hidden" name="cosigner_r_city" placeholder="City" value="<?php if (isset($this->session->userdata['cosigner_r_city'])) echo $this->session->userdata['cosigner_r_city'] ?>" class="form-control width_100" id="cosigner_r_city" >
+                                <label>City</label>
+                                <input type="hidden" name="cosigner_r_city" placeholder="City" value="<?php // if (isset($this->session->userdata['cosigner_r_city'])) echo $this->session->userdata['cosigner_r_city'] ?>" class="form-control width_100" id="cosigner_r_city" >
                             </div>
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                                <!--<label>Zipcode</label>-->
-                                <input type="hidden" name="cosigner_r_zip_code" placeholder="Zipcode" value="<?php if (isset($this->session->userdata['cosigner_r_zip_code'])) echo $this->session->userdata['cosigner_r_zip_code'] ?>" class="form-control width_100" id="cosigner_r_zip_code" >
-                            </div>
+                                <label>Zipcode</label>
+                                <input type="hidden" name="cosigner_r_zip_code" placeholder="Zipcode" value="<?php // if (isset($this->session->userdata['cosigner_r_zip_code'])) echo $this->session->userdata['cosigner_r_zip_code'] ?>" class="form-control width_100" id="cosigner_r_zip_code" >
+                            </div> -->
 
                             <div class="col-xs-12 col-sm-12 radio margtop_20">
                                 <input type="submit" value="Continue" class="button" >
@@ -110,7 +146,7 @@
 </div>
 <!-- Banner ends here -->
 <script> //$('input[name=amount]').val()
-    $(document).ready(function () {
+/*   $(document).ready(function () {
         $('#cosigner_relatives_address').autocomplete({
             source: function (request, response) {
                 $("#err3").html("");
@@ -141,7 +177,7 @@
             minLength: 1,
             select: function (event, ui) {
                 $('.cosigner_r_resource-container').empty();
-                /*TODO future need to remove inline styles*/
+               // TODO future need to remove inline styles
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
                 $('#cosigner_r_country').val('United States');
                 $('#cosigner_r_street_line').val(ui.item.street_line);
@@ -153,7 +189,7 @@
             },
             focus: function (event, ui) {
                 $('.cosigner_r_resource-container').empty();
-                /*TODO future need to remove inline styles*/
+               // TODO future need to remove inline styles
                 let addr = ui.item.street_line + ' ' + ui.item.city + ' ' + ui.item.state + ' ' + ui.item.zipcode;    
                 $('#cosigner_r_country').val('United States');
                 $('#cosigner_r_street_line').val(ui.item.street_line);
@@ -180,7 +216,7 @@
         };
 
         //
-    });
+    });  */
 
     $('#cosigner_relatives_phone').on('input', function() {
       var phoneNumber = $(this).val().replace(/\D/g, ''); // Remove all non-digit characters

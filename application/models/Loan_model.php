@@ -40,6 +40,26 @@ class Loan_model extends CI_Model {
         return $result->result_array();
     }
 
+    public function get_city_value($city_id = 0) {
+        //$this->db->select('id,name');
+                $this->db->from(CITY);
+                $this->db->where('id', $city_id);
+                $result = $this->db->get();
+                //echo $this->db->last_query();
+        
+                return $result->result_array();
+            }
+       
+    public function get_state_value($state_id = 0) {
+        //$this->db->select('id,name');
+                $this->db->from(STATE);
+                $this->db->where('id', $state_id);
+                $result = $this->db->get();
+                //echo $this->db->last_query();
+        
+                return $result->result_array();
+            } 
+
     public function add_loan($logData) {
 
         ///$this->db->select('lend_id');

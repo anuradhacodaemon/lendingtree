@@ -96,19 +96,112 @@ if (!empty($this->session->flashdata('item'))) {
             success: function (data)
             {
                 var len = data.length;
-                 $('#city').prop('disabled',false);
+                 $('#p_city').prop('disabled',false);
 
                 if (JSON.parse(data) == '') {
-                    $('#city').prop('disabled', 'disabled');
+                    $('#p_city').prop('disabled', 'disabled');
                     // array empty or does not exist
                 }
                 
                   
                 
                 //$("#city").empty();
-                $("#city").html("<option value=''>Select City</option>");
+                $("#p_city").html("<option value=''>Select City</option>");
                 $.each(JSON.parse(data), function (key, value) {
-                    $('select[name="city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                    $('select[name="p_city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    }
+
+        function get_r_city(id) {
+        // alert("<?php echo BASE_URL; ?>auto/getcity/" +  id);
+        $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+        $('#err4').html('');
+
+        $.ajax({
+            type: "GET",
+            url: "<?php echo BASE_URL; ?>auto/getcity/" + id,
+            success: function (data)
+            {
+                var len = data.length;
+                 $('#r_city').prop('disabled',false);
+
+                if (JSON.parse(data) == '') {
+                    $('#r_city').prop('disabled', 'disabled');
+                    // array empty or does not exist
+                }
+                
+                  
+                
+                //$("#city").empty();
+                $("#r_city").html("<option value=''>Select City</option>");
+                $.each(JSON.parse(data), function (key, value) {
+                    $('select[name="r_city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    }
+
+            function get_co_p_city(id) {
+        // alert("<?php echo BASE_URL; ?>auto/getcity/" +  id);
+        $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+        $('#err4').html('');
+
+        $.ajax({
+            type: "GET",
+            url: "<?php echo BASE_URL; ?>auto/getcity/" + id,
+            success: function (data)
+            {
+                var len = data.length;
+                 $('#co_p_city').prop('disabled',false);
+
+                if (JSON.parse(data) == '') {
+                    $('#co_p_city').prop('disabled', 'disabled');
+                    // array empty or does not exist
+                }
+                
+                  
+                
+                //$("#city").empty();
+                $("#co_p_city").html("<option value=''>Select City</option>");
+                $.each(JSON.parse(data), function (key, value) {
+                    $('select[name="co_p_city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    }
+
+            function get_co_r_city(id) {
+        // alert("<?php echo BASE_URL; ?>auto/getcity/" +  id);
+        $('#err1').html('');
+        $('#err2').html('');
+        $('#err3').html('');
+        $('#err4').html('');
+
+        $.ajax({
+            type: "GET",
+            url: "<?php echo BASE_URL; ?>auto/getcity/" + id,
+            success: function (data)
+            {
+                var len = data.length;
+                 $('#cosigner_r_city').prop('disabled',false);
+
+                if (JSON.parse(data) == '') {
+                    $('#cosigner_r_city').prop('disabled', 'disabled');
+                    // array empty or does not exist
+                }
+                
+                  
+                
+                //$("#city").empty();
+                $("#cosigner_r_city").html("<option value=''>Select City</option>");
+                $.each(JSON.parse(data), function (key, value) {
+                    $('select[name="cosigner_r_city"]').append('<option value="' + value.id + '">' + value.name + '</option>');
                 });
             }
         });
