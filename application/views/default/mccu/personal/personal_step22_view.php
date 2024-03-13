@@ -53,8 +53,15 @@
                                 </div>              
                             </div> -->
                             <div class="input-text">
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                            <input type="text" name="cosigner_home_address" placeholder="Home Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
+                                <div class="resource-container"></div>
+                            </div>                
+                        </div>
+
+                            <div class="input-text">
                         <div class="col-xs-12 col-sm-6 margbot_10">
-                        <select class="form-control width_100" style="width:auto;" name="co_p_state" id="co_p_state" onchange="get_co_p_city($(this).val())">
+                        <select class="form-control" style="max-width: 100%;" name="co_p_state" id="co_p_state" onchange="get_co_p_city($(this).val())">
                             <option value="">Select State</option>
                             <?php
                             foreach ($state as $k => $v) {
@@ -69,7 +76,7 @@
 
                         <div class="input-text">
                         <div class="col-xs-12 col-sm-6 margbot_10">
-                        <select class="form-control width_100" name="co_p_city" id="co_p_city" style="width:auto;">
+                        <select class="form-control" name="co_p_city" id="co_p_city" style="max-width: 100%;">
                             <option value="">Select City</option> 
                             <?php
                             foreach ($city as $k => $v) {
@@ -85,7 +92,8 @@
 
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                            <input type="text" name="cosigner_home_address" placeholder="Home Address" value="<?php if (isset($this->session->userdata['p_cosigner_address'])) echo $this->session->userdata['p_cosigner_address'] ?>" class="form-control width_100" id="cosigner_home_address" >
+                                <input type="text" name="co_p_zip" placeholder="Enter Your Zip Code" value="<?php if (isset($this->session->userdata['co_p_zip'])) echo $this->session->userdata['co_p_zip'] ?>" class="form-control width_100" id="co_p_zip" >
+                                <span id="err7" style="color: red"></span>
                                 <div class="resource-container"></div>
                             </div>                
                         </div>
@@ -129,7 +137,7 @@
                             </div> -->
                         
                             <div class="col-xs-12 col-sm-12 radio margtop_20">
-                                <button type="submit" class="button">Continue<span class="continueIcon sprites"></span></button>
+                                <button type="submit" class="button" id="continue_button">Continue<span class="continueIcon sprites"></span></button>
                             </div>
                         </form>  
                         </div>
@@ -235,5 +243,36 @@
         $(this).val(input);
         });
     });
+    function validateZip(value) {
+            var isValidZip = /^[0-9.,]+$/.test(value) && /^\d{5}(-\d{4})?$/.test(value);
+            return isValidZip;
+        }
+
+
+        $('#continue_button').click(function() {
+
+
+
+        var isDisabled = $("#co_p_city").prop("disabled");
+                if (!isDisabled) {
+                    var city_value = $('#co_p_city').val();
+                    if (city_value=="")
+                    {
+                        $("#err6").html("Please Select City");
+                        return false;
+                    }
+                } 
+
+var value1 = $('#co_p_zip').val();
+if (validateZip(value1)) {
+    $("#err7").html("");
+    } else {
+        $("#err7").html("Invalid US zip code. Please enter a valid zip code");
+        return false;
+    }
+
+
+    
+});
     
 </script>

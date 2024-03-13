@@ -73,8 +73,14 @@
                                 <input type="hidden" name="r_auto_complete" id="r_auto_complete" >
                             </div> -->
 
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                            <input type="text" name="relative_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
+                                <span id="err3" style="color: red"></span>
+                            </div>
+
+
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <select class="form-control width_100" style="width:auto;" name="r_state" id="r_state" onchange="get_r_city($(this).val())">
+                            <select class="form-control" style="max-width: 100%;" name="r_state" id="r_state" onchange="get_r_city($(this).val())">
                             <option value="">Select State</option>
                             <?php
                             foreach ($state as $k => $v) {
@@ -88,7 +94,7 @@
 
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <select class="form-control width_100" name="r_city" id="r_city" style="width:auto;">
+                            <select class="form-control" name="r_city" id="r_city" style="max-width: 100%;">
                             <option value="">Select City</option> 
                             <?php
                             foreach ($city as $k => $v) {
@@ -101,11 +107,10 @@
                        <span id="err6" style="color: red"></span>
                             </div>
 
-                            
                             <div class="col-xs-12 col-sm-6 margbot_10">
-                            <input type="text" name="relative_address" placeholder="Reference Address" value="<?php if (isset($this->session->userdata['r_relatives_live_address'])) echo $this->session->userdata['r_relatives_live_address'] ?>" class="form-control width_100" id="relative_address" >
-                                <span id="err3" style="color: red"></span>
-                            </div>
+                                    <input type="text" name="r_zip" placeholder="Enter Your Zip Code" value="<?php if (isset($this->session->userdata['r_zip'])) echo $this->session->userdata['r_zip'] ?>" class="form-control width_100" id="r_zip" >
+                                <span id="err7" style="color: red"></span>
+                            </div>   
 
 
                             <div class="col-xs-12 col-sm-6 margbot_10">
@@ -137,7 +142,7 @@
                             
 
                             <div class="col-xs-12 col-sm-12 radio margtop_20">
-                                <input type="submit" value="Continue" class="button" >
+                                <input type="submit" value="Continue" class="button" id="continue_button" >
                                             
                             </div>   
                         </div>
@@ -230,5 +235,36 @@
         console.log('invalid');
       }
     });
+
+
+    function validateZip(value) {
+            var isValidZip = /^[0-9.,]+$/.test(value) && /^\d{5}(-\d{4})?$/.test(value);
+            return isValidZip;
+        }
+
+
+    $('#continue_button').click(function() {
+
+var isDisabled = $("#r_city").prop("disabled");
+        if (!isDisabled) {
+            var city_value = $('#r_city').val();
+            if (city_value=="")
+            {
+                $("#err6").html("Please Select City");
+                return false;
+            }
+        } 
+
+var value1 = $('#r_zip').val();
+if (validateZip(value1)) {
+    $("#err7").html("");
+    } else {
+        $("#err7").html("Invalid US zip code. Please enter a valid zip code");
+        return false;
+    }
+
+
+    
+});
 
 </script>

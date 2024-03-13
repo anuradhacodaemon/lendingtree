@@ -228,7 +228,7 @@ class RecreationalLoan extends CI_Controller
                        // 'p_street_line' => $this->input->post('p_street_line'),
                         'p_city' => $this->input->post('p_city'),
                         'p_state' => $this->input->post('p_state'),
-                      //  'p_zip_code' => $this->input->post('p_zip_code'),
+                        'p_zip' => $this->input->post('p_zip'),
                         'p_address'=> $p_address_reponse
                     );
 
@@ -311,7 +311,7 @@ class RecreationalLoan extends CI_Controller
                        // 'r_street_line' => $this->input->post('r_street_line'),
                         'r_city' => $this->input->post('r_city'),
                         'r_state' => $this->input->post('r_state'),
-                       // 'r_zip_code' => $this->input->post('r_zip_code')
+                        'r_zip' => $this->input->post('r_zip')
                     );
 
                     $this->session->set_userdata($data);
@@ -1044,7 +1044,7 @@ class RecreationalLoan extends CI_Controller
                      //   'co_p_street_line' => $this->input->post('co_p_street_line'),
                         'co_p_city' => $this->input->post('co_p_city'),
                         'co_p_state' => $this->input->post('co_p_state'),
-                       // 'co_p_zip_code' => $this->input->post('co_p_zip_code'),
+                        'co_p_zip' => $this->input->post('co_p_zip'),
                         'cosigner_address'=> $co_p_address_reponse
                     );
 
@@ -1127,7 +1127,7 @@ class RecreationalLoan extends CI_Controller
                      //   'cosigner_r_street_line' => $this->input->post('cosigner_r_street_line'),
                         'cosigner_r_city' => $this->input->post('cosigner_r_city'),
                         'cosigner_r_state' => $this->input->post('cosigner_r_state'),
-                        //'cosigner_r_zip_code' => $this->input->post('cosigner_r_zip_code')
+                        'cosigner_r_zip' => $this->input->post('cosigner_r_zip')
                     );
 
                     $this->session->set_userdata($data);

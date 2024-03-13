@@ -415,7 +415,7 @@ function isJson($string) {
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $zipcode; ?>
+                        <?php echo $userDetails['p_zip']; ?>
                     </td>
                 </tr>
             </table>
@@ -537,7 +537,7 @@ function isJson($string) {
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $r_zipcode; ?>
+                    <?php echo $userDetails['r_zip']; ?>
                     </td>
                 </tr>
                 
@@ -1240,7 +1240,7 @@ function isJson($string) {
                         Zip Code :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php echo $co_zipcode; ?>
+                        <?php echo $userDetails['co_p_zip']; ?>
                     </td>
                 </tr>
                 </table>
