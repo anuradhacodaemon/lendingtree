@@ -90,13 +90,21 @@
         //
         $('#amt_button').click(function() {
         var value1 = $('#p_req_amt').val();
-            if (value1==0.00||value1==0) 
+        var containsOnlyNumbers = /^[0-9.,]+$/.test(value1);
+        if (containsOnlyNumbers) {
+                if (value1==0.00||value1==0) 
             {
 
-              $("#err1").html("Amount must be geter than zero");
-                    return false;
-                    $(this).focus();
-            } 
+               $("#err1").html("Amount must be geter than zero");
+                     return false;
+                     $(this).focus();
+             } 
+        } else {
+          $("#err1").html("Only Numbers are allowed.");
+              return false;
+
+        }
+            
        });
     });
     

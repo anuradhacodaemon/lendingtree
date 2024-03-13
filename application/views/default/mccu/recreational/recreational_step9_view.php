@@ -95,3 +95,22 @@ $(document).ready(function() {
 });
 
 </script>
+<style>
+    .error-message {
+        color: red;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        visibility: hidden; /* Initially hide error messages */
+    }
+
+    .form-section {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .optional-file {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
