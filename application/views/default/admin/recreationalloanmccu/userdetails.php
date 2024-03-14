@@ -188,7 +188,7 @@ function isJson($string) {
                                     <?php echo $city_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
-                                    <?php echo $zipcode; ?>
+                                <?php echo $userDetails['p_zip'] ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Domain: &nbsp;</b>
                                     <?php echo $userDetails['domain'] ?>
@@ -229,7 +229,7 @@ function isJson($string) {
                                     <?php echo $r_city_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
-                                    <?php echo $zipcode; ?>
+                                <?php echo $userDetails['r_zip']; ?>
                                 </div>
                                 <div class="col-sm-12"><b>Personal Reference Phone: &nbsp</b>
                                         <?php echo $userDetails['personal_refrence_phone'] ?>
@@ -352,7 +352,7 @@ function isJson($string) {
                                     <?php echo $co_p_city_name; ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Zipcode: &nbsp;</b>
-                                    <?php echo $zipcode; ?>
+                                <?php echo $userDetails['co_p_zip']; ?>
                                 </div>
                             </div>
                             <!-- /.col -->

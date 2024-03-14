@@ -967,9 +967,9 @@ function addCosigner(value)
                 if(step == 5)
                 {
                     //alert('you are in 5');
-                    $('#err1').html(obj['error_messages']['monthly_pay']);
+                    $('#err3').html(obj['error_messages']['monthly_pay']);
                     $('#err2').html(obj['error_messages']['living_there_years']);
-                    $('#err3').html(obj['error_messages']['address']);
+                    $('#err1').html(obj['error_messages']['address']);
                     $('#err4').html(obj['error_messages']['p_state']);
                     $('#err5').html(obj['error_messages']['p_city']);
                 }

@@ -52,8 +52,16 @@
                             </div>                
                         </div> -->
                         <div class="input-text">
+                            <div class="col-xs-12 col-sm-12 margbot_10">
+                                <input type="text" name="address" placeholder="Enter Your Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
+                                <span id="err1" style="color: red"></span>
+                                <div class="resource-container"></div>
+                            </div>                
+                        </div>
+
+                        <div class="input-text">
                         <div class="col-xs-12 col-sm-6 margbot_10">
-                        <select class="form-control width_100" style="width:auto;" name="p_state" id="p_state" onchange="get_city($(this).val())">
+                        <select class="form-control" style="max-width: 100%;" name="p_state" id="p_state" onchange="get_city($(this).val())">
                             <option value="">Select State</option>
                             <?php
                             foreach ($state as $k => $v) {
@@ -68,7 +76,7 @@
 
                         <div class="input-text">
                         <div class="col-xs-12 col-sm-6 margbot_10">
-                        <select class="form-control width_100" name="p_city" id="p_city" style="width:auto;">
+                        <select class="form-control" name="p_city" id="p_city" style="max-width: 100%;">
                             <option value="">Select City</option> 
                             <?php
                             foreach ($city as $k => $v) {
@@ -84,8 +92,8 @@
 
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
-                                <input type="text" name="address" placeholder="Enter Your Address" value="<?php if (isset($this->session->userdata['address_p'])) echo $this->session->userdata['address_p'] ?>" class="form-control width_100" id="auto_primary_address_id" >
-                                <span id="err1" style="color: red"></span>
+                                <input type="text" name="p_zip" placeholder="Enter Your Zip Code" value="<?php if (isset($this->session->userdata['p_zip'])) echo $this->session->userdata['p_zip'] ?>" class="form-control width_100" id="p_zip" >
+                                <span id="err6" style="color: red"></span>
                                 <div class="resource-container"></div>
                             </div>                
                         </div>
@@ -93,7 +101,7 @@
                         <div class="input-text">
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text" name="monthly_pay" placeholder="Monthly Payment" value="<?php if (isset($this->session->userdata['monthly_pay'])) echo $this->session->userdata['monthly_pay'] ?>" class="form-control width_100" id="monthly_pay_auto" >
-                                <span id="err1" style="color: red"></span>
+                                <span id="err3" style="color: red"></span>
                             </div>
                             <div class="col-xs-12 col-sm-12 margbot_10">
                                 <input type="text" name="living_there_years" pattern="(?!0$)([1-9]\d?|0[1-9])" placeholder="Years You Have Lived Here" value="<?php if (isset($this->session->userdata['p_years_been_there_on_address'])) echo $this->session->userdata['p_years_been_there_on_address'] ?>" class="form-control width_100" id="living_there_years" >
@@ -127,7 +135,7 @@
                         </div> -->
                         
                             <div class="col-xs-12 col-sm-12 radio margtop_20">
-                                <button type="submit" class="button">Continue<span class="continueIcon sprites"></span></button>
+                                <button type="submit" class="button"  id="continue_button" >Continue<span class="continueIcon sprites"></span></button>
                             </div>   
                         </form>
                         </div>
@@ -232,7 +240,34 @@
         $(this).val(input);
         });
     });
+    function validateZip(value) {
+            var isValidZip = /^[0-9.,]+$/.test(value) && /^\d{5}(-\d{4})?$/.test(value);
+            return isValidZip;
+        }
     
+    $('#continue_button').click(function() {
+
+        var isDisabled = $("#p_city").prop("disabled");
+                if (!isDisabled) {
+                    var city_value = $('#p_city').val();
+                    if (city_value=="")
+                    {
+                        $("#err5").html("Please Select City");
+                        return false;
+                    }
+                } 
+
+            var value1 = $('#p_zip').val();
+            if (validateZip(value1)) {
+                $("#err6").html("");
+                } else {
+                    $("#err6").html("Invalid US zip code. Please enter a valid zip code");
+                    return false;
+                }
+
+
+    
+});
 </script>
 
 
