@@ -88,7 +88,7 @@ input:focus {
   padding: 0;
 }
 .number a {
-  color: #8f846f;
+  color: #6FA8DC;
   font-size: 17px;
   line-height: 40px;
 }
@@ -100,7 +100,7 @@ input:focus {
 }
 .banner-main {
   /* background: url("../img/banner-new.jpg") no-repeat 50% 50% / cover; */
-  background: url("../img/1.jpg") no-repeat 50% 30% / cover;
+  background: url("../img/ufcw23.jpg") no-repeat 50% 30% / cover;
   position: relative;
   min-height: calc(80vh - 100px);
   display: flex;
@@ -149,8 +149,8 @@ input:focus {
   padding: 5px 8px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #654040;
-  background-color:  #654040;
+  border: 2px solid #013567;
+  background-color:  #013567;
   /* border: 2px solid #8f846f;
   background: #8f846f; */
 }
@@ -159,7 +159,8 @@ input:focus {
 }
 .offer-cont > a:hover .offer-circ .outer-circ .inner-bevel .second-bevel {
   /* background: #333; */
-  background-color: #b79090;
+  background-color: #6FA8DC
+;
   color: #fff;
 }
 .offer-cont .offer-circ .outer-circ .inner-bevel .second-bevel .offer-img {
@@ -261,8 +262,8 @@ input:focus {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #654040;
-  background: #654040;
+  border: 2px solid #013567;
+  background: #013567;
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -279,11 +280,12 @@ input:focus {
 .btn-calc.status,
 .radio .button.status {
   /* background: #8f846f; */
-  background-color: #654040b3;
+  background-color: #16537E;
 }
 .radio .button:hover {
   /* background: #333; */
-  background-color: #b79090;
+  background-color: #6FA8DC
+;
   color: #fff;
 }
 .calculator-main {
@@ -322,7 +324,7 @@ input:focus {
   margin-bottom: 30px;
 }
 .prod-sec a {
-  color: #8f846f;
+  color: #6FA8DC;
   text-decoration: none;
 }
 .prod-sec .prodicon {
@@ -338,7 +340,7 @@ input:focus {
 .prod-sec a .prodname {
   font-size: 15px;
   text-align: center;
-  color: #8f846f;
+  color: #6FA8DC;
   padding-top: 10px;
 }
 .prod-sec a .outerborder {
@@ -347,7 +349,7 @@ input:focus {
   width: 120px;
   height: 120px;
   line-height: 116px;
-  border: 7px solid #8f846f;
+  border: 7px solid #6FA8DC;
   -webkit-border-radius: 100px;
   -o-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -365,7 +367,7 @@ input:focus {
   line-height: 110px;
 }
 .quicklinks-main {
-  background: #8f846f url("../img/bg-footer.png") 50% 100% no-repeat;
+  background: #6FA8DC url("../img/bg-footer.png") 50% 100% no-repeat;
   padding: 40px 0;
   text-align: center;
   display: none;
@@ -411,7 +413,7 @@ input:focus {
   transform: translate3d(0, 0, 0);
 }
 .click-box.effect-sadie:hover i {
-  fill: #8f846f;
+  fill: #6FA8DC;
   transform: translate3d(0, -50%, 0) translate3d(0, -15px, 0);
 }
 .click-box.effect-sadie:hover h5 {
@@ -466,7 +468,7 @@ input:focus {
 .click-box.effect-sadie h5 {
   transition: transform 0.35s, color 0.35s;
   transform: translate3d(0, 0, 0);
-  color: #8f846f;
+  color: #6FA8DC;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -484,8 +486,8 @@ input:focus {
 }
 .blue {
   background: 0 0;
-  color: #8f846f !important;
-  fill: #8f846f;
+  color: #6FA8DC !important;
+  fill: #6FA8DC;
 }
 .footer-main {
   position: fixed;
@@ -634,14 +636,14 @@ input:focus {
   pointer-events: none;
   font-size: 22px;
   background: none;
-  color: #8f846f;
+  color: #6FA8DC;
 }
 .radio .text {
   font-size: 16px;
   font-weight: 600;
 }
 .radio .button_payment_current {
-  background: #8f846f;
+  background: #6FA8DC;
   color: #fff;
 }
 .button_back .sprites.continueIcon {
@@ -703,7 +705,7 @@ input[type="checkbox"] {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8f846f;
+  border: 2px solid #6FA8DC;
   padding: 0 15px;
 }
 .form-main select.form-control {
@@ -715,7 +717,7 @@ input[type="checkbox"] {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 50px;
-  border: 2px solid #8f846f;
+  border: 2px solid #6FA8DC;
   padding: 0 15px;
 }
 .subtext {
@@ -844,7 +846,7 @@ input[type="checkbox"] {
   height: 20px;
   width: 20px;
   background: #fff;
-  border: 2px solid #8f846f;
+  border: 2px solid #6FA8DC;
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -861,7 +863,7 @@ input[type="checkbox"] {
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background: #8f846f;
+  background: #6FA8DC;
   transform: translate(-50%, -50%);
   transition: all 0.3s ease-out;
 }
@@ -920,13 +922,13 @@ input[type="checkbox"] {
   box-shadow: none;
 }
 .slider-box .slider.slider-horizontal .slider-selection {
-  background: #8f846f;
+  background: #6FA8DC;
 }
 .slider-box .slider.slider-horizontal .slider-handle {
   width: 20px;
   height: 20px;
   top: 5px;
-  background: #8f846f;
+  background: #6FA8DC;
   cursor: grab;
 }
 .slider-box .slider.slider-horizontal .slider-handle:active {
@@ -1018,7 +1020,7 @@ input[type="checkbox"] {
   font-weight: 500;
 }
 .top-head {
-  background: #8f846f;
+  background: #6FA8DC;
   padding: 10px;
   color: #fff;
   font-size: 18px;
@@ -1053,7 +1055,7 @@ input[type="checkbox"] {
 .white-box label {
   font-size: 15px;
   display: block;
-  color: #8f846f;
+  color: #6FA8DC;
 }
 .white-box .input {
   background: #fff;
@@ -1069,7 +1071,7 @@ input[type="checkbox"] {
   bottom: 18px;
   vertical-align: middle;
   font-size: 14px;
-  color: #8f846f;
+  color: #6FA8DC;
 }
 .chk-box {
   padding: 10px 0;
@@ -1099,8 +1101,8 @@ input[type="checkbox"] {
   font-size: 18px;
   transition: all 0.3s;
   color: #fff;
-  border: 2px solid #8f846f;
-  background: #8f846f;
+  border: 2px solid #6FA8DC;
+  background: #6FA8DC;
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -1110,7 +1112,7 @@ input[type="checkbox"] {
 }
 .btn-calc:hover {
   /* background: #333; */
-  background-color: #654040b3;
+  background-color: #16537E;
   color: #fff;
 }
 .btn-calc .sprites {
@@ -1181,7 +1183,7 @@ input[type="checkbox"] {
   text-align: left;
 }
 .formula-inner {
-  border-bottom: 1px dashed #8f846f;
+  border-bottom: 1px dashed #6FA8DC;
   padding: 0 0 10px;
   margin: 0 0 10px;
 }
@@ -1192,22 +1194,22 @@ input[type="checkbox"] {
 }
 .formula-inner span {
   font-size: 24px;
-  color: #8f846f;
+  color: #v;
 }
 .formula-inner a {
-  color: #8f846f;
+  color: #6FA8DC;
   font-weight: bold;
   text-decoration: underline;
 }
 .formula-inner-head {
-  border-bottom: 1px solid #8f846f;
+  border-bottom: 1px solid #6FA8DC;
   padding: 10px 0 5px;
   margin: 10px 0 10px;
 }
 .value-box {
   background: rgba(197, 207, 234, 0.6);
   padding: 10px;
-  color: #8f846f;
+  color: #6FA8DC;
   font-size: 16px;
   line-height: 22px;
   -webkit-border-radius: 5px;
