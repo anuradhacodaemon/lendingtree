@@ -280,7 +280,10 @@ input:focus {
 .btn-calc.status,
 .radio .button.status {
   /* background: #8f846f; */
-  background-color: #16537E;
+  background-color: #f7be31
+
+
+;
 }
 .radio .button:hover {
   /* background: #333; */
@@ -1112,7 +1115,10 @@ input[type="checkbox"] {
 }
 .btn-calc:hover {
   /* background: #333; */
-  background-color: #16537E;
+  background-color: #f7be31
+
+
+;
   color: #fff;
 }
 .btn-calc .sprites {

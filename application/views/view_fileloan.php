@@ -92,7 +92,7 @@
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                       <?php  
-                                        if($userDetails[0]['requested_amount']>0){
+                                  /*      if($userDetails[0]['requested_amount']>0){
                                             $years='';
                                         if($userDetails[0]['requested_amount']==7)
                                     $years='$5,000-$10,000';
@@ -107,11 +107,12 @@
                                         if($userDetails[0]['requested_amount']==2)
                                     $years='$40,000 - $50,000';
                                         if($userDetails[0]['requested_amount']==1)
-                                    $years='$50,000+';
+                                    $years='$50,000+'; 
                                       
                                         
-                                        echo $years;
-                                        }
+                                        echo $years; 
+                                        } */
+                                        echo $userDetails[0]['requested_amount'];
                                          ?>
                     </td>
                 </tr>
