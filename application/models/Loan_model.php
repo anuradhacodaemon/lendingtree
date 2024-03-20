@@ -197,7 +197,10 @@ class Loan_model extends CI_Model {
 
     //send to zapier
     public function send_to_zapier($postFields,$name,$id){
-        $zapierWebhookUrl = ZAPIER_HOOK_URL;
+     //   $zapierWebhookUrl = ZAPIER_HOOK_URL;
+
+        $this->config->load('config');
+        $zapierWebhookUrl = $this->config->item('ZAPIER_HOOK_URL');
 
         // Initialize cURL session
         $ch = curl_init();

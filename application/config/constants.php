@@ -110,7 +110,7 @@ define('ZIPCODE', 'lend_zipcode');
 //SmartApi
 define('SMARTY_AUTH_ID', '31e7020d-9a47-c928-f6d2-bc3c38fb6546');
 define('SMARTY_AUTH_TOKEN','ygIUWrlkwpFlPZGX2Oj0');
-define('ZAPIER_HOOK_URL','https://hooks.zapier.com/hooks/catch/4330880/3x45jmt/');
+
 
 
 #year make model
