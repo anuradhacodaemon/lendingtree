@@ -224,7 +224,8 @@
     $(document).ready(function() {
         $('#cosigner_monthly_pay_auto').on('blur', function() {
             $("#err3").html("");
-            var value = parseInt($(this).val().replace(/[^0-9.,]/g, ''));
+            var cleanedValue = $(this).val().replace(/,/g, '');
+            var value = parseFloat(cleanedValue);
             if (!isNaN(value)) 
             {
                 value = value.toLocaleString('en-US', {  minimumFractionDigits: 2,maximumFractionDigits: 2 })

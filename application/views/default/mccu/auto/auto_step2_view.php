@@ -69,17 +69,18 @@
     $(document).ready(function() {
         $('#req_amt').on('blur', function() {
             $("#err1").html("");
-            var value = parseInt($(this).val().replace(/[^0-9.,]/g, ''));
-            if (!isNaN(value)) 
-            {
-                value = value.toLocaleString('en-US', {  minimumFractionDigits: 2,maximumFractionDigits: 2 })
+            var cleanedValue = $(this).val().replace(/,/g, '');
+            var value = parseFloat(cleanedValue);
+
+            if (!isNaN(value)) {
+                // Format the number with two decimal places
+                value = value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 $(this).val(value);
+            } else {
+                $("#err1").html("Enter Number only");
+                $(this).focus();
+                return false;
             }
-            else{
-                    $("#err1").html("Enter Number only");
-                    return false;
-                    $(this).focus();
-                }
         });
 
         $('#amt_button').click(function() {
