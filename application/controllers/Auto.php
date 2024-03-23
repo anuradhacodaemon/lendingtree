@@ -471,7 +471,8 @@ class Auto extends CI_Controller {
                 if ($this->input->post('monthly_income_pre_tax')) 
                 {
                     $data = array(
-                        'employment_monthly_income' => $this->input->post('monthly_income_pre_tax'),
+                    //    'employment_monthly_income' => $this->input->post('monthly_income_pre_tax'),
+                    'employment_monthly_income' => str_replace(",", "", $this->input->post('monthly_income_pre_tax')),
                         'employment_total_dependent' => $this->input->post('total_dependent')
                     );
                     $this->session->set_userdata($data);
@@ -600,7 +601,8 @@ class Auto extends CI_Controller {
                 {
                     $data = array(
                         'if_source_income_yes_what_isit' => $this->input->post('second_income_source'),
-                        'if_source_income_yes_monthly_income' => $this->input->post('second_monthly_income')
+                       // 'if_source_income_yes_monthly_income' => $this->input->post('second_monthly_income')
+                       'if_source_income_yes_monthly_income' => str_replace(",", "", $this->input->post('second_monthly_income'))
                     );
 
                     $this->session->set_userdata($data);
@@ -1270,7 +1272,8 @@ class Auto extends CI_Controller {
                 if ($this->input->post('cosigner_monthly_income_pre_tax')) 
                 {
                     $data = array(
-                        'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax'),
+                     //   'cosigner_monthly_income_pre_tax' => $this->input->post('cosigner_monthly_income_pre_tax'),
+                     'cosigner_monthly_income_pre_tax' => str_replace(",", "", $this->input->post('cosigner_monthly_income_pre_tax')),
                         'co_total_dependent' => $this->input->post('co_total_dependent')
                     );
 
@@ -1399,7 +1402,8 @@ class Auto extends CI_Controller {
                 {
                     $data = array(
                         'cosigner_what_income_source' => $this->input->post('cosigner_second_income_source'),
-                        'cosigner_other_source_monthly_income' => $this->input->post('cosigner_second_monthly_income')
+                      //  'cosigner_other_source_monthly_income' => $this->input->post('cosigner_second_monthly_income')
+                      'cosigner_other_source_monthly_income' => str_replace(",", "", $this->input->post('cosigner_second_monthly_income')),
                     );
 
                     $this->session->set_userdata($data);
