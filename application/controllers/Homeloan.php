@@ -197,13 +197,21 @@ class Homeloan extends CI_Controller {
     }
 
     public function homestep11($id = '') {
+
+
         if ($id) {
+            $additional_cash=$id;
+        }else{
+            $additional_cash=0;
+        }
+
+
             $data = array(
-                'additional_cash' => $id
+                'additional_cash' => $additional_cash
             );
 
             $this->session->set_userdata($data);
-        }
+        
         //echo '<pre>';
         // print_r($this->session->userdata());
 
@@ -212,12 +220,16 @@ class Homeloan extends CI_Controller {
 
     public function homestep111($id = '') {
         if ($id) {
+            $close_mortgage=$id;
+        }else{
+            $close_mortgage=0;
+        }
             $data = array(
-                'close_mortgage' => $id
+                'close_mortgage' => $close_mortgage
             );
 
             $this->session->set_userdata($data);
-        }
+       
         //echo '<pre>';
         // print_r($this->session->userdata());
         if ($id == 1)
@@ -459,6 +471,14 @@ class Homeloan extends CI_Controller {
 //        unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['state']);
 
+        if(empty($this->session->userdata['bankruptcy_years']))
+        {
+            $this->session->userdata['bankruptcy_years']=0;
+        }
+        if(empty($this->session->userdata['foreclosure_years']))
+        {
+            $this->session->userdata['foreclosure_years']=0;
+        }
         $result = $this->loan_model->add_homeloan($this->session->userdata());
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);

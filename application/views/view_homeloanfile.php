@@ -149,14 +149,14 @@
                                         ?>
                     </td>
                 </tr>
-                <tr>
+             <!--   <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         If refinance of vehicle, enter VIN :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                        --
                     </td>
-                </tr>
+                </tr> -->
                 
                
                
@@ -230,7 +230,7 @@
                     </td>
                 </tr>
                 
-                <tr>
+             <!--   <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Apt. No. :
                     </td>
@@ -245,7 +245,7 @@
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                         --
                     </td>
-                </tr>
+                </tr>  -->
                
                 
                 <tr>
@@ -270,7 +270,7 @@
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                           <?php if($userDetails[0]['mortgage_2']==1) echo 'Yes';
-                                    if($userDetails[0]['mortgage_2']==2) echo 'No';?>
+                                    else echo 'No';?>
                     </td>
                 </tr>
                 
@@ -288,7 +288,7 @@
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                           <?php if($userDetails[0]['additional_cash']==1) echo 'Yes';
-                                    if($userDetails[0]['additional_cash']==2) echo 'No';?>
+                                   else echo 'No';?>
                     </td>
                 </tr>
                 
@@ -297,10 +297,10 @@
                       Credit Score:
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                         <?php if($userDetails[0]['credit_score']==1) echo 'Excellent ≥720';
-                                    if($userDetails[0]['credit_score']==2) echo 'Good 680-719';
-                                    if($userDetails[0]['credit_score']==3) echo 'Fair 640-679';
-                                    if($userDetails[0]['credit_score']==4) echo 'Poor ≤639';?>
+                         <?php if($userDetails[0]['credit_score']==1) echo 'Excellent (> 720)';
+                                    if($userDetails[0]['credit_score']==2) echo 'Good (680-719)';
+                                    if($userDetails[0]['credit_score']==3) echo 'Fair (640-679)';
+                                    if($userDetails[0]['credit_score']==4) echo 'Poor (< 639)';?>
                     </td>
                 </tr>
                 <tr>
@@ -362,9 +362,14 @@
                      Close Mortgage:
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                       <?php echo $userDetails[0]['close_mortgage'] ?>
+                       <?php  if($userDetails[0]['close_mortgage']==1)
+                       {
+                        echo "Yes";
+                       }else{
+                        echo "NO";
+                       } ?>
                     </td>
-                </tr>
+                </tr> 
             </table>
         </td>
     </tr>
@@ -386,7 +391,7 @@
     <tr>
         <td>
             <table>
-                <tr>
+              <!--  <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Current Employer :
                     </td>
@@ -401,7 +406,7 @@
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
                      --
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Estimated monthly income  ($):

@@ -6,7 +6,7 @@
                     <h1 class="text-head">What type of home loan are you looking for?</h1>
                     <!--<a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>-->
                     <div class="clearfix"></div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
+             <!--         <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step2(1)">
                                 <button class="offer-circ">
@@ -37,8 +37,8 @@
                                 </button>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
+                    </div> -->
+                    <div class="col-md-12 col-sm-4 col-xs-12">
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step2(3)">
                                 <button class="offer-circ">
@@ -54,7 +54,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
+                 <!--    <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="offer-cont">
                             <a href="javascript:void(0);" onclick="home_step2(4)">
                                 <button class="offer-circ">
@@ -69,7 +69,7 @@
                                 </button>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="disclosure">
