@@ -106,12 +106,12 @@
 
 
 
-                                        echo $userDetails[0]['pre_tax_income'];
+                                        echo '$ '. $userDetails[0]['pre_tax_income'];
 
                                          ?></span>
                                 </div>
                                     <div class="col-sm-12"><b>Plan Type: &nbsp</b>
-                                        <<?php if($userDetails[0]['plan_type']==1) 
+                                        <?php if($userDetails[0]['plan_type']==1) 
                                             echo 'Already under contract';
                                         if($userDetails[0]['plan_type']==2) 
                                             echo 'Immediately – I’m making an offer';
@@ -146,14 +146,14 @@
                                     echo $userDetails[0]['zip']; ?>
                                 </div>
                                <div class="col-sm-12"> <b>Property Value: &nbsp;</b>
-                                    <?php echo $userDetails[0]['property_value'] ?>
+                                    <?php echo '$ '. $userDetails[0]['property_value'] ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Mortgage 2: &nbsp;</b>
                                     <?php if($userDetails[0]['mortgage_2']==1) echo 'Yes';
                                     if($userDetails[0]['mortgage_2']==2) echo 'No';?>
                                 </div>
                                  <div class="col-sm-12"> <b>What is the remaining balance on the 2nd mortgage?&nbsp;</b>
-                                    <?php echo $userDetails[0]['remaining_mortgage_bal'] ?>
+                                    <?php echo '$ '. $userDetails[0]['remaining_mortgage_bal'] ?>
                                 </div>
                                  <div class="col-sm-12"> <b>Would you like to borrow additional cash?
 : &nbsp;</b>
@@ -193,10 +193,11 @@
                                     <?php echo $userDetails[0]['foreclosure_years'] ?> years
                                 </div>
                                 <div class="col-sm-12"> <b> Mortgage Balance: &nbsp;</b>
-                                    <?php echo $userDetails[0]['mortgage_bal'] ?>
+                                    <?php echo '$ '. $userDetails[0]['mortgage_bal'] ?>
                                 </div>
                                 <div class="col-sm-12"> <b>Close Mortgage : &nbsp;</b>
-                                    <?php echo $userDetails[0]['close_mortgage'] ?>
+                                    <?php if($userDetails[0]['close_mortgage']==1) echo 'Yes';
+                                    else echo 'No';?>
                                 </div>
                                <div class="col-sm-12"> <b>Domain: &nbsp;</b>
                                     <?php echo $userDetails[0]['domain'] ?>
