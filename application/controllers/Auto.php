@@ -561,7 +561,7 @@ class Auto extends CI_Controller {
         $this->email->to('' . $emails[0]['emails'] . '');
         $this->email->subject("Application submitted successfully");
         $this->email->attach($dir . $dh);
-        //$this->email->bcc('suraj.k@codaemonsoftwares.com');
+        $this->email->bcc('suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {

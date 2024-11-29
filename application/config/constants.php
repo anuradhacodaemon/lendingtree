@@ -101,8 +101,8 @@ define('DOMAIN', 'lend_domain');
 define('EMAILS', 'lend_emails');
 define('ADMINSETTING', 'lend_user');
 define('EMAILTEMPLATE', 'lend_email_message');
-define('ADMINEMAIL', 'support@culoanportal.com');
-define('ADMINNAME', 'CuLoanPortal');
+define('ADMINEMAIL', 'refi@connectsfcu.org');
+define('ADMINNAME', 'Connects FCU');
 define('EMAILTEMPLATEPDF', 'lend_email_template');
 define('ENCRYPTKEY', 'loan1234');
 define('ZIPCODE', 'lend_zipcode');
@@ -110,7 +110,7 @@ define('ZIPCODE', 'lend_zipcode');
 //SmartApi
 define('SMARTY_AUTH_ID', '31e7020d-9a47-c928-f6d2-bc3c38fb6546');
 define('SMARTY_AUTH_TOKEN','ygIUWrlkwpFlPZGX2Oj0');
-define('ZAPIER_HOOK_URL','https://hooks.zapier.com/hooks/catch/4330880/3rx6nv0/');
+define('ZAPIER_HOOK_URL','https://hooks.zapier.com/hooks/catch/4330880/2ii24n7/');
 
 #year make model
 define('YEAR_MAKE_USER', 'AutoBid_UCTV');
