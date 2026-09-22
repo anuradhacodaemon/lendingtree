@@ -62,7 +62,7 @@ class Admin_emails extends CI_Controller {
 
             $config['total_rows'] = $this->emails->get_count_emails($filterData);
             //$config['per_page'] = RECORD_LIMIT;
-            $page = ($record_num) ? $record_num : 0;
+            $page = (is_numeric($record_num)) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;
             $config['use_page_numbers'] = TRUE;
             if ($page > 0)
