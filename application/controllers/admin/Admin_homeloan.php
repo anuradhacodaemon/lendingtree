@@ -130,7 +130,7 @@ class Admin_homeloan extends CI_Controller {
             $config['base_url'] = BASE_URL . MASTERADMIN . '/homeloan';
 
             $config['total_rows'] = $this->homeloan->get_count_user($filterData);
-            $page = ($record_num) ? $record_num : 0;
+            $page = (is_numeric($record_num)) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;
             $config['use_page_numbers'] = TRUE;
             if ($page > 0)

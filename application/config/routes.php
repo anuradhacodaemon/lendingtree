@@ -87,6 +87,23 @@ $route['admin/refinance/deleteall'] = 'admin/admin_refinance/deleteall';
 $route['admin/refinance/sentemail'] = 'admin/admin_refinance/sentemail';
 $route['admin/refinance/getpdf'] = 'admin/admin_refinance/getpdf';
 
+$route['admin/state/add'] = 'admin/admin_state/add';
+$route['admin/state/store'] = 'admin/admin_state/store';
+$route['admin/state/edit/(:num)'] = 'admin/admin_state/edit/$1';
+$route['admin/state/update/(:num)'] = 'admin/admin_state/update/$1';
+$route['admin/state/delete/(:num)'] = 'admin/admin_state/delete/$1';
+$route['admin/state/(:num)'] = 'admin/admin_state/index/$1';
+$route['admin/state'] = 'admin/admin_state/index';
+
+$route['admin/city/get_states/(:num)'] = 'admin/admin_city/get_states/$1';
+$route['admin/city/add'] = 'admin/admin_city/add';
+$route['admin/city/store'] = 'admin/admin_city/store';
+$route['admin/city/edit/(:num)'] = 'admin/admin_city/edit/$1';
+$route['admin/city/update/(:num)'] = 'admin/admin_city/update/$1';
+$route['admin/city/delete/(:num)'] = 'admin/admin_city/delete/$1';
+$route['admin/city/(:num)'] = 'admin/admin_city/index/$1';
+$route['admin/city'] = 'admin/admin_city/index';
+
 $route['admin/domain'] = 'admin/admin_domain/index';
 $route['admin/domain/(:num)'] = 'admin/admin_domain/index/$1';
 $route['admin/domain/add'] = 'admin/admin_domain/add';

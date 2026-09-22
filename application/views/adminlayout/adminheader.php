@@ -42,6 +42,14 @@
                     <li><a href="<?php echo BASE_URL ?>admin/domain"><i class="fa fa-edit"></i>Settings</a>
                     </li>
 
+                    <?php if (isset($this->session->userdata['userdata']['ud']) && $this->session->userdata['userdata']['ud'] == 'superadmin') { ?>
+                    <li><a><i class="fa fa-map-marker"></i> State & City Management <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="<?php echo BASE_URL ?>admin/state">States</a></li>
+                            <li><a href="<?php echo BASE_URL ?>admin/city">Cities</a></li>
+                        </ul>
+                    </li>
+                    <?php } ?>
 
                     <li><a href="<?php echo BASE_URL ?>admin/template"><i class="fa fa-edit"></i>Template for lead</a>
                     </li>
