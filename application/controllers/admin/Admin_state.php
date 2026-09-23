@@ -183,11 +183,15 @@ class Admin_state extends CI_Controller {
         }
 
         if ($this->state_model->count_cities_by_state($id) > 0) {
-            $this->admin_access->set_module_flash(self::FLASH_KEY, '<font color=red>Cannot delete state while cities exist. Delete related cities first.</font>');
+            $this->admin_access->set_module_flash(self::FLASH_KEY, '<font color=red>Cannot delete state while active cities exist. Delete related cities first.</font>');
             redirect('admin/state', 'refresh');
         }
 
-        $this->state_model->delete_state($id);
+        if (!$this->state_model->delete_state($id)) {
+            $this->admin_access->set_module_flash(self::FLASH_KEY, '<font color=red>Unable to delete state.</font>');
+            redirect('admin/state', 'refresh');
+        }
+
         $this->admin_access->set_module_flash(self::FLASH_KEY, '<font color=green>State deleted successfully.</font>');
         redirect('admin/state', 'refresh');
     }

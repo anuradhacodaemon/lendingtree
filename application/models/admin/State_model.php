@@ -6,14 +6,22 @@ if (!defined('BASEPATH')) {
 
 class State_model extends CI_Model {
 
+    const STATUS_ACTIVE = 0;
+    const STATUS_INACTIVE = 1;
+
     public function __construct() {
         parent::__construct();
+    }
+
+    private function _apply_active_status($alias = 'state') {
+        $this->db->where($alias . '.status', self::STATUS_ACTIVE);
     }
 
     public function get_states($id = 0, $limit = '', $start = 0, $filterData = array(), $sortData = array()) {
         $this->db->select('state.*, country.name as country_name');
         $this->db->from(STATE . ' as state');
         $this->db->join(COUNTRY . ' as country', 'country.id = state.country_id', 'left');
+        $this->_apply_active_status('state');
 
         if ((int) $id > 0) {
             $this->db->where('state.id', (int) $id);
@@ -45,6 +53,7 @@ class State_model extends CI_Model {
 
     public function get_count_states($filterData = array()) {
         $this->db->from(STATE . ' as state');
+        $this->_apply_active_status('state');
 
         if (!empty($filterData['country_id'])) {
             $this->db->where('state.country_id', (int) $filterData['country_id']);
@@ -63,10 +72,11 @@ class State_model extends CI_Model {
             return array();
         }
 
-        $this->db->select('state.id, state.name, state.country_id, country.name AS country_name');
+        $this->db->select('state.id, state.name, state.country_id, state.status, country.name AS country_name');
         $this->db->from(STATE . ' AS state');
         $this->db->join(COUNTRY . ' AS country', 'country.id = state.country_id', 'left');
         $this->db->where('state.id', $id);
+        $this->_apply_active_status('state');
         $this->db->limit(1);
         $result = $this->db->get();
 
@@ -77,6 +87,7 @@ class State_model extends CI_Model {
         $this->db->from(STATE);
         $this->db->where('country_id', (int) $country_id);
         $this->db->where('name', trim($name));
+        $this->db->where('status', self::STATUS_ACTIVE);
 
         if ((int) $exclude_id > 0) {
             $this->db->where('id !=', (int) $exclude_id);
@@ -89,6 +100,7 @@ class State_model extends CI_Model {
         $insertData = array(
             'country_id' => (int) $data['country_id'],
             'name' => trim($data['name']),
+            'status' => self::STATUS_ACTIVE,
         );
 
         $this->db->insert(STATE, $insertData);
@@ -107,6 +119,7 @@ class State_model extends CI_Model {
         );
 
         $this->db->where('id', (int) $id);
+        $this->db->where('status', self::STATUS_ACTIVE);
         $this->db->update(STATE, $updateData);
 
         return $this->db->affected_rows();
@@ -114,7 +127,8 @@ class State_model extends CI_Model {
 
     public function delete_state($id) {
         $this->db->where('id', (int) $id);
-        $this->db->delete(STATE);
+        $this->db->where('status', self::STATUS_ACTIVE);
+        $this->db->update(STATE, array('status' => self::STATUS_INACTIVE));
 
         return $this->db->affected_rows();
     }
@@ -122,6 +136,7 @@ class State_model extends CI_Model {
     public function count_cities_by_state($state_id = 0) {
         $this->db->from(CITY);
         $this->db->where('state_id', (int) $state_id);
+        $this->db->where('status', self::STATUS_ACTIVE);
 
         return $this->db->count_all_results();
     }

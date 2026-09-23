@@ -6,8 +6,15 @@ if (!defined('BASEPATH')) {
 
 class City_model extends CI_Model {
 
+    const STATUS_ACTIVE = 0;
+    const STATUS_INACTIVE = 1;
+
     public function __construct() {
         parent::__construct();
+    }
+
+    private function _apply_active_status($alias = 'city') {
+        $this->db->where($alias . '.status', self::STATUS_ACTIVE);
     }
 
     public function get_cities($id = 0, $limit = '', $start = 0, $filterData = array(), $sortData = array()) {
@@ -15,6 +22,8 @@ class City_model extends CI_Model {
         $this->db->from(CITY . ' as city');
         $this->db->join(STATE . ' as state', 'state.id = city.state_id', 'left');
         $this->db->join(COUNTRY . ' as country', 'country.id = state.country_id', 'left');
+        $this->_apply_active_status('city');
+        $this->db->where('state.status', self::STATUS_ACTIVE);
 
         if ((int) $id > 0) {
             $this->db->where('city.id', (int) $id);
@@ -52,6 +61,8 @@ class City_model extends CI_Model {
     public function get_count_cities($filterData = array()) {
         $this->db->from(CITY . ' as city');
         $this->db->join(STATE . ' as state', 'state.id = city.state_id', 'left');
+        $this->_apply_active_status('city');
+        $this->db->where('state.status', self::STATUS_ACTIVE);
 
         if (isset($filterData['state_id']) && $filterData['state_id'] !== '') {
             $this->db->where('city.state_id', (int) $filterData['state_id']);
@@ -74,11 +85,13 @@ class City_model extends CI_Model {
             return array();
         }
 
-        $this->db->select('city.id, city.name, city.state_id, state.name AS state_name, state.country_id, country.name AS country_name');
+        $this->db->select('city.id, city.name, city.state_id, city.status, state.name AS state_name, state.country_id, country.name AS country_name');
         $this->db->from(CITY . ' AS city');
         $this->db->join(STATE . ' AS state', 'state.id = city.state_id', 'left');
         $this->db->join(COUNTRY . ' AS country', 'country.id = state.country_id', 'left');
         $this->db->where('city.id', $id);
+        $this->_apply_active_status('city');
+        $this->db->where('state.status', self::STATUS_ACTIVE);
         $this->db->limit(1);
         $result = $this->db->get();
 
@@ -89,6 +102,7 @@ class City_model extends CI_Model {
         $this->db->from(CITY);
         $this->db->where('state_id', (int) $state_id);
         $this->db->where('name', trim($name));
+        $this->db->where('status', self::STATUS_ACTIVE);
 
         if ((int) $exclude_id > 0) {
             $this->db->where('id !=', (int) $exclude_id);
@@ -104,6 +118,7 @@ class City_model extends CI_Model {
 
         $this->db->from(STATE);
         $this->db->where('id', (int) $state_id);
+        $this->db->where('status', self::STATUS_ACTIVE);
         $result = $this->db->get();
 
         return ($result->num_rows() > 0);
@@ -112,6 +127,7 @@ class City_model extends CI_Model {
     public function get_states_by_country($country_id = 0) {
         $this->db->from(STATE);
         $this->db->where('country_id', (int) $country_id);
+        $this->db->where('status', self::STATUS_ACTIVE);
         $this->db->order_by('name', 'asc');
         $result = $this->db->get();
 
@@ -122,6 +138,7 @@ class City_model extends CI_Model {
         $insertData = array(
             'state_id' => (int) $data['state_id'],
             'name' => trim($data['name']),
+            'status' => self::STATUS_ACTIVE,
         );
 
         $this->db->insert(CITY, $insertData);
@@ -140,6 +157,7 @@ class City_model extends CI_Model {
         );
 
         $this->db->where('id', (int) $id);
+        $this->db->where('status', self::STATUS_ACTIVE);
         $this->db->update(CITY, $updateData);
 
         return $this->db->affected_rows();
@@ -147,7 +165,8 @@ class City_model extends CI_Model {
 
     public function delete_city($id) {
         $this->db->where('id', (int) $id);
-        $this->db->delete(CITY);
+        $this->db->where('status', self::STATUS_ACTIVE);
+        $this->db->update(CITY, array('status' => self::STATUS_INACTIVE));
 
         return $this->db->affected_rows();
     }

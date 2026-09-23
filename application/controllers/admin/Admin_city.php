@@ -215,7 +215,11 @@ class Admin_city extends CI_Controller {
             show_404();
         }
 
-        $this->city_model->delete_city($id);
+        if (!$this->city_model->delete_city($id)) {
+            $this->admin_access->set_module_flash(self::FLASH_KEY, '<font color=red>Unable to delete city.</font>');
+            redirect('admin/city', 'refresh');
+        }
+
         $this->admin_access->set_module_flash(self::FLASH_KEY, '<font color=green>City deleted successfully.</font>');
         redirect('admin/city', 'refresh');
     }
