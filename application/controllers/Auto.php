@@ -33,10 +33,32 @@ class Auto extends CI_Controller {
         }
 
         $this->session->set_userdata('panel', 'frontend');
+        $start_time = date('Y-m-d H:i:s');
+        $data = array(
+            'start_time' => $start_time,
+        );
+        $this->session->set_userdata($data);
 
         $this->template->view('step1_view');
     }
-
+       public function testMail()
+    {
+        $this->load->library('email');
+        $this->email->set_newline("\r\n");
+        $this->email->from(ADMINEMAIL, ADMINNAME);
+        $this->email->to('suraj.k@codaemonsoftwares.com');
+        $this->email->subject("Test Application");
+        $this->email->message('Test Email for Server Demo');
+        $emailSend = $this->email->send();
+        if ($emailSend) {
+            echo "from if>>";
+            echo $this->email->print_debugger();exit;
+            return 1;
+        }
+        echo "from if mail not send>>";
+        echo $this->email->print_debugger();exit;
+        return 0;
+    }
     public function step1() {
 
         $this->load->view('step1_view');
@@ -52,10 +74,13 @@ class Auto extends CI_Controller {
         $this->load->view('step2_view');
     }
 
-    public function step3($id = 0) {
-        if ($id) {
+    public function step3($requested_amount = 0) {
+
+        //$requested_amount = $this->input->get('requested_amount');
+
+        if ($requested_amount) {
             $data = array(
-                'requested_amount' => $id
+                'requested_amount' => $requested_amount
             );
 
             $this->session->set_userdata($data);
@@ -65,22 +90,26 @@ class Auto extends CI_Controller {
         $this->load->view('step3_view');
     }
 
-    public function step4($id = 0, $pre_approved = 0) {
-        if ($id) {
+    public function step4($start_month = 0, $start_day = 0, $start_years = 0,$cemployer = 0) {
+
+        if ($cemployer) {
             $data = array(
-                'current_employer' => $id,
-                'job_title' => $pre_approved
+                'start_month' => $start_month,
+                'start_day' => $start_day,
+                'start_years' => $start_years,
+                'start_date' => $start_years . '-' . $start_month . '-' . $start_day,
+                'current_employer' => $cemployer,
+               // 'start_date' => $start_date
             );
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
+    //    echo '<pre>';
+    //  print_r($this->session->userdata());
         $this->load->view('step4_view');
     }
 
     public function step5($pre_tax_income = 0) {
-
         if ($pre_tax_income) {
 
             //$num = explode('$', $pre_tax_income);
@@ -108,15 +137,17 @@ class Auto extends CI_Controller {
         echo json_encode($city);
     }
 
-    public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '') {
+    public function step6($firstname = '', $lastname = '', $address = '', $city = '', $state = '', $zip = '', $country = '', $street_line = '') {
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
                 'lastname' => $lastname,
-                'address' => $address,
-                'city' => $city,
-                'state' => $state,
-                'zip' => $zip
+                'address' => urldecode($address),
+                'city' => urldecode($city),
+                'state' => urldecode($state),
+                'zip' => $zip,
+                'country' => 'United States',
+                'street_line' => urldecode($street_line),
             );
 
             $this->session->set_userdata($data);
@@ -145,21 +176,72 @@ class Auto extends CI_Controller {
         $this->load->view('step7_view');
     }
 
-    public function step8($email = '', $phone = '') {
+    // public function step8($email = '', $phone = '') {
+
+        
+    //     if ($email) {
+    //         $data = array(
+    //             'email' => $email,
+    //             'phone' => $phone,
+    //             'add_date' => date('Y-m-d H:i:s'),
+    //             'domain' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
+    //             'status' => "2",
+    //             'active_status' => 1
+    //         );
+
+    //         $this->session->set_userdata($data);
+    //     }
+    //     $this->load->view('step8_view');
+    // }
+
+    public function step9($email = '', $phone = '') {
+        
         if ($email) {
             $data = array(
                 'email' => $email,
                 'phone' => $phone,
                 'add_date' => date('Y-m-d H:i:s'),
-                'domain' => 'http://' . $_SERVER['SERVER_NAME'] . '/',
-                'status' => "2"
+                'domain' => 'https://' . $_SERVER['SERVER_NAME'] . '/',
+                'status' => "2",
+                'active_status' => 1
             );
 
             $this->session->set_userdata($data);
         }
-        //echo '<pre>';
-        // print_r($this->session->userdata());
-        //die;
+        $this->load->view('step9_view');
+    }
+
+    public function step10($i_represent_stated = '', $date_of_application = '', $insurance_value = '') {
+
+	// echo '<pre>';
+    //     print_r($this->session->userdata());
+    
+        if($this->input->get('i_represent_stated')) {
+
+            $value = $this->input->get('i_represent_stated');
+            $value2 = $this->input->get('date_of_application');
+            $value4 = $this->input->get('insurance_value');
+
+
+            $newDate = date("Y-m-d", strtotime($value2));
+            $selected = ($value == 'consent') ? 'Y' : 'N';
+            $insuranceselected = ($value4 == 'true') ? 'Y' : 'N';
+            $data = array(
+                'i_represent_stated' => $selected,
+                'date_of_application' => $newDate,
+                'loan_insurance' => $insuranceselected
+            );
+
+            $this->session->set_userdata($data);
+        }
+        
+        $end_time = date('Y-m-d H:i:s');
+        $data = array(
+            'end_time' => $end_time,
+        );
+
+        $this->session->set_userdata($data);
+
         unset($this->session->userdata['panel']);
         unset($this->session->userdata['__ci_last_regenerate']);
         unset($this->session->userdata['userdata']);
@@ -187,12 +269,134 @@ class Auto extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['total_dependent']);
+        unset($this->session->userdata['laid_off_for_payment_waived']);
+        unset($this->session->userdata['total_time_taken_to_submit_the_application']);
+        	
+        $result = $this->loan_model->add_loan($this->session->userdata());
+   //     echo"<pre>"; print_r($result); die();		
+        $start_datetime = new DateTime($this->session->userdata['start_time']);
+        $end_datetime = new DateTime($this->session->userdata['end_time']);
+        // Calculate the difference
+        $time_difference = $start_datetime->diff($end_datetime);
+        $total_time= $time_difference->format('%H:%I:%S');
+        $data = array(
+            'total_time_taken_to_submit_the_application' => $total_time,
+        );
         
-        
+        $this->session->set_userdata($data);
 
+        unset($this->session->userdata['start_time']);
+        unset($this->session->userdata['end_time']);
+		
+        if ($result > 0) {
+            $getPhone = $this->loan_model->get_phone();
+            $error = 'Your application has been submitted! Someone will be in touch with you shortly. If you have any questions, please call ' . $getPhone[0]['phone'];
+            $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+            
+            $this->mailformat($this->session->userdata['firstname'], $this->session->userdata['lastname'], $this->session->userdata['email']);
+            $this->sent_mail($result, $this->session->userdata['firstname'], $this->session->userdata['lastname']);
+            
+            $this->session->userdata['userdata'] = '';
+            $this->session->userdata['type'] = '';
+            $this->session->userdata['requested_amount'] = '';
+            $this->session->userdata['current_employer'] = '';
+            $this->session->userdata['job_title'] = '';
+            $this->session->userdata['pre_tax_income'] = '';
+            $this->session->userdata['firstname'] = '';
+            $this->session->userdata['lastname'] = '';
+            $this->session->userdata['address'] = '';
+            $this->session->userdata['state'] = '';
+            $this->session->userdata['city'] = '';
+            $this->session->userdata['zip'] = '';
+            $this->session->userdata['month'] = '';
+            $this->session->userdata['day'] = '';
+            $this->session->userdata['years'] = '';
+            $this->session->userdata['dob'] = '';
+            $this->session->userdata['ssn'] = '';
+            $this->session->userdata['email'] = '';
+            $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
+            $this->session->userdata['i_represent_stated'] = '';
+            $this->session->userdata['date_of_application'] = '';
+            $this->session->userdata['start_time'] = '';
+            $this->session->userdata['end_time'] = '';
+            $this->session->userdata['total_time_taken_to_submit_the_application'] = '';
+            $this->session->userdata['start_month'] = '';
+            $this->session->userdata['start_day'] = '';
+            $this->session->userdata['start_years'] = '';
+            //redirect('/');
+            echo 1;
+
+            
+        } /*         * else {
+
+          $error = 'Your email already exist';
+          $this->session->set_flashdata('item', array('message' => '<font color=red>' . $error . '</font>', 'class' => 'success'));
+
+          $this->load->view('step6_view');
+          }* */
+        //$this->load->view('step10_view');
+    }
+
+   /* public function step11($val = 'N') {
+        if ($val) {
+            $data = array(
+                'die_or_ill_cancel_the_loan' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $end_time = date('Y-m-d H:i:s');
+        $data = array(
+            'end_time' => $end_time,
+        );
+        $this->session->set_userdata($data);
+
+        unset($this->session->userdata['panel']);
+        unset($this->session->userdata['__ci_last_regenerate']);
+        unset($this->session->userdata['userdata']);
+
+        unset($this->session->userdata['currently_owe']);
+        unset($this->session->userdata['monthly_payment']);
+        unset($this->session->userdata['vin']);
+        unset($this->session->userdata['current_milage']);
+        unset($this->session->userdata['property_type']);
+        unset($this->session->userdata['userdata']);
+        unset($this->session->userdata['loan_type']);
+        unset($this->session->userdata['property_type']);
+        unset($this->session->userdata['home_type']);
+        unset($this->session->userdata['plan_type']);
+        unset($this->session->userdata['property_value']);
+        unset($this->session->userdata['mortgage_2']);
+        unset($this->session->userdata['remaining_mortgage_bal']);
+        unset($this->session->userdata['additional_cash']);
+        unset($this->session->userdata['close_mortgage_bal']);
+        unset($this->session->userdata['credit_score']);
+        unset($this->session->userdata['military_served']);
+        unset($this->session->userdata['va_loan']);
+        unset($this->session->userdata['bankruptcy_or_foreclosure']);
+        unset($this->session->userdata['bankruptcy_years']);
+        unset($this->session->userdata['foreclosure_years']);
+        unset($this->session->userdata['mortgage_bal']);
+        unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['total_dependent']);
+        	
         $result = $this->loan_model->add_loan($this->session->userdata());
 
-        //$this->loan_model->add_loan($this->session->userdata['userdata']);
+        $start_datetime = new DateTime($this->session->userdata['start_time']);
+        $end_datetime = new DateTime($this->session->userdata['end_time']);
+        // Calculate the difference
+        $time_difference = $start_datetime->diff($end_datetime);
+        $total_time= $time_difference->format('%H:%I:%S');
+        $data = array(
+            'total_time_taken_to_submit_the_application' => $total_time,
+        );
+        
+        $this->session->set_userdata($data);
+
+        unset($this->session->userdata['start_time']);
+        unset($this->session->userdata['end_time']);
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
@@ -221,6 +425,13 @@ class Auto extends CI_Controller {
             $this->session->userdata['ssn'] = '';
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
+            $this->session->userdata['i_represent_stated'] = '';
+            $this->session->userdata['date_of_application'] = '';
+            $this->session->userdata['start_time'] = '';
+            $this->session->userdata['end_time'] = '';
+            $this->session->userdata['total_time_taken_to_submit_the_application'] = '';
             //redirect('/');
             echo 1;
         } /*         * else {
@@ -230,7 +441,7 @@ class Auto extends CI_Controller {
 
           $this->load->view('step6_view');
           }* */
-    }
+  //  } 
 
     /** Please dont change the mailformat because template is coming from database * */
     public function mailformat($firstname, $lastname, $email) {
@@ -255,15 +466,15 @@ class Auto extends CI_Controller {
         $this->email->from(ADMINEMAIL, ADMINNAME);
         //$this->email->from('anuradha.chakraborti@gmail.com', $this->session->userdata['userdata']['ud']);
         $this->email->to('' . $email . '');
-        $this->email->subject("MCT Credit Union New Digital Application");
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->subject("Application submitted successfully");
+        //$this->email->bcc('suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
             $url = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-                $url = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+                $url = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
             
         $token = array(
@@ -329,6 +540,8 @@ class Auto extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'auto',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
@@ -346,16 +559,16 @@ class Auto extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("MCT Credit Union New Digital Application");
+        $this->email->subject("Application submitted successfully");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
+        //$this->email->bcc('suraj.k@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
             $url_name = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-            $url_name = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
             'firstname' => $firstname,
@@ -380,6 +593,25 @@ class Auto extends CI_Controller {
         }
 
         return 0;
+    }
+
+    public function pdfLoan($id = 0) {
+     
+        $data['userDetails'] = $this->loan_model->get_userdetailsloanpdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
 }

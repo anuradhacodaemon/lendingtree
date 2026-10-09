@@ -59,6 +59,8 @@ class Loan_model extends CI_Model {
            // return 0;
         //}
     }
+
+
     
      public function add_homeloan($logData) {
 
@@ -135,7 +137,7 @@ class Loan_model extends CI_Model {
     }
     
      public function get_emailtemplate() {
-        $domain = 'http://' . $_SERVER['SERVER_NAME'];
+        $domain = $_SERVER['REQUEST_SCHEME'].'://' . $_SERVER['SERVER_NAME'];
         $this->db->from(EMAILTEMPLATE . ' as email');
         $this->db->like('email.domain_name', $domain,'both');
         $result = $this->db->get();
@@ -193,6 +195,84 @@ class Loan_model extends CI_Model {
         return $result->result_array();
     }
 
+    //send to zapier
+    public function send_to_zapier($postFields,$name,$id){
+        $zapierWebhookUrl = ZAPIER_HOOK_URL;
+
+        // Initialize cURL session
+        $ch = curl_init();
+
+        // Define the file to be sent as an attachment
+        $fileAttachment =  $_SERVER['HTTP_HOST'].'/'.$name.'/pdfLoan/'.$id;
+        $postFields["File"] = $fileAttachment;
+
+        
+
+        // Set the Content-Type header to indicate multipart/form-data
+        $headers = array('Content-Type: multipart/form-data');
+
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_URL, $zapierWebhookUrl);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        // Execute the cURL request
+        $response = curl_exec($ch);
+
+        // Check for cURL errors or process the response as needed
+        if (curl_errno($ch)) {
+            $status = 'fail';
+        } else {
+            // Decode the JSON string into an associative array
+            $data = json_decode($response, true);
+
+            // Extract the "status" value
+            $status = $data['status'];
+        }
+
+        // Close cURL session
+        curl_close($ch);
+        return $status;
+        
+    }
+
+    public function add_vsc($logData) {
+
+        ///$this->db->select('lend_id');
+        //$this->db->from(LOANS);
+        //$this->db->where('email', $logData['email']);
+        //$this->db->where("lastname", $logData['lastname']);
+        //$result = $this->db->get();
+        //$num = $result->num_rows();
+        //echo $this->db->last_query();
+       // if ($num == 0) {
+            $this->db->insert(VSC, $logData);
+            $id = $this->db->insert_id();
+           // echo $this->db->last_query();
+            //if ($this->db->affected_rows() > 0) {
+                return $id;
+            //}
+       // } else {
+           // return 0;
+        //}
+    }
+
+    public function get_userdetailsvscpdf($shopId = 0) {
+        $this->db->select('shop.*');
+
+        $this->db->from(VSC . ' as shop');
+        // $this->db->join(LOGIN . ' as address', 'address.id = shop.contact_owner_id', 'left');
+        $this->db->where('shop.vsc_id', $shopId);
+
+        $result = $this->db->get();
+
+        return $result->result_array();
+    }
+
+
 }
 ?>
-

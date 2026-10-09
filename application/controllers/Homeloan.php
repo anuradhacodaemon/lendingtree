@@ -533,15 +533,15 @@ class Homeloan extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("MCT Credit Union New Digital Application");
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
+        $this->email->subject("Demo Credit Union New Digital Application");
+        $this->email->bcc('haroon.m@codaemonsoftwares.com,nisar.shaikh@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
             $url = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-                $url = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+                $url = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
             
         $token = array(
@@ -606,6 +606,8 @@ class Homeloan extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
+        //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'homeloan',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
@@ -623,16 +625,16 @@ class Homeloan extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("MCT Credit Union New Digital Application");
+        $this->email->subject("Demo Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('amit.jadhav@codaemonsoftwares.com');
+        $this->email->bcc('haroon.m@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
             $url_name = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-            $url_name = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
             'firstname' => $firstname,
@@ -674,6 +676,24 @@ class Homeloan extends CI_Controller {
             echo $result[0]['city'] ;
             $this->session->userdata['city'] = $result[0]['city'];
         } 
+    }
+
+    public function pdfLoan($id = 0) {
+        $data['userDetails'] = $this->loan_model->get_userdetailshomeloanpdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
 }

@@ -109,6 +109,104 @@ $config = array(
             )
         )
      
+    ),
+    'admin/state/store' => array(
+        array(
+            'field' => 'country_id',
+            'label' => 'Country',
+            'rules' => 'trim|required|integer|callback_validate_country',
+            'errors' => array(
+                'required' => 'Country is required field.',
+                'integer' => 'Please select a valid Country.'
+            )
+        ),
+        array(
+            'field' => 'name',
+            'label' => 'State Name',
+            'rules' => 'trim|required|max_length[30]|callback_validate_state_unique',
+            'errors' => array(
+                'required' => 'State Name is required field.',
+                'max_length' => 'State Name cannot exceed 30 characters.'
+            )
+        )
+    ),
+    'admin/state/update' => array(
+        array(
+            'field' => 'country_id',
+            'label' => 'Country',
+            'rules' => 'trim|required|integer|callback_validate_country',
+            'errors' => array(
+                'required' => 'Country is required field.',
+                'integer' => 'Please select a valid Country.'
+            )
+        ),
+        array(
+            'field' => 'name',
+            'label' => 'State Name',
+            'rules' => 'trim|required|max_length[30]|callback_validate_state_unique',
+            'errors' => array(
+                'required' => 'State Name is required field.',
+                'max_length' => 'State Name cannot exceed 30 characters.'
+            )
+        )
+    ),
+    'admin/city/store' => array(
+        array(
+            'field' => 'country_id',
+            'label' => 'Country',
+            'rules' => 'trim|required|integer|callback_validate_country',
+            'errors' => array(
+                'required' => 'Country is required field.',
+                'integer' => 'Please select a valid Country.'
+            )
+        ),
+        array(
+            'field' => 'state_id',
+            'label' => 'State',
+            'rules' => 'trim|required|integer|callback_validate_state',
+            'errors' => array(
+                'required' => 'State is required field.',
+                'integer' => 'Please select a valid State.'
+            )
+        ),
+        array(
+            'field' => 'name',
+            'label' => 'City Name',
+            'rules' => 'trim|required|max_length[30]|callback_validate_city_unique',
+            'errors' => array(
+                'required' => 'City Name is required field.',
+                'max_length' => 'City Name cannot exceed 30 characters.'
+            )
+        )
+    ),
+    'admin/city/update' => array(
+        array(
+            'field' => 'country_id',
+            'label' => 'Country',
+            'rules' => 'trim|required|integer|callback_validate_country',
+            'errors' => array(
+                'required' => 'Country is required field.',
+                'integer' => 'Please select a valid Country.'
+            )
+        ),
+        array(
+            'field' => 'state_id',
+            'label' => 'State',
+            'rules' => 'trim|required|integer|callback_validate_state',
+            'errors' => array(
+                'required' => 'State is required field.',
+                'integer' => 'Please select a valid State.'
+            )
+        ),
+        array(
+            'field' => 'name',
+            'label' => 'City Name',
+            'rules' => 'trim|required|max_length[30]|callback_validate_city_unique',
+            'errors' => array(
+                'required' => 'City Name is required field.',
+                'max_length' => 'City Name cannot exceed 30 characters.'
+            )
+        )
     )
      
 );

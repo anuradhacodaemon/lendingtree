@@ -135,11 +135,15 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                             <select class="form-control" placeholder="Domain" name="domain" >
                                 <option value="">Select domain </option>
-                                <option value="http://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
-                                <option value="http://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
-                                <option value="http://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
-                                <option value="http://swfinancial.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://swfinancial.culoanportal.com/") echo 'selected' ?>>swfinancial.culoanportal.com</option>
-                                <option value="http://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
+                                <option value= "<?php echo $_SERVER['REQUEST_SCHEME']; ?>://coastalcommunity.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://coastalcommunity.culoanportal.com/") echo 'selected' ?>>coastalcommunity.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://culoanportal.com/") echo 'selected' ?>>culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://mct.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://mct.culoanportal.com/") echo 'selected' ?>>mct.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://swfinancial.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://swfinancial.culoanportal.com/") echo 'selected' ?>>swfinancial.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://bmtccu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == "http://bmtccu.culoanportal.com/") echo 'selected' ?>>bmtccu.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://demo.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://demo.culoanportal.com/") echo 'selected' ?>>demo.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://texasbridge.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://texasbridge.culoanportal.com/") echo 'selected' ?>>taxasbridge.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://jcfcu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://jcfcu.culoanportal.com/") echo 'selected' ?>>jcfcu.culoanportal.com</option>
+                                <option value="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://jctfcu.culoanportal.com/" <?php if (isset($_REQUEST['domain'])) if ($_REQUEST['domain'] == $_SERVER['REQUEST_SCHEME']."://jctfcu.culoanportal.com/") echo 'selected' ?>>jctfcu.culoanportal.com</option>  
                             </select>
                         </div>
 
@@ -270,8 +274,12 @@ $visitor = $this->users->checklead_denied_forDomain();
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?> <?php if ($sort_by != "user.pre_tax_income") { ?> onClick="sortList('user.pre_tax_income', 'asc')"<?php } ?><?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?> onClick="sortList('user.pre_tax_income', 'desc')"<?php } ?>> Monthly Income</a>&nbsp;<?php if ($sort_by == "user.pre_tax_income" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.pre_tax_income" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
-                                <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                
+                                    <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?> <?php if ($sort_by != "user.job_title") { ?> onClick="sortList('user.job_title', 'asc')"<?php } ?><?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?> onClick="sortList('user.job_title', 'desc')"<?php } ?>> Work Experience</a>&nbsp;<?php if ($sort_by == "user.job_title" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.job_title" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
+
+                                    <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.start_time" && $sort_direction == "desc") { ?> onClick="sortList('user.start_time', 'asc')"<?php } ?> <?php if ($sort_by != "user.start_time") { ?> onClick="sortList('user.start_time', 'asc')"<?php } ?><?php if ($sort_by == "user.start_time" && $sort_direction == "asc") { ?> onClick="sortList('user.start_time', 'desc')"<?php } ?>> Total Time</a>&nbsp;<?php if ($sort_by == "user.start_time" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                    <?php } if ($sort_by == "user.start_time" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
 
                                 <th class="column-title"><a href="javascript:void(0)" <?php if ($sort_by == "user.status" && $sort_direction == "desc") { ?> onClick="sortList('user.status', 'asc')"<?php } ?> <?php if ($sort_by != "user.status") { ?> onClick="sortList('user.status', 'asc')"<?php } ?><?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?> onClick="sortList('user.status', 'desc')"<?php } ?>> Status</a>&nbsp;<?php if ($sort_by == "user.status" && $sort_direction == "asc") { ?><i class="fa fa-arrow-up" aria-hidden="true"></i>
                                     <?php } if ($sort_by == "user.status" && $sort_direction == "desc") { ?> <i class="fa fa-arrow-down" aria-hidden="true"></i> <?php } ?></th>
@@ -338,6 +346,16 @@ $visitor = $this->users->checklead_denied_forDomain();
                                         <td><?php echo '$' . number_format($v['pre_tax_income']); ?></td>
 
                                         <td><?php echo $v['job_title']; ?></td>
+                                        <td><?php 
+                                        if(!empty($v['start_time']) && !empty($v['end_time'])){
+                                        $start_datetime = new DateTime($v['start_time']);
+                                        $end_datetime = new DateTime($v['end_time']);
+                                        // Calculate the difference
+                                        $time_difference = $start_datetime->diff($end_datetime);
+                                        echo $time_difference->format('%H:%I:%S');
+                                        }else{
+                                            echo 'N/A';
+                                        } ?></td>
                                         <td><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:green" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"><?php if ($v['status'] == 1) { ?>  Approved<?php } ?></a>
                                             <?php if ($v['status'] == 2) { ?> <a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:darkgoldenrod" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status">Pending <?php } ?>
                                                 <?php if ($v['status'] == 0) { ?><a href="javascript:void()" id="fc_edit" data-toggle="modal" data-target="#CalenderModalView" style="color:red" onclick="getStatus(<?php echo $v['lend_id'] ?>,<?php echo $v['status'] ?>)" title="Change Status"> Denied<?php } ?>

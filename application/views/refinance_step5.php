@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-main clearfix">
                     <h1>Refinance Your Vehicle</h1>
-                    <a href="" class="disclosure-sec">Disclosures</a>
+                    <a href="javascript:void(0)" class="disclosure-sec">Disclosures</a>
                     <div class="clearfix"></div>
                     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                     <label class="control-label">When Were You Born?</label>
@@ -43,14 +43,14 @@
                     <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
                         <select id="selectYear" name="year" class="form-control form-control-small">
                             <option value="">Year</option>
-<?php for ($i = 1900; $i <= 2015; $i++) { ?>
-                                <option  value="<?php echo $i ?>" <?php
-    if (isset($this->session->userdata['years'])) {
-        if ($this->session->userdata['years'] == $i)
-            echo 'selected';
-    }
-    ?>><?php echo $i ?></option>
-<?php } ?>
+                            <?php for ($i = 2023; $i >= 1950; $i--) { ?>
+                                                            <option  value="<?php echo $i ?>" <?php
+                                if (isset($this->session->userdata['years'])) {
+                                    if ($this->session->userdata['years'] == $i)
+                                        echo 'selected';
+                                }
+                                ?>><?php echo $i ?></option>
+                            <?php } ?>
                         </select>
                         
                     </div>

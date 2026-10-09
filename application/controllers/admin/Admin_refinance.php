@@ -128,7 +128,7 @@ class Admin_refinance extends CI_Controller {
             $record_num = $this->uri->segment($last);
             $config['base_url'] = BASE_URL . MASTERADMIN . '/refinance';
             $config['total_rows'] = $this->refinance->get_count_user($filterData);
-            $page = ($record_num) ? $record_num : 0;
+            $page = (is_numeric($record_num)) ? $record_num : 0;
             $config['reuse_query_string'] = TRUE;
             $config['use_page_numbers'] = TRUE;
             if ($page > 0)

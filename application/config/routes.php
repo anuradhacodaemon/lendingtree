@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -87,6 +87,23 @@ $route['admin/refinance/deleteall'] = 'admin/admin_refinance/deleteall';
 $route['admin/refinance/sentemail'] = 'admin/admin_refinance/sentemail';
 $route['admin/refinance/getpdf'] = 'admin/admin_refinance/getpdf';
 
+$route['admin/state/add'] = 'admin/admin_state/add';
+$route['admin/state/store'] = 'admin/admin_state/store';
+$route['admin/state/edit/(:num)'] = 'admin/admin_state/edit/$1';
+$route['admin/state/update/(:num)'] = 'admin/admin_state/update/$1';
+$route['admin/state/delete/(:num)'] = 'admin/admin_state/delete/$1';
+$route['admin/state/(:num)'] = 'admin/admin_state/index/$1';
+$route['admin/state'] = 'admin/admin_state/index';
+
+$route['admin/city/get_states/(:num)'] = 'admin/admin_city/get_states/$1';
+$route['admin/city/add'] = 'admin/admin_city/add';
+$route['admin/city/store'] = 'admin/admin_city/store';
+$route['admin/city/edit/(:num)'] = 'admin/admin_city/edit/$1';
+$route['admin/city/update/(:num)'] = 'admin/admin_city/update/$1';
+$route['admin/city/delete/(:num)'] = 'admin/admin_city/delete/$1';
+$route['admin/city/(:num)'] = 'admin/admin_city/index/$1';
+$route['admin/city'] = 'admin/admin_city/index';
+
 $route['admin/domain'] = 'admin/admin_domain/index';
 $route['admin/domain/(:num)'] = 'admin/admin_domain/index/$1';
 $route['admin/domain/add'] = 'admin/admin_domain/add';
@@ -127,3 +144,23 @@ $route['admin/homeloan/delete_inactive/(:any)'] = 'admin/admin_homeloan/delete_i
 $route['admin/homeloan/deleteall'] = 'admin/admin_homeloan/deleteall';
 $route['admin/homeloan/sentemail'] = 'admin/admin_homeloan/sentemail';
 $route['admin/homeloan/getpdf'] = 'admin/admin_homeloan/getpdf';
+
+$route['admin/personalloanmccu'] = 'admin/personalLoanMccu/index';
+$route['admin/personalloanmccu/(:num)'] = 'admin/personalLoanMccu/index/$1';
+$route['admin/personalloanmccu/details/(:num)'] = 'admin/personalLoanMccu/details/$1';
+$route['admin/personalloanmccu/pdfloan/(:num)'] = 'admin/personalLoanMccu/pdfLoan/$1';
+$route['admin/personalloanmccu/export'] = 'admin/personalLoanMccu/export';
+$route['admin/personalloanmccu/delete_inactive/(:any)'] = 'admin/personalLoanMccu/delete_inactive/$1';
+$route['admin/personalloanmccu/deleteall'] = 'admin/personalLoanMccu/deleteall';
+$route['admin/personalloanmccu/updatestatus'] = 'admin/personalLoanMccu/updatestatus';
+
+
+$route['admin/vsc'] = 'admin/admin_vsc/index';
+$route['admin/vsc/(:num)'] = 'admin/admin_vsc/index/$1';
+$route['admin/vsc/details/(:num)'] = 'admin/admin_vsc/details/$1';
+$route['admin/vsc/vscpdf/(:num)'] = 'admin/admin_vsc/vscpdf/$1';
+$route['admin/vsc/pdfloan/(:num)'] = 'admin/admin_vsc/pdfLoan/$1';
+$route['admin/vsc/export'] = 'admin/admin_vsc/export';
+$route['admin/vsc/delete_inactive/(:any)'] = 'admin/admin_vsc/delete_inactive/$1';
+$route['admin/vsc/deleteall'] = 'admin/admin_vsc/deleteall';
+$route['admin/vsc/updatestatus'] = 'admin/admin_vsc/updatestatus';

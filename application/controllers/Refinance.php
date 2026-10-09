@@ -30,6 +30,11 @@ class Refinance extends CI_Controller {
         if (empty($this->session->userdata['userdata'])) {
             $data = array();
         }
+        $start_time = date('Y-m-d H:i:s');
+        $data = array(
+            'start_time' => $start_time,
+        );
+        $this->session->set_userdata($data);
 
         $this->session->set_userdata('panel', 'frontend');
 
@@ -101,6 +106,10 @@ class Refinance extends CI_Controller {
 
     public function refinancestep5($firstname = '', $lastname = '', $address = '', $city = '', $state = '') {
 
+        $firstname = $this->input->get('firstname');
+        $lastname = $this->input->get('lastname');
+        $address = $this->input->get('address');
+
         if ($firstname) {
             $data = array(
                 'firstname' => $firstname,
@@ -117,7 +126,7 @@ class Refinance extends CI_Controller {
     }
 
 
-    public function refinancestep6($cemployer = '',$job_title = '') {
+    public function refinancestep6($cemployer = '',$start_date = '') {
 
         if ($cemployer) {
 
@@ -126,7 +135,7 @@ class Refinance extends CI_Controller {
             //$real_integer = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
             $data = array(
                 'current_employer' => $cemployer,
-                'job_title' => $job_title
+                'start_date' => $start_date
             );
 
             $this->session->set_userdata($data);
@@ -144,6 +153,9 @@ class Refinance extends CI_Controller {
     }
 
     public function refinancestep7($month = 0, $day = 0, $year = 0, $ssn = '') {
+
+       // $ssn = $this->input->get('ssn');
+        
         if ($ssn) {
             $data = array(
                 'month' => $month,
@@ -175,6 +187,52 @@ class Refinance extends CI_Controller {
             $this->session->set_userdata($data);
 
         }
+            $this->load->view('refinance_step8');
+    }
+
+    public function refinancestep9($val = 'N') {
+    
+        if ($val) {
+            $data = array(
+                'laid_off_for_payment_waived' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $this->load->view('refinance_step9');
+    }
+
+    public function refinancestep10($i_represent_stated = '', $date_of_application = '') {
+    
+        if($this->input->get('i_represent_stated')) {
+
+            $value = $this->input->get('i_represent_stated');
+            $value2 = $this->input->get('date_of_application');
+
+            $newDate = date("Y-m-d", strtotime($value2));
+            $selected = ($value == 'consent') ? 'Y' : 'N';
+            $data = array(
+                'i_represent_stated' => $selected,
+                'date_of_application' => $newDate
+            );
+
+            $this->session->set_userdata($data);
+        }
+
+        $this->load->view('refinance_step10');
+    }
+
+    public function refinancestep11($val = 'N') {
+        if ($val) {
+            $data = array(
+                'die_or_ill_cancel_the_loan' => $val
+            );
+            $this->session->set_userdata($data);
+        }
+        $end_time = date('Y-m-d H:i:s');
+        $data = array(
+            'end_time' => $end_time,
+        );
+        $this->session->set_userdata($data);
 
 
         unset($this->session->userdata['panel']);
@@ -182,10 +240,12 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['userdata']);
         unset($this->session->userdata['type']);
         unset($this->session->userdata['requested_amount']);
-        unset($this->session->userdata['current_employer']);
+        //unset($this->session->userdata['current_employer']);
         //unset($this->session->userdata['job_title']);
         unset($this->session->userdata['pre_tax_income']);
         unset($this->session->userdata['zip']);
+        unset($this->session->userdata['country']);
+        unset($this->session->userdata['street_line']);
         unset($this->session->userdata['loan_type']);
         unset($this->session->userdata['property_type']);
         unset($this->session->userdata['home_type']);
@@ -203,11 +263,26 @@ class Refinance extends CI_Controller {
         unset($this->session->userdata['foreclosure_years']);
         unset($this->session->userdata['mortgage_bal']);
         unset($this->session->userdata['close_mortgage']);
+        unset($this->session->userdata['total_dependent']);
         
         $result = $this->loan_model->add_refinance($this->session->userdata());
 
 
         //$this->loan_model->add_loan($this->session->userdata['userdata']);
+
+        $start_datetime = new DateTime($this->session->userdata['start_time']);
+        $end_datetime = new DateTime($this->session->userdata['end_time']);
+        // Calculate the difference
+        $time_difference = $start_datetime->diff($end_datetime);
+        $total_time= $time_difference->format('%H:%I:%S');
+        $data = array(
+            'total_time_taken_to_submit_the_application' => $total_time,
+        );
+        
+        $this->session->set_userdata($data);
+
+        unset($this->session->userdata['start_time']);
+        unset($this->session->userdata['end_time']);
 
         if ($result > 0) {
             $getPhone = $this->loan_model->get_phone();
@@ -233,6 +308,13 @@ class Refinance extends CI_Controller {
             $this->session->userdata['ssn'] = '';
             $this->session->userdata['email'] = '';
             $this->session->userdata['phone'] = '';
+            $this->session->userdata['laid_off_for_payment_waived'] = '';
+            $this->session->userdata['die_or_ill_cancel_the_loan'] = '';
+            $this->session->userdata['i_represent_stated'] = '';
+            $this->session->userdata['date_of_application'] = '';
+            $this->session->userdata['start_time'] = '';
+            $this->session->userdata['end_time'] = '';
+            $this->session->userdata['total_time_taken_to_submit_the_application'] = '';
             //redirect('/');
             echo 1;
         } /** else {
@@ -266,15 +348,15 @@ class Refinance extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $email . '');
-        $this->email->subject("Space City New Digital Application");
-        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,amit.jadhav@codaemonsoftwares.com');
+        $this->email->subject("Demo Credit Union New Digital Application");
+        $this->email->bcc('nisar.shaikh@codaemonsoftwares.com,haroon.m@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplate();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
             $url = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-                $url = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+                $url = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
             
         $token = array(
@@ -339,6 +421,8 @@ class Refinance extends CI_Controller {
         // $dh = scandir($dir);
         $dh ='' . $name . '.pdf';
         $emails = $this->loan_model->get_phone();
+         //send data to zapier
+        $this->loan_model->send_to_zapier($this->session->userdata(),'refinance',$id);
 
         /*         * $config = Array(
           'protocol' => 'sendmail',
@@ -357,16 +441,16 @@ class Refinance extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(ADMINEMAIL, ADMINNAME);
         $this->email->to('' . $emails[0]['emails'] . '');
-        $this->email->subject("Space City New Digital Application");
+        $this->email->subject("Demo Credit Union New Digital Application");
         $this->email->attach($dir . $dh);
-        $this->email->bcc('shashank.c@codaemonsoftwares.com');
+        $this->email->bcc('haroon.m@codaemonsoftwares.com');
         $emailtemplate = $this->loan_model->get_emailtemplatepdf();
         if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='localhost:82' )
 	    {
             $url_name = 'http://'.$_SERVER['HTTP_HOST'].'/lendingtree';
         }   
         else{
-            $url_name = 'http://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
+            $url_name = $_SERVER['REQUEST_SCHEME'].'://' . str_replace('www.', '', $_SERVER['SERVER_NAME']);
             }
         $token = array(
             'firstname' => $firstname,
@@ -389,6 +473,24 @@ class Refinance extends CI_Controller {
             return 1;
         }
         return 0;
+    }
+
+    public function pdfLoan($id = 0) {
+        $data['userDetails'] = $this->loan_model->get_userdetailsrefinancepdf($id);
+        $name = $data['userDetails'][0]['firstname'] . '_' . $data['userDetails'][0]['lend_id'];
+        $pdf = new PDF();
+        $pdf->SetTitle('' . $_SERVER['HTTP_HOST'] . '');
+        //$pdf->SetMargins(PDF_MARGIN_LEFT, 20, PDF_MARGIN_RIGHT);
+        //$pdf->SetAutoPageBreak(true, 20);
+        // $pdf->setFontSubsetting(false);
+        // $pdf->SetFont('helvetica', '', 10);
+        // add a page
+        $pdf->AddPage();
+        $tbl = $this->load->view('view_fileloan', $data, TRUE);
+        $pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->SetFont('helvetica', '', 6);
+        ob_end_clean();
+        $pdf->Output('' . $name . '.pdf', 'D');
     }
 
 }

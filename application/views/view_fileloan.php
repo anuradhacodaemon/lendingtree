@@ -224,13 +224,19 @@
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Country :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                          <?php echo $userDetails[0]['country']; ?>
+                    </td>
+                </tr>                        
+                                        
+                <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         City :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                          <?php 
-                          if($userDetails[0]['city']>0){
-                          $city=$this->details->get_city($userDetails[0]['city']);
-                          echo $city[0]['name'];} ?>
+                          <?php echo $userDetails[0]['city']; ?>
                     </td>
                 </tr>
                 <tr>
@@ -238,10 +244,7 @@
                         State :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                        <?php  
-                        if($userDetails[0]['state']>0){
-                        $state=$this->details->get_state($userDetails[0]['state']);
-                        echo $state[0]['name']; }?>
+                        <?php  echo $userDetails[0]['state']; ?>
                     </td>
                 </tr>
                 <tr>
@@ -283,11 +286,13 @@
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
-                        Years There :
+                        Start Date :
                     </td>
                     <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
-                      <?php echo $userDetails[0]['job_title'] ?>
+                        <?php echo date('d-m-Y' ,strtotime($userDetails[0]['start_date'])) ?>
                     </td>
+
+                    
                 </tr>
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
@@ -305,6 +310,38 @@
                          <?php echo $userDetails[0]['email'] ?>
                     </td>
                 </tr>
+              <!-- <tr>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        If you are laid off and lose this income source, would you like to have your loan payments waived?  :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                         <?php // echo $userDetails[0]['laid_off_for_payment_waived'] ?>
+                    </td>
+                </tr> -->
+                <tr style='margin-bottom: 5px;'>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        I represent that everything I have stated in this application is correct and complete to the best of my knowledge. you are authorized to check my (our) credit history, and to answer questions about your credit history with me. (us). :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                         <?php echo $userDetails[0]['i_represent_stated'] ?>
+                    </td>
+                </tr>
+                <tr style='margin-bottom: 5px;'>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        Option In for Life Plus Protection :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                         <?php echo $userDetails[0]['loan_insurance'] ?>
+                    </td>
+                </tr>
+                <!-- <tr style='margin-bottom: 5px;'>
+                    <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
+                        If you die or become critically ill during your loan, would you like the credit union to cancel the remaining balance of the loan? :
+                    </td>
+                    <td style="padding:0; font-size:11px; font-weight:400; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0 0 10px;">
+                         <?php // echo $userDetails[0]['die_or_ill_cancel_the_loan'] ?>
+                    </td>
+                </tr>  -->
                 <tr>
                     <td style="padding:0; font-size:11px; font-weight:600; color:#000; text-align:left; font-family:Arial; line-height:20px; letter-spacing:0.3px; margin:0px;">
                         Applicant Signature :
