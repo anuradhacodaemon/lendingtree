@@ -23,6 +23,7 @@ class City_model extends CI_Model {
         $this->db->join(STATE . ' as state', 'state.id = city.state_id', 'left');
         $this->db->join(COUNTRY . ' as country', 'country.id = state.country_id', 'left');
         $this->_apply_active_status('city');
+        $this->db->where('state.country_id', '231');
         $this->db->where('state.status', self::STATUS_ACTIVE);
 
         if ((int) $id > 0) {
@@ -62,6 +63,7 @@ class City_model extends CI_Model {
         $this->db->from(CITY . ' as city');
         $this->db->join(STATE . ' as state', 'state.id = city.state_id', 'left');
         $this->_apply_active_status('city');
+        $this->db->where('state.country_id', '231');
         $this->db->where('state.status', self::STATUS_ACTIVE);
 
         if (isset($filterData['state_id']) && $filterData['state_id'] !== '') {

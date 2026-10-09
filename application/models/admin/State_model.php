@@ -22,6 +22,7 @@ class State_model extends CI_Model {
         $this->db->from(STATE . ' as state');
         $this->db->join(COUNTRY . ' as country', 'country.id = state.country_id', 'left');
         $this->_apply_active_status('state');
+        $this->db->where('state.country_id', '231');
 
         if ((int) $id > 0) {
             $this->db->where('state.id', (int) $id);
@@ -54,6 +55,7 @@ class State_model extends CI_Model {
     public function get_count_states($filterData = array()) {
         $this->db->from(STATE . ' as state');
         $this->_apply_active_status('state');
+        $this->db->where('state.country_id', '231');
 
         if (!empty($filterData['country_id'])) {
             $this->db->where('state.country_id', (int) $filterData['country_id']);

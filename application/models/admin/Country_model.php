@@ -13,6 +13,7 @@ class Country_model extends CI_Model {
     public function get_countries() {
         $this->db->from(COUNTRY);
         $this->db->order_by('name', 'asc');
+        $this->db->where('id', '231');
         $result = $this->db->get();
 
         return $result->result_array();
